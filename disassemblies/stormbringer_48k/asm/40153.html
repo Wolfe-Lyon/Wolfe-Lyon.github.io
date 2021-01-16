@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 40153</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="40008.html">40008</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#40153">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="40177.html">40177</a></span></td>
+</tr>
+</table>
+<div class="description">40153: Decrease Magic Knight's Current Strength by Ten</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="40008.html">40008</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="40153"></span>40153</td>
+<td class="instruction">LD B,10</td>
+<td class="comment-11" rowspan="1">Load B with 10 (as we are decreasing Magic Knight's strength by 10)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="40155"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="40177.html">40177</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="40155"></span>40155</td>
+<td class="instruction">LD A,(24768)</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's current strength into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40158"></span>40158</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...and if zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40159"></span>40159</td>
+<td class="instruction">JR Z,40173</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="40153.html#40173">40173</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40161"></span>40161</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Decrease Magic Knight's current strength by one...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40162"></span>40162</td>
+<td class="instruction">LD (24768),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40165"></span>40165</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40166"></span>40166</td>
+<td class="instruction">CALL <a href="46463.html">46463</a></td>
+<td class="comment-11" rowspan="1">Print Magic Knight's current strength at (6, 2) as text if he is carrying the Mirror</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40169"></span>40169</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40170"></span>40170</td>
+<td class="instruction">DJNZ 40155</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="40153.html#40155">40155</a> for next strength point</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="40172"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="40190.html">40190</a>. It also serves as the room-specific routine for various rooms.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="40172"></span>40172</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="40173"></span>40173</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Remove return address of calling routine from top of Stack</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40174"></span>40174</td>
+<td class="instruction">JP <a href="38841.html#38857">38857</a></td>
+<td class="comment-11" rowspan="1">Display "YOU DIED OF EXHAUSTION" Game Over window and return to Control Selection Menu</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="40008.html">40008</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#40153">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="40177.html">40177</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

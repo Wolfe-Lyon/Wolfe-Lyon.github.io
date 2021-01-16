@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 39829</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="39795.html">39795</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39829">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39883.html">39883</a></span></td>
+</tr>
+</table>
+<div class="description">39829: Animate Arrival of Any New Character if in Magic Knight's Current Room</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="39393.html">39393</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39829"></span>39829</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Reset Character Is Incoming Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39830"></span>39830</td>
+<td class="instruction">LD (23367),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39833"></span>39833</td>
+<td class="instruction">SET 2,(IY+65)</td>
+<td class="comment-11" rowspan="1">Set Characters Can't Move Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39837"></span>39837</td>
+<td class="instruction">LD IX,24898</td>
+<td class="comment-11" rowspan="1">Point IX at start of Table of Characters' Current Positions at <a href="24898.html">24898</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39841"></span>39841</td>
+<td class="instruction">LD BC,2048</td>
+<td class="comment-11" rowspan="1">Load B with 8 and C (current character) with 0</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39844"></span>39844</td>
+<td class="instruction">LD A,(23702)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39847"></span>39847</td>
+<td class="instruction">BIT 7,(IX+0)</td>
+<td class="comment-11" rowspan="1">If Arrival Pending Flag in character's current room (pointed to by IX) is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39851"></span>39851</td>
+<td class="instruction">JR Z,39869</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="39829.html#39869">39869</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39853"></span>39853</td>
+<td class="instruction">LD E,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load E with character's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39856"></span>39856</td>
+<td class="instruction">RES 7,E</td>
+<td class="comment-11" rowspan="1">Reset Arrival Pending Flag in E...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39858"></span>39858</td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="1">...and if this is then the same as Magic Knight's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39859"></span>39859</td>
+<td class="instruction">CALL Z,<a href="39958.html">39958</a></td>
+<td class="comment-11" rowspan="1">...then animate Puff of Smoke at character's current coordinates...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39862"></span>39862</td>
+<td class="instruction">CALL Z,<a href="39883.html">39883</a></td>
+<td class="comment-11" rowspan="1">...and draw the character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39865"></span>39865</td>
+<td class="instruction">RES 7,(IX+0)</td>
+<td class="comment-11" rowspan="1">Reset character's Arrival Pending Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39869"></span>39869</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Increase C (index of current character)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39870"></span>39870</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance IX to room of next character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39872"></span>39872</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39874"></span>39874</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39876"></span>39876</td>
+<td class="instruction">DJNZ 39844</td>
+<td class="comment-11" rowspan="1">Decrease B (remaining number of characters to check) and loop back to <a href="39829.html#39844">39844</a> if not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39878"></span>39878</td>
+<td class="instruction">RES 2,(IY+65)</td>
+<td class="comment-11" rowspan="1">Reset Characters Can't Move Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39882"></span>39882</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="39795.html">39795</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39829">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39883.html">39883</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

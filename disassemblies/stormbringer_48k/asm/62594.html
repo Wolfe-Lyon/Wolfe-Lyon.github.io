@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 62594</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62476.html">62476</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#62594">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="62622.html">62622</a></span></td>
+</tr>
+</table>
+<div class="description">62594: Update Characters' Stats as They Tire (Awake) or Regenerate (Asleep)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="45434.html">45434</a>, <a href="62428.html">62428</a> and <a href="62476.html">62476</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">A character's stat (strength, stamina, happiness or spell power)</td>
+</tr>
+<tr>
+<td class="register">C</td>
+<td class="register-desc">An increment (while asleep) or decrement (while awake) for that stat</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">New value of stat</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62594"></span>62594</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF (A = value of character's stat)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62595"></span>62595</td>
+<td class="instruction">AND 128</td>
+<td class="comment-11" rowspan="1">Capture MSB in stat value and store in instruction at <a href="62594.html#62619">62619</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62597"></span>62597</td>
+<td class="instruction">LD (62620),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62600"></span>62600</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF (A = value of character's stat)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62601"></span>62601</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">Discard MSB of stat value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62603"></span>62603</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">Add change value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62604"></span>62604</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">Check Sign Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62605"></span>62605</td>
+<td class="instruction">JP P,62611</td>
+<td class="comment-11" rowspan="1">If sign flag reset (i.e. MSB of result is reset and result is positive) then jump ahead to <a href="62594.html#62611">62611</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62608"></span>62608</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">else stat must have dropped below zero, so set stat to zero (as it can't be less than 0)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62609"></span>62609</td>
+<td class="instruction">JR 62619</td>
+<td class="comment-11" rowspan="1">Skip ahead to <a href="62594.html#62619">62619</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62611"></span>62611</td>
+<td class="instruction">CP 100</td>
+<td class="comment-11" rowspan="1">If new value of stat is less than or equal to 100...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62613"></span>62613</td>
+<td class="instruction">JR Z,62619</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="62594.html#62619">62619</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62615"></span>62615</td>
+<td class="instruction">JR C,62619</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62617"></span>62617</td>
+<td class="instruction">LD A,100</td>
+<td class="comment-11" rowspan="1">...else set stat to 100 (as it can't be greater than 100)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="62619"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="62594.html#62619">62619</a> represents bit 7 of the input value in A. This is modified by the instruction at <a href="62594.html#62597">62597</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62619"></span>62619</td>
+<td class="instruction">OR 0</td>
+<td class="comment-11" rowspan="1">Restore previously stored MSB state</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62621"></span>62621</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62476.html">62476</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#62594">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="62622.html">62622</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

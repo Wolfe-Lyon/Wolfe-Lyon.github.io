@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 33180</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33129.html">33129</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33180">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33269.html">33269</a></span></td>
+</tr>
+</table>
+<div class="description">33180: Show "WELL DONE MAGIC KNIGHT" Screen with Animated Starfield, Jumping to Game Over on Key-Press</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="33312.html">33312</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33180"></span>33180</td>
+<td class="instruction">IM 1</td>
+<td class="comment-11" rowspan="1">Set interrupt mode 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33182"></span>33182</td>
+<td class="instruction">LD A,(23506)</td>
+<td class="comment-11" rowspan="1">Increase "characters sent home" score...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33185"></span>33185</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33186"></span>33186</td>
+<td class="instruction">LD (23506),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33189"></span>33189</td>
+<td class="instruction">CALL <a href="33278.html">33278</a></td>
+<td class="comment-11" rowspan="1">Flash border and screen (as in cast a spell)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33192"></span>33192</td>
+<td class="instruction">LD A,36</td>
+<td class="comment-11" rowspan="1">Draw window 36...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33194"></span>33194</td>
+<td class="instruction">CALL <a href="36987.html">36987</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33197"></span>33197</td>
+<td class="instruction">LD HL,43663</td>
+<td class="comment-11" rowspan="1">Print "WELL DONE MAGIC KNIGHT..." text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33200"></span>33200</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33203"></span>33203</td>
+<td class="instruction">LD HL,16384</td>
+<td class="comment-11" rowspan="1">Blank out top two thirds of Display File...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33206"></span>33206</td>
+<td class="instruction">LD DE,16385</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33209"></span>33209</td>
+<td class="instruction">LD BC,4095</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33212"></span>33212</td>
+<td class="instruction">LD (HL),L</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33213"></span>33213</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33215"></span>33215</td>
+<td class="instruction">LD A,71</td>
+<td class="comment-11" rowspan="1">Load system variable ATTR T with 71 (white INK, black PAPER, BRIGHT)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33217"></span>33217</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33220"></span>33220</td>
+<td class="instruction">LD (23693),A</td>
+<td class="comment-11" rowspan="1">...and flood top two thirds of Attribute File with this attribute...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33223"></span>33223</td>
+<td class="instruction">LD HL,22528</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33226"></span>33226</td>
+<td class="instruction">LD DE,22529</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33229"></span>33229</td>
+<td class="instruction">LD BC,511</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33232"></span>33232</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33233"></span>33233</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33235"></span>33235</td>
+<td class="instruction">LD HL,0</td>
+<td class="comment-11" rowspan="1">Set Magic Knight's x- and y-velocities to zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33238"></span>33238</td>
+<td class="instruction">LD (25391),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33241"></span>33241</td>
+<td class="instruction">LD HL,19320</td>
+<td class="comment-11" rowspan="1">Set Magic Knight's x-coordinate to 120 and y-coordinate to 75...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33244"></span>33244</td>
+<td class="instruction">LD (25387),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33247"></span>33247</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set Magic Knight's current frame to erase to zero (frame 0 is blank graphic data) so Magic Knight is drawn but not erased...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33248"></span>33248</td>
+<td class="instruction">LD (25389),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33251"></span>33251</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Set Magic Knight's current frame to 1...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33253"></span>33253</td>
+<td class="instruction">LD (25390),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33256"></span>33256</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set A to zero (Magic Knight) and...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33257"></span>33257</td>
+<td class="instruction">CALL <a href="39224.html">39224</a></td>
+<td class="comment-11" rowspan="1">...draw Magic Knight (erase old frame and draw new frame)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33260"></span>33260</td>
+<td class="instruction">CALL <a href="38884.html">38884</a></td>
+<td class="comment-11" rowspan="1">Animate starfield until a key is pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33263"></span>33263</td>
+<td class="instruction">LD HL,43789</td>
+<td class="comment-11" rowspan="1">Point HL at "YOU HAVE SUCCEEDED IN YOUR TASK..." text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33266"></span>33266</td>
+<td class="instruction">JP <a href="35101.html">35101</a></td>
+<td class="comment-11" rowspan="1">Jump to "Game over" window routine and exit</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33129.html">33129</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33180">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33269.html">33269</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

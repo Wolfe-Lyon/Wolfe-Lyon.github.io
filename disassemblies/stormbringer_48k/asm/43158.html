@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 43158</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="43117.html">43117</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#43158">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="43199.html">43199</a></span></td>
+</tr>
+</table>
+<div class="description">43158: Wake Current Character Up if Possible</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="43158"></span>43158</td>
+<td class="instruction">CALL <a href="45411.html">45411</a></td>
+<td class="comment-11" rowspan="1">Point IX at Current Character's current stats</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43161"></span>43161</td>
+<td class="instruction">BIT 7,(IX+6)</td>
+<td class="comment-11" rowspan="1">If character's Asleep Flag is set then reset Zero Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43165"></span>43165</td>
+<td class="instruction">LD HL,52707</td>
+<td class="comment-11" rowspan="1">Point HL at "[Current Character's short name] IS ALREADY AWAKE" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43168"></span>43168</td>
+<td class="instruction">JP Z,<a href="64313.html">64313</a></td>
+<td class="comment-11" rowspan="1">If character is awake then display "[Character] IS ALREADY AWAKE" Window (29), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43171"></span>43171</td>
+<td class="instruction">LD A,(IX+2)</td>
+<td class="comment-11" rowspan="1">If character's stamina is less than 30...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43174"></span>43174</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43176"></span>43176</td>
+<td class="instruction">CP 30</td>
+<td class="comment-11" rowspan="1">...then set Carry Flag, otherwise reset it</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43178"></span>43178</td>
+<td class="instruction">LD HL,52719</td>
+<td class="comment-11" rowspan="1">Point HL at "[Current Character's short name] IS TOO TIRED TO WAKE UP" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43181"></span>43181</td>
+<td class="instruction">JP C,<a href="64313.html">64313</a></td>
+<td class="comment-11" rowspan="1">If Carry Flag is set then display "[Character] IS TOO TIRED TO WAKE UP" window (29), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43184"></span>43184</td>
+<td class="instruction">LD B,30</td>
+<td class="comment-11" rowspan="1">If character's happiness is less than 30 then Show "[Character] DOES NOT WANT TO BE COMMANDED..." and Jump to Main Game Loop...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43186"></span>43186</td>
+<td class="instruction">CALL <a href="45423.html">45423</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43189"></span>43189</td>
+<td class="instruction">RES 7,(IX+6)</td>
+<td class="comment-11" rowspan="1">Reset character's Asleep Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43193"></span>43193</td>
+<td class="instruction">LD HL,52731</td>
+<td class="comment-11" rowspan="1">Point HL at "[Current Character's short name] HAS WOKEN UP" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43196"></span>43196</td>
+<td class="instruction">JP <a href="64313.html">64313</a></td>
+<td class="comment-11" rowspan="1">Display "[Character] HAS WOKEN UP" Window (29), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="43117.html">43117</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#43158">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="43199.html">43199</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

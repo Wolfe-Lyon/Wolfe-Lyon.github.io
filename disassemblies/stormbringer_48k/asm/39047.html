@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 39047</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="39036.html">39036</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39047">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39158.html">39158</a></span></td>
+</tr>
+</table>
+<div class="description">39047: Room Drawing (000) - Draw Floor, Paint Attributes / Terrain Interaction Data, Draw MK, Characters and Objects then Return</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="38841.html">38841</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39047"></span>39047</td>
+<td class="instruction">LD A,(23452)</td>
+<td class="comment-11" rowspan="1">If Drawing Layout Data Fragment Flag is zero (reset)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39050"></span>39050</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39051"></span>39051</td>
+<td class="instruction">JR Z,39063</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="39047.html#39063">39063</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39053"></span>39053</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set Drawing Layout Data Fragment Flag to zero (reset)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39054"></span>39054</td>
+<td class="instruction">LD (23452),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39057"></span>39057</td>
+<td class="instruction">LD HL,(23453)</td>
+<td class="comment-11" rowspan="1">Load HL with previously stored position in room layout data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39060"></span>39060</td>
+<td class="instruction">JP <a href="38841.html#38977">38977</a></td>
+<td class="comment-11" rowspan="1">Loop back to <a href="38841.html#38977">38977</a> for next byte of room layout data</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="39063"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="39047.html#39063">39063</a> represents the address of start of room layout data for the current room. This is modified by the instruction at <a href="38841.html#38974">38974</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39063"></span>39063</td>
+<td class="instruction">LD IX,0</td>
+<td class="comment-11" rowspan="1">Load IX with start address of room layout data for current room</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="39067"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="39183.html">39183</a>, <a href="39189.html">39189</a>, <a href="39216.html">39216</a>, <a href="39291.html">39291</a>, <a href="39393.html">39393</a> and <a href="41059.html">41059</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39067"></span>39067</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load first byte of room layout data instruction</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39070"></span>39070</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If this byte is zero (i.e. last entry so no more painting to do)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39071"></span>39071</td>
+<td class="instruction">JP Z,<a href="39393.html">39393</a></td>
+<td class="comment-11" rowspan="1">...then finalise room drawing, draw objects and characters, and animate the arrival of any new characters, then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39074"></span>39074</td>
+<td class="instruction">CP 127</td>
+<td class="comment-11" rowspan="1">If this byte is 127 (i.e. horizontal block drawing)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39076"></span>39076</td>
+<td class="instruction">JP Z,<a href="39216.html">39216</a></td>
+<td class="comment-11" rowspan="1">...then draw run of 2x2 blocks horizontally</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39079"></span>39079</td>
+<td class="instruction">CP 126</td>
+<td class="comment-11" rowspan="1">If this byte is 126 (i.e. vertical block drawing)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39081"></span>39081</td>
+<td class="instruction">JP Z,<a href="39291.html">39291</a></td>
+<td class="comment-11" rowspan="1">...then draw run of 2x2 blocks vertically</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39084"></span>39084</td>
+<td class="instruction">BIT 7,A</td>
+<td class="comment-11" rowspan="1">If Bit 7 (Draw Layout Data Fragment Flag) is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39086"></span>39086</td>
+<td class="instruction">JP NZ,<a href="39189.html">39189</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="39189.html">39189</a> (start painting attribute / terrain interaction data for layout data fragment)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39089"></span>39089</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance to RLE Attribute Data index and load into L...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39091"></span>39091</td>
+<td class="instruction">LD L,(IX+0)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39094"></span>39094</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance to RLE Terrain Interaction Data index and load into E...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39096"></span>39096</td>
+<td class="instruction">LD E,(IX+0)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39099"></span>39099</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance to x-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39101"></span>39101</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39104"></span>39104</td>
+<td class="instruction">LD (23408),A</td>
+<td class="comment-11" rowspan="1">...and store at <a href="23404.html#23408">23408</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39107"></span>39107</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance to y-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39109"></span>39109</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39112"></span>39112</td>
+<td class="instruction">LD (23409),A</td>
+<td class="comment-11" rowspan="1">...and store at <a href="23404.html#23409">23409</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39115"></span>39115</td>
+<td class="instruction">LD H,0</td>
+<td class="comment-11" rowspan="1">Load H with zero (RLE Attribute Data index already in L)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39117"></span>39117</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...and multiply by four...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39118"></span>39118</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39119"></span>39119</td>
+<td class="instruction">LD BC,60487</td>
+<td class="comment-11" rowspan="1">Point BC at start of Lookup Table for RLE Attribute Data (Room Layout Graphics)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39122"></span>39122</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...and add HL as offset, loading result into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39123"></span>39123</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Swap DE (now points to entry in RLE Attribute Lookup Table at <a href="60487.html">60487</a>) and HL (L now RLE Terrain Interaction Data index)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39124"></span>39124</td>
+<td class="instruction">LD H,0</td>
+<td class="comment-11" rowspan="1">Load H with zero (RLE Terrain Interaction Data index already in L)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39126"></span>39126</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...and multiply by four...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39127"></span>39127</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39128"></span>39128</td>
+<td class="instruction">LD BC,60889</td>
+<td class="comment-11" rowspan="1">Point BC at start of Lookup Table for RLE Terrain Interaction Data (Room Layout Graphics)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39131"></span>39131</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...and add HL as offset, loading result into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39132"></span>39132</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Swap DE (now points to entry in RLE Terrain Interaction Lookup Table at <a href="60889.html">60889</a>) and HL (now points to entry in RLE Attribute Lookup Table at <a href="60487.html">60487</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39133"></span>39133</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Store DE (pointer to required entry in RLE Terrain Interaction Lookup Table)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39134"></span>39134</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance to Mirror Options...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39136"></span>39136</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">...and load into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39139"></span>39139</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store IX (current position in room layout data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39141"></span>39141</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If both mirror options are off...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="39142"></span>
+<div class="comments">
+<div class="paragraph">
+The following jumps handle the painting of the current room layout data entry's attribute and terrain interaction data. After this painting is completed, IX is advanced to the start of the next room layout data entry and a jump back to <a href="39047.html#39067">39067</a> occurs to process this next entry.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39142"></span>39142</td>
+<td class="instruction">JP Z,<a href="40937.html">40937</a></td>
+<td class="comment-11" rowspan="1">...then paint room layout data entry's attributes and terrain interaction data then process next entry</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39145"></span>39145</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">If Apply Vertical Mirror selected...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39147"></span>39147</td>
+<td class="instruction">JP Z,<a href="40905.html">40905</a></td>
+<td class="comment-11" rowspan="1">...then paint room layout data entry's attributes and terrain interaction data applying vertical mirror, then process next entry</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39150"></span>39150</td>
+<td class="instruction">CP 2</td>
+<td class="comment-11" rowspan="1">If Apply Horizontal Mirror selected...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39152"></span>39152</td>
+<td class="instruction">JP Z,<a href="40873.html">40873</a></td>
+<td class="comment-11" rowspan="1">...then paint room layout data entry's attributes and terrain interaction data applying horizontal mirror, then process next entry</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39155"></span>39155</td>
+<td class="instruction">JP <a href="40845.html">40845</a></td>
+<td class="comment-11" rowspan="1">Otherwise, paint room layout data entry's attributes and terrain interaction data applying horizontal and vertical mirrors, then process next entry</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="39036.html">39036</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39047">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39158.html">39158</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

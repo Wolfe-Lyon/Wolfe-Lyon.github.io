@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 29291</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="29225.html">29225</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#29291">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="29356.html">29356</a></span></td>
+</tr>
+</table>
+<div class="description">29291: Room Drawing: Draw Ceiling Candles</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="29291"></span>29291</td>
+<td class="instruction">CALL <a href="29441.html">29441</a></td>
+<td class="comment-11" rowspan="1">Read two bytes AFTER HL position into BC, advancing HL before both reads</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29294"></span>29294</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29295"></span>29295</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29296"></span>29296</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-11" rowspan="1">Load system variable ATTR T with 7 (white INK, black PAPER)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29298"></span>29298</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29301"></span>29301</td>
+<td class="instruction">LD A,64</td>
+<td class="comment-11" rowspan="1">Set current Terrain Interaction Parameter to "preserve attribute"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29303"></span>29303</td>
+<td class="instruction">LD (23483),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29306"></span>29306</td>
+<td class="instruction">LD A,96</td>
+<td class="comment-11" rowspan="1">Draw ceiling candles...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29308"></span>29308</td>
+<td class="instruction">CALL <a href="29960.html">29960</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29311"></span>29311</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29312"></span>29312</td>
+<td class="instruction">INC B</td>
+<td class="comment-11" rowspan="1">Increase y-coordinate by two...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29313"></span>29313</td>
+<td class="instruction">INC B</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29314"></span>29314</td>
+<td class="instruction">CALL <a href="36569.html">36569</a></td>
+<td class="comment-11" rowspan="1">Update Virtual Attribute Cursor storage location to coordinates x=C y=B and point HL to corresponding Attribute File address</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29317"></span>29317</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (memory address of attribute cursor)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29318"></span>29318</td>
+<td class="instruction">CALL <a href="28814.html">28814</a></td>
+<td class="comment-11" rowspan="1">Add a glowing character block to the current room (left-hand candle)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29321"></span>29321</td>
+<td class="instruction">LD BC,34</td>
+<td class="comment-11" rowspan="1">Advance Attribute File pointer down a row and to the right by two characters...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29324"></span>29324</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29325"></span>29325</td>
+<td class="instruction">CALL <a href="28814.html">28814</a></td>
+<td class="comment-11" rowspan="1">Add a glowing character block to the current room (right-hand candle)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29328"></span>29328</td>
+<td class="instruction">LD A,70</td>
+<td class="comment-11" rowspan="1">Set attribute at this location to 70 (yellow INK, black PAPER, BRIGHT) (candles)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29330"></span>29330</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore memory address of attribute cursor to IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29332"></span>29332</td>
+<td class="instruction">LD (IX+32),A</td>
+<td class="comment-11" rowspan="1">Set attribute of left-hand candle...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29335"></span>29335</td>
+<td class="instruction">LD (IX+64),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29338"></span>29338</td>
+<td class="instruction">LD (IX+66),A</td>
+<td class="comment-11" rowspan="1">...and right-hand candle to 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29341"></span>29341</td>
+<td class="instruction">LD A,71</td>
+<td class="comment-11" rowspan="1">Set attribute at this location to 71 (white INK, black PAPER, BRIGHT) (base - 3 bytes, 3 x 1)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29343"></span>29343</td>
+<td class="instruction">LD (IX+96),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29346"></span>29346</td>
+<td class="instruction">LD (IX+97),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29349"></span>29349</td>
+<td class="instruction">LD (IX+98),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29352"></span>29352</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29353"></span>29353</td>
+<td class="instruction">JP <a href="27865.html#28060">28060</a></td>
+<td class="comment-11" rowspan="1">Return to room drawing routine and process next data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="29225.html">29225</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#29291">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="29356.html">29356</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

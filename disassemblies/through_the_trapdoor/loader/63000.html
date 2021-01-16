@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 63000</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="loader-Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Loader routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="23755.html">23755</a></span></td>
+<td class="up">Up: <a href="loader.html#63000">Map</a></td>
+<td class="next"><span class="next-0">Next: <a href=""></a></span></td>
+</tr>
+</table>
+<div class="description">63000: Load loading screen and main game code</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="63000"></span>
+<div class="comments">
+<div class="paragraph">
+The following instructions set the system variable DF SZ to zero. This prevents a press of the break key returning us to basic while the game is loading.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63000"></span>63000</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="2">Set system variable DF SZ to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63001"></span>63001</td>
+<td class="instruction">LD (23659),A</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63004"></span>63004</td>
+<td class="instruction">LD DE,6912</td>
+<td class="comment-11" rowspan="9">Load loading screen to 40000 and copy into Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63007"></span>63007</td>
+<td class="instruction">LD IX,40000</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63011"></span>63011</td>
+<td class="instruction">LD A,255</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63013"></span>63013</td>
+<td class="instruction">SCF</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63014"></span>63014</td>
+<td class="instruction">CALL 1366</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63017"></span>63017</td>
+<td class="instruction">LD HL,40000</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63020"></span>63020</td>
+<td class="instruction">LD DE,16384</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63023"></span>63023</td>
+<td class="instruction">LD BC,6912</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63026"></span>63026</td>
+<td class="instruction">LDIR</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63028"></span>63028</td>
+<td class="instruction">LD DE,32860</td>
+<td class="comment-11" rowspan="5">Load 32860 bytes to 27000</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63031"></span>63031</td>
+<td class="instruction">LD IX,27000</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63035"></span>63035</td>
+<td class="instruction">LD A,255</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63037"></span>63037</td>
+<td class="instruction">SCF</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63038"></span>63038</td>
+<td class="instruction">CALL 1366</td>
+<td class="comment-01" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63041"></span>63041</td>
+<td class="instruction">JP <a href="../initialisation/34200.html">34200</a></td>
+<td class="comment-11" rowspan="1">Jump to start-up code</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="23755.html">23755</a></span></td>
+<td class="up">Up: <a href="loader.html#63000">Map</a></td>
+<td class="next"><span class="next-0">Next: <a href=""></a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 48567</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="48487.html">48487</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#48567">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="48593.html">48593</a></span></td>
+</tr>
+</table>
+<div class="description">48567: Script Routine (35): Move Entity at IX (and if Berk, Carried Entity) Down One Character</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="37778.html">37778</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data for an entity</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="48567"></span>48567</td>
+<td class="instruction">INC (IX+4)</td>
+<td class="comment-11" rowspan="1">Increase y-coordinates of entity's top and bottom edges by one character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48570"></span>48570</td>
+<td class="instruction">INC (IX+6)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48573"></span>48573</td>
+<td class="instruction">BIT 4,(IX+9)</td>
+<td class="comment-11" rowspan="1">If entity is Berk and his Carrying Something Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48577"></span>48577</td>
+<td class="instruction">JP Z,<a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance HL to next script instruction and execute)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48580"></span>48580</td>
+<td class="instruction">LD IY,(34260)</td>
+<td class="comment-11" rowspan="1">Load IY with address of complex state data for entity held by Berk...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48584"></span>48584</td>
+<td class="instruction">INC (IY+4)</td>
+<td class="comment-11" rowspan="1">...and increase its top and bottom y-coordinates by one character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48587"></span>48587</td>
+<td class="instruction">INC (IY+6)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48590"></span>48590</td>
+<td class="instruction">JP <a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="48487.html">48487</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#48567">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="48593.html">48593</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

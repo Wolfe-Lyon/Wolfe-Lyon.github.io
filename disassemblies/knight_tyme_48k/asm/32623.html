@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 32623</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32602.html">32602</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32623">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32672.html">32672</a></span></td>
+</tr>
+</table>
+<div class="description">32623: Set Top-Left and Bottom-Right of Area to Cycle Attributes (for Transporter Effect)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="32252.html">32252</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32623"></span>32623</td>
+<td class="instruction">LD HL,2571</td>
+<td class="comment-11" rowspan="1">Set top-left of area for transporter effect to (11, 10) characters...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32626"></span>32626</td>
+<td class="instruction">LD (23493),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32629"></span>32629</td>
+<td class="instruction">LD HL,4628</td>
+<td class="comment-11" rowspan="1">Set bottom-right of area for transporter effect to (20, 18) characters...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32632"></span>32632</td>
+<td class="instruction">LD (23495),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32635"></span>32635</td>
+<td class="instruction">LD A,(23701)</td>
+<td class="comment-11" rowspan="1">If Magic Knight's current room is 2 (USS Pisces, 2, The Transporter Room)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32638"></span>32638</td>
+<td class="instruction">CP 2</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32640"></span>32640</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32641"></span>32641</td>
+<td class="instruction">LD HL,2561</td>
+<td class="comment-11" rowspan="1">Set top-left of area for transporter effect to (1, 10) characters...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32644"></span>32644</td>
+<td class="instruction">LD (23493),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32647"></span>32647</td>
+<td class="instruction">LD HL,4613</td>
+<td class="comment-11" rowspan="1">Set bottom-right of area for transporter effect to (5, 18) characters...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32650"></span>32650</td>
+<td class="instruction">LD (23495),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32653"></span>32653</td>
+<td class="instruction">LD A,(23701)</td>
+<td class="comment-11" rowspan="1">If Magic Knight's current room is not 36 (index of "YE OLDE TRANSPORTER" room in 128k version - <a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32656"></span>32656</td>
+<td class="instruction">CP 36</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32658"></span>32658</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32659"></span>32659</td>
+<td class="instruction">LD HL,4870</td>
+<td class="comment-11" rowspan="1">Set top-left of area for transporter effect to (6, 19) characters...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32662"></span>32662</td>
+<td class="instruction">LD (23493),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32665"></span>32665</td>
+<td class="instruction">LD HL,5640</td>
+<td class="comment-11" rowspan="1">Set bottom-right of area for transporter effect to (8, 22) characters...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32668"></span>32668</td>
+<td class="instruction">LD (23495),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32671"></span>32671</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32602.html">32602</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32623">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32672.html">32672</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

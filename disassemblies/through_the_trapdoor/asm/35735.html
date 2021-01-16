@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 35735</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35689.html">35689</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35735">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36008.html">36008</a></span></td>
+</tr>
+</table>
+<div class="description">35735: Update State of Berk Depending Upon Currently Selected Character, Control Input and Currently Active Power</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="35689.html">35689</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data (current level) for Berk</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35735"></span>35735</td>
+<td class="instruction">BIT 7,(IX+9)</td>
+<td class="comment-11" rowspan="1">If Berk's Moving Upwards Flag (floating power) is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35739"></span>35739</td>
+<td class="instruction">JP NZ,<a href="36542.html">36542</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="36542.html">36542</a> (update state of Berk,  floating power active)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35742"></span>35742</td>
+<td class="instruction">BIT 0,(IX+9)</td>
+<td class="comment-11" rowspan="1">If Berk's Must Process Current Script Data Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35746"></span>35746</td>
+<td class="instruction">JP NZ,<a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance HL to next script instruction and execute)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35749"></span>35749</td>
+<td class="instruction">LD A,(34208)</td>
+<td class="comment-11" rowspan="1">If Drutt Mode Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35752"></span>35752</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35754"></span>35754</td>
+<td class="instruction">JP NZ,<a href="35577.html">35577</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="35577.html">35577</a> (change direction Berk is facing depending upon relative position of Drutt)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35757"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt Mode Flag is reset (i.e. Berk Mode)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35757"></span>35757</td>
+<td class="instruction">LD A,(34219)</td>
+<td class="comment-11" rowspan="1">Load A with control input</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35760"></span>35760</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">If right has been pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35762"></span>35762</td>
+<td class="instruction">JP NZ,<a href="36116.html#36214">36214</a></td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="36116.html#36214">36214</a> (move Berk right if appropriate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35765"></span>35765</td>
+<td class="instruction">BIT 1,A</td>
+<td class="comment-11" rowspan="1">If left has been pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35767"></span>35767</td>
+<td class="instruction">JP NZ,<a href="36116.html#36137">36137</a></td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="36116.html#36137">36137</a> (move Berk left if appropriate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35770"></span>35770</td>
+<td class="instruction">CALL <a href="54283.html">54283</a></td>
+<td class="comment-11" rowspan="1">Move Berk into new room (left or right) if he is at the edge of his current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35773"></span>35773</td>
+<td class="instruction">LD A,(34219)</td>
+<td class="comment-11" rowspan="1">Load A with control input</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35776"></span>35776</td>
+<td class="instruction">BIT 2,A</td>
+<td class="comment-11" rowspan="1">If forward has been pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35778"></span>35778</td>
+<td class="instruction">JP NZ,<a href="36036.html">36036</a></td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="36036.html">36036</a> (update state of Berk, forward pressed)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35781"></span>35781</td>
+<td class="instruction">BIT 3,A</td>
+<td class="comment-11" rowspan="1">If back has been pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35783"></span>35783</td>
+<td class="instruction">JP NZ,35827</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35735.html#35827">35827</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35786"></span>
+<div class="comments">
+<div class="paragraph">
+At this point, no control has been pressed.
+</div>
+<div class="paragraph">
+This entry point is used by the routines at <a href="35577.html">35577</a>, <a href="36036.html">36036</a> and <a href="36116.html">36116</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35786"></span>35786</td>
+<td class="instruction">BIT 6,(IX+9)</td>
+<td class="comment-11" rowspan="1">If Berk is not flying...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35790"></span>35790</td>
+<td class="instruction">JR Z,35802</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35735.html#35802">35802</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35792"></span>
+<div class="comments">
+<div class="paragraph">
+Berk is flying
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35792"></span>35792</td>
+<td class="instruction">RES 6,(IX+9)</td>
+<td class="comment-11" rowspan="1">Reset Berk's Is Flying Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35796"></span>35796</td>
+<td class="instruction">LD HL,35359</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk starting to fall downwards...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35799"></span>35799</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35802"></span>
+<div class="comments">
+<div class="paragraph">
+No control pressed and Berk not flying
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35802"></span>35802</td>
+<td class="instruction">BIT 1,(IX+9)</td>
+<td class="comment-11" rowspan="1">If Berk's Facing Into Screen Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35806"></span>35806</td>
+<td class="instruction">JR Z,35821</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35735.html#35821">35821</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35808"></span>
+<div class="comments">
+<div class="paragraph">
+No control pressed, Berk not flying and Berk's Facing Into Screen Flag is set
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35808"></span>35808</td>
+<td class="instruction">BIT 3,(IX+11)</td>
+<td class="comment-11" rowspan="1">If Berk's Unused (11,3) Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35812"></span>35812</td>
+<td class="instruction">JP Z,<a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance HL to next script instruction and execute)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35815"></span>
+<div class="comments">
+<div class="paragraph">
+No control pressed, Berk not flying, Berk's Facing Into Screen and Unused (11,3) flags are set
+</div>
+<div class="paragraph">
+This entry point is used by the routine at <a href="35577.html">35577</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35815"></span>35815</td>
+<td class="instruction">LD HL,35113</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk facing into screen, ready to respond to control input...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35818"></span>35818</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35821"></span>
+<div class="comments">
+<div class="paragraph">
+No control pressed, Berk not flying and Berk's Facing Into Screen Flag is reset
+</div>
+<div class="paragraph">
+This entry point is used by the routine at <a href="35577.html">35577</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35821"></span>35821</td>
+<td class="instruction">LD HL,35081</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk facing out of screen, ready to respond to control input...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35824"></span>35824</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35827"></span>
+<div class="comments">
+<div class="paragraph">
+Back Pressed
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35827"></span>35827</td>
+<td class="instruction">BIT 6,(IX+9)</td>
+<td class="comment-11" rowspan="1">If Berk is flying...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35831"></span>35831</td>
+<td class="instruction">JP NZ,<a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance HL to next script instruction and execute)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35834"></span>35834</td>
+<td class="instruction">CALL <a href="36008.html">36008</a></td>
+<td class="comment-11" rowspan="1">If Berk is holding an edible entity them make him eat it, process appropriate script data and return to calling routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35837"></span>35837</td>
+<td class="instruction">DEC (IX+4)</td>
+<td class="comment-11" rowspan="1">Temporarily decrease y-coordinate of Berk's top edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35840"></span>35840</td>
+<td class="instruction">CALL <a href="54890.html">54890</a></td>
+<td class="comment-11" rowspan="1">Check entity at IX for collision with another entity (in reverse order) at next depth level into screen whose Interaction (11,7) Flag is set</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35843"></span>35843</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35844"></span>35844</td>
+<td class="instruction">INC (IX+4)</td>
+<td class="comment-11" rowspan="1">Restore y-coordinate of Berk's top edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35847"></span>35847</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35848"></span>35848</td>
+<td class="instruction">JR C,35953</td>
+<td class="comment-11" rowspan="1">If no collision occurred, then skip ahead to <a href="35735.html#35953">35953</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35850"></span>35850</td>
+<td class="instruction">CP 33</td>
+<td class="comment-11" rowspan="1">If collision was not with an entity of class 33 (door)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35852"></span>35852</td>
+<td class="instruction">JR NZ,35870</td>
+<td class="comment-11" rowspan="1">...then skip ahead <a href="35735.html#35870">35870</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35854"></span>
+<div class="comments">
+<div class="paragraph">
+Collision with door
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35854"></span>35854</td>
+<td class="instruction">CALL <a href="36116.html">36116</a></td>
+<td class="comment-11" rowspan="1">If Berk is not horizontally aligned with door then move him closer and exit this routine</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35857"></span>
+<div class="comments">
+<div class="paragraph">
+Berk is now horizontally aligned with door
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35857"></span>35857</td>
+<td class="instruction">CALL <a href="36367.html">36367</a></td>
+<td class="comment-11" rowspan="1">If Berk is neither facing into the screen nor walking then exit this routine and have Berk turn into screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35860"></span>35860</td>
+<td class="instruction">LD (34256),IY</td>
+<td class="comment-11" rowspan="1">Store address of complex state data for door at <a href="34256.html">34256</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35864"></span>35864</td>
+<td class="instruction">LD HL,35017</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk interacting with a door behind him...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35867"></span>35867</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35870"></span>
+<div class="comments">
+<div class="paragraph">
+Collision with something other than door
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35870"></span>35870</td>
+<td class="instruction">CP 22</td>
+<td class="comment-11" rowspan="1">If collision was with an entity of class of 22 or greater (can't be picked up)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35872"></span>35872</td>
+<td class="instruction">JR NC,35924</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35735.html#35924">35924</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35874"></span>
+<div class="comments">
+<div class="paragraph">
+Collision with entity that can be picked up
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35874"></span>35874</td>
+<td class="instruction">BIT 4,(IX+9)</td>
+<td class="comment-11" rowspan="1">If Berk is already carrying something...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35878"></span>35878</td>
+<td class="instruction">JP NZ,35953</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35735.html#35953">35953</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35881"></span>35881</td>
+<td class="instruction">CALL <a href="36116.html">36116</a></td>
+<td class="comment-11" rowspan="1">If Berk is not horizontally aligned with entity then move him closer and exit this routine</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35884"></span>
+<div class="comments">
+<div class="paragraph">
+Berk is now horizontally aligned with entity pointed to by IY
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35884"></span>35884</td>
+<td class="instruction">CALL <a href="36367.html">36367</a></td>
+<td class="comment-11" rowspan="1">If Berk is neither facing into the screen nor walking then exit this routine and have Berk turn into screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35887"></span>35887</td>
+<td class="instruction">LD (34256),IY</td>
+<td class="comment-11" rowspan="1">Store address of complex state data for entity at <a href="34256.html">34256</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35891"></span>35891</td>
+<td class="instruction">LD B,(IX+6)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of Berk's bottom edge...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35894"></span>35894</td>
+<td class="instruction">DEC B</td>
+<td class="comment-11" rowspan="1">...minus 1 (to take into account different depth)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35895"></span>35895</td>
+<td class="instruction">LD A,(IY+6)</td>
+<td class="comment-11" rowspan="1">Load A with y-coordinate of entity's bottom edge...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35898"></span>35898</td>
+<td class="instruction">CP (IX+4)</td>
+<td class="comment-11" rowspan="1">...and if this is less than the y-coordinate of Berk's top edge...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35901"></span>35901</td>
+<td class="instruction">JR C,35918</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35735.html#35918">35918</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35903"></span>
+<div class="comments">
+<div class="paragraph">
+Entity is not above Berk
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35903"></span>35903</td>
+<td class="instruction">CP B</td>
+<td class="comment-11" rowspan="1">If entity's bottom edge is level with Berk's (taking into account different depth)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35904"></span>35904</td>
+<td class="instruction">JR Z,35912</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35735.html#35912">35912</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35906"></span>
+<div class="comments">
+<div class="paragraph">
+Entity is above floor and below Berk's top edge
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35906"></span>35906</td>
+<td class="instruction">LD HL,35163</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk picking up an entity that is above floor and below Berk's top edge and behind him...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35909"></span>35909</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35912"></span>
+<div class="comments">
+<div class="paragraph">
+Entity is on floor behind Berk
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35912"></span>35912</td>
+<td class="instruction">LD HL,35135</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk picking up an entity on floor behind him...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35915"></span>35915</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35918"></span>
+<div class="comments">
+<div class="paragraph">
+Entity is above Berk
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35918"></span>35918</td>
+<td class="instruction">LD HL,35149</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk picking up an entity above and behind him...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35921"></span>35921</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35924"></span>
+<div class="comments">
+<div class="paragraph">
+Collision with something that can't be picked up
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35924"></span>35924</td>
+<td class="instruction">CP 32</td>
+<td class="comment-11" rowspan="1">If collision was not with entity of class 32 (coloured creatures' slots, Level 3)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35926"></span>35926</td>
+<td class="instruction">JR NZ,35953</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35735.html#35953">35953</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35928"></span>
+<div class="comments">
+<div class="paragraph">
+Collision with a coloured creature slot
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35928"></span>35928</td>
+<td class="instruction">BIT 4,(IX+9)</td>
+<td class="comment-11" rowspan="1">If Berk is not carrying anything...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35932"></span>35932</td>
+<td class="instruction">JR Z,35953</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35735.html#35953">35953</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35934"></span>
+<div class="comments">
+<div class="paragraph">
+Berk is carrying something
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35934"></span>35934</td>
+<td class="instruction">CALL <a href="36116.html">36116</a></td>
+<td class="comment-11" rowspan="1">If Berk is not horizontally aligned with coloured creature slot then move him closer and exit this routine</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35937"></span>
+<div class="comments">
+<div class="paragraph">
+Berk is now horizontally aligned with coloured creature slot and carrying something
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35937"></span>35937</td>
+<td class="instruction">CALL <a href="36367.html">36367</a></td>
+<td class="comment-11" rowspan="1">If Berk is neither facing into the screen nor walking then exit this routine and have Berk turn into screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35940"></span>35940</td>
+<td class="instruction">LD A,(IY+4)</td>
+<td class="comment-11" rowspan="1">Load A with y-coordinate of top edge of coloured creature slot... (<a href="../reference/facts.html#colouredcreatureslots">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35943"></span>35943</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...minus 1...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35944"></span>35944</td>
+<td class="instruction">LD (34222),A</td>
+<td class="comment-11" rowspan="1">...and store at <a href="34221.html#34222">34222</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35947"></span>35947</td>
+<td class="instruction">LD HL,35235</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk putting an entity down above floor behind him...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35950"></span>35950</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35953"></span>
+<div class="comments">
+<div class="paragraph">
+No collision, collision with non-interactive entity or interaction conditions not met
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35953"></span>35953</td>
+<td class="instruction">LD A,(34220)</td>
+<td class="comment-11" rowspan="1">If Berk has no current power...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35956"></span>35956</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35957"></span>35957</td>
+<td class="instruction">JR Z,35969</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35735.html#35969">35969</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35959"></span>35959</td>
+<td class="instruction">CP 4</td>
+<td class="comment-11" rowspan="1">If Berk's current power is 1-3 (jumping)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35961"></span>35961</td>
+<td class="instruction">JP C,35995</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35735.html#35995">35995</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35964"></span>35964</td>
+<td class="instruction">CP 9</td>
+<td class="comment-11" rowspan="1">If Berk's current power is 4-8 (flying)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35966"></span>35966</td>
+<td class="instruction">JP C,35985</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35735.html#35985">35985</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35969"></span>
+<div class="comments">
+<div class="paragraph">
+Berk has neither jumping nor flying power
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35969"></span>35969</td>
+<td class="instruction">BIT 4,(IX+9)</td>
+<td class="comment-11" rowspan="1">If Berk is not carrying anything...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35973"></span>35973</td>
+<td class="instruction">JP Z,35786</td>
+<td class="comment-11" rowspan="1">...then jump to <a href="35735.html#35786">35786</a> (terminate Berk's flight, or have him (turn to) face out of screen as appropriate)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35976"></span>
+<div class="comments">
+<div class="paragraph">
+Berk is carrying something
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35976"></span>35976</td>
+<td class="instruction">CALL <a href="36367.html">36367</a></td>
+<td class="comment-11" rowspan="1">If Berk is neither facing into the screen nor walking then exit this routine and have Berk turn into screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35979"></span>35979</td>
+<td class="instruction">LD HL,35219</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk putting an entity down on floor behind him...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35982"></span>35982</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35985"></span>
+<div class="comments">
+<div class="paragraph">
+Berk's current power is flying
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35985"></span>35985</td>
+<td class="instruction">SET 6,(IX+9)</td>
+<td class="comment-11" rowspan="1">Set Berk's Is Flying Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35989"></span>35989</td>
+<td class="instruction">LD HL,35417</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk starting to fly...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35992"></span>35992</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35995"></span>
+<div class="comments">
+<div class="paragraph">
+Berk's current power is jumping
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35995"></span>35995</td>
+<td class="instruction">CALL <a href="36296.html">36296</a></td>
+<td class="comment-11" rowspan="1">Make Berk drop the entity he is holding and load IY with its complex state data address</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35998"></span>35998</td>
+<td class="instruction">LD (IX+12),129</td>
+<td class="comment-11" rowspan="1">Set Berk's Is Jumping Flag and set initial jump velocity to 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36002"></span>36002</td>
+<td class="instruction">LD HL,35441</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk starting to jump straight up...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36005"></span>36005</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35689.html">35689</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35735">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36008.html">36008</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

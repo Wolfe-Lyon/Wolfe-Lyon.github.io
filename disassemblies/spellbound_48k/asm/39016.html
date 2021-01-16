@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 39016</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38980.html">38980</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39016">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39081.html">39081</a></span></td>
+</tr>
+</table>
+<div class="description">39016: Set Up Star Movement Data Based Upon Starting Position and Direction</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="38795.html">38795</a> and <a href="38844.html">38844</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">y component of star direction added to initial y-coordinate (random number 72 to 103)</td>
+</tr>
+<tr>
+<td class="register">C</td>
+<td class="register-desc">x component of star direction added to initial x-coordinate (random number 113 to 144)</td>
+</tr>
+<tr>
+<td class="register">D</td>
+<td class="register-desc">Initial y-coordinate of star (87) (pixels)</td>
+</tr>
+<tr>
+<td class="register">E</td>
+<td class="register-desc">Initial x-coordinate of star (128) (pixels)</td>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Points to an entry in table of stars' movement data at <a href="25614.html">25614</a></td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39016"></span>39016</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1">Load (DIR-Y + INIT-Y) into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39017"></span>39017</td>
+<td class="instruction">SUB D</td>
+<td class="comment-11" rowspan="1">Subtract initial y-coordinate to leave y-component of direction in A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39018"></span>39018</td>
+<td class="instruction">LD D,1</td>
+<td class="comment-11" rowspan="1">Set D to 1 (because star is moving up)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39020"></span>39020</td>
+<td class="instruction">JR NC,39026</td>
+<td class="comment-11" rowspan="1">If y-component is positive (i.e. star is moving up) then skip ahead to <a href="39016.html#39026">39026</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39022"></span>39022</td>
+<td class="instruction">CPL</td>
+<td class="comment-11" rowspan="1">Negate negative y-direction component...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39023"></span>39023</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39024"></span>39024</td>
+<td class="instruction">LD D,255</td>
+<td class="comment-11" rowspan="1">Set D to -1 (because star is moving down)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39026"></span>39026</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load magnitude of y-component into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39027"></span>39027</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Load (DIR-X + INIT-X) into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39028"></span>39028</td>
+<td class="instruction">SUB E</td>
+<td class="comment-11" rowspan="1">Subtract initial x-coordinate to leave x-component of direction in A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39029"></span>39029</td>
+<td class="instruction">LD E,1</td>
+<td class="comment-11" rowspan="1">Set D to 1 (because star is moving 1 pixel right)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39031"></span>39031</td>
+<td class="instruction">JR NC,39037</td>
+<td class="comment-11" rowspan="1">If x-component is positive (i.e. star is moving right) then skip ahead to <a href="39016.html#39037">39037</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39033"></span>39033</td>
+<td class="instruction">CPL</td>
+<td class="comment-11" rowspan="1">Negate negative x-direction component...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39034"></span>39034</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39035"></span>39035</td>
+<td class="instruction">LD E,255</td>
+<td class="comment-11" rowspan="1">Set E to -1 (because star is moving 1 pixel left)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39037"></span>39037</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load magnitude of x-component into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39038"></span>39038</td>
+<td class="instruction">LD (IX+3),D</td>
+<td class="comment-11" rowspan="1">Store y-direction at byte 4</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39041"></span>39041</td>
+<td class="instruction">LD (IX+2),E</td>
+<td class="comment-11" rowspan="1">Store x-direction at byte 3</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39044"></span>39044</td>
+<td class="instruction">LD (IX+5),D</td>
+<td class="comment-11" rowspan="1">Store y-direction at byte 6</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39047"></span>39047</td>
+<td class="instruction">LD (IX+4),E</td>
+<td class="comment-11" rowspan="1">Store x-direction at byte 5</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39050"></span>39050</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Load magnitude of x-component into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39051"></span>39051</td>
+<td class="instruction">CP B</td>
+<td class="comment-11" rowspan="1">If magnitude of y-component is less than or equal to magnitude of x-component...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39052"></span>39052</td>
+<td class="instruction">JR NC,39063</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="39016.html#39063">39063</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39054"></span>39054</td>
+<td class="instruction">LD (IX+8),C</td>
+<td class="comment-11" rowspan="1">Store magnitude of x-component at byte 9</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39057"></span>39057</td>
+<td class="instruction">LD (IX+2),0</td>
+<td class="comment-11" rowspan="1">Set byte 3 to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39061"></span>39061</td>
+<td class="instruction">JR 39073</td>
+<td class="comment-11" rowspan="1">Skip ahead to <a href="39016.html#39073">39073</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39063"></span>39063</td>
+<td class="instruction">OR C</td>
+<td class="comment-11" rowspan="1">If magnitude of x-component is zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39064"></span>39064</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39065"></span>39065</td>
+<td class="instruction">LD (IX+8),B</td>
+<td class="comment-11" rowspan="1">Store magnitude of y-component at byte 9</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39068"></span>39068</td>
+<td class="instruction">LD B,C</td>
+<td class="comment-11" rowspan="1">Load magnitude of x-component into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39069"></span>39069</td>
+<td class="instruction">LD (IX+3),0</td>
+<td class="comment-11" rowspan="1">Store zero at byte 4</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39073"></span>39073</td>
+<td class="instruction">LD (IX+7),B</td>
+<td class="comment-11" rowspan="1">Store magnitude of x-/y-component at byte 8</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39076"></span>39076</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1">Load magnitude of x-/y-component into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39077"></span>39077</td>
+<td class="instruction">LD (IX+6),A</td>
+<td class="comment-11" rowspan="1">...and store at byte 7</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39080"></span>39080</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38980.html">38980</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39016">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39081.html">39081</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

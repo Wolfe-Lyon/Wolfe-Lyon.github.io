@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 64367</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="64361.html">64361</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#64367">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="64456.html">64456</a></span></td>
+</tr>
+</table>
+<div class="description">64367: Scroll a Region of the Display File Up a Pixel Row</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="64354.html">64354</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Address to jump to at the end of this routine (instruction at <a href="64367.html#64453">64453</a>)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="64367"></span>64367</td>
+<td class="instruction">LD (64454),HL</td>
+<td class="comment-11" rowspan="1">Modify jump (at <a href="64367.html#64453">64453</a>) destination to address stored in HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64370"></span>64370</td>
+<td class="instruction">LD A,(23406)</td>
+<td class="comment-11" rowspan="1">Load y-coordinate of top of region to scroll (pixels) into C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64373"></span>64373</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64374"></span>64374</td>
+<td class="instruction">LD DE,65140</td>
+<td class="comment-11" rowspan="1">Point DE at Table of Display File Addresses of Start of Each Pixel Row</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64377"></span>64377</td>
+<td class="instruction">LD H,0</td>
+<td class="comment-11" rowspan="1">Load HL with double y-coordinate of top of region to scroll...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64379"></span>64379</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...(as entries in table at <a href="26200.html#26240">26240</a> are two bytes wide)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64380"></span>64380</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64381"></span>64381</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">...and add to DE as offset in HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64382"></span>64382</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-11" rowspan="1">Load Display File address of pixel row of interest into DE...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64383"></span>64383</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64384"></span>64384</td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64385"></span>64385</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Swap HL (now Display File address of start of A-th pixel row) and DE (now points to entry in table at <a href="65140.html">65140</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64386"></span>64386</td>
+<td class="instruction">LD A,(23407)</td>
+<td class="comment-11" rowspan="1">Load y-coordinate of bottom of region to scroll (pixels) into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64389"></span>64389</td>
+<td class="instruction">SUB C</td>
+<td class="comment-11" rowspan="1">...and subtract C to get height of region to scroll (pixels)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64390"></span>64390</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Swap AF and AF' (A' now holds height of region to scroll in pixels)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64391"></span>64391</td>
+<td class="instruction">LD A,(23404)</td>
+<td class="comment-11" rowspan="1">Load C with x-coordinate of left edge of region to scroll (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64394"></span>64394</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64395"></span>64395</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">Add this x-coordinate value as offset (via OR) to HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64396"></span>64396</td>
+<td class="instruction">OR C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64397"></span>64397</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64398"></span>64398</td>
+<td class="instruction">LD A,(23405)</td>
+<td class="comment-11" rowspan="1">Load A with x-coordinate of right edge of region to scroll (characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64401"></span>64401</td>
+<td class="instruction">SUB C</td>
+<td class="comment-11" rowspan="1">Subtract C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64402"></span>64402</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...and add one to get width (characters) of region to scroll</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64403"></span>64403</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">Load BC with width of region to scroll (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64405"></span>64405</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64406"></span>64406</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (width of region to scroll in characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64407"></span>64407</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (current position in Display File, at left edge of top pixel row in region to scroll)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64408"></span>64408</td>
+<td class="instruction">LD DE,23296</td>
+<td class="comment-11" rowspan="1">Point DE at <a href="23296.html">23296</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64411"></span>64411</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">Copy BC bytes of data from HL to DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64413"></span>64413</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (current position in Display File, at left edge of top pixel row in region to scroll)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64414"></span>64414</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (width of region to scroll in characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64415"></span>64415</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Swap all registers (B' = width of region to scroll in characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64416"></span>64416</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Swap AF and AF' (A now holds height of region to scroll in pixels)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64417"></span>64417</td>
+<td class="instruction">JP Z,64452</td>
+<td class="comment-11" rowspan="1">If height of region to scroll in pixels is zero then skip ahead to <a href="64367.html#64452">64452</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64420"></span>64420</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load B with height of region to scroll in pixels</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="64421"></span>64421</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Swap all registers (B = width of region to scroll, B' = remaining number of pixel rows to scroll)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64422"></span>64422</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1">Load D and A with H plus 1 and E with L...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64423"></span>64423</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64424"></span>64424</td>
+<td class="instruction">LD D,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64425"></span>64425</td>
+<td class="instruction">LD E,L</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64426"></span>64426</td>
+<td class="instruction">AND 7</td>
+<td class="comment-11" rowspan="1">If any of three least significant bits in A are set (i.e. at least one of the three least significant bits in H were also set)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64428"></span>64428</td>
+<td class="instruction">JP NZ,64442</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="64367.html#64442">64442</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="64431"></span>
+<div class="comments">
+<div class="paragraph">
+At least one of the three least significant bits of H are set, meaning we could be at the top of a third of the display
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64431"></span>64431</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">Move DE on by 32 bytes to move up one character row (eight rows of pixels)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64432"></span>64432</td>
+<td class="instruction">ADD A,32</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64434"></span>64434</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64435"></span>64435</td>
+<td class="instruction">JP C,64442</td>
+<td class="comment-11" rowspan="1">If L hasn't gone over 256 (i.e. we haven't moved 32 bytes on from the top pixel row of the bottom character row of a third) then skip ahead to <a href="64367.html#64442">64442</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64438"></span>64438</td>
+<td class="instruction">LD A,D</td>
+<td class="comment-11" rowspan="1">...else move up by a third...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64439"></span>64439</td>
+<td class="instruction">SUB 8</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64441"></span>64441</td>
+<td class="instruction">LD D,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="64442"></span>64442</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Swap DE (now points to start of upper pixel row) and HL (now points to start of lower pixel row)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64443"></span>64443</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to lower pixel row)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64444"></span>64444</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = width of region to scroll, in characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64445"></span>64445</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">Copy row of bitmap data up a row from HL to DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64447"></span>64447</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = width of region to scroll, in characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64448"></span>64448</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to upper pixel row)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64449"></span>64449</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Swap all registers (B = remaining number of pixel rows to scroll, B' = width of region to scroll)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64450"></span>64450</td>
+<td class="instruction">DJNZ 64421</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="64367.html#64421">64421</a> to copy next row of pixels up</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="64452"></span>64452</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Swap all registers</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="64453"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="64367.html#64453">64453</a> is the address to jump to upon completion of this routine. This is modified by the instruction at <a href="64367.html">64367</a>, set to the value in HL at the start of this routine. The only value this is set to is <a href="64360.html">64360</a> (return).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64453"></span>64453</td>
+<td class="instruction">JP <a href="64360.html">64360</a></td>
+<td class="comment-11" rowspan="1">Jump to address that was in HL at start of this routine (return)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="64361.html">64361</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#64367">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="64456.html">64456</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

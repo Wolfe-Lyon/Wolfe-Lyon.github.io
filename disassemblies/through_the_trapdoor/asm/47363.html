@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 47363</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47355.html">47355</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47363">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47431.html">47431</a></span></td>
+</tr>
+</table>
+<div class="description">47363: Update Eyes of a Randomly Selected Timer Figure, Increase Timer Tick Counter and Process Timer Figure Blinking</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="34438.html">34438</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47363"></span>47363</td>
+<td class="instruction">CALL <a href="47431.html">47431</a></td>
+<td class="comment-11" rowspan="1">Select a remaining Timer Figure at random and update its eyes to a random (open-eyed) frame</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47366"></span>47366</td>
+<td class="instruction">CALL <a href="47468.html">47468</a></td>
+<td class="comment-11" rowspan="1">Increase Timer Tick Counter and reduce remaining time if Counter &gt; 767</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47369"></span>47369</td>
+<td class="instruction">LD A,(34227)</td>
+<td class="comment-11" rowspan="1">If Blink Duration Counter is zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47372"></span>47372</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47373"></span>47373</td>
+<td class="instruction">JR Z,47388</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="47363.html#47388">47388</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47375"></span>47375</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Decrease Blink Duration Counter by one...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47376"></span>47376</td>
+<td class="instruction">LD (34227),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47379"></span>47379</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If decreased Blink Duration Counter is not zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47380"></span>47380</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47381"></span>47381</td>
+<td class="instruction">LD IX,(34264)</td>
+<td class="comment-11" rowspan="1">Restore Attribute File address of eyes of currently blinking timer figure into IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47385"></span>47385</td>
+<td class="instruction">JP <a href="47315.html">47315</a></td>
+<td class="comment-11" rowspan="1">If Show Score Flag reset then draw pair of Timer Figure eyes (open, random frame) at Attribute File address IX, advance IX by two bytes then return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="47388"></span>
+<div class="comments">
+<div class="paragraph">
+Make a randomly chosen timer figure blink
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47388"></span>47388</td>
+<td class="instruction">LD A,10</td>
+<td class="comment-11" rowspan="1">Load A with a random number, 0-9...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47390"></span>47390</td>
+<td class="instruction">CALL <a href="54222.html">54222</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47393"></span>47393</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If A is not zero (9 in 10 chance)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47394"></span>47394</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47395"></span>47395</td>
+<td class="instruction">LD A,(34210)</td>
+<td class="comment-11" rowspan="1">Load remaining time / lives into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47398"></span>47398</td>
+<td class="instruction">CP 2</td>
+<td class="comment-11" rowspan="1">If less than two time / lives remain...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47400"></span>47400</td>
+<td class="instruction">RET C</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47401"></span>47401</td>
+<td class="instruction">CALL <a href="54222.html">54222</a></td>
+<td class="comment-11" rowspan="1">Load A with a random number, 0-(x-1) (where x is remaining time / lives)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47404"></span>47404</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Double A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47405"></span>47405</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...and load into BC...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47406"></span>47406</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47408"></span>47408</td>
+<td class="instruction">LD IX,23232</td>
+<td class="comment-11" rowspan="1">Point IX to start of second-last row of Attribute File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47412"></span>47412</td>
+<td class="instruction">ADD IX,BC</td>
+<td class="comment-11" rowspan="1">Add BC as offset to IX (i.e. point to a random "awake" timer figure)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47414"></span>47414</td>
+<td class="instruction">LD (34264),IX</td>
+<td class="comment-11" rowspan="1">Store Attribute File address of eyes of currently blinking timer figure at 34264</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47418"></span>47418</td>
+<td class="instruction">CALL <a href="47302.html">47302</a></td>
+<td class="comment-11" rowspan="1">If Show Score Flag reset then draw pair of Timer Figure eyes (closed) at Attribute File address IX and advance IX by two bytes</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47421"></span>47421</td>
+<td class="instruction">LD A,10</td>
+<td class="comment-11" rowspan="1">Set Blink Duration Counter to a random number, 1-9...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47423"></span>47423</td>
+<td class="instruction">CALL <a href="54222.html">54222</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47426"></span>47426</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47427"></span>47427</td>
+<td class="instruction">LD (34227),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47430"></span>47430</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47355.html">47355</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47363">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47431.html">47431</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

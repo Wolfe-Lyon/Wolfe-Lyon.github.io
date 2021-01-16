@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 36725</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36709.html">36709</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36725">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36800.html">36800</a></span></td>
+</tr>
+</table>
+<div class="description">36725: Print Text at Location HL to Screen</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="26747.html">26747</a>, <a href="26788.html">26788</a>, <a href="../initialisation/27118.html">27118</a>, <a href="28092.html">28092</a>, <a href="28272.html">28272</a>, <a href="29800.html">29800</a>, <a href="29880.html">29880</a>, <a href="30540.html">30540</a>, <a href="30602.html">30602</a>, <a href="31153.html">31153</a>, <a href="31370.html">31370</a>, <a href="31636.html">31636</a>, <a href="32035.html">32035</a>, <a href="32655.html">32655</a>, <a href="32876.html">32876</a>, <a href="33180.html">33180</a>, <a href="33663.html">33663</a>, <a href="34350.html">34350</a>, <a href="34768.html">34768</a>, <a href="34914.html">34914</a>, <a href="35101.html">35101</a>, <a href="35141.html">35141</a>, <a href="35293.html">35293</a>, <a href="36830.html">36830</a>, <a href="37654.html">37654</a>, <a href="38693.html">38693</a>, <a href="38725.html">38725</a> and <a href="38749.html">38749</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Points to text data to print</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36725"></span>36725</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36726"></span>36726</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36727"></span>36727</td>
+<td class="instruction">CALL <a href="36709.html">36709</a></td>
+<td class="comment-11" rowspan="1">Update stored location of start of attribute data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36730"></span>36730</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Retrieve HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36731"></span>36731</td>
+<td class="instruction">DEC HL</td>
+<td class="comment-11" rowspan="1">Prepare for loop</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="36732"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="36800.html">36800</a> and <a href="36830.html">36830</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36732"></span>36732</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Start of loop - advance to next character to be printed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36733"></span>36733</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Get character from string at location HL (e.g. "**&#160;&#160;" text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36734"></span>36734</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">Check against various values...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36735"></span>36735</td>
+<td class="instruction">JP Z,36798</td>
+<td class="comment-11" rowspan="1">If character is a null character, exit routine (via RET at <a href="36725.html#36798">36798</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36738"></span>36738</td>
+<td class="instruction">CP 9</td>
+<td class="comment-11" rowspan="1">If character is a "9" (move right)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36740"></span>36740</td>
+<td class="instruction">JP Z,<a href="36875.html">36875</a></td>
+<td class="comment-11" rowspan="1">...then move virtual text cursor right by one character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36743"></span>36743</td>
+<td class="instruction">CP 13</td>
+<td class="comment-11" rowspan="1">If the character is a "13" ("ENTER" - carriage return + line feed)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36745"></span>36745</td>
+<td class="instruction">JP Z,<a href="36800.html">36800</a></td>
+<td class="comment-11" rowspan="1">...then move Virtual Text Cursor down to start of next row</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36748"></span>36748</td>
+<td class="instruction">CP 14</td>
+<td class="comment-11" rowspan="1">If the character is a "14"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36750"></span>36750</td>
+<td class="instruction">JP Z,<a href="36810.html">36810</a></td>
+<td class="comment-11" rowspan="1">...then move Virtual Text Cursor down to start of next row within current window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36753"></span>36753</td>
+<td class="instruction">CP 16</td>
+<td class="comment-11" rowspan="1">If the character is a "16" (change of INK colour)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36755"></span>36755</td>
+<td class="instruction">JP Z,<a href="36830.html#36861">36861</a></td>
+<td class="comment-11" rowspan="1">...then go to change INK colour routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36758"></span>36758</td>
+<td class="instruction">CP 17</td>
+<td class="comment-11" rowspan="1">If the character is a "17" (change of PAPER colour)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36760"></span>36760</td>
+<td class="instruction">JP Z,<a href="36830.html#36849">36849</a></td>
+<td class="comment-11" rowspan="1">...then go to change PAPER colour routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36763"></span>36763</td>
+<td class="instruction">CP 18</td>
+<td class="comment-11" rowspan="1">If the character is a "18" (change of FLASH status)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36765"></span>36765</td>
+<td class="instruction">JP Z,<a href="36830.html#36857">36857</a></td>
+<td class="comment-11" rowspan="1">...go to change FLASH status routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36768"></span>36768</td>
+<td class="instruction">CP 19</td>
+<td class="comment-11" rowspan="1">If the character is a "19" (change of BRIGHT status)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36770"></span>36770</td>
+<td class="instruction">JP Z,<a href="36830.html#36853">36853</a></td>
+<td class="comment-11" rowspan="1">...then go to change BRIGHT status routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36773"></span>36773</td>
+<td class="instruction">CP 29</td>
+<td class="comment-11" rowspan="1">If the character is a "29" (print name of Current Object)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36775"></span>36775</td>
+<td class="instruction">JP Z,<a href="36882.html">36882</a></td>
+<td class="comment-11" rowspan="1">...then go to the print Current Object name routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36778"></span>36778</td>
+<td class="instruction">CP 30</td>
+<td class="comment-11" rowspan="1">If the character is a "30" (print full name of Current Character)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36780"></span>36780</td>
+<td class="instruction">JP Z,<a href="36892.html">36892</a></td>
+<td class="comment-11" rowspan="1">...then print the Current Character's full name</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36783"></span>36783</td>
+<td class="instruction">CP 31</td>
+<td class="comment-11" rowspan="1">If the character is a "31" (print short name of Current Character)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36785"></span>36785</td>
+<td class="instruction">JP Z,<a href="36900.html">36900</a></td>
+<td class="comment-11" rowspan="1">...then print the Current Character's short name</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36788"></span>36788</td>
+<td class="instruction">CP 91</td>
+<td class="comment-11" rowspan="1">If value is 91 or greater (i.e. special character)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36790"></span>36790</td>
+<td class="instruction">JP NC,<a href="36830.html">36830</a></td>
+<td class="comment-11" rowspan="1">...then print special character or change text attribute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36793"></span>36793</td>
+<td class="instruction">CALL <a href="36475.html">36475</a></td>
+<td class="comment-11" rowspan="1">Print character to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36796"></span>36796</td>
+<td class="instruction">JR 36732</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="36725.html#36732">36732</a> to print next character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36798"></span>36798</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF and return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36799"></span>36799</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36709.html">36709</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36725">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36800.html">36800</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

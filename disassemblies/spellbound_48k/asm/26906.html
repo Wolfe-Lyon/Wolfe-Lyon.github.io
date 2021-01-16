@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 26906</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="26853.html">26853</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#26906">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27168.html">27168</a></span></td>
+</tr>
+</table>
+<div class="description">26906: Initialise Data and Start a New Game</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="26673.html">26673</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="26906"></span>26906</td>
+<td class="instruction">LD A,(40140)</td>
+<td class="comment-11" rowspan="1">Load input device selection into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26909"></span>26909</td>
+<td class="instruction">CALL <a href="37857.html">37857</a></td>
+<td class="comment-11" rowspan="1">Change input device based on A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26912"></span>26912</td>
+<td class="instruction">CALL <a href="37816.html">37816</a></td>
+<td class="comment-11" rowspan="1">Clear Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26915"></span>26915</td>
+<td class="instruction">LD A,70</td>
+<td class="comment-11" rowspan="1">Flood Attribute File with value 70 (yellow INK, black PAPER, BRIGHT)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26917"></span>26917</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26920"></span>26920</td>
+<td class="instruction">CALL <a href="37841.html">37841</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26923"></span>26923</td>
+<td class="instruction">LD HL,42170</td>
+<td class="comment-11" rowspan="1">Copy initial characters' stats into "current" (modifiable) slots...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26926"></span>26926</td>
+<td class="instruction">LD DE,25315</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26929"></span>26929</td>
+<td class="instruction">LD BC,72</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26932"></span>26932</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26934"></span>26934</td>
+<td class="instruction">LD HL,40141</td>
+<td class="comment-11" rowspan="1">Copy initial Magic Knight properties (position) into "current" (modifiable) slots...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26937"></span>26937</td>
+<td class="instruction">LD BC,8</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26940"></span>26940</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26942"></span>26942</td>
+<td class="instruction">LD HL,41017</td>
+<td class="comment-11" rowspan="1">Copy initial characters' inventories into "current" (modifiable) slots...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26945"></span>26945</td>
+<td class="instruction">LD BC,45</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26948"></span>26948</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26950"></span>26950</td>
+<td class="instruction">LD HL,41062</td>
+<td class="comment-11" rowspan="1">Copy initial characters' positions into "current" (modifiable) slots...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26953"></span>26953</td>
+<td class="instruction">LD BC,24</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26956"></span>26956</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26958"></span>26958</td>
+<td class="instruction">LD HL,41086</td>
+<td class="comment-11" rowspan="1">Copy initial objects' locations into "current" (modifiable) slots (at <a href="25464.html">25464</a>)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26961"></span>26961</td>
+<td class="instruction">LD BC,150</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26964"></span>26964</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26966"></span>26966</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set A to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26967"></span>26967</td>
+<td class="instruction">LD (23675),A</td>
+<td class="comment-11" rowspan="1">Set UDG system variable to zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26970"></span>26970</td>
+<td class="instruction">LD (23676),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26973"></span>26973</td>
+<td class="instruction">LD (23382),A</td>
+<td class="comment-11" rowspan="1">Set Lift control panel to display R as current floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26976"></span>26976</td>
+<td class="instruction">LD (41713),A</td>
+<td class="comment-11" rowspan="1">Set left-hand exit of the left-most Roof Garden room to lead to the Lift</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26979"></span>26979</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Set right-hand exit of The Lift to lead to the Roof Garden (i.e. move the Lift to the roof)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26980"></span>26980</td>
+<td class="instruction">LD (41712),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26983"></span>26983</td>
+<td class="instruction">LD A,255</td>
+<td class="comment-11" rowspan="1">Set left-hand exits of left-most rooms on all other floors to be inaccessible (i.e. Lift isn't there!)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26985"></span>26985</td>
+<td class="instruction">LD (41729),A</td>
+<td class="comment-11" rowspan="1">...4th Floor...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26988"></span>26988</td>
+<td class="instruction">LD (41745),A</td>
+<td class="comment-11" rowspan="1">...3rd Floor...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26991"></span>26991</td>
+<td class="instruction">LD (41761),A</td>
+<td class="comment-11" rowspan="1">...2nd Floor...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26994"></span>26994</td>
+<td class="instruction">LD (41777),A</td>
+<td class="comment-11" rowspan="1">...1st Floor...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26997"></span>26997</td>
+<td class="instruction">LD (41793),A</td>
+<td class="comment-11" rowspan="1">...Ground Floor...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27000"></span>27000</td>
+<td class="instruction">LD (41809),A</td>
+<td class="comment-11" rowspan="1">...and Basement</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27003"></span>27003</td>
+<td class="instruction">CALL <a href="35495.html">35495</a></td>
+<td class="comment-11" rowspan="1">Set Magic Knight's available action flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27006"></span>27006</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set A to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27007"></span>27007</td>
+<td class="instruction">LD (23560),A</td>
+<td class="comment-11" rowspan="1">Set last key pressed to NULL (system variable)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27010"></span>27010</td>
+<td class="instruction">LD (23484),A</td>
+<td class="comment-11" rowspan="1">Set unused memory address to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27013"></span>27013</td>
+<td class="instruction">LD (23407),A</td>
+<td class="comment-11" rowspan="1">Set number of 1/50 seconds elapsed to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27016"></span>27016</td>
+<td class="instruction">LD H,A</td>
+<td class="comment-11" rowspan="1">Load HL with zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27017"></span>27017</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27018"></span>27018</td>
+<td class="instruction">LD (23405),HL</td>
+<td class="comment-11" rowspan="1">Set number of minutes elapsed to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27021"></span>27021</td>
+<td class="instruction">LD (23672),A</td>
+<td class="comment-11" rowspan="1">Set system variable FRAMES to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27024"></span>27024</td>
+<td class="instruction">LD (23673),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27027"></span>27027</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Set A to 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27028"></span>27028</td>
+<td class="instruction">LD (25307),A</td>
+<td class="comment-11" rowspan="1">Set Gimbal's current slot to 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27031"></span>27031</td>
+<td class="instruction">LD (65528),A</td>
+<td class="comment-11" rowspan="1">Set temporary store for Magic Knight's frame number to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27034"></span>27034</td>
+<td class="instruction">LD (23505),A</td>
+<td class="comment-11" rowspan="1">Set "Animate Magic Knight's Puff of Smoke Appearance on Next Room Redraw" flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27037"></span>27037</td>
+<td class="instruction">LD A,48</td>
+<td class="comment-11" rowspan="1">Set number of hours left...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27039"></span>27039</td>
+<td class="instruction">LD (23404),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27042"></span>27042</td>
+<td class="instruction">LD A,127</td>
+<td class="comment-11" rowspan="1">Set Gimbal's current attribute to 127 (white INK, white PAPER, BRIGHT)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27044"></span>27044</td>
+<td class="instruction">LD (29939),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27047"></span>27047</td>
+<td class="instruction">LD A,139</td>
+<td class="comment-11" rowspan="1">Set read-text property of the Crystal Ball to 139...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27049"></span>27049</td>
+<td class="instruction">LD (42292),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27052"></span>27052</td>
+<td class="instruction">LD HL,25443</td>
+<td class="comment-11" rowspan="1">Point HL at Thor's current position</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27055"></span>27055</td>
+<td class="instruction">LD BC,1791</td>
+<td class="comment-11" rowspan="1">Load B with 6 and C with 255</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27058"></span>27058</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Increase C (current character index)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27059"></span>27059</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store B and C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27060"></span>27060</td>
+<td class="instruction">LD B,C</td>
+<td class="comment-11" rowspan="1">Copy C into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27061"></span>27061</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-11" rowspan="1">Load character's screen number into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27062"></span>27062</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27063"></span>27063</td>
+<td class="instruction">CALL <a href="36327.html">36327</a></td>
+<td class="comment-11" rowspan="1">Assign a slot in room C to character B and get x- and y-coordinates in BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27066"></span>27066</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27067"></span>27067</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to character's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27068"></span>27068</td>
+<td class="instruction">LD (HL),C</td>
+<td class="comment-11" rowspan="1">Update current x-coordinate based upon position of assigned slot</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27069"></span>27069</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to character's y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27070"></span>27070</td>
+<td class="instruction">LD (HL),B</td>
+<td class="comment-11" rowspan="1">Update current y-coordinate based upon position of assigned slot</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27071"></span>27071</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to start of next character's data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27072"></span>27072</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore B and C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27073"></span>27073</td>
+<td class="instruction">DJNZ 27058</td>
+<td class="comment-11" rowspan="1">Repeat loop for next character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27075"></span>27075</td>
+<td class="instruction">LD A,69</td>
+<td class="comment-11" rowspan="1">Assign an attribute of 69 (cyan INK, black PAPER, BRIGHT) to...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27077"></span>27077</td>
+<td class="instruction">LD (42360),A</td>
+<td class="comment-11" rowspan="1">...Broken Glass...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27080"></span>27080</td>
+<td class="instruction">LD (42640),A</td>
+<td class="comment-11" rowspan="1">...and Teleport Pad</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27083"></span>27083</td>
+<td class="instruction">LD L,41</td>
+<td class="comment-11" rowspan="1">Set room layout pointer for "The Wall" to 53289...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27085"></span>27085</td>
+<td class="instruction">LD H,208</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27087"></span>27087</td>
+<td class="instruction">LD (51971),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27090"></span>27090</td>
+<td class="instruction">LD HL,33565</td>
+<td class="comment-11" rowspan="1">Point HL at start of character summoning sequence to return them home</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27093"></span>27093</td>
+<td class="instruction">LD (23503),HL</td>
+<td class="comment-11" rowspan="1">Store this at 23503</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27096"></span>27096</td>
+<td class="instruction">LD A,9</td>
+<td class="comment-11" rowspan="1">Make right-wall in Secret Tunnel Entrance height 9 (i.e. full height of room)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27098"></span>27098</td>
+<td class="instruction">LD (53598),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27101"></span>27101</td>
+<td class="instruction">LD A,8</td>
+<td class="comment-11" rowspan="1">Set character whose turn it is to move to Banshee (8)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27103"></span>27103</td>
+<td class="instruction">LD (55218),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27106"></span>27106</td>
+<td class="instruction">LD A,21</td>
+<td class="comment-11" rowspan="1">Load A with 21 (The Start Room)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27108"></span>27108</td>
+<td class="instruction">CALL <a href="27865.html">27865</a></td>
+<td class="comment-11" rowspan="1">Move Magic Knight into room A, initialise room-specific data and draw room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27111"></span>27111</td>
+<td class="instruction">SET 0,(IY+65)</td>
+<td class="comment-11" rowspan="1">Set "Update Game Time and Locate Arrow Glow" flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27115"></span>27115</td>
+<td class="instruction">JP <a href="27176.html#27189">27189</a></td>
+<td class="comment-11" rowspan="1">Jump into Main Game Loop (process keyboard input and move Magic Knight, enter menus or execute other command)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="26853.html">26853</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#26906">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27168.html">27168</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

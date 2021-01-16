@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 36273</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36254.html">36254</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36273">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36321.html">36321</a></span></td>
+</tr>
+</table>
+<div class="description">36273: Reset Star to Point of Origin and Generate a New Direction and Movement Data</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="36321.html">36321</a> and <a href="36415.html">36415</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Points to an entry in table of stars' movement data at <a href="24832.html">24832</a></td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36273"></span>36273</td>
+<td class="instruction">CALL <a href="55740.html">55740</a></td>
+<td class="comment-11" rowspan="1">Set new random seed and load LSB of this (random value) into A and E</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36276"></span>36276</td>
+<td class="instruction">AND 31</td>
+<td class="comment-11" rowspan="1">Discard bits five to seven</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36278"></span>36278</td>
+<td class="instruction">SUB 15</td>
+<td class="comment-11" rowspan="1">Subtract 15</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36280"></span>36280</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load result into B (random number -15 to 16) (y-component of star's direction)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36281"></span>36281</td>
+<td class="instruction">CALL <a href="55740.html">55740</a></td>
+<td class="comment-11" rowspan="1">Set new random seed and load LSB of this (random value) into A and E</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36284"></span>36284</td>
+<td class="instruction">AND 31</td>
+<td class="comment-11" rowspan="1">Discard bits five to seven</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36286"></span>36286</td>
+<td class="instruction">SUB 15</td>
+<td class="comment-11" rowspan="1">Subtract 15</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36288"></span>36288</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load result into C (random number -15 to 16) (x-component of star's direction)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36289"></span>36289</td>
+<td class="instruction">LD A,128</td>
+<td class="comment-11" rowspan="1">Add to 128 (set bit 7) in C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36291"></span>36291</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36292"></span>36292</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...(random number 113 to 144)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36293"></span>36293</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1">Add 70 to B...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36294"></span>36294</td>
+<td class="instruction">ADD A,70</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36296"></span>36296</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...(random number 55 to 86)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36297"></span>36297</td>
+<td class="instruction">CP 70</td>
+<td class="comment-11" rowspan="1">If A is not 70 (i.e. y-direction component is not zero)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36299"></span>36299</td>
+<td class="instruction">JR NZ,36306</td>
+<td class="comment-11" rowspan="1">...skip ahead to <a href="36273.html#36306">36306</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36301"></span>36301</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">If A (loaded into C) is 128... [<a href="../reference/bugs.html#invertedstarmovementinstruction">bug</a>: this instruction only executed if A is 87, so how could it ever be 128 here? This should actually be LD A,C, preventing stars having zero for both direction components]</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36302"></span>36302</td>
+<td class="instruction">CP 128</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36304"></span>36304</td>
+<td class="instruction">JR Z,36273</td>
+<td class="comment-11" rowspan="1">...then restart this routine to generate two new random numbers/seeds</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36306"></span>36306</td>
+<td class="instruction">LD DE,18048</td>
+<td class="comment-11" rowspan="1">Load D (initial y-coordinate) with 70 and E (initial x-coordinate) with 128</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36309"></span>36309</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Store DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36310"></span>36310</td>
+<td class="instruction">CALL <a href="36434.html">36434</a></td>
+<td class="comment-11" rowspan="1">Set up star's movement data based upon starting position and direction</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36313"></span>36313</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Restore DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36314"></span>36314</td>
+<td class="instruction">LD (IX+0),E</td>
+<td class="comment-11" rowspan="1">Set star's initial coordinates as (128, 70)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36317"></span>36317</td>
+<td class="instruction">LD (IX+1),D</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36320"></span>36320</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36254.html">36254</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36273">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36321.html">36321</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

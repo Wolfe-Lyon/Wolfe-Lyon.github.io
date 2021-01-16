@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 30810</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="30804.html">30804</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30810">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30842.html">30842</a></span></td>
+</tr>
+</table>
+<div class="description">30810: Send Current Character to Sleep if Possible</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="30810"></span>30810</td>
+<td class="instruction">CALL <a href="33546.html">33546</a></td>
+<td class="comment-11" rowspan="1">Point IX at Current Character's current stats</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30813"></span>30813</td>
+<td class="instruction">BIT 7,(IX+6)</td>
+<td class="comment-11" rowspan="1">If character's Asleep Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30817"></span>30817</td>
+<td class="instruction">JP NZ,<a href="55227.html">55227</a></td>
+<td class="comment-11" rowspan="1">...then display "[Character] IS ALREADY ASLEEP" window (29), wait for fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30820"></span>30820</td>
+<td class="instruction">LD A,(IX+2)</td>
+<td class="comment-11" rowspan="1">If character's stamina is 70 or more...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30823"></span>30823</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30825"></span>30825</td>
+<td class="instruction">CP 70</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30827"></span>30827</td>
+<td class="instruction">JP NC,<a href="55232.html">55232</a></td>
+<td class="comment-11" rowspan="1">...then display "[Character] IS TOO WAKEFUL TO SLEEP" window (29), wait for fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30830"></span>30830</td>
+<td class="instruction">LD B,30</td>
+<td class="comment-11" rowspan="1">If character's happiness is less than 30 then Show "[Character] DOES NOT WANT TO BE COMMANDED..." and Jump to Main Game Loop...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30832"></span>30832</td>
+<td class="instruction">CALL <a href="33558.html">33558</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30835"></span>30835</td>
+<td class="instruction">SET 7,(IX+6)</td>
+<td class="comment-11" rowspan="1">Set character's Asleep Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30839"></span>30839</td>
+<td class="instruction">JP <a href="55354.html">55354</a></td>
+<td class="comment-11" rowspan="1">Display "[Character] HAS GONE TO SLEEP" Window (29), wait for fire to be pressed then jump to Main Game Loop</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="30804.html">30804</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30810">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30842.html">30842</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

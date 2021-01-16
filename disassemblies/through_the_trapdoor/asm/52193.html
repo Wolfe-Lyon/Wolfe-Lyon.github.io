@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 52193</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52148.html">52148</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52193">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52243.html">52243</a></span></td>
+</tr>
+</table>
+<div class="description">52193: Advance Position of Entity Pushed Right by Drutt</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="52148.html">52148</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">Address of complex state data for entity pushed by Drutt</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52193"></span>52193</td>
+<td class="instruction">PUSH IY</td>
+<td class="comment-11" rowspan="1">Transfer address of complex state data for pushed entity from IY...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52195"></span>52195</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">...to IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52197"></span>52197</td>
+<td class="instruction">CALL <a href="54569.html">54569</a></td>
+<td class="comment-11" rowspan="1">Check pushed entity for collision with another impassable / pushable entity immediately to the right...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52200"></span>52200</td>
+<td class="instruction">JR C,52207</td>
+<td class="comment-11" rowspan="1">...and if a collision has not occurred, then skip ahead to <a href="52193.html#52207">52207</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52202"></span>52202</td>
+<td class="instruction">CP 129</td>
+<td class="comment-11" rowspan="1">If collision was with entity of class 129 (causes other entities to start falling)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52204"></span>52204</td>
+<td class="instruction">JR Z,52235</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="52193.html#52235">52235</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52206"></span>52206</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return (as Drutt can't push two entities)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52207"></span>
+<div class="comments">
+<div class="paragraph">
+No knock-on collision
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52207"></span>52207</td>
+<td class="instruction">LD A,(34235)</td>
+<td class="comment-11" rowspan="1">Load E with width of current room (chars) + 99...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52210"></span>52210</td>
+<td class="instruction">SUB 2</td>
+<td class="comment-11" rowspan="1">...minus 2...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52212"></span>52212</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52213"></span>52213</td>
+<td class="instruction">LD A,(IX+7)</td>
+<td class="comment-11" rowspan="1">...and if x-coordinate of right edge of pushed entity is less than this...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52216"></span>52216</td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="1">...i.e. not yet at right edge of room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52217"></span>52217</td>
+<td class="instruction">JR C,52227</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="52193.html#52227">52227</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52219"></span>52219</td>
+<td class="instruction">CALL <a href="54505.html">54505</a></td>
+<td class="comment-11" rowspan="1">Load B with index of room to right of current character's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52222"></span>52222</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...and if there is no room to the right then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52223"></span>52223</td>
+<td class="instruction">CALL <a href="54313.html">54313</a></td>
+<td class="comment-11" rowspan="1">Move pushed entity into room to the right, if appropriate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52226"></span>52226</td>
+<td class="instruction">RET NC</td>
+<td class="comment-11" rowspan="1">...and if pushed entity can't enter new room then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52227"></span>52227</td>
+<td class="instruction">INC (IX+5)</td>
+<td class="comment-11" rowspan="1">Move pushed entity right one character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52230"></span>52230</td>
+<td class="instruction">INC (IX+7)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52233"></span>52233</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Load A with zero (<a href="../reference/facts.html#redundantinstructionsvii">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52234"></span>52234</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52235"></span>52235</td>
+<td class="instruction">CALL <a href="55516.html">55516</a></td>
+<td class="comment-11" rowspan="1">Set Can Fall Flag and set initial velocity factor of 2 for pushed entity</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52238"></span>52238</td>
+<td class="instruction">CALL 52227</td>
+<td class="comment-11" rowspan="1">Move pushed entity right two characters...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52241"></span>52241</td>
+<td class="instruction">JR 52227</td>
+<td class="comment-11" rowspan="1">...and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52148.html">52148</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52193">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52243.html">52243</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 37147</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36987.html">36987</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37147">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37333.html">37333</a></span></td>
+</tr>
+</table>
+<div class="description">37147: Draw a Window Frame</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="36987.html">36987</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Window border attribute</td>
+</tr>
+<tr>
+<td class="register">A'</td>
+<td class="register-desc">Window background colour</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37147"></span>37147</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">Store border attribute in system variable ATTR T</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37150"></span>37150</td>
+<td class="instruction">LD A,(23493)</td>
+<td class="comment-11" rowspan="1">Load A with x-coordinate of left of window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37153"></span>37153</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Copy into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37154"></span>37154</td>
+<td class="instruction">LD A,(23495)</td>
+<td class="comment-11" rowspan="1">Load A with x-coordinate of right of window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37157"></span>37157</td>
+<td class="instruction">SUB C</td>
+<td class="comment-11" rowspan="1">Get distance between left and right coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37158"></span>37158</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Subtract 1 to get width of window top-edge (not including corner pieces)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37159"></span>37159</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Transfer this to BC...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37160"></span>37160</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37162"></span>37162</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC on stack</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37163"></span>37163</td>
+<td class="instruction">LD BC,(23493)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of top edge and C with x-coordinate of left edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37167"></span>37167</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Increase C by one (as top edge strictly starts one to the right of this x-coordinate - the left-most is actually a corner piece, not an edge)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37168"></span>37168</td>
+<td class="instruction">CALL <a href="36551.html">36551</a></td>
+<td class="comment-11" rowspan="1">Set position of virtual cursor for drawing</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37171"></span>37171</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Put width of top edge piece into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37172"></span>37172</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">...but retain it on stack also</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37173"></span>37173</td>
+<td class="instruction">CALL <a href="36908.html">36908</a></td>
+<td class="comment-11" rowspan="1">Draw the top edge of the window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37176"></span>37176</td>
+<td class="instruction">LD A,(36912)</td>
+<td class="comment-11" rowspan="1">Get previously drawn window component character (i.e. top edge)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37179"></span>37179</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...and increase to obtain next one (i.e. bottom edge)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37180"></span>37180</td>
+<td class="instruction">LD (36912),A</td>
+<td class="comment-11" rowspan="1">Place this new character into the drawing routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37183"></span>37183</td>
+<td class="instruction">LD A,(23493)</td>
+<td class="comment-11" rowspan="1">Load A with x-coordinate of left of window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37186"></span>37186</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Copy into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37187"></span>37187</td>
+<td class="instruction">LD A,(23496)</td>
+<td class="comment-11" rowspan="1">Load A with y-coordinate of bottom of window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37190"></span>37190</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Copy into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37191"></span>37191</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Increase C by one (as bottom edge strictly starts one to the right of this x-coordinate - the left-most is actually a corner piece, not an edge)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37192"></span>37192</td>
+<td class="instruction">CALL <a href="36551.html">36551</a></td>
+<td class="comment-11" rowspan="1">Set position of virtual cursor for drawing</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37195"></span>37195</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Put width of bottom edge into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37196"></span>37196</td>
+<td class="instruction">CALL <a href="36908.html">36908</a></td>
+<td class="comment-11" rowspan="1">Draw the bottom edge of the window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37199"></span>37199</td>
+<td class="instruction">LD A,(36912)</td>
+<td class="comment-11" rowspan="1">Get previously drawn window component character (i.e. bottom edge)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37202"></span>37202</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...and increase to obtain next one (i.e. left edge)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37203"></span>37203</td>
+<td class="instruction">LD (36912),A</td>
+<td class="comment-11" rowspan="1">Place this new character into the drawing routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37206"></span>37206</td>
+<td class="instruction">LD A,(23494)</td>
+<td class="comment-11" rowspan="1">Load y-coordinate of top of window into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37209"></span>37209</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Copy into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37210"></span>37210</td>
+<td class="instruction">LD A,(23496)</td>
+<td class="comment-11" rowspan="1">Load y-coordinate of bottom of window into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37213"></span>37213</td>
+<td class="instruction">SUB B</td>
+<td class="comment-11" rowspan="1">Subtract B...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37214"></span>37214</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...and decrease by one to get length of left-edge (not including corner pieces)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37215"></span>37215</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF (A contains length of left / right edges)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37216"></span>37216</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">Store length in E</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37217"></span>37217</td>
+<td class="instruction">LD BC,(23493)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of top edge and C with x-coordinate of left edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37221"></span>37221</td>
+<td class="instruction">ADD A,B</td>
+<td class="comment-11" rowspan="1">Add to get starting point of left edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37222"></span>37222</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37223"></span>37223</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Store DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37224"></span>37224</td>
+<td class="instruction">CALL <a href="36551.html">36551</a></td>
+<td class="comment-11" rowspan="1">Set position of virtual cursor for drawing</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37227"></span>37227</td>
+<td class="instruction">LD A,(36912)</td>
+<td class="comment-11" rowspan="1">Get character to draw</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37230"></span>37230</td>
+<td class="instruction">CALL <a href="36475.html">36475</a></td>
+<td class="comment-11" rowspan="1">Draw character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37233"></span>37233</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Restore DE (length of edge in E)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37234"></span>37234</td>
+<td class="instruction">LD A,(23495)</td>
+<td class="comment-11" rowspan="1">Load x-coordinate of right edge of window into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37237"></span>37237</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Copy to C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37238"></span>37238</td>
+<td class="instruction">LD A,(23494)</td>
+<td class="comment-11" rowspan="1">Load y-coordinate of top edge of window into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37241"></span>37241</td>
+<td class="instruction">ADD A,E</td>
+<td class="comment-11" rowspan="1">Add to E to give y-coordinate of bottom of edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37242"></span>37242</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Copy to B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37243"></span>37243</td>
+<td class="instruction">CALL <a href="36551.html">36551</a></td>
+<td class="comment-11" rowspan="1">Set position of virtual cursor for drawing</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37246"></span>37246</td>
+<td class="instruction">LD A,(36912)</td>
+<td class="comment-11" rowspan="1">Get character previously drawn (left edge)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37249"></span>37249</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...and increase to give right edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37250"></span>37250</td>
+<td class="instruction">CALL <a href="36475.html">36475</a></td>
+<td class="comment-11" rowspan="1">Draw character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37253"></span>37253</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF  (A contains length of left / right edges)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37254"></span>37254</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Decrease A by one as we have drawn one character of both left and right edges</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37255"></span>37255</td>
+<td class="instruction">JP NZ,37215</td>
+<td class="comment-11" rowspan="1">If there is still some left and right edge to be drawn, loop back</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="37258"></span>
+<div class="comments">
+<div class="paragraph">
+edges of window have been drawn
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37258"></span>37258</td>
+<td class="instruction">LD A,(23495)</td>
+<td class="comment-11" rowspan="1">Load x-coordinate of right edge into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37261"></span>37261</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Copy to C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37262"></span>37262</td>
+<td class="instruction">LD A,(23494)</td>
+<td class="comment-11" rowspan="1">Load y-coordinate of top edge into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37265"></span>37265</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Copy to B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37266"></span>37266</td>
+<td class="instruction">CALL <a href="36551.html">36551</a></td>
+<td class="comment-11" rowspan="1">Set position of virtual cursor for drawing</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37269"></span>37269</td>
+<td class="instruction">LD A,(36912)</td>
+<td class="comment-11" rowspan="1">Get character previously STORED (left edge)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37272"></span>37272</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...and increase twice to get top-right corner piece...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37273"></span>37273</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37274"></span>37274</td>
+<td class="instruction">LD (36912),A</td>
+<td class="comment-11" rowspan="1">Update drawing routine with this character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37277"></span>37277</td>
+<td class="instruction">CALL <a href="36475.html">36475</a></td>
+<td class="comment-11" rowspan="1">Draw character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37280"></span>37280</td>
+<td class="instruction">LD BC,(23495)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of bottom edge and C with x-coordinate of right edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37284"></span>37284</td>
+<td class="instruction">CALL <a href="36551.html">36551</a></td>
+<td class="comment-11" rowspan="1">Set position of virtual cursor for drawing</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37287"></span>37287</td>
+<td class="instruction">LD A,(36912)</td>
+<td class="comment-11" rowspan="1">Get character previously stored (top-right corner)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37290"></span>37290</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...and increase to get bottom-right corner piece</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37291"></span>37291</td>
+<td class="instruction">LD (36912),A</td>
+<td class="comment-11" rowspan="1">Place this character back into drawing routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37294"></span>37294</td>
+<td class="instruction">CALL <a href="36475.html">36475</a></td>
+<td class="comment-11" rowspan="1">Draw character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37297"></span>37297</td>
+<td class="instruction">LD A,(23493)</td>
+<td class="comment-11" rowspan="1">Load x-coordinate of left edge into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37300"></span>37300</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Copy into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37301"></span>37301</td>
+<td class="instruction">LD A,(23496)</td>
+<td class="comment-11" rowspan="1">Load y-coordinate of bottom edge into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37304"></span>37304</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Copy into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37305"></span>37305</td>
+<td class="instruction">CALL <a href="36551.html">36551</a></td>
+<td class="comment-11" rowspan="1">Set position of virtual cursor for drawing</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37308"></span>37308</td>
+<td class="instruction">LD A,(36912)</td>
+<td class="comment-11" rowspan="1">Get character previously stored (bottom-right corner)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37311"></span>37311</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...and increase to get bottom-left corner piece</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37312"></span>37312</td>
+<td class="instruction">LD (36912),A</td>
+<td class="comment-11" rowspan="1">Place this character back into drawing routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37315"></span>37315</td>
+<td class="instruction">CALL <a href="36475.html">36475</a></td>
+<td class="comment-11" rowspan="1">Draw character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37318"></span>37318</td>
+<td class="instruction">LD BC,(23493)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of top edge and C with x-coordinate of left edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37322"></span>37322</td>
+<td class="instruction">CALL <a href="36551.html">36551</a></td>
+<td class="comment-11" rowspan="1">Set position of virtual cursor for drawing</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37325"></span>37325</td>
+<td class="instruction">LD A,(36912)</td>
+<td class="comment-11" rowspan="1">Get character previously stored (bottom-left corner)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37328"></span>37328</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...and increase to get top-left corner piece</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37329"></span>37329</td>
+<td class="instruction">CALL <a href="36475.html">36475</a></td>
+<td class="comment-11" rowspan="1">Draw character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37332"></span>37332</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36987.html">36987</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37147">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37333.html">37333</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

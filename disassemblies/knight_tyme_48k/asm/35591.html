@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 35591</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35525.html">35525</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35591">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35627.html">35627</a></span></td>
+</tr>
+</table>
+<div class="description">35591: Convert Numeric Value BC to ASCII String at Location HL</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="34697.html">34697</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">BC</td>
+<td class="register-desc">A numeric value</td>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Points to location to hold a five-character string</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35591"></span>35591</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Store DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35592"></span>35592</td>
+<td class="instruction">LD DE,53419</td>
+<td class="comment-11" rowspan="1">Point DE at table of powers of ten</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35595"></span>35595</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (value)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35596"></span>35596</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (location to hold string)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35597"></span>35597</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (location to hold string)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35598"></span>35598</td>
+<td class="instruction">LD H,B</td>
+<td class="comment-11" rowspan="1">Load BC (value) into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35599"></span>35599</td>
+<td class="instruction">LD L,C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35600"></span>35600</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Swap DE (now value) and HL (now pointer to table of powers of ten)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35601"></span>35601</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-11" rowspan="1">Read WORD at HL (power of ten) into BC...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35602"></span>35602</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...and advance HL by two bytes...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35603"></span>35603</td>
+<td class="instruction">LD B,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35604"></span>35604</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35605"></span>35605</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Swap DE (now pointer to next power of ten) and HL (now value)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35606"></span>35606</td>
+<td class="instruction">LD A,47</td>
+<td class="comment-11" rowspan="1">Load A with 47 (ASCII code immediately prior to that for zero, "0")</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35608"></span>35608</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase A to next ASCII character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35609"></span>35609</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">(Re)Set carry flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35610"></span>35610</td>
+<td class="instruction">SBC HL,BC</td>
+<td class="comment-11" rowspan="1">Subtract (BC [power of ten] + carry flag) from HL (value)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35612"></span>35612</td>
+<td class="instruction">JR NC,35608</td>
+<td class="comment-11" rowspan="1">If carry flag was not set then loop back to <a href="35591.html#35608">35608</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35614"></span>35614</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Add power of ten back to HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35615"></span>35615</td>
+<td class="instruction">EX (SP),HL</td>
+<td class="comment-11" rowspan="1">Swap value on top of stack (now remaining value) with HL (now location to hold string)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35616"></span>35616</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">Store ASCII code in string and advance HL to next slot...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35617"></span>35617</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35618"></span>35618</td>
+<td class="instruction">EX (SP),HL</td>
+<td class="comment-11" rowspan="1">Swap value on top of stack (pointer to current position in string) with HL (now remaining value)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35619"></span>35619</td>
+<td class="instruction">DEC C</td>
+<td class="comment-11" rowspan="1">Decrease C to check if last power of ten (i.e. 1) has been reached...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35620"></span>35620</td>
+<td class="instruction">JR NZ,35600</td>
+<td class="comment-11" rowspan="1">...and if not, then loop back to <a href="35591.html#35600">35600</a> for next power of ten</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35622"></span>35622</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35623"></span>35623</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35624"></span>35624</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35625"></span>35625</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Restore DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35626"></span>35626</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35525.html">35525</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35591">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35627.html">35627</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

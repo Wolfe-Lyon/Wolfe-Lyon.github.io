@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 40338</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="40326.html">40326</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#40338">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="40357.html">40357</a></span></td>
+</tr>
+</table>
+<div class="description">40338: Room-Specific Routine: Check for Egg Dropped down Wishing Well and Set Wish Pending Flag and Display Message If Appropriate</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="40338"></span>40338</td>
+<td class="instruction">LD A,(23365)</td>
+<td class="comment-11" rowspan="1">If Wish Pending Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40341"></span>40341</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40342"></span>40342</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40343"></span>40343</td>
+<td class="instruction">CALL <a href="40357.html">40357</a></td>
+<td class="comment-11" rowspan="1">Check whether an egg has been dropped down the Wishing Well and set Wish Pending Flag if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40346"></span>40346</td>
+<td class="instruction">LD A,(23365)</td>
+<td class="comment-11" rowspan="1">If Wish Pending Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40349"></span>40349</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40350"></span>40350</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40351"></span>40351</td>
+<td class="instruction">LD HL,57442</td>
+<td class="comment-11" rowspan="1">Point HL at "SOMEBODY YELLS...YOU CAN HAVE A WISH IF YOU WANT..." text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40354"></span>40354</td>
+<td class="instruction">JP <a href="64313.html">64313</a></td>
+<td class="comment-11" rowspan="1">Display "...YOU CAN HAVE A WISH IF YOU WANT..." window (29), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="40326.html">40326</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#40338">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="40357.html">40357</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 61913</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="61860.html">61860</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#61913">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="62003.html">62003</a></span></td>
+</tr>
+</table>
+<div class="description">61913: Store Background Attribute Data at Magic Knight's Current Location</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="61860.html">61860</a>.
+</div>
+<div class="paragraph">
+See also analogous routine at <a href="61638.html">61638</a>
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61913"></span>61913</td>
+<td class="instruction">LD DE,25048</td>
+<td class="comment-11" rowspan="1">Point DE at Table of Background Attribute data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61916"></span>61916</td>
+<td class="instruction">LD A,(24841)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current y-coordinate (pixels)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61919"></span>61919</td>
+<td class="instruction">AND 248</td>
+<td class="comment-11" rowspan="1">Clear lowest three bits to round down to nearest multiple of 8</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61921"></span>61921</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">Load this value into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61922"></span>61922</td>
+<td class="instruction">LD H,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61924"></span>61924</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">Multiply by four to obtain 32 x y-coordinate (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61925"></span>61925</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61926"></span>61926</td>
+<td class="instruction">LD A,(24840)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current x-coordinate (pixels)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61929"></span>61929</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">Divide this by eight, rounding down to nearest integer...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61930"></span>61930</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">...to convert from pixels to characters...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61931"></span>61931</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61932"></span>61932</td>
+<td class="instruction">AND 31</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61934"></span>61934</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load x-coordinate (characters) into BC...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61935"></span>61935</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61937"></span>61937</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Add x-coordinate to 32 x y-coordinate in HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61938"></span>61938</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (32 x y-coordinate in characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61939"></span>61939</td>
+<td class="instruction">LD BC,22528</td>
+<td class="comment-11" rowspan="1">Add this to start address of Attribute File...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61942"></span>61942</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...so that HL points to required byte in Attribute File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61943"></span>61943</td>
+<td class="instruction">EX (SP),HL</td>
+<td class="comment-11" rowspan="1">Put Attribute File address on top of stack and load HL with 32 x y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61944"></span>61944</td>
+<td class="instruction">LD BC,23808</td>
+<td class="comment-11" rowspan="1">Point BC at start of Terrain Interaction Data Table...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61947"></span>61947</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...and add 32 x y-coordinate as offset in HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61948"></span>61948</td>
+<td class="instruction">EX (SP),HL</td>
+<td class="comment-11" rowspan="1">Restore Attribute File address to HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61949"></span>61949</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">...and load IX with Terrain Interaction address</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61951"></span>61951</td>
+<td class="instruction">LD A,(24846)</td>
+<td class="comment-11" rowspan="1">Load C with Magic Knight's attribute...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61954"></span>61954</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61955"></span>61955</td>
+<td class="instruction">LD B,4</td>
+<td class="comment-11" rowspan="1">Load B with 4 as Magic Knight is four characters tall</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61957"></span>61957</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = remaining number of character rows)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61958"></span>61958</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Copy byte from Attribute File...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61959"></span>61959</td>
+<td class="instruction">LD (DE),A</td>
+<td class="comment-11" rowspan="1">...into Table of Background Attribute Data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61960"></span>61960</td>
+<td class="instruction">BIT 5,(IX+0)</td>
+<td class="comment-11" rowspan="1">If Preserve Attribute Terrain Interaction Flag is set for this character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61964"></span>61964</td>
+<td class="instruction">JR NZ,61967</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="61913.html#61967">61967</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61966"></span>61966</td>
+<td class="instruction">LD (HL),C</td>
+<td class="comment-11" rowspan="1">Set current Attribute File byte to match Magic Knight's attribute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61967"></span>61967</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance current position in Attribute File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61968"></span>61968</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance current position in Table of Background Attribute Data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61969"></span>61969</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Copy byte from Attribute File...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61970"></span>61970</td>
+<td class="instruction">LD (DE),A</td>
+<td class="comment-11" rowspan="1">...into Table of Background Attribute Data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61971"></span>61971</td>
+<td class="instruction">BIT 5,(IX+1)</td>
+<td class="comment-11" rowspan="1">If Preserve Attribute Terrain Interaction Flag is set for this character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61975"></span>61975</td>
+<td class="instruction">JR NZ,61978</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="61913.html#61978">61978</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61977"></span>61977</td>
+<td class="instruction">LD (HL),C</td>
+<td class="comment-11" rowspan="1">Set current Attribute File byte to match Magic Knight's attribute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61978"></span>61978</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance current position in Attribute File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61979"></span>61979</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance current position in Table of Background Attribute Data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61980"></span>61980</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Copy byte from Attribute File...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61981"></span>61981</td>
+<td class="instruction">LD (DE),A</td>
+<td class="comment-11" rowspan="1">...into Table of Background Attribute Data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61982"></span>61982</td>
+<td class="instruction">BIT 5,(IX+2)</td>
+<td class="comment-11" rowspan="1">If Preserve Attribute Terrain Interaction Flag is set for this character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61986"></span>61986</td>
+<td class="instruction">JR NZ,61989</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="61913.html#61989">61989</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61988"></span>61988</td>
+<td class="instruction">LD (HL),C</td>
+<td class="comment-11" rowspan="1">Set current Attribute File byte to match Magic Knight's attribute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61989"></span>61989</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance current position in Table of Background Attribute Data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61990"></span>61990</td>
+<td class="instruction">LD BC,30</td>
+<td class="comment-11" rowspan="1">Advance current position in Attribute File by 30 bytes...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61993"></span>61993</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...i.e. down one character and left two characters</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61994"></span>61994</td>
+<td class="instruction">LD BC,32</td>
+<td class="comment-11" rowspan="1">Advance current position in Terrain Interaction Data Table by 32 bytes...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61997"></span>61997</td>
+<td class="instruction">ADD IX,BC</td>
+<td class="comment-11" rowspan="1">...i.e. down one character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61999"></span>61999</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = remaining number of character rows)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62000"></span>62000</td>
+<td class="instruction">DJNZ 61957</td>
+<td class="comment-11" rowspan="1">If character rows remain then loop back to <a href="61913.html#61957">61957</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62002"></span>62002</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="61860.html">61860</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#61913">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="62003.html">62003</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 35577</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35523.html">35523</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35577">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35687.html">35687</a></span></td>
+</tr>
+</table>
+<div class="description">35577: Change Direction Berk is Facing Depending Upon Relative Position of Drutt</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="35735.html">35735</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data (current level) for Berk</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35577"></span>35577</td>
+<td class="instruction">LD A,(34218)</td>
+<td class="comment-11" rowspan="1">If Drutt's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35580"></span>35580</td>
+<td class="instruction">CP (IX+0)</td>
+<td class="comment-11" rowspan="1">...is not the same as Berk's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35583"></span>35583</td>
+<td class="instruction">JP NZ,<a href="35735.html#35786">35786</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="35735.html#35786">35786</a> (terminate Berk's flight, or have him (turn to) face out of screen as appropriate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35586"></span>35586</td>
+<td class="instruction">LD A,(IX+11)</td>
+<td class="comment-11" rowspan="1">Reset Berk's Walking Right, Walking Left, Unused (11,2) and Unused (11,3) flags...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35589"></span>35589</td>
+<td class="instruction">AND 240</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35591"></span>35591</td>
+<td class="instruction">LD (IX+11),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35594"></span>35594</td>
+<td class="instruction">LD E,(IX+9)</td>
+<td class="comment-11" rowspan="1">Load Berk's Flags into E</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35597"></span>35597</td>
+<td class="instruction">LD IY,(34242)</td>
+<td class="comment-11" rowspan="1">Load IY with address of complex state data (current level) for Drutt</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35601"></span>35601</td>
+<td class="instruction">LD A,(IY+7)</td>
+<td class="comment-11" rowspan="1">Load A with x-coordinate of Drutt's right side...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35604"></span>35604</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...and increase by one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35605"></span>35605</td>
+<td class="instruction">CP (IX+5)</td>
+<td class="comment-11" rowspan="1">If x-coordinate of Berk's left side is greater than this (i.e. Drutt is to the left of Berk)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35608"></span>35608</td>
+<td class="instruction">JR C,35653</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35577.html#35653">35653</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35610"></span>35610</td>
+<td class="instruction">LD A,(IX+7)</td>
+<td class="comment-11" rowspan="1">Load A with x-coordinate of Berk's right side</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35613"></span>35613</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase A by one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35614"></span>35614</td>
+<td class="instruction">CP (IY+5)</td>
+<td class="comment-11" rowspan="1">If x-coordinate of Drutt's left side is greater than this (i.e. Drutt is to the right of Berk)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35617"></span>35617</td>
+<td class="instruction">JR C,35670</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35577.html#35670">35670</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35619"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt is between Berk's left and right sides
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35619"></span>35619</td>
+<td class="instruction">LD A,(IY+1)</td>
+<td class="comment-11" rowspan="1">If Drutt's depth is 1...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35622"></span>35622</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35624"></span>35624</td>
+<td class="instruction">JP Z,35642</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35577.html#35642">35642</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35627"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt is behind Berk
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35627"></span>35627</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">Load A with Berk's flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35628"></span>35628</td>
+<td class="instruction">AND 14</td>
+<td class="comment-11" rowspan="1">If Berk's Facing into Screen, Facing Left and Facing Right flags are all reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35630"></span>35630</td>
+<td class="instruction">JP Z,35636</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35577.html#35636">35636</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35633"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt is behind Berk and at least one of Berk's Facing into Screen, Facing Left and Facing Right flags is set
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35633"></span>35633</td>
+<td class="instruction">JP <a href="35735.html#35815">35815</a></td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk facing into screen, ready to respond to control input and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35636"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt is behind Berk and Berk's Facing into Screen, Facing Left and Facing Right flags are all reset
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35636"></span>35636</td>
+<td class="instruction">LD HL,35105</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk turning (facing out of screen to facing into screen)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35639"></span>35639</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35642"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt is in front of Berk
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35642"></span>35642</td>
+<td class="instruction">BIT 1,E</td>
+<td class="comment-11" rowspan="1">If Berk's Facing into Screen Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35644"></span>35644</td>
+<td class="instruction">JP Z,<a href="35735.html#35821">35821</a></td>
+<td class="comment-11" rowspan="1">...then point HL at script data for Berk facing out of screen, ready to respond to control input and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35647"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt is in front of Berk and Berk's Facing into Screen Flag is set
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35647"></span>35647</td>
+<td class="instruction">LD HL,35073</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk turning (facing into screen to facing out of screen)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35650"></span>35650</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35653"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt is to the left of Berk
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35653"></span>35653</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">Load A with Berk's flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35654"></span>35654</td>
+<td class="instruction">AND 6</td>
+<td class="comment-11" rowspan="1">If either of Berk's Facing into Screen or Facing Left flags are set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35656"></span>35656</td>
+<td class="instruction">JR NZ,35664</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35577.html#35664">35664</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35658"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt is to the left of Berk, and Berk's Facing into Screen and Facing Left flags are both reset
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35658"></span>35658</td>
+<td class="instruction">LD HL,34977</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk turning to face left...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35661"></span>35661</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35664"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt is to the left of Berk and either of Berk's Facing into Screen or Facing Left flags are set
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35664"></span>35664</td>
+<td class="instruction">LD HL,34985</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk facing left...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35667"></span>35667</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35670"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt is to the right of Berk
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35670"></span>35670</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">Load A with Berk's flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35671"></span>35671</td>
+<td class="instruction">AND 10</td>
+<td class="comment-11" rowspan="1">If either of Berk's Facing into Screen or Facing Right flags are set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35673"></span>35673</td>
+<td class="instruction">JR NZ,35681</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="35577.html#35681">35681</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35675"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt is to the right of Berk, and Berk's Facing into Screen and Facing Right flags are both reset
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35675"></span>35675</td>
+<td class="instruction">LD HL,34997</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk turning to face right...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35678"></span>35678</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35681"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt is to the right of Berk and either of Berk's Facing into Screen or Facing Right flags are set
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35681"></span>35681</td>
+<td class="instruction">LD HL,35005</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk facing right...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35684"></span>35684</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35523.html">35523</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35577">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35687.html">35687</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

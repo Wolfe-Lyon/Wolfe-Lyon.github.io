@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 39714</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="39682.html">39682</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39714">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39758.html">39758</a></span></td>
+</tr>
+</table>
+<div class="description">39714: Move Magic Knight One Room to the Left if Possible</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="39668.html">39668</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">(Entry at <a href="39714.html#39746">39746</a> only) Magic Knight's new x-coordinate (pixels)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39714"></span>39714</td>
+<td class="instruction">LD A,(23702)</td>
+<td class="comment-11" rowspan="1">If Magic Knight's current room is not 2 (Outdoors, 1, Bearwoolf's Cave)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39717"></span>39717</td>
+<td class="instruction">CP 2</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39719"></span>39719</td>
+<td class="instruction">JR NZ,39736</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="39714.html#39736">39736</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39721"></span>39721</td>
+<td class="instruction">LD A,(23465)</td>
+<td class="comment-11" rowspan="1">If current progress through cave is 4...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39724"></span>39724</td>
+<td class="instruction">CP 4</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39726"></span>39726</td>
+<td class="instruction">JR Z,39736</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="39714.html#39736">39736</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39728"></span>39728</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase current progress through cave by one...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39729"></span>39729</td>
+<td class="instruction">LD (23465),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39732"></span>39732</td>
+<td class="instruction">LD A,228</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's new x-coordinate when he arrives in new room (228 is near right-hand side of room)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39734"></span>39734</td>
+<td class="instruction">JR 39746</td>
+<td class="comment-11" rowspan="1">Skip ahead to <a href="39714.html#39746">39746</a> (move Magic Knight back to other side of the room)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39736"></span>39736</td>
+<td class="instruction">LD DE,0</td>
+<td class="comment-11" rowspan="1">Set DE to zero (dealing with current room's left exit)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39739"></span>39739</td>
+<td class="instruction">LD A,228</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's new x-coordinate when he arrives in new room (228 is near right-hand side of room)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39741"></span>39741</td>
+<td class="instruction">CALL <a href="39682.html">39682</a></td>
+<td class="comment-11" rowspan="1">Change Magic Knight's current room (if possible) based upon left exit of his current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39744"></span>39744</td>
+<td class="instruction">JR Z,39752</td>
+<td class="comment-11" rowspan="1">If Magic Knight can't leave his current room then jump to <a href="39714.html#39752">39752</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="39746"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="39758.html">39758</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39746"></span>39746</td>
+<td class="instruction">LD (24840),A</td>
+<td class="comment-11" rowspan="1">Set Magic Knight's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39749"></span>39749</td>
+<td class="instruction">JP <a href="38841.html#38844">38844</a></td>
+<td class="comment-11" rowspan="1">Draw Magic Knight's current room, draw objects and characters and initialise room-specific data and return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39752"></span>39752</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Set Magic Knight's Temporary Movement Flags to 1 (Magic Knight can't move left because he can't leave his current room)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39754"></span>39754</td>
+<td class="instruction">LD (23451),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39757"></span>39757</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="39682.html">39682</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39714">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39758.html">39758</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

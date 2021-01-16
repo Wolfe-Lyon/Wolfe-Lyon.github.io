@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 42429</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="42413.html">42413</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#42429">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="42440.html">42440</a></span></td>
+</tr>
+</table>
+<div class="description">42429: Give an Object Routine: Off-White Knight</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Off-White will refuse to take the Brass Ankh (<a href="../reference/bugs.html#grunteroffwhitegiveroutine">bug</a>).
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="42429"></span>42429</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">If Current Object is 16 (Brass Ankh)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42432"></span>42432</td>
+<td class="instruction">CP 16</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42434"></span>42434</td>
+<td class="instruction">JP Z,<a href="64275.html">64275</a></td>
+<td class="comment-11" rowspan="1">...then display "[Character] DOES NOT WANT THE [Object]" Window (13), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42437"></span>42437</td>
+<td class="instruction">JP 39875</td>
+<td class="comment-11" rowspan="1">Jump to non-existent address (<a href="../reference/bugs.html#grunteroffwhitegiveroutine">bug</a>)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="42413.html">42413</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#42429">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="42440.html">42440</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

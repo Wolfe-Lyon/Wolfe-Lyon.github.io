@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 35789</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35749.html">35749</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35789">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35815.html">35815</a></span></td>
+</tr>
+</table>
+<div class="description">35789: Set the "Magic Knight Can Call Lift" Flag if he is in the First Room of a Floor</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Room numbers from which lift can be called:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Value</th>
+<th colspan="1" rowspan="1">Description</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Roof</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">9</td>
+<td class="" colspan="1" rowspan="1">4th Floor</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">17</td>
+<td class="" colspan="1" rowspan="1">3rd Floor</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">25</td>
+<td class="" colspan="1" rowspan="1">2nd Floor</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">33</td>
+<td class="" colspan="1" rowspan="1">1st Floor</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">41</td>
+<td class="" colspan="1" rowspan="1">Ground Floor</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">49</td>
+<td class="" colspan="1" rowspan="1">Basement</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+Used by the routine at <a href="35495.html">35495</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35789"></span>35789</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Reset "Magic Knight Can Call Lift" flag (i.e. false)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35792"></span>35792</td>
+<td class="instruction">RES 7,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35794"></span>35794</td>
+<td class="instruction">LD (65532),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35797"></span>35797</td>
+<td class="instruction">LD A,(65529)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35800"></span>35800</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If room number is zero (i.e. "The Lift")...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35801"></span>35801</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return with flag unset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35802"></span>35802</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Decrease room number by one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35803"></span>35803</td>
+<td class="instruction">AND 7</td>
+<td class="comment-11" rowspan="1">If this value is not a multiple of eight (i.e. a room from which the lift can be called)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35805"></span>35805</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...then return with flag unset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35806"></span>35806</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Set "Magic Knight Can Call Lift" flag (i.e. true)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35809"></span>35809</td>
+<td class="instruction">SET 7,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35811"></span>35811</td>
+<td class="instruction">LD (65532),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35814"></span>35814</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35749.html">35749</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35789">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35815.html">35815</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

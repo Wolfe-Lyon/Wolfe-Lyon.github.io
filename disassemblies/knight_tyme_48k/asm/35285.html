@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 35285</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35123.html">35123</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35285">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35296.html">35296</a></span></td>
+</tr>
+</table>
+<div class="description">35285: Draw an upper or lower window frame edge then increment the border character index</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="35123.html">35123</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">(Input, <a href="35285.html#35291">35291</a>) Previous border edge character index used</td>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">(Input, <a href="35285.html">35285</a>) Width of window edge to draw (characters, minus 1)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35285"></span>35285</td>
+<td class="instruction">CALL <a href="54231.html">54231</a></td>
+<td class="comment-11" rowspan="1">Draw an Edge of Frame of a Window</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35288"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="35123.html">35123</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35288"></span>35288</td>
+<td class="instruction">LD A,(54235)</td>
+<td class="comment-11" rowspan="1">Load A with window edge border character previously used</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35291"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="35123.html">35123</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35291"></span>35291</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase index of window edge border character to use next...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35292"></span>35292</td>
+<td class="instruction">LD (54235),A</td>
+<td class="comment-11" rowspan="1">...and store at <a href="54231.html#54234">54235</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35295"></span>35295</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35123.html">35123</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35285">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35296.html">35296</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

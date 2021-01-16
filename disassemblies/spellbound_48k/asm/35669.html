@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 35669</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35629.html">35629</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35669">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35709.html">35709</a></span></td>
+</tr>
+</table>
+<div class="description">35669: Set the "Magic Knight Can Throw" Flag if he is Carrying a Throwable Object</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="35495.html">35495</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35669"></span>35669</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Reset "Magic Knight Can Throw" flag (i.e. false)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35672"></span>35672</td>
+<td class="instruction">RES 4,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35674"></span>35674</td>
+<td class="instruction">LD (65532),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35677"></span>35677</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Set counter to 5 (as Magic Knight can carry 5 objects)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35679"></span>35679</td>
+<td class="instruction">LD IX,25395</td>
+<td class="comment-11" rowspan="1">Point IX to start of Magic Knight's current inventory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35683"></span>35683</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load index of object carried by Magic Knight into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35686"></span>35686</td>
+<td class="instruction">LD E,4</td>
+<td class="comment-11" rowspan="1">Point HL to property 4 ("use status") of this object (in table at <a href="42242.html">42242</a>)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35688"></span>35688</td>
+<td class="instruction">CALL <a href="34160.html">34160</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35691"></span>35691</td>
+<td class="instruction">BIT 1,(HL)</td>
+<td class="comment-11" rowspan="1">...and if bit 1 (Throw status) of this is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35693"></span>35693</td>
+<td class="instruction">JR NZ,35700</td>
+<td class="comment-11" rowspan="1">...then skip to <a href="35669.html#35700">35700</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35695"></span>35695</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">...else advance to next inventory slot...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35697"></span>35697</td>
+<td class="instruction">DJNZ 35683</td>
+<td class="comment-11" rowspan="1">...and repeat</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35699"></span>35699</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">If this was last slot, then return with "Magic Knight Can Throw" flag unset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35700"></span>35700</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Set "Magic Knight Can Throw" flag (i.e. true)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35703"></span>35703</td>
+<td class="instruction">SET 4,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35705"></span>35705</td>
+<td class="instruction">LD (65532),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35708"></span>35708</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35629.html">35629</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35669">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35709.html">35709</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

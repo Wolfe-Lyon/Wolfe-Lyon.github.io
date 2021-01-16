@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 44635</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="44615.html">44615</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#44635">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="44861.html">44861</a></span></td>
+</tr>
+</table>
+<div class="description">44635: Process Command to Wear / Unwear an Object</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="44635"></span>44635</td>
+<td class="instruction">LD A,11</td>
+<td class="comment-11" rowspan="1">Draw Window 11...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44637"></span>44637</td>
+<td class="instruction">CALL <a href="47185.html">47185</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44640"></span>44640</td>
+<td class="instruction">LD HL,56380</td>
+<td class="comment-11" rowspan="1">Point HL at Wear/Unwear Menu text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44643"></span>44643</td>
+<td class="instruction">CALL <a href="46902.html">46902</a></td>
+<td class="comment-11" rowspan="1">...and print to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44646"></span>44646</td>
+<td class="instruction">CALL <a href="47502.html">47502</a></td>
+<td class="comment-11" rowspan="1">Process keyboard / joystick input on a menu and load A with selected item index</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44649"></span>44649</td>
+<td class="instruction">JR NZ,44745</td>
+<td class="comment-11" rowspan="1">If UNWEAR selected then skip ahead to <a href="44635.html#44745">44745</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44651"></span>44651</td>
+<td class="instruction">CALL <a href="45641.html">45641</a></td>
+<td class="comment-11" rowspan="1">Display "YOU ARE NOT CARRYING ANYTHING" Window and set Zero Flag if Magic Knight's inventory (carrying) is empty</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44654"></span>44654</td>
+<td class="instruction">JP Z,<a href="41578.html#41742">41742</a></td>
+<td class="comment-11" rowspan="1">If MK's inventory (carrying) is empty then set his available action flags and jump to start of Main Game Loop (<a href="41578.html#41742">41742</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44657"></span>44657</td>
+<td class="instruction">LD IX,24848</td>
+<td class="comment-11" rowspan="1">Point IX at Magic Knight's current inventory (carrying)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44661"></span>44661</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44663"></span>44663</td>
+<td class="instruction">LD HL,56397</td>
+<td class="comment-11" rowspan="1">Point HL at "[Current Command] WHICH OBJECT ?" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44666"></span>44666</td>
+<td class="instruction">LD DE,56391</td>
+<td class="comment-11" rowspan="1">Point DE at "UN[Current Command] THE " text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44669"></span>44669</td>
+<td class="instruction">CALL <a href="45809.html">45809</a></td>
+<td class="comment-11" rowspan="1">Show list of objects in Magic Knight's inventory (carrying) as a menu and load A with selected item index</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44672"></span>44672</td>
+<td class="instruction">LD HL,24848</td>
+<td class="comment-11" rowspan="1">Point HL at start of Magic Knight's current inventory (carrying)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44675"></span>44675</td>
+<td class="instruction">CALL <a href="45766.html">45766</a></td>
+<td class="comment-11" rowspan="1">Print name of object in inventory slot A of inventory data at HL in Command Summary Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44678"></span>44678</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">If Current Object (selected object) is the Disquise (1)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44681"></span>44681</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44683"></span>44683</td>
+<td class="instruction">JP Z,44824</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="44635.html#44824">44824</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44686"></span>44686</td>
+<td class="instruction">CALL <a href="64207.html">64207</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="44689"></span>44689</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44692"></span>44692</td>
+<td class="instruction">CALL <a href="45685.html">45685</a></td>
+<td class="comment-11" rowspan="1">...and if this is 4 (Teddy Bear) then display "THE BEAR SAYS..." message and wait for Fire to be pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44695"></span>44695</td>
+<td class="instruction">LD HL,24857</td>
+<td class="comment-11" rowspan="1">If last slot in Magic Knight's current inventory (wearing) is not empty...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44698"></span>44698</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44699"></span>44699</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...then reset Zero Flag, otherwise set</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44700"></span>44700</td>
+<td class="instruction">LD HL,56404</td>
+<td class="comment-11" rowspan="1">Point HL at "YOU ARE [Current Command]ING TOO MUCH" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44703"></span>44703</td>
+<td class="instruction">JP NZ,<a href="64258.html#64261">64261</a></td>
+<td class="comment-11" rowspan="1">If Zero Flag is reset then display "YOU ARE [Command]ING TOO MUCH" Window (13), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44706"></span>44706</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44709"></span>44709</td>
+<td class="instruction">LD E,1</td>
+<td class="comment-11" rowspan="1">If object's Can Be Worn Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44711"></span>44711</td>
+<td class="instruction">CALL <a href="45390.html">45390</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44714"></span>44714</td>
+<td class="instruction">BIT 3,(HL)</td>
+<td class="comment-11" rowspan="1">...then set Zero Flag, otherwise reset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44716"></span>44716</td>
+<td class="instruction">LD HL,56419</td>
+<td class="comment-11" rowspan="1">Point HL at "YOU CANNOT [Current Command] THAT " text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44719"></span>44719</td>
+<td class="instruction">JP Z,<a href="64258.html#64261">64261</a></td>
+<td class="comment-11" rowspan="1">If Zero Flag is set then display "YOU CANNOT [Command] THAT" Window (13), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44722"></span>44722</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">Load C with index of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44725"></span>44725</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44726"></span>44726</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44728"></span>44728</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = number of slots to process, C = Current Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44729"></span>44729</td>
+<td class="instruction">LD HL,24848</td>
+<td class="comment-11" rowspan="1">Point HL at start of Magic Knight's current inventory (carrying)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44732"></span>44732</td>
+<td class="instruction">CALL <a href="48341.html">48341</a></td>
+<td class="comment-11" rowspan="1">Remove object C from this inventory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44735"></span>44735</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = number of slots to process, C = Current Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44736"></span>44736</td>
+<td class="instruction">LD HL,24853</td>
+<td class="comment-11" rowspan="1">Point HL at Magic Knight's current inventory (wearing)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44739"></span>44739</td>
+<td class="instruction">CALL <a href="45380.html">45380</a></td>
+<td class="comment-11" rowspan="1">...and wait for interrupt then load object C into the first empty slot</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44742"></span>44742</td>
+<td class="instruction">JP <a href="41578.html#41727">41727</a></td>
+<td class="comment-11" rowspan="1">Show Magic Knight's current inventory and jump back to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="44745"></span>44745</td>
+<td class="instruction">CALL <a href="45631.html">45631</a></td>
+<td class="comment-11" rowspan="1">Display "YOU ARE NOT WEARING ANYTHING" Window and set Zero Flag if Magic Knight's inventory (wearing) is empty</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44748"></span>44748</td>
+<td class="instruction">JP Z,<a href="41578.html#41742">41742</a></td>
+<td class="comment-11" rowspan="1">If MK's inventory (wearing) is empty then set his available action flags and jump to start of Main Game Loop (<a href="41578.html#41742">41742</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44751"></span>44751</td>
+<td class="instruction">LD IX,24853</td>
+<td class="comment-11" rowspan="1">Point IX at Magic Knight's current inventory (wearing)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44755"></span>44755</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44757"></span>44757</td>
+<td class="instruction">LD HL,56395</td>
+<td class="comment-11" rowspan="1">Point HL at "UN[Current Command] WHICH OBJECT ?" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44760"></span>44760</td>
+<td class="instruction">LD DE,56389</td>
+<td class="comment-11" rowspan="1">Point DE at "UN[Current Command] THE " text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44763"></span>44763</td>
+<td class="instruction">CALL <a href="45809.html">45809</a></td>
+<td class="comment-11" rowspan="1">Show list of objects in Magic Knight's inventory (wearing) as a menu and load A with selected item index</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44766"></span>44766</td>
+<td class="instruction">LD HL,24853</td>
+<td class="comment-11" rowspan="1">Point HL at Magic Knight's current inventory (wearing)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44769"></span>44769</td>
+<td class="instruction">CALL <a href="45766.html">45766</a></td>
+<td class="comment-11" rowspan="1">Print name of object in inventory slot A of inventory data at HL in Command Summary Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44772"></span>44772</td>
+<td class="instruction">CALL <a href="64207.html">64207</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44775"></span>44775</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44778"></span>44778</td>
+<td class="instruction">CALL <a href="45685.html">45685</a></td>
+<td class="comment-11" rowspan="1">...and if this is 4 (Teddy Bear) then display "THE BEAR SAYS..." message and wait for Fire to be pressed (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44781"></span>44781</td>
+<td class="instruction">LD HL,24852</td>
+<td class="comment-11" rowspan="1">Load A with index of object in Magic Knight's fifth inventory slot (carrying)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44784"></span>44784</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44785"></span>44785</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If this is not zero (i.e. Magic Knight's hands are full)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44786"></span>44786</td>
+<td class="instruction">JP NZ,<a href="64258.html">64258</a></td>
+<td class="comment-11" rowspan="1">...then display "YOUR HANDS ARE FULL" Window (13), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44789"></span>44789</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">Load C with index of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44792"></span>44792</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44793"></span>44793</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44795"></span>44795</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = number of slots to process, C = Current Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44796"></span>44796</td>
+<td class="instruction">LD HL,24853</td>
+<td class="comment-11" rowspan="1">Point HL at Magic Knight's current inventory (wearing)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44799"></span>44799</td>
+<td class="instruction">CALL <a href="48341.html">48341</a></td>
+<td class="comment-11" rowspan="1">Remove object C from Magic Knight's current inventory (wearing)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44802"></span>44802</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = number of slots to process, C = Current Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44803"></span>44803</td>
+<td class="instruction">LD HL,24848</td>
+<td class="comment-11" rowspan="1">Point HL at start of Magic Knight's current inventory (carrying)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44806"></span>44806</td>
+<td class="instruction">CALL <a href="45380.html">45380</a></td>
+<td class="comment-11" rowspan="1">...and wait for interrupt then load Object C into the first empty slot</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44809"></span>44809</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">If Current Object (selected object) is not the Disquise (1)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44812"></span>44812</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44814"></span>44814</td>
+<td class="instruction">JP NZ,<a href="41578.html#41727">41727</a></td>
+<td class="comment-11" rowspan="1">...then show Magic Knight's current inventory and jump back to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44817"></span>44817</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set Current Disquise to zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44818"></span>44818</td>
+<td class="instruction">LD (23438),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44821"></span>44821</td>
+<td class="instruction">JP <a href="41578.html#41727">41727</a></td>
+<td class="comment-11" rowspan="1">Show Magic Knight's current inventory and jump back to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="44824"></span>44824</td>
+<td class="instruction">LD HL,56429</td>
+<td class="comment-11" rowspan="1">Point HL at "WHICH DISQUISE DO YOU WANT TO [Current Command]?" full menu text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44827"></span>44827</td>
+<td class="instruction">LD DE,49140</td>
+<td class="comment-11" rowspan="1">Adjust height of window 13 to accommodate text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44830"></span>44830</td>
+<td class="instruction">CALL <a href="45617.html">45617</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44833"></span>44833</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to menu text to print)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44834"></span>44834</td>
+<td class="instruction">LD A,13</td>
+<td class="comment-11" rowspan="1">Draw Menu Window 13...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44836"></span>44836</td>
+<td class="instruction">CALL <a href="47185.html">47185</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44839"></span>44839</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (pointer to menu text to print)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44840"></span>44840</td>
+<td class="instruction">CALL <a href="46902.html">46902</a></td>
+<td class="comment-11" rowspan="1">Print text to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44843"></span>44843</td>
+<td class="instruction">CALL <a href="47502.html">47502</a></td>
+<td class="comment-11" rowspan="1">Process keyboard / joystick input on a menu and load A with selected item index</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44846"></span>44846</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Add one to selected item index to give selected disquise index...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44847"></span>44847</td>
+<td class="instruction">LD (44854),A</td>
+<td class="comment-11" rowspan="1">...and store as operand to instruction at <a href="44635.html#44853">44853</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44850"></span>44850</td>
+<td class="instruction">CALL <a href="64207.html">64207</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="44853"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="44635.html#44853">44853</a> represents the index of the selected disquise to wear. This is modified by the instruction at <a href="44635.html#44847">44847</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44853"></span>44853</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Load A with selected disquise index...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44855"></span>44855</td>
+<td class="instruction">LD (23438),A</td>
+<td class="comment-11" rowspan="1">...and store at <a href="23436.html#23438">23438</a> as Current Disquise</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44858"></span>44858</td>
+<td class="instruction">JP 44689</td>
+<td class="comment-11" rowspan="1">Jump back to <a href="44635.html#44689">44689</a> (i.e. try to wear selected disquise)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="44615.html">44615</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#44635">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="44861.html">44861</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

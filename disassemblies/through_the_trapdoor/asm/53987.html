@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 53987</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="53968.html">53968</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#53987">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="54019.html">54019</a></span></td>
+</tr>
+</table>
+<div class="description">53987: Reset Complex State Data for First Entity of Class A to that Stored in Initial-State Table at <a href="59821.html">59821</a></div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="37639.html">37639</a> and <a href="48417.html">48417</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Entity class value</td>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">(Entry at <a href="53987.html#53994">53994</a> only) Address of complex state data for an entity</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53987"></span>53987</td>
+<td class="instruction">CALL <a href="54019.html">54019</a></td>
+<td class="comment-11" rowspan="1">Load IX with address of complex state data for first entry in current level that has class A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53990"></span>53990</td>
+<td class="instruction">PUSH IY</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53992"></span>53992</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="53994"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="42064.html">42064</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53994"></span>53994</td>
+<td class="instruction">LD IY,59821</td>
+<td class="comment-11" rowspan="1">Point IY at start of Table of Initial-State Data for Complex Entities</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53998"></span>53998</td>
+<td class="instruction">CALL <a href="54019.html#54023">54023</a></td>
+<td class="comment-11" rowspan="1">Advance IY to first entry in copied complex state data that has class A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54001"></span>54001</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store IX (address of entry in complex state data to overwrite)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54003"></span>54003</td>
+<td class="instruction">LD B,E</td>
+<td class="comment-11" rowspan="1">Load B with 13 (DE set to 13 in routine at <a href="54019.html">54019</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="54004"></span>54004</td>
+<td class="instruction">LD A,(IY+0)</td>
+<td class="comment-11" rowspan="1">Overwrite IX data entry with IY data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54007"></span>54007</td>
+<td class="instruction">LD (IX+0),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54010"></span>54010</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54012"></span>54012</td>
+<td class="instruction">INC IY</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54014"></span>54014</td>
+<td class="instruction">DJNZ 54004</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54016"></span>54016</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore IX (address of entry in complex state data just overwritten)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54018"></span>54018</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="53968.html">53968</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#53987">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="54019.html">54019</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

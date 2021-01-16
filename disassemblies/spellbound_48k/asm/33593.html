@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 33593</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33574.html">33574</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33593">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33663.html">33663</a></span></td>
+</tr>
+</table>
+<div class="description">33593: Process Command to Call Lift</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33593"></span>33593</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">If "Magic Knight Can Call Lift" flag is not set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33596"></span>33596</td>
+<td class="instruction">BIT 7,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33598"></span>33598</td>
+<td class="instruction">JP Z,<a href="27176.html#27189">27189</a></td>
+<td class="comment-11" rowspan="1">...then jump into Main Game Loop (process keyboard input and move Magic Knight, enter menus or execute other command)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33601"></span>33601</td>
+<td class="instruction">CALL <a href="38075.html">38075</a></td>
+<td class="comment-11" rowspan="1">Play upward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33604"></span>33604</td>
+<td class="instruction">CALL <a href="37654.html">37654</a></td>
+<td class="comment-11" rowspan="1">Print command summary window at bottom of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33607"></span>33607</td>
+<td class="instruction">LD DE,51271</td>
+<td class="comment-11" rowspan="1">Point DE to "CALL LIFT" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33610"></span>33610</td>
+<td class="instruction">CALL <a href="38693.html">38693</a></td>
+<td class="comment-11" rowspan="1">...and print in Command Summary Window at bottom of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33613"></span>33613</td>
+<td class="instruction">CALL <a href="38725.html">38725</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return if Execute chosen, else exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33616"></span>33616</td>
+<td class="instruction">CALL <a href="33770.html">33770</a></td>
+<td class="comment-11" rowspan="1">Set the Lift as not being at any floor at all</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33619"></span>33619</td>
+<td class="instruction">LD A,(65529)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33622"></span>33622</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Decrease index by one...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33623"></span>33623</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">...divide by eight...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33624"></span>33624</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33625"></span>33625</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33626"></span>33626</td>
+<td class="instruction">AND 7</td>
+<td class="comment-11" rowspan="1">...and leave number 0-7 (0=Roof, 1=4th Floor, ..., 6=Basement)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33628"></span>33628</td>
+<td class="instruction">LD (23382),A</td>
+<td class="comment-11" rowspan="1">Update light on Lift control panel to show current floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33631"></span>33631</td>
+<td class="instruction">LD A,(65529)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33634"></span>33634</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...and double the value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33635"></span>33635</td>
+<td class="instruction">LD HL,41711</td>
+<td class="comment-11" rowspan="1">Point HL at room connectivity data table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33638"></span>33638</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">Load double the room number into DE...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33639"></span>33639</td>
+<td class="instruction">LD D,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33641"></span>33641</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Add DE to HL as offset so HL now points to room connectivity entry for current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33642"></span>33642</td>
+<td class="instruction">LD (HL),D</td>
+<td class="comment-11" rowspan="1">Set left-hand exit of current room to lead to The Lift</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33643"></span>33643</td>
+<td class="instruction">LD A,(65529)</td>
+<td class="comment-11" rowspan="1">Set the right-hand exit of "The Lift" screen to be Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33646"></span>33646</td>
+<td class="instruction">LD (41712),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33649"></span>33649</td>
+<td class="instruction">CALL <a href="38175.html">38175</a></td>
+<td class="comment-11" rowspan="1">Play "LIFT HAS ARRIVED" sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33652"></span>33652</td>
+<td class="instruction">LD A,(23410)</td>
+<td class="comment-11" rowspan="1">Reset "Magic Knight Can't Move Left" Temporary Movement Flag, as the room's left exit has opened...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33655"></span>33655</td>
+<td class="instruction">AND 2</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33657"></span>33657</td>
+<td class="instruction">LD (23410),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33660"></span>33660</td>
+<td class="instruction">JP <a href="34544.html">34544</a></td>
+<td class="comment-11" rowspan="1">Display "THE LIFT IS HERE" window</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33574.html">33574</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33593">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33663.html">33663</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

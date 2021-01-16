@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 45766</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45723.html">45723</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45766">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45779.html">45779</a></span></td>
+</tr>
+</table>
+<div class="description">45766: Print Name of Object in Inventory Slot A of Inventory Data at HL in Command Summary Window</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="41748.html">41748</a>, <a href="41924.html">41924</a>, <a href="42257.html">42257</a>, <a href="42638.html">42638</a>, <a href="43494.html">43494</a>, <a href="43636.html">43636</a>, <a href="44337.html">44337</a>, <a href="44635.html">44635</a> and <a href="45095.html">45095</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Index of an inventory slot, with first slot being zero</td>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Points to start of a character's inventory</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45766"></span>45766</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">Load inventory slot number into DE...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45767"></span>45767</td>
+<td class="instruction">LD D,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45769"></span>45769</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Add to HL as offset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45770"></span>45770</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load index of object in that slot into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45771"></span>45771</td>
+<td class="instruction">LD (41779),A</td>
+<td class="comment-11" rowspan="1">Set this object as the Current Object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45774"></span>45774</td>
+<td class="instruction">LD DE,45779</td>
+<td class="comment-11" rowspan="1">Point DE at instruction to print name of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45777"></span>45777</td>
+<td class="instruction">JR <a href="45781.html#45795">45795</a></td>
+<td class="comment-11" rowspan="1">...print in Command Summary Window at top of screen and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45723.html">45723</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45766">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45779.html">45779</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

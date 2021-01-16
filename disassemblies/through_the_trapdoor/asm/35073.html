@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Data at 35073</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35045.html">35045</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35073">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35105.html">35105</a></span></td>
+</tr>
+</table>
+<div class="description">35073: Script Data: Berk Turning (Facing into Screen to Facing Out of Screen)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35073"></span>35073</td>
+<td class="instruction">DEFB 8,0</td>
+<td class="comment-11" rowspan="1">Set Must Process Current Script Data Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35075"></span>35075</td>
+<td class="instruction">DEFB 20,0</td>
+<td class="comment-11" rowspan="1">Move carried entity to Berk's right as he faces right</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35077"></span>35077</td>
+<td class="instruction">DEFB 146,217</td>
+<td class="comment-11" rowspan="1"><a href="55698.html">55698</a> (Berk, stepping right, right foot out and forward, arm and eye animated)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35079"></span>35079</td>
+<td class="instruction">DEFB 158,217</td>
+<td class="comment-11" rowspan="1"><a href="55698.html#55710">55710</a> (Berk, stepping right, right foot out, arm and eye animated)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35081"></span>
+<div class="comments">
+<div class="paragraph">
+Berk facing out of screen, ready to respond to control input
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35081"></span>35081</td>
+<td class="instruction">DEFB 10,0</td>
+<td class="comment-11" rowspan="1">Reset Berk's Walking Left and Walking Right flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35083"></span>35083</td>
+<td class="instruction">DEFB  9,0</td>
+<td class="comment-11" rowspan="1">Reset Must Process Current Script Data Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35085"></span>35085</td>
+<td class="instruction">DEFB  7,0</td>
+<td class="comment-11" rowspan="1">Reset Berk's Facing Into Screen, Facing Left and Facing Right flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35087"></span>35087</td>
+<td class="instruction">DEFB 15,0,25,137</td>
+<td class="comment-11" rowspan="1">If Berk is carrying something then jump to <a href="35073.html#35097">35097</a> (Berk facing out of screen, holding something)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35091"></span>
+<div class="comments">
+<div class="paragraph">
+Berk holding nothing
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35091"></span>35091</td>
+<td class="instruction">DEFB 228,221</td>
+<td class="comment-11" rowspan="1"><a href="56731.html#56804">56804</a> (Berk, facing out of screen, arms down at sides, animated)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35093"></span>35093</td>
+<td class="instruction">DEFB  1,0,19,137</td>
+<td class="comment-11" rowspan="1">Jump to <a href="35073.html#35091">35091</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35097"></span>
+<div class="comments">
+<div class="paragraph">
+Berk holding something
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35097"></span>35097</td>
+<td class="instruction">DEFB 21,0</td>
+<td class="comment-11" rowspan="1">Move carried entity in front of Berk as he faces out of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35099"></span>35099</td>
+<td class="instruction">DEFB 226,222</td>
+<td class="comment-11" rowspan="1"><a href="56731.html#57058">57058</a> (Berk, facing out of screen, holding something, animated)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35101"></span>35101</td>
+<td class="instruction">DEFB 1,0,25,137</td>
+<td class="comment-11" rowspan="1">Jump to <a href="35073.html#35097">35097</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35045.html">35045</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35073">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35105.html">35105</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

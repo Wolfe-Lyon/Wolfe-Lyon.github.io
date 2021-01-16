@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 35629</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35598.html">35598</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35629">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35669.html">35669</a></span></td>
+</tr>
+</table>
+<div class="description">35629: Set the "Magic Knight Can Read" Flag if he is Carrying a Readable Object</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="35495.html">35495</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35629"></span>35629</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Reset "Magic Knight Can Read" flag (i.e. false)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35632"></span>35632</td>
+<td class="instruction">RES 3,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35634"></span>35634</td>
+<td class="instruction">LD (65532),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35637"></span>35637</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Set counter to 5 (as Magic Knight can carry 5 objects)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35639"></span>35639</td>
+<td class="instruction">LD IX,25395</td>
+<td class="comment-11" rowspan="1">Point IX to start of Magic Knight's current inventory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35643"></span>35643</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load index of object carried by Magic Knight into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35646"></span>35646</td>
+<td class="instruction">LD E,2</td>
+<td class="comment-11" rowspan="1">Point HL to property 2 ("Read Text") of this object (in table at <a href="42242.html">42242</a>)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35648"></span>35648</td>
+<td class="instruction">CALL <a href="34160.html">34160</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35651"></span>35651</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...and load into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35652"></span>35652</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If "Read Text" property is not zero (i.e. if object can be read)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35653"></span>35653</td>
+<td class="instruction">JR NZ,35660</td>
+<td class="comment-11" rowspan="1">...then skip to <a href="35629.html#35660">35660</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35655"></span>35655</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">...else advance to next inventory slot...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35657"></span>35657</td>
+<td class="instruction">DJNZ 35643</td>
+<td class="comment-11" rowspan="1">...and repeat</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35659"></span>35659</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">If this was last slot, then return with "Magic Knight Can Read" flag unset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35660"></span>35660</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Set "Magic Knight Can Read" flag (i.e. true)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35663"></span>35663</td>
+<td class="instruction">SET 3,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35665"></span>35665</td>
+<td class="instruction">LD (65532),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35668"></span>35668</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="35598.html">35598</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35629">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35669.html">35669</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

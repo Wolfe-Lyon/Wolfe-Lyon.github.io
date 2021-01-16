@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 46902</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46873.html">46873</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46902">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47020.html">47020</a></span></td>
+</tr>
+</table>
+<div class="description">46902: Print Text at Location HL to Screen</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="37764.html">37764</a>, <a href="37909.html">37909</a>, <a href="37951.html">37951</a>, <a href="38780.html">38780</a>, <a href="38829.html">38829</a>, <a href="40258.html">40258</a>, <a href="40489.html">40489</a>, <a href="42494.html">42494</a>, <a href="42616.html">42616</a>, <a href="42638.html">42638</a>, <a href="43043.html">43043</a>, <a href="43874.html">43874</a>, <a href="44253.html">44253</a>, <a href="44635.html">44635</a>, <a href="45552.html">45552</a>, <a href="45641.html">45641</a>, <a href="45685.html">45685</a>, <a href="45723.html">45723</a>, <a href="45809.html">45809</a>, <a href="45963.html">45963</a>, <a href="46106.html">46106</a>, <a href="46463.html">46463</a>, <a href="46873.html">46873</a>, <a href="63349.html">63349</a>, <a href="63399.html">63399</a>, <a href="64207.html">64207</a>, <a href="64230.html">64230</a>, <a href="64317.html">64317</a> and <a href="64582.html">64582</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Points to text data to print</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46902"></span>46902</td>
+<td class="instruction">LD IX,25060</td>
+<td class="comment-11" rowspan="1">Point IX at start of Temporary Text Buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46906"></span>46906</td>
+<td class="instruction">LD A,255</td>
+<td class="comment-11" rowspan="1">Prepare Recursion Depth Counter for loop...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46908"></span>46908</td>
+<td class="instruction">LD (23398),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46911"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="47049.html">47049</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46911"></span>46911</td>
+<td class="instruction">LD A,(23398)</td>
+<td class="comment-11" rowspan="1">Increase Recursion Depth Counter...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46914"></span>46914</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46915"></span>46915</td>
+<td class="instruction">LD (23398),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46918"></span>46918</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46919"></span>46919</td>
+<td class="instruction">CALL <a href="63286.html">63286</a></td>
+<td class="comment-11" rowspan="1">Update Attribute Virtual Text Cursor based upon current Bitmap Virtual Text Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46922"></span>46922</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46923"></span>46923</td>
+<td class="instruction">DEC HL</td>
+<td class="comment-11" rowspan="1">Prepare pointer to text to print for loop</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46924"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="47020.html">47020</a>, <a href="47096.html">47096</a> and <a href="48389.html">48389</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46924"></span>46924</td>
+<td class="instruction">LD A,(23398)</td>
+<td class="comment-11" rowspan="1">Load A with value in Recursion Depth Counter...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46927"></span>46927</td>
+<td class="instruction">CP 255</td>
+<td class="comment-11" rowspan="1">...and if this is 255 (i.e. no more text to print)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46929"></span>46929</td>
+<td class="instruction">JP Z,<a href="47178.html">47178</a></td>
+<td class="comment-11" rowspan="1">...then return (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46932"></span>46932</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance to next character code to be printed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46933"></span>46933</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...and load into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46934"></span>46934</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If character code is a zero (i.e. End Marker)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46935"></span>46935</td>
+<td class="instruction">JP Z,<a href="47023.html">47023</a></td>
+<td class="comment-11" rowspan="1">...then return from current level of text printing</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46938"></span>46938</td>
+<td class="instruction">CP 32</td>
+<td class="comment-11" rowspan="1">If the character is a "32" (SPACE)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46940"></span>46940</td>
+<td class="instruction">JP Z,<a href="48389.html">48389</a></td>
+<td class="comment-11" rowspan="1">...then print word in Temporary Text Buffer to screen, wrapping text if necessary, then jump to <a href="46902.html#46924">46924</a> to load next word</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46943"></span>46943</td>
+<td class="instruction">CP 31</td>
+<td class="comment-11" rowspan="1">If the character is a "31"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46945"></span>46945</td>
+<td class="instruction">JP Z,<a href="47170.html">47170</a></td>
+<td class="comment-11" rowspan="1">...then print the Current Character's short name</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46948"></span>46948</td>
+<td class="instruction">CP 30</td>
+<td class="comment-11" rowspan="1">If the character is a "30"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46950"></span>46950</td>
+<td class="instruction">JP Z,<a href="47162.html">47162</a></td>
+<td class="comment-11" rowspan="1">...then print the Current Character's full name</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46953"></span>46953</td>
+<td class="instruction">CP 29</td>
+<td class="comment-11" rowspan="1">If the character is a "29"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46955"></span>46955</td>
+<td class="instruction">JP Z,<a href="47110.html">47110</a></td>
+<td class="comment-11" rowspan="1">...then print the Current Object's name</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46958"></span>46958</td>
+<td class="instruction">CP 28</td>
+<td class="comment-11" rowspan="1">If the character is a "28"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46960"></span>46960</td>
+<td class="instruction">JP Z,<a href="47121.html">47121</a></td>
+<td class="comment-11" rowspan="1">... then print appropriate Newspaper substring for current required disquise</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46963"></span>46963</td>
+<td class="instruction">CP 27</td>
+<td class="comment-11" rowspan="1">If the character is a "27"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46965"></span>46965</td>
+<td class="instruction">JP Z,<a href="47132.html">47132</a></td>
+<td class="comment-11" rowspan="1">...then print current Crystal Ball substring</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46968"></span>46968</td>
+<td class="instruction">CP 26</td>
+<td class="comment-11" rowspan="1">If the character is a "26"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46970"></span>46970</td>
+<td class="instruction">JP Z,<a href="47143.html">47143</a></td>
+<td class="comment-11" rowspan="1">...then print current Scroll substring</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46973"></span>46973</td>
+<td class="instruction">CP 25</td>
+<td class="comment-11" rowspan="1">If the character is a "25"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46975"></span>46975</td>
+<td class="instruction">JP Z,<a href="47154.html">47154</a></td>
+<td class="comment-11" rowspan="1">...then print the name of the Current Command</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46978"></span>46978</td>
+<td class="instruction">CP 19</td>
+<td class="comment-11" rowspan="1">If the character is a "19"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46980"></span>46980</td>
+<td class="instruction">JP Z,<a href="47080.html">47080</a></td>
+<td class="comment-11" rowspan="1">...then toggle BRIGHT Flag then loop back to <a href="46902.html#46924">46924</a> for next data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46983"></span>46983</td>
+<td class="instruction">CP 18</td>
+<td class="comment-11" rowspan="1">If the character is a "18"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46985"></span>46985</td>
+<td class="instruction">JP Z,<a href="47084.html">47084</a></td>
+<td class="comment-11" rowspan="1">...then toggle FLASH Flag then loop back to <a href="46902.html#46924">46924</a> for next data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46988"></span>46988</td>
+<td class="instruction">CP 17</td>
+<td class="comment-11" rowspan="1">If the character is a "17"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46990"></span>46990</td>
+<td class="instruction">JP Z,<a href="47092.html">47092</a></td>
+<td class="comment-11" rowspan="1">...then change PAPER colour based upon following data byte then loop back to <a href="46902.html#46924">46924</a> for next data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46993"></span>46993</td>
+<td class="instruction">CP 16</td>
+<td class="comment-11" rowspan="1">If the character is a "16"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46995"></span>46995</td>
+<td class="instruction">JP Z,<a href="47096.html">47096</a></td>
+<td class="comment-11" rowspan="1">...then change INK colour based upon following data byte then loop back to <a href="46902.html#46924">46924</a> for next data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46998"></span>46998</td>
+<td class="instruction">CP 14</td>
+<td class="comment-11" rowspan="1">If the character is a "14" (Carriage return / line feed to start of next character row down within window)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47000"></span>47000</td>
+<td class="instruction">JP Z,<a href="48389.html">48389</a></td>
+<td class="comment-11" rowspan="1">...then print word in Temporary Text Buffer to screen, wrapping text if necessary, then jump to <a href="46902.html#46924">46924</a> to load next word</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47003"></span>47003</td>
+<td class="instruction">CP 13</td>
+<td class="comment-11" rowspan="1">If the character is a "13" (Carriage return / line feed to start of next character row down)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47005"></span>47005</td>
+<td class="instruction">JP Z,<a href="48389.html">48389</a></td>
+<td class="comment-11" rowspan="1">...then print word in Temporary Text Buffer to screen, wrapping text if necessary, then jump to <a href="46902.html#46924">46924</a> to load next word</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47008"></span>47008</td>
+<td class="instruction">CP 91</td>
+<td class="comment-11" rowspan="1">If value is 91 or greater (i.e. special character)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47010"></span>47010</td>
+<td class="instruction">JP NC,<a href="47049.html">47049</a></td>
+<td class="comment-11" rowspan="1">...then print an entry from the Common Words Table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47013"></span>47013</td>
+<td class="instruction">LD (IX+0),A</td>
+<td class="comment-11" rowspan="1">Load character into Temporary Text Buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47016"></span>47016</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance to next position in temporary text buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47018"></span>47018</td>
+<td class="instruction">JR 46924</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="46902.html#46924">46924</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46873.html">46873</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46902">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47020.html">47020</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

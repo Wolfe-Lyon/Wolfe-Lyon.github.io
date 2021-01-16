@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 34861</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34858.html">34858</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#34861">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="34887.html">34887</a></span></td>
+</tr>
+</table>
+<div class="description">34861: Text Printing: Return from current level of text printing</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="34762.html">34762</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34861"></span>34861</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34862"></span>34862</td>
+<td class="instruction">LD A,(23488)</td>
+<td class="comment-11" rowspan="1">Load Recursion Depth Counter into B...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34865"></span>34865</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34866"></span>34866</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34867"></span>34867</td>
+<td class="instruction">OR B</td>
+<td class="comment-11" rowspan="1">If Recursion Depth Counter is not zero (i.e. we are not at the end of the top-level string)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34868"></span>34868</td>
+<td class="instruction">JR NZ,34879</td>
+<td class="comment-11" rowspan="1">...then skip ahead to 34879</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34870"></span>34870</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Decrease Recursion Depth Counter to 255, as we have reached the end of the top-level string...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34871"></span>34871</td>
+<td class="instruction">LD (23488),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34874"></span>34874</td>
+<td class="instruction">LD A,255</td>
+<td class="comment-11" rowspan="1">Load A with 255 (End Marker)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34876"></span>34876</td>
+<td class="instruction">JP <a href="36602.html">36602</a></td>
+<td class="comment-11" rowspan="1">Print word in Temporary Text Buffer to screen, wrapping text if necessary, then jump to <a href="34762.html#34784">34784</a> to return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34879"></span>34879</td>
+<td class="instruction">LD A,(23488)</td>
+<td class="comment-11" rowspan="1">Decrease Recursion Depth Counter...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34882"></span>34882</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34883"></span>34883</td>
+<td class="instruction">LD (23488),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34886"></span>34886</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34858.html">34858</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#34861">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="34887.html">34887</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

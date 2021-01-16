@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 37782</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37746.html">37746</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37782">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37816.html">37816</a></span></td>
+</tr>
+</table>
+<div class="description">37782: Clear Top Two Thirds of Display File and Draw Two Rows of [SPACE] Characters Below (UNUSED)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37782"></span>37782</td>
+<td class="instruction">LD HL,20480</td>
+<td class="comment-11" rowspan="1">Point HL two thirds of the way down Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37785"></span>37785</td>
+<td class="instruction">LD (36488),HL</td>
+<td class="comment-11" rowspan="1">Store this address at 36488</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37788"></span>37788</td>
+<td class="instruction">LD HL,64</td>
+<td class="comment-11" rowspan="1">Set width to 64</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37791"></span>37791</td>
+<td class="instruction">LD A,32</td>
+<td class="comment-11" rowspan="1">Set window border style character to 32 (a SPACE character)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37793"></span>37793</td>
+<td class="instruction">LD (36912),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37796"></span>37796</td>
+<td class="instruction">CALL <a href="36908.html">36908</a></td>
+<td class="comment-11" rowspan="1">Draw upper edge of frame of a window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37799"></span>37799</td>
+<td class="instruction">LD HL,0</td>
+<td class="comment-11" rowspan="1">Load zero (all bits reset) into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37802"></span>37802</td>
+<td class="instruction">LD BC,8</td>
+<td class="comment-11" rowspan="1">Load 0 into B and 8 into C to repeat outer loop 8 times</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37805"></span>37805</td>
+<td class="instruction">DI</td>
+<td class="comment-11" rowspan="1">Disable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37806"></span>37806</td>
+<td class="instruction">LD (37837),SP</td>
+<td class="comment-11" rowspan="1">Store stack pointer at 37837</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37810"></span>37810</td>
+<td class="instruction">LD SP,20480</td>
+<td class="comment-11" rowspan="1">Point stack pointer two thirds of the way down Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37813"></span>37813</td>
+<td class="instruction">JP <a href="37816.html#37830">37830</a></td>
+<td class="comment-11" rowspan="1">Jump into clearing routine</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37746.html">37746</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37782">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37816.html">37816</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

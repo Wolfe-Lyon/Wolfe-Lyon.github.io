@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 46830</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46710.html">46710</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46830">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46946.html">46946</a></span></td>
+</tr>
+</table>
+<div class="description">46830: Display and Handle Main Menu</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="34438.html">34438</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46830"></span>46830</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Load A with 1 (blue)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46832"></span>46832</td>
+<td class="instruction">LD (34217),A</td>
+<td class="comment-11" rowspan="1">Store at <a href="34217.html">34217</a> and...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46835"></span>46835</td>
+<td class="instruction">OUT (254),A</td>
+<td class="comment-11" rowspan="1">...set border to this value (blue)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46837"></span>46837</td>
+<td class="instruction">LD A,9</td>
+<td class="comment-11" rowspan="1">Fill top 22 rows of Attribute File with blue PAPER &amp; blue INK...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46839"></span>46839</td>
+<td class="instruction">CALL <a href="53649.html">53649</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46842"></span>46842</td>
+<td class="instruction">CALL <a href="47140.html">47140</a></td>
+<td class="comment-11" rowspan="1">Print "THROUGH the TRAPDOOR" string</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46845"></span>46845</td>
+<td class="instruction">CALL <a href="47628.html">47628</a></td>
+<td class="comment-11" rowspan="1">Print SCORE / TOTAL / HI-SC string in current character's colours</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46848"></span>46848</td>
+<td class="instruction">LD IX,46690</td>
+<td class="comment-11" rowspan="1">Point IX at Table of Attribute File Addresses for Main Menu Strings</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46852"></span>46852</td>
+<td class="instruction">LD IY,46710</td>
+<td class="comment-11" rowspan="1">Point IY at start of Table of Main Menu Strings</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46856"></span>46856</td>
+<td class="instruction">LD A,112</td>
+<td class="comment-11" rowspan="1">Load A with 112 (black INK on yellow PAPER)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46858"></span>46858</td>
+<td class="instruction">LD (34269),A</td>
+<td class="comment-11" rowspan="1">Store at <a href="34256.html#34269">34269</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46861"></span>46861</td>
+<td class="instruction">LD B,10</td>
+<td class="comment-11" rowspan="1">Load B with 10 as there are 10 strings to print (loop counter)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46863"></span>46863</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = remaining number of strings to print)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46864"></span>46864</td>
+<td class="instruction">LD L,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load Attribute File address at which to print text into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46867"></span>46867</td>
+<td class="instruction">LD H,(IX+1)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46870"></span>46870</td>
+<td class="instruction">LD B,12</td>
+<td class="comment-11" rowspan="1">Load B with 12 as there are 12 characters to print (loop counter)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46872"></span>46872</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = number of remaining characters to print)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46873"></span>46873</td>
+<td class="instruction">LD E,(IY+0)</td>
+<td class="comment-11" rowspan="1">Load E with text character to print</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46876"></span>46876</td>
+<td class="instruction">CALL <a href="47682.html">47682</a></td>
+<td class="comment-11" rowspan="1">Print double-height text character in E</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46879"></span>46879</td>
+<td class="instruction">INC IY</td>
+<td class="comment-11" rowspan="1">Advance IY to next character in text to print</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46881"></span>46881</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance to next Attribute File location</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46882"></span>46882</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = number of remaining characters to print)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46883"></span>46883</td>
+<td class="instruction">DJNZ 46872</td>
+<td class="comment-11" rowspan="1">Loop back for next character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46885"></span>46885</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance IX to next entry in list of Attribute File addresses to print to...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46887"></span>46887</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46889"></span>46889</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = remaining number of strings to print)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46890"></span>46890</td>
+<td class="instruction">DJNZ 46863</td>
+<td class="comment-11" rowspan="1">Loop back for next string</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46892"></span>46892</td>
+<td class="instruction">CALL <a href="46946.html">46946</a></td>
+<td class="comment-11" rowspan="1">Draw Joystick "J" (Main Menu) in colour depending upon Joystick Mode</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46895"></span>46895</td>
+<td class="instruction">LD A,114</td>
+<td class="comment-11" rowspan="1">Load A with the attribute value for red INK, yellow PAPER, BRIGHT</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46897"></span>46897</td>
+<td class="instruction">CALL <a href="47084.html">47084</a></td>
+<td class="comment-11" rowspan="1">Print keyboard controls on main menu</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46900"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="46968.html">46968</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46900"></span>46900</td>
+<td class="instruction">CALL <a href="47955.html">47955</a></td>
+<td class="comment-11" rowspan="1">Wait for key-press, store pressed key code in A and play Main Menu Sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46903"></span>46903</td>
+<td class="instruction">CP 83</td>
+<td class="comment-11" rowspan="1">If pressed key was not 83 (S)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46905"></span>46905</td>
+<td class="instruction">JR NZ,46915</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="46830.html#46915">46915</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46907"></span>46907</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1">Set current border colour to red...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46909"></span>46909</td>
+<td class="instruction">LD (34217),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46912"></span>46912</td>
+<td class="instruction">OUT (254),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46914"></span>46914</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46915"></span>46915</td>
+<td class="instruction">CP 74</td>
+<td class="comment-11" rowspan="1">If pressed key was not 74 (J)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46917"></span>46917</td>
+<td class="instruction">JR NZ,<a href="46968.html">46968</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="46968.html">46968</a> (if "K" pressed then redefine controls)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46919"></span>46919</td>
+<td class="instruction">LD A,(34298)</td>
+<td class="comment-11" rowspan="1">If we are in Joystick Mode...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46922"></span>46922</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46923"></span>46923</td>
+<td class="instruction">JR NZ,46937</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="46830.html#46937">46937</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46925"></span>46925</td>
+<td class="instruction">CALL <a href="47043.html">47043</a></td>
+<td class="comment-11" rowspan="1">If Kempston Interface not present, or Kempston Joystick moved / fire pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46928"></span>46928</td>
+<td class="instruction">JR C,46900</td>
+<td class="comment-11" rowspan="1">...then jump to <a href="46830.html#46900">46900</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46930"></span>46930</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Set Joystick Mode to On...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46932"></span>46932</td>
+<td class="instruction">LD (34298),A</td>
+<td class="comment-11" rowspan="1">...(<a href="../reference/facts.html#redundantinstructionsvi">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46935"></span>46935</td>
+<td class="instruction">JR 46938</td>
+<td class="comment-11" rowspan="1">Skip ahead to <a href="46830.html#46938">46938</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46937"></span>46937</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Set Joystick Mode to Off...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46938"></span>46938</td>
+<td class="instruction">LD (34298),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46941"></span>46941</td>
+<td class="instruction">CALL <a href="46946.html">46946</a></td>
+<td class="comment-11" rowspan="1">Draw Joystick "J" (Main Menu) in colour depending upon Joystick Mode</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46944"></span>46944</td>
+<td class="instruction">JR 46900</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="46830.html#46900">46900</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46710.html">46710</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46830">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46946.html">46946</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

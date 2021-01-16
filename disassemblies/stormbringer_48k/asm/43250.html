@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 43250</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="43199.html">43199</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#43250">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="43302.html">43302</a></span></td>
+</tr>
+</table>
+<div class="description">43250: Have a Character Help if Possible</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="43250"></span>43250</td>
+<td class="instruction">CALL <a href="45552.html">45552</a></td>
+<td class="comment-11" rowspan="1">Display "[Character] IS ASLEEP" Window and jump to Main Game Loop if Current Character is asleep, else return here and continue</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43253"></span>43253</td>
+<td class="instruction">LD A,32</td>
+<td class="comment-11" rowspan="1">Set last character in "[Current Character's short name] CANNOT HELP YOU&#160;&#160;" text at <a href="52523.html#52770">52770</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43255"></span>43255</td>
+<td class="instruction">LD (52779),A</td>
+<td class="comment-11" rowspan="1">...to 32 (SPACE) (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43258"></span>43258</td>
+<td class="instruction">LD A,(41937)</td>
+<td class="comment-11" rowspan="1">If index of Current Character is 7 (Grunter the Bearwoolf)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43261"></span>43261</td>
+<td class="instruction">CP 7</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43263"></span>43263</td>
+<td class="instruction">JR Z,43293</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43250.html#43293">43293</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43265"></span>43265</td>
+<td class="instruction">CALL <a href="45411.html">45411</a></td>
+<td class="comment-11" rowspan="1">Point IX at Current Character's current stats</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43268"></span>43268</td>
+<td class="instruction">BIT 7,(IX+3)</td>
+<td class="comment-11" rowspan="1">If character's Can Help Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43272"></span>43272</td>
+<td class="instruction">JP Z,<a href="64285.html">64285</a></td>
+<td class="comment-11" rowspan="1">...then display "[Character] CANNOT HELP YOU" Window (29), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43275"></span>43275</td>
+<td class="instruction">LD A,(IX+2)</td>
+<td class="comment-11" rowspan="1">If character's stamina is less than 10...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43278"></span>43278</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43280"></span>43280</td>
+<td class="instruction">CP 10</td>
+<td class="comment-11" rowspan="1">...the set Carry Flag, otherwise reset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43282"></span>43282</td>
+<td class="instruction">LD HL,52781</td>
+<td class="comment-11" rowspan="1">Point HL at "[Current Character's short name] IS TOO TIRED TO HELP YOU " text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43285"></span>43285</td>
+<td class="instruction">JP C,<a href="64313.html">64313</a></td>
+<td class="comment-11" rowspan="1">...then display "[Character] IS TOO TIRED TO HELP YOU" Window (29), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43288"></span>43288</td>
+<td class="instruction">LD B,10</td>
+<td class="comment-11" rowspan="1">If character's happiness is less than 10 then Show "[Character] DOES NOT WANT TO BE COMMANDED..." and Jump to Main Game Loop...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43290"></span>43290</td>
+<td class="instruction">CALL <a href="45423.html">45423</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="43293"></span>43293</td>
+<td class="instruction">LD A,(41937)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43296"></span>43296</td>
+<td class="instruction">LD HL,43302</td>
+<td class="comment-11" rowspan="1">Point HL at start of Table of Addressed of Characters' Help Routines</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43299"></span>43299</td>
+<td class="instruction">JP <a href="64623.html">64623</a></td>
+<td class="comment-11" rowspan="1">Advance HL by A words, load HL with word at location HL as address and jump to it</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="43199.html">43199</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#43250">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="43302.html">43302</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

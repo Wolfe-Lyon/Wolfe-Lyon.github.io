@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Data at 23675</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="23502.html">23502</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#23675">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="23698.html">23698</a></span></td>
+</tr>
+</table>
+<div class="description">23675: Interrupt Routine Flags</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Bitwise flags which determine which things occur upon executing the Interrupt Routine. The bits are as follows:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Bit</th>
+<th colspan="1" rowspan="1">Effect</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Game In Progress Flag</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Characters Free to Move Flag</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Unknown Flag</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+The Game In Progress Flag is used to determine whether or not to allow loading and saving of games (which can only be done via Gadget X), and also whether or not to move characters and update the game clock.
+</div>
+<div class="paragraph">
+The Characters Free to Move Flag determines whether or not the characters in the same room as Magic Knight are free to move. When the player is controlling Magic Knight, this flag is reset, meaning characters are unable to move. When the player is navigating menus the flag is set meaning characters are able to move.
+</div>
+<div class="paragraph">
+The Unknown Flag is reset by the instruction at <a href="28101.html#28145">28145</a>, and also along with all other bits of this address by the instruction at <a href="26670.html#26676">26676</a>. This flag is not accessed or modified by any other part of the game code.
+</div>
+<div class="paragraph">
+Note: location 23675 (IY+65) is the least significant byte of the UDG System Variable, being used for a different purpose here.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="23675"></span>23675</td>
+<td class="instruction">DEFB 88</td>
+<td class="comment-10" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="23502.html">23502</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#23675">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="23698.html">23698</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 36499</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36434.html">36434</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36499">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36543.html">36543</a></span></td>
+</tr>
+</table>
+<div class="description">36499: Move a Star Depending Upon the Signs and Magnitudes of its "Direction"</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Each time this routine runs, we add the smaller of the x- and y-magnitudes to the running "ratio" value in (IX+6).
+</div>
+<div class="paragraph">
+If the larger of the x- and y-magnitudes is smaller than this, then we move the star in both x- and y-directions and subtract the larger magnitude from the running value in (IX+6).
+</div>
+<div class="paragraph">
+If the larger of the x- and y-magnitudes is larger  than this, then we move the star only in that direction with the larger magnitude and do not update (IX+6) further beyond adding the smaller magnitude (i.e. we do NOT subtract the larger one)
+</div>
+<div class="paragraph">
+Used by the routine at <a href="36321.html">36321</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Points to entry in Star Data table at <a href="24832.html">24832</a></td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">New y-coordinate to plot</td>
+</tr>
+<tr>
+<td class="register">C</td>
+<td class="register-desc">New x-coordinate to plot</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36499"></span>36499</td>
+<td class="instruction">LD A,(IX+6)</td>
+<td class="comment-11" rowspan="1">Load current "ratio" value into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36502"></span>36502</td>
+<td class="instruction">ADD A,(IX+8)</td>
+<td class="comment-11" rowspan="1">Add smaller of x- and y-component magnitudes</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36505"></span>36505</td>
+<td class="instruction">JR C,36512</td>
+<td class="comment-11" rowspan="1">If result is crosses the 255-0 boundary then skip ahead to <a href="36499.html#36512">36512</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36507"></span>36507</td>
+<td class="instruction">CP (IX+7)</td>
+<td class="comment-11" rowspan="1">If result is less than larger of x- and y-component magnitudes...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36510"></span>36510</td>
+<td class="instruction">JR C,36523</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="36499.html#36523">36523</a> (move star only on axis with larger magnitude)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36512"></span>36512</td>
+<td class="instruction">SUB (IX+7)</td>
+<td class="comment-11" rowspan="1">Subtract larger of x- and y-magnitudes</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36515"></span>36515</td>
+<td class="instruction">LD H,(IX+5)</td>
+<td class="comment-11" rowspan="1">Load y-step into H...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36518"></span>36518</td>
+<td class="instruction">LD L,(IX+4)</td>
+<td class="comment-11" rowspan="1">...and x-step into H (moving star on BOTH axes)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36521"></span>36521</td>
+<td class="instruction">JR 36529</td>
+<td class="comment-11" rowspan="1">Skip ahead to <a href="36499.html#36529">36529</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36523"></span>36523</td>
+<td class="instruction">LD H,(IX+3)</td>
+<td class="comment-11" rowspan="1">Load 0 / y-step into H</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36526"></span>36526</td>
+<td class="instruction">LD L,(IX+2)</td>
+<td class="comment-11" rowspan="1">Load 0 / x-step into H</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36529"></span>36529</td>
+<td class="instruction">LD (IX+6),A</td>
+<td class="comment-11" rowspan="1">Update "ratio" value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36532"></span>36532</td>
+<td class="instruction">LD A,(IX+1)</td>
+<td class="comment-11" rowspan="1">Add previous y-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36535"></span>36535</td>
+<td class="instruction">ADD A,H</td>
+<td class="comment-11" rowspan="1">...to y-step...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36536"></span>36536</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...in B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36537"></span>36537</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Add previous x-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36540"></span>36540</td>
+<td class="instruction">ADD A,L</td>
+<td class="comment-11" rowspan="1">...to x-step...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36541"></span>36541</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...in C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36542"></span>36542</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36434.html">36434</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36499">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36543.html">36543</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

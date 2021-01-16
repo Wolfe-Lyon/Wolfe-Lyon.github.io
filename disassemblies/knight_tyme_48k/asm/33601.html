@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 33601</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33585.html">33585</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33601">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33640.html">33640</a></span></td>
+</tr>
+</table>
+<div class="description">33601: Test Whether Current Object is too Heavy for Magic Knight to Pick Up (or Take)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="29330.html">29330</a> and <a href="29619.html">29619</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">F</td>
+<td class="register-desc">S Flag set if object is light enough to be picked up, reset otherwise</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33601"></span>33601</td>
+<td class="instruction">LD IX,25164</td>
+<td class="comment-11" rowspan="1">Point IX at start of Magic Knight's current inventory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33605"></span>33605</td>
+<td class="instruction">LD A,(25020)</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's current strength into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33608"></span>33608</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF (A = Magic Knight's current strength)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33609"></span>33609</td>
+<td class="instruction">LD BC,1280</td>
+<td class="comment-11" rowspan="1">Load B with 5 (as five inventory slots to check) and C (total weight carried) with zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33612"></span>33612</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load object in current inventory slot</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33615"></span>33615</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If no object present...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33616"></span>33616</td>
+<td class="instruction">JR Z,33627</td>
+<td class="comment-11" rowspan="1">...skip ahead to <a href="33601.html#33627">33627</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33618"></span>33618</td>
+<td class="instruction">CALL <a href="33487.html">33487</a></td>
+<td class="comment-11" rowspan="1">Load A with weight of object A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33621"></span>33621</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">Add C to this...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33622"></span>33622</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...and load result into C (total weight so far)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33623"></span>33623</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance to next inventory slot</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33625"></span>33625</td>
+<td class="instruction">DJNZ 33612</td>
+<td class="comment-11" rowspan="1">Loop back for next inventory slot</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33627"></span>33627</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF (A = Magic Knight's current strength)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33628"></span>33628</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">Ensure that strength is capped at 127 and that Sign Flag is reset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33630"></span>33630</td>
+<td class="instruction">SUB C</td>
+<td class="comment-11" rowspan="1">Subtract total weight of Magic Knight's carried objects from his strength to get "surplus" strength...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33631"></span>33631</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...and load into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33632"></span>33632</td>
+<td class="instruction">LD A,(29526)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object (i.e. object Magic Knight is trying to pick up)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33635"></span>33635</td>
+<td class="instruction">CALL <a href="33487.html">33487</a></td>
+<td class="comment-11" rowspan="1">Load A with weight of object A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33638"></span>33638</td>
+<td class="instruction">CP C</td>
+<td class="comment-11" rowspan="1">Set Sign Flag if surplus strength exceeds weight of object, otherwise reset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33639"></span>33639</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33585.html">33585</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33601">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33640.html">33640</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

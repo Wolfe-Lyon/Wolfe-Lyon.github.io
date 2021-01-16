@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 40614</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="40598.html">40598</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#40614">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="40658.html">40658</a></span></td>
+</tr>
+</table>
+<div class="description">40614: Room-Specific Routine: Enable / Disable Entry to Castle Depending Upon Disquise Worn and Whether Newspaper is Held</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="40614"></span>40614</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1">Do nothing...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40615"></span>40615</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40616"></span>40616</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40617"></span>40617</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40618"></span>40618</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40619"></span>40619</td>
+<td class="instruction">LD A,255</td>
+<td class="comment-11" rowspan="1">Set right exit from Outdoors, 15 (The Castle Entrance) to 255...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40621"></span>40621</td>
+<td class="instruction">LD (48844),A</td>
+<td class="comment-11" rowspan="1">...i.e. disable right exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40624"></span>40624</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not wearing the Disquise...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40626"></span>40626</td>
+<td class="instruction">CALL <a href="45505.html">45505</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40629"></span>40629</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40630"></span>40630</td>
+<td class="instruction">LD A,(23438)</td>
+<td class="comment-11" rowspan="1">Load B with zero-based index of current disquise...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40633"></span>40633</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40634"></span>40634</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40635"></span>40635</td>
+<td class="instruction">LD A,(23703)</td>
+<td class="comment-11" rowspan="1">Load A with Index of Required Disquise...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40638"></span>40638</td>
+<td class="instruction">CP B</td>
+<td class="comment-11" rowspan="1">...and if this is not the same as the disquise currently being worn...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40639"></span>40639</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40640"></span>40640</td>
+<td class="instruction">LD A,33</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not carrying the Newspaper (33)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40642"></span>40642</td>
+<td class="instruction">CALL <a href="45510.html">45510</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40645"></span>40645</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40646"></span>40646</td>
+<td class="instruction">LD A,(23702)</td>
+<td class="comment-11" rowspan="1">Load A with index Magic Knight's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40649"></span>40649</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...plus one...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40650"></span>40650</td>
+<td class="instruction">LD (48844),A</td>
+<td class="comment-11" rowspan="1">...and set right exit from Outdoors, 15 (The Castle Entrance) to A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40653"></span>40653</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set Magic Knight's Temporary Movement Flags to zero (so Magic Knight can move both left and right)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40654"></span>40654</td>
+<td class="instruction">LD (23451),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40657"></span>40657</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="40598.html">40598</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#40614">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="40658.html">40658</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

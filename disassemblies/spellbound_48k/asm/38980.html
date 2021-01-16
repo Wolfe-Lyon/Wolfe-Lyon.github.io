@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Unused RAM at 38980</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-u">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Unused</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38961.html">38961</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38980">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39016.html">39016</a></span></td>
+</tr>
+</table>
+<div class="description">38980: Unused routine</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+This routine draws a line from (C, B) to (E, D).
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38980"></span>38980</td>
+<td class="instruction">LD (23677),DE</td>
+<td class="comment-11" rowspan="1">Load contents of DE into system variable COORDS (start point of line)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38984"></span>38984</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1">Subtract y-coordinate of start of line from y-coordinate of end of line...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38985"></span>38985</td>
+<td class="instruction">SUB D</td>
+<td class="comment-11" rowspan="1">...to get delta-y</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38986"></span>38986</td>
+<td class="instruction">LD D,1</td>
+<td class="comment-11" rowspan="1">Set direction of vertical change to +1 (upward)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38988"></span>38988</td>
+<td class="instruction">JR NC,38994</td>
+<td class="comment-11" rowspan="1">If delta-y is positive (i.e. upward) then skip ahead to <a href="38980.html#38994">38994</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38990"></span>38990</td>
+<td class="instruction">CPL</td>
+<td class="comment-11" rowspan="1">Multiply delta-y by -1 (downward) to get absolute magnitude...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38991"></span>38991</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38992"></span>38992</td>
+<td class="instruction">LD D,255</td>
+<td class="comment-11" rowspan="1">Set direction of vertical change to -1 (downward)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38994"></span>38994</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load B with magnitude of difference in y-coordinate between start and end of line</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38995"></span>38995</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Subtract x-coordinate of start of line from y-coordinate of end of line...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38996"></span>38996</td>
+<td class="instruction">SUB E</td>
+<td class="comment-11" rowspan="1">...to get delta-x</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38997"></span>38997</td>
+<td class="instruction">LD E,1</td>
+<td class="comment-11" rowspan="1">Set direction of horizontal change to +1 (rightward)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38999"></span>38999</td>
+<td class="instruction">JR NC,39005</td>
+<td class="comment-11" rowspan="1">If delta-x is positive (i.e. rightward) then skip ahead to <a href="38980.html#39005">39005</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39001"></span>39001</td>
+<td class="instruction">CPL</td>
+<td class="comment-11" rowspan="1">Multiply delta-x by -1 (leftward) to get absolute magnitude...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39002"></span>39002</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39003"></span>39003</td>
+<td class="instruction">LD E,255</td>
+<td class="comment-11" rowspan="1">Set direction of vertical change to -1 (leftward)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39005"></span>39005</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load C with magnitude of difference in x-coordinate between start and end of line</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39006"></span>39006</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Switch registers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39007"></span>39007</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39008"></span>39008</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Switch registers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39009"></span>39009</td>
+<td class="instruction">CALL 9402</td>
+<td class="comment-11" rowspan="1">Draw a line (ROM routine)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39012"></span>39012</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Switch registers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39013"></span>39013</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39014"></span>39014</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Switch registers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39015"></span>39015</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38961.html">38961</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38980">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39016.html">39016</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Data at 37089</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37074.html">37074</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37089">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37329.html">37329</a></span></td>
+</tr>
+</table>
+<div class="description">37089: Window Data</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Eight bytes per window. The meaning of the data is:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Offset</th>
+<th colspan="1" rowspan="1">Meaning</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">x-coordinate of left edge (characters)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">x-coordinate of right edge (characters)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">y-coordinate of top edge (characters)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">y-coordinate of bottom edge (characters)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Border Style</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">Border Attribute</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Initial (and minimum allowed) y-coordinate of Hand Cursor (characters)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Content Attribute</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+The border style data refers to the index of the first window frame graphic element in a group (of eight) which are part of the character set at <a href="64756.html">64756</a>. Character number 116, the only one used, is the first element of the window frame group.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37089"></span>37089</td>
+<td class="instruction">DEFB 0,23,6,20,116,79,1,79</td>
+<td class="comment-11" rowspan="1">(00) Main Menu (Game) Window / "Choose Communication" Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37097"></span>37097</td>
+<td class="instruction">DEFB 0,31,0,5,116,67,0,71</td>
+<td class="comment-11" rowspan="1">(01) Starship Summary Window (top of screen)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37105"></span>37105</td>
+<td class="instruction">DEFB 0,25,6,15,116,68,0,79</td>
+<td class="comment-11" rowspan="1">(02)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37113"></span>37113</td>
+<td class="instruction">DEFB 0,26,6,18,116,68,2,79</td>
+<td class="comment-11" rowspan="1">(03)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37121"></span>37121</td>
+<td class="instruction">DEFB 0,25,6,20,116,70,1,79</td>
+<td class="comment-11" rowspan="1">(04) List of objects window (menu or info)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37129"></span>37129</td>
+<td class="instruction">DEFB 5,26,16,21,116,66,0,70</td>
+<td class="comment-11" rowspan="1">(05) "KNIGHT-TYME A NEW GRAPHIC ADVENTURE..." window below Control Selection Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37137"></span>37137</td>
+<td class="instruction">DEFB 4,27,3,12,116,70,0,69</td>
+<td class="comment-11" rowspan="1">(06) Control Selection Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37145"></span>37145</td>
+<td class="instruction">DEFB 0,31,3,12,116,70,2,79</td>
+<td class="comment-11" rowspan="1">(07) "REDEFINE THE GAME" Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37153"></span>37153</td>
+<td class="instruction">DEFB 3,28,2,12,116,84,0,14</td>
+<td class="comment-11" rowspan="1">(08)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37161"></span>37161</td>
+<td class="instruction">DEFB 5,26,0,12,116,115,0,69</td>
+<td class="comment-11" rowspan="1">(09)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37169"></span>37169</td>
+<td class="instruction">DEFB 0,23,6,9,116,68,0,71</td>
+<td class="comment-11" rowspan="1">(10)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37177"></span>37177</td>
+<td class="instruction">DEFB 0,19,6,10,116,76,0,70</td>
+<td class="comment-11" rowspan="1">(11) "EXECUTE / REJECT COMMAND" Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37185"></span>37185</td>
+<td class="instruction">DEFB 0,16,6,10,116,98,0,104</td>
+<td class="comment-11" rowspan="1">(12)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37193"></span>37193</td>
+<td class="instruction">DEFB 0,18,6,9,116,67,0,70</td>
+<td class="comment-11" rowspan="1">(13)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37201"></span>37201</td>
+<td class="instruction">DEFB 4,27,21,23,116,70,0,205</td>
+<td class="comment-11" rowspan="1">(14)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37209"></span>37209</td>
+<td class="instruction">DEFB 0,31,0,5,116,70,0,69</td>
+<td class="comment-11" rowspan="1">(15)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37217"></span>37217</td>
+<td class="instruction">DEFB 0,15,6,13,116,98,1,112</td>
+<td class="comment-11" rowspan="1">(16) "EXAMINE WHAT?" Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37225"></span>37225</td>
+<td class="instruction">DEFB 0,18,6,14,116,68,5,120</td>
+<td class="comment-11" rowspan="1">(17)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37233"></span>37233</td>
+<td class="instruction">DEFB 0,22,6,18,116,67,0,120</td>
+<td class="comment-11" rowspan="1">(18) "EXAMINE YOURSELF" / "EXAMINE CHARACTER" Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37241"></span>37241</td>
+<td class="instruction">DEFB 17,20,9,14,116,68,0,71</td>
+<td class="comment-11" rowspan="1">(19) Frame around portrait of character on "EXAMINE CHARACTER" and "EXAMINE YOURSELF" windows</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37249"></span>37249</td>
+<td class="instruction">DEFB 0,22,6,15,116,67,0,120</td>
+<td class="comment-11" rowspan="1">(20) "EXAMINE OBJECT" / "EXAMINE USS PISCES" Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37257"></span>37257</td>
+<td class="instruction">DEFB 2,5,10,13,116,69,0,69</td>
+<td class="comment-11" rowspan="1">(21) Frame around object in "EXAMINE OBJECT" Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37265"></span>37265</td>
+<td class="instruction">DEFB 0,31,14,23,116,67,0,79</td>
+<td class="comment-11" rowspan="1">(22)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37273"></span>37273</td>
+<td class="instruction">DEFB 0,22,6,13,116,77,2,78</td>
+<td class="comment-11" rowspan="1">(23) "WHICH COMMAND DO YOU WANT TO USE?" ("COMMAND [CHARACTER] TO...") Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37281"></span>37281</td>
+<td class="instruction">DEFB 4,27,7,18,116,104,0,104</td>
+<td class="comment-11" rowspan="1">(24) Game Over Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37289"></span>37289</td>
+<td class="instruction">DEFB 0,18,6,17,116,77,1,71</td>
+<td class="comment-11" rowspan="1">(25) "WHERE TO ?" Window / Speed Selection Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37297"></span>37297</td>
+<td class="instruction">DEFB 16,23,10,16,116,104,0,120</td>
+<td class="comment-11" rowspan="1">(26)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37305"></span>37305</td>
+<td class="instruction">DEFB 0,26,6,16,116,87,2,87</td>
+<td class="comment-11" rowspan="1">(27)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37313"></span>37313</td>
+<td class="instruction">DEFB 0,10,6,9,116,104,0,104</td>
+<td class="comment-11" rowspan="1">(28)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37321"></span>37321</td>
+<td class="instruction">DEFB 0,19,6,9,116,68,2,71</td>
+<td class="comment-11" rowspan="1">(29)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37074.html">37074</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37089">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37329.html">37329</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

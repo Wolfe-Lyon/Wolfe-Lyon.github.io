@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 45723</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45685.html">45685</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45723">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45766.html">45766</a></span></td>
+</tr>
+</table>
+<div class="description">45723: End the Game if Current Character is Off-White or Grunter</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="42244.html">42244</a>, <a href="42491.html">42491</a>, <a href="43043.html">43043</a> and <a href="44933.html">44933</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45723"></span>45723</td>
+<td class="instruction">LD A,(41937)</td>
+<td class="comment-11" rowspan="1">If Current Character is 7 (Grunter)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45726"></span>45726</td>
+<td class="instruction">CP 7</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45728"></span>45728</td>
+<td class="instruction">JR Z,45760</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="45723.html#45760">45760</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45730"></span>45730</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If Current Character is not 0 (Off-White)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45731"></span>45731</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="45732"></span>
+<div class="comments">
+<div class="paragraph">
+Current Character is Off-White
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45732"></span>45732</td>
+<td class="instruction">LD HL,51164</td>
+<td class="comment-11" rowspan="1">Point HL at "OFF-WHITE KNIGHT SAYS " text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45735"></span>45735</td>
+<td class="instruction">LD DE,49228</td>
+<td class="comment-11" rowspan="1">Adjust height of window 24 ("Game Over" Window) to accommodate text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45738"></span>45738</td>
+<td class="instruction">CALL <a href="45617.html">45617</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45741"></span>45741</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (points to first character of text to display)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45742"></span>45742</td>
+<td class="instruction">LD A,24</td>
+<td class="comment-11" rowspan="1">Draw Window 24 ("Game Over" Window)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45744"></span>45744</td>
+<td class="instruction">CALL <a href="47193.html">47193</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45747"></span>45747</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (points to first character of text to display)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45748"></span>45748</td>
+<td class="instruction">CALL <a href="46902.html">46902</a></td>
+<td class="comment-11" rowspan="1">Print text to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45751"></span>45751</td>
+<td class="instruction">CALL <a href="64230.html">64230</a></td>
+<td class="comment-11" rowspan="1">Wait for interrupt then display "PRESS FIRE TO CONTINUE" Window and wait for Fire to be pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45754"></span>45754</td>
+<td class="instruction">LD HL,51310</td>
+<td class="comment-11" rowspan="1">Point HL at "YOU WERE KILLED BY OFF-WHITE KNIGHT." text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45757"></span>45757</td>
+<td class="instruction">JP <a href="64582.html">64582</a></td>
+<td class="comment-11" rowspan="1">Display cyan "Game Over" Window and return to Control Selection Menu</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="45760"></span>
+<div class="comments">
+<div class="paragraph">
+Current Character is Grunter
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45760"></span>45760</td>
+<td class="instruction">LD HL,51090</td>
+<td class="comment-11" rowspan="1">Point HL at "[Current Character's full name] KILLED YOU AS YOU APPROACHED." text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45763"></span>45763</td>
+<td class="instruction">JP <a href="64582.html">64582</a></td>
+<td class="comment-11" rowspan="1">Display cyan "Game Over" Window and return to Control Selection Menu</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45685.html">45685</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45723">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45766.html">45766</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

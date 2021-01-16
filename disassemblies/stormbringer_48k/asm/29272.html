@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Data at 29272</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-w">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="29208.html">29208</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#29272">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="29548.html">29548</a></span></td>
+</tr>
+</table>
+<div class="description">29272: Graphic Lookup Data</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Table of addresses of start of graphic data for game graphics.
+</div>
+<div class="paragraph">
+In some cases (marked "Graphics (Standard)"), entries comprise of a pair of WORD values. The first of these is the address of the actual bitmap graphic data while the second value is the address of that graphic's mask bitmap data. The masks are used to allow, for example, background scenery to show behind objects that do not span the entire 2x2 character blocks when drawn. These standard graphics are generally for entities that can move, e.g. objects and characters, and are drawn by the routine at <a href="63504.html">63504</a>.
+</div>
+<div class="paragraph">
+In other cases (marked "Graphics (Compacted)", entries comprise of a width value and a height value (both in characters) and an address for compacted graphic data. These compacted graphics are generally for static entities, such as scenery and terrain, and are drawn by the routine at <a href="40664.html">40664</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29272"></span>29272</td>
+<td class="instruction">DEFW 0,0</td>
+<td class="comment-11" rowspan="1">(00) - Unused</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29276"></span>29276</td>
+<td class="instruction">DEFW 1795,29548</td>
+<td class="comment-11" rowspan="1">(01) - Graphics (Compacted): (03 x 07) Left half of Teleport</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29280"></span>29280</td>
+<td class="instruction">DEFW <a href="29681.html">29681</a>,<a href="29681.html">29681</a></td>
+<td class="comment-11" rowspan="1">(02) - Graphics (Standard): (02 x 02) Menu Hand Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29284"></span>29284</td>
+<td class="instruction">DEFW <a href="29713.html">29713</a>,29745</td>
+<td class="comment-11" rowspan="1">(03) - Graphics (Standard): (02 x 02) Gadget X / Bow</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29288"></span>29288</td>
+<td class="instruction">DEFW <a href="29713.html#29777">29777</a>,29809</td>
+<td class="comment-11" rowspan="1">(04) - Graphics (Standard): (02 x 02) Advert / Newspaper</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29292"></span>29292</td>
+<td class="instruction">DEFW <a href="29713.html#29841">29841</a>,29809</td>
+<td class="comment-11" rowspan="1">(05) - Graphics (Standard): (02 x 02) Mirror</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29296"></span>29296</td>
+<td class="instruction">DEFW <a href="29713.html#29873">29873</a>,29809</td>
+<td class="comment-11" rowspan="1">(06) - Graphics (Standard): (02 x 02) Scroll / List of Clues</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29300"></span>29300</td>
+<td class="instruction">DEFW <a href="29713.html#29905">29905</a>,29937</td>
+<td class="comment-11" rowspan="1">(07) - Graphics (Standard): (02 x 02) Disquise</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29304"></span>29304</td>
+<td class="instruction">DEFW <a href="29713.html#29969">29969</a>,30001</td>
+<td class="comment-11" rowspan="1">(08) - Graphics (Standard): (02 x 02) Teleport Pad</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29308"></span>29308</td>
+<td class="instruction">DEFW <a href="29713.html#30033">30033</a>,30065</td>
+<td class="comment-11" rowspan="1">(09) - Graphics (Standard): (02 x 02) Golden Egg / Silver Egg / Copper Egg</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29312"></span>29312</td>
+<td class="instruction">DEFW <a href="29713.html#30097">30097</a>,30129</td>
+<td class="comment-11" rowspan="1">(10) - Graphics (Standard): (02 x 02) Shield / Glow Shield</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29316"></span>29316</td>
+<td class="instruction">DEFW <a href="29713.html#30161">30161</a>,30193</td>
+<td class="comment-11" rowspan="1">(11) - Graphics (Standard): (02 x 02) Magic Talisman</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29320"></span>29320</td>
+<td class="instruction">DEFW <a href="29713.html#30225">30225</a>,30257</td>
+<td class="comment-11" rowspan="1">(12) - Graphics (Standard): (02 x 02) Chicken</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29324"></span>29324</td>
+<td class="instruction">DEFW <a href="29713.html#30289">30289</a>,30321</td>
+<td class="comment-11" rowspan="1">(13) - Graphics (Standard): (02 x 02) Broken Glass</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29328"></span>29328</td>
+<td class="instruction">DEFW <a href="29713.html#30353">30353</a>,30385</td>
+<td class="comment-11" rowspan="1">(14) - Graphics (Standard): (02 x 02) Bottle of Liquid / Empty Bottle</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29332"></span>29332</td>
+<td class="instruction">DEFW <a href="29713.html#30417">30417</a>,30449</td>
+<td class="comment-11" rowspan="1">(15) - Graphics (Standard): (02 x 02) Instruction Book</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29336"></span>29336</td>
+<td class="instruction">DEFW <a href="29713.html#30481">30481</a>,30513</td>
+<td class="comment-11" rowspan="1">(16) - Graphics (Standard): (02 x 02) Crystal Ball</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29340"></span>29340</td>
+<td class="instruction">DEFW <a href="29713.html#30545">30545</a>,30577</td>
+<td class="comment-11" rowspan="1">(17) - Graphics (Standard): (02 x 02) Wand of Command</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29344"></span>29344</td>
+<td class="instruction">DEFW <a href="29713.html#30609">30609</a>,30641</td>
+<td class="comment-11" rowspan="1">(18) - Graphics (Standard): (02 x 02) Torch</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29348"></span>29348</td>
+<td class="instruction">DEFW <a href="29713.html#30673">30673</a>,30705</td>
+<td class="comment-11" rowspan="1">(19) - Graphics (Standard): (02 x 02) Brass Ankh</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29352"></span>29352</td>
+<td class="instruction">DEFW <a href="29713.html#30737">30737</a>,30769</td>
+<td class="comment-11" rowspan="1">(20) - Graphics (Standard): (02 x 02) Teddy Bear</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29356"></span>29356</td>
+<td class="instruction">DEFW <a href="29713.html#30801">30801</a>,30833</td>
+<td class="comment-11" rowspan="1">(21) - Graphics (Standard): (02 x 02) Teleport Key</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29360"></span>29360</td>
+<td class="instruction">DEFW <a href="29713.html#30865">30865</a>,30897</td>
+<td class="comment-11" rowspan="1">(22) - Graphics (Standard): (02 x 02) Magic Missile</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29364"></span>29364</td>
+<td class="instruction">DEFW <a href="29713.html#30929">30929</a>,30961</td>
+<td class="comment-11" rowspan="1">(23) - Graphics (Standard): (02 x 02) Elf-Horn</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29368"></span>29368</td>
+<td class="instruction">DEFW <a href="29713.html#30993">30993</a>,31025</td>
+<td class="comment-11" rowspan="1">(24) - Graphics (Standard): (02 x 02) Silver Arrow</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29372"></span>29372</td>
+<td class="instruction">DEFW <a href="29713.html#31057">31057</a>,31089</td>
+<td class="comment-11" rowspan="1">(25) - Graphics (Standard): (02 x 02) Boomerang</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29376"></span>29376</td>
+<td class="instruction">DEFW <a href="29713.html#31121">31121</a>,31153</td>
+<td class="comment-11" rowspan="1">(26) - Graphics (Standard): (02 x 02) Stick of Dynamite</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29380"></span>29380</td>
+<td class="instruction">DEFW <a href="29713.html#31185">31185</a>,31217</td>
+<td class="comment-11" rowspan="1">(27) - Graphics (Standard): (02 x 02) Power Boots</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29384"></span>29384</td>
+<td class="instruction">DEFW <a href="29713.html#31249">31249</a>,31281</td>
+<td class="comment-11" rowspan="1">(28) - Graphics (Standard): (02 x 02) Horse Feather</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29388"></span>29388</td>
+<td class="instruction">DEFW <a href="29713.html#31313">31313</a>,31345</td>
+<td class="comment-11" rowspan="1">(29) - Graphics (Standard): (02 x 02) Sword</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29392"></span>29392</td>
+<td class="instruction">DEFW <a href="31377.html">31377</a>,31425</td>
+<td class="comment-11" rowspan="1">(30) - Graphics (Standard): (02 x 03) Puff of Smoke, frame 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29396"></span>29396</td>
+<td class="instruction">DEFW <a href="31377.html#31473">31473</a>,31521</td>
+<td class="comment-11" rowspan="1">(31) - Graphics (Standard): (02 x 03) Puff of Smoke, frame 2</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29400"></span>29400</td>
+<td class="instruction">DEFW <a href="31377.html#31569">31569</a>,31617</td>
+<td class="comment-11" rowspan="1">(32) - Graphics (Standard): (02 x 03) Puff of Smoke, frame 3</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29404"></span>29404</td>
+<td class="instruction">DEFW <a href="31377.html#31665">31665</a>,31713</td>
+<td class="comment-11" rowspan="1">(33) - Graphics (Standard): (02 x 03) Puff of Smoke, frame 4</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29408"></span>29408</td>
+<td class="instruction">DEFW <a href="31377.html#31761">31761</a>,31809</td>
+<td class="comment-11" rowspan="1">(34) - Graphics (Standard): (02 x 03) Puff of Smoke, frame 5</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29412"></span>29412</td>
+<td class="instruction">DEFW <a href="31377.html#31857">31857</a>,31905</td>
+<td class="comment-11" rowspan="1">(35) - Graphics (Standard): (02 x 03) Puff of Smoke, frame 6</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29416"></span>29416</td>
+<td class="instruction">DEFW 3083,31953</td>
+<td class="comment-11" rowspan="1">(36) - Graphics (Compacted): (11 x 12) Grunter / Statue</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29420"></span>29420</td>
+<td class="instruction">DEFW <a href="32705.html">32705</a>,32769</td>
+<td class="comment-11" rowspan="1">(37) - Graphics (Standard): (02 x 04) Magic Knight facing left / Off-White Knight</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29424"></span>29424</td>
+<td class="instruction">DEFW 1804,32833</td>
+<td class="comment-11" rowspan="1">(38) - Graphics (Compacted): (12 x 07) Top of tree with face</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29428"></span>29428</td>
+<td class="instruction">DEFW 1545,33126</td>
+<td class="comment-11" rowspan="1">(39) - Graphics (Compacted): (09 x 06) Top of tree without face</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29432"></span>29432</td>
+<td class="instruction">DEFW 2567,33418</td>
+<td class="comment-11" rowspan="1">(40) - Graphics (Compacted): (07 x 10) Top of tree, bare</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29436"></span>29436</td>
+<td class="instruction">DEFW 0,0</td>
+<td class="comment-11" rowspan="1">(41) - Unused</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29440"></span>29440</td>
+<td class="instruction">DEFW 1797,33676</td>
+<td class="comment-11" rowspan="1">(42) - Graphics (Compacted): (05 x 07) Axe in tree stump</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29444"></span>29444</td>
+<td class="instruction">DEFW 3332,33835</td>
+<td class="comment-11" rowspan="1">(43) - Graphics (Compacted): (04 x 13) Control console</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29448"></span>29448</td>
+<td class="instruction">DEFW 772,34013</td>
+<td class="comment-11" rowspan="1">(44) - Graphics (Compacted): (04 x 03) Tree trunk 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29452"></span>29452</td>
+<td class="instruction">DEFW 775,34087</td>
+<td class="comment-11" rowspan="1">(45) - Graphics (Compacted): (07 x 03) Tree trunk 2</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29456"></span>29456</td>
+<td class="instruction">DEFW 0,0</td>
+<td class="comment-11" rowspan="1">(46) - Unused</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29460"></span>29460</td>
+<td class="instruction">DEFW 774,34205</td>
+<td class="comment-11" rowspan="1">(47) - Graphics (Compacted): (06 x 03) Tree trunk 3</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29464"></span>29464</td>
+<td class="instruction">DEFW 1029,34330</td>
+<td class="comment-11" rowspan="1">(48) - Graphics (Compacted): (05 x 04) Monitor showing castle</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29468"></span>29468</td>
+<td class="instruction">DEFW 1029,34502</td>
+<td class="comment-11" rowspan="1">(49) - Graphics (Compacted): (05 x 04) Control panel</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29472"></span>29472</td>
+<td class="instruction">DEFW 1029,34669</td>
+<td class="comment-11" rowspan="1">(50) - Graphics (Compacted): (05 x 04) Display screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29476"></span>29476</td>
+<td class="instruction">DEFW 1285,34810</td>
+<td class="comment-11" rowspan="1">(51) - Graphics (Compacted): (05 x 05) Moon</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29480"></span>29480</td>
+<td class="instruction">DEFW <a href="34893.html">34893</a>,34957</td>
+<td class="comment-11" rowspan="1">(52) - Graphics (Standard): (02 x 04) Aramis Le Peux</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29484"></span>29484</td>
+<td class="instruction">DEFW <a href="34893.html#35021">35021</a>,35085</td>
+<td class="comment-11" rowspan="1">(53) - Graphics (Standard): (02 x 04) Robin of Shylock</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29488"></span>29488</td>
+<td class="instruction">DEFW <a href="34893.html#35149">35149</a>,35213</td>
+<td class="comment-11" rowspan="1">(54) - Graphics (Standard): (02 x 04) Rachel of Amazonia</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29492"></span>29492</td>
+<td class="instruction">DEFW 1031,35277</td>
+<td class="comment-11" rowspan="1">(55) - Graphics (Compacted): (07 x 04) Flowers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29496"></span>29496</td>
+<td class="instruction">DEFW 1026,35443</td>
+<td class="comment-11" rowspan="1">(56) - Graphics (Compacted): (02 x 04) Organon the Guard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29500"></span>29500</td>
+<td class="instruction">DEFW 517,35512</td>
+<td class="comment-11" rowspan="1">(57) - Graphics (Compacted): (05 x 02) Reggie the Rat</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29504"></span>29504</td>
+<td class="instruction">DEFW 778,35569</td>
+<td class="comment-11" rowspan="1">(58) - Graphics (Compacted): (10 x 03) Roof / Top of Well</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29508"></span>29508</td>
+<td class="instruction">DEFW 2571,35790</td>
+<td class="comment-11" rowspan="1">(59) - Graphics (Compacted): (11 x 10) Well</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29512"></span>29512</td>
+<td class="instruction">DEFW 516,36407</td>
+<td class="comment-11" rowspan="1">(60) - Graphics (Compacted): (04 x 02) Jump Chute / Corridor Pad</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29516"></span>29516</td>
+<td class="instruction">DEFW 1796,36463</td>
+<td class="comment-11" rowspan="1">(61) - Graphics (Compacted): (04 x 07) Cracked Column Section 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29520"></span>29520</td>
+<td class="instruction">DEFW 1540,36648</td>
+<td class="comment-11" rowspan="1">(62) - Graphics (Compacted): (04 x 06) Cracked Column Section 2</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29524"></span>29524</td>
+<td class="instruction">DEFW 1799,36794</td>
+<td class="comment-11" rowspan="1">(63) - Graphics (Compacted): (07 x 07) Fire bowl</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29528"></span>29528</td>
+<td class="instruction">DEFW 1027,37033</td>
+<td class="comment-11" rowspan="1">(64) - Graphics (Compacted): (03 x 04) Plinth</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29532"></span>29532</td>
+<td class="instruction">DEFW 1540,37132</td>
+<td class="comment-11" rowspan="1">(65) - Graphics (Compacted): (04 x 06) Large stool</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29536"></span>29536</td>
+<td class="instruction">DEFW 1282,37268</td>
+<td class="comment-11" rowspan="1">(66) - Graphics (Compacted): (02 x 05) Plant</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29540"></span>29540</td>
+<td class="instruction">DEFW 1795,37343</td>
+<td class="comment-11" rowspan="1">(67) - Graphics (Compacted): (03 x 07) Torch</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29544"></span>29544</td>
+<td class="instruction">DEFW 1286,37470</td>
+<td class="comment-11" rowspan="1">(68) - Graphics (Compacted): (06 x 05) Sword in Concrete</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="29208.html">29208</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#29272">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="29548.html">29548</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

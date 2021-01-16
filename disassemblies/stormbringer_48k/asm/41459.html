@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 41459</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="41271.html">41271</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#41459">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="41477.html">41477</a></span></td>
+</tr>
+</table>
+<div class="description">41459: Read Glowing Character Block Definitions and Add to Current Room</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="39393.html">39393</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Current position in room layout data</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41459"></span>41459</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL by one byte...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41460"></span>41460</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...and if value here is 255 (end marker)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41461"></span>41461</td>
+<td class="instruction">CP 255</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41463"></span>41463</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41464"></span>41464</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load C with x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41465"></span>41465</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to y-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41466"></span>41466</td>
+<td class="instruction">LD B,(HL)</td>
+<td class="comment-11" rowspan="1">...and load into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41467"></span>41467</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (current position in room layout data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41468"></span>41468</td>
+<td class="instruction">CALL <a href="63219.html">63219</a></td>
+<td class="comment-11" rowspan="1">Point HL at Attribute File address for character coordinates x=C, y=B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41471"></span>41471</td>
+<td class="instruction">CALL <a href="41477.html">41477</a></td>
+<td class="comment-11" rowspan="1">Add a glowing character block to the current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41474"></span>41474</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (current position in room layout data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41475"></span>41475</td>
+<td class="instruction">JR 41459</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="41459.html">41459</a> for next entry</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="41271.html">41271</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#41459">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="41477.html">41477</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

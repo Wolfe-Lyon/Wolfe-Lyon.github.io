@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 32194</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32035.html">32035</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32194">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32258.html">32258</a></span></td>
+</tr>
+</table>
+<div class="description">32194: Process and Execute Command to Teleport</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32194"></span>32194</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">If "Magic Knight Can Teleport" flag is not set then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32197"></span>32197</td>
+<td class="instruction">BIT 2,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32199"></span>32199</td>
+<td class="instruction">JP Z,<a href="27176.html#27189">27189</a></td>
+<td class="comment-11" rowspan="1">...jump into Main Game Loop (process keyboard input and move Magic Knight, enter menus or execute other command)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32202"></span>32202</td>
+<td class="instruction">CALL <a href="38075.html">38075</a></td>
+<td class="comment-11" rowspan="1">Play upward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32205"></span>32205</td>
+<td class="instruction">CALL <a href="37654.html">37654</a></td>
+<td class="comment-11" rowspan="1">Display / update command summary window at bottom of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32208"></span>32208</td>
+<td class="instruction">LD DE,50346</td>
+<td class="comment-11" rowspan="1">Point DE at "TELEPORT" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32211"></span>32211</td>
+<td class="instruction">CALL <a href="38693.html">38693</a></td>
+<td class="comment-11" rowspan="1">...and print in Command Summary Window at bottom of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32214"></span>32214</td>
+<td class="instruction">CALL <a href="38725.html">38725</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return if Execute chosen, else exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32217"></span>32217</td>
+<td class="instruction">LD A,(25611)</td>
+<td class="comment-11" rowspan="1">Get current location (room) of Teleport Pad...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32220"></span>32220</td>
+<td class="instruction">CP 99</td>
+<td class="comment-11" rowspan="1">...and if this is set to 99...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32222"></span>32222</td>
+<td class="instruction">JP Z,<a href="34584.html">34584</a></td>
+<td class="comment-11" rowspan="1">...Display "IT IS NOT SAFE TO TELEPORT TRY AGAIN LATER" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32225"></span>32225</td>
+<td class="instruction">LD HL,25611</td>
+<td class="comment-11" rowspan="1">Point HL to current position data of Teleport Pad</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32228"></span>32228</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load A with current location (room) of Teleport Pad...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32229"></span>32229</td>
+<td class="instruction">LD (65529),A</td>
+<td class="comment-11" rowspan="1">...then update Magic Knight's current room to match</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32232"></span>32232</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to x-coordinate of Teleport Pad...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32233"></span>32233</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...and load this into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32234"></span>32234</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Multiply x-coordinate by eight...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32235"></span>32235</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32236"></span>32236</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32237"></span>32237</td>
+<td class="instruction">LD (25387),A</td>
+<td class="comment-11" rowspan="1">...and update Magic Knight's current x-coordinate to match</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32240"></span>32240</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to y-coordinate of Teleport Pad...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32241"></span>32241</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...and load this into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32242"></span>32242</td>
+<td class="instruction">SUB 3</td>
+<td class="comment-11" rowspan="1">Subtract three (because Magic Knight is four character blocks tall)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32244"></span>32244</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...then multiply by eight...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32245"></span>32245</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32246"></span>32246</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32247"></span>32247</td>
+<td class="instruction">LD (25388),A</td>
+<td class="comment-11" rowspan="1">...then update Magic Knight's current y-coordinate to match</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32250"></span>32250</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Set "Animate Magic Knight's Puff of Smoke Appearance on Next Room Redraw" flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32252"></span>32252</td>
+<td class="instruction">LD (23505),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32255"></span>32255</td>
+<td class="instruction">JP <a href="30222.html#30428">30428</a></td>
+<td class="comment-11" rowspan="1">Reset Gimbal-White-Out Safe Flag, redraw current room and return to main game loop</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32035.html">32035</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32194">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32258.html">32258</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

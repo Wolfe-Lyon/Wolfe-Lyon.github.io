@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 46326</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46315.html">46315</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46326">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46380.html">46380</a></span></td>
+</tr>
+</table>
+<div class="description">46326: Set Magic Knight's Available Action Flags (Additional)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="46183.html">46183</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46326"></span>46326</td>
+<td class="instruction">SET 1,(IY+89)</td>
+<td class="comment-11" rowspan="1">Set "PULL LEVER" Menu Command Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46330"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="46183.html">46183</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46330"></span>46330</td>
+<td class="instruction">LD A,4</td>
+<td class="comment-11" rowspan="1">Load A with Attribute Flags and Can Smell flags of all Magic Knight's carried objects, OR-ed Together...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46332"></span>46332</td>
+<td class="instruction">CALL <a href="46380.html">46380</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46335"></span>46335</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46336"></span>46336</td>
+<td class="instruction">AND 240</td>
+<td class="comment-11" rowspan="1">Reset all but bits 4, 5, 6 and 7 (the four Can Smell flags)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46338"></span>46338</td>
+<td class="instruction">JR Z,46344</td>
+<td class="comment-11" rowspan="1">...and if these flags are all reset then skip ahead to <a href="46326.html#46344">46344</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46340"></span>46340</td>
+<td class="instruction">SET 2,(IY+89)</td>
+<td class="comment-11" rowspan="1">Set "SMELL SOMETHING" Menu Command Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46344"></span>46344</td>
+<td class="instruction">LD A,(23365)</td>
+<td class="comment-11" rowspan="1">If Wish Pending Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46347"></span>46347</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46348"></span>46348</td>
+<td class="instruction">JR Z,46361</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="46326.html#46361">46361</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46350"></span>46350</td>
+<td class="instruction">LD A,(23702)</td>
+<td class="comment-11" rowspan="1">If Magic Knight's current room is not 14...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46353"></span>46353</td>
+<td class="instruction">CP 14</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46355"></span>46355</td>
+<td class="instruction">JR NZ,46361</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="46326.html#46361">46361</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46357"></span>46357</td>
+<td class="instruction">SET 3,(IY+89)</td>
+<td class="comment-11" rowspan="1">Set "HAVE A WISH" Menu Command Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46361"></span>46361</td>
+<td class="instruction">LD A,17</td>
+<td class="comment-11" rowspan="1">If Magic Knight is carrying the Bottle of Liquid (17)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46363"></span>46363</td>
+<td class="instruction">CALL <a href="45510.html">45510</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46366"></span>46366</td>
+<td class="instruction">JR Z,46375</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="46326.html#46375">46375</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46368"></span>46368</td>
+<td class="instruction">LD A,18</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not carrying the Bottle of Liquid (18)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46370"></span>46370</td>
+<td class="instruction">CALL <a href="45510.html">45510</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46373"></span>46373</td>
+<td class="instruction">JR NZ,46379</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="46326.html#46379">46379</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46375"></span>46375</td>
+<td class="instruction">SET 4,(IY+89)</td>
+<td class="comment-11" rowspan="1">Set "HAVE A DRINK" Menu Command Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46379"></span>46379</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46315.html">46315</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46326">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46380.html">46380</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

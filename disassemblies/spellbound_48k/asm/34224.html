@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 34224</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34211.html">34211</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#34224">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="34256.html">34256</a></span></td>
+</tr>
+</table>
+<div class="description">34224: Test Whether Current Object is too Heavy for A Character to Pick Up</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="34202.html">34202</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Character's current strength</td>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Points to Character's current inventory</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">F</td>
+<td class="register-desc">S Flag set if object is light enough to be picked up, reset otherwise</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34224"></span>34224</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF (A = Character's current strength)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34225"></span>34225</td>
+<td class="instruction">LD BC,1280</td>
+<td class="comment-11" rowspan="1">Load B with 5 (as five inventory slots to check) and C (total weight carried) with zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34228"></span>34228</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load object in current inventory slot</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34231"></span>34231</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If no object present...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34232"></span>34232</td>
+<td class="instruction">JR Z,34243</td>
+<td class="comment-11" rowspan="1">...skip ahead to <a href="34224.html#34243">34243</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34234"></span>34234</td>
+<td class="instruction">CALL <a href="34126.html">34126</a></td>
+<td class="comment-11" rowspan="1">Load A with weight of object A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34237"></span>34237</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">Add C to this...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34238"></span>34238</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...and load result into C (total weight so far)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34239"></span>34239</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance to next inventory slot</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34241"></span>34241</td>
+<td class="instruction">DJNZ 34228</td>
+<td class="comment-11" rowspan="1">Loop back for next inventory slot</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34243"></span>34243</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF (A = Character's current strength)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34244"></span>34244</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">Ensure that strength is capped at 127 and that Sign Flag is reset (in reality, Magic Knight's strength can only go as high as 96)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34246"></span>34246</td>
+<td class="instruction">SUB C</td>
+<td class="comment-11" rowspan="1">Subtract total weight of character's carried objects from his/her strength to get "surplus" strength...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34247"></span>34247</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...and load into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34248"></span>34248</td>
+<td class="instruction">LD A,(30467)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object (e.g. object character is trying to receive)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34251"></span>34251</td>
+<td class="instruction">CALL <a href="34126.html">34126</a></td>
+<td class="comment-11" rowspan="1">Load A with weight of object A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34254"></span>34254</td>
+<td class="instruction">CP C</td>
+<td class="comment-11" rowspan="1">Set Sign Flag if surplus strength exceeds weight of object, otherwise reset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34255"></span>34255</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34211.html">34211</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#34224">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="34256.html">34256</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

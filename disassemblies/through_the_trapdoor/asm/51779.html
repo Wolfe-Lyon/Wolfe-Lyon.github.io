@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 51779</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="51765.html">51765</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#51779">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="51890.html">51890</a></span></td>
+</tr>
+</table>
+<div class="description">51779: Script Routine (43): Select Next Action for Drutt Depending Upon Control Input</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data (current level) for Drutt</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Address of next script instruction to execute</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="51779"></span>51779</td>
+<td class="instruction">CALL <a href="54768.html">54768</a></td>
+<td class="comment-11" rowspan="1">Check Drutt for collision with another entity at same depth whose Interaction (11,6) Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51782"></span>51782</td>
+<td class="instruction">CP 129</td>
+<td class="comment-11" rowspan="1">...and if collision was not with entity of class 129 (causes other entities to start falling)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51784"></span>51784</td>
+<td class="instruction">JR NZ,51792</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="51779.html#51792">51792</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51786"></span>51786</td>
+<td class="instruction">CALL <a href="55516.html">55516</a></td>
+<td class="comment-11" rowspan="1">Set Drutt's Can Fall Flag and initial velocity factor to 2</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51789"></span>51789</td>
+<td class="instruction">JP <a href="52038.html">52038</a></td>
+<td class="comment-11" rowspan="1">Move Drutt down one character, advance HL to next script instruction and execute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="51792"></span>51792</td>
+<td class="instruction">LD IY,(34244)</td>
+<td class="comment-11" rowspan="1">Load IY with address of current level's complex state data for worm</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51796"></span>51796</td>
+<td class="instruction">LD A,(34208)</td>
+<td class="comment-11" rowspan="1">If Drutt Mode Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51799"></span>51799</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51801"></span>51801</td>
+<td class="instruction">JR Z,51841</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="51779.html#51841">51841</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="51803"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt Mode Flag is set (i.e. Drutt Mode)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51803"></span>51803</td>
+<td class="instruction">SET 1,(IX+9)</td>
+<td class="comment-11" rowspan="1">Set Drutt's Under Player Control Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51807"></span>51807</td>
+<td class="instruction">LD A,(34219)</td>
+<td class="comment-11" rowspan="1">Load A with control input</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51810"></span>51810</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">If right has been pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51812"></span>51812</td>
+<td class="instruction">JR NZ,<a href="51904.html">51904</a></td>
+<td class="comment-11" rowspan="1">...then randomly select script data for rightward hop of size three or four, and execute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51814"></span>51814</td>
+<td class="instruction">BIT 1,A</td>
+<td class="comment-11" rowspan="1">If left has been pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51816"></span>51816</td>
+<td class="instruction">JR NZ,<a href="51924.html">51924</a></td>
+<td class="comment-11" rowspan="1">...then randomly select script data for leftward hop of size three or four, and execute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51818"></span>51818</td>
+<td class="instruction">BIT 2,A</td>
+<td class="comment-11" rowspan="1">If forward has been pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51820"></span>51820</td>
+<td class="instruction">JP NZ,<a href="51954.html">51954</a></td>
+<td class="comment-11" rowspan="1">...then point HL at script data for Drutt swapping depth levels and execute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51823"></span>51823</td>
+<td class="instruction">BIT 3,A</td>
+<td class="comment-11" rowspan="1">If back has been pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51825"></span>51825</td>
+<td class="instruction">JP NZ,<a href="51944.html">51944</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="51944.html">51944</a> (start Drutt jumping)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="51828"></span>
+<div class="comments">
+<div class="paragraph">
+At this point, no control has been pressed, so Drutt is effectively not under player control
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51828"></span>51828</td>
+<td class="instruction">RES 1,(IX+9)</td>
+<td class="comment-11" rowspan="1">Reset Drutt's Under Player Control Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51832"></span>51832</td>
+<td class="instruction">LD A,(IY+1)</td>
+<td class="comment-11" rowspan="1">If worm's depth is zero (i.e. not in play area)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51835"></span>51835</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51836"></span>51836</td>
+<td class="instruction">JR Z,51875</td>
+<td class="comment-11" rowspan="1">...then randomly select an action for Drutt and execute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51838"></span>51838</td>
+<td class="instruction">JP <a href="51960.html">51960</a></td>
+<td class="comment-11" rowspan="1">Move Drutt closer to the worm and eat it if close enough</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="51841"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt Mode Flag is reset (i.e. Berk Mode)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="51841"></span>51841</td>
+<td class="instruction">RES 1,(IX+9)</td>
+<td class="comment-11" rowspan="1">Reset Drutt's Under Player Control Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51845"></span>51845</td>
+<td class="instruction">LD A,(IY+1)</td>
+<td class="comment-11" rowspan="1">If worm's depth is not zero (i.e. is in play area)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51848"></span>51848</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51849"></span>51849</td>
+<td class="instruction">JP NZ,<a href="51960.html">51960</a></td>
+<td class="comment-11" rowspan="1">...then move Drutt closer to the worm and eat it if close enough</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51852"></span>51852</td>
+<td class="instruction">LD IY,(34240)</td>
+<td class="comment-11" rowspan="1">Load IY with address of current level's complex state data for Berk</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51856"></span>51856</td>
+<td class="instruction">LD A,(IY+0)</td>
+<td class="comment-11" rowspan="1">If Drutt is in the same room as Berk...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51859"></span>51859</td>
+<td class="instruction">CP (IX+0)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51862"></span>51862</td>
+<td class="instruction">JR Z,51875</td>
+<td class="comment-11" rowspan="1">...then randomly select an action for Drutt and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="51864"></span>
+<div class="comments">
+<div class="paragraph">
+The following code will make Drutt move closer to the target (a worm, or Berk if in Berk Mode) if the target's room is directly to the left or right of Drutt's room (i.e. no vertical separation). Otherwise, Drutt will perform a random action.
+</div>
+<div class="paragraph">
+This entry point is used by the routine at <a href="51960.html">51960</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="51864"></span>51864</td>
+<td class="instruction">CALL <a href="53194.html">53194</a></td>
+<td class="comment-11" rowspan="1">Load A with value indicating which direction room A lies relative to Drutt's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51867"></span>51867</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">If target room is to the right...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51869"></span>51869</td>
+<td class="instruction">JR Z,<a href="51904.html">51904</a></td>
+<td class="comment-11" rowspan="1">...then randomly select script data for rightward hop of size three or four, and execute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51871"></span>51871</td>
+<td class="instruction">CP 2</td>
+<td class="comment-11" rowspan="1">If target room is to the left...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51873"></span>51873</td>
+<td class="instruction">JR Z,<a href="51924.html">51924</a></td>
+<td class="comment-11" rowspan="1">...then randomly select script data for leftward hop of size three or four, and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="51875"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="51960.html">51960</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="51875"></span>51875</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-11" rowspan="1">Load A with a random number, 0-6...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51877"></span>51877</td>
+<td class="instruction">CALL <a href="54222.html">54222</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51880"></span>51880</td>
+<td class="instruction">LD DE,51890</td>
+<td class="comment-11" rowspan="1">Point DE at Table of Addresses of Script Data for Drutt's Actions...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51883"></span>51883</td>
+<td class="instruction">CALL <a href="53814.html">53814</a></td>
+<td class="comment-11" rowspan="1">...and load DE with entry of index A in this table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51886"></span>51886</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Switch DE and HL (now contains address of randomly selected script data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51887"></span>51887</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">Execute script data at address in HL</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="51765.html">51765</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#51779">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="51890.html">51890</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

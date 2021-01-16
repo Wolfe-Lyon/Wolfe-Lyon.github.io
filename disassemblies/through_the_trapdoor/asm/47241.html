@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 47241</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47213.html">47213</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47241">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47302.html">47302</a></span></td>
+</tr>
+</table>
+<div class="description">47241: Reset Show Score Flag and Draw Timer Figures Bar</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="34438.html">34438</a>, <a href="34916.html">34916</a> and <a href="47468.html">47468</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47241"></span>47241</td>
+<td class="instruction">LD A,(34208)</td>
+<td class="comment-11" rowspan="1">Reset Show Score Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47244"></span>47244</td>
+<td class="instruction">RES 7,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47246"></span>47246</td>
+<td class="instruction">LD (34208),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47249"></span>47249</td>
+<td class="instruction">LD IX,23232</td>
+<td class="comment-11" rowspan="1">Point IX to start of second-last row of Attribute File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47253"></span>47253</td>
+<td class="instruction">LD A,(34210)</td>
+<td class="comment-11" rowspan="1">Load remaining time / lives into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47256"></span>47256</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...and if zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47257"></span>47257</td>
+<td class="instruction">JR Z,47267</td>
+<td class="comment-11" rowspan="1">...then skip ahead 47267</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47259"></span>47259</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load number of lives into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47260"></span>47260</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = remaining number of pairs of open eyes to draw)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47261"></span>47261</td>
+<td class="instruction">CALL <a href="47315.html">47315</a></td>
+<td class="comment-11" rowspan="1">If Show Score Flag reset then draw pair of Timer Figure eyes (open, random frame) at Attribute File address in IX and advance by two bytes</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47264"></span>47264</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = remaining number of pairs of open eyes to draw)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47265"></span>47265</td>
+<td class="instruction">DJNZ 47260</td>
+<td class="comment-11" rowspan="1">Decrease B (remaining number of pairs of open eyes to draw) and loop back to <a href="47241.html#47260">47260</a> if not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47267"></span>47267</td>
+<td class="instruction">LD A,(34210)</td>
+<td class="comment-11" rowspan="1">Load remaining time / lives into E...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47270"></span>47270</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47271"></span>47271</td>
+<td class="instruction">LD A,16</td>
+<td class="comment-11" rowspan="1">Load A with number of lives lost by subtracting E from 16...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47273"></span>47273</td>
+<td class="instruction">SUB E</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47274"></span>47274</td>
+<td class="instruction">JR Z,47284</td>
+<td class="comment-11" rowspan="1">If zero, then skip ahead to <a href="47241.html#47284">47284</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47276"></span>47276</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load number of lost lives into B as counter for loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47277"></span>47277</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = remaining number of pairs of closed eyes to draw)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47278"></span>47278</td>
+<td class="instruction">CALL <a href="47302.html">47302</a></td>
+<td class="comment-11" rowspan="1">If Show Score Flag reset then draw pair of Timer Figure eyes (closed) at Attribute File address in IX and advance by two bytes</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47281"></span>47281</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = remaining number of pairs of closed eyes to draw)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47282"></span>47282</td>
+<td class="instruction">DJNZ 47277</td>
+<td class="comment-11" rowspan="1">Decrease B (remaining number of pairs of open eyes to draw) and loop back to <a href="47241.html#47277">47277</a> if not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47284"></span>47284</td>
+<td class="instruction">LD C,27</td>
+<td class="comment-11" rowspan="1">Set graphic index to 27 (timer figures' bodies)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47286"></span>47286</td>
+<td class="instruction">LD A,(34226)</td>
+<td class="comment-11" rowspan="1">Load attribute of current character into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47289"></span>47289</td>
+<td class="instruction">LD B,16</td>
+<td class="comment-11" rowspan="1">Load B with 16 (as 16 timer figures' bodies to draw)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47291"></span>47291</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store B (remaining number of timer figure bodies to draw)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47292"></span>47292</td>
+<td class="instruction">CALL <a href="47323.html#47333">47333</a></td>
+<td class="comment-11" rowspan="1">Draw left half of timer figure's body and invert mirror flag on attribute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47295"></span>47295</td>
+<td class="instruction">CALL <a href="47323.html#47333">47333</a></td>
+<td class="comment-11" rowspan="1">Draw right half of timer figure's body</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47298"></span>47298</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore B (remaining number of timer figure bodies to draw)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47299"></span>47299</td>
+<td class="instruction">DJNZ 47291</td>
+<td class="comment-11" rowspan="1">Decrease B and loop back to <a href="47241.html#47291">47291</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47301"></span>47301</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47213.html">47213</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47241">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47302.html">47302</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

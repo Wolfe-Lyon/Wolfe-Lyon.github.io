@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 36573</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36543.html">36543</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36573">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36602.html">36602</a></span></td>
+</tr>
+</table>
+<div class="description">36573: Draw a Rectangle with Opposite Vertices at (C, B) and (E, D) (Pixels)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="35882.html">35882</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">y-coordinate of vertex 1</td>
+</tr>
+<tr>
+<td class="register">C</td>
+<td class="register-desc">x-coordinate of vertex 1</td>
+</tr>
+<tr>
+<td class="register">D</td>
+<td class="register-desc">y-coordinate of vertex 2</td>
+</tr>
+<tr>
+<td class="register">E</td>
+<td class="register-desc">x-coordinate of vertex 2</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36573"></span>36573</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Draw a line from (E, B) to (E, D)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36574"></span>36574</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36575"></span>36575</td>
+<td class="instruction">LD C,E</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36576"></span>36576</td>
+<td class="instruction">CALL <a href="36543.html">36543</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36579"></span>36579</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36580"></span>36580</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36581"></span>36581</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Draw a line from (C, D) to (E, D)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36582"></span>36582</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36583"></span>36583</td>
+<td class="instruction">LD B,D</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36584"></span>36584</td>
+<td class="instruction">CALL <a href="36543.html">36543</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36587"></span>36587</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36588"></span>36588</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36589"></span>36589</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Draw a line from (C, B) to (E, B)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36590"></span>36590</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36591"></span>36591</td>
+<td class="instruction">LD D,B</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36592"></span>36592</td>
+<td class="instruction">CALL <a href="36543.html">36543</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36595"></span>36595</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36596"></span>36596</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36597"></span>36597</td>
+<td class="instruction">LD E,C</td>
+<td class="comment-11" rowspan="1">Draw a line from (C, B) to (C, D)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36598"></span>36598</td>
+<td class="instruction">CALL <a href="36543.html">36543</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36601"></span>36601</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36543.html">36543</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36573">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36602.html">36602</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

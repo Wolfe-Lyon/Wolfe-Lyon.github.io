@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 46968</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46946.html">46946</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46968">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47043.html">47043</a></span></td>
+</tr>
+</table>
+<div class="description">46968: If "K" Pressed then Redefine Controls</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="46830.html">46830</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">ASCII code of pressed key</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46968"></span>46968</td>
+<td class="instruction">CP 75</td>
+<td class="comment-11" rowspan="1">If pressed key was not 75 (K)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46970"></span>46970</td>
+<td class="instruction">JR NZ,<a href="46830.html#46900">46900</a></td>
+<td class="comment-11" rowspan="1">...then jump to Main Menu handling routine at <a href="46830.html#46900">46900</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46972"></span>46972</td>
+<td class="instruction">LD B,7</td>
+<td class="comment-11" rowspan="1">Load B with 7 (as there are seven controls to define)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46974"></span>46974</td>
+<td class="instruction">LD HL,46683</td>
+<td class="comment-11" rowspan="1">Point HL at start of Table of Current Keyboard Controls</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46977"></span>46977</td>
+<td class="instruction">LD (HL),63</td>
+<td class="comment-11" rowspan="1">Set current entry in table to 63 (ASCII code for "?")</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46979"></span>46979</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to next entry</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46980"></span>46980</td>
+<td class="instruction">DJNZ 46977</td>
+<td class="comment-11" rowspan="1">Decrease remaining number of controls to change and loop back to <a href="46968.html#46977">46977</a> if not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46982"></span>46982</td>
+<td class="instruction">LD A,112</td>
+<td class="comment-11" rowspan="1">Load A with the attribute value for black INK, yellow PAPER, BRIGHT</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46984"></span>46984</td>
+<td class="instruction">CALL <a href="47084.html">47084</a></td>
+<td class="comment-11" rowspan="1">Print keyboard controls on main menu</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46987"></span>46987</td>
+<td class="instruction">LD IY,46683</td>
+<td class="comment-11" rowspan="1">Point IY at Table of Current Keyboard Controls</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46991"></span>46991</td>
+<td class="instruction">LD IX,46696</td>
+<td class="comment-11" rowspan="1">Point IX at entry for "&#160;&#160;&#160;RIGHT&#160;&#160;&#160;&#160;" text in table of Attribute File addresses at which to print for main menu</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46995"></span>46995</td>
+<td class="instruction">LD B,7</td>
+<td class="comment-11" rowspan="1">Load B with 7 (as there are seven controls to define)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46997"></span>46997</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (remaining number of controls to define)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46998"></span>46998</td>
+<td class="instruction">LD A,198</td>
+<td class="comment-11" rowspan="1">Load A with 198 (yellow INK, black PAPER, BRIGHT, FLASH)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47000"></span>47000</td>
+<td class="instruction">LD E,32</td>
+<td class="comment-11" rowspan="1">Load E with 32 (" ")</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47002"></span>47002</td>
+<td class="instruction">CALL <a href="47071.html">47071</a></td>
+<td class="comment-11" rowspan="1">Set attribute to A and location to (IX) and print double-height character in E</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47005"></span>47005</td>
+<td class="instruction">CALL <a href="47955.html">47955</a></td>
+<td class="comment-11" rowspan="1">Wait for key-press, store pressed key code in A and play Main Menu Sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47008"></span>47008</td>
+<td class="instruction">CALL <a href="47060.html">47060</a></td>
+<td class="comment-11" rowspan="1">If key pressed matches a direction, or the Berk / Drutt key...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47011"></span>47011</td>
+<td class="instruction">JR Z,47005</td>
+<td class="comment-11" rowspan="1">...then loop back to <a href="46968.html#47005">47005</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47013"></span>47013</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">Load keycode of pressed control into E...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47014"></span>47014</td>
+<td class="instruction">LD (IY+0),E</td>
+<td class="comment-11" rowspan="1">...and store in Table of Current Keyboard Controls</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47017"></span>47017</td>
+<td class="instruction">INC IY</td>
+<td class="comment-11" rowspan="1">Advance IY to next control</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47019"></span>47019</td>
+<td class="instruction">LD A,113</td>
+<td class="comment-11" rowspan="1">Load A with 113 (blue INK, yellow PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47021"></span>47021</td>
+<td class="instruction">CALL <a href="47071.html">47071</a></td>
+<td class="comment-11" rowspan="1">Set attribute to A and location to (IX) and print double-height character in E</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47024"></span>47024</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance IX to next entry in table of Attribute File addresses...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47026"></span>47026</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47028"></span>47028</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (remaining number of controls to define)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47029"></span>47029</td>
+<td class="instruction">DJNZ 46997</td>
+<td class="comment-11" rowspan="1">Decrease remaining number of controls to define and loop back to <a href="46968.html#46997">46997</a> if not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47031"></span>47031</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Switch Joystick Mode to Off...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47032"></span>47032</td>
+<td class="instruction">LD (34298),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47035"></span>47035</td>
+<td class="instruction">LD A,114</td>
+<td class="comment-11" rowspan="1">Load A with the attribute value for red INK, yellow PAPER, BRIGHT</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47037"></span>47037</td>
+<td class="instruction">CALL <a href="47084.html">47084</a></td>
+<td class="comment-11" rowspan="1">Print keyboard controls on main menu</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47040"></span>47040</td>
+<td class="instruction">JP <a href="46830.html#46900">46900</a></td>
+<td class="comment-11" rowspan="1">Jump to Main Menu handling routine at <a href="46830.html#46900">46900</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46946.html">46946</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46968">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47043.html">47043</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

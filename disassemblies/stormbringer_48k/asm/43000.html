@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 43000</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="42938.html">42938</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#43000">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="43043.html">43043</a></span></td>
+</tr>
+</table>
+<div class="description">43000: Insert Numeric / Text Stats of an Object into "Examine Object" Window Text</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="42638.html">42638</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Address of start of an object's properties</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="43000"></span>43000</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load A with weight of the object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43001"></span>43001</td>
+<td class="instruction">AND 15</td>
+<td class="comment-11" rowspan="1">...stripping out flag values</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43003"></span>43003</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (address of start of object's properties)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43004"></span>43004</td>
+<td class="instruction">LD HL,52267</td>
+<td class="comment-11" rowspan="1">Point HL at numeric part of "WEIGHT" string...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43007"></span>43007</td>
+<td class="instruction">CALL <a href="46837.html">46837</a></td>
+<td class="comment-11" rowspan="1">...and overwrite with weight value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43010"></span>43010</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (address of start of object's properties)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43011"></span>43011</td>
+<td class="instruction">LD A,147</td>
+<td class="comment-11" rowspan="1">Load A with (Common Word Index for text "YES")</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43013"></span>43013</td>
+<td class="instruction">BIT 6,(HL)</td>
+<td class="comment-11" rowspan="1">If Can Blow Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43015"></span>43015</td>
+<td class="instruction">JR NZ,43018</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43000.html#43018">43018</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43017"></span>43017</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase A to 148 (Common Word Index for text "NO")</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="43018"></span>43018</td>
+<td class="instruction">LD (52279),A</td>
+<td class="comment-11" rowspan="1">Insert Common Word Index in A into the "BLOW" field of the string</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43021"></span>43021</td>
+<td class="instruction">LD A,147</td>
+<td class="comment-11" rowspan="1">Load A with (Common Word Index for text "YES")</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43023"></span>43023</td>
+<td class="instruction">BIT 5,(HL)</td>
+<td class="comment-11" rowspan="1">If Can Read Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43025"></span>43025</td>
+<td class="instruction">JR NZ,43028</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43000.html#43028">43028</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43027"></span>43027</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase A to 148 (Common Word Index for text "NO")</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="43028"></span>43028</td>
+<td class="instruction">LD (52288),A</td>
+<td class="comment-11" rowspan="1">Insert Common Word Index in A into the "READ" field of the string</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43031"></span>43031</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to second byte in record</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43032"></span>43032</td>
+<td class="instruction">LD A,147</td>
+<td class="comment-11" rowspan="1">Load A with (Common Word Index for text "YES")</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43034"></span>43034</td>
+<td class="instruction">BIT 3,(HL)</td>
+<td class="comment-11" rowspan="1">If Can Be Worn Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43036"></span>43036</td>
+<td class="instruction">JR NZ,43039</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43000.html#43039">43039</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43038"></span>43038</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase A to 148 (Common Word Index for text "NO")</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="43039"></span>43039</td>
+<td class="instruction">LD (52297),A</td>
+<td class="comment-11" rowspan="1">Insert Common Word Index in A into the "WEAR" field of the string</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43042"></span>43042</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="42938.html">42938</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#43000">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="43043.html">43043</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

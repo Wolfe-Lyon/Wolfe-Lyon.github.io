@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 32258</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32194.html">32194</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32258">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32390.html">32390</a></span></td>
+</tr>
+</table>
+<div class="description">32258: Process and Execute Command to Read an Object</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32258"></span>32258</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">If "Magic Knight Can Read" flag is not set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32261"></span>32261</td>
+<td class="instruction">BIT 3,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32263"></span>32263</td>
+<td class="instruction">JP Z,<a href="27176.html#27189">27189</a></td>
+<td class="comment-11" rowspan="1">...then jump into Main Game Loop (process keyboard input and move Magic Knight, enter menus or execute other command)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32266"></span>32266</td>
+<td class="instruction">CALL <a href="38075.html">38075</a></td>
+<td class="comment-11" rowspan="1">Play upward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32269"></span>32269</td>
+<td class="instruction">LD IX,25395</td>
+<td class="comment-11" rowspan="1">Point IX at start of Magic Knight's inventory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32273"></span>32273</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (as there are five inventory slots)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32275"></span>32275</td>
+<td class="instruction">LD HL,47288</td>
+<td class="comment-11" rowspan="1">Point HL at "READ WHICH OBJECT?" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32278"></span>32278</td>
+<td class="instruction">LD DE,47295</td>
+<td class="comment-11" rowspan="1">Point DE at "READ" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32281"></span>32281</td>
+<td class="instruction">CALL <a href="34914.html">34914</a></td>
+<td class="comment-11" rowspan="1">Show list of objects (window or menu) and handle selection if a menu</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32284"></span>32284</td>
+<td class="instruction">LD HL,25395</td>
+<td class="comment-11" rowspan="1">Point HL at Magic Knight's inventory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32287"></span>32287</td>
+<td class="instruction">CALL <a href="34864.html">34864</a></td>
+<td class="comment-11" rowspan="1">Point DE at name of a selected object in object names table and print in command summary window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32290"></span>32290</td>
+<td class="instruction">CALL <a href="38725.html">38725</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return if Execute chosen, else exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32293"></span>32293</td>
+<td class="instruction">LD A,(30467)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32296"></span>32296</td>
+<td class="instruction">CP 41</td>
+<td class="comment-11" rowspan="1">If Current Object is 41 (Instruction Book)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32298"></span>32298</td>
+<td class="instruction">JP Z,32384</td>
+<td class="comment-11" rowspan="1">...then display instructions</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32301"></span>32301</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">If Current Object is not 1 (Ancient Scroll)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32303"></span>32303</td>
+<td class="instruction">JR NZ,32326</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32258.html#32326">32326</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32305"></span>32305</td>
+<td class="instruction">LD A,(23467)</td>
+<td class="comment-11" rowspan="1">If the Engraved Candle is not lit...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32308"></span>32308</td>
+<td class="instruction">BIT 1,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32310"></span>32310</td>
+<td class="instruction">JP Z,32361</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32258.html#32361">32361</a> (display normal read-text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32313"></span>32313</td>
+<td class="instruction">LD A,33</td>
+<td class="comment-11" rowspan="1">Load A with index of object 33 (Engraved Candle)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32315"></span>32315</td>
+<td class="instruction">CALL <a href="34256.html">34256</a></td>
+<td class="comment-11" rowspan="1">Check whether Magic Knight is carrying the Engraved Candle...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32318"></span>32318</td>
+<td class="instruction">JP NZ,32361</td>
+<td class="comment-11" rowspan="1">...and if not, skip to <a href="32258.html#32361">32361</a> (display normal read-text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32321"></span>32321</td>
+<td class="instruction">LD B,8</td>
+<td class="comment-11" rowspan="1">Set text index to 8 (full Ancient Scroll text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32323"></span>32323</td>
+<td class="instruction">JP 32378</td>
+<td class="comment-11" rowspan="1">Point HL at this text, then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32326"></span>32326</td>
+<td class="instruction">CP 33</td>
+<td class="comment-11" rowspan="1">If Current Object is not 33 (Engraved Candle)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32328"></span>32328</td>
+<td class="instruction">JP NZ,32344</td>
+<td class="comment-11" rowspan="1">... then skip ahead to <a href="32258.html#32344">32344</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32331"></span>32331</td>
+<td class="instruction">LD A,14</td>
+<td class="comment-11" rowspan="1">Load A with index of object 14 (Broken Glass)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32333"></span>32333</td>
+<td class="instruction">CALL <a href="34256.html">34256</a></td>
+<td class="comment-11" rowspan="1">Check whether Magic Knight is carrying the Broken Glass...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32336"></span>32336</td>
+<td class="instruction">JP NZ,32361</td>
+<td class="comment-11" rowspan="1">...and if not, skip to <a href="32258.html#32361">32361</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32339"></span>32339</td>
+<td class="instruction">LD B,9</td>
+<td class="comment-11" rowspan="1">Set text index to 9 (Engraved Candle text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32341"></span>32341</td>
+<td class="instruction">JP 32378</td>
+<td class="comment-11" rowspan="1">Point HL at this text, then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32344"></span>32344</td>
+<td class="instruction">CP 13</td>
+<td class="comment-11" rowspan="1">If Current Object is not 13 (Runestone)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32346"></span>32346</td>
+<td class="instruction">JR NZ,32361</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32258.html#32361">32361</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32348"></span>32348</td>
+<td class="instruction">LD A,15</td>
+<td class="comment-11" rowspan="1">Load A with index of object 15 (Book of Runes)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32350"></span>32350</td>
+<td class="instruction">CALL <a href="34256.html">34256</a></td>
+<td class="comment-11" rowspan="1">Check whether Magic Knight is carrying the Book of Runes...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32353"></span>32353</td>
+<td class="instruction">JP NZ,32361</td>
+<td class="comment-11" rowspan="1">...and if not, skip to <a href="32258.html#32361">32361</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32356"></span>32356</td>
+<td class="instruction">LD B,10</td>
+<td class="comment-11" rowspan="1">Set text index to 10 (full Runestone text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32358"></span>32358</td>
+<td class="instruction">JP 32378</td>
+<td class="comment-11" rowspan="1">Point HL at this text, then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32361"></span>32361</td>
+<td class="instruction">LD A,(30467)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32364"></span>32364</td>
+<td class="instruction">LD E,2</td>
+<td class="comment-11" rowspan="1">Load E with 2 (Read text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32366"></span>32366</td>
+<td class="instruction">CALL <a href="34160.html">34160</a></td>
+<td class="comment-11" rowspan="1">Point HL to read text property of object A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32369"></span>32369</td>
+<td class="instruction">BIT 7,(HL)</td>
+<td class="comment-11" rowspan="1">If bit 7 is reset (i.e. value at HL is less than 128 so the object can't be read)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32371"></span>32371</td>
+<td class="instruction">JP Z,<a href="34576.html">34576</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="34576.html">34576</a> (display "THERE IS NO WRITING FOR ME TO READ" window and return to game)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32374"></span>32374</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load value into B...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32375"></span>32375</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">...resetting bit 7 to leave index of text required...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32377"></span>32377</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32378"></span>32378</td>
+<td class="instruction">CALL <a href="34854.html">34854</a></td>
+<td class="comment-11" rowspan="1">Advance HL to B-th entry in list of readable objects' texts at 47322 then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32381"></span>32381</td>
+<td class="instruction">JP <a href="34799.html">34799</a></td>
+<td class="comment-11" rowspan="1">Display window showing read-text window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32384"></span>32384</td>
+<td class="instruction">CALL <a href="26788.html">26788</a></td>
+<td class="comment-11" rowspan="1">Display instructions</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32387"></span>32387</td>
+<td class="instruction">JP <a href="30222.html#30428">30428</a></td>
+<td class="comment-11" rowspan="1">Reset Gimbal-White-Out Safe Flag, redraw current room and return to main game loop</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32194.html">32194</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32258">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32390.html">32390</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

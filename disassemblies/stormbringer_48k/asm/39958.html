@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 39958</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="39933.html">39933</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39958">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="40008.html">40008</a></span></td>
+</tr>
+</table>
+<div class="description">39958: Animate Puff of Smoke at Coordinates Pointed to by IX</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="39393.html">39393</a> and <a href="39829.html">39829</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of position data for a character, or Magic Knight</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39958"></span>39958</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39959"></span>39959</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39960"></span>39960</td>
+<td class="instruction">CALL <a href="41504.html">41504</a></td>
+<td class="comment-11" rowspan="1">Copy 2x4 (Characters) Region of Display File into Temporary Storage at <a href="23299.html">23299</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39963"></span>39963</td>
+<td class="instruction">LD A,(23367)</td>
+<td class="comment-11" rowspan="1">Set Character Is Incoming Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39966"></span>39966</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39967"></span>39967</td>
+<td class="instruction">LD (23367),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39970"></span>39970</td>
+<td class="instruction">LD C,30</td>
+<td class="comment-11" rowspan="1">Load C with 30 (graphic index of first Puff of Smoke frame)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39972"></span>39972</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (number of smoke frames to draw) [<a href="../reference/bugs.html#sixthpuffofsmokeframe">bug</a>]</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39974"></span>39974</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = remaining number of frames to draw, C = current frame's lookup index)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39975"></span>39975</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store IX (address of position data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39977"></span>39977</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39978"></span>39978</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Load A with current graphic index</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39979"></span>39979</td>
+<td class="instruction">LD C,(IX+1)</td>
+<td class="comment-11" rowspan="1">Load C with x-coordinate (characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39982"></span>39982</td>
+<td class="instruction">LD B,(IX+2)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate (characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39985"></span>39985</td>
+<td class="instruction">CALL <a href="63494.html">63494</a></td>
+<td class="comment-11" rowspan="1">Draw 2x3 graphic with lookup index A at character coordinates (C, B)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39988"></span>39988</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = remaining number of frames to draw, C = current frame's lookup index)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39989"></span>39989</td>
+<td class="instruction">LD B,12</td>
+<td class="comment-11" rowspan="1">Load B with 12 (number of interrupt cycles to wait per frame)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39991"></span>39991</td>
+<td class="instruction">HALT</td>
+<td class="comment-11" rowspan="1">Wait for interrupt</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39992"></span>39992</td>
+<td class="instruction">DJNZ 39991</td>
+<td class="comment-11" rowspan="1">Decrease remaining number of interrupt cycles to wait and loop back to <a href="39958.html#39991">39991</a> if not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39994"></span>39994</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = remaining number of frames to draw, C = current frame's lookup index)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39995"></span>39995</td>
+<td class="instruction">CALL <a href="41545.html">41545</a></td>
+<td class="comment-11" rowspan="1">Copy 2x4 (Characters) Region from Temporary Storage at <a href="23299.html">23299</a> into Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39998"></span>39998</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39999"></span>39999</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore IX (address of position data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40001"></span>40001</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = remaining number of frames to draw, C = current frame's lookup index)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40002"></span>40002</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Advance to next Puff of Smoke frame</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40003"></span>40003</td>
+<td class="instruction">DJNZ 39974</td>
+<td class="comment-11" rowspan="1">Decrease remaining number of frames to draw and loop back to <a href="39958.html#39974">39974</a> if not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40005"></span>40005</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40006"></span>40006</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="40007"></span>40007</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="39933.html">39933</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39958">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="40008.html">40008</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

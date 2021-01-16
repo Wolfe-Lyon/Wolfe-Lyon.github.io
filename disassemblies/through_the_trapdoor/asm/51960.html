@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 51960</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="51954.html">51954</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#51960">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52029.html">52029</a></span></td>
+</tr>
+</table>
+<div class="description">51960: Move Drutt Closer to the Worm and Eat it if Close Enough</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="51779.html">51779</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data (current level) for Drutt</td>
+</tr>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">Address of complex state data (current level) for Worm</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="51960"></span>51960</td>
+<td class="instruction">LD A,(IY+0)</td>
+<td class="comment-11" rowspan="1">If Drutt and worm are not in the same room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51963"></span>51963</td>
+<td class="instruction">CP (IX+0)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51966"></span>51966</td>
+<td class="instruction">JP NZ,<a href="51779.html#51864">51864</a></td>
+<td class="comment-11" rowspan="1">...then move Drutt closer to worm if appropriate, otherwise make Drutt perform random action</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51969"></span>51969</td>
+<td class="instruction">LD A,(IX+5)</td>
+<td class="comment-11" rowspan="1">If Drutt's left edge...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51972"></span>51972</td>
+<td class="instruction">CP (IY+5)</td>
+<td class="comment-11" rowspan="1">...is to the left of the worm's...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51975"></span>51975</td>
+<td class="instruction">JR C,52017</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="51960.html#52017">52017</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51977"></span>51977</td>
+<td class="instruction">LD A,(IY+7)</td>
+<td class="comment-11" rowspan="1">If worm's right edge...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51980"></span>51980</td>
+<td class="instruction">CP (IX+5)</td>
+<td class="comment-11" rowspan="1">...is to the left of Drutt's left edge...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51983"></span>51983</td>
+<td class="instruction">JR C,52023</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="51960.html#52023">52023</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51985"></span>51985</td>
+<td class="instruction">LD A,(IX+4)</td>
+<td class="comment-11" rowspan="1">If y-coordinate of Drutt's top edge...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51988"></span>51988</td>
+<td class="instruction">CP 120</td>
+<td class="comment-11" rowspan="1">...is less than 120...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51990"></span>51990</td>
+<td class="instruction">JP C,<a href="51779.html#51875">51875</a></td>
+<td class="comment-11" rowspan="1">...then randomly select an action for Drutt and execute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51993"></span>51993</td>
+<td class="instruction">LD A,(IY+1)</td>
+<td class="comment-11" rowspan="1">If worm's depth is the same as Drutt's...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51996"></span>51996</td>
+<td class="instruction">CP (IX+1)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="51999"></span>51999</td>
+<td class="instruction">JR Z,52007</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="51960.html#52007">52007</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52001"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt and worm in same room, at different depth and same x-coordinate
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52001"></span>52001</td>
+<td class="instruction">LD HL,51630</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Drutt swapping depth levels...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52004"></span>52004</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52007"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt and worm in same room, at same depth and same x-coordinate
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52007"></span>52007</td>
+<td class="instruction">LD (IY+1),0</td>
+<td class="comment-11" rowspan="1">Set worm's depth to zero (i.e. remove from play)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52011"></span>52011</td>
+<td class="instruction">LD HL,51706</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Drutt eating a worm...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52014"></span>52014</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52017"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt's left edge to left of worm's
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52017"></span>52017</td>
+<td class="instruction">LD HL,51538</td>
+<td class="comment-11" rowspan="1">Point HL at script data for moving Drutt and any pushed entity right by a hop of size four...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52020"></span>52020</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52023"></span>
+<div class="comments">
+<div class="paragraph">
+Worm's right edge to left of Drutt's left edge
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52023"></span>52023</td>
+<td class="instruction">LD HL,51584</td>
+<td class="comment-11" rowspan="1">Point HL at script data for moving Drutt and any pushed entity left by a hop of size four...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52026"></span>52026</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="51954.html">51954</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#51960">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52029.html">52029</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

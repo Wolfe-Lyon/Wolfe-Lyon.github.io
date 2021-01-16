@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 36543</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36499.html">36499</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36543">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36573.html">36573</a></span></td>
+</tr>
+</table>
+<div class="description">36543: Draw a Line From (C, B) to (E, D)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="28766.html">28766</a> and <a href="36573.html">36573</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">y-coordinate of start of line</td>
+</tr>
+<tr>
+<td class="register">C</td>
+<td class="register-desc">x-coordinate of start of line</td>
+</tr>
+<tr>
+<td class="register">D</td>
+<td class="register-desc">y-coordinate of end of line</td>
+</tr>
+<tr>
+<td class="register">E</td>
+<td class="register-desc">x-coordinate of end of line</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36543"></span>36543</td>
+<td class="instruction">LD (23677),DE</td>
+<td class="comment-11" rowspan="1">Load contents of DE into system variable COORDS (start point of line)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36547"></span>36547</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1">Subtract y-coordinate of start of line from y-coordinate of end of line...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36548"></span>36548</td>
+<td class="instruction">SUB D</td>
+<td class="comment-11" rowspan="1">...to get delta-y</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36549"></span>36549</td>
+<td class="instruction">LD D,1</td>
+<td class="comment-11" rowspan="1">Set direction of vertical change to +1 (upward)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36551"></span>36551</td>
+<td class="instruction">JR NC,36557</td>
+<td class="comment-11" rowspan="1">If delta-y is positive (i.e. upward) then skip ahead to <a href="36543.html#36557">36557</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36553"></span>36553</td>
+<td class="instruction">CPL</td>
+<td class="comment-11" rowspan="1">Multiply delta-y by -1 (downward) to get absolute magnitude...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36554"></span>36554</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36555"></span>36555</td>
+<td class="instruction">LD D,255</td>
+<td class="comment-11" rowspan="1">Set direction of vertical change to -1 (downward)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36557"></span>36557</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load B with magnitude of difference in y-coordinate between start and end of line</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36558"></span>36558</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Subtract x-coordinate of start of line from y-coordinate of end of line...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36559"></span>36559</td>
+<td class="instruction">SUB E</td>
+<td class="comment-11" rowspan="1">...to get delta-x</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36560"></span>36560</td>
+<td class="instruction">LD E,1</td>
+<td class="comment-11" rowspan="1">Set direction of horizontal change to +1 (rightward)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36562"></span>36562</td>
+<td class="instruction">JR NC,36568</td>
+<td class="comment-11" rowspan="1">If delta-x is positive (i.e. rightward) then skip ahead to <a href="36543.html#36568">36568</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36564"></span>36564</td>
+<td class="instruction">CPL</td>
+<td class="comment-11" rowspan="1">Multiply delta-x by -1 (leftward) to get absolute magnitude...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36565"></span>36565</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36566"></span>36566</td>
+<td class="instruction">LD E,255</td>
+<td class="comment-11" rowspan="1">Set direction of vertical change to -1 (leftward)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36568"></span>36568</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load C with magnitude of difference in x-coordinate between start and end of line</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36569"></span>36569</td>
+<td class="instruction">CALL 9402</td>
+<td class="comment-11" rowspan="1">Draw the line (ROM routine)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36572"></span>36572</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36499.html">36499</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36543">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36573.html">36573</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

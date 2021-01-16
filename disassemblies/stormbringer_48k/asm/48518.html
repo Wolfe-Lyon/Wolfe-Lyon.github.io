@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 48518</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="48389.html">48389</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#48518">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="48535.html">48535</a></span></td>
+</tr>
+</table>
+<div class="description">48518: Move Virtual Text Cursors (Attribute and Bitmap) down to left edge of next row of window</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="48389.html">48389</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="48518"></span>48518</td>
+<td class="instruction">CALL <a href="63263.html">63263</a></td>
+<td class="comment-11" rowspan="1">Advance Bitmap Virtual Text Cursor to start of next character row</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48521"></span>48521</td>
+<td class="instruction">LD HL,(63018)</td>
+<td class="comment-11" rowspan="1">Load HL with address of Bitmap Virtual Text Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48524"></span>48524</td>
+<td class="instruction">LD A,(23408)</td>
+<td class="comment-11" rowspan="1">Load A with x-coordinate of left edge of window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48527"></span>48527</td>
+<td class="instruction">ADD A,L</td>
+<td class="comment-11" rowspan="1">Add this to address in HL to move cursor to left edge of window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48528"></span>48528</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48529"></span>48529</td>
+<td class="instruction">LD (63018),HL</td>
+<td class="comment-11" rowspan="1">...and place the result back at <a href="63005.html#63017">63018</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48532"></span>48532</td>
+<td class="instruction">JP <a href="63286.html">63286</a></td>
+<td class="comment-11" rowspan="1">Update Attribute Virtual Text Cursor based upon current Bitmap Virtual Text Cursor and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="48389.html">48389</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#48518">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="48535.html">48535</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

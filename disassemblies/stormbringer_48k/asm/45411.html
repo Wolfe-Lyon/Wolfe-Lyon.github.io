@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 45411</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45406.html">45406</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45411">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45423.html">45423</a></span></td>
+</tr>
+</table>
+<div class="description">45411: Point IX at Current Character's Current Stats</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="43117.html">43117</a>, <a href="43158.html">43158</a>, <a href="43199.html">43199</a>, <a href="43250.html">43250</a> and <a href="45434.html">45434</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Address of start of Current Character's stats</td>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of start of Current Character's stats</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45411"></span>45411</td>
+<td class="instruction">LD A,(41937)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45414"></span>45414</td>
+<td class="instruction">LD E,0</td>
+<td class="comment-11" rowspan="1">Point HL at Current Character's current strength...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45416"></span>45416</td>
+<td class="instruction">CALL <a href="45406.html">45406</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45419"></span>45419</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Transfer address from HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45420"></span>45420</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">...to IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45422"></span>45422</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45406.html">45406</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45411">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45423.html">45423</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

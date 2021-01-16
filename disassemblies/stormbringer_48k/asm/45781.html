@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 45781</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45779.html">45779</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45781">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45798.html">45798</a></span></td>
+</tr>
+</table>
+<div class="description">45781: Update Current Character Based Upon Selection Made in Menu</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="45963.html">45963</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Index of selected character from a character-selection menu</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45781"></span>45781</td>
+<td class="instruction">LD HL,23422</td>
+<td class="comment-11" rowspan="1">Point HL at list of characters in room of interest</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45784"></span>45784</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">Load DE with index of selected item in menu...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45785"></span>45785</td>
+<td class="instruction">LD D,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45787"></span>45787</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Add this as offset in table of characters in room to point to character of interest</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45788"></span>45788</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load index of this character into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45789"></span>45789</td>
+<td class="instruction">LD (41937),A</td>
+<td class="comment-11" rowspan="1">Modify operand of instruction at <a href="41924.html#41936">41936</a> to use this particular character (i.e. set Current Character)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="45792"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="41924.html">41924</a> and <a href="46106.html">46106</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45792"></span>45792</td>
+<td class="instruction">LD DE,45798</td>
+<td class="comment-11" rowspan="1">Point DE at instruction to print short name of Current Character</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="45795"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="45766.html">45766</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45795"></span>45795</td>
+<td class="instruction">JP <a href="63349.html">63349</a></td>
+<td class="comment-11" rowspan="1">Print text at DE in Command Summary Window at top of screen and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45779.html">45779</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45781">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45798.html">45798</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 28344</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28334.html">28334</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28344">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28510.html">28510</a></span></td>
+</tr>
+</table>
+<div class="description">28344: Room Drawing: Draw a 2-by-2 Block of Brickwork, then Move Cursor Right or Down, Depending Upon Wall Direction Flag</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="27865.html">27865</a>, <a href="29396.html">29396</a> and <a href="29414.html">29414</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Architecture style index (e.g. A = C = 19, or 0)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28344"></span>28344</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Switch BC, DE and HL with BC', DE' and HL'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28345"></span>28345</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">Load architecture style index into L</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28346"></span>28346</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If architecture style index is not zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28347"></span>28347</td>
+<td class="instruction">JP NZ,28360</td>
+<td class="comment-11" rowspan="1">...then jump ahead to <a href="28344.html#28360">28360</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28350"></span>28350</td>
+<td class="instruction">LD A,(23476)</td>
+<td class="comment-11" rowspan="1">If brickwork direction flag is zero (horizontal mode for floor and ceiling)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28353"></span>28353</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28354"></span>28354</td>
+<td class="instruction">JP Z,<a href="28510.html">28510</a></td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="28510.html">28510</a> (blank out bitmap and set attribute to current value for 2-by-2 character block)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28357"></span>28357</td>
+<td class="instruction">JP 28471</td>
+<td class="comment-11" rowspan="1">Move location to print and Terrain Interaction Cursor down two character rows observing y-wrap, then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28360"></span>28360</td>
+<td class="instruction">LD H,0</td>
+<td class="comment-11" rowspan="1">Load four times Architecture Style Index into HL, as entries are four bytes wide...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28362"></span>28362</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28363"></span>28363</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28364"></span>28364</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28365"></span>28365</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28366"></span>28366</td>
+<td class="instruction">LD DE,54617</td>
+<td class="comment-11" rowspan="1">Point DE at Architecture Styles Lookup Table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28369"></span>28369</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Add HL (4 times Architecture Style Index) as offset to this, in HL (as each entry is 4 bytes wide)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28370"></span>28370</td>
+<td class="instruction">LD DE,(36488)</td>
+<td class="comment-11" rowspan="1">Load "memory location to start printing character" in character printing routine into DE...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28374"></span>28374</td>
+<td class="instruction">LD (23296),DE</td>
+<td class="comment-11" rowspan="1">...and store at 23296</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28378"></span>28378</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load first architecture style element (top-left) into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28379"></span>28379</td>
+<td class="instruction">CALL <a href="36510.html">36510</a></td>
+<td class="comment-11" rowspan="1">Draw a single character block part of a wall, ceiling or floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28382"></span>28382</td>
+<td class="instruction">LD DE,(36488)</td>
+<td class="comment-11" rowspan="1">Load "memory location to start printing character" in character printing routine into DE...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28386"></span>28386</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance DE by one byte...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28387"></span>28387</td>
+<td class="instruction">LD (36488),DE</td>
+<td class="comment-11" rowspan="1">...and load into "memory location to start printing character"</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28391"></span>28391</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to next architecture style element (top-right)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28392"></span>28392</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load next architecture style element into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28393"></span>28393</td>
+<td class="instruction">CALL <a href="36510.html">36510</a></td>
+<td class="comment-11" rowspan="1">Draw a single character block part of a wall, ceiling or floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28396"></span>28396</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to next architecture style index (bottom-left)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28397"></span>28397</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Switch HL and DE (HL now Display File address to print to and DE now pointer to architecture style)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28398"></span>28398</td>
+<td class="instruction">LD HL,(23296)</td>
+<td class="comment-11" rowspan="1">Advance this pointer down a character row (32 bytes from original stored value)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28401"></span>28401</td>
+<td class="instruction">LD BC,32</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28404"></span>28404</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28405"></span>28405</td>
+<td class="instruction">LD (36488),HL</td>
+<td class="comment-11" rowspan="1">Load new position into "memory location to start printing character"</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28408"></span>28408</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Switch DE and HL back (HL now pointer to architecture style and DE now Display File address to print to)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28409"></span>28409</td>
+<td class="instruction">LD A,(23469)</td>
+<td class="comment-11" rowspan="1">Load brickwork drawing mode into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28412"></span>28412</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">If this is 1 [only draw one row of "bricks"]...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28414"></span>28414</td>
+<td class="instruction">JR Z,28441</td>
+<td class="comment-11" rowspan="1">...then jump ahead to <a href="28344.html#28441">28441</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28416"></span>28416</td>
+<td class="instruction">CP 2</td>
+<td class="comment-11" rowspan="1">If it is not 2 [draw row of bricks and blank row beneath]...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28418"></span>28418</td>
+<td class="instruction">JR NZ,28423</td>
+<td class="comment-11" rowspan="1">...then jump ahead to <a href="28344.html#28423">28423</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28420"></span>28420</td>
+<td class="instruction">LD HL,54617</td>
+<td class="comment-11" rowspan="1">...else point HL at first entry (blank, i.e. no brickwork)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28423"></span>28423</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load brickwork graphic index into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28424"></span>28424</td>
+<td class="instruction">CALL <a href="36510.html">36510</a></td>
+<td class="comment-11" rowspan="1">Draw a single character block part of a wall, ceiling or floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28427"></span>28427</td>
+<td class="instruction">LD DE,(36488)</td>
+<td class="comment-11" rowspan="1">Load "memory location to start printing character" in character printing routine into DE...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28431"></span>28431</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance DE by one byte...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28432"></span>28432</td>
+<td class="instruction">LD (36488),DE</td>
+<td class="comment-11" rowspan="1">...and load into "memory location to start printing character"</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28436"></span>28436</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to next brickwork graphic index...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28437"></span>28437</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...and load into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28438"></span>28438</td>
+<td class="instruction">CALL <a href="36510.html">36510</a></td>
+<td class="comment-11" rowspan="1">Draw a single character block part of a wall, ceiling or floor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28441"></span>28441</td>
+<td class="instruction">LD HL,(23296)</td>
+<td class="comment-11" rowspan="1">Load previously stored "memory location to start printing character" into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28444"></span>28444</td>
+<td class="instruction">LD (36488),HL</td>
+<td class="comment-11" rowspan="1">...and place back in character drawing routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28447"></span>28447</td>
+<td class="instruction">LD A,(23483)</td>
+<td class="comment-11" rowspan="1">Load stored, "current" Terrain Interaction Parameter into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28450"></span>28450</td>
+<td class="instruction">LD HL,(23481)</td>
+<td class="comment-11" rowspan="1">Load current Terrain Interaction Table Cursor position into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28453"></span>28453</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">Set this and the following character blocks to have the current Terrain Interaction Flags...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28454"></span>28454</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28455"></span>28455</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28456"></span>28456</td>
+<td class="instruction">LD A,(23469)</td>
+<td class="comment-11" rowspan="1">Load brickwork drawing mode into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28459"></span>28459</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If brickwork drawing mode is not zero (draw two rows)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28460"></span>28460</td>
+<td class="instruction">JP NZ,28471</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="28344.html#28471">28471</a> (move location to print and Terrain Interaction Cursor down two character rows observing y-wrap, then return)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28463"></span>28463</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load last written Terrain Interaction Parameter back into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28464"></span>28464</td>
+<td class="instruction">LD BC,31</td>
+<td class="comment-11" rowspan="1">Advance Terrain Interaction Table Cursor by 31 bytes (to character below starting position)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28467"></span>28467</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28468"></span>28468</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">Set this and the following character blocks to have the current Terrain Interaction Flags...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28469"></span>28469</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28470"></span>28470</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="28471"></span>
+<div class="comments">
+<div class="paragraph">
+Mode 1 or 2, Draw one row of bricks
+</div>
+<div class="paragraph">
+This entry point is used by the routine at <a href="28510.html">28510</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28471"></span>28471</td>
+<td class="instruction">LD A,(23476)</td>
+<td class="comment-11" rowspan="1">If brickwork direction flag is not zero (horizontal mode for floor and ceiling)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28474"></span>28474</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28475"></span>28475</td>
+<td class="instruction">JR NZ,<a href="28561.html">28561</a></td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="28561.html">28561</a> (move location to print and Terrain Interaction Cursor down two character rows with y-wrap, as in vertical mode)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28477"></span>28477</td>
+<td class="instruction">CALL <a href="36626.html">36626</a></td>
+<td class="comment-11" rowspan="1">Advance Display File pointer by two characters</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28480"></span>28480</td>
+<td class="instruction">LD HL,(23481)</td>
+<td class="comment-11" rowspan="1">Update current Terrain Interaction Table Cursor position onwards by two characters...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28483"></span>28483</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28484"></span>28484</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28485"></span>28485</td>
+<td class="instruction">LD (23481),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28488"></span>28488</td>
+<td class="instruction">LD A,(36488)</td>
+<td class="comment-11" rowspan="1">Load LSB of "memory location to start printing character" into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28491"></span>28491</td>
+<td class="instruction">AND 31</td>
+<td class="comment-11" rowspan="1">If this is not a multiple of 32 (i.e. not at start of a pixel row)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28493"></span>28493</td>
+<td class="instruction">JR NZ,28508</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="28344.html#28508">28508</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28495"></span>28495</td>
+<td class="instruction">CALL <a href="37703.html">37703</a></td>
+<td class="comment-11" rowspan="1">Move virtual text cursor down to start of next text row (as 2-by-2 blocks are 2 characters high so we need to move down another character)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28498"></span>28498</td>
+<td class="instruction">LD BC,32</td>
+<td class="comment-11" rowspan="1">Update current Terrain Interaction Table Cursor position onwards by 32 characters (i.e. down one row)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28501"></span>28501</td>
+<td class="instruction">LD HL,(23481)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28504"></span>28504</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28505"></span>28505</td>
+<td class="instruction">LD (23481),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28508"></span>28508</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Switch BC, DE and HL with BC', DE' and HL', restoring values as at input</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28509"></span>28509</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28334.html">28334</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28344">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28510.html">28510</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

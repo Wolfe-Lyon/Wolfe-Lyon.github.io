@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Data at 52371</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52315.html">52315</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52371">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52726.html">52726</a></span></td>
+</tr>
+</table>
+<div class="description">52371: Graphic Layout Data: Drutt</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52371"></span>
+<div class="comments">
+<div class="paragraph">
+Facing out of screen, fully animated, jumping / falling / held by Berk
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52371"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52371"></span>52371</td>
+<td class="instruction">DEFB 247,3</td>
+<td class="comment-11" rowspan="1">Jump to one of the 3 addresses in the following list, chosen at random:</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52373"></span>52373</td>
+<td class="instruction">DEFB 155,204</td>
+<td class="comment-11" rowspan="1"><a href="52371.html#52379">52379</a> (facing out of screen, legs bent, eyes and mouth animated)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52375"></span>52375</td>
+<td class="instruction">DEFB 171,204</td>
+<td class="comment-11" rowspan="1"><a href="52371.html#52395">52395</a> (facing out of screen, legs partially extended, eyes and mouth animated)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52377"></span>52377</td>
+<td class="instruction">DEFB 193,204</td>
+<td class="comment-11" rowspan="1"><a href="52371.html#52417">52417</a> (facing out of screen, legs fully extended, eyes and mouth animated)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52379"></span>
+<div class="comments">
+<div class="paragraph">
+Facing out of screen, legs bent, eyes and mouth animated
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52379"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52379"></span>52379</td>
+<td class="instruction">DEFB 251,124,205</td>
+<td class="comment-11" rowspan="1">Process graphic layout data at <a href="52371.html#52604">52604</a> and upon returning, move cursor to base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52382"></span>52382</td>
+<td class="instruction">DEFB 250,0,255</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by -1 and 0 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52385"></span>52385</td>
+<td class="instruction">DEFB 45,6,34,45,134,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52391"></span>52391</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52392"></span>
+<div class="comments">
+<div class="paragraph">
+Facing out of screen, legs partially extended, eyes and mouth animated
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52392"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52392"></span>52392</td>
+<td class="instruction">DEFB 254,255,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and -1 characters respectively and store as new base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52395"></span>52395</td>
+<td class="instruction">DEFB 251,124,205</td>
+<td class="comment-11" rowspan="1">Process graphic layout data at <a href="52371.html#52604">52604</a> and upon returning, move cursor to base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52398"></span>52398</td>
+<td class="instruction">DEFB 250,0,255</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by -1 and 0 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52401"></span>52401</td>
+<td class="instruction">DEFB 38,6,34,38,134,30</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52407"></span>52407</td>
+<td class="instruction">DEFB 46,6,33,47,6,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52413"></span>52413</td>
+<td class="instruction">DEFB 46,134,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52416"></span>52416</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52417"></span>
+<div class="comments">
+<div class="paragraph">
+Facing out of screen, legs fully extended, eyes and mouth animated
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52417"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52417"></span>52417</td>
+<td class="instruction">DEFB 251,124,205</td>
+<td class="comment-11" rowspan="1">Process graphic layout data at <a href="52371.html#52604">52604</a> and upon returning, move cursor to base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52420"></span>52420</td>
+<td class="instruction">DEFB 250,0,255</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by -1 and 0 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52423"></span>52423</td>
+<td class="instruction">DEFB 38,6,34,38,134,30</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52429"></span>52429</td>
+<td class="instruction">DEFB 58,6,33,56,6,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52435"></span>52435</td>
+<td class="instruction">DEFB 58,134,31,57,6,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52441"></span>52441</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52442"></span>
+<div class="comments">
+<div class="paragraph">
+Facing right, legs bent
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52442"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52442"></span>52442</td>
+<td class="instruction">DEFB 244,7</td>
+<td class="comment-11" rowspan="1">Set current graphic set to 7</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52444"></span>52444</td>
+<td class="instruction">DEFB 250,255,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and -1 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52447"></span>52447</td>
+<td class="instruction">DEFB 48,7,31,38,6,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52453"></span>52453</td>
+<td class="instruction">DEFB 49,6,161,50,6,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52459"></span>52459</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52460"></span>
+<div class="comments">
+<div class="paragraph">
+Facing right, legs extended back (jumping)
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52460"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52460"></span>52460</td>
+<td class="instruction">DEFB 254,255,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and -1 characters respectively and store as new base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52463"></span>52463</td>
+<td class="instruction">DEFB 251,25,205</td>
+<td class="comment-11" rowspan="1">Process graphic layout data at <a href="52371.html#52505">52505</a> and upon returning, move cursor to base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52466"></span>52466</td>
+<td class="instruction">DEFB 250,1,255</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by -1 and +1 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52469"></span>52469</td>
+<td class="instruction">DEFB 51,6,33,52,6,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52475"></span>52475</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52476"></span>
+<div class="comments">
+<div class="paragraph">
+Facing right, legs bent, airborne
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52476"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52476"></span>52476</td>
+<td class="instruction">DEFB 254,254,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and -2 characters respectively and store as new base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52479"></span>52479</td>
+<td class="instruction">DEFB 251,25,205</td>
+<td class="comment-11" rowspan="1">Process graphic layout data at <a href="52371.html#52505">52505</a> and upon returning, move cursor to base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52482"></span>52482</td>
+<td class="instruction">DEFB 250,1,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and +1 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52485"></span>52485</td>
+<td class="instruction">DEFB 53,6,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52488"></span>52488</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52489"></span>
+<div class="comments">
+<div class="paragraph">
+Facing right, legs bent, landing
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52489"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52489"></span>52489</td>
+<td class="instruction">DEFB 254,255,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and -1 characters respectively and store as new base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52492"></span>52492</td>
+<td class="instruction">DEFB 251,25,205</td>
+<td class="comment-11" rowspan="1">Process graphic layout data at <a href="52371.html#52505">52505</a> and upon returning, move cursor to base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52495"></span>52495</td>
+<td class="instruction">DEFB 250,1,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and +1 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52498"></span>52498</td>
+<td class="instruction">DEFB 54,6,33,55,6,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52504"></span>52504</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52505"></span>
+<div class="comments">
+<div class="paragraph">
+Body, facing right
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52505"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52505"></span>52505</td>
+<td class="instruction">DEFB 244,7</td>
+<td class="comment-11" rowspan="1">Set current graphic set to 7</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52507"></span>52507</td>
+<td class="instruction">DEFB 250,255,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and -1 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52510"></span>52510</td>
+<td class="instruction">DEFB 48,7,31,38,6,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52516"></span>52516</td>
+<td class="instruction">DEFB 0,54,33,38,134,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52522"></span>52522</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52523"></span>
+<div class="comments">
+<div class="paragraph">
+Facing left, legs bent
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52523"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52523"></span>52523</td>
+<td class="instruction">DEFB 244,7</td>
+<td class="comment-11" rowspan="1">Set current graphic set to 7</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52525"></span>52525</td>
+<td class="instruction">DEFB 250,255,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and -1 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52528"></span>52528</td>
+<td class="instruction">DEFB 48,135,31,50,134,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52534"></span>52534</td>
+<td class="instruction">DEFB 49,134,161,38,134,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52540"></span>52540</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52541"></span>
+<div class="comments">
+<div class="paragraph">
+Facing left, legs extended back (jumping)
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52541"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52541"></span>52541</td>
+<td class="instruction">DEFB 254,255,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and -1 characters respectively and store as new base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52544"></span>52544</td>
+<td class="instruction">DEFB 251,106,205</td>
+<td class="comment-11" rowspan="1">Process graphic layout data at <a href="52371.html#52586">52586</a> and upon returning, move cursor to base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52547"></span>52547</td>
+<td class="instruction">DEFB 250,1,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and +1 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52550"></span>52550</td>
+<td class="instruction">DEFB 52,134,33,51,134,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52556"></span>52556</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52557"></span>
+<div class="comments">
+<div class="paragraph">
+Facing left, legs bent, airborne
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52557"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52557"></span>52557</td>
+<td class="instruction">DEFB 254,254,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and -2 characters respectively and store as new base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52560"></span>52560</td>
+<td class="instruction">DEFB 251,106,205</td>
+<td class="comment-11" rowspan="1">Process graphic layout data at <a href="52371.html#52586">52586</a> and upon returning, move cursor to base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52563"></span>52563</td>
+<td class="instruction">DEFB 250,1,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and +1 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52566"></span>52566</td>
+<td class="instruction">DEFB 53,134,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52569"></span>52569</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52570"></span>
+<div class="comments">
+<div class="paragraph">
+Facing left, legs bent, landing
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52570"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52570"></span>52570</td>
+<td class="instruction">DEFB 254,255,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and -1 characters respectively and store as new base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52573"></span>52573</td>
+<td class="instruction">DEFB 251,106,205</td>
+<td class="comment-11" rowspan="1">Process graphic layout data at <a href="52371.html#52586">52586</a> and upon returning, move cursor to base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52576"></span>52576</td>
+<td class="instruction">DEFB 250,1,255</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by -1 and +1 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52579"></span>52579</td>
+<td class="instruction">DEFB 55,134,33,54,134,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52585"></span>52585</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52586"></span>
+<div class="comments">
+<div class="paragraph">
+Body, facing left
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52586"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52586"></span>52586</td>
+<td class="instruction">DEFB 244,7</td>
+<td class="comment-11" rowspan="1">Set current graphic set to 7</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52588"></span>52588</td>
+<td class="instruction">DEFB 250,255,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and -1 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52591"></span>52591</td>
+<td class="instruction">DEFB 48,135,31,38,6,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52597"></span>52597</td>
+<td class="instruction">DEFB 0,54,33,38,134,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52603"></span>52603</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52604"></span>
+<div class="comments">
+<div class="paragraph">
+Mouth and eyes (animated)
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52604"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52604"></span>52604</td>
+<td class="instruction">DEFB 244,7</td>
+<td class="comment-11" rowspan="1">Set current graphic set to 7</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52606"></span>52606</td>
+<td class="instruction">DEFB 236,3,39,40,41</td>
+<td class="comment-11" rowspan="1">Modify following instruction to display graphic of random index, chosen from 39, 40 and 41</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52611"></span>52611</td>
+<td class="instruction">DEFB 0,48,161</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52614"></span>52614</td>
+<td class="instruction">DEFB 250,255,254</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by -2 and -1 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52617"></span>52617</td>
+<td class="instruction">DEFB 249,2,0</td>
+<td class="comment-11" rowspan="1">If state n (initially 1) has remaining time of zero then reset its time to maximum and randomly select a new state, n, from the 2 in the following list. Jump to the address specified in the current state and decrease its remaining time:</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52620"></span>52620</td>
+<td class="instruction">DEFB 2,4,148,205</td>
+<td class="comment-11" rowspan="1"><a href="52371.html#52628">52628</a> (eyes, open, facing out of screen, for 4 ticks)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52624"></span>52624</td>
+<td class="instruction">DEFB 1,2,158,205</td>
+<td class="comment-11" rowspan="1"><a href="52371.html#52638">52638</a> (eyes, closed, facing out of screen, for 2 ticks)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52628"></span>
+<div class="comments">
+<div class="paragraph">
+Eyes (Open, Facing Out of Screen)
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52628" data-graphic-set-index="7"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52628"></span>52628</td>
+<td class="instruction">DEFB 37,7,33,35,7,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52634"></span>52634</td>
+<td class="instruction">DEFB 37,135,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52637"></span>52637</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52638"></span>
+<div class="comments">
+<div class="paragraph">
+Eyes (Closed, Facing Out of Screen)
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52638" data-graphic-set-index="7"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52638"></span>52638</td>
+<td class="instruction">DEFB 37,6,33,36,6,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52644"></span>52644</td>
+<td class="instruction">DEFB 37,134,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52647"></span>52647</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52648"></span>
+<div class="comments">
+<div class="paragraph">
+Facing out of screen, smiling, legs partially extended, eyes blinking
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52648"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52648"></span>52648</td>
+<td class="instruction">DEFB 244,7</td>
+<td class="comment-11" rowspan="1">Set current graphic set to 7</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52650"></span>52650</td>
+<td class="instruction">DEFB 250,255,255</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by -1 and -1 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52653"></span>52653</td>
+<td class="instruction">DEFB 38,6,33,42,48,161</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52659"></span>52659</td>
+<td class="instruction">DEFB 38,134,30,46,6,34</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52665"></span>52665</td>
+<td class="instruction">DEFB 46,134,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52668"></span>52668</td>
+<td class="instruction">DEFB 250,254,253</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by -3 and -2 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52671"></span>52671</td>
+<td class="instruction">DEFB 247,2</td>
+<td class="comment-11" rowspan="1">Jump to one of the 2 addresses in the following list, chosen at random:</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52673"></span>52673</td>
+<td class="instruction">DEFB 148,205</td>
+<td class="comment-11" rowspan="1"><a href="52371.html#52628">52628</a> (eyes, open, facing out of screen)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52675"></span>52675</td>
+<td class="instruction">DEFB 158,205</td>
+<td class="comment-11" rowspan="1"><a href="52371.html#52638">52638</a> (eyes, closed, facing out of screen)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52677"></span>
+<div class="comments">
+<div class="paragraph">
+Facing out of screen, legs partially extended, eating a worm (animated)
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52677"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52677"></span>52677</td>
+<td class="instruction">DEFB 251,168,205</td>
+<td class="comment-11" rowspan="1">Process graphic layout data at <a href="52371.html#52648">52648</a> and upon returning, move cursor to base coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52680"></span>52680</td>
+<td class="instruction">DEFB 250,255,0</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and -1 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52683"></span>52683</td>
+<td class="instruction">DEFB 236,2,43,44</td>
+<td class="comment-11" rowspan="1">Modify following instruction to display graphic of random index, chosen from 43 and 44</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52687"></span>52687</td>
+<td class="instruction">DEFB 0,48,160</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52690"></span>52690</td>
+<td class="instruction">DEFB 243,1,6</td>
+<td class="comment-11" rowspan="1">Increase current state value n (initially 1), up to maximum of 6, resetting to zero if maximum reached and jump to n-th address in following list:</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52693"></span>52693</td>
+<td class="instruction">DEFB 225,205</td>
+<td class="comment-11" rowspan="1"><a href="52371.html#52705">52705</a> (worm facing left, curved up into Drutt's mouth)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52695"></span>52695</td>
+<td class="instruction">DEFB 235,205</td>
+<td class="comment-11" rowspan="1"><a href="52371.html#52715">52715</a> (worm facing right, curved up into Drutt's mouth)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52697"></span>52697</td>
+<td class="instruction">DEFB 225,205</td>
+<td class="comment-11" rowspan="1"><a href="52371.html#52705">52705</a> (worm facing left, curved up into Drutt's mouth)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52699"></span>52699</td>
+<td class="instruction">DEFB 235,205</td>
+<td class="comment-11" rowspan="1"><a href="52371.html#52715">52715</a> (worm facing right, curved up into Drutt's mouth)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52701"></span>52701</td>
+<td class="instruction">DEFB 242,205</td>
+<td class="comment-11" rowspan="1"><a href="52371.html#52722">52722</a> (worm's eyes facing out of screen)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52703"></span>52703</td>
+<td class="instruction">DEFB 242,205</td>
+<td class="comment-11" rowspan="1"><a href="52371.html#52722">52722</a> (worm's eyes facing out of screen)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52705"></span>
+<div class="comments">
+<div class="paragraph">
+Worm facing left, curved up into Drutt's mouth
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52705" data-graphic-set-index="7"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52705"></span>52705</td>
+<td class="instruction">DEFB 250,0,255</td>
+<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by -1 and 0 characters respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52708"></span>52708</td>
+<td class="instruction">DEFB 7,7,33,59,3,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52714"></span>52714</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52715"></span>
+<div class="comments">
+<div class="paragraph">
+Worm facing right, curved up into Drutt's mouth
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52715" data-graphic-set-index="7"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52715"></span>52715</td>
+<td class="instruction">DEFB 59,131,33,7,135,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52721"></span>52721</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52722"></span>
+<div class="comments">
+<div class="paragraph">
+Worm's eyes facing out of screen
+</div>
+<div class="paragraph">
+<canvas class="graphicLayoutData" data-graphic-layout-data-address="52722" data-graphic-set-index="7"></canvas>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52722"></span>52722</td>
+<td class="instruction">DEFB 34,7,33</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52725"></span>52725</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52315.html">52315</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52371">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52726.html">52726</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

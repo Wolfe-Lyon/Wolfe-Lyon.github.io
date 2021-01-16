@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 26997</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="26976.html">26976</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#26997">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27136.html">27136</a></span></td>
+</tr>
+</table>
+<div class="description">26997: Initialise Data and Start a New Game</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="26670.html">26670</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="26997"></span>26997</td>
+<td class="instruction">LD A,28</td>
+<td class="comment-11" rowspan="1">Set Current Starship Location in " LOCATION : [name of Current Starship Location]" text at <a href="38233.html#38298">38298</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26999"></span>26999</td>
+<td class="instruction">LD (38307),A</td>
+<td class="comment-11" rowspan="1">...to the name of the Current Starship Location (28)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27002"></span>27002</td>
+<td class="instruction">CALL <a href="35690.html">35690</a></td>
+<td class="comment-11" rowspan="1">Play upward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27005"></span>27005</td>
+<td class="instruction">LD A,70</td>
+<td class="comment-11" rowspan="1">Set ATTR T system variable to 70 (yellow INK, black PAPER, BRIGHT)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27007"></span>27007</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27010"></span>27010</td>
+<td class="instruction">LD HL,37329</td>
+<td class="comment-11" rowspan="1">Copy data from <a href="37329.html">37329</a> - 37472 (USS Pisces' Initial Stats, Characters' Initial Stats, Table of Object Properties for first four objects)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27013"></span>27013</td>
+<td class="instruction">LD DE,25012</td>
+<td class="comment-11" rowspan="1">...to <a href="25012.html">25012</a> - 25155 (USS Pisces' Current Stats, Characters' Current Stats, Unused Data Block)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27016"></span>27016</td>
+<td class="instruction">LD BC,144</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27019"></span>27019</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27021"></span>27021</td>
+<td class="instruction">LD HL,36797</td>
+<td class="comment-11" rowspan="1">Copy data from <a href="36797.html">36797</a> - 36804 (Magic Knight's Initial Data)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27024"></span>27024</td>
+<td class="instruction">LD BC,8</td>
+<td class="comment-11" rowspan="1">...to <a href="25156.html">25156</a> - 25163 (Magic Knight's Current Data)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27027"></span>27027</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27029"></span>27029</td>
+<td class="instruction">LD HL,36805</td>
+<td class="comment-11" rowspan="1">Copy data from <a href="36805.html">36805</a> - 36884 (Characters' Initial Inventories and part of Characters' Initial Positions)... (<a href="../reference/facts.html#extradatacopied">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27032"></span>27032</td>
+<td class="instruction">LD BC,80</td>
+<td class="comment-11" rowspan="1">...to <a href="25164.html">25164</a> - 25243 (Characters' Current Inventories and Unused Data Block)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27035"></span>27035</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27037"></span>27037</td>
+<td class="instruction">LD HL,36875</td>
+<td class="comment-11" rowspan="1">Copy data from <a href="36875.html">36875</a> - 36916 (Characters' Initial Positions and first two entries in Objects' Initial Positions)... (<a href="../reference/facts.html#extradatacopied">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27040"></span>27040</td>
+<td class="instruction">LD BC,42</td>
+<td class="comment-11" rowspan="1">...to <a href="25244.html">25244</a> - 25285 (Characters' Current Positions and Unused Data Block)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27043"></span>27043</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27045"></span>27045</td>
+<td class="instruction">LD HL,36911</td>
+<td class="comment-11" rowspan="1">Copy data from <a href="36911.html">36911</a> - 37021 (Objects' Initial Positions)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27048"></span>27048</td>
+<td class="instruction">LD BC,111</td>
+<td class="comment-11" rowspan="1">...to <a href="25286.html">25286</a> - 25396 (Objects' Current Positions)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27051"></span>27051</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27053"></span>27053</td>
+<td class="instruction">LD HL,53361</td>
+<td class="comment-11" rowspan="1">Copy data from <a href="53361.html">53361</a> - 53410 (Initial Planetary Data)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27056"></span>27056</td>
+<td class="instruction">LD BC,50</td>
+<td class="comment-11" rowspan="1">...to <a href="25397.html">25397</a> - 25446 (Current Planetary Data)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27059"></span>27059</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27061"></span>27061</td>
+<td class="instruction">LD H,D</td>
+<td class="comment-11" rowspan="1">Load HL with value in DE (25447)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27062"></span>27062</td>
+<td class="instruction">LD L,E</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27063"></span>27063</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance DE by one byte</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27064"></span>27064</td>
+<td class="instruction">LD BC,15</td>
+<td class="comment-11" rowspan="1">Load memory locations at <a href="25447.html">25447</a> - 25462 with zeroes...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27067"></span>27067</td>
+<td class="instruction">LD (HL),0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27069"></span>27069</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27071"></span>27071</td>
+<td class="instruction">CALL <a href="34265.html">34265</a></td>
+<td class="comment-11" rowspan="1">Set Magic Knight's available action flags and validate I.D. Card if appropriate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27074"></span>27074</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Load A and HL with zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27075"></span>27075</td>
+<td class="instruction">LD H,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27076"></span>27076</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27077"></span>27077</td>
+<td class="instruction">LD (23675),HL</td>
+<td class="comment-11" rowspan="1">Interrupt Routine Flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27080"></span>27080</td>
+<td class="instruction">LD (23672),A</td>
+<td class="comment-11" rowspan="1">Set system variable FRAMES to zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27083"></span>27083</td>
+<td class="instruction">LD (23673),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27086"></span>27086</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Set Unknown / Unused Flag 2 to 1...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27087"></span>27087</td>
+<td class="instruction">LD (23480),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27090"></span>27090</td>
+<td class="instruction">LD A,30</td>
+<td class="comment-11" rowspan="1">Set number of days left to 30...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27092"></span>27092</td>
+<td class="instruction">LD (23457),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27095"></span>27095</td>
+<td class="instruction">LD A,13</td>
+<td class="comment-11" rowspan="1">Set USS Pisces' location to Brightstar (13)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27097"></span>27097</td>
+<td class="instruction">LD (23700),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27100"></span>27100</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Load BC with 26 (A x 2)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27101"></span>27101</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27102"></span>27102</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27104"></span>27104</td>
+<td class="instruction">LD HL,25398</td>
+<td class="comment-11" rowspan="1">Point HL at first attribute entry in Table of Current Planetary Data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27107"></span>27107</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...and add BC as offset to point to data for Brightstar</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27108"></span>27108</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load A with attribute of Brightstar planet...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27109"></span>27109</td>
+<td class="instruction">LD (52196),A</td>
+<td class="comment-11" rowspan="1">...and set colour of planet on viewscreen accordingly</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27112"></span>27112</td>
+<td class="instruction">LD HL,1286</td>
+<td class="comment-11" rowspan="1">Set right exit from USS Pisces, 5 (The Airlock) to USS Pisces, 6 (The Life Boat)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27115"></span>27115</td>
+<td class="instruction">LD (37033),HL</td>
+<td class="comment-11" rowspan="1">...and left exit from USS Pisces, 6 (The Life Boat) to USS Pisces, 5 (The Airlock)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27118"></span>27118</td>
+<td class="instruction">LD HL,50850</td>
+<td class="comment-11" rowspan="1">Set Room Layout Data Pointer address for Retreat, 2 to address of "With Barrier" version of Room 09 (<a href="50956.html">50956</a>)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27121"></span>27121</td>
+<td class="instruction">LD (50161),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27124"></span>27124</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1">Move Magic Knight into USS Pisces, 2 (The Transporter Room), draw room and initialise room-specific data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27126"></span>27126</td>
+<td class="instruction">CALL <a href="27762.html">27762</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27129"></span>27129</td>
+<td class="instruction">SET 0,(IY+65)</td>
+<td class="comment-11" rowspan="1">Set Game In Progress Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27133"></span>27133</td>
+<td class="instruction">JP <a href="27136.html#27139">27139</a></td>
+<td class="comment-11" rowspan="1">Jump into Main Game Loop (process keyboard input and move Magic Knight or enter menus)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="26976.html">26976</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#26997">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27136.html">27136</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

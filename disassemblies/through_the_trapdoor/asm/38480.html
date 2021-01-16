@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 38480</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38468.html">38468</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38480">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="38540.html">38540</a></span></td>
+</tr>
+</table>
+<div class="description">38480: Update States of Apebeasts (Level 2) and Store Current Positions in Script Data</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="38009.html">38009</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38480"></span>38480</td>
+<td class="instruction">LD IX,44162</td>
+<td class="comment-11" rowspan="1">Load IX with address of complex state data for Green Apebeast 1 (Level 2)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38484"></span>38484</td>
+<td class="instruction">LD IY,38424</td>
+<td class="comment-11" rowspan="1">Point IY at Table of Current Positions in Apebeasts' Script Data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38488"></span>38488</td>
+<td class="instruction">LD A,(IX+1)</td>
+<td class="comment-11" rowspan="1">If depth of Apebeast is zero (i.e. Apebeast killed by Bubo)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38491"></span>38491</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38492"></span>38492</td>
+<td class="instruction">JR Z,38523</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="38480.html#38523">38523</a> (i.e. move onto next apebeast)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38494"></span>38494</td>
+<td class="instruction">LD L,(IY+0)</td>
+<td class="comment-11" rowspan="1">Load HL with current position in script data for current apebeast...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38497"></span>38497</td>
+<td class="instruction">LD H,(IY+1)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38500"></span>38500</td>
+<td class="instruction">LD (34277),HL</td>
+<td class="comment-11" rowspan="1">...and store at <a href="34277.html">34277</a> as position in script currently running</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38503"></span>38503</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38505"></span>38505</td>
+<td class="instruction">PUSH IY</td>
+<td class="comment-11" rowspan="1">Store IY</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38507"></span>38507</td>
+<td class="instruction">CALL <a href="38540.html">38540</a></td>
+<td class="comment-11" rowspan="1">Update the state of the current apebeast</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38510"></span>38510</td>
+<td class="instruction">POP IY</td>
+<td class="comment-11" rowspan="1">Restore IY</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38512"></span>38512</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38514"></span>38514</td>
+<td class="instruction">LD HL,(34277)</td>
+<td class="comment-11" rowspan="1">Store address (current position in script data for current apebeast) stored at <a href="34277.html">34277</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38517"></span>38517</td>
+<td class="instruction">LD (IY+0),L</td>
+<td class="comment-11" rowspan="1">...in table at <a href="38424.html">38424</a> as current position in this apebeast's script data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38520"></span>38520</td>
+<td class="instruction">LD (IY+1),H</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38523"></span>38523</td>
+<td class="instruction">INC IY</td>
+<td class="comment-11" rowspan="1">Advance IY to next entry in table (i.e. position in next apebeast's script data)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38525"></span>38525</td>
+<td class="instruction">INC IY</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38527"></span>38527</td>
+<td class="instruction">LD DE,13</td>
+<td class="comment-11" rowspan="1">Advance IX by 13 bytes (i.e. to entry for next apebeast)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38530"></span>38530</td>
+<td class="instruction">ADD IX,DE</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38532"></span>38532</td>
+<td class="instruction">LD A,(IX+8)</td>
+<td class="comment-11" rowspan="1">If class of this next entry is 25 (i.e. Apebeast)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38535"></span>38535</td>
+<td class="instruction">CP 25</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38537"></span>38537</td>
+<td class="instruction">JR Z,38488</td>
+<td class="comment-11" rowspan="1">...then loop back to <a href="38480.html#38488">38488</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38539"></span>38539</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38468.html">38468</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38480">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="38540.html">38540</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

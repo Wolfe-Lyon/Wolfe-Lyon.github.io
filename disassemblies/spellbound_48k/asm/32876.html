@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 32876</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32823.html">32823</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32876">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32903.html">32903</a></span></td>
+</tr>
+</table>
+<div class="description">32876: Kill Magic Knight with Exploding Candle</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="32823.html">32823</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32876"></span>32876</td>
+<td class="instruction">LD HL,49505</td>
+<td class="comment-11" rowspan="1">Load number of rows spanned by "BOOM! THE CANDLE BLEW UP..." text into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32879"></span>32879</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32880"></span>32880</td>
+<td class="instruction">LD (42157),A</td>
+<td class="comment-11" rowspan="1">...and adjust height of window 35 accordingly</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32883"></span>32883</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to start of actual text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32884"></span>32884</td>
+<td class="instruction">LD A,35</td>
+<td class="comment-11" rowspan="1">Prepare to draw window 35</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32886"></span>32886</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32887"></span>32887</td>
+<td class="instruction">CALL <a href="36987.html">36987</a></td>
+<td class="comment-11" rowspan="1">Draw window 35</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32890"></span>32890</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (pointer to text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32891"></span>32891</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">Print the text in the window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32894"></span>32894</td>
+<td class="instruction">CALL <a href="38749.html">38749</a></td>
+<td class="comment-11" rowspan="1">Display "PRESS SPACE OR FIRE TO CONTINUE" window and wait for space / fire</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32897"></span>32897</td>
+<td class="instruction">LD HL,50168</td>
+<td class="comment-11" rowspan="1">Point HL at "YOU BLEW YOURSELF UP" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32900"></span>32900</td>
+<td class="instruction">JP <a href="35101.html">35101</a></td>
+<td class="comment-11" rowspan="1">Jump to "Game over" window routine and exit</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32823.html">32823</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32876">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32903.html">32903</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

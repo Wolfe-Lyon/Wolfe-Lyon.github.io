@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 38165</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38074.html">38074</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38165">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="38219.html">38219</a></span></td>
+</tr>
+</table>
+<div class="description">38165: Script Routine (61): Fire Bubo's Projectile</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Note that Bubo normally can't fire when being carried (see instructions at <a href="38074.html#38119">38119-38129</a>), however if he starts to fire immediately before being picked up, then his Being Carried Flag will be set by the time execution reaches this routine.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data for Bubo (Level 2)</td>
+</tr>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">Address of complex state data for Bubo's projectile</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38165"></span>38165</td>
+<td class="instruction">SET 1,(IY+9)</td>
+<td class="comment-11" rowspan="1">Set projectile's Fired Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38169"></span>38169</td>
+<td class="instruction">BIT 5,(IX+10)</td>
+<td class="comment-11" rowspan="1">If Bubo is being carried...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38173"></span>38173</td>
+<td class="instruction">JR NZ,38181</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="38165.html#38181">38181</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38175"></span>38175</td>
+<td class="instruction">LD (IY+12),251</td>
+<td class="comment-11" rowspan="1">Set projectile's Velocity Factor to -5</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38179"></span>38179</td>
+<td class="instruction">JR 38185</td>
+<td class="comment-11" rowspan="1">Skip ahead to <a href="38165.html#38185">38185</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38181"></span>38181</td>
+<td class="instruction">LD (IY+12),246</td>
+<td class="comment-11" rowspan="1">Set projectile's Velocity Factor to -10</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38185"></span>38185</td>
+<td class="instruction">LD A,(IX+5)</td>
+<td class="comment-11" rowspan="1">Set projectile's x-coordinate to one more than Bubo's...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38188"></span>38188</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38189"></span>38189</td>
+<td class="instruction">LD (IY+5),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38192"></span>38192</td>
+<td class="instruction">LD (IY+7),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38195"></span>38195</td>
+<td class="instruction">LD A,(IX+4)</td>
+<td class="comment-11" rowspan="1">Set projectile's y-coordinate to be three less than Bubo's...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38198"></span>38198</td>
+<td class="instruction">SUB 3</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38200"></span>38200</td>
+<td class="instruction">LD (IY+4),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38203"></span>38203</td>
+<td class="instruction">LD (IY+6),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38206"></span>38206</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Set projectile's room to be same as Bubo's...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38209"></span>38209</td>
+<td class="instruction">LD (IY+0),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38212"></span>38212</td>
+<td class="instruction">LD (IY+1),1</td>
+<td class="comment-11" rowspan="1">Set projectile's depth to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38216"></span>38216</td>
+<td class="instruction">JP <a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38074.html">38074</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38165">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="38219.html">38219</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

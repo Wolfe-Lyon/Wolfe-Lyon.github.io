@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 32252</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32239.html">32239</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32252">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32543.html">32543</a></span></td>
+</tr>
+</table>
+<div class="description">32252: Process Command to Use Transporter</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32252"></span>32252</td>
+<td class="instruction">CALL <a href="54333.html">54333</a></td>
+<td class="comment-11" rowspan="1">Print or update Command Summary Window at top of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32255"></span>32255</td>
+<td class="instruction">LD DE,42015</td>
+<td class="comment-11" rowspan="1">Point DE at "SEND TRANSPORTER CONTENTS"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32258"></span>32258</td>
+<td class="instruction">CALL <a href="54283.html">54283</a></td>
+<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32261"></span>32261</td>
+<td class="instruction">LD DE,42145</td>
+<td class="comment-11" rowspan="1">Point DE at "TO"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32264"></span>32264</td>
+<td class="instruction">CALL <a href="54283.html">54283</a></td>
+<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32267"></span>32267</td>
+<td class="instruction">LD DE,37227</td>
+<td class="comment-11" rowspan="1">Point DE at y-coordinate of top edge of Window 17 in Window Data Table at <a href="37089.html">37089</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32270"></span>32270</td>
+<td class="instruction">LD A,13</td>
+<td class="comment-11" rowspan="1">...and set this window's height to 13...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32272"></span>32272</td>
+<td class="instruction">CALL <a href="33782.html">33782</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32275"></span>32275</td>
+<td class="instruction">LD A,17</td>
+<td class="comment-11" rowspan="1">Draw Window 17...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32277"></span>32277</td>
+<td class="instruction">CALL <a href="34990.html">34990</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32280"></span>32280</td>
+<td class="instruction">LD HL,42032</td>
+<td class="comment-11" rowspan="1">Point HL at "ENTER TRANSPORTER COORDINATES" Menu text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32283"></span>32283</td>
+<td class="instruction">CALL <a href="34762.html">34762</a></td>
+<td class="comment-11" rowspan="1">...and print to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32286"></span>32286</td>
+<td class="instruction">LD A,127</td>
+<td class="comment-11" rowspan="1">Set ATTR T system variable to 127 (white INK, white PAPER, BRIGHT)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32288"></span>32288</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32291"></span>32291</td>
+<td class="instruction">LD DE,18438</td>
+<td class="comment-11" rowspan="1">Load D with 72 (pixels) and E with 6 (characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32294"></span>32294</td>
+<td class="instruction">CALL <a href="32694.html">32694</a></td>
+<td class="comment-11" rowspan="1">Handle vertical scrolling digit selection for x-coordinate and load A with selected digit's ASCII code</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32297"></span>32297</td>
+<td class="instruction">LD (42174),A</td>
+<td class="comment-11" rowspan="1">Set x-coordinate value (as ASCII character code) in "YOU HAVE ARRIVED AT..." text at <a href="42160.html#42171">42171</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32300"></span>32300</td>
+<td class="instruction">LD DE,18440</td>
+<td class="comment-11" rowspan="1">Load D with 72 (pixels) and E with 8 (characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32303"></span>32303</td>
+<td class="instruction">CALL <a href="32694.html">32694</a></td>
+<td class="comment-11" rowspan="1">Handle vertical scrolling digit selection for x-coordinate and load A with selected digit's ASCII code</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32306"></span>32306</td>
+<td class="instruction">LD (42176),A</td>
+<td class="comment-11" rowspan="1">Set y-coordinate value (as ASCII character code) in "YOU HAVE ARRIVED AT..." text at <a href="42160.html#42171">42171</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32309"></span>32309</td>
+<td class="instruction">LD DE,18442</td>
+<td class="comment-11" rowspan="1">Load D with 72 (pixels) and E with 10 (characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32312"></span>32312</td>
+<td class="instruction">CALL <a href="32694.html">32694</a></td>
+<td class="comment-11" rowspan="1">Handle vertical scrolling digit selection for x-coordinate and load A with selected digit's ASCII code</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32315"></span>32315</td>
+<td class="instruction">LD (42178),A</td>
+<td class="comment-11" rowspan="1">Set z-coordinate value (as ASCII character code) in "YOU HAVE ARRIVED AT..." text at <a href="42160.html#42171">42171</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32318"></span>32318</td>
+<td class="instruction">LD A,78</td>
+<td class="comment-11" rowspan="1">Set ATTR T system variable to 78 (yellow INK, blue PAPER, BRIGHT)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32320"></span>32320</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32323"></span>32323</td>
+<td class="instruction">LD DE,42173</td>
+<td class="comment-11" rowspan="1">Point DE at "X.Y.Z."...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32326"></span>32326</td>
+<td class="instruction">CALL <a href="54283.html">54283</a></td>
+<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32329"></span>32329</td>
+<td class="instruction">CALL <a href="55115.html">55115</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32332"></span>32332</td>
+<td class="instruction">LD A,(23451)</td>
+<td class="comment-11" rowspan="1">If Transporter Repaired Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32335"></span>32335</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32337"></span>32337</td>
+<td class="instruction">JP Z,32521</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32252.html#32521">32521</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32340"></span>32340</td>
+<td class="instruction">LD HL,32543</td>
+<td class="comment-11" rowspan="1">Point HL at Table of Transporter Pad Data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32343"></span>32343</td>
+<td class="instruction">LD BC,8</td>
+<td class="comment-11" rowspan="1">Load BC with 8 (as each transporter pad entry is eight bytes wide)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32346"></span>32346</td>
+<td class="instruction">LD A,(23700)</td>
+<td class="comment-11" rowspan="1">If current transporter pad is at the same location as the USS Pisces...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32349"></span>32349</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32350"></span>32350</td>
+<td class="instruction">JR Z,32360</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32252.html#32360">32360</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32352"></span>32352</td>
+<td class="instruction">LD A,99</td>
+<td class="comment-11" rowspan="1">If current transporter pad's current location is 99 (end marker)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32354"></span>32354</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32355"></span>32355</td>
+<td class="instruction">JR Z,32360</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32252.html#32360">32360</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32357"></span>32357</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Advance HL by eight bytes to next transporter pad entry</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32358"></span>32358</td>
+<td class="instruction">JR 32346</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="32252.html#32346">32346</a> for next transporter pad</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32360"></span>32360</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to transporter pad's x-coordinate (ASCII)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32361"></span>32361</td>
+<td class="instruction">LD A,(42174)</td>
+<td class="comment-11" rowspan="1">Load A with ASCII x-coordinate value from "YOU HAVE ARRIVED AT..." text at <a href="42160.html#42171">42171</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32364"></span>32364</td>
+<td class="instruction">CP 48</td>
+<td class="comment-11" rowspan="1">...and if this is 48 ("0", i.e. first digit in USS Pisces' transporter coordinates)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32366"></span>32366</td>
+<td class="instruction">JP Z,32449</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32252.html#32449">32449</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32369"></span>32369</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">If current transporter pad's ASCII x-coordinate is not the same as x-coordinate value in A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32370"></span>32370</td>
+<td class="instruction">JP NZ,32482</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32252.html#32482">32482</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32373"></span>32373</td>
+<td class="instruction">LD A,(42176)</td>
+<td class="comment-11" rowspan="1">Load A with ASCII y-coordinate value from "YOU HAVE ARRIVED AT..." text at <a href="42160.html#42171">42171</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32376"></span>32376</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to transporter pad's ASCII y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32377"></span>32377</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">If current transporter pad's ASCII y-coordinate is not the same as y-coordinate value in A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32378"></span>32378</td>
+<td class="instruction">JP NZ,32482</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32252.html#32482">32482</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32381"></span>32381</td>
+<td class="instruction">LD A,(42178)</td>
+<td class="comment-11" rowspan="1">Load A with ASCII z-coordinate value from "YOU HAVE ARRIVED AT..." text at <a href="42160.html#42171">42171</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32384"></span>32384</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to transporter pad's ASCII z-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32385"></span>32385</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">If current transporter pad's ASCII z-coordinate is not the same as z-coordinate value in A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32386"></span>32386</td>
+<td class="instruction">JP NZ,32482</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32252.html#32482">32482</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32389"></span>32389</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to transporter pad's room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32390"></span>32390</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Set operand of instruction at <a href="32252.html#32427">32427</a> to index of pad's room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32391"></span>32391</td>
+<td class="instruction">LD (32428),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32394"></span>32394</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to destination x-coordinate (for Magic Knight)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32395"></span>32395</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Set operand of instruction at <a href="32252.html#32417">32417</a> to destination x-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32396"></span>32396</td>
+<td class="instruction">LD (32418),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32399"></span>32399</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to destination y-coordinate (for Magic Knight)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32400"></span>32400</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Set operand of instruction at <a href="32252.html#32422">32422</a> to destination y-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32401"></span>32401</td>
+<td class="instruction">LD (32423),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32404"></span>32404</td>
+<td class="instruction">CALL <a href="27762.html#27765">27765</a></td>
+<td class="comment-11" rowspan="1">Draw Magic Knight's current room, draw objects and characters and initialise room-specific data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32407"></span>32407</td>
+<td class="instruction">CALL <a href="32623.html">32623</a></td>
+<td class="comment-11" rowspan="1">Set top-left and bottom-right of area to cycle attributes (for transporter effect)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32410"></span>32410</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Prepare to fill a region with attribute 0 (black INK, black PAPER)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32411"></span>32411</td>
+<td class="instruction">LD (35948),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32414"></span>32414</td>
+<td class="instruction">CALL <a href="32602.html">32602</a></td>
+<td class="comment-11" rowspan="1">Display transporter glow effect</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="32417"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="32252.html#32417">32417</a> is Magic Knight's new x-coordinate. This is modified by the instructions at <a href="32252.html#32396">32396</a> and <a href="32252.html#32472">32472</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32417"></span>32417</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Set Magic Knight's x-coordinate (pixels) to transporter pad arrival point</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32419"></span>32419</td>
+<td class="instruction">LD (25156),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="32422"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="32252.html#32422">32422</a> is Magic Knight's new y-coordinate. This is modified by the instructions at <a href="32252.html#32401">32401</a> and <a href="32252.html#32477">32477</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32422"></span>32422</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Set Magic Knight's y-coordinate (pixels) to transporter pad arrival point</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32424"></span>32424</td>
+<td class="instruction">LD (25157),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="32427"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="32252.html#32427">32427</a> is the index of the room to move Magic Knight into. This is modified by the instructions at <a href="32252.html#32391">32391</a> and <a href="32252.html#32467">32467</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32427"></span>32427</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Move Magic Knight into room A, draw room and initialise room-specific data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32429"></span>32429</td>
+<td class="instruction">CALL <a href="27762.html">27762</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32432"></span>32432</td>
+<td class="instruction">CALL <a href="32623.html">32623</a></td>
+<td class="comment-11" rowspan="1">Set top-left and bottom-right of area to cycle attributes (for transporter effect)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32435"></span>32435</td>
+<td class="instruction">CALL <a href="32602.html">32602</a></td>
+<td class="comment-11" rowspan="1">Display transporter glow effect</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32438"></span>32438</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-11" rowspan="1">Prepare to fill a region with attribute 7 (white INK, black PAPER)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32440"></span>32440</td>
+<td class="instruction">LD (35948),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32443"></span>32443</td>
+<td class="instruction">CALL <a href="35940.html">35940</a></td>
+<td class="comment-11" rowspan="1">Fill a region of Attribute File with specified attribute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32446"></span>32446</td>
+<td class="instruction">JP <a href="55272.html">55272</a></td>
+<td class="comment-11" rowspan="1">Display "YOU HAVE ARRIVED AT X.Y.Z." Window (17), wait for fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32449"></span>32449</td>
+<td class="instruction">LD A,(42176)</td>
+<td class="comment-11" rowspan="1">Load A with y-coordinate value (as ASCII character code) from "YOU HAVE ARRIVED AT..." text at <a href="42160.html#42171">42171</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32452"></span>32452</td>
+<td class="instruction">CP 48</td>
+<td class="comment-11" rowspan="1">...and if this is not 48 ("0")...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32454"></span>32454</td>
+<td class="instruction">JP NZ,32482</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32252.html#32482">32482</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32457"></span>32457</td>
+<td class="instruction">LD A,(42178)</td>
+<td class="comment-11" rowspan="1">Load A with z-coordinate value (as ASCII character code) from "YOU HAVE ARRIVED AT..." text at <a href="42160.html#42171">42171</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32460"></span>32460</td>
+<td class="instruction">CP 48</td>
+<td class="comment-11" rowspan="1">...and if this is not 48 ("0")...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32462"></span>32462</td>
+<td class="instruction">JP NZ,32482</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32252.html#32482">32482</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32465"></span>32465</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1">Set operand of instruction at <a href="32252.html#32427">32427</a> to 2 (USS Pisces, 2, The Transporter Room)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32467"></span>32467</td>
+<td class="instruction">LD (32428),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32470"></span>32470</td>
+<td class="instruction">LD A,120</td>
+<td class="comment-11" rowspan="1">Set operand of instruction at <a href="32252.html#32417">32417</a> to 120 (x-coordinate of middle of USS Pisces' transporter pad)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32472"></span>32472</td>
+<td class="instruction">LD (32418),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32475"></span>32475</td>
+<td class="instruction">LD A,120</td>
+<td class="comment-11" rowspan="1">Set operand of instruction at <a href="32252.html#32422">32422</a> to 120 (y-coordinate of USS Pisces' transporter pad)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32477"></span>32477</td>
+<td class="instruction">LD (32423),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32480"></span>32480</td>
+<td class="instruction">JR 32404</td>
+<td class="comment-11" rowspan="1">Jump back to <a href="32252.html#32404">32404</a> to beam Magic Knight back to USS Pisces</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32482"></span>32482</td>
+<td class="instruction">CALL <a href="27762.html#27765">27765</a></td>
+<td class="comment-11" rowspan="1">Draw Magic Knight's current room, draw objects and characters and initialise room-specific data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32485"></span>32485</td>
+<td class="instruction">CALL <a href="32623.html">32623</a></td>
+<td class="comment-11" rowspan="1">Set top-left and bottom-right of area to cycle attributes (for transporter effect)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32488"></span>32488</td>
+<td class="instruction">CALL <a href="32602.html">32602</a></td>
+<td class="comment-11" rowspan="1">Display transporter glow effect</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32491"></span>32491</td>
+<td class="instruction">LD HL,45157</td>
+<td class="comment-11" rowspan="1">Point HL at "IT WOULD MAKE MORE SENSE TO ENTER COORDINATES..." text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32494"></span>32494</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to "IT WOULD MAKE MORE SENSE TO ENTER COORDINATES..." text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32495"></span>32495</td>
+<td class="instruction">LD DE,37187</td>
+<td class="comment-11" rowspan="1">Prepare to adjust height of window 12 to accommodate text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32498"></span>32498</td>
+<td class="instruction">LD HL,45013</td>
+<td class="comment-11" rowspan="1">Point HL at "THE TRANSPORTER SENDS YOU TO SUFFOCATE..." text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32501"></span>32501</td>
+<td class="instruction">CALL <a href="33774.html">33774</a></td>
+<td class="comment-11" rowspan="1">Adjust height of window 12 to accommodate text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32504"></span>32504</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to "THE TRANSPORTER SENDS YOU TO SUFFOCATE..." / "THE TRANSPORTER IS BROKEN" text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32505"></span>32505</td>
+<td class="instruction">LD A,12</td>
+<td class="comment-11" rowspan="1">Draw Window 12...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32507"></span>32507</td>
+<td class="instruction">CALL <a href="34990.html">34990</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32510"></span>32510</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (pointer to "THE TRANSPORTER SENDS YOU TO SUFFOCATE..." / "THE TRANSPORTER IS BROKEN" text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32511"></span>32511</td>
+<td class="instruction">CALL <a href="34762.html">34762</a></td>
+<td class="comment-11" rowspan="1">Print text to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32514"></span>32514</td>
+<td class="instruction">CALL <a href="55138.html">55138</a></td>
+<td class="comment-11" rowspan="1">Display "PRESS FIRE TO CONTINUE" Window and Wait for Fire to be Pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32517"></span>32517</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (pointer to "IT WOULD MAKE MORE SENSE TO ENTER COORDINATES..." / "THE TRANSPORTER HAS MALFUNCTIONED..." text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32518"></span>32518</td>
+<td class="instruction">JP <a href="55685.html">55685</a></td>
+<td class="comment-11" rowspan="1">Jump to "Game over" window routine and return to Control Selection Menu</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="32521"></span>
+<div class="comments">
+<div class="paragraph">
+Magic Knight has used the transporter while it is broken
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32521"></span>32521</td>
+<td class="instruction">CALL <a href="27762.html#27765">27765</a></td>
+<td class="comment-11" rowspan="1">Draw Magic Knight's current room, draw objects and characters and initialise room-specific data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32524"></span>32524</td>
+<td class="instruction">CALL <a href="32623.html">32623</a></td>
+<td class="comment-11" rowspan="1">Set top-left and bottom-right of area to cycle attributes (for transporter effect)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32527"></span>32527</td>
+<td class="instruction">CALL <a href="32602.html">32602</a></td>
+<td class="comment-11" rowspan="1">Display transporter glow effect</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32530"></span>32530</td>
+<td class="instruction">LD HL,45059</td>
+<td class="comment-11" rowspan="1">Point HL at "THE TRANSPORTER HAS MALFUNCTIONED..." text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32533"></span>32533</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to "THE TRANSPORTER HAS MALFUNCTIONED..." text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32534"></span>32534</td>
+<td class="instruction">LD DE,37187</td>
+<td class="comment-11" rowspan="1">Prepare to adjust height of window 12 to accommodate text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32537"></span>32537</td>
+<td class="instruction">LD HL,42147</td>
+<td class="comment-11" rowspan="1">Point HL at "THE TRANSPORTER IS BROKEN" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32540"></span>32540</td>
+<td class="instruction">JP 32501</td>
+<td class="comment-11" rowspan="1">Jump back to <a href="32252.html#32501">32501</a> (display GAME OVER message and return to Control Selection Menu)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32239.html">32239</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32252">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32543.html">32543</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

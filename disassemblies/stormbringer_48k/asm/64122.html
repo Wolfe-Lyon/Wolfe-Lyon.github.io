@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 64122</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="64091.html">64091</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#64122">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="64159.html">64159</a></span></td>
+</tr>
+</table>
+<div class="description">64122: Capture Cursor Joystick Input</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Stored keypress (bits: 0=LEFT, 1=RIGHT, 2=UP, 3=DOWN, 4=FIRE)</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="64122"></span>64122</td>
+<td class="instruction">LD C,254</td>
+<td class="comment-11" rowspan="1">IN 63486 reads the half row 1 to 5</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64124"></span>64124</td>
+<td class="instruction">LD B,247</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64126"></span>64126</td>
+<td class="instruction">IN A,(C)</td>
+<td class="comment-11" rowspan="1">Read keyboard/joystick</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64128"></span>64128</td>
+<td class="instruction">BIT 4,A</td>
+<td class="comment-11" rowspan="1">If joystick moved left ("5" key pressed)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64130"></span>64130</td>
+<td class="instruction">CALL Z,<a href="64192.html">64192</a></td>
+<td class="comment-11" rowspan="1">...store a LEFT input from control device</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64133"></span>64133</td>
+<td class="instruction">LD B,239</td>
+<td class="comment-11" rowspan="1">IN 61438 reads the half row O to 6</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64135"></span>64135</td>
+<td class="instruction">IN A,(C)</td>
+<td class="comment-11" rowspan="1">Read keyboard/joystick</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64137"></span>64137</td>
+<td class="instruction">BIT 2,A</td>
+<td class="comment-11" rowspan="1">If joystick moved right ("8" key pressed)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64139"></span>64139</td>
+<td class="instruction">CALL Z,<a href="64195.html">64195</a></td>
+<td class="comment-11" rowspan="1">...store a RIGHT input from control device</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64142"></span>64142</td>
+<td class="instruction">BIT 4,A</td>
+<td class="comment-11" rowspan="1">If joystick moved down ("6" key pressed)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64144"></span>64144</td>
+<td class="instruction">CALL Z,<a href="64201.html">64201</a></td>
+<td class="comment-11" rowspan="1">...store a DOWN input from control device</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64147"></span>64147</td>
+<td class="instruction">BIT 3,A</td>
+<td class="comment-11" rowspan="1">If joystick moved up ("7" key pressed)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64149"></span>64149</td>
+<td class="instruction">CALL Z,<a href="64198.html">64198</a></td>
+<td class="comment-11" rowspan="1">...store an UP input from control device</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64152"></span>64152</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">If fire button pressed ("0" key pressed)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64154"></span>64154</td>
+<td class="instruction">CALL Z,<a href="64204.html">64204</a></td>
+<td class="comment-11" rowspan="1">...store a FIRE input from control device</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64157"></span>64157</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Return stored joystick movement in A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64158"></span>64158</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="64091.html">64091</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#64122">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="64159.html">64159</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

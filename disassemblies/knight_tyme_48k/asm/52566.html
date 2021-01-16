@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 52566</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52535.html">52535</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52566">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52596.html">52596</a></span></td>
+</tr>
+</table>
+<div class="description">52566: Room Drawing: Set "Apply Vertical Mirror" Mode off, "Apply Horizontal Mirror" Mode on and Draw a Graphic</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="28631.html">28631</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52566"></span>52566</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Load <a href="52635.html#52672">52672</a> with opcode for "NOP"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52567"></span>52567</td>
+<td class="instruction">LD (52672),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52570"></span>52570</td>
+<td class="instruction">LD H,A</td>
+<td class="comment-11" rowspan="1">Load <a href="52635.html#52672">52673</a> and <a href="52635.html#52672">52674</a> with opcode for "NOP"</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52571"></span>52571</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52572"></span>52572</td>
+<td class="instruction">LD (52673),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52575"></span>52575</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1">Reset Apply Vertical Mirror Flag and set Apply Horizontal Mirror Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52577"></span>52577</td>
+<td class="instruction">LD (23450),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52580"></span>52580</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-11" rowspan="1">Set Pixel Row Counter to 7...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52582"></span>52582</td>
+<td class="instruction">LD (23449),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52585"></span>52585</td>
+<td class="instruction">LD A,(23493)</td>
+<td class="comment-11" rowspan="1">Load C with x-coordinate of left edge of current graphic to draw...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52588"></span>52588</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52589"></span>52589</td>
+<td class="instruction">LD A,(23496)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate + 1 for current graphic...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52592"></span>52592</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52593"></span>52593</td>
+<td class="instruction">JP <a href="52596.html#52622">52622</a></td>
+<td class="comment-11" rowspan="1">Jump to <a href="52596.html#52622">52622</a> (set coordinates, draw the graphic then return)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52535.html">52535</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52566">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52596.html">52596</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

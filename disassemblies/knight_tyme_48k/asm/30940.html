@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 30940</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="30916.html">30916</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30940">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30968.html">30968</a></span></td>
+</tr>
+</table>
+<div class="description">30940: Process Command to Launch Tyme Machine</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="30940"></span>30940</td>
+<td class="instruction">LD A,(23700)</td>
+<td class="comment-11" rowspan="1">If USS Pisces' current location is Gangrole (20)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30943"></span>30943</td>
+<td class="instruction">CP 20</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30945"></span>30945</td>
+<td class="instruction">JP Z,30954</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="30940.html#30954">30954</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30948"></span>30948</td>
+<td class="instruction">LD HL,47460</td>
+<td class="comment-11" rowspan="1">Point HL at "YOU AND THE TYME MACHINE CRASHED TO THE SURFACE OF..." text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30951"></span>30951</td>
+<td class="instruction">JP <a href="55685.html">55685</a></td>
+<td class="comment-11" rowspan="1">Jump to "Game over" window routine and return to Control Selection Menu</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="30954"></span>30954</td>
+<td class="instruction">LD A,(23403)</td>
+<td class="comment-11" rowspan="1">If Tyme Machine Charged Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30957"></span>30957</td>
+<td class="instruction">AND 2</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30959"></span>30959</td>
+<td class="instruction">JP NZ,<a href="31468.html">31468</a></td>
+<td class="comment-11" rowspan="1">...then show "WELL DONE MAGIC KNIGHT" screen, jumping to Game Over on key-press</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30962"></span>30962</td>
+<td class="instruction">LD HL,47406</td>
+<td class="comment-11" rowspan="1">Point HL at "AS YOU FELL TOWARDS GANGROLE THE TYME MACHINE OVERLOADED..." text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30965"></span>30965</td>
+<td class="instruction">JP <a href="55685.html">55685</a></td>
+<td class="comment-11" rowspan="1">Jump to "Game over" window routine and return to Control Selection Menu</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="30916.html">30916</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30940">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30968.html">30968</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

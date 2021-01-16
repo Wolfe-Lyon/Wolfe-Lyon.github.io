@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 45625</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45617.html">45617</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45625">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45631.html">45631</a></span></td>
+</tr>
+</table>
+<div class="description">45625: Set a Window's Height to A</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="46106.html">46106</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">A window height</td>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">Location of a window's top y-coordinate data</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45625"></span>45625</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load window height into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45626"></span>45626</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">Load window's top y-coordinate into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45627"></span>45627</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">Add C to give bottom y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45628"></span>45628</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance DE to window's bottom y-coordinate data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45629"></span>45629</td>
+<td class="instruction">LD (DE),A</td>
+<td class="comment-11" rowspan="1">...and update with new height value in A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45630"></span>45630</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45617.html">45617</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45625">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45631.html">45631</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

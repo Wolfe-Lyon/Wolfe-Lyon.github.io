@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 32982</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32903.html">32903</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32982">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33036.html">33036</a></span></td>
+</tr>
+</table>
+<div class="description">32982: Cast Fumaticus Protectium if Possible, else Display Failure Message</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="32655.html">32655</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32982"></span>32982</td>
+<td class="instruction">LD A,(23468)</td>
+<td class="comment-11" rowspan="1">If "Fumaticus Protectium cast" flag is set then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32985"></span>32985</td>
+<td class="instruction">BIT 1,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32987"></span>32987</td>
+<td class="instruction">JP NZ,<a href="34682.html">34682</a></td>
+<td class="comment-11" rowspan="1">Jump to <a href="34682.html">34682</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32990"></span>32990</td>
+<td class="instruction">LD A,(23404)</td>
+<td class="comment-11" rowspan="1">Load current time left (hours) into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32993"></span>32993</td>
+<td class="instruction">CP 48</td>
+<td class="comment-11" rowspan="1">Compare to 48</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32995"></span>32995</td>
+<td class="instruction">JP Z,<a href="34634.html">34634</a></td>
+<td class="comment-11" rowspan="1">If time left is 48 hours, then display "THAT SPELL CANNOT YET BE CAST..." window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32998"></span>32998</td>
+<td class="instruction">LD A,46</td>
+<td class="comment-11" rowspan="1">Load A with index of object 46 (Power-Pong Plant)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33000"></span>33000</td>
+<td class="instruction">CALL <a href="34256.html">34256</a></td>
+<td class="comment-11" rowspan="1">Check whether Magic Knight is holding the Power-Pong Plant...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33003"></span>33003</td>
+<td class="instruction">JP NZ,<a href="34634.html">34634</a></td>
+<td class="comment-11" rowspan="1">...and if not, then display "THAT SPELL CANNOT YET BE CAST..." window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33006"></span>33006</td>
+<td class="instruction">LD A,19</td>
+<td class="comment-11" rowspan="1">Load A with index of object 19 (Red Herring)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33008"></span>33008</td>
+<td class="instruction">CALL <a href="34256.html">34256</a></td>
+<td class="comment-11" rowspan="1">Check whether Magic Knight is holding the Red Herring...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33011"></span>33011</td>
+<td class="instruction">JP NZ,<a href="34634.html">34634</a></td>
+<td class="comment-11" rowspan="1">...and if not, then display "THAT SPELL CANNOT YET BE CAST..." window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33014"></span>33014</td>
+<td class="instruction">CALL <a href="33278.html">33278</a></td>
+<td class="comment-11" rowspan="1">Flash border and screen (cast spell effect)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33017"></span>33017</td>
+<td class="instruction">LD A,(23468)</td>
+<td class="comment-11" rowspan="1">Set "Fumaticus Protectium has been cast" flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33020"></span>33020</td>
+<td class="instruction">SET 1,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33022"></span>33022</td>
+<td class="instruction">LD (23468),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33025"></span>33025</td>
+<td class="instruction">LD A,(23378)</td>
+<td class="comment-11" rowspan="1">Set bit 3 of score progress flags...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33028"></span>33028</td>
+<td class="instruction">OR 8</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33030"></span>33030</td>
+<td class="instruction">LD (23378),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33033"></span>33033</td>
+<td class="instruction">JP <a href="34688.html">34688</a></td>
+<td class="comment-11" rowspan="1">Display Fumaticus Protectium successful window</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32903.html">32903</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32982">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33036.html">33036</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

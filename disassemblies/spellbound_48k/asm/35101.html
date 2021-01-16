@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 35101</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34914.html">34914</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35101">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35141.html">35141</a></span></td>
+</tr>
+</table>
+<div class="description">35101: Display Cyan "Game Over" Window and Return to Pre-Game Menu</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="27176.html">27176</a>, <a href="27865.html">27865</a>, <a href="29800.html">29800</a>, <a href="29880.html">29880</a>, <a href="29915.html">29915</a>, <a href="30602.html">30602</a>, <a href="32390.html">32390</a>, <a href="32876.html">32876</a>, <a href="33180.html">33180</a>, <a href="33269.html">33269</a>, <a href="35993.html">35993</a>, <a href="55461.html">55461</a> and <a href="55478.html">55478</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Points to location of a string (e.g. "YOU DIED OF EXHAUSTION...")</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35101"></span>35101</td>
+<td class="instruction">RES 0,(IY+65)</td>
+<td class="comment-11" rowspan="1">Reset "Update Game Time and Locate Arrow Glow" flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35105"></span>35105</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Set height of window to accommodate text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35106"></span>35106</td>
+<td class="instruction">LD (42141),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35109"></span>35109</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance to first character of message...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35110"></span>35110</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">...and store for later use</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35111"></span>35111</td>
+<td class="instruction">LD A,33</td>
+<td class="comment-11" rowspan="1">Draw window 33 ("Game Over" window with modified height, as above)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35113"></span>35113</td>
+<td class="instruction">CALL <a href="36987.html">36987</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35116"></span>35116</td>
+<td class="instruction">LD HL,43247</td>
+<td class="comment-11" rowspan="1">Point to string for percentage completion</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35119"></span>35119</td>
+<td class="instruction">LD DE,43259</td>
+<td class="comment-11" rowspan="1">Point to string for time left</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35122"></span>35122</td>
+<td class="instruction">CALL <a href="34268.html">34268</a></td>
+<td class="comment-11" rowspan="1">Insert current time and score into "TIME LEFT" and "PERCENTAGE COMPLETION" texts</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35125"></span>35125</td>
+<td class="instruction">LD HL,43224</td>
+<td class="comment-11" rowspan="1">Point HL at "GAME OVER / TOTAL COMPLETION XX% / TIME LEFT XX HOURS" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35128"></span>35128</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...and print it to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35131"></span>35131</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (pointer to first character of message pointed to on entry to routine)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35132"></span>35132</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...and print it to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35135"></span>35135</td>
+<td class="instruction">CALL <a href="38749.html">38749</a></td>
+<td class="comment-11" rowspan="1">Display "PRESS SPACE OR FIRE TO CONTINUE" window and wait for space / fire</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35138"></span>35138</td>
+<td class="instruction">JP <a href="26673.html">26673</a></td>
+<td class="comment-11" rowspan="1">Jump back to pre-game menu (select input device, view instructions, play game, etc.)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34914.html">34914</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35101">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35141.html">35141</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

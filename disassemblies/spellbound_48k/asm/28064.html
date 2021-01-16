@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 28064</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="27865.html">27865</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28064">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28092.html">28092</a></span></td>
+</tr>
+</table>
+<div class="description">28064: Set Brickwork Direction Mode to Vertical and Reset Pointers to Beginning of Display</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28064"></span>28064</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to current position in current room data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28065"></span>28065</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Set brickwork direction flag to 1 (vertical mode for walls)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28067"></span>28067</td>
+<td class="instruction">LD (23476),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28070"></span>28070</td>
+<td class="instruction">LD HL,16384</td>
+<td class="comment-11" rowspan="1">Point HL to start of Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28073"></span>28073</td>
+<td class="instruction">LD (36488),HL</td>
+<td class="comment-11" rowspan="1">Load HL into "memory location to start printing character" in character printing routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28076"></span>28076</td>
+<td class="instruction">LD HL,22528</td>
+<td class="comment-11" rowspan="1">Point HL to start of Attribute File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28079"></span>28079</td>
+<td class="instruction">LD (23487),HL</td>
+<td class="comment-11" rowspan="1">Update virtual text cursor (attribute) position to 0, 0</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28082"></span>28082</td>
+<td class="instruction">LD HL,24539</td>
+<td class="comment-11" rowspan="1">Set Terrain Interaction Table Cursor to point to start of Terrain Interaction Data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28085"></span>28085</td>
+<td class="instruction">LD (23481),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28088"></span>28088</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (pointer to current position in current room data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28089"></span>28089</td>
+<td class="instruction">JP <a href="27865.html#28056">28056</a></td>
+<td class="comment-11" rowspan="1">Return to room drawing routine, setting brickwork drawing mode to two rows (so walls don't have holes in them!)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="27865.html">27865</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28064">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28092.html">28092</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

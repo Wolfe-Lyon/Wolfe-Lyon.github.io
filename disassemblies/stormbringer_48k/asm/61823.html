@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 61823</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="61816.html">61816</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#61823">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="61860.html">61860</a></span></td>
+</tr>
+</table>
+<div class="description">61823: Erase Magic Knight from Display, Advance his Current Position then Redraw</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="62178.html">62178</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61823"></span>61823</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61825"></span>61825</td>
+<td class="instruction">CALL <a href="46784.html">46784</a></td>
+<td class="comment-11" rowspan="1">Draw axe(s) to screen if Magic Knight is in an axe room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61828"></span>61828</td>
+<td class="instruction">LD DE,24672</td>
+<td class="comment-11" rowspan="1">Point DE at Table of Background Bitmap Data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61831"></span>61831</td>
+<td class="instruction">CALL <a href="61774.html#61777">61777</a></td>
+<td class="comment-11" rowspan="1">Restore background bitmap data (i.e. remove Magic Knight bitmap data from display)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61834"></span>61834</td>
+<td class="instruction">LD A,(23706)</td>
+<td class="comment-11" rowspan="1">If Player Attribute Update Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61837"></span>61837</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61838"></span>61838</td>
+<td class="instruction">CALL NZ,<a href="62003.html">62003</a></td>
+<td class="comment-11" rowspan="1">...then restore background attribute data at Magic Knight's current location</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61841"></span>61841</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61843"></span>61843</td>
+<td class="instruction">LD HL,24840</td>
+<td class="comment-11" rowspan="1">Point HL at Magic Knight's current x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61846"></span>61846</td>
+<td class="instruction">LD A,(24844)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current x-velocity...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61849"></span>61849</td>
+<td class="instruction">ADD A,(HL)</td>
+<td class="comment-11" rowspan="1">...and add to this Magic Knight's current x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61850"></span>61850</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">Set this as Magic Knight's new x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61851"></span>61851</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to Magic Knight's y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61852"></span>61852</td>
+<td class="instruction">LD A,(24845)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current y-velocity...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61855"></span>61855</td>
+<td class="instruction">ADD A,(HL)</td>
+<td class="comment-11" rowspan="1">...and add to this Magic Knight's current y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61856"></span>61856</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">Set this as Magic Knight's new y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61857"></span>61857</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Load A with 0 (prepare to reset Do Not Draw Axes Flag)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61858"></span>61858</td>
+<td class="instruction">JR <a href="61860.html#61866">61866</a></td>
+<td class="comment-11" rowspan="1">Store background attributes if appropriate, then draw Magic Knight (and axes if appropriate) to display, then return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="61816.html">61816</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#61823">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="61860.html">61860</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 52315</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52309.html">52309</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52315">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52371.html">52371</a></span></td>
+</tr>
+</table>
+<div class="description">52315: Swap Drutt's Current Depth Level if Possible</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="52309.html">52309</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data (current level) for Drutt</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52315"></span>52315</td>
+<td class="instruction">LD A,(IX+1)</td>
+<td class="comment-11" rowspan="1">If Drutt's depth is not 1...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52318"></span>52318</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52320"></span>52320</td>
+<td class="instruction">JR NZ,52351</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="52315.html#52351">52351</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52322"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt's depth is 1
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52322"></span>52322</td>
+<td class="instruction">LD A,(34230)</td>
+<td class="comment-11" rowspan="1">If Drutt's current depth is the same as number of available depth levels in current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52325"></span>52325</td>
+<td class="instruction">CP (IX+1)</td>
+<td class="comment-11" rowspan="1">...i.e. room has depth of 1...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52328"></span>52328</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return (as there is no other depth level for Drutt to move to)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52329"></span>
+<div class="comments">
+<div class="paragraph">
+The following collision check is usually only satisfied by Berk. This prevents Drutt from jumping back a depth level while in front of (at same depth level as) Berk.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52329"></span>52329</td>
+<td class="instruction">CALL <a href="54878.html">54878</a></td>
+<td class="comment-11" rowspan="1">Check Drutt for collision with another entity (only those defined before, and in reverse order) at same depth level whose Interaction (11,7) Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52332"></span>52332</td>
+<td class="instruction">RET NC</td>
+<td class="comment-11" rowspan="1">...and if a collision occurred, then return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52333"></span>
+<div class="comments">
+<div class="paragraph">
+The following collision check prevents Drutt from jumping back when there is an obstruction (e.g. the brick columns in the pit room, level 1) behind him.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52333"></span>52333</td>
+<td class="instruction">CALL <a href="54890.html">54890</a></td>
+<td class="comment-11" rowspan="1">Check Drutt for collision with another entity (in reverse order) at next depth level into screen whose Interaction (11,7) Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52336"></span>52336</td>
+<td class="instruction">JR C,52341</td>
+<td class="comment-11" rowspan="1">...and if no collision occurred, then skip ahead to <a href="52315.html#52341">52341</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52338"></span>52338</td>
+<td class="instruction">CP 22</td>
+<td class="comment-11" rowspan="1">If collision was with an entity of class of 22 or greater (can't be picked up)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52340"></span>52340</td>
+<td class="instruction">RET NC</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52341"></span>52341</td>
+<td class="instruction">INC (IX+1)</td>
+<td class="comment-11" rowspan="1">Increase Drutt's depth (i.e. move backward away from screen)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52344"></span>52344</td>
+<td class="instruction">DEC (IX+4)</td>
+<td class="comment-11" rowspan="1">Decrease Drutt's top and bottom y-coordinates...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52347"></span>52347</td>
+<td class="instruction">DEC (IX+6)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52350"></span>52350</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52351"></span>
+<div class="comments">
+<div class="paragraph">
+Drutt's depth is not 1
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52351"></span>52351</td>
+<td class="instruction">LD A,(IX+1)</td>
+<td class="comment-11" rowspan="1">If Drutt's current depth is 1... (<a href="../reference/facts.html#redundantinstructionsviii">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52354"></span>52354</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52356"></span>52356</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52357"></span>
+<div class="comments">
+<div class="paragraph">
+The following collision check prevents Drutt from jumping forward a depth level while in behind an obstruction (e.g. Berk).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52357"></span>52357</td>
+<td class="instruction">CALL <a href="54764.html">54764</a></td>
+<td class="comment-11" rowspan="1">Check Drutt for collision with another entity at next depth level out of screen whose Interaction (11,6) Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52360"></span>52360</td>
+<td class="instruction">RET NC</td>
+<td class="comment-11" rowspan="1">...and if a collision occurred, then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52361"></span>52361</td>
+<td class="instruction">DEC (IX+1)</td>
+<td class="comment-11" rowspan="1">Decrease Drutt's depth (i.e. move forward towards screen)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52364"></span>52364</td>
+<td class="instruction">INC (IX+4)</td>
+<td class="comment-11" rowspan="1">Increase Drutt's top and bottom y-coordinates...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52367"></span>52367</td>
+<td class="instruction">INC (IX+6)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52370"></span>52370</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52309.html">52309</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52315">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52371.html">52371</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

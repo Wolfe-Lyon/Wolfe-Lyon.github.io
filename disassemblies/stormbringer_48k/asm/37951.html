@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 37951</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37909.html">37909</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37951">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="38003.html">38003</a></span></td>
+</tr>
+</table>
+<div class="description">37951: Display Instructions Windows</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="37689.html">37689</a> and <a href="43494.html">43494</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37951"></span>37951</td>
+<td class="instruction">LD A,10</td>
+<td class="comment-11" rowspan="1">Set y-coordinate of top edge (characters) of Window 7 to 10...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37953"></span>37953</td>
+<td class="instruction">LD (49092),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37956"></span>37956</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-11" rowspan="1">Load A with 7 (index of window to draw)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37958"></span>37958</td>
+<td class="instruction">LD HL,50138</td>
+<td class="comment-11" rowspan="1">Point HL at Instructions Text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37961"></span>37961</td>
+<td class="instruction">CALL 37989</td>
+<td class="comment-11" rowspan="1">Print text at HL in Window 07</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37964"></span>37964</td>
+<td class="instruction">LD A,8</td>
+<td class="comment-11" rowspan="1">Draw Window 8...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37966"></span>37966</td>
+<td class="instruction">CALL <a href="47193.html">47193</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37969"></span>37969</td>
+<td class="instruction">LD HL,50296</td>
+<td class="comment-11" rowspan="1">Point HL at "THE KEYS ARE :-..." text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37972"></span>37972</td>
+<td class="instruction">CALL <a href="46902.html">46902</a></td>
+<td class="comment-11" rowspan="1">...and print to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37975"></span>37975</td>
+<td class="instruction">CALL <a href="63691.html">63691</a></td>
+<td class="comment-11" rowspan="1">Print current control keys to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37978"></span>37978</td>
+<td class="instruction">CALL <a href="47897.html">47897</a></td>
+<td class="comment-11" rowspan="1">Play upward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37981"></span>37981</td>
+<td class="instruction">CALL <a href="64230.html">64230</a></td>
+<td class="comment-11" rowspan="1">Wait for interrupt then display "PRESS FIRE TO CONTINUE" Window and wait for Fire to be pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37984"></span>37984</td>
+<td class="instruction">LD A,9</td>
+<td class="comment-11" rowspan="1">Prepare to draw Window 9</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37986"></span>37986</td>
+<td class="instruction">LD HL,50360</td>
+<td class="comment-11" rowspan="1">Point HL at Cast of Characters text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37989"></span>37989</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to text to print)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37990"></span>37990</td>
+<td class="instruction">CALL <a href="47193.html">47193</a></td>
+<td class="comment-11" rowspan="1">Draw current Instructions Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37993"></span>37993</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (pointer to text to print)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37994"></span>37994</td>
+<td class="instruction">CALL <a href="46902.html">46902</a></td>
+<td class="comment-11" rowspan="1">Print text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37997"></span>37997</td>
+<td class="instruction">CALL <a href="47897.html">47897</a></td>
+<td class="comment-11" rowspan="1">Play upward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38000"></span>38000</td>
+<td class="instruction">JP <a href="64230.html">64230</a></td>
+<td class="comment-11" rowspan="1">Wait for interrupt then display "PRESS FIRE TO CONTINUE" Window and wait for Fire to be pressed and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37909.html">37909</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37951">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="38003.html">38003</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

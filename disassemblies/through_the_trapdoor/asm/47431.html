@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 47431</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47363.html">47363</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47431">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47468.html">47468</a></span></td>
+</tr>
+</table>
+<div class="description">47431: Select a Remaining Timer Figure at Random and Update its Eyes to a Random (Open-Eyed) Frame</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="47363.html">47363</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47431"></span>47431</td>
+<td class="instruction">LD A,(34210)</td>
+<td class="comment-11" rowspan="1">Load remaining time / lives into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47434"></span>47434</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...and if none remain...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47435"></span>47435</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47436"></span>47436</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">Load remaining time / lives into E</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47437"></span>47437</td>
+<td class="instruction">LD A,18</td>
+<td class="comment-11" rowspan="1">Load A with 18 minus remaining time / lives (i.e. number in range 2 to 18)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47439"></span>47439</td>
+<td class="instruction">SUB E</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="47440"></span>
+<div class="comments">
+<div class="paragraph">
+As the value of x (Remaining Time / Lives) decreases, the probability that a randomly generated number between 0 and (18-x) is 2 or more increases. This probability is used to ensure that the rate at which each timer figure is updated remains roughly constant.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47440"></span>47440</td>
+<td class="instruction">CALL <a href="54222.html">54222</a></td>
+<td class="comment-11" rowspan="1">Load A with a random number, 0-(17 minus remaining time / lives)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47443"></span>47443</td>
+<td class="instruction">CP 2</td>
+<td class="comment-11" rowspan="1">If generated number is 2 or more...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47445"></span>47445</td>
+<td class="instruction">RET NC</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47446"></span>47446</td>
+<td class="instruction">LD IX,23232</td>
+<td class="comment-11" rowspan="1">Point IX to start of second-last row of Attribute File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47450"></span>47450</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">Load remaining time / lives into A</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="47451"></span>
+<div class="comments">
+<div class="paragraph">
+If remaining time / lives is one, then there is only one Timer Figure to update
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47451"></span>47451</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">If this is 1...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47453"></span>47453</td>
+<td class="instruction">JP Z,<a href="47315.html">47315</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="47315.html">47315</a> (If Show Score Flag reset then draw pair of Timer Figure eyes and return)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="47456"></span>
+<div class="comments">
+<div class="paragraph">
+Otherwise, randomly select one of the remaining Timer Figures to update
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47456"></span>47456</td>
+<td class="instruction">CALL <a href="54222.html">54222</a></td>
+<td class="comment-11" rowspan="1">Load A with random number between 0 and (x-1) where x is remaining time / lives</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47459"></span>47459</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Double A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47460"></span>47460</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...and load into BC...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47461"></span>47461</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47463"></span>47463</td>
+<td class="instruction">ADD IX,BC</td>
+<td class="comment-11" rowspan="1">Add BC as offset to IX (i.e. advance IX to point to left eye of randomly chosen Timer Figure)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47465"></span>47465</td>
+<td class="instruction">JP <a href="47315.html">47315</a></td>
+<td class="comment-11" rowspan="1">If Show Score Flag reset then draw pair of Timer Figure eyes (open, random frame) at Attribute File address IX, advance IX by two bytes then return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47363.html">47363</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47431">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47468.html">47468</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

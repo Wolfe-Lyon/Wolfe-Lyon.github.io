@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Data at 25020</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="25012.html">25012</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25020">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25124.html">25124</a></span></td>
+</tr>
+</table>
+<div class="description">25020: Characters' Current Stats</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Nine groups of eight bytes, one group per character (including Magic Knight). The values are capped at 100:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Offset</th>
+<th colspan="1" rowspan="1">Effect</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Strength (bits 0-6)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Happiness (bits 0-6)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Stamina (bits 0-6) / Characters Can't Move Flag (bit 7, Gordon Only, see routine at <a href="53731.html">53731</a> and <a href="../reference/facts.html#debugcode002">trivia</a>)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">Charisma (bits 0-6) / Can Help Flag (bit 7)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Magic Level / Attribute (bits 0-6) / Attribute FLASH Flag (bit 7) (<a href="../reference/facts.html#combinedmagicattribute">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">Character Graphic Index (if zero, then character is not drawn)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Flags</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Index of current status text (e.g. "GORDON IS AT THE HELM CONTROL") (bits 0-3 only)</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+Characters' flags (byte 6) are as follows:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Bit</th>
+<th colspan="1" rowspan="1">Effect</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Dislikes Starfleet Flag</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Is Artificial Flag (<a href="../reference/facts.html#isartificialflag">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Can't Move Flag (reset = character can move / set = character can't move)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Asleep Flag (reset = awake / set = asleep)</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+See also Characters' Initial Stats at <a href="37337.html">37337</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25020"></span>25020</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">Magic Knight</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25028"></span>25028</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">Gordon</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25036"></span>25036</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">Sarab</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25044"></span>25044</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">Klink</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25052"></span>25052</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">S3 E3</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25060"></span>25060</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">Hooper</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25068"></span>25068</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">Murphy</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25076"></span>25076</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">Sharon</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25084"></span>25084</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">Forbin</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25092"></span>25092</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">Derby IV</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25100"></span>25100</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">Swiftfoot</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25108"></span>25108</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">Julie 8</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="25116"></span>25116</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">Hectorr</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="25012.html">25012</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#25020">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="25124.html">25124</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

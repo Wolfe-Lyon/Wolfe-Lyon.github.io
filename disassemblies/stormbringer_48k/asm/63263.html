@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 63263</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="63247.html">63247</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63263">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63286.html">63286</a></span></td>
+</tr>
+</table>
+<div class="description">63263: Advance Bitmap Virtual Text Cursor to start of next character row</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="41271.html">41271</a>, <a href="48389.html">48389</a> and <a href="48518.html">48518</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63263"></span>63263</td>
+<td class="instruction">LD HL,(63018)</td>
+<td class="comment-11" rowspan="1">Load HL with address of Bitmap Virtual Text Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63266"></span>63266</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">Get LSB of video memory address in A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63267"></span>63267</td>
+<td class="instruction">ADD A,32</td>
+<td class="comment-11" rowspan="1">Add 32 (i.e. move down one character row)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63269"></span>63269</td>
+<td class="instruction">JP C,63277</td>
+<td class="comment-11" rowspan="1">If we have encountered the bottom of the current third of the display, then skip ahead to <a href="63263.html#63277">63277</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63272"></span>63272</td>
+<td class="instruction">AND 224</td>
+<td class="comment-11" rowspan="1">Decrease to nearest multiple of 32 (i.e. start of a character row)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63274"></span>63274</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">Place modified address back into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63275"></span>63275</td>
+<td class="instruction">JR <a href="63247.html#63259">63259</a></td>
+<td class="comment-11" rowspan="1">Store at 63018 and return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63277"></span>63277</td>
+<td class="instruction">AND 224</td>
+<td class="comment-11" rowspan="1">Decrease to nearest multiple of 32 (i.e. start of a character row)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63279"></span>63279</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">Place modified address back into L</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63280"></span>63280</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1">Load MSB of video memory address into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63281"></span>63281</td>
+<td class="instruction">ADD A,8</td>
+<td class="comment-11" rowspan="1">Increase by 8 (as we're moving one text row, or EIGHT pixel rows down)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63283"></span>63283</td>
+<td class="instruction">LD H,A</td>
+<td class="comment-11" rowspan="1">Place modified address back into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63284"></span>63284</td>
+<td class="instruction">JR <a href="63247.html#63259">63259</a></td>
+<td class="comment-11" rowspan="1">Store at 63018 and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="63247.html">63247</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63263">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63286.html">63286</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Data at 53159</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="53083.html">53083</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#53159">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="53171.html">53171</a></span></td>
+</tr>
+</table>
+<div class="description">53159: Pathfinding Data Table</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+When built, this table has a header and a main data block. The header is three bytes long and contains the values:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Offset</th>
+<th colspan="1" rowspan="1">Value</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">255</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">255</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Index of source room for search (e.g. Drutt's current room)</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+The body of the table is composed of two-byte entries which are made up of:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Offset</th>
+<th colspan="1" rowspan="1">Value</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">"Direction index" (1 or 2 indicating that room is to right or left, respectively, of source room)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Index of that room</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+The table is terminated with an end marker value of 255 after the final entry.
+</div>
+<div class="paragraph">
+Since each room can only exist once in the table and the widest horizontal run of rooms in the game is five (levels 1 and 2), then the table is necessarily limited to four entries (eight bytes). This will occur when the source room, e.g. Drutt's room, lies within this horizontal run of five rooms but the target's does not. Adding the header and End Marker results in a data block size of twelve bytes.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53159"></span>53159</td>
+<td class="instruction">DEFB 0,0,0</td>
+<td class="comment-10" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53162"></span>53162</td>
+<td class="instruction">DEFB 0,0</td>
+<td class="comment-10" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53164"></span>53164</td>
+<td class="instruction">DEFB 0,0</td>
+<td class="comment-10" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53166"></span>53166</td>
+<td class="instruction">DEFB 0,0</td>
+<td class="comment-10" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53168"></span>53168</td>
+<td class="instruction">DEFB 0,0</td>
+<td class="comment-10" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53170"></span>53170</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-10" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="53083.html">53083</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#53159">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="53171.html">53171</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 53073</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="53019.html">53019</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#53073">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="53115.html">53115</a></span></td>
+</tr>
+</table>
+<div class="description">53073: Draw Bitmap Data for Magic Knight Overlaid on Background to Display File</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="53150.html">53150</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">(Entry at <a href="53073.html#53076">53076</a> only) Address of Table of Background Bitmap Data (<a href="23909.html">23909</a>)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53073"></span>53073</td>
+<td class="instruction">LD DE,23813</td>
+<td class="comment-11" rowspan="1">Point DE at Table of Bitmap Data for Magic Knight at his Current Location</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="53076"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="53115.html">53115</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53076"></span>53076</td>
+<td class="instruction">LD IX,(23420)</td>
+<td class="comment-11" rowspan="1">Load IX with pointer to entry in Table of Display File Addresses for pixel row at Magic Knight's current y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53080"></span>53080</td>
+<td class="instruction">LD A,(23422)</td>
+<td class="comment-11" rowspan="1">Load C with Magic Knight's current x-coordinate (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53083"></span>53083</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53084"></span>53084</td>
+<td class="instruction">LD B,32</td>
+<td class="comment-11" rowspan="1">Load B with 32 (as Magic Knight is 32 pixels tall)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53086"></span>53086</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = remaining number of pixel rows to draw, C = MK's x-coordinate in characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53087"></span>53087</td>
+<td class="instruction">LD L,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load Display File address of pixel row at IX into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53090"></span>53090</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">...and advance IX to entry for next pixel row down...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53092"></span>53092</td>
+<td class="instruction">LD H,(IX+0)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53095"></span>53095</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53097"></span>53097</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">Set B to zero (BC = Magic Knight's current x-coordinate in characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53099"></span>53099</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Add BC to HL as offset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53100"></span>53100</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">Copy three bytes of graphic data from Table of Bitmap Data for Magic Knight at his Current Location...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53101"></span>53101</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...into Display File...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53102"></span>53102</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...as Magic Knight can only occupy three consecutive character blocks horizontally...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53103"></span>53103</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53104"></span>53104</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53105"></span>53105</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53106"></span>53106</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53107"></span>53107</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53108"></span>53108</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53109"></span>53109</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53110"></span>53110</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53111"></span>53111</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = remaining number of pixel rows to store, C = MK's x-coordinate in characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53112"></span>53112</td>
+<td class="instruction">DJNZ 53086</td>
+<td class="comment-11" rowspan="1">Decrease B (remaining number of pixel rows to draw) and loop back to <a href="53073.html#53086">53086</a> if non-zero for next pixel row</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53114"></span>53114</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="53019.html">53019</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#53073">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="53115.html">53115</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

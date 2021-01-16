@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 46363</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46347.html">46347</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46363">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46385.html">46385</a></span></td>
+</tr>
+</table>
+<div class="description">46363: Graphic Layout Routine (246): Decrease Timer Value, and if Zero, Reset and Write Random Attribute from List into Next Instruction</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Decrease timer value (1st parameter). If now zero, then reset timer to value in 2nd parameter, then load one of the n (3rd parameter) following values chosen at random into the Attribute field of the next instruction.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of first parameter in current graphic layout data instruction</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">Do Not Recalculate Display Buffer Address Flag (0)</td>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of next graphic layout data instruction to process</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46363"></span>46363</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">Prepare to recalculate Display Buffer address</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46365"></span>46365</td>
+<td class="instruction">DEC (IX+0)</td>
+<td class="comment-11" rowspan="1">Decrease timer value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46368"></span>46368</td>
+<td class="instruction">JR Z,46376</td>
+<td class="comment-11" rowspan="1">If timer is zero, then reset timer, advance to next instruction and set that instruction's attribute to random value from sequence</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46370"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="46347.html">46347</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46370"></span>46370</td>
+<td class="instruction">CALL <a href="46385.html#46409">46409</a></td>
+<td class="comment-11" rowspan="1">Advance to next instruction and process...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46373"></span>46373</td>
+<td class="instruction">JP <a href="45965.html#46003">46003</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46376"></span>46376</td>
+<td class="instruction">CALL <a href="46385.html">46385</a></td>
+<td class="comment-11" rowspan="1">Reset timer to maximum, advance IX to start of next instruction and set second value here (attribute) to random value from sequence of data following previous instruction...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46379"></span>46379</td>
+<td class="instruction">LD (IX+1),E</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46382"></span>46382</td>
+<td class="instruction">JP <a href="45965.html#46003">46003</a></td>
+<td class="comment-11" rowspan="1">Read / process data at address in IX</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46347.html">46347</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46363">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46385.html">46385</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

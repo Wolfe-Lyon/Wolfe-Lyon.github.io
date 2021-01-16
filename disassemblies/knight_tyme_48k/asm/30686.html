@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 30686</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="30643.html">30643</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30686">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30804.html">30804</a></span></td>
+</tr>
+</table>
+<div class="description">30686: Process Command to Command a Character</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="30686"></span>30686</td>
+<td class="instruction">LD HL,38669</td>
+<td class="comment-11" rowspan="1">Point HL at "COMMAND ?" text (end of sub-menu title, after "WHO DO YOU WANT TO ")</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30689"></span>30689</td>
+<td class="instruction">LD DE,39574</td>
+<td class="comment-11" rowspan="1">Point DE (Command Summary Text Pointer) at "COMMAND " text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30692"></span>30692</td>
+<td class="instruction">CALL <a href="34122.html">34122</a></td>
+<td class="comment-11" rowspan="1">Display and process input for Character Selection Menu (current room's characters only), setting Current Character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30695"></span>30695</td>
+<td class="instruction">JP Z,<a href="29330.html#29482">29482</a></td>
+<td class="comment-11" rowspan="1">If there are no characters in the room then set MK's available action flags, validate I.D. Card if appropriate and jump to start of Main Game Loop (<a href="29330.html#29482">29482</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30698"></span>30698</td>
+<td class="instruction">LD DE,39082</td>
+<td class="comment-11" rowspan="1">Point DE at "TO"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30701"></span>30701</td>
+<td class="instruction">CALL <a href="54283.html">54283</a></td>
+<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30704"></span>30704</td>
+<td class="instruction">LD A,23</td>
+<td class="comment-11" rowspan="1">Draw  "WHICH COMMAND DO YOU WANT TO USE?" Menu Window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30706"></span>30706</td>
+<td class="instruction">CALL <a href="34982.html">34982</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30709"></span>30709</td>
+<td class="instruction">LD HL,39577</td>
+<td class="comment-11" rowspan="1">Print "WHICH COMMAND DO YOU WANT TO USE" Menu text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30712"></span>30712</td>
+<td class="instruction">CALL <a href="34762.html">34762</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30715"></span>30715</td>
+<td class="instruction">CALL <a href="35296.html">35296</a></td>
+<td class="comment-11" rowspan="1">Process keyboard / joystick input on a menu and load A with selected item index</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30718"></span>30718</td>
+<td class="instruction">LD (30797),A</td>
+<td class="comment-11" rowspan="1">Load index of selected command into operand of instruction at <a href="30686.html#30796">30796</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30721"></span>30721</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...and into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30722"></span>30722</td>
+<td class="instruction">CALL <a href="54256.html">54256</a></td>
+<td class="comment-11" rowspan="1">Point HL at start of B-th entry in list of "COMMAND A CHARACTER" commands at <a href="39574.html#39626">39626</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30725"></span>30725</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Swap HL and DE (Command Summary Text Pointer, now at selected command string)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30726"></span>30726</td>
+<td class="instruction">CALL <a href="54283.html">54283</a></td>
+<td class="comment-11" rowspan="1">Print text at DE in Command Summary Window at top of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30729"></span>30729</td>
+<td class="instruction">CALL <a href="55115.html">55115</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30732"></span>30732</td>
+<td class="instruction">LD A,250</td>
+<td class="comment-11" rowspan="1">Decrease Current Character's happiness by 6...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30734"></span>30734</td>
+<td class="instruction">CALL <a href="33569.html">33569</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30737"></span>30737</td>
+<td class="instruction">LD A,27</td>
+<td class="comment-11" rowspan="1">If Magic Knight is wearing the Gas Mask (27)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30739"></span>30739</td>
+<td class="instruction">CALL <a href="33640.html">33640</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30742"></span>30742</td>
+<td class="instruction">JP Z,<a href="55322.html">55322</a></td>
+<td class="comment-11" rowspan="1">...then display "[Character] HEARS A MUFFLED VOICE..." Window (12), wait for fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30745"></span>30745</td>
+<td class="instruction">LD A,(29632)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30748"></span>30748</td>
+<td class="instruction">LD E,6</td>
+<td class="comment-11" rowspan="1">Point HL at Current Character's Flags...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30750"></span>30750</td>
+<td class="instruction">CALL <a href="33541.html">33541</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30753"></span>30753</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load Flags into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30754"></span>30754</td>
+<td class="instruction">AND 3</td>
+<td class="comment-11" rowspan="1">If Is Artificial Flag is set and Dislikes Starfleet Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30756"></span>30756</td>
+<td class="instruction">CP 2</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30758"></span>30758</td>
+<td class="instruction">JR Z,30791</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="30686.html#30791">30791</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30760"></span>30760</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Switch AF and AF' (character's "Is Artificial" and "Dislikes Starfleet" flags now in A')</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30761"></span>30761</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">If Magic Knight is wearing the Cloak of Invisibility (01)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30763"></span>30763</td>
+<td class="instruction">CALL <a href="33640.html">33640</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30766"></span>30766</td>
+<td class="instruction">JP Z,<a href="55303.html">55303</a></td>
+<td class="comment-11" rowspan="1">...then display "[Character] HEARS A VOICE AND IGNORES IT" Window, and Jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30769"></span>30769</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Switch AF and AF' (character's "Is Artificial" and "Dislikes Starfleet" flags now in A)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30770"></span>30770</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If character is not artificial, and likes Starfleet...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30771"></span>30771</td>
+<td class="instruction">JR Z,30783</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="30686.html#30783">30783</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30773"></span>30773</td>
+<td class="instruction">LD A,3</td>
+<td class="comment-11" rowspan="1">If Magic Knight is wearing the Valid I.D. Card (03)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30775"></span>30775</td>
+<td class="instruction">CALL <a href="33640.html">33640</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30778"></span>30778</td>
+<td class="instruction">JP Z,<a href="55317.html">55317</a></td>
+<td class="comment-11" rowspan="1">...then display "[Character] DOES NOT LIKE STARFLEET SO HE IGNORES YOU" Window (12), wait for fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30781"></span>30781</td>
+<td class="instruction">JR 30791</td>
+<td class="comment-11" rowspan="1">Skip ahead to <a href="30686.html#30791">30791</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="30783"></span>30783</td>
+<td class="instruction">LD A,3</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not wearing the Valid I.D. Card (03)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30785"></span>30785</td>
+<td class="instruction">CALL <a href="33640.html">33640</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30788"></span>30788</td>
+<td class="instruction">JP NZ,<a href="55312.html">55312</a></td>
+<td class="comment-11" rowspan="1">...then display "[Character] DOES NOT RECOGNISE YOUR AUTHORITY" Window (12), wait for fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="30791"></span>30791</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-11" rowspan="1">Increase Current Character's happiness by 7...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30793"></span>30793</td>
+<td class="instruction">CALL <a href="33569.html">33569</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="30796"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="30686.html#30796">30796</a> is the index of the currently selected command from the "COMMAND A CHARACTER TO" menu. This is modified by the instruction at <a href="30686.html#30718">30718</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30796"></span>30796</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Load A with index of selected "COMMAND A CHARACTER TO" command</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30798"></span>30798</td>
+<td class="instruction">LD HL,30804</td>
+<td class="comment-11" rowspan="1">Point HL at start of Table of "Command a Character" Routine Addresses</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30801"></span>30801</td>
+<td class="instruction">JP <a href="55726.html">55726</a></td>
+<td class="comment-11" rowspan="1">Advance HL by A words, load HL with word at location HL as address and jump to it</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="30643.html">30643</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30686">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30804.html">30804</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

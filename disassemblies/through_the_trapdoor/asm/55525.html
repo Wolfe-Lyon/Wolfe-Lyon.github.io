@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 55525</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="55516.html">55516</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#55525">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="55616.html">55616</a></span></td>
+</tr>
+</table>
+<div class="description">55525: Move All Falling Entities Down by Distances Appropriate to their Current Velocity Factors</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+If an entity's "velocity factor" is equal to its height in characters plus 3 (a proxy for its mass), then it has reached its terminal velocity.
+</div>
+<div class="paragraph">
+Used by the routine at <a href="34438.html">34438</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="55525"></span>55525</td>
+<td class="instruction">LD IX,(34238)</td>
+<td class="comment-11" rowspan="1">Load IX with start address of current level's complex state data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55529"></span>55529</td>
+<td class="instruction">LD DE,13</td>
+<td class="comment-11" rowspan="1">Load DE with 13 (as entries in complex state data are 13 bytes wide)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="55532"></span>55532</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">If first byte of entry is 255 (i.e. End Marker)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55535"></span>55535</td>
+<td class="instruction">CP 255</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55537"></span>55537</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55538"></span>55538</td>
+<td class="instruction">BIT 6,(IX+10)</td>
+<td class="comment-11" rowspan="1">If current entity's "Can Fall" flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55542"></span>55542</td>
+<td class="instruction">JR Z,55592</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="55525.html#55592">55592</a> (advance to next entity)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="55544"></span>
+<div class="comments">
+<div class="paragraph">
+Current entity's "Can Fall" Flag is set
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55544"></span>55544</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Store DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55545"></span>55545</td>
+<td class="instruction">CALL <a href="53825.html#53848">53848</a></td>
+<td class="comment-11" rowspan="1">Store room size data for current entity's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55548"></span>55548</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Restore DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55549"></span>55549</td>
+<td class="instruction">LD A,(IX+6)</td>
+<td class="comment-11" rowspan="1">Load C with height (of entity defined by entry) + 3...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55552"></span>55552</td>
+<td class="instruction">SUB (IX+4)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55555"></span>55555</td>
+<td class="instruction">ADD A,4</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55557"></span>55557</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55558"></span>55558</td>
+<td class="instruction">LD A,(IX+12)</td>
+<td class="comment-11" rowspan="1">Load B with velocity factor...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55561"></span>55561</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55562"></span>55562</td>
+<td class="instruction">CP C</td>
+<td class="comment-11" rowspan="1">If C is less than or equal to this (i.e. "terminal velocity" reached)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55563"></span>55563</td>
+<td class="instruction">JR NC,55569</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="55525.html#55569">55569</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55565"></span>55565</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase velocity factor by one and store for next pass (i.e. acceleration)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55566"></span>55566</td>
+<td class="instruction">LD (IX+12),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="55569"></span>55569</td>
+<td class="instruction">SRL B</td>
+<td class="comment-11" rowspan="1">Divide current (i.e. not increased) velocity factor by 2</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="55571"></span>55571</td>
+<td class="instruction">LD A,(IX+6)</td>
+<td class="comment-11" rowspan="1">If sum of y-coordinate of entity's bottom and entity's depth is 122...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55574"></span>55574</td>
+<td class="instruction">ADD A,(IX+1)</td>
+<td class="comment-11" rowspan="1">...(i.e. entity is at ground-level)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55577"></span>55577</td>
+<td class="instruction">CP 122</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55579"></span>55579</td>
+<td class="instruction">JR Z,55596</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="55525.html#55596">55596</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="55581"></span>55581</td>
+<td class="instruction">INC (IX+4)</td>
+<td class="comment-11" rowspan="1">Move entity down by one character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55584"></span>55584</td>
+<td class="instruction">INC (IX+6)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55587"></span>55587</td>
+<td class="instruction">CALL <a href="55616.html">55616</a></td>
+<td class="comment-11" rowspan="1">Change entity's room down one if appropriate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55590"></span>55590</td>
+<td class="instruction">DJNZ 55571</td>
+<td class="comment-11" rowspan="1">Decrease B (current velocity factor, i.e. remaining number of characters to drop entity) and if non-zero, loop back to <a href="55525.html#55571">55571</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="55592"></span>55592</td>
+<td class="instruction">ADD IX,DE</td>
+<td class="comment-11" rowspan="1">Advance IX by 13 bytes to next entry</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55594"></span>55594</td>
+<td class="instruction">JR 55532</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="55525.html#55532">55532</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="55596"></span>
+<div class="comments">
+<div class="paragraph">
+Entity's position is such that sum of y-coordinate of bottom + depth = 122 (i.e. at ground-level)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="55596"></span>55596</td>
+<td class="instruction">CALL <a href="54768.html">54768</a></td>
+<td class="comment-11" rowspan="1">Check entity at IX for collision with another entity at same depth whose Interaction (11,6) Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="55599"></span>55599</td>
+<td class="instruction">JR C,55610</td>
+<td class="comment-11" rowspan="1">...and if no collision occurred, then skip ahead to <a href="55525.html#55610">55610</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55601"></span>55601</td>
+<td class="instruction">CP 129</td>
+<td class="comment-11" rowspan="1">If collision was with entity of class 129 (causes other entities to start falling)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55603"></span>55603</td>
+<td class="instruction">JR Z,55581</td>
+<td class="comment-11" rowspan="1">...then jump to <a href="55525.html#55581">55581</a> (entity may fall down into next room)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="55605"></span>
+<div class="comments">
+<div class="paragraph">
+Collision was not with entity of class 129, so need to resume collision check from current position in entities list, i.e. entity that character did collide with
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55605"></span>55605</td>
+<td class="instruction">CALL <a href="54768.html#54871">54871</a></td>
+<td class="comment-11" rowspan="1">Resume checking entity for collision with another entity at same depth whose Interaction (11,6) Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55608"></span>55608</td>
+<td class="instruction">JR 55599</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="55610"></span>
+<div class="comments">
+<div class="paragraph">
+Entity has landed (i.e. is at ground-level and has not collided with a marker of class 129)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="55610"></span>55610</td>
+<td class="instruction">RES 6,(IX+10)</td>
+<td class="comment-11" rowspan="1">Reset entity's "Can Fall" flag as entity has landed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="55614"></span>55614</td>
+<td class="instruction">JR 55592</td>
+<td class="comment-11" rowspan="1">Loop back for next entity</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="55516.html">55516</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#55525">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="55616.html">55616</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

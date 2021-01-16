@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 28561</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28510.html">28510</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28561">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28647.html">28647</a></span></td>
+</tr>
+</table>
+<div class="description">28561: Move Location to Print and Terrain Interaction Cursor Down Two Character Rows with y-Wrap</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Instructions from 28609 onwards can only be executed if, after moving down two character blocks, the next location to draw to is beneath the (two-character deep) floor, on the same character row as the "SPELLBOUND" text in the bottom window which shows either the copyright message if Magic Knight doesn't hold the mirror, or Magic Knight's strength and inventory if he does.
+</div>
+<div class="paragraph">
+Used by the routine at <a href="28344.html">28344</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Points to Terrain Interaction Table data for bottom-right character block of 2-by-2 brickwork block just drawn</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28561"></span>28561</td>
+<td class="instruction">LD HL,(36488)</td>
+<td class="comment-11" rowspan="1">Load HL with Display File address to draw character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28564"></span>28564</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">Clear all but least significant five bits (i.e. x-coordinate)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28565"></span>28565</td>
+<td class="instruction">AND 31</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28567"></span>28567</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28568"></span>28568</td>
+<td class="instruction">LD H,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28570"></span>28570</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (x-coordinate to draw character)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28571"></span>28571</td>
+<td class="instruction">CALL <a href="37719.html">37719</a></td>
+<td class="comment-11" rowspan="1">Move virtual text cursor to beginning of character row two rows below current position</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28574"></span>28574</td>
+<td class="instruction">LD HL,(36488)</td>
+<td class="comment-11" rowspan="1">Load HL with Display File address to draw character (as just updated)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28577"></span>28577</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Restore DE (new location to draw character, previously in HL)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28578"></span>28578</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Add x-coordinate as offset to updated location to draw character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28579"></span>28579</td>
+<td class="instruction">LD (36488),HL</td>
+<td class="comment-11" rowspan="1">Store the new location (now two characters below position upon entering this routine)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28582"></span>28582</td>
+<td class="instruction">LD HL,(23481)</td>
+<td class="comment-11" rowspan="1">Update current Terrain Interaction Table Cursor position onwards by 64 characters (i.e. down two rows)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28585"></span>28585</td>
+<td class="instruction">LD BC,64</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28588"></span>28588</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28589"></span>28589</td>
+<td class="instruction">LD (23481),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28592"></span>28592</td>
+<td class="instruction">LD HL,(36488)</td>
+<td class="comment-11" rowspan="1">Load HL with new Display File address to draw character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28595"></span>28595</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1">If memory location to draw character is not in the bottom third of the display...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28596"></span>28596</td>
+<td class="instruction">AND 248</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28598"></span>28598</td>
+<td class="instruction">CP 80</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28600"></span>28600</td>
+<td class="instruction">JR NZ,28645</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28602"></span>28602</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">If memory location to draw character is not in the fifth character row (any of the 8 pixel rows)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28603"></span>28603</td>
+<td class="instruction">AND 224</td>
+<td class="comment-11" rowspan="1">...(which is the row two rows beneath the floor level, in line with "SPELLBOUND" text in bottom window)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28605"></span>28605</td>
+<td class="instruction">CP 128</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28607"></span>28607</td>
+<td class="instruction">JR NZ,28645</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28609"></span>28609</td>
+<td class="instruction">LD A,64</td>
+<td class="comment-11" rowspan="1">Load 64 into MSB of Display File address to print character, wrapping from bottom of display back up to top...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28611"></span>28611</td>
+<td class="instruction">LD (36489),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28614"></span>28614</td>
+<td class="instruction">LD A,(36488)</td>
+<td class="comment-11" rowspan="1">Increase LSB by two characters (moving right by two characters upon bottom-to-top wrap)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28617"></span>28617</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28618"></span>28618</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28619"></span>28619</td>
+<td class="instruction">AND 31</td>
+<td class="comment-11" rowspan="1">Cap value to maximum of 31 to ensure that new position is in top character row of display (i.e. y-coordinate = 0)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28621"></span>28621</td>
+<td class="instruction">LD (36488),A</td>
+<td class="comment-11" rowspan="1">...and store</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28624"></span>28624</td>
+<td class="instruction">LD BC,24539</td>
+<td class="comment-11" rowspan="1">Point BC at Terrain Interaction Table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28627"></span>28627</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set A to zero (and clear carry flag)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28628"></span>28628</td>
+<td class="instruction">LD HL,(23481)</td>
+<td class="comment-11" rowspan="1">Load HL with Terrain Interaction Table Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28631"></span>28631</td>
+<td class="instruction">SBC HL,BC</td>
+<td class="comment-11" rowspan="1">Load HL with position of Terrain Interaction Table Cursor relative (i.e. offset) to beginning of the table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28633"></span>28633</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">Advance cursor x-coordinate offset by two character blocks...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28634"></span>28634</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28635"></span>28635</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28636"></span>28636</td>
+<td class="instruction">AND 31</td>
+<td class="comment-11" rowspan="1">...and cap value to maximum of 31 to ensure that new position is in top character row of display (i.e. y-coordinate = 0)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28638"></span>28638</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">Place new x-coordinate in HL along with y-coordinate of zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28639"></span>28639</td>
+<td class="instruction">LD H,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28641"></span>28641</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Add this new offset to start of Terrain Interaction Data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28642"></span>28642</td>
+<td class="instruction">LD (23481),HL</td>
+<td class="comment-11" rowspan="1">Store the updated Terrain Interaction Table cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28645"></span>28645</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Switch registers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28646"></span>28646</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28510.html">28510</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28561">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28647.html">28647</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

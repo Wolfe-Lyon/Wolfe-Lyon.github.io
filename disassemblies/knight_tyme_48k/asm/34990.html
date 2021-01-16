@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 34990</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34982.html">34982</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#34990">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35123.html">35123</a></span></td>
+</tr>
+</table>
+<div class="description">34990: Draw a Window</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="26745.html">26745</a>, <a href="26884.html">26884</a>, <a href="26926.html">26926</a>, <a href="27703.html">27703</a>, <a href="27762.html">27762</a>, <a href="28506.html">28506</a>, <a href="28554.html">28554</a>, <a href="28696.html">28696</a>, <a href="29756.html">29756</a>, <a href="30145.html">30145</a>, <a href="31188.html">31188</a>, <a href="31312.html">31312</a>, <a href="31468.html">31468</a>, <a href="32252.html">32252</a>, <a href="32895.html">32895</a>, <a href="33338.html">33338</a>, <a href="33725.html">33725</a>, <a href="33834.html">33834</a>, <a href="33952.html">33952</a>, <a href="34122.html">34122</a>, <a href="54333.html">54333</a>, <a href="55138.html">55138</a>, <a href="55364.html">55364</a> and <a href="55685.html">55685</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Index of window to draw</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34990"></span>34990</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Switch AF and AF'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34991"></span>34991</td>
+<td class="instruction">LD A,111</td>
+<td class="comment-11" rowspan="1">Reset "Draw Hand Menu Cursor" Flag (later in this routine)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34993"></span>34993</td>
+<td class="instruction">LD (35087),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="34996"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="34982.html">34982</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34996"></span>34996</td>
+<td class="instruction">SET 1,(IY+65)</td>
+<td class="comment-11" rowspan="1">Set Characters Free to Move Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35000"></span>35000</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Restore original AF (with A being index of window)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35001"></span>35001</td>
+<td class="instruction">LD (54334),A</td>
+<td class="comment-11" rowspan="1">Set this index as the "current" window index</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35004"></span>35004</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">Load HL with A value (index of required window)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35005"></span>35005</td>
+<td class="instruction">LD H,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35007"></span>35007</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">Multiply index by eight (as each window's data takes up eight bytes in table at 37089)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35008"></span>35008</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35009"></span>35009</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35010"></span>35010</td>
+<td class="instruction">LD BC,37089</td>
+<td class="comment-11" rowspan="1">Set BC to start of window data table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35013"></span>35013</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Calculate location of start of required window's data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35014"></span>35014</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-11" rowspan="1">Load E with x-coordinate of left edge (characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35015"></span>35015</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Load C with x-coordinate of right edge (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35016"></span>35016</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35017"></span>35017</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Load D with y-coordinate of top edge (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35018"></span>35018</td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35019"></span>35019</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of bottom edge (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35020"></span>35020</td>
+<td class="instruction">LD B,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35021"></span>35021</td>
+<td class="instruction">LD (23493),DE</td>
+<td class="comment-11" rowspan="1">Store values for later use...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35025"></span>35025</td>
+<td class="instruction">LD (23495),BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35029"></span>35029</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Load A with window's upper edge border style...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35030"></span>35030</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35031"></span>35031</td>
+<td class="instruction">LD (54235),A</td>
+<td class="comment-11" rowspan="1">Store for later use in routine at <a href="54231.html">54231</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35034"></span>35034</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Load A with window's border attribute...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35035"></span>35035</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35036"></span>35036</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Exchange AF and AF'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35037"></span>35037</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Load A with starting y-coordinate of hand cursor...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35038"></span>35038</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35039"></span>35039</td>
+<td class="instruction">LD (23456),A</td>
+<td class="comment-11" rowspan="1">Store for later use</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35042"></span>35042</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Load A with window's content attribute...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35043"></span>35043</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35044"></span>35044</td>
+<td class="instruction">LD (23481),A</td>
+<td class="comment-11" rowspan="1">Store for later use</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35047"></span>35047</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Exchange AF and AF' (restoring border attribute to A and putting background colour in A')</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35048"></span>35048</td>
+<td class="instruction">CALL <a href="35123.html">35123</a></td>
+<td class="comment-11" rowspan="1">Draw window frame</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35051"></span>35051</td>
+<td class="instruction">LD HL,23493</td>
+<td class="comment-11" rowspan="1">Point HL at previously stored values</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35054"></span>35054</td>
+<td class="instruction">INC (HL)</td>
+<td class="comment-11" rowspan="1">Increase top-left x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35055"></span>35055</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Increase top-left y-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35056"></span>35056</td>
+<td class="instruction">INC (HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35057"></span>35057</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Decrease bottom-right x-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35058"></span>35058</td>
+<td class="instruction">DEC (HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35059"></span>35059</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Decrease bottom-right y-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35060"></span>35060</td>
+<td class="instruction">DEC (HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35061"></span>35061</td>
+<td class="instruction">LD A,(23481)</td>
+<td class="comment-11" rowspan="1">Load window content attribute into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35064"></span>35064</td>
+<td class="instruction">LD (35948),A</td>
+<td class="comment-11" rowspan="1">Prepare to fill a region with the attribute in A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35067"></span>35067</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">Update ATTR T system variable with window content attribute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35070"></span>35070</td>
+<td class="instruction">CALL <a href="35940.html">35940</a></td>
+<td class="comment-11" rowspan="1">Fill a region of Attribute File with specified attribute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35073"></span>35073</td>
+<td class="instruction">CALL <a href="35994.html">35994</a></td>
+<td class="comment-11" rowspan="1">Blank the interior of the window (Display File)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35076"></span>35076</td>
+<td class="instruction">LD HL,23493</td>
+<td class="comment-11" rowspan="1">Load x-coordinate of left of interior of window into C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35079"></span>35079</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35080"></span>35080</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Load y-coordinate of top of interior of window into B...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35081"></span>35081</td>
+<td class="instruction">LD B,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35082"></span>35082</td>
+<td class="instruction">CALL <a href="54132.html">54132</a></td>
+<td class="comment-11" rowspan="1">Move Bitmap Virtual Cursor (bitmap) to top-left of interior or window and load address into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35085"></span>35085</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (address in Display File of top-left of interior of window)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35086"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="34990.html#35086">35086</a> represents the "Draw Hand Menu Cursor" Flag. This is modified by the instructions at <a href="34982.html#34985">34985</a> and <a href="34990.html#34993">34993</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35086"></span>35086</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Load A with "Draw Hand Menu Cursor" Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35088"></span>35088</td>
+<td class="instruction">CP 105</td>
+<td class="comment-11" rowspan="1">If value is not 105...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35090"></span>35090</td>
+<td class="instruction">JP NZ,35114</td>
+<td class="comment-11" rowspan="1">...then jump to <a href="34990.html#35114">35114</a> (i.e. don't draw the hand cursor)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="35093"></span>
+<div class="comments">
+<div class="paragraph">
+Window is a menu (105)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35093"></span>35093</td>
+<td class="instruction">LD BC,(23493)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of top edge and C with x-coordinate of left edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35097"></span>35097</td>
+<td class="instruction">LD A,(23456)</td>
+<td class="comment-11" rowspan="1">Load A with starting y-coordinate of hand cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35100"></span>35100</td>
+<td class="instruction">ADD A,B</td>
+<td class="comment-11" rowspan="1">Add y-coordinate of top of area to this...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35101"></span>35101</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...and place back into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35102"></span>35102</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1">Load A with 2 (graphic lookup index of Menu Hand Cursor graphic in table at <a href="55950.html">55950</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35104"></span>35104</td>
+<td class="instruction">LD DE,514</td>
+<td class="comment-11" rowspan="1">Load D (graphic width) with 2 and E (graphic height) with 2</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35107"></span>35107</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35109"></span>35109</td>
+<td class="instruction">CALL <a href="54411.html#54414">54414</a></td>
+<td class="comment-11" rowspan="1">Draw a Graphic with Lookup Index A at Character Coordinates (C, B) with width = E characters and height = D characters</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35112"></span>35112</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35114"></span>35114</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set A to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35115"></span>35115</td>
+<td class="instruction">LD (23479),A</td>
+<td class="comment-11" rowspan="1">Set hand cursor's current y-coordinate to zero (i.e. defaults to top of its movement range within current window)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35118"></span>35118</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (address in Display File of top-left of interior of window)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35119"></span>35119</td>
+<td class="instruction">LD (54110),HL</td>
+<td class="comment-11" rowspan="1">Set memory location to start printing character in character printing routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35122"></span>35122</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34982.html">34982</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#34990">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35123.html">35123</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 31920</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="31904.html">31904</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31920">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31980.html">31980</a></span></td>
+</tr>
+</table>
+<div class="description">31920: Make Current Character Eat &amp; Drink if Possible</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31920"></span>31920</td>
+<td class="instruction">CALL <a href="34350.html">34350</a></td>
+<td class="comment-11" rowspan="1">Check if Current Character is asleep and display "[CHARACTER] IS ASLEEP" window if so</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31923"></span>31923</td>
+<td class="instruction">LD A,(30615)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31926"></span>31926</td>
+<td class="instruction">LD E,0</td>
+<td class="comment-11" rowspan="1">Point HL at strength...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31928"></span>31928</td>
+<td class="instruction">CALL <a href="34174.html">34174</a></td>
+<td class="comment-11" rowspan="1">...of character whose index is A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31931"></span>31931</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Switch pointer from HL to IX...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31932"></span>31932</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31934"></span>31934</td>
+<td class="instruction">LD A,(IX+4)</td>
+<td class="comment-11" rowspan="1">Load A with food level of Current Character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31937"></span>31937</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If food level is zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31938"></span>31938</td>
+<td class="instruction">JP Z,<a href="34526.html">34526</a></td>
+<td class="comment-11" rowspan="1">...then display "[CHARACTER] HAS NO FOOD LEFT" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31941"></span>31941</td>
+<td class="instruction">LD A,(IX+2)</td>
+<td class="comment-11" rowspan="1">Load A with stamina of Current Character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31944"></span>31944</td>
+<td class="instruction">CP 20</td>
+<td class="comment-11" rowspan="1">...and if this is anything up to 20...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31946"></span>31946</td>
+<td class="instruction">JP C,<a href="34532.html">34532</a></td>
+<td class="comment-11" rowspan="1">...then display "[CHARACTER] IS TOO TIRED TO EAT OR DRINK" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31949"></span>31949</td>
+<td class="instruction">LD A,(IX+1)</td>
+<td class="comment-11" rowspan="1">Load A with the happiness of Current Character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31952"></span>31952</td>
+<td class="instruction">CP 30</td>
+<td class="comment-11" rowspan="1">...and if this is anything up to 30...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31954"></span>31954</td>
+<td class="instruction">JP C,<a href="34490.html">34490</a></td>
+<td class="comment-11" rowspan="1">...then display "[CHARACTER] DOES NOT WANT TO BE COMMANDED BY YOU" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31957"></span>31957</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load A with the strength of Current Character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31960"></span>31960</td>
+<td class="instruction">CP 100</td>
+<td class="comment-11" rowspan="1">...and if this is equal to 100...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31962"></span>31962</td>
+<td class="instruction">JP Z,<a href="34756.html">34756</a></td>
+<td class="comment-11" rowspan="1">...then display "[CHARACTER] HAS TAKEN REFRESHMENT" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31965"></span>31965</td>
+<td class="instruction">DEC (IX+4)</td>
+<td class="comment-11" rowspan="1">Decrease food level by one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31968"></span>31968</td>
+<td class="instruction">INC (IX+0)</td>
+<td class="comment-11" rowspan="1">Increase strength by one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31971"></span>31971</td>
+<td class="instruction">LD A,(IX+4)</td>
+<td class="comment-11" rowspan="1">If food level is not zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31974"></span>31974</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31975"></span>31975</td>
+<td class="instruction">JR NZ,31957</td>
+<td class="comment-11" rowspan="1">...then loop back to <a href="31920.html#31957">31957</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31977"></span>31977</td>
+<td class="instruction">JP <a href="34756.html">34756</a></td>
+<td class="comment-11" rowspan="1">...then display "[CHARACTER] HAS TAKEN REFRESHMENT" window and exit</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="31904.html">31904</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31920">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31980.html">31980</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

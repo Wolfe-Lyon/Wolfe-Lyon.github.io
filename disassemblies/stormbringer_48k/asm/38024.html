@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 38024</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38003.html">38003</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38024">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="38205.html">38205</a></span></td>
+</tr>
+</table>
+<div class="description">38024: Initialise Data and Start a New Game</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="37689.html">37689</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38024"></span>38024</td>
+<td class="instruction">LD A,(23672)</td>
+<td class="comment-11" rowspan="1">Load A with LSB of System Variable FRAMES...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38027"></span>38027</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">...and clear bit 7 to leave random number between 0 and 127</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38029"></span>38029</td>
+<td class="instruction">JR Z,38024</td>
+<td class="comment-11" rowspan="1">If number is zero then loop back to <a href="38024.html">38024</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38031"></span>38031</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load B with generated number</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38032"></span>38032</td>
+<td class="instruction">AND 96</td>
+<td class="comment-11" rowspan="1">If neither bit 5 not bit 6 is set (<a href="../reference/facts.html#numberoftheday">see trivia</a>)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38034"></span>38034</td>
+<td class="instruction">JR Z,38024</td>
+<td class="comment-11" rowspan="1">...then loop back to <a href="38024.html">38024</a> to generate another number</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38036"></span>38036</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1">Load A with generated number...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38037"></span>38037</td>
+<td class="instruction">LD (23484),A</td>
+<td class="comment-11" rowspan="1">...and store at <a href="23481.html#23484">23484</a> as Current Password Number</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38040"></span>38040</td>
+<td class="instruction">LD HL,51742</td>
+<td class="comment-11" rowspan="1">Point HL at start of "---" segment for Password Number in Rachel's help text at <a href="51588.html#51709">51709</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38043"></span>38043</td>
+<td class="instruction">CALL <a href="46837.html">46837</a></td>
+<td class="comment-11" rowspan="1">Splice numeric Password data as a string into Rachel's help text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38046"></span>38046</td>
+<td class="instruction">CALL <a href="47897.html">47897</a></td>
+<td class="comment-11" rowspan="1">Play upward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38049"></span>38049</td>
+<td class="instruction">LD A,70</td>
+<td class="comment-11" rowspan="1">Set ATTR T system variable to 70 (yellow INK, black PAPER, BRIGHT)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38051"></span>38051</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38054"></span>38054</td>
+<td class="instruction">LD HL,49282</td>
+<td class="comment-11" rowspan="1">Copy data from <a href="49282.html">49282</a> - 49353 (Characters' Initial Stats)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38057"></span>38057</td>
+<td class="instruction">LD DE,24768</td>
+<td class="comment-11" rowspan="1">...to <a href="24768.html">24768</a> - 24839 (Characters' Current Stats)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38060"></span>38060</td>
+<td class="instruction">LD BC,72</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38063"></span>38063</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38065"></span>38065</td>
+<td class="instruction">LD HL,48603</td>
+<td class="comment-11" rowspan="1">Copy data from <a href="48603.html">48603</a> - 48610 (Magic Knight's Initial Data)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38068"></span>38068</td>
+<td class="instruction">LD BC,8</td>
+<td class="comment-11" rowspan="1">...to <a href="24840.html">24840</a> - 24847 (Magic Knight's Current Data)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38071"></span>38071</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38073"></span>38073</td>
+<td class="instruction">LD HL,48611</td>
+<td class="comment-11" rowspan="1">Copy data from <a href="48611.html">48611</a> - 48660 (Characters' Initial Inventories)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38076"></span>38076</td>
+<td class="instruction">LD BC,50</td>
+<td class="comment-11" rowspan="1">...to <a href="24848.html">24848</a> - 24897 (Characters' Current Inventories)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38079"></span>38079</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38081"></span>38081</td>
+<td class="instruction">LD HL,48661</td>
+<td class="comment-11" rowspan="1">Copy data from <a href="48661.html">48661</a> - 48684 (Characters' Initial Positions)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38084"></span>38084</td>
+<td class="instruction">LD BC,24</td>
+<td class="comment-11" rowspan="1">...to <a href="24898.html">24898</a> - 24921 (Characters' Current Positions)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38087"></span>38087</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38089"></span>38089</td>
+<td class="instruction">LD HL,48685</td>
+<td class="comment-11" rowspan="1">Copy data from <a href="48685.html">48685</a> - 48810 (Objects' Initial Positions)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38092"></span>38092</td>
+<td class="instruction">LD BC,126</td>
+<td class="comment-11" rowspan="1">...to <a href="24922.html">24922</a> - 25047 (Objects' Current Positions)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38095"></span>38095</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38097"></span>38097</td>
+<td class="instruction">CALL <a href="46183.html">46183</a></td>
+<td class="comment-11" rowspan="1">Set Magic Knight's available action flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38100"></span>38100</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Load A and HL with zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38101"></span>38101</td>
+<td class="instruction">LD H,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38102"></span>38102</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38103"></span>38103</td>
+<td class="instruction">LD (23560),A</td>
+<td class="comment-11" rowspan="1">Clear last pressed key</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38106"></span>38106</td>
+<td class="instruction">LD (40605),A</td>
+<td class="comment-11" rowspan="1">Reset Bearwoolf Removed Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38109"></span>38109</td>
+<td class="instruction">LD (23486),A</td>
+<td class="comment-11" rowspan="1">Store zero at <a href="23481.html#23486">23486</a> (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38112"></span>38112</td>
+<td class="instruction">LD (23460),A</td>
+<td class="comment-11" rowspan="1">Set 1/50 Second Counter (Time Elapsed since last second) to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38115"></span>38115</td>
+<td class="instruction">LD (23458),HL</td>
+<td class="comment-11" rowspan="1">Set Minute Counter and Second Counter to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38118"></span>38118</td>
+<td class="instruction">LD (23675),HL</td>
+<td class="comment-11" rowspan="1">Reset all Interrupt Routine flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38121"></span>38121</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1">Do nothing (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38122"></span>38122</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38123"></span>38123</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38124"></span>38124</td>
+<td class="instruction">LD (23673),HL</td>
+<td class="comment-11" rowspan="1">Set two most significant bytes of system variable FRAMES to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38127"></span>38127</td>
+<td class="instruction">LD (23471),HL</td>
+<td class="comment-11" rowspan="1">Set x- &amp; y- coordinates of top-left character of currently glowing "Locate Compass" component to zero (<a href="../reference/facts.html#commandlocate">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38130"></span>38130</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Set Animate Puff of Smoke Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38131"></span>38131</td>
+<td class="instruction">LD (23480),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38134"></span>38134</td>
+<td class="instruction">LD (64688),A</td>
+<td class="comment-11" rowspan="1">Set Do Not Draw Storm Cloud Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38137"></span>38137</td>
+<td class="instruction">LD A,36</td>
+<td class="comment-11" rowspan="1">Set number of hours left to 36...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38139"></span>38139</td>
+<td class="instruction">LD (23457),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38142"></span>38142</td>
+<td class="instruction">LD A,135</td>
+<td class="comment-11" rowspan="1">Set room layout data instruction at <a href="59841.html#59866">59866</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38144"></span>38144</td>
+<td class="instruction">LD (59866),A</td>
+<td class="comment-11" rowspan="1">...to 135 (draw Security Door 1/3)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38147"></span>38147</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Set room layout data instruction at <a href="59841.html#59867">59867</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38148"></span>38148</td>
+<td class="instruction">LD (59867),A</td>
+<td class="comment-11" rowspan="1">...to 136 (draw Security Door 2/3)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38151"></span>38151</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Set room layout data instruction at <a href="59841.html#59868">59868</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38152"></span>38152</td>
+<td class="instruction">LD (59868),A</td>
+<td class="comment-11" rowspan="1">...to 137 (draw Security Door 3/3)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38155"></span>38155</td>
+<td class="instruction">LD HL,59006</td>
+<td class="comment-11" rowspan="1">Set Room Layout Data Pointer for Room 3 to <a href="59006.html">59006</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38158"></span>38158</td>
+<td class="instruction">LD (58847),HL</td>
+<td class="comment-11" rowspan="1">...i.e. include Grunter graphic in room layout</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38161"></span>38161</td>
+<td class="instruction">LD B,6</td>
+<td class="comment-11" rowspan="1">Load A with random number in range 0-5...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38163"></span>38163</td>
+<td class="instruction">CALL <a href="64829.html">64829</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38166"></span>38166</td>
+<td class="instruction">LD (23703),A</td>
+<td class="comment-11" rowspan="1">...and store as Index of Required Disquise</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38169"></span>38169</td>
+<td class="instruction">LD A,(23672)</td>
+<td class="comment-11" rowspan="1">Load A with LSB of System Variable FRAMES...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38172"></span>38172</td>
+<td class="instruction">AND 7</td>
+<td class="comment-11" rowspan="1">...clear bits 3-7 to leave random number between 0 and 7...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38174"></span>38174</td>
+<td class="instruction">LD (23713),A</td>
+<td class="comment-11" rowspan="1">...and set index of current Crystal Ball substring to this value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38177"></span>38177</td>
+<td class="instruction">ADD A,4</td>
+<td class="comment-11" rowspan="1">Add four to A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38179"></span>38179</td>
+<td class="instruction">AND 7</td>
+<td class="comment-11" rowspan="1">...clear bits 3-7 to leave random number between 0 and 7...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38181"></span>38181</td>
+<td class="instruction">LD (23714),A</td>
+<td class="comment-11" rowspan="1">...and set index of current Scroll substring to this value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38184"></span>38184</td>
+<td class="instruction">LD A,36</td>
+<td class="comment-11" rowspan="1">Set index of next object to be laid by Chicken to 36 (Golden Egg)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38186"></span>38186</td>
+<td class="instruction">LD (23466),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38189"></span>38189</td>
+<td class="instruction">LD A,12</td>
+<td class="comment-11" rowspan="1">Set Storm Cloud's current room to 12 (Outdoors, 11, The Spooky Forest, 3)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38191"></span>38191</td>
+<td class="instruction">LD (23715),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38194"></span>38194</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-11" rowspan="1">Move Magic Knight into Outdoors, 6 (The Sword in the Concrete), draw room and initialise room-specific data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38196"></span>38196</td>
+<td class="instruction">CALL <a href="38841.html">38841</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38199"></span>38199</td>
+<td class="instruction">SET 0,(IY+65)</td>
+<td class="comment-11" rowspan="1">Set Game In Progress Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38203"></span>38203</td>
+<td class="instruction">JR <a href="38205.html#38208">38208</a></td>
+<td class="comment-11" rowspan="1">Jump into Main Game Loop (process keyboard input and move Magic Knight or enter menus)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38003.html">38003</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38024">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="38205.html">38205</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

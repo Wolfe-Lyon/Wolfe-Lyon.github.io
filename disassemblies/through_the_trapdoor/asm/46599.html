@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Unused RAM at 46599</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-u">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Unused</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46594.html">46594</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46599">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46611.html">46611</a></span></td>
+</tr>
+</table>
+<div class="description">46599: Unused routine</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Graphic layout routine (252): if Berk is holding nothing then jump to address.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46599"></span>
+<div class="comments">
+<div class="paragraph">
+Input:IX Address of first parameter in current graphic layout data instruction Output:B Do Not Recalculate Display Buffer Address Flag (0)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46599"></span>46599</td>
+<td class="instruction">LD A,(34221)</td>
+<td class="comment-11" rowspan="1">If Berk is not holding anything...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46602"></span>46602</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46603"></span>46603</td>
+<td class="instruction">JP Z,<a href="46481.html">46481</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="46481.html">46481</a> (set current position in graphic layout data to value of WORD at this address)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46606"></span>46606</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">Prepare to recalculate Display Buffer address</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46608"></span>46608</td>
+<td class="instruction">JP <a href="45965.html#45999">45999</a></td>
+<td class="comment-11" rowspan="1">Advance graphic layout data pointer by two bytes and read / process next data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46594.html">46594</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46599">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46611.html">46611</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 43494</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="43486.html">43486</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#43494">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="43636.html">43636</a></span></td>
+</tr>
+</table>
+<div class="description">43494: Process Command to Read an Object</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="43494"></span>43494</td>
+<td class="instruction">LD IX,24848</td>
+<td class="comment-11" rowspan="1">Point IX at Magic Knight's current inventory (carrying)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43498"></span>43498</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43500"></span>43500</td>
+<td class="instruction">LD HL,51920</td>
+<td class="comment-11" rowspan="1">Point HL at "[Current Command] WHICH OBJECT ?" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43503"></span>43503</td>
+<td class="instruction">LD DE,51928</td>
+<td class="comment-11" rowspan="1">Point DE at "[Current Command] THE " text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43506"></span>43506</td>
+<td class="instruction">CALL <a href="45809.html">45809</a></td>
+<td class="comment-11" rowspan="1">Show list of objects in Magic Knight's inventory (carrying) as a menu and load A with selected item index</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43509"></span>43509</td>
+<td class="instruction">LD HL,24848</td>
+<td class="comment-11" rowspan="1">Point IX at Magic Knight's current inventory (carrying)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43512"></span>43512</td>
+<td class="instruction">CALL <a href="45766.html">45766</a></td>
+<td class="comment-11" rowspan="1">Print name of object in inventory slot A of inventory data at HL in Command Summary Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43515"></span>43515</td>
+<td class="instruction">CALL <a href="64207.html">64207</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43518"></span>43518</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43521"></span>43521</td>
+<td class="instruction">CALL <a href="45685.html">45685</a></td>
+<td class="comment-11" rowspan="1">...and if this is 4 (Teddy Bear) then display "THE BEAR SAYS..." message and wait for Fire to be pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43524"></span>43524</td>
+<td class="instruction">CP 24</td>
+<td class="comment-11" rowspan="1">If Current Object is the Instruction Book (24)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43526"></span>43526</td>
+<td class="instruction">JP Z,43624</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43494.html#43624">43624</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43529"></span>43529</td>
+<td class="instruction">CP 21</td>
+<td class="comment-11" rowspan="1">If Current Object is the Gadget X (21)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43531"></span>43531</td>
+<td class="instruction">JP Z,43630</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43494.html#43630">43630</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43534"></span>43534</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not carrying the Crystal Ball (2)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43536"></span>43536</td>
+<td class="instruction">CALL <a href="45510.html">45510</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43539"></span>43539</td>
+<td class="instruction">JR NZ,43592</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43494.html#43592">43592</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43541"></span>43541</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43544"></span>43544</td>
+<td class="instruction">LD B,21</td>
+<td class="comment-11" rowspan="1">Load B with 21 (index of read-text for Wand of Command with Crystal Ball)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43546"></span>43546</td>
+<td class="instruction">CP 3</td>
+<td class="comment-11" rowspan="1">If Current Object is the Wand of Command (3)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43548"></span>43548</td>
+<td class="instruction">JR Z,43617</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43494.html#43617">43617</a> (display text with index B)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43550"></span>43550</td>
+<td class="instruction">LD B,23</td>
+<td class="comment-11" rowspan="1">Load B with 23 (index of read-text for Magic Talisman with Crystal Ball)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43552"></span>43552</td>
+<td class="instruction">CP 6</td>
+<td class="comment-11" rowspan="1">If Current Object is the Magic Talisman (6)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43554"></span>43554</td>
+<td class="instruction">JR Z,43617</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43494.html#43617">43617</a> (display text with index B)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43556"></span>43556</td>
+<td class="instruction">LD B,24</td>
+<td class="comment-11" rowspan="1">Load B with 24 (index of read-text for Glow Shield with Crystal Ball)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43558"></span>43558</td>
+<td class="instruction">CP 12</td>
+<td class="comment-11" rowspan="1">If Current Object is the Glow Shield (12)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43560"></span>43560</td>
+<td class="instruction">JR Z,43617</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43494.html#43617">43617</a> (display text with index B)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43562"></span>43562</td>
+<td class="instruction">LD B,25</td>
+<td class="comment-11" rowspan="1">Load B with 25 (index of read-text for Boomerang with Crystal Ball)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43564"></span>43564</td>
+<td class="instruction">CP 14</td>
+<td class="comment-11" rowspan="1">If Current Object is the Boomerang (14)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43566"></span>43566</td>
+<td class="instruction">JR Z,43617</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43494.html#43617">43617</a> (display text with index B)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43568"></span>43568</td>
+<td class="instruction">LD B,3</td>
+<td class="comment-11" rowspan="1">Load B with 3 (index of read-text for unreadable magic language) (<a href="../reference/facts.html#undreadablesword">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43570"></span>43570</td>
+<td class="instruction">CP 15</td>
+<td class="comment-11" rowspan="1">If Current Object is the Sword (15)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43572"></span>43572</td>
+<td class="instruction">JR Z,43617</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43494.html#43617">43617</a> (display text with index B)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43574"></span>43574</td>
+<td class="instruction">LD B,27</td>
+<td class="comment-11" rowspan="1">Load B with 27 (index of read-text for Brass Ankh with Crystal Ball)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43576"></span>43576</td>
+<td class="instruction">CP 16</td>
+<td class="comment-11" rowspan="1">If Current Object is the Brass Ankh (16)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43578"></span>43578</td>
+<td class="instruction">JR Z,43617</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43494.html#43617">43617</a> (display text with index B)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43580"></span>43580</td>
+<td class="instruction">LD B,28</td>
+<td class="comment-11" rowspan="1">Load B with 28 (index of read-text for Elf-Horn with Crystal Ball)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43582"></span>43582</td>
+<td class="instruction">CP 22</td>
+<td class="comment-11" rowspan="1">If Current Object is the Elf-Horn (22)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43584"></span>43584</td>
+<td class="instruction">JR Z,43617</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43494.html#43617">43617</a> (display text with index B)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43586"></span>43586</td>
+<td class="instruction">LD B,29</td>
+<td class="comment-11" rowspan="1">Load B with 29 (index of read-text for Silver Arrow with Crystal Ball)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43588"></span>43588</td>
+<td class="instruction">CP 23</td>
+<td class="comment-11" rowspan="1">If Current Object is the Silver Arrow (23)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43590"></span>43590</td>
+<td class="instruction">JR Z,43617</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43494.html#43617">43617</a> (display text with index B)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="43592"></span>43592</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43595"></span>43595</td>
+<td class="instruction">LD E,0</td>
+<td class="comment-11" rowspan="1">Point HL at start of record for object with index A in Object Properties Table...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43597"></span>43597</td>
+<td class="instruction">CALL <a href="45390.html">45390</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43600"></span>43600</td>
+<td class="instruction">BIT 5,(HL)</td>
+<td class="comment-11" rowspan="1">If Can Read Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43602"></span>43602</td>
+<td class="instruction">JR NZ,43610</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="43494.html#43610">43610</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43604"></span>43604</td>
+<td class="instruction">LD HL,52859</td>
+<td class="comment-11" rowspan="1">Point HL at "THERE IS NO WRITING FOR ME TO [Current Command]" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43607"></span>43607</td>
+<td class="instruction">JP <a href="64297.html">64297</a></td>
+<td class="comment-11" rowspan="1">Display "THERE IS NO WRITING FOR ME TO [Current Command]" Window (12), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="43610"></span>43610</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to read-text index for object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43611"></span>43611</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43612"></span>43612</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43613"></span>43613</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...and load into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43614"></span>43614</td>
+<td class="instruction">AND 31</td>
+<td class="comment-11" rowspan="1">Clear bits 5, 6 and 7...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43616"></span>43616</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...and load index into B</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="43617"></span>
+<div class="comments">
+<div class="paragraph">
+At this point, B holds the index of the read-text to print
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="43617"></span>43617</td>
+<td class="instruction">CALL <a href="63322.html">63322</a></td>
+<td class="comment-11" rowspan="1">Point HL at start of B-th entry in List of Read-Texts of Readable Objects</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43620"></span>43620</td>
+<td class="instruction">CALL <a href="64317.html">64317</a></td>
+<td class="comment-11" rowspan="1">Display Window 02 with object's read-text, wait for Fire to be pressed then jump to Main Game Loop...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43623"></span>43623</td>
+<td class="instruction">DEFB 2</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="43624"></span>43624</td>
+<td class="instruction">CALL <a href="37951.html">37951</a></td>
+<td class="comment-11" rowspan="1">Display Instructions windows</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43627"></span>43627</td>
+<td class="instruction">JP <a href="41578.html#41742">41742</a></td>
+<td class="comment-11" rowspan="1">Set Magic Knight's available action flags and jump to start of Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="43630"></span>43630</td>
+<td class="instruction">CALL <a href="37764.html">37764</a></td>
+<td class="comment-11" rowspan="1">Display and handle Gadget X Menu</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43633"></span>43633</td>
+<td class="instruction">JP <a href="41578.html#41742">41742</a></td>
+<td class="comment-11" rowspan="1">Set Magic Knight's available action flags and jump to start of Main Game Loop</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="43486.html">43486</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#43494">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="43636.html">43636</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

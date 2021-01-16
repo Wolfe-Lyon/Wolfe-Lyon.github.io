@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 54876</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="54647.html">54647</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#54876">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="54894.html">54894</a></span></td>
+</tr>
+</table>
+<div class="description">54876: Set Zero Flag if Key Pressed is Already Assigned to a Control, Otherwise Reset</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="54647.html">54647</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Index of key pressed</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">F</td>
+<td class="register-desc">Zero Flag set if pressed key is already assigned, otherwise reset</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="54876"></span>54876</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54877"></span>54877</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54878"></span>54878</td>
+<td class="instruction">LD HL,54894</td>
+<td class="comment-11" rowspan="1">Point HL at start of list of current keyboard control characters</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54881"></span>54881</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (as there are five controls to process)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="54883"></span>54883</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">If key pressed is the same as current control key index...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54884"></span>54884</td>
+<td class="instruction">JR Z,54891</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="54876.html#54891">54891</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54886"></span>54886</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to next entry in list of current keyboard control characters</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54887"></span>54887</td>
+<td class="instruction">DJNZ 54883</td>
+<td class="comment-11" rowspan="1">Decrease B (remaining number of control characters to process) and loop back to <a href="54876.html#54883">54883</a> if not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54889"></span>54889</td>
+<td class="instruction">CP 0</td>
+<td class="comment-11" rowspan="1">Reset Zero Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="54891"></span>54891</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54892"></span>54892</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54893"></span>54893</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="54647.html">54647</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#54876">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="54894.html">54894</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

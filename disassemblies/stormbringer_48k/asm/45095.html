@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 45095</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45094.html">45094</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45095">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45131.html">45131</a></span></td>
+</tr>
+</table>
+<div class="description">45095: Process Command to Smell Something</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45095"></span>45095</td>
+<td class="instruction">LD IX,24848</td>
+<td class="comment-11" rowspan="1">Point IX at start of Magic Knight's current inventory (carrying)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45099"></span>45099</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45101"></span>45101</td>
+<td class="instruction">LD HL,51920</td>
+<td class="comment-11" rowspan="1">Point HL at "[Current Command] WHICH OBJECT ?" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45104"></span>45104</td>
+<td class="instruction">LD DE,51928</td>
+<td class="comment-11" rowspan="1">Point DE at "[Current Command] THE " text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45107"></span>45107</td>
+<td class="instruction">CALL <a href="45809.html">45809</a></td>
+<td class="comment-11" rowspan="1">Show list of objects in Magic Knight's inventory (carrying) as a menu and load A with selected item index</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45110"></span>45110</td>
+<td class="instruction">LD HL,24848</td>
+<td class="comment-11" rowspan="1">Point HL at start of Magic Knight's current inventory (carrying)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45113"></span>45113</td>
+<td class="instruction">CALL <a href="45766.html">45766</a></td>
+<td class="comment-11" rowspan="1">Print name of selected object in Magic Knight's current inventory (carrying) in Command Summary Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45116"></span>45116</td>
+<td class="instruction">CALL <a href="64207.html">64207</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45119"></span>45119</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45122"></span>45122</td>
+<td class="instruction">CALL <a href="45685.html">45685</a></td>
+<td class="comment-11" rowspan="1">...and if this is 4 (Teddy Bear) then display "THE BEAR SAYS..." message and wait for Fire to be pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45125"></span>45125</td>
+<td class="instruction">LD HL,57501</td>
+<td class="comment-11" rowspan="1">Point HL at "YOU CAN SMELL NOTHING BECAUSE YOUR NOSE IS BLOCKED!" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45128"></span>45128</td>
+<td class="instruction">JP <a href="64297.html">64297</a></td>
+<td class="comment-11" rowspan="1">Display "YOU CAN SMELL NOTHING..." Window (12), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45094.html">45094</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45095">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45131.html">45131</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

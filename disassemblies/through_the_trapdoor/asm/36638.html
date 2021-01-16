@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 36638</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36625.html">36625</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36638">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36753.html">36753</a></span></td>
+</tr>
+</table>
+<div class="description">36638: Advance to Next Level and if Back to Level 1 then Exit Calling Routine and Make Berk Start Falling</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="36390.html">36390</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36638"></span>36638</td>
+<td class="instruction">LD A,(34208)</td>
+<td class="comment-11" rowspan="1">Set Update Scores and Display Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36641"></span>36641</td>
+<td class="instruction">SET 5,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36643"></span>36643</td>
+<td class="instruction">LD (34208),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36646"></span>36646</td>
+<td class="instruction">LD IY,(34256)</td>
+<td class="comment-11" rowspan="1">Load IY with address of complex state data for Door just interacted with</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36650"></span>36650</td>
+<td class="instruction">LD A,(IY+9)</td>
+<td class="comment-11" rowspan="1">Load A with destination level from Door's state data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36653"></span>36653</td>
+<td class="instruction">LD (34207),A</td>
+<td class="comment-11" rowspan="1">...and set current level to this value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36656"></span>36656</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">If destination level is not Level 1...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36658"></span>36658</td>
+<td class="instruction">JR NZ,36725</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="36638.html#36725">36725</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="36660"></span>
+<div class="comments">
+<div class="paragraph">
+Destination level is Level 1 (i.e. Level 4 completed)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36660"></span>36660</td>
+<td class="instruction">CALL <a href="36753.html">36753</a></td>
+<td class="comment-11" rowspan="1">Load IX with address of Berk's complex state data and set his horizontal position to match Level 1's entry door</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36663"></span>36663</td>
+<td class="instruction">SET 2,(IX+10)</td>
+<td class="comment-11" rowspan="1">Set "Back to Level 1" Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36667"></span>36667</td>
+<td class="instruction">LD (IX+0),10</td>
+<td class="comment-11" rowspan="1">Set Berk's room to 10</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36671"></span>36671</td>
+<td class="instruction">LD (IX+4),103</td>
+<td class="comment-11" rowspan="1">Set y-coordinate of Berk's top edge to 103</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36675"></span>36675</td>
+<td class="instruction">LD (IX+6),109</td>
+<td class="comment-11" rowspan="1">Set y-coordinate of Berk's bottom edge to 109</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36679"></span>36679</td>
+<td class="instruction">LD IY,43606</td>
+<td class="comment-11" rowspan="1">Load IY with address of Boni's entry in Level 1's State Data for Complex Entities...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36683"></span>36683</td>
+<td class="instruction">LD (34256),IY</td>
+<td class="comment-11" rowspan="1">...and store at <a href="34256.html">34256</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36687"></span>36687</td>
+<td class="instruction">CALL <a href="48850.html">48850</a></td>
+<td class="comment-11" rowspan="1">Have Berk hold Boni, and position him appropriately between Berk's hands</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36690"></span>36690</td>
+<td class="instruction">LD (IY+1),1</td>
+<td class="comment-11" rowspan="1">Set Boni's depth to 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36694"></span>36694</td>
+<td class="instruction">LD (IY+0),10</td>
+<td class="comment-11" rowspan="1">Set Boni's room to 10</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36698"></span>36698</td>
+<td class="instruction">CALL <a href="36296.html">36296</a></td>
+<td class="comment-11" rowspan="1">Make Berk drop the entity he is holding and load IY with its complex state data address</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36701"></span>36701</td>
+<td class="instruction">CALL <a href="55516.html">55516</a></td>
+<td class="comment-11" rowspan="1">Set Berk's Can Fall Flag and set his initial velocity factor to 2</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36704"></span>36704</td>
+<td class="instruction">CALL 36739</td>
+<td class="comment-11" rowspan="1">Lock Level 1's exit door and cycle attributes (full-screen)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36707"></span>36707</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Remove top value from stack (i.e. return address to routine that called this routine)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36708"></span>36708</td>
+<td class="instruction">LD HL,36625</td>
+<td class="comment-11" rowspan="1">Overwrite Drutt's entry in Level 1's State Data for Complex Entities with data at <a href="36625.html">36625</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36711"></span>36711</td>
+<td class="instruction">LD DE,43671</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36714"></span>36714</td>
+<td class="instruction">LD BC,13</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36717"></span>36717</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36719"></span>36719</td>
+<td class="instruction">LD HL,35359</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk starting to fall downwards...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36722"></span>36722</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="36725"></span>
+<div class="comments">
+<div class="paragraph">
+Destination level is not Level 1
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36725"></span>36725</td>
+<td class="instruction">CALL <a href="36753.html">36753</a></td>
+<td class="comment-11" rowspan="1">Set Berk's horizontal position to match Level 1's entry door</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36728"></span>36728</td>
+<td class="instruction">LD IY,(34242)</td>
+<td class="comment-11" rowspan="1">Load IY with address of current level's complex state data for Drutt...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36732"></span>36732</td>
+<td class="instruction">LD (34256),IY</td>
+<td class="comment-11" rowspan="1">...and store at <a href="34256.html">34256</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36736"></span>36736</td>
+<td class="instruction">CALL <a href="48850.html">48850</a></td>
+<td class="comment-11" rowspan="1">Have Berk hold Drutt, and position him appropriately between Berk's hands</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36739"></span>36739</td>
+<td class="instruction">LD HL,34208</td>
+<td class="comment-11" rowspan="1">Reset Level Exit Door Unlocked Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36742"></span>36742</td>
+<td class="instruction">RES 4,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36744"></span>36744</td>
+<td class="instruction">LD A,5</td>
+<td class="comment-11" rowspan="1">Set door colour to 5 (cyan, i.e. locked)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36746"></span>36746</td>
+<td class="instruction">LD (50712),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36749"></span>36749</td>
+<td class="instruction">CALL <a href="36616.html">36616</a></td>
+<td class="comment-11" rowspan="1">Cycle attributes (full-screen), clear display buffers and paint red areas outside current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36752"></span>36752</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36625.html">36625</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36638">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36753.html">36753</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

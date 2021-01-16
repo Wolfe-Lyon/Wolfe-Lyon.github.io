@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 63005</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62987.html">62987</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63005">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63040.html">63040</a></span></td>
+</tr>
+</table>
+<div class="description">63005: Print Text/Graphic Character in A and Advance Bitmap Virtual Text Cursor</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="40729.html">40729</a>, <a href="40752.html">40752</a>, <a href="47326.html">47326</a>, <a href="48389.html">48389</a>, <a href="63302.html">63302</a>, <a href="63691.html">63691</a> and <a href="63740.html">63740</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Index of character to print</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63005"></span>63005</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="63006"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="63005.html#63006">63006</a> represents the base address of the character set. This is modified by the instructions between <a href="63472.html#63478">63478</a> and <a href="63472.html#63482">63482</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63006"></span>63006</td>
+<td class="instruction">LD DE,27480</td>
+<td class="comment-11" rowspan="1">Point to (effective) start Character Set graphics</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63009"></span>63009</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Load index of character into HL and multiply by 8...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63010"></span>63010</td>
+<td class="instruction">LD H,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63012"></span>63012</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63013"></span>63013</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63014"></span>63014</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63015"></span>63015</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">...and add to DE to obtain memory location of required character in the character set</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63016"></span>63016</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Swap values (DE now holds memory location of character to print and HL holds <a href="26200.html#27480">27480</a>)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="63017"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="63005.html#63017">63017</a> represents the address of the Bitmap Virtual Text Cursor. This is modified by the instructions at <a href="38780.html#38804">38804</a>, <a href="38780.html#38816">38816</a>, <a href="38829.html#38832">38832</a>, <a href="39393.html#39425">39425</a>, <a href="39578.html#39634">39634</a>, <a href="40489.html#40501">40501</a>, <a href="41271.html#41358">41358</a>, <a href="41271.html#41374">41374</a>, <a href="41271.html#41395">41395</a>, <a href="46463.html#46481">46481</a>, <a href="47193.html#47322">47322</a>, <a href="47326.html#47409">47409</a>, <a href="47833.html#47836">47836</a>, <a href="48518.html#48529">48529</a>, <a href="63247.html#63259">63259</a>, <a href="63349.html#63363">63363</a>, <a href="63598.html#63625">63625</a>, <a href="63598.html#63642">63642</a> and <a href="64687.html#64797">64797</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63017"></span>63017</td>
+<td class="instruction">LD HL,0</td>
+<td class="comment-11" rowspan="1">Load (video) memory location to start printing character into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63020"></span>63020</td>
+<td class="instruction">LD B,8</td>
+<td class="comment-11" rowspan="1">For eight bytes (i.e. full height of character)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63022"></span>63022</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">...get graphic data from character set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63023"></span>63023</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...and load into video memory...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63024"></span>63024</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">...move to next pixel row in character set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63025"></span>63025</td>
+<td class="instruction">INC H</td>
+<td class="comment-11" rowspan="1">...and move to next pixel row in video memory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63026"></span>63026</td>
+<td class="instruction">DJNZ 63022</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="63005.html#63022">63022</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63028"></span>63028</td>
+<td class="instruction">CALL <a href="63286.html">63286</a></td>
+<td class="comment-11" rowspan="1">Update Attribute Virtual Text Cursor based upon current Bitmap Virtual Text Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63031"></span>63031</td>
+<td class="instruction">LD A,(23695)</td>
+<td class="comment-11" rowspan="1">Obtain attribute data stored previously (71 = bright white)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63034"></span>63034</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">Apply attribute to character just printed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63035"></span>63035</td>
+<td class="instruction">CALL <a href="63247.html">63247</a></td>
+<td class="comment-11" rowspan="1">Advance Bitmap Virtual Text Cursor right by one character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63038"></span>63038</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63039"></span>63039</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62987.html">62987</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63005">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63040.html">63040</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

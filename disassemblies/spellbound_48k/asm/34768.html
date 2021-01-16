@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 34768</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34762.html">34762</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#34768">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="34799.html">34799</a></span></td>
+</tr>
+</table>
+<div class="description">34768: Adjust the Height and Display a Message Window, then Return to Game</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="33129.html">33129</a>, <a href="33811.html">33811</a>, <a href="33883.html">33883</a>, <a href="33935.html">33935</a>, <a href="33993.html">33993</a>, <a href="34062.html">34062</a>, <a href="34106.html">34106</a>, <a href="34544.html">34544</a>, <a href="34552.html">34552</a>, <a href="34560.html">34560</a>, <a href="34568.html">34568</a>, <a href="34576.html">34576</a>, <a href="34584.html">34584</a>, <a href="34730.html">34730</a>, <a href="34799.html">34799</a>, <a href="34803.html">34803</a>, <a href="34808.html">34808</a>, <a href="34812.html">34812</a>, <a href="34816.html">34816</a>, <a href="34914.html">34914</a> and <a href="35393.html">35393</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Window index</td>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Points to text to show in window</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34768"></span>34768</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34769"></span>34769</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">Load index A into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34770"></span>34770</td>
+<td class="instruction">LD H,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34772"></span>34772</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Exchange AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34773"></span>34773</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">Multiply HL by 8...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34774"></span>34774</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34775"></span>34775</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34776"></span>34776</td>
+<td class="instruction">LD DE,41877</td>
+<td class="comment-11" rowspan="1">Point DE at bottom position of first window in window data table...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34779"></span>34779</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">...then add this to HL to obtain bottom position of window A location</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34780"></span>34780</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Restore pointer to text to show in window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34781"></span>34781</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">Load the first character of the text (a height value) into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34782"></span>34782</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...and from there into window table, thereby adjusting the height of the window!</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34783"></span>34783</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Move to next character (which should be the true start of the text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34784"></span>34784</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Store this pointer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34785"></span>34785</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Switch back to restore window index to A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34786"></span>34786</td>
+<td class="instruction">CALL <a href="36987.html">36987</a></td>
+<td class="comment-11" rowspan="1">Draw the window with index A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34789"></span>34789</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore pointer to text to HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34790"></span>34790</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">Print the text into the window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34793"></span>34793</td>
+<td class="instruction">CALL <a href="38749.html">38749</a></td>
+<td class="comment-11" rowspan="1">Display "PRESS SPACE OR FIRE TO CONTINUE" window and wait for space / fire</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34796"></span>34796</td>
+<td class="instruction">JP <a href="30222.html#30428">30428</a></td>
+<td class="comment-11" rowspan="1">Reset Gimbal-White-Out Safe Flag, redraw current room and return to main game loop</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34762.html">34762</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#34768">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="34799.html">34799</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

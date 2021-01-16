@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 36908</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36900.html">36900</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36908">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36919.html">36919</a></span></td>
+</tr>
+</table>
+<div class="description">36908: Draw an Edge of Frame of a Window</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="37147.html">37147</a> and <a href="37782.html">37782</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Width of window (characters) minus 1 - used as a loop counter to print segments of window border</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36908"></span>36908</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1">Check whether remaining window's width is zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36909"></span>36909</td>
+<td class="instruction">OR L</td>
+<td class="comment-11" rowspan="1">...and if it is...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36910"></span>36910</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="36911"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="36908.html#36911">36911</a> represents the border style (character index) to print. This is modified by the instructions at <a href="36987.html#37028">37028</a>, <a href="37147.html#37176">37176</a> and <a href="37147.html#37246">37246</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36911"></span>36911</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Load A with the border style (character index)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36913"></span>36913</td>
+<td class="instruction">CALL <a href="36475.html">36475</a></td>
+<td class="comment-11" rowspan="1">...print the character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36916"></span>36916</td>
+<td class="instruction">DEC HL</td>
+<td class="comment-11" rowspan="1">...decrease the remaining width...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36917"></span>36917</td>
+<td class="instruction">JR 36908</td>
+<td class="comment-11" rowspan="1">...and loop back to <a href="36908.html">36908</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36900.html">36900</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36908">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36919.html">36919</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

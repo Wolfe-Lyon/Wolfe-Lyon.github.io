@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 47468</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47431.html">47431</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47468">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47499.html">47499</a></span></td>
+</tr>
+</table>
+<div class="description">47468: Increase Timer Tick Counter and Reduce Remaining Time if Counter &gt; 767</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="47363.html">47363</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47468"></span>47468</td>
+<td class="instruction">LD HL,(34211)</td>
+<td class="comment-11" rowspan="1">Increase Timer Tick Counter by one...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47471"></span>47471</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47472"></span>47472</td>
+<td class="instruction">LD (34211),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47475"></span>47475</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1">If Timer Tick Counter is less than 768 (i.e. 3 x 256)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47476"></span>47476</td>
+<td class="instruction">CP 3</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47478"></span>47478</td>
+<td class="instruction">RET C</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47479"></span>47479</td>
+<td class="instruction">LD HL,0</td>
+<td class="comment-11" rowspan="1">Reset Timer Tick Counter to zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47482"></span>47482</td>
+<td class="instruction">LD (34211),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="47485"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="53723.html">53723</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47485"></span>47485</td>
+<td class="instruction">LD A,(34210)</td>
+<td class="comment-11" rowspan="1">If no time / lives remain...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47488"></span>47488</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47489"></span>47489</td>
+<td class="instruction">JP Z,<a href="47241.html">47241</a></td>
+<td class="comment-11" rowspan="1">...then reset Show Score Flag, draw timer figures bar and return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47492"></span>47492</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Decrease current time / lives by one...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47493"></span>47493</td>
+<td class="instruction">LD (34210),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47496"></span>47496</td>
+<td class="instruction">JP <a href="47241.html">47241</a></td>
+<td class="comment-11" rowspan="1">Reset Show Score Flag, and draw timer figures bar and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47431.html">47431</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47468">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47499.html">47499</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

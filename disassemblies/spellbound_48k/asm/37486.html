@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 37486</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37472.html">37472</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37486">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37497.html">37497</a></span></td>
+</tr>
+</table>
+<div class="description">37486: Wait for Fire Button / Key to be Released</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="27176.html">27176</a>, <a href="37552.html">37552</a> and <a href="38749.html">38749</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37486"></span>37486</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37487"></span>37487</td>
+<td class="instruction">HALT</td>
+<td class="comment-11" rowspan="1">Wait for interrupt</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37488"></span>37488</td>
+<td class="instruction">CALL <a href="37876.html">37876</a></td>
+<td class="comment-11" rowspan="1">Capture keyboard / joystick input into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37491"></span>37491</td>
+<td class="instruction">BIT 4,A</td>
+<td class="comment-11" rowspan="1">If fire button / key pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37493"></span>37493</td>
+<td class="instruction">JR NZ,37487</td>
+<td class="comment-11" rowspan="1">...loop back</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37495"></span>37495</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37496"></span>37496</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37472.html">37472</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37486">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37497.html">37497</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

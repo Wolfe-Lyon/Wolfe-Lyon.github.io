@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 52889</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52870.html">52870</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52889">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52908.html">52908</a></span></td>
+</tr>
+</table>
+<div class="description">52889: Script Routine (54): Move Worm Right if Possible, Otherwise Choose New Direction</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data for an entity</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52889"></span>52889</td>
+<td class="instruction">CALL <a href="54569.html">54569</a></td>
+<td class="comment-11" rowspan="1">Check worm for collision with another impassable / pushable entity immediately to the right...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52892"></span>52892</td>
+<td class="instruction">JR NC,<a href="52908.html">52908</a></td>
+<td class="comment-11" rowspan="1">...and if a collision occurred, then have worm choose new direction</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52894"></span>52894</td>
+<td class="instruction">CALL <a href="54313.html">54313</a></td>
+<td class="comment-11" rowspan="1">Move worm into room to the right, if appropriate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52897"></span>52897</td>
+<td class="instruction">JR NC,<a href="52908.html">52908</a></td>
+<td class="comment-11" rowspan="1">...and if worm can't enter new room then have worm choose new direction</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52899"></span>52899</td>
+<td class="instruction">INC (IX+5)</td>
+<td class="comment-11" rowspan="1">Move worm right one character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52902"></span>52902</td>
+<td class="instruction">INC (IX+7)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52905"></span>52905</td>
+<td class="instruction">JP <a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52870.html">52870</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52889">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52908.html">52908</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

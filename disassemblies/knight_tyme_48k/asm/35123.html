@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 35123</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34990.html">34990</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35123">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35285.html">35285</a></span></td>
+</tr>
+</table>
+<div class="description">35123: Draw a Window Frame</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="34990.html">34990</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35123"></span>35123</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">Store border attribute in ATTR T system variable</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35126"></span>35126</td>
+<td class="instruction">LD A,(23493)</td>
+<td class="comment-11" rowspan="1">Load A with x-coordinate of left of window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35129"></span>35129</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Copy into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35130"></span>35130</td>
+<td class="instruction">LD A,(23495)</td>
+<td class="comment-11" rowspan="1">Load A with x-coordinate of right of window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35133"></span>35133</td>
+<td class="instruction">SUB C</td>
+<td class="comment-11" rowspan="1">Get distance between left and right coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35134"></span>35134</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Subtract 1 to get width of window top-edge (not including corner pieces)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35135"></span>35135</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Transfer this to BC...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35136"></span>35136</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35138"></span>35138</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (width of top edge of window, not including corner pieces)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35139"></span>35139</td>
+<td class="instruction">LD BC,(23493)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of top edge and C with x-coordinate of left edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35143"></span>35143</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Increase C by one (as top edge strictly starts one to the right of this x-coordinate - the left-most is actually a corner piece, not an edge)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35144"></span>35144</td>
+<td class="instruction">CALL <a href="54132.html">54132</a></td>
+<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35147"></span>35147</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (width of top edge of window, not including corner pieces)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35148"></span>35148</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (width of top edge of window, not including corner pieces)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35149"></span>35149</td>
+<td class="instruction">HALT</td>
+<td class="comment-11" rowspan="1">Wait for interrupt</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35150"></span>35150</td>
+<td class="instruction">CALL <a href="35285.html">35285</a></td>
+<td class="comment-11" rowspan="1">Draw upper window frame edge then increment the border character index in routine at <a href="54231.html">54231</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35153"></span>35153</td>
+<td class="instruction">LD A,(23493)</td>
+<td class="comment-11" rowspan="1">Load C with x-coordinate of left of window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35156"></span>35156</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35157"></span>35157</td>
+<td class="instruction">LD A,(23496)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of bottom of window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35160"></span>35160</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35161"></span>35161</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Increase C by one (as bottom edge strictly starts one to the right of this x-coordinate - the left-most is actually a corner piece, not an edge)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35162"></span>35162</td>
+<td class="instruction">CALL <a href="54132.html">54132</a></td>
+<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35165"></span>35165</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (width of bottom edge of window)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35166"></span>35166</td>
+<td class="instruction">CALL <a href="35285.html">35285</a></td>
+<td class="comment-11" rowspan="1">Draw lower window frame edge then increment the border character index in routine at <a href="54231.html">54231</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35169"></span>35169</td>
+<td class="instruction">LD A,(23494)</td>
+<td class="comment-11" rowspan="1">Load y-coordinate of top of window into B...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35172"></span>35172</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35173"></span>35173</td>
+<td class="instruction">LD A,(23496)</td>
+<td class="comment-11" rowspan="1">Load y-coordinate of bottom of window into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35176"></span>35176</td>
+<td class="instruction">SUB B</td>
+<td class="comment-11" rowspan="1">Subtract B...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35177"></span>35177</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...and decrease by one to get length of left-edge (not including corner pieces)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="35178"></span>35178</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF (A = remaining length of left / right edges)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35179"></span>35179</td>
+<td class="instruction">LD BC,(23493)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of top edge and C with x-coordinate of left edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35183"></span>35183</td>
+<td class="instruction">ADD A,B</td>
+<td class="comment-11" rowspan="1">Add A and B to get y-coordinate of character to draw in left edge...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35184"></span>35184</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...and load into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35185"></span>35185</td>
+<td class="instruction">CALL <a href="54132.html">54132</a></td>
+<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35188"></span>35188</td>
+<td class="instruction">LD A,(54235)</td>
+<td class="comment-11" rowspan="1">Load A with index of character (left edge) to draw</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35191"></span>35191</td>
+<td class="instruction">CALL <a href="54097.html">54097</a></td>
+<td class="comment-11" rowspan="1">Print text/graphic character in A and advance Bitmap Virtual Text Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35194"></span>35194</td>
+<td class="instruction">LD HL,(54110)</td>
+<td class="comment-11" rowspan="1">Load HL with address of Bitmap Virtual Text Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35197"></span>35197</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">Load A with LSB of Display File address (virtual attribute cursor location)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35198"></span>35198</td>
+<td class="instruction">AND 224</td>
+<td class="comment-11" rowspan="1">Decrease to nearest multiple of 32 (i.e. start of character row)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35200"></span>35200</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...and place back in L</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35201"></span>35201</td>
+<td class="instruction">LD A,(23495)</td>
+<td class="comment-11" rowspan="1">Load A with x-coordinate of right edge of window (characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35204"></span>35204</td>
+<td class="instruction">OR L</td>
+<td class="comment-11" rowspan="1">Add this x-coordinate to value in HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35205"></span>35205</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35206"></span>35206</td>
+<td class="instruction">LD (54110),HL</td>
+<td class="comment-11" rowspan="1">...and update address of Bitmap Virtual Text Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35209"></span>35209</td>
+<td class="instruction">LD A,(54235)</td>
+<td class="comment-11" rowspan="1">Load A with index of character (left edge) to draw...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35212"></span>35212</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...and increment index to get index of right-edge character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35213"></span>35213</td>
+<td class="instruction">CALL <a href="54097.html">54097</a></td>
+<td class="comment-11" rowspan="1">Print text/graphic character in A and advance Bitmap Virtual Text Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35216"></span>35216</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF (A = remaining length of left / right edges)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35217"></span>35217</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Decrease remaining length</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35218"></span>35218</td>
+<td class="instruction">JP NZ,35178</td>
+<td class="comment-11" rowspan="1">If remaining length is not zero then loop back to <a href="35123.html#35178">35178</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35221"></span>35221</td>
+<td class="instruction">LD A,(23495)</td>
+<td class="comment-11" rowspan="1">Load C with x-coordinate of right edge of window (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35224"></span>35224</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35225"></span>35225</td>
+<td class="instruction">LD A,(23494)</td>
+<td class="comment-11" rowspan="1">Load y-coordinate of top edge of window into B...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35228"></span>35228</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35229"></span>35229</td>
+<td class="instruction">CALL <a href="54132.html">54132</a></td>
+<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35232"></span>35232</td>
+<td class="instruction">LD A,(54235)</td>
+<td class="comment-11" rowspan="1">Load A with index of character (left-edge) to draw...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35235"></span>35235</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...and increment (to get right-edge character)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35236"></span>35236</td>
+<td class="instruction">CALL <a href="35285.html#35291">35291</a></td>
+<td class="comment-11" rowspan="1">Increment index again (to get top-right corner character) and store at <a href="54231.html#54234">54235</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35239"></span>35239</td>
+<td class="instruction">CALL <a href="54097.html">54097</a></td>
+<td class="comment-11" rowspan="1">Print text/graphic character in A and advance Bitmap Virtual Text Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35242"></span>35242</td>
+<td class="instruction">LD BC,(23495)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of window's bottom edge and C with x-coordinate of window's right-edge</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35246"></span>35246</td>
+<td class="instruction">CALL <a href="54132.html">54132</a></td>
+<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35249"></span>35249</td>
+<td class="instruction">CALL <a href="35285.html#35288">35288</a></td>
+<td class="comment-11" rowspan="1">Increment index of window frame character currently in use to get bottom-right corner character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35252"></span>35252</td>
+<td class="instruction">CALL <a href="54097.html">54097</a></td>
+<td class="comment-11" rowspan="1">Print text/graphic character in A and advance Bitmap Virtual Text Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35255"></span>35255</td>
+<td class="instruction">LD A,(23493)</td>
+<td class="comment-11" rowspan="1">Load C with x-coordinate of left edge of current window to draw (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35258"></span>35258</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35259"></span>35259</td>
+<td class="instruction">LD A,(23496)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of window's bottom edge...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35262"></span>35262</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35263"></span>35263</td>
+<td class="instruction">CALL <a href="54132.html">54132</a></td>
+<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35266"></span>35266</td>
+<td class="instruction">CALL <a href="35285.html#35288">35288</a></td>
+<td class="comment-11" rowspan="1">Increment index of window frame character currently in use to get bottom-left corner character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35269"></span>35269</td>
+<td class="instruction">CALL <a href="54097.html">54097</a></td>
+<td class="comment-11" rowspan="1">Print text/graphic character in A and advance Bitmap Virtual Text Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35272"></span>35272</td>
+<td class="instruction">LD BC,(23493)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of top-edge of window and C with x-coordinate of left-edge of window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35276"></span>35276</td>
+<td class="instruction">CALL <a href="54132.html">54132</a></td>
+<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35279"></span>35279</td>
+<td class="instruction">CALL <a href="35285.html#35288">35288</a></td>
+<td class="comment-11" rowspan="1">Increment index of window frame character currently in use to get top-left corner character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="35282"></span>35282</td>
+<td class="instruction">JP <a href="54097.html">54097</a></td>
+<td class="comment-11" rowspan="1">Print text/graphic character in A and advance Bitmap Virtual Text Cursor and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34990.html">34990</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#35123">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="35285.html">35285</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 33129</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33036.html">33036</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33129">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33180.html">33180</a></span></td>
+</tr>
+</table>
+<div class="description">33129: Cast Release Spell if Possible, else Display Failure Message</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="32655.html">32655</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33129"></span>33129</td>
+<td class="instruction">LD A,(23378)</td>
+<td class="comment-11" rowspan="1">If any of Crystallium Spectralis, Candelium Illuminatus, Armouris Photonicus or Fumaticus Protectium have not been cast...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33132"></span>33132</td>
+<td class="instruction">CP 15</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33134"></span>33134</td>
+<td class="instruction">JP NZ,<a href="34634.html">34634</a></td>
+<td class="comment-11" rowspan="1">...then display "THAT SPELL CANNOT YET BE CAST" message and return to game</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33137"></span>33137</td>
+<td class="instruction">LD A,(23468)</td>
+<td class="comment-11" rowspan="1">If Gimbal is not free...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33140"></span>33140</td>
+<td class="instruction">AND 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33142"></span>33142</td>
+<td class="instruction">JP Z,<a href="34634.html">34634</a></td>
+<td class="comment-11" rowspan="1">...then display "THAT SPELL CANNOT YET BE CAST" message and return to game</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33145"></span>33145</td>
+<td class="instruction">LD A,12</td>
+<td class="comment-11" rowspan="1">Load A with index of object 12 (Magic Talisman)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33147"></span>33147</td>
+<td class="instruction">CALL <a href="34256.html">34256</a></td>
+<td class="comment-11" rowspan="1">Check whether Magic Knight is holding the Magic Talisman...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33150"></span>33150</td>
+<td class="instruction">JP NZ,<a href="34634.html">34634</a></td>
+<td class="comment-11" rowspan="1">...and if not, then display "THAT SPELL CANNOT YET BE CAST..." window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33153"></span>33153</td>
+<td class="instruction">LD A,32</td>
+<td class="comment-11" rowspan="1">Load A with index of object 32 (White Gold Ring)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33155"></span>33155</td>
+<td class="instruction">CALL <a href="34256.html">34256</a></td>
+<td class="comment-11" rowspan="1">Check whether Magic Knight is holding the White Gold Ring...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33158"></span>33158</td>
+<td class="instruction">JP NZ,<a href="34634.html">34634</a></td>
+<td class="comment-11" rowspan="1">...and if not, then display "THAT SPELL CANNOT YET BE CAST..." window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33161"></span>33161</td>
+<td class="instruction">LD A,(23378)</td>
+<td class="comment-11" rowspan="1">Set bit 4 of score progress flags...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33164"></span>33164</td>
+<td class="instruction">OR 16</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33166"></span>33166</td>
+<td class="instruction">LD (23378),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33169"></span>33169</td>
+<td class="instruction">CALL <a href="33278.html">33278</a></td>
+<td class="comment-11" rowspan="1">Flash border and screen (as in cast a spell)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33172"></span>33172</td>
+<td class="instruction">LD A,30</td>
+<td class="comment-11" rowspan="1">Display "GIMBAL WILL NOW SEND EACH CHARACTER BACK TO THEIR HOMES..." window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33174"></span>33174</td>
+<td class="instruction">LD HL,50213</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33177"></span>33177</td>
+<td class="instruction">JP <a href="34768.html">34768</a></td>
+<td class="comment-11" rowspan="1">...and return to game</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33036.html">33036</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33129">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33180.html">33180</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

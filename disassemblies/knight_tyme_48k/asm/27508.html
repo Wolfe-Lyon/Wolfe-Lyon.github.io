@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 27508</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="27357.html">27357</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27508">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27647.html">27647</a></span></td>
+</tr>
+</table>
+<div class="description">27508: Kill Magic Knight's x-Velocity if he Cannot Horizontally Pass Through a Block Beside Him</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="27136.html">27136</a> and <a href="27357.html">27357</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27508"></span>27508</td>
+<td class="instruction">LD A,(23463)</td>
+<td class="comment-11" rowspan="1">Load B with Magic Knight's "temporary store" movement flags...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27511"></span>27511</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27512"></span>27512</td>
+<td class="instruction">LD A,(25156)</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's x-coordinate into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27515"></span>27515</td>
+<td class="instruction">CP 5</td>
+<td class="comment-11" rowspan="1">If x-coordinate is less than 5...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27517"></span>27517</td>
+<td class="instruction">JP C,27527</td>
+<td class="comment-11" rowspan="1">...then jump ahead to <a href="27508.html#27527">27527</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27520"></span>27520</td>
+<td class="instruction">CP 230</td>
+<td class="comment-11" rowspan="1">If x-coordinate is greater than 230...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27522"></span>27522</td>
+<td class="instruction">JP NC,27527</td>
+<td class="comment-11" rowspan="1">...then jump ahead to <a href="27508.html#27527">27527</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27525"></span>27525</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">Set B (Magic Knight's Temporary Store Movement Flags) to zero (i.e. Magic Knight is not at the outer edges of his current room, so can move both left and right)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27527"></span>27527</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's Temporary Store Movement Flags into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27528"></span>27528</td>
+<td class="instruction">LD (23474),A</td>
+<td class="comment-11" rowspan="1">Set Magic Knight's movement flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27531"></span>27531</td>
+<td class="instruction">LD A,(25157)</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's y-coordinate into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27534"></span>27534</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27535"></span>27535</td>
+<td class="instruction">LD A,(25161)</td>
+<td class="comment-11" rowspan="1">Add Magic Knight's y-velocity to y-coordinate in A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27538"></span>27538</td>
+<td class="instruction">ADD A,B</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27539"></span>27539</td>
+<td class="instruction">LD (23483),A</td>
+<td class="comment-11" rowspan="1">Store this new (predicted) y-coordinate at <a href="23481.html#23483">23483</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27542"></span>27542</td>
+<td class="instruction">LD C,4</td>
+<td class="comment-11" rowspan="1">Set C to 4 (as Magic Knight is normally four characters tall)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27544"></span>27544</td>
+<td class="instruction">AND 7</td>
+<td class="comment-11" rowspan="1">If predicted y-coordinate is divisible by eight...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27546"></span>27546</td>
+<td class="instruction">JR Z,27549</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="27508.html#27549">27549</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27548"></span>27548</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">...else Magic Knight must be airborne and at non-integer y-coordinate, and so spans five character blocks rather than four</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27549"></span>27549</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Load A with number of vertical characters spanned by Magic Knight...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27550"></span>27550</td>
+<td class="instruction">LD (27582),A</td>
+<td class="comment-11" rowspan="1">...and update instructions at <a href="27508.html#27581">27581</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27553"></span>27553</td>
+<td class="instruction">LD (27621),A</td>
+<td class="comment-11" rowspan="1">...and <a href="27508.html#27620">27620</a> with this value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27556"></span>27556</td>
+<td class="instruction">LD A,(25156)</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's current x-coordinate into C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27559"></span>27559</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27560"></span>27560</td>
+<td class="instruction">LD A,(25160)</td>
+<td class="comment-11" rowspan="1">Add Magic Knight's x-velocity to x-coordinate in A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27563"></span>27563</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27564"></span>27564</td>
+<td class="instruction">LD (23482),A</td>
+<td class="comment-11" rowspan="1">Store this new (predicted) x-coordinate at <a href="23481.html#23482">23482</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27567"></span>27567</td>
+<td class="instruction">CALL <a href="28625.html">28625</a></td>
+<td class="comment-11" rowspan="1">Divide predicted x-coordinate by eight, rounding down to nearest integer...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27570"></span>27570</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...and load into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27571"></span>27571</td>
+<td class="instruction">LD A,(23483)</td>
+<td class="comment-11" rowspan="1">Load predicted y-coordinate into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27574"></span>27574</td>
+<td class="instruction">CALL <a href="28625.html">28625</a></td>
+<td class="comment-11" rowspan="1">...divide it by eight, rounding down to nearest integer...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27577"></span>27577</td>
+<td class="instruction">LD (23483),A</td>
+<td class="comment-11" rowspan="1">...store back at <a href="23481.html#23483">23483</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27580"></span>27580</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...and load into B</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="27581"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="27508.html#27581">27581</a> represents number of characters spanned by Magic Knight, vertically. This is modified by the instruction at <a href="27508.html#27550">27550</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27581"></span>27581</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Load number of characters (vertically) to check for impassibility</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27583"></span>27583</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store remaining number of character blocks spanned by Magic Knight vertically to check</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27584"></span>27584</td>
+<td class="instruction">CALL <a href="54162.html">54162</a></td>
+<td class="comment-11" rowspan="1">Point HL at terrain interaction data for character coordinates x=C, y=B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27587"></span>27587</td>
+<td class="instruction">BIT 6,(HL)</td>
+<td class="comment-11" rowspan="1">If Bit 6 of terrain data is set (i.e. Magic Knight cannot pass block horizontally)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27589"></span>27589</td>
+<td class="instruction">JR NZ,27598</td>
+<td class="comment-11" rowspan="1">...then jump ahead to <a href="27508.html#27598">27598</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27591"></span>27591</td>
+<td class="instruction">INC B</td>
+<td class="comment-11" rowspan="1">Advance check to next character down</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27592"></span>27592</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore remaining number of character blocks spanned by Magic Knight vertically to check</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27593"></span>27593</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Decrease count of remaining character blocks by one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27594"></span>27594</td>
+<td class="instruction">JR NZ,27583</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="27508.html#27583">27583</a> to check next block down</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27596"></span>27596</td>
+<td class="instruction">JR 27607</td>
+<td class="comment-11" rowspan="1">Skip over setting Magic Knight's Cannot Move Left Flag as there are no obstructions to the left</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27598"></span>27598</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27599"></span>27599</td>
+<td class="instruction">LD A,(23474)</td>
+<td class="comment-11" rowspan="1">Set "Magic Knight Cannot Move Left" Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27602"></span>27602</td>
+<td class="instruction">OR 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27604"></span>27604</td>
+<td class="instruction">LD (23474),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27607"></span>27607</td>
+<td class="instruction">LD A,(23482)</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's predicted x-coordinate (pixels) into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27610"></span>27610</td>
+<td class="instruction">ADD A,15</td>
+<td class="comment-11" rowspan="1">...and add 15...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27612"></span>27612</td>
+<td class="instruction">CALL <a href="28625.html">28625</a></td>
+<td class="comment-11" rowspan="1">...divide by eight, rounding down to nearest integer...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27615"></span>27615</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...and load into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27616"></span>27616</td>
+<td class="instruction">LD A,(23483)</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's predicted y-coordinate (chars) into B...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27619"></span>27619</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="27620"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="27508.html#27620">27620</a> represents number of characters spanned by Magic Knight, vertically. This is modified by the instruction at <a href="27508.html#27553">27553</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27620"></span>27620</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Load number of characters (vertically) to check for impassibility</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27622"></span>27622</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF (remaining number of vertical characters to check for impassibility)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27623"></span>27623</td>
+<td class="instruction">CALL <a href="54162.html">54162</a></td>
+<td class="comment-11" rowspan="1">Point HL at terrain interaction data for character coordinates x=C, y=B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27626"></span>27626</td>
+<td class="instruction">BIT 6,(HL)</td>
+<td class="comment-11" rowspan="1">If Bit 6 is set (i.e. Magic Knight cannot pass block horizontally)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27628"></span>27628</td>
+<td class="instruction">JR NZ,27637</td>
+<td class="comment-11" rowspan="1">...jump ahead to <a href="27508.html#27637">27637</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27630"></span>27630</td>
+<td class="instruction">INC B</td>
+<td class="comment-11" rowspan="1">Increase y-coordinate by one character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27631"></span>27631</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27632"></span>27632</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Decrease number of remaining blocks to check</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27633"></span>27633</td>
+<td class="instruction">JR NZ,27622</td>
+<td class="comment-11" rowspan="1">If number of remaining blocks to check is not zero then loop back to 27622</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27635"></span>27635</td>
+<td class="instruction">JR 27646</td>
+<td class="comment-11" rowspan="1">Exit routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27637"></span>27637</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27638"></span>27638</td>
+<td class="instruction">LD A,(23474)</td>
+<td class="comment-11" rowspan="1">Set "Magic Knight Cannot Move Right" flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27641"></span>27641</td>
+<td class="instruction">OR 2</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27643"></span>27643</td>
+<td class="instruction">LD (23474),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27646"></span>27646</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="27357.html">27357</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27508">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27647.html">27647</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

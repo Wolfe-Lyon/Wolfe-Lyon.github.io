@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 28070</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="27951.html">27951</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28070">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28095.html">28095</a></span></td>
+</tr>
+</table>
+<div class="description">28070: Room Drawing: Advance IX to Start of Next Room Layout Data Entry and Paint Attributes</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+This routine is jumped to only by the routine at <a href="28938.html">28938</a>, which in turn is only jumped to by the routine at <a href="27951.html">27951</a>. In this latter routine, the instruction at <a href="27951.html#28045">28045</a> pushes DE (pointer to required entry in RLE Terrain Interaction Lookup Table) onto the stack, and then the instruction at <a href="27951.html#28051">28051</a> pushes IX (current position in room layout data) onto the stack.
+</div>
+<div class="paragraph">
+Used by the routine at <a href="28938.html">28938</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28070"></span>28070</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore IX (current position in room layout data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28072"></span>28072</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (pointer to required entry in RLE Terrain Interaction Lookup Table, PUSHed by instruction at <a href="27951.html#28045">28045</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28073"></span>28073</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load Mirror Options into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28076"></span>28076</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store IX (current position in room layout data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28078"></span>28078</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If both mirror options are off...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28079"></span>28079</td>
+<td class="instruction">JP Z,<a href="29174.html">29174</a></td>
+<td class="comment-11" rowspan="1">...then paint room layout data entry's Terrain Interaction Parameters, then advance to next entry</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28082"></span>28082</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">If Apply Vertical Mirror selected...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28084"></span>28084</td>
+<td class="instruction">JP Z,<a href="29142.html">29142</a></td>
+<td class="comment-11" rowspan="1">...then paint room layout data entry's Terrain Interaction Parameters, applying vertical mirror, then advance to next entry</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28087"></span>28087</td>
+<td class="instruction">CP 2</td>
+<td class="comment-11" rowspan="1">If Apply Horizontal Mirror selected...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28089"></span>28089</td>
+<td class="instruction">JP Z,<a href="29110.html">29110</a></td>
+<td class="comment-11" rowspan="1">...then paint room layout data entry's Terrain Interaction Parameters, applying horizontal mirror, then advance to next entry</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28092"></span>28092</td>
+<td class="instruction">JP <a href="29082.html">29082</a></td>
+<td class="comment-11" rowspan="1">Otherwise, paint room layout data entry's Terrain Interaction Parameters, applying horizontal and vertical mirrors, then advance to next entry</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="27951.html">27951</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28070">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28095.html">28095</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 47499</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47468.html">47468</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47499">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47589.html">47589</a></span></td>
+</tr>
+</table>
+<div class="description">47499: Update Scores and Display</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="34438.html">34438</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47499"></span>47499</td>
+<td class="instruction">LD HL,34208</td>
+<td class="comment-11" rowspan="1">Set Show Score Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47502"></span>47502</td>
+<td class="instruction">SET 7,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47504"></span>47504</td>
+<td class="instruction">LD HL,0</td>
+<td class="comment-11" rowspan="1">Set HL to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47507"></span>47507</td>
+<td class="instruction">LD A,(34210)</td>
+<td class="comment-11" rowspan="1">If no time / lives remain...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47510"></span>47510</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47511"></span>47511</td>
+<td class="instruction">JR Z,47526</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="47499.html#47526">47526</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47513"></span>47513</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load HL with 1000 x current remaining time / lives...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47514"></span>47514</td>
+<td class="instruction">LD DE,1000</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47517"></span>47517</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47518"></span>47518</td>
+<td class="instruction">DJNZ 47517</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47520"></span>47520</td>
+<td class="instruction">LD DE,(34211)</td>
+<td class="comment-11" rowspan="1">Subtract value of Timer Tick Counter (i.e. Score Penalty) from current level's score...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47524"></span>47524</td>
+<td class="instruction">SBC HL,DE</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47526"></span>47526</td>
+<td class="instruction">LD (34213),HL</td>
+<td class="comment-11" rowspan="1">Set score for current level</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47529"></span>47529</td>
+<td class="instruction">LD DE,(34215)</td>
+<td class="comment-11" rowspan="1">Load DE with current total score</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47533"></span>47533</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Add score for current level to total score...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47534"></span>47534</td>
+<td class="instruction">LD (34215),HL</td>
+<td class="comment-11" rowspan="1">...and store</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47537"></span>47537</td>
+<td class="instruction">LD DE,(34299)</td>
+<td class="comment-11" rowspan="1">Load current high score into DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47541"></span>47541</td>
+<td class="instruction">SBC HL,DE</td>
+<td class="comment-11" rowspan="1">Subtract high score from current total score...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47543"></span>47543</td>
+<td class="instruction">JR C,47551</td>
+<td class="comment-11" rowspan="1">...and if this is less than zero (i.e. high score is higher than current total score) then skip ahead to <a href="47499.html#47551">47551</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47545"></span>47545</td>
+<td class="instruction">LD HL,(34215)</td>
+<td class="comment-11" rowspan="1">Load current total score into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47548"></span>47548</td>
+<td class="instruction">LD (34299),HL</td>
+<td class="comment-11" rowspan="1">...and store as new high score</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47551"></span>47551</td>
+<td class="instruction">LD A,16</td>
+<td class="comment-11" rowspan="1">Set time / lives to 16...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47553"></span>47553</td>
+<td class="instruction">LD (34210),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47556"></span>47556</td>
+<td class="instruction">LD IY,47596</td>
+<td class="comment-11" rowspan="1">Point IY at "numeric (score)" part of string at 47589</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47560"></span>47560</td>
+<td class="instruction">LD HL,(34213)</td>
+<td class="comment-11" rowspan="1">Load HL with current score...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47563"></span>47563</td>
+<td class="instruction">CALL <a href="47741.html">47741</a></td>
+<td class="comment-11" rowspan="1">...and convert to string at IY</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47566"></span>47566</td>
+<td class="instruction">LD IY,47609</td>
+<td class="comment-11" rowspan="1">Point IY at "numeric (total)" part of string at 47589</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47570"></span>47570</td>
+<td class="instruction">LD HL,(34215)</td>
+<td class="comment-11" rowspan="1">Load HL with current total score...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47573"></span>47573</td>
+<td class="instruction">CALL <a href="47741.html">47741</a></td>
+<td class="comment-11" rowspan="1">...and convert to string at IY</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47576"></span>47576</td>
+<td class="instruction">LD IY,47622</td>
+<td class="comment-11" rowspan="1">Point IY at "numeric (high score)" part of string at 47589</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47580"></span>47580</td>
+<td class="instruction">LD HL,(34299)</td>
+<td class="comment-11" rowspan="1">Load HL with current high score...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47583"></span>47583</td>
+<td class="instruction">CALL <a href="47741.html">47741</a></td>
+<td class="comment-11" rowspan="1">...and convert to string at IY</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47586"></span>47586</td>
+<td class="instruction">JP <a href="47628.html">47628</a></td>
+<td class="comment-11" rowspan="1">Print SCORE / TOTAL / HI-SC string in current character's colours and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47468.html">47468</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47499">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47589.html">47589</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

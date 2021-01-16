@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 53194</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="53171.html">53171</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#53194">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="53309.html">53309</a></span></td>
+</tr>
+</table>
+<div class="description">53194: Load A with Value Indicating Which Direction Room A Lies Relative to Room in State Data at IX</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Direction index value in A denotes which direction (left or right), e.g. Drutt, has to travel to reach the target room:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Value</th>
+<th colspan="1" rowspan="1">Meaning</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">neither (target room cannot be reached by going left or right)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">right</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">left</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+Used by the routine at <a href="51779.html">51779</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Target room index (e.g. Berk's room or worm's room)</td>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data (current level) for Drutt</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Direction index</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53194"></span>53194</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53195"></span>53195</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53197"></span>53197</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">Load E with target room index</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53198"></span>53198</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load D with Drutt's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53201"></span>53201</td>
+<td class="instruction">LD D,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53202"></span>53202</td>
+<td class="instruction">LD HL,53159</td>
+<td class="comment-11" rowspan="1">Set first two bytes of header to 255 (Start Marker)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53205"></span>53205</td>
+<td class="instruction">LD (HL),255</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53207"></span>53207</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53208"></span>53208</td>
+<td class="instruction">LD (HL),255</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53210"></span>53210</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Set third byte of header to index of Drutt's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53211"></span>53211</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53212"></span>53212</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to first byte of first entry</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53213"></span>53213</td>
+<td class="instruction">CALL <a href="54539.html#54542">54542</a></td>
+<td class="comment-11" rowspan="1">Load B with index of room to left of Drutt's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53216"></span>53216</td>
+<td class="instruction">JR Z,53228</td>
+<td class="comment-11" rowspan="1">...and if there is no such room then skip ahead to <a href="53194.html#53228">53228</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53218"></span>53218</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">If room to left of Drutt's current room is the target room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53219"></span>53219</td>
+<td class="instruction">CP B</td>
+<td class="comment-11" rowspan="1">...then set Zero Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53220"></span>53220</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1">Load A with 2 ("go left")</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53222"></span>53222</td>
+<td class="instruction">JP Z,<a href="53333.html#53336">53336</a></td>
+<td class="comment-11" rowspan="1">If Zero Flag is set (room to left is target room) then restore registers and return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53225"></span>53225</td>
+<td class="instruction">CALL <a href="53309.html">53309</a></td>
+<td class="comment-11" rowspan="1">Add entry to Pathfinding Data Table stating room to left of Drutt is to the left</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53228"></span>53228</td>
+<td class="instruction">CALL <a href="54505.html#54508">54508</a></td>
+<td class="comment-11" rowspan="1">Load B with index of room to right of Drutt's room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53231"></span>53231</td>
+<td class="instruction">JR Z,53243</td>
+<td class="comment-11" rowspan="1">...and if there is no such room then skip ahead to <a href="53194.html#53243">53243</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53233"></span>53233</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">If room to right of Drutt's current room is the target room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53234"></span>53234</td>
+<td class="instruction">CP B</td>
+<td class="comment-11" rowspan="1">...then set Zero Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53235"></span>53235</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Load A with 1 ("go right")</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53237"></span>53237</td>
+<td class="instruction">JP Z,<a href="53333.html#53336">53336</a></td>
+<td class="comment-11" rowspan="1">If Zero Flag is set (room to right is target room) then restore registers and return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53240"></span>53240</td>
+<td class="instruction">CALL <a href="53309.html">53309</a></td>
+<td class="comment-11" rowspan="1">Add entry to Pathfinding Data Table stating room to right of Drutt is to the right</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="53243"></span>
+<div class="comments">
+<div class="paragraph">
+Now the Pathfinding Data Table has a header and zero, one or two records, depending upon the horizontal connectivity of Drutt's current room.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53243"></span>53243</td>
+<td class="instruction">LD IX,53162</td>
+<td class="comment-11" rowspan="1">Load IX with address of first entry in Pathfinding Data Table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53247"></span>53247</td>
+<td class="instruction">LD D,(IX+1)</td>
+<td class="comment-11" rowspan="1">Load D with index of room from current entry in Pathfinding Data Table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53250"></span>53250</td>
+<td class="instruction">CALL <a href="54539.html#54542">54542</a></td>
+<td class="comment-11" rowspan="1">Load B with index of room to left of room D...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53253"></span>53253</td>
+<td class="instruction">JR Z,53271</td>
+<td class="comment-11" rowspan="1">...and if there is no such room then skip ahead to <a href="53194.html#53271">53271</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53255"></span>53255</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">If room to left of room D is the target room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53256"></span>53256</td>
+<td class="instruction">CP B</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53257"></span>53257</td>
+<td class="instruction">JP Z,<a href="53333.html">53333</a></td>
+<td class="comment-11" rowspan="1">...then load A with direction index for room D, restore registers and return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53260"></span>53260</td>
+<td class="instruction">CALL <a href="53317.html">53317</a></td>
+<td class="comment-11" rowspan="1">If room B already has an entry in Pathfinding Data Table...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53263"></span>53263</td>
+<td class="instruction">JR Z,53271</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="53194.html#53271">53271</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53265"></span>53265</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load A with current entry's direction index (room B must lie in same direction as room D)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53268"></span>53268</td>
+<td class="instruction">CALL <a href="53309.html">53309</a></td>
+<td class="comment-11" rowspan="1">Add entry to Pathfinding Data Table for room B lying in direction A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53271"></span>53271</td>
+<td class="instruction">CALL <a href="54505.html#54508">54508</a></td>
+<td class="comment-11" rowspan="1">Load B with index of room to right of room D...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53274"></span>53274</td>
+<td class="instruction">JR Z,53292</td>
+<td class="comment-11" rowspan="1">...and if there is no such room then skip ahead to <a href="53194.html#53292">53292</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53276"></span>53276</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">If room to right of room D is the target room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53277"></span>53277</td>
+<td class="instruction">CP B</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53278"></span>53278</td>
+<td class="instruction">JP Z,<a href="53333.html">53333</a></td>
+<td class="comment-11" rowspan="1">...then load A with direction index for room D, restore registers and return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53281"></span>53281</td>
+<td class="instruction">CALL <a href="53317.html">53317</a></td>
+<td class="comment-11" rowspan="1">If room B already has an entry in Pathfinding Data Table...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53284"></span>53284</td>
+<td class="instruction">JR Z,53292</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="53194.html#53292">53292</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53286"></span>53286</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load A with current entry's direction index (room B must lie in same direction as room D)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53289"></span>53289</td>
+<td class="instruction">CALL <a href="53309.html">53309</a></td>
+<td class="comment-11" rowspan="1">Add entry to Pathfinding Data Table for room B lying in direction A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53292"></span>53292</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance IX by two bytes to next entry in Pathfinding Data Table...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53294"></span>53294</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53296"></span>53296</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">If byte at this location is not 255 (End Marker)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53299"></span>53299</td>
+<td class="instruction">CP 255</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53301"></span>53301</td>
+<td class="instruction">JP NZ,53247</td>
+<td class="comment-11" rowspan="1">...then loop back to <a href="53194.html#53247">53247</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="53304"></span>
+<div class="comments">
+<div class="paragraph">
+At this point, the search has checked all rooms and not found the target room.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53304"></span>53304</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53306"></span>53306</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53307"></span>53307</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set A to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53308"></span>53308</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="53171.html">53171</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#53194">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="53309.html">53309</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 63302</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="63286.html">63286</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63302">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63313.html">63313</a></span></td>
+</tr>
+</table>
+<div class="description">63302: Draw a Run of Characters (e.g. Edge of Frame of a Window)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="39393.html">39393</a>, <a href="47491.html">47491</a>, <a href="47833.html">47833</a> and <a href="63598.html">63598</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Repeat count for printing character (e.g. width of window in characters minus 1)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="63302"></span>63302</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1">Check whether remaining window's width is zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63303"></span>63303</td>
+<td class="instruction">OR L</td>
+<td class="comment-11" rowspan="1">...and if it is...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63304"></span>63304</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return without doing anything</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="63305"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="63302.html#63305">63305</a> represents the index of a character set character to draw. This is modified by the instructions at <a href="39393.html#39413">39413</a>, <a href="47193.html#47234">47234</a>, <a href="47491.html#47498">47498</a>, <a href="47833.html#47844">47844</a> and <a href="63598.html#63630">63630</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63305"></span>63305</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Else, load A with the character index</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63307"></span>63307</td>
+<td class="instruction">CALL <a href="63005.html">63005</a></td>
+<td class="comment-11" rowspan="1">Print text/graphic character in A and advance Bitmap Virtual Text Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63310"></span>63310</td>
+<td class="instruction">DEC HL</td>
+<td class="comment-11" rowspan="1">Decrease remaining width</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="63311"></span>63311</td>
+<td class="instruction">JR 63302</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="63302.html">63302</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="63286.html">63286</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#63302">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="63313.html">63313</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

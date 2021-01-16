@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Data at 60909</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="60889.html">60889</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#60909">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="60925.html">60925</a></span></td>
+</tr>
+</table>
+<div class="description">60909: RLE Terrain Interaction Parameter Data (Room Layout Graphics)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Run Length Encoded data used to paint terrain interaction parameters, with two bytes per entry (or a one-byte end marker represented by a zero). Records are comprised of:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Byte</th>
+<th colspan="1" rowspan="1">Meaning</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Repeat Count</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Terrain Interaction Parameter</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+Note, entry numbers correspond to indices of records in table at <a href="60889.html">60889</a>, and so do not necessarily start at zero.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60909"></span>
+<div class="comments">
+<div class="paragraph">
+(01) - Jump Chute / Corridor Pad
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60909"></span>60909</td>
+<td class="instruction">DEFB 4,255</td>
+<td class="comment-11" rowspan="1">4 x 255 (impassable horizontally, upwards and downwards / preserve attribute)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60911"></span>60911</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60912"></span>
+<div class="comments">
+<div class="paragraph">
+(02) - Axe in Tree Stump
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60912"></span>60912</td>
+<td class="instruction">DEFB 20,0</td>
+<td class="comment-11" rowspan="1">20 x 0 (no interaction)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60914"></span>60914</td>
+<td class="instruction">DEFB 3,128</td>
+<td class="comment-11" rowspan="1">3 x 128 (impassable downwards)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60916"></span>60916</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60917"></span>
+<div class="comments">
+<div class="paragraph">
+(03) - Large Stool
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60917"></span>60917</td>
+<td class="instruction">DEFB 4,128</td>
+<td class="comment-11" rowspan="1">4 x 128 (impassable downwards)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60919"></span>60919</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60920"></span>
+<div class="comments">
+<div class="paragraph">
+(04) - Well
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60920"></span>60920</td>
+<td class="instruction">DEFB 68,0</td>
+<td class="comment-11" rowspan="1">68 x 0 (no interaction)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60922"></span>60922</td>
+<td class="instruction">DEFB 7,128</td>
+<td class="comment-11" rowspan="1">7 x 128 (impassable downwards)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60924"></span>60924</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="60889.html">60889</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#60909">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="60925.html">60925</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

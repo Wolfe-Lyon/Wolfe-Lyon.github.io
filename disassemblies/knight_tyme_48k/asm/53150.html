@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 53150</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="53115.html">53115</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#53150">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="53185.html">53185</a></span></td>
+</tr>
+</table>
+<div class="description">53150: Store Background Attributes if Appropriate, then Draw Magic Knight to Display</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="28101.html">28101</a> and <a href="31468.html">31468</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53150"></span>53150</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Load A with 1 (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="53152"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="53115.html">53115</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53152"></span>53152</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53154"></span>53154</td>
+<td class="instruction">LD A,(23705)</td>
+<td class="comment-11" rowspan="1">If Player Attribute Update Flag is set (Player Attribute Update mode)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53157"></span>53157</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53158"></span>53158</td>
+<td class="instruction">CALL NZ,<a href="53185.html">53185</a></td>
+<td class="comment-11" rowspan="1">...then store background attribute data at Magic Knight's current location</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53161"></span>53161</td>
+<td class="instruction">CALL <a href="52937.html">52937</a></td>
+<td class="comment-11" rowspan="1">Store background bitmap data at Magic Knight's current location</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53164"></span>53164</td>
+<td class="instruction">CALL <a href="53019.html">53019</a></td>
+<td class="comment-11" rowspan="1">Overlay graphic data for MK's current frame on Table of Bitmap Data for MK at his Current Location</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53167"></span>53167</td>
+<td class="instruction">CALL <a href="53073.html">53073</a></td>
+<td class="comment-11" rowspan="1">Draw bitmap data for Magic Knight overlaid on background to Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53170"></span>53170</td>
+<td class="instruction">LD A,(23422)</td>
+<td class="comment-11" rowspan="1">Store Magic Knight's current x-coordinate (characters) at <a href="23420.html#23423">23423</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53173"></span>53173</td>
+<td class="instruction">LD (23423),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53176"></span>53176</td>
+<td class="instruction">LD A,(25157)</td>
+<td class="comment-11" rowspan="1">Store Magic Knight's current y-coordinate (pixels) at <a href="23420.html#23424">23424</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53179"></span>53179</td>
+<td class="instruction">LD (23424),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53182"></span>53182</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53184"></span>53184</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="53115.html">53115</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#53150">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="53185.html">53185</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

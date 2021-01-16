@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 41173</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="41141.html">41141</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#41173">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="41271.html">41271</a></span></td>
+</tr>
+</table>
+<div class="description">41173: Paint Room Layout Data Entry's Terrain Interaction Parameters then Advance to Next Entry (Room Drawing)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="39158.html">39158</a>.
+</div>
+<div class="paragraph">
+See also analogous routine at <a href="40937.html">40937</a> (RLE Attribute Data painting)
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Points to entry in Lookup Table for RLE Terrain Interaction Data (Room Layout Graphics) at <a href="60889.html">60889</a></td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41173"></span>41173</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (Pointer to entry in Lookup Table for RLE Terrain Interaction Data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41174"></span>41174</td>
+<td class="instruction">LD HL,23410</td>
+<td class="comment-11" rowspan="1">Modify instruction at <a href="41173.html#41219">41219</a> to load x-coordinate of graphic's right edge into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41177"></span>41177</td>
+<td class="instruction">LD (41220),HL</td>
+<td class="comment-11" rowspan="1">...i.e. set end x-coordinate for painting left-to-right</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41180"></span>41180</td>
+<td class="instruction">LD HL,41240</td>
+<td class="comment-11" rowspan="1">Modify instruction at <a href="41173.html#41223">41223</a> to jump to <a href="41173.html#41240">41240</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41183"></span>41183</td>
+<td class="instruction">LD (41224),HL</td>
+<td class="comment-11" rowspan="1">...i.e. advance HL down one character row in Terrain Interaction Data Table at <a href="23808.html">23808</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41186"></span>41186</td>
+<td class="instruction">LD A,35</td>
+<td class="comment-11" rowspan="1">Modify instruction at <a href="41173.html#41226">41226</a> with opcode 35 (INC HL)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41188"></span>41188</td>
+<td class="instruction">LD (41226),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41191"></span>41191</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (Pointer to entry in Lookup Table for RLE Terrain Interaction Data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41192"></span>41192</td>
+<td class="instruction">CALL <a href="41035.html">41035</a></td>
+<td class="comment-11" rowspan="1">Store coordinates of area to be coloured and point IX at RLE Terrain Interaction Data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41195"></span>41195</td>
+<td class="instruction">LD BC,(23408)</td>
+<td class="comment-11" rowspan="1">Load BC with x- and y-coordinates (top-left) defined in current room layout data entry</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="41199"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="41081.html">41081</a>, <a href="41109.html">41109</a> and <a href="41141.html">41141</a>.
+</div>
+<div class="paragraph">
+At this point, BC holds the initial coordinates in characters, from which to start painting terrain interaction parameters. IX points to the required RLE terrain interaction data.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41199"></span>41199</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = current y-coordinate, C = initial x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41200"></span>41200</td>
+<td class="instruction">CALL <a href="63233.html">63233</a></td>
+<td class="comment-11" rowspan="1">Point HL at Terrain Interaction Data Table address for character coordinates x=C, y=B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41203"></span>41203</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load A with repeat count value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41206"></span>41206</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If repeat count is zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41207"></span>41207</td>
+<td class="instruction">JP Z,41236</td>
+<td class="comment-11" rowspan="1">...then jump to <a href="41173.html#41236">41236</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41210"></span>41210</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load B with repeat count</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41211"></span>41211</td>
+<td class="instruction">LD C,(IX+1)</td>
+<td class="comment-11" rowspan="1">Load C with terrain interaction parameter to paint</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41214"></span>41214</td>
+<td class="instruction">LD (HL),C</td>
+<td class="comment-11" rowspan="1">Apply terrain interaction parameter in C to current Terrain Interaction Data Table location in HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41215"></span>41215</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">Load E with x-coordinate (characters) of current Terrain Interaction Data location...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41216"></span>41216</td>
+<td class="instruction">AND 31</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41218"></span>41218</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="41219"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="41173.html#41219">41219</a> is modified by instructions at <a href="41081.html#41085">41085</a>, <a href="41109.html#41113">41113</a>, <a href="41141.html#41145">41145</a>, <a href="41173.html#41177">41177</a>, to <a href="23404.html#23408">23408</a> (x-coordinate of left edge), <a href="23404.html#23410">23410</a> (x-coordinate of right edge), <a href="23404.html#23408">23408</a> (x-coordinate of left edge), or <a href="23404.html#23410">23410</a> (x-coordinate of right edge) respectively.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41219"></span>41219</td>
+<td class="instruction">LD A,(23410)</td>
+<td class="comment-11" rowspan="1">Load A with end x-coordinate for painting...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41222"></span>41222</td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="1">...and if this is the same as the x-coordinate...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="41223"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="41173.html#41223">41223</a> (i.e. the destination of the jump) is modified by the instructions at <a href="41081.html#41091">41091</a>, <a href="41109.html#41119">41119</a>, <a href="41141.html#41151">41151</a> and <a href="41173.html#41183">41183</a> to be <a href="41173.html#41261">41261</a> (move up one character row), <a href="41173.html#41261">41261</a> (move up one character row), <a href="41173.html#41240">41240</a> (move down one character row) or <a href="41173.html#41240">41240</a> (move down one character row) respectively.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41223"></span>41223</td>
+<td class="instruction">JP Z,41240</td>
+<td class="comment-11" rowspan="1">...then jump to routine to move up or down one character row</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="41226"></span>
+<div class="comments">
+<div class="paragraph">
+The instruction at <a href="41173.html#41226">41226</a> is modified by the instructions at <a href="41081.html#41096">41096</a>, <a href="41109.html#41124">41124</a>, <a href="41141.html#41156">41156</a> and <a href="41173.html#41188">41188</a> to 43 (DEC HL), 35 (INC HL), 43 (DEC HL) or 35 (INC HL) respectively.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41226"></span>41226</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to next (or previous) byte in Terrain Interaction Data Table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41227"></span>41227</td>
+<td class="instruction">DJNZ 41214</td>
+<td class="comment-11" rowspan="1">Decrease B (repeat count) and loop back to <a href="41173.html#41214">41214</a> if not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41229"></span>41229</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance IX by two bytes in RLE terrain interaction data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41231"></span>41231</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41233"></span>41233</td>
+<td class="instruction">JP 41203</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="41173.html#41203">41203</a> for this new data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41236"></span>41236</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = current y-coordinate, C = initial x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41237"></span>41237</td>
+<td class="instruction">JP <a href="39183.html">39183</a></td>
+<td class="comment-11" rowspan="1">Advance IX to start of next Room Layout Data entry and jump back to <a href="39047.html#39067">39067</a> to paint its attributes / terrain interaction data</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="41240"></span>
+<div class="comments">
+<div class="paragraph">
+Move down one character row
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41240"></span>41240</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Switch registers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41241"></span>41241</td>
+<td class="instruction">LD A,(23411)</td>
+<td class="comment-11" rowspan="1">Load A with one more than y-coordinate of bottom edge of area to paint...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41244"></span>41244</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41245"></span>41245</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = current y-coordinate, C = initial x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41246"></span>41246</td>
+<td class="instruction">INC B</td>
+<td class="comment-11" rowspan="1">Increase B (i.e. move down a character row)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41247"></span>41247</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = updated y-coordinate, C = initial x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41248"></span>41248</td>
+<td class="instruction">CP B</td>
+<td class="comment-11" rowspan="1">If B is the same as A (i.e. we are now outside the area to be painted)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41249"></span>41249</td>
+<td class="instruction">JP Z,41236</td>
+<td class="comment-11" rowspan="1">...then jump to <a href="41173.html#41236">41236</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41252"></span>41252</td>
+<td class="instruction">CALL <a href="63233.html">63233</a></td>
+<td class="comment-11" rowspan="1">Load HL with Terrain Interaction Data Table address for coordinates (C, B) and load E with x-coordinate (characters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41255"></span>41255</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (new Terrain Interaction Data Table Address)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41256"></span>41256</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Switch registers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41257"></span>41257</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (new Terrain Interaction Data Table Address)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41258"></span>41258</td>
+<td class="instruction">JP 41227</td>
+<td class="comment-11" rowspan="1">Jump back to <a href="41173.html#41227">41227</a> and continue painting</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="41261"></span>
+<div class="comments">
+<div class="paragraph">
+Move up one character row
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41261"></span>41261</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Switch registers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41262"></span>41262</td>
+<td class="instruction">LD A,(23409)</td>
+<td class="comment-11" rowspan="1">Load A with one less than y-coordinate of top edge of area to paint...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41265"></span>41265</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41266"></span>41266</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = current y-coordinate, C = initial x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41267"></span>41267</td>
+<td class="instruction">DEC B</td>
+<td class="comment-11" rowspan="1">Increase B (i.e. move down a character row)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41268"></span>41268</td>
+<td class="instruction">JP 41247</td>
+<td class="comment-11" rowspan="1">Jump back to <a href="41173.html#41247">41247</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="41141.html">41141</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#41173">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="41271.html">41271</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

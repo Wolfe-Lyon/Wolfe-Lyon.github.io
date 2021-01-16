@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 54348</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="54313.html">54313</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#54348">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="54383.html">54383</a></span></td>
+</tr>
+</table>
+<div class="description">54348: Move Entity at IX into Room to the Left, If Appropriate</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+This routine moves an entity (e.g. Berk or Drutt) into the next room to the right, if there is one, in a way that is consistent with the point of view of the currently selected character. For example, if Berk is the selected character and he moves into a new room, he does so as soon as his leading edge (left or right) crosses the edge of the screen. He essentially disappears immediately from his old room. However from Drutt's point of view, Berk should move across the boundary smoothly and not just vanish as soon as his leading edge crosses the boundary. This routine (along with its counterpart at <a href="54313.html">54313</a>) ensures that this happens correctly.
+</div>
+<div class="paragraph">
+Used by the routines at <a href="36116.html">36116</a>, <a href="36542.html">36542</a>, <a href="39278.html">39278</a>, <a href="41961.html">41961</a>, <a href="42266.html">42266</a>, <a href="48142.html">48142</a>, <a href="52053.html">52053</a>, <a href="52098.html">52098</a>, <a href="52870.html">52870</a>, <a href="52914.html">52914</a> and <a href="55041.html">55041</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data for an entity</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Zero if no room exists to the left, otherwise, x-coordinate of character's appropriate edge</td>
+</tr>
+<tr>
+<td class="register">F</td>
+<td class="register-desc">(Carry Flag) Set if entity is not at edge of current room, or has moved into new room and has not collided. Reset otherwise (i.e. can't enter new room).</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="54348"></span>54348</td>
+<td class="instruction">LD A,(34208)</td>
+<td class="comment-11" rowspan="1">If Drutt Mode Flag is reset (Berk Mode)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54351"></span>54351</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54353"></span>54353</td>
+<td class="instruction">JR Z,54363</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="54348.html#54363">54363</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54355"></span>54355</td>
+<td class="instruction">LD A,100</td>
+<td class="comment-11" rowspan="1">If x-coordinate of Drutt's right edge is greater than 100 (x-coordinate of left-edge of room)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54357"></span>54357</td>
+<td class="instruction">CP (IX+7)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54360"></span>54360</td>
+<td class="instruction">RET C</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54361"></span>54361</td>
+<td class="instruction">JR 54369</td>
+<td class="comment-11" rowspan="1">Skip ahead to <a href="54348.html#54369">54369</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="54363"></span>54363</td>
+<td class="instruction">LD A,100</td>
+<td class="comment-11" rowspan="1">If x-coordinate of Berk's left edge is greater than 100 (x-coordinate of left-edge of room)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54365"></span>54365</td>
+<td class="instruction">CP (IX+5)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54368"></span>54368</td>
+<td class="instruction">RET C</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="54369"></span>54369</td>
+<td class="instruction">CALL <a href="54539.html">54539</a></td>
+<td class="comment-11" rowspan="1">Load B with index of room to left of entity's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54372"></span>54372</td>
+<td class="instruction">JR Z,54381</td>
+<td class="comment-11" rowspan="1">If there is no room to the left, then jump to <a href="54348.html#54381">54381</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54374"></span>54374</td>
+<td class="instruction">CALL <a href="54419.html">54419</a></td>
+<td class="comment-11" rowspan="1">Move entity at IX into room to left of its current room and update position of carried entity if moving entity is Berk</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54377"></span>54377</td>
+<td class="instruction">CALL <a href="54666.html">54666</a></td>
+<td class="comment-11" rowspan="1">Set Carry Flag if entity at IX has not collided with another impassable / pushable entity immediately to the left, reset otherwise</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54380"></span>54380</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="54381"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="54313.html">54313</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="54381"></span>54381</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set A to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54382"></span>54382</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="54313.html">54313</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#54348">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="54383.html">54383</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

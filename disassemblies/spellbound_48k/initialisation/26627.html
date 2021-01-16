@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 26627</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="initialisation-Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Initialisation routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="26624.html">26624</a></span></td>
+<td class="up">Up: <a href="initialisation.html#26627">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27118.html">27118</a></span></td>
+</tr>
+</table>
+<div class="description">26627: Initialise Interrupt Code then Jump to Input Device Selection Menu</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="26627"></span>26627</td>
+<td class="instruction">LD A,(23728)</td>
+<td class="comment-11" rowspan="1">Redundant instructions (part of a previous debug routine?)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26630"></span>26630</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26631"></span>26631</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26632"></span>26632</td>
+<td class="instruction">NOP</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26633"></span>26633</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set A to zero (<a href="../reference/facts.html#cheatmode">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26634"></span>26634</td>
+<td class="instruction">LD (27236),A</td>
+<td class="comment-11" rowspan="1">Disable debug / cheat mode...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26637"></span>26637</td>
+<td class="instruction">LD (27237),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26640"></span>26640</td>
+<td class="instruction">LD (27238),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26643"></span>26643</td>
+<td class="instruction">DI</td>
+<td class="comment-11" rowspan="1">Disable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26644"></span>26644</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Reset "Update Game Time and Locate Arrow Glow" flag, "Disable In-Game Glow" flag and "Characters Can't Move" flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26645"></span>26645</td>
+<td class="instruction">LD (IY+65),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26648"></span>26648</td>
+<td class="instruction">LD A,24</td>
+<td class="comment-11" rowspan="1">Put JR instruction at <a href="../asm/65535.html">65535</a> for jumping to interrupt routine...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26650"></span>26650</td>
+<td class="instruction">LD (65535),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26653"></span>26653</td>
+<td class="instruction">LD HL,65524</td>
+<td class="comment-11" rowspan="1">Load first three bytes of interrupt routine with 195, 69 and 214...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26656"></span>26656</td>
+<td class="instruction">LD (HL),195</td>
+<td class="comment-11" rowspan="1">...this corresponds to the instruction "JP <a href="../asm/54853.html">54853</a>"</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26658"></span>26658</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26659"></span>26659</td>
+<td class="instruction">LD (HL),69</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26661"></span>26661</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26662"></span>26662</td>
+<td class="instruction">LD (HL),214</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="26664"></span>
+<div class="comments">
+<div class="paragraph">
+Here we load I with 57, indicating an interrupt vector table at 57*256=14592. This is an area of ROM filled with FF values. This causes a jump to $FFFF (i.e. <a href="../asm/65535.html">65535</a>) on each interrupt.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26664"></span>26664</td>
+<td class="instruction">LD A,57</td>
+<td class="comment-11" rowspan="1">Load I register with 57 (for interrupt routine)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26666"></span>26666</td>
+<td class="instruction">LD I,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26668"></span>26668</td>
+<td class="instruction">EI</td>
+<td class="comment-11" rowspan="1">Enable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26669"></span>26669</td>
+<td class="instruction">SET 3,(IY+48)</td>
+<td class="comment-11" rowspan="1">Set CAPS LOCK flag (i.e. set CAPS LOCK to ON)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+
+<div class="comments">
+<div class="paragraph">
+Execution continues into the routine at <a href="../asm/26673.html">26673</a> that displays the input device selection menu.
+</div>
+</div>
+</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="26624.html">26624</a></span></td>
+<td class="up">Up: <a href="initialisation.html#26627">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27118.html">27118</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

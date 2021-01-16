@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 62178</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62072.html">62072</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#62178">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="62310.html">62310</a></span></td>
+</tr>
+</table>
+<div class="description">62178: Call Time-Dependent Routines [Main Interrupt Routine]</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="65524.html">65524</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62178"></span>62178</td>
+<td class="instruction">CALL <a href="62959.html">62959</a></td>
+<td class="comment-11" rowspan="1">Store all registers on the stack</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62181"></span>62181</td>
+<td class="instruction">BIT 0,(IY+65)</td>
+<td class="comment-11" rowspan="1">If Game In Progress Flag is reset... (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62185"></span>62185</td>
+<td class="instruction">JP Z,62288</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="62178.html#62288">62288</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62188"></span>62188</td>
+<td class="instruction">CALL <a href="64687.html">64687</a></td>
+<td class="comment-11" rowspan="1">If Do Not Draw Storm Cloud Flag is reset then draw Storm Cloud</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62191"></span>62191</td>
+<td class="instruction">LD A,(23441)</td>
+<td class="comment-11" rowspan="1">If Redraw Magic Knight On Next Interrupt Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62194"></span>62194</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62195"></span>62195</td>
+<td class="instruction">CALL NZ,<a href="61823.html">61823</a></td>
+<td class="comment-11" rowspan="1">...then erase Magic Knight from display, advance his current position then redraw</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62198"></span>62198</td>
+<td class="instruction">CALL <a href="62330.html">62330</a></td>
+<td class="comment-11" rowspan="1">Update game time, time left and move characters if appropriate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62201"></span>62201</td>
+<td class="instruction">LD A,(23403)</td>
+<td class="comment-11" rowspan="1">Load B with MSB of Off-White Knight Sent To Sleep Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62204"></span>62204</td>
+<td class="instruction">AND 128</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62206"></span>62206</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62207"></span>62207</td>
+<td class="instruction">LD A,(24782)</td>
+<td class="comment-11" rowspan="1">Set Off-White Knight's Asleep Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62210"></span>62210</td>
+<td class="instruction">OR B</td>
+<td class="comment-11" rowspan="1">...if MSB of Off-White Knight Sent To Sleep Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62211"></span>62211</td>
+<td class="instruction">LD (24782),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="62214"></span>
+<div class="comments">
+<div class="paragraph">
+The instructions between <a href="62178.html#62214">62214</a> and <a href="62178.html#62252">62252</a> (inclusive) are not used in the 48k version of Stormbringer. These instructions relate to the LOCATE A CHARACTER functionality that is present in the 128k version of Stormbringer - <a href="../reference/facts.html#commandlocate">see trivia</a>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62214"></span>62214</td>
+<td class="instruction">LD BC,(23471)</td>
+<td class="comment-11" rowspan="1">Load x- &amp; y- coordinate of top-left character of currently glowing "Locate Compass" component into BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62218"></span>62218</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1">If this is zero (i.e. compass not glowing because Magic Knight isn't "locating")...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62219"></span>62219</td>
+<td class="instruction">OR C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62220"></span>62220</td>
+<td class="instruction">JR Z,62255</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="62178.html#62255">62255</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62222"></span>62222</td>
+<td class="instruction">LD A,(23436)</td>
+<td class="comment-11" rowspan="1">Load "Compass Glow Update Flag" into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62225"></span>62225</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Invert Compass Glow Update Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62226"></span>62226</td>
+<td class="instruction">AND 1</td>
+<td class="comment-11" rowspan="1">Store back at <a href="23436.html">23436</a> and if Compass Glow Update Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62228"></span>62228</td>
+<td class="instruction">LD (23436),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62231"></span>62231</td>
+<td class="instruction">JR NZ,62255</td>
+<td class="comment-11" rowspan="1">...then skip over glow attribute update section to <a href="62178.html#62255">62255</a> (don't update glowing attributes this time)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62233"></span>62233</td>
+<td class="instruction">CALL <a href="63219.html">63219</a></td>
+<td class="comment-11" rowspan="1">Load HL with Attribute File address for coordinates (C, B)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62236"></span>62236</td>
+<td class="instruction">CALL <a href="62317.html">62317</a></td>
+<td class="comment-11" rowspan="1">Update glowing blocks' attribute to next colour in sequence and load into E</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62239"></span>62239</td>
+<td class="instruction">CALL <a href="62310.html">62310</a></td>
+<td class="comment-11" rowspan="1">Write current attribute for a glowing block to Attribute File (HL) and advance HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62242"></span>62242</td>
+<td class="instruction">CALL <a href="62310.html">62310</a></td>
+<td class="comment-11" rowspan="1">Write current attribute for a glowing block to Attribute File (HL) and advance HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62245"></span>62245</td>
+<td class="instruction">LD BC,30</td>
+<td class="comment-11" rowspan="1">Advance Attribute File address (HL) down to next row, to the block immediately below the first one updated at instruction <a href="62178.html#62239">62239</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62248"></span>62248</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62249"></span>62249</td>
+<td class="instruction">CALL <a href="62310.html">62310</a></td>
+<td class="comment-11" rowspan="1">Write current attribute for a glowing block to Attribute File (HL) and advance HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62252"></span>62252</td>
+<td class="instruction">CALL <a href="62310.html">62310</a></td>
+<td class="comment-11" rowspan="1">Write current attribute for a glowing block to Attribute File (HL) and advance HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62255"></span>62255</td>
+<td class="instruction">BIT 1,(IY+65)</td>
+<td class="comment-11" rowspan="1">If "Disable In-Game Glow" flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62259"></span>62259</td>
+<td class="instruction">JP NZ,62302</td>
+<td class="comment-11" rowspan="1">...then skip to end of interrupt routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62262"></span>62262</td>
+<td class="instruction">LD IX,23368</td>
+<td class="comment-11" rowspan="1">Point IX at Table of Glowing Attribute File Addresses</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62266"></span>62266</td>
+<td class="instruction">CALL <a href="62317.html">62317</a></td>
+<td class="comment-11" rowspan="1">Update glowing blocks' attribute to next colour in sequence and load into E</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62269"></span>62269</td>
+<td class="instruction">LD L,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load a glowing Attribute File address into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62272"></span>62272</td>
+<td class="instruction">LD H,(IX+1)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62275"></span>62275</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">If HL is zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62276"></span>62276</td>
+<td class="instruction">OR H</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62277"></span>62277</td>
+<td class="instruction">JR Z,62288</td>
+<td class="comment-11" rowspan="1">...then jump to <a href="62178.html#62288">62288</a> (to exit loop)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62279"></span>62279</td>
+<td class="instruction">CALL <a href="62310.html">62310</a></td>
+<td class="comment-11" rowspan="1">Write current attribute for a glowing block to Attribute File (HL) and advance HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62282"></span>62282</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance to next Attribute File address in list of glowing blocks...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62284"></span>62284</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62286"></span>62286</td>
+<td class="instruction">JR 62269</td>
+<td class="comment-11" rowspan="1">Jump back to <a href="62178.html#62269">62269</a> to update next block</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62288"></span>62288</td>
+<td class="instruction">LD HL,(23672)</td>
+<td class="comment-11" rowspan="1">Load HL with current value in lowest two bytes of System Variable FRAMES...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62291"></span>62291</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...increase...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62292"></span>62292</td>
+<td class="instruction">LD (23672),HL</td>
+<td class="comment-11" rowspan="1">...and write back to memory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62295"></span>62295</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1">If lowest two bytes of FRAMES are not both zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62296"></span>62296</td>
+<td class="instruction">OR L</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62297"></span>62297</td>
+<td class="instruction">JR NZ,62302</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="62178.html#62302">62302</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62299"></span>62299</td>
+<td class="instruction">INC (IY+64)</td>
+<td class="comment-11" rowspan="1">Increase most significant byte of System Variable FRAMES (23674)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62302"></span>62302</td>
+<td class="instruction">CALL 703</td>
+<td class="comment-11" rowspan="1">Call ROM routine to read keyboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62305"></span>62305</td>
+<td class="instruction">CALL <a href="62987.html">62987</a></td>
+<td class="comment-11" rowspan="1">Restore all registers from the Stack</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62308"></span>62308</td>
+<td class="instruction">EI</td>
+<td class="comment-11" rowspan="1">Enable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62309"></span>62309</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62072.html">62072</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#62178">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="62310.html">62310</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

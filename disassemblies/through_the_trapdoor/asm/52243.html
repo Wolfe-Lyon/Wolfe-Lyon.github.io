@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 52243</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52193.html">52193</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52243">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52309.html">52309</a></span></td>
+</tr>
+</table>
+<div class="description">52243: Script Routine (50): Advance Drutt's Jump and Select Next Phase if Current Phase Complete</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+The CALL at <a href="52243.html">52243</a> will be RETurned from if Drutt's Is Jumping Flag is reset. Otherwise, E will be loaded with Drutt's jump state index (see <a href="55041.html">table</a>).
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Address of next script instruction to execute</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52243"></span>52243</td>
+<td class="instruction">CALL <a href="55023.html">55023</a></td>
+<td class="comment-11" rowspan="1">Handle Drutt's jump, and load A with Jump State Index as appropriate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52246"></span>52246</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">If jump state index is zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52247"></span>52247</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52248"></span>52248</td>
+<td class="instruction">JP Z,<a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance HL to next script instruction and execute)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52251"></span>52251</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">If jump state index is 1...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52253"></span>52253</td>
+<td class="instruction">JR Z,52259</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="52243.html#52259">52259</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52255"></span>52255</td>
+<td class="instruction">CP 2</td>
+<td class="comment-11" rowspan="1">If jump state index is not 2...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52257"></span>52257</td>
+<td class="instruction">JR NZ,52265</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="52243.html#52265">52265</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52259"></span>
+<div class="comments">
+<div class="paragraph">
+Jump state index is 1 (landed on floor / platform and Back (control input) bit set) or 2 (unused)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52259"></span>52259</td>
+<td class="instruction">LD HL,51674</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Drutt starting to jump straight up...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52262"></span>52262</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52265"></span>
+<div class="comments">
+<div class="paragraph">
+Jump state index is not 2
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52265"></span>52265</td>
+<td class="instruction">CP 3</td>
+<td class="comment-11" rowspan="1">If jump state index is not 3...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52267"></span>52267</td>
+<td class="instruction">JR NZ,52275</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="52243.html#52275">52275</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52269"></span>
+<div class="comments">
+<div class="paragraph">
+Jump state index is 3 (Drutt's jump velocity less than 4, and back not pressed, i.e. terminate jumping)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52269"></span>52269</td>
+<td class="instruction">LD HL,51524</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Drutt facing out of screen...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52272"></span>52272</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52275"></span>
+<div class="comments">
+<div class="paragraph">
+Jump state index is not 3
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52275"></span>52275</td>
+<td class="instruction">CP 4</td>
+<td class="comment-11" rowspan="1">If jump state index is not 4...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52277"></span>52277</td>
+<td class="instruction">JR NZ,52285</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="52243.html#52285">52285</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52279"></span>
+<div class="comments">
+<div class="paragraph">
+Jump state index is 4 (bounced off an obstruction to the right or Left (control input) Bit set)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52279"></span>52279</td>
+<td class="instruction">LD HL,51686</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Drutt Jumping Left...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52282"></span>52282</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52285"></span>
+<div class="comments">
+<div class="paragraph">
+Jump state index is not 4
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52285"></span>52285</td>
+<td class="instruction">CP 5</td>
+<td class="comment-11" rowspan="1">If jump state index is not 5...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52287"></span>52287</td>
+<td class="instruction">JR NZ,52295</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="52243.html#52295">52295</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52289"></span>
+<div class="comments">
+<div class="paragraph">
+Jump state index is 5 (bounced off an obstruction to the left or Right (control input) Bit set)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52289"></span>52289</td>
+<td class="instruction">LD HL,51696</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Drutt Jumping Right...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52292"></span>52292</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52295"></span>
+<div class="comments">
+<div class="paragraph">
+Jump state index is not 5
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52295"></span>52295</td>
+<td class="instruction">CP 6</td>
+<td class="comment-11" rowspan="1">If jump state index is not 6...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52297"></span>52297</td>
+<td class="instruction">JP NZ,<a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance HL to next script instruction and execute)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52300"></span>
+<div class="comments">
+<div class="paragraph">
+Jump state index is 6 (Drutt has banged his head on something above him)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52300"></span>52300</td>
+<td class="instruction">CALL <a href="55516.html">55516</a></td>
+<td class="comment-11" rowspan="1">Set Drutt's Can Fall Flag and set initial velocity factor of 2</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52303"></span>52303</td>
+<td class="instruction">LD HL,51520</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Drutt facing out of screen (falling)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52306"></span>52306</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52193.html">52193</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52243">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52309.html">52309</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

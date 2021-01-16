@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 41578</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="41545.html">41545</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#41578">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="41748.html">41748</a></span></td>
+</tr>
+</table>
+<div class="description">41578: Process Command to Pick Up an Object</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41578"></span>41578</td>
+<td class="instruction">CALL <a href="63399.html">63399</a></td>
+<td class="comment-11" rowspan="1">Print or update Command Summary Window at top of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41581"></span>41581</td>
+<td class="instruction">LD DE,51811</td>
+<td class="comment-11" rowspan="1">Point DE at "PICK UP THE" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41584"></span>41584</td>
+<td class="instruction">CALL <a href="63349.html">63349</a></td>
+<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41587"></span>41587</td>
+<td class="instruction">LD HL,24922</td>
+<td class="comment-11" rowspan="1">Point HL at start of Objects' Current Positions Table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41590"></span>41590</td>
+<td class="instruction">LD BC,10752</td>
+<td class="comment-11" rowspan="1">Load B with 42 (as there are 42 objects) and C with 0</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41593"></span>41593</td>
+<td class="instruction">LD A,(23702)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41596"></span>41596</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">If current object's room is not the same as Magic Knight's then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41597"></span>41597</td>
+<td class="instruction">JR NZ,41600</td>
+<td class="comment-11" rowspan="1">...skip ahead to <a href="41578.html#41600">41600</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41599"></span>41599</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Increase C (count of objects in Magic Knight's current room)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41600"></span>41600</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to next object's position...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41601"></span>41601</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41602"></span>41602</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41603"></span>41603</td>
+<td class="instruction">DJNZ 41593</td>
+<td class="comment-11" rowspan="1">Decrease B and loop back for next object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41605"></span>41605</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Copy total number of objects into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41606"></span>41606</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...and if this value is zero then set Zero Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41607"></span>41607</td>
+<td class="instruction">LD HL,51822</td>
+<td class="comment-11" rowspan="1">Load HL with address of "THERE IS NOTHING IN THIS ROOM" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41610"></span>41610</td>
+<td class="instruction">JP Z,<a href="64258.html#64261">64261</a></td>
+<td class="comment-11" rowspan="1">Display "THERE IS NOTHING IN THIS ROOM" Window (13), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41613"></span>41613</td>
+<td class="instruction">LD HL,24922</td>
+<td class="comment-11" rowspan="1">Point HL at start of Objects' Current Positions Table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41616"></span>41616</td>
+<td class="instruction">LD A,(23702)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41619"></span>41619</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...and copy into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41620"></span>41620</td>
+<td class="instruction">CALL <a href="45584.html">45584</a></td>
+<td class="comment-11" rowspan="1">Load Magic Knight's coordinates (in characters) into DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41623"></span>41623</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set A to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41624"></span>41624</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Switch A register</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41625"></span>41625</td>
+<td class="instruction">LD B,42</td>
+<td class="comment-11" rowspan="1">Load B with 42 (as there are 42 objects)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41627"></span>41627</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's current room into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41628"></span>41628</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">If room of current object is not the same as Magic Knight's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41629"></span>41629</td>
+<td class="instruction">JR NZ,41652</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="41578.html#41652">41652</a> [advance to next object]</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41631"></span>41631</td>
+<td class="instruction">LD A,D</td>
+<td class="comment-11" rowspan="1">Copy Magic Knight's y-coordinate into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41632"></span>41632</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to current object's y-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41633"></span>41633</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41634"></span>41634</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">...and if this is not the same as Magic Knight's y-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41635"></span>41635</td>
+<td class="instruction">JR NZ,41654</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="41578.html#41654">41654</a> [advance to next object]</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41637"></span>41637</td>
+<td class="instruction">DEC HL</td>
+<td class="comment-11" rowspan="1">Move HL back to object's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41638"></span>41638</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's x-coordinate into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41639"></span>41639</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Decrease x-coordinate by two...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41640"></span>41640</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41641"></span>41641</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41642"></span>41642</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (as we are going to test 5 different x-coordinates)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41644"></span>41644</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">If x-coordinate of object is the same as current x-coordinate value...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41645"></span>41645</td>
+<td class="instruction">JR Z,41666</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="41578.html#41666">41666</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41647"></span>41647</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase value of current x-coordinate (to test next x-coordinate in range -2 to +2)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41648"></span>41648</td>
+<td class="instruction">DJNZ 41644</td>
+<td class="comment-11" rowspan="1">Decrease B (remaining number of x-coordinates to test) and loop back to <a href="41578.html#41644">41644</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41650"></span>41650</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41651"></span>41651</td>
+<td class="instruction">DEC HL</td>
+<td class="comment-11" rowspan="1">Move HL back one byte to start of position data for current object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41652"></span>41652</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL by three bytes to move to next object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41653"></span>41653</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41654"></span>41654</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41655"></span>41655</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Switch A register back (so now contains the index of the object to test next)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41656"></span>41656</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase A [index of current object to test]</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41657"></span>41657</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Switch A register</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41658"></span>41658</td>
+<td class="instruction">DJNZ 41627</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="41578.html#41627">41627</a> for next object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41660"></span>41660</td>
+<td class="instruction">LD HL,51833</td>
+<td class="comment-11" rowspan="1">Display "THERE IS NOTHING NEAR ENOUGH" Window (13), wait for Fire to be pressed then jump to Main Game Loop...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41663"></span>41663</td>
+<td class="instruction">JP <a href="64258.html#64261">64261</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="41666"></span>
+<div class="comments">
+<div class="paragraph">
+An object has been found within Magic Knight's reach so make this the current object
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41666"></span>41666</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41667"></span>41667</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Switch A register (so now contains index of first object that is within Magic Knight's reach)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41668"></span>41668</td>
+<td class="instruction">LD (41779),A</td>
+<td class="comment-11" rowspan="1">Load index of this object into instruction at <a href="41748.html#41778">41778</a> (i.e. set as Current Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41671"></span>41671</td>
+<td class="instruction">LD DE,45779</td>
+<td class="comment-11" rowspan="1">Point DE at character code to print name of Current Object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41674"></span>41674</td>
+<td class="instruction">CALL <a href="63349.html">63349</a></td>
+<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41677"></span>41677</td>
+<td class="instruction">CALL <a href="64207.html">64207</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41680"></span>41680</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41683"></span>41683</td>
+<td class="instruction">CALL <a href="45685.html">45685</a></td>
+<td class="comment-11" rowspan="1">...and if this is 4 (Teddy Bear) then display "THE BEAR SAYS..." message and wait for Fire to be pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41686"></span>41686</td>
+<td class="instruction">LD HL,24852</td>
+<td class="comment-11" rowspan="1">Load A with index of object in Magic Knight's fifth inventory slot (carrying)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41689"></span>41689</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41690"></span>41690</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If this is not zero (i.e. Magic Knight's hands are full)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41691"></span>41691</td>
+<td class="instruction">JP NZ,<a href="64258.html">64258</a></td>
+<td class="comment-11" rowspan="1">...then display "YOUR HANDS ARE FULL" window, wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41694"></span>41694</td>
+<td class="instruction">CALL <a href="45466.html">45466</a></td>
+<td class="comment-11" rowspan="1">Check whether object has a weight greater than Magic Knight's surplus strength...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41697"></span>41697</td>
+<td class="instruction">JP P,<a href="64265.html">64265</a></td>
+<td class="comment-11" rowspan="1">...and if it does then display "THE [name of Current Object] IS TOO HEAVY FOR YOU" Window), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41700"></span>41700</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41703"></span>41703</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...and copy into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41704"></span>41704</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41706"></span>41706</td>
+<td class="instruction">LD HL,24848</td>
+<td class="comment-11" rowspan="1">Wait for interrupt then load object in C into Magic Knight's first empty inventory (carrying) slot...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41709"></span>41709</td>
+<td class="instruction">CALL <a href="45380.html">45380</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41712"></span>41712</td>
+<td class="instruction">LD A,(41779)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41715"></span>41715</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...and copy into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41716"></span>41716</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Multiply index by three in A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41717"></span>41717</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41718"></span>41718</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">Load three times object index into BC...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41720"></span>41720</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41721"></span>41721</td>
+<td class="instruction">LD HL,24922</td>
+<td class="comment-11" rowspan="1">Point HL at start of Objects' Current Positions Table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41724"></span>41724</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Add BC as offset to point HL at position data for current object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41725"></span>41725</td>
+<td class="instruction">LD (HL),99</td>
+<td class="comment-11" rowspan="1">Set object's room to 99</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="41727"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="41748.html">41748</a>, <a href="42036.html">42036</a>, <a href="42395.html">42395</a> and <a href="44635.html">44635</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41727"></span>41727</td>
+<td class="instruction">LD IX,24848</td>
+<td class="comment-11" rowspan="1">Point IX at Magic Knight's current inventory (carrying)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41731"></span>41731</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41733"></span>41733</td>
+<td class="instruction">LD HL,51794</td>
+<td class="comment-11" rowspan="1">Point HL at "YOU ARE NOW CARRYING" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41736"></span>41736</td>
+<td class="instruction">CALL <a href="45802.html">45802</a></td>
+<td class="comment-11" rowspan="1">Display "Magic Knight's current inventory" window as an information window</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="41739"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="42638.html">42638</a> and <a href="45552.html">45552</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41739"></span>41739</td>
+<td class="instruction">CALL <a href="64230.html">64230</a></td>
+<td class="comment-11" rowspan="1">Wait for Interrupt then display "PRESS FIRE TO CONTINUE" window and wait for Fire to be pressed</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="41742"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="41748.html">41748</a>, <a href="41924.html">41924</a>, <a href="42257.html">42257</a>, <a href="42638.html">42638</a>, <a href="43043.html">43043</a>, <a href="43494.html">43494</a>, <a href="43636.html">43636</a>, <a href="44635.html">44635</a>, <a href="44861.html">44861</a>, <a href="44933.html">44933</a>, <a href="64207.html">64207</a> and <a href="64317.html">64317</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41742"></span>41742</td>
+<td class="instruction">CALL <a href="46183.html">46183</a></td>
+<td class="comment-11" rowspan="1">Set Magic Knight's available action flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41745"></span>41745</td>
+<td class="instruction">JP <a href="38205.html">38205</a></td>
+<td class="comment-11" rowspan="1">Jump to start of Main Game Loop</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="41545.html">41545</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#41578">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="41748.html">41748</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 54333</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="54322.html">54322</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#54333">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="54377.html">54377</a></span></td>
+</tr>
+</table>
+<div class="description">54333: Print or Update Command Summary Window at Top of Screen</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="29330.html">29330</a>, <a href="29619.html">29619</a>, <a href="30145.html">30145</a>, <a href="31041.html">31041</a>, <a href="31688.html">31688</a>, <a href="32252.html">32252</a>, <a href="32895.html">32895</a> and <a href="54322.html">54322</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="54333"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="54333.html">54333</a> represents the index of the window being drawn. This is modified by the instructions at <a href="34990.html#35001">35001</a> and <a href="54333.html#54371">54371</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="54333"></span>54333</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Load index of window being drawn into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54335"></span>54335</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF (A = index of Current Window)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54336"></span>54336</td>
+<td class="instruction">LD HL,(54110)</td>
+<td class="comment-11" rowspan="1">Load HL with address of Bitmap Virtual Text Cursor...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54339"></span>54339</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">...and store</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54340"></span>54340</td>
+<td class="instruction">CALL <a href="54377.html">54377</a></td>
+<td class="comment-11" rowspan="1">Store x- and y-coordinates of current window temporarily at <a href="23426.html">23426</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54343"></span>54343</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Draw Window 1 (Command Summary Window at top of screen)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54345"></span>54345</td>
+<td class="instruction">HALT</td>
+<td class="comment-11" rowspan="1">...and wait for interrupt...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54346"></span>54346</td>
+<td class="instruction">CALL <a href="34990.html">34990</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54349"></span>54349</td>
+<td class="instruction">LD HL,38354</td>
+<td class="comment-11" rowspan="1">Point HL to ("COMMAND") text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54352"></span>54352</td>
+<td class="instruction">CALL <a href="34762.html">34762</a></td>
+<td class="comment-11" rowspan="1">...and print to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54355"></span>54355</td>
+<td class="instruction">LD HL,(54110)</td>
+<td class="comment-11" rowspan="1">Load HL with address of Bitmap Virtual Text Cursor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54358"></span>54358</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (address of Bitmap Virtual Text Cursor)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54359"></span>54359</td>
+<td class="instruction">CALL <a href="27750.html">27750</a></td>
+<td class="comment-11" rowspan="1">Print "KNIGHT-TYME" text at bottom of Command Summary Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54362"></span>54362</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (address of Bitmap Virtual Text Cursor)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54363"></span>54363</td>
+<td class="instruction">LD (23703),HL</td>
+<td class="comment-11" rowspan="1">Store this location as the location to print text to in the Command Summary Window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54366"></span>54366</td>
+<td class="instruction">CALL <a href="54377.html">54377</a></td>
+<td class="comment-11" rowspan="1">Restore x- and y-coordinates of current window from <a href="23426.html">23426</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54369"></span>54369</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (address of Bitmap Virtual Text Cursor)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54370"></span>54370</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF (A = index of Current Window)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54371"></span>54371</td>
+<td class="instruction">LD (54334),A</td>
+<td class="comment-11" rowspan="1">Restore index of Current Window to 54334 (was updated to 1 by call at <a href="54333.html#54346">54346</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54374"></span>54374</td>
+<td class="instruction">JP <a href="54176.html#54188">54188</a></td>
+<td class="comment-11" rowspan="1">Store the updated address of Bitmap Virtual Text Cursor and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="54322.html">54322</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#54333">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="54377.html">54377</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

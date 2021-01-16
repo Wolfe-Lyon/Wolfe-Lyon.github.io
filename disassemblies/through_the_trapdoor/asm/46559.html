@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 46559</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46495.html">46495</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46559">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46577.html">46577</a></span></td>
+</tr>
+</table>
+<div class="description">46559: Graphic Layout Routine (243): Increment Index, n, and Jump to n-th Address in Following List</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Read first parameter (n) from graphic layout data, increment (resetting to zero if it is equal to the length of the list of addresses as specified by the second parameter) and jump to n-th address.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of first parameter in current graphic layout data instruction</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Number of bytes in graphic layout data to skip over</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46559"></span>46559</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load current byte of graphic layout data into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46562"></span>46562</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase by one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46563"></span>46563</td>
+<td class="instruction">CP (IX+1)</td>
+<td class="comment-11" rowspan="1">If following byte (cap value) is greater than current byte...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46566"></span>46566</td>
+<td class="instruction">JR C,46569</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="46559.html#46569">46569</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46568"></span>46568</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Reset current value to zero as cap value reached</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46569"></span>46569</td>
+<td class="instruction">LD (IX+0),A</td>
+<td class="comment-11" rowspan="1">Load current value back into current position in graphic layout data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46572"></span>46572</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Load double current value + 2 (as we're skipping over first two bytes and subsequent data are WORD addresses) into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46573"></span>46573</td>
+<td class="instruction">ADD A,2</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46575"></span>46575</td>
+<td class="instruction">JR <a href="46577.html#46586">46586</a></td>
+<td class="comment-11" rowspan="1">Jump to <a href="46577.html#46586">46586</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46495.html">46495</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46559">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46577.html">46577</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

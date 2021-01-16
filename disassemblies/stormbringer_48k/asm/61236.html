@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 61236</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="61214.html">61214</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#61236">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="61267.html">61267</a></span></td>
+</tr>
+</table>
+<div class="description">61236: Room Drawing: Set "Apply Vertical Mirror" Mode on, "Apply Horizontal Mirror" Mode off and Draw a Graphic</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="40664.html">40664</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61236"></span>61236</td>
+<td class="instruction">LD A,205</td>
+<td class="comment-11" rowspan="1">Load <a href="61336.html#61373">61373</a> with opcode for "CALL"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61238"></span>61238</td>
+<td class="instruction">LD (61373),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61241"></span>61241</td>
+<td class="instruction">LD HL,61625</td>
+<td class="comment-11" rowspan="1">Load <a href="61336.html#61373">61374</a> (i.e. operand of instruction at <a href="61336.html#61373">61373</a>) with address of start of "Reverse the order of the bits in A" routine...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61244"></span>61244</td>
+<td class="instruction">LD (61374),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61247"></span>61247</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set Pixel Row Counter to zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61248"></span>61248</td>
+<td class="instruction">LD (23449),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61251"></span>61251</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Set Apply Vertical Mirror Flag and reset Apply Horizontal Mirror Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61252"></span>61252</td>
+<td class="instruction">LD (23450),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61255"></span>61255</td>
+<td class="instruction">LD A,(23409)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of graphic to draw...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61258"></span>61258</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61259"></span>61259</td>
+<td class="instruction">LD A,(23410)</td>
+<td class="comment-11" rowspan="1">Load C with x-coordinate of graphic to draw...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61262"></span>61262</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...and decrease by one...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61263"></span>61263</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61264"></span>61264</td>
+<td class="instruction">JP <a href="61336.html">61336</a></td>
+<td class="comment-11" rowspan="1">Jump to <a href="61336.html">61336</a> (draw the graphic then return)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="61214.html">61214</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#61236">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="61267.html">61267</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

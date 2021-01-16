@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 44225</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="44216.html">44216</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#44225">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="44253.html">44253</a></span></td>
+</tr>
+</table>
+<div class="description">44225: Flash Border and Screen and Decrease Magic Knight's Magic Level if Level is at Least C</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="43950.html">43950</a>, <a href="44001.html">44001</a>, <a href="44063.html">44063</a>, <a href="44100.html">44100</a> and <a href="44198.html">44198</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">C</td>
+<td class="register-desc">Cost of spell</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Magic Knight's magic level if less than C, otherwise zero</td>
+</tr>
+<tr>
+<td class="register">F</td>
+<td class="register-desc">Carry Flag set if Magic Knight's magic level is less than C, reset otherwise</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="44225"></span>44225</td>
+<td class="instruction">LD A,(24771)</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's current magic level into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44228"></span>44228</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44230"></span>44230</td>
+<td class="instruction">CP C</td>
+<td class="comment-11" rowspan="1">If this is less than C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44231"></span>44231</td>
+<td class="instruction">RET C</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44232"></span>44232</td>
+<td class="instruction">LD A,(24771)</td>
+<td class="comment-11" rowspan="1">Load B with unused bit...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44235"></span>44235</td>
+<td class="instruction">AND 128</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44237"></span>44237</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44238"></span>44238</td>
+<td class="instruction">LD A,(24771)</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's current magic level into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44241"></span>44241</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44243"></span>44243</td>
+<td class="instruction">SUB C</td>
+<td class="comment-11" rowspan="1">...subtract C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44244"></span>44244</td>
+<td class="instruction">OR B</td>
+<td class="comment-11" rowspan="1">...combine with unused bit...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44245"></span>44245</td>
+<td class="instruction">LD (24771),A</td>
+<td class="comment-11" rowspan="1">...and store</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44248"></span>44248</td>
+<td class="instruction">CALL <a href="64548.html">64548</a></td>
+<td class="comment-11" rowspan="1">Flash border and screen (as in Cast a Spell)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44251"></span>44251</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set A to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44252"></span>44252</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="44216.html">44216</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#44225">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="44253.html">44253</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

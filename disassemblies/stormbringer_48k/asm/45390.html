@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 45390</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45380.html">45380</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45390">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45406.html">45406</a></span></td>
+</tr>
+</table>
+<div class="description">45390: Point HL to the E-th byte of the A-th record in Object Properties Table</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="41748.html">41748</a>, <a href="42638.html">42638</a>, <a href="43494.html">43494</a>, <a href="43636.html">43636</a>, <a href="44337.html">44337</a>, <a href="44635.html">44635</a>, <a href="45351.html">45351</a>, <a href="46380.html">46380</a> and <a href="46490.html">46490</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Index of required record (i.e. table entry number), first is zero</td>
+</tr>
+<tr>
+<td class="register">E</td>
+<td class="register-desc">Index of required field within record (i.e. byte number), first is zero</td>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">(entry at <a href="45390.html#45393">45393</a> only) Points to Table of Characters' Current Stats (Off-White's entry, i.e. not including Magic Knight)</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Points to required field within record of interest</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45390"></span>45390</td>
+<td class="instruction">LD HL,49354</td>
+<td class="comment-11" rowspan="1">Point HL at start of Table of Object Properties</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="45393"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="45406.html">45406</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45393"></span>45393</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (points to current position in a table of 8-byte-wide records)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45394"></span>45394</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Multiply A (record number) by eight and load into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45395"></span>45395</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45396"></span>45396</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45397"></span>45397</td>
+<td class="instruction">LD H,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45399"></span>45399</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45400"></span>45400</td>
+<td class="instruction">LD D,0</td>
+<td class="comment-11" rowspan="1">Set D to zero (DE = field number)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45402"></span>45402</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Add field number to HL to give exact offset to record and field of interest</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45403"></span>45403</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Restore DE (points to current position in a table of 8-byte-wide records)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45404"></span>45404</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">...and add to offset value already in HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45405"></span>45405</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45380.html">45380</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45390">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45406.html">45406</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

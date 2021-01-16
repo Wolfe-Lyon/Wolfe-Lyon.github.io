@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 28101</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28095.html">28095</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28101">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28172.html">28172</a></span></td>
+</tr>
+</table>
+<div class="description">28101: Draw All Objects and Characters in Current Room, Draw Magic Knight, Set Action Flags and Validate I.D. Card</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="27951.html">27951</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Index of Magic Knight's current room</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28101"></span>28101</td>
+<td class="instruction">CALL <a href="29272.html">29272</a></td>
+<td class="comment-11" rowspan="1">If Magic Knight is on the bridge and USS Pisces is not at Gangrole then draw viewscreen starfield</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28104"></span>28104</td>
+<td class="instruction">CALL <a href="28172.html">28172</a></td>
+<td class="comment-11" rowspan="1">Print Magic Knight's current room's name at top of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28107"></span>28107</td>
+<td class="instruction">CALL <a href="28264.html">28264</a></td>
+<td class="comment-11" rowspan="1">Prepare to execute room-specific routine for Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28110"></span>28110</td>
+<td class="instruction">CALL <a href="36077.html">36077</a></td>
+<td class="comment-11" rowspan="1">Draw all objects in Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28113"></span>28113</td>
+<td class="instruction">CALL <a href="28364.html">28364</a></td>
+<td class="comment-11" rowspan="1">Draw all characters in Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28116"></span>28116</td>
+<td class="instruction">LD A,(23701)</td>
+<td class="comment-11" rowspan="1">Flag Magic Knight's current room as visited for scoring purposes...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28119"></span>28119</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28120"></span>28120</td>
+<td class="instruction">LD D,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28122"></span>28122</td>
+<td class="instruction">LD HL,23502</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28125"></span>28125</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28126"></span>28126</td>
+<td class="instruction">LD (HL),1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28128"></span>28128</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-11" rowspan="1">Set system variable BORDCR to 7...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28130"></span>28130</td>
+<td class="instruction">LD (23624),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28133"></span>28133</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set border to black and reset speaker state...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28134"></span>28134</td>
+<td class="instruction">OUT (254),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28136"></span>28136</td>
+<td class="instruction">LD A,71</td>
+<td class="comment-11" rowspan="1">Set ATTR T system variable to 71 (white INK, black PAPER, BRIGHT)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28138"></span>28138</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28141"></span>28141</td>
+<td class="instruction">RES 1,(IY+65)</td>
+<td class="comment-11" rowspan="1">Reset Characters Free to Move Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28145"></span>28145</td>
+<td class="instruction">RES 2,(IY+65)</td>
+<td class="comment-11" rowspan="1">Reset Unknown Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28149"></span>28149</td>
+<td class="instruction">LD A,(23480)</td>
+<td class="comment-11" rowspan="1">If Unknown / Unused Flag 2 is zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28152"></span>28152</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28153"></span>28153</td>
+<td class="instruction">JR Z,28155</td>
+<td class="comment-11" rowspan="1">...then jump to <a href="28101.html#28155">28155</a> (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28155"></span>28155</td>
+<td class="instruction">CALL <a href="53150.html">53150</a></td>
+<td class="comment-11" rowspan="1">Store background attributes if appropriate, then draw Magic Knight to display</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28158"></span>28158</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set Unknown / Unused Flag 2 to zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28159"></span>28159</td>
+<td class="instruction">LD (23480),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28162"></span>28162</td>
+<td class="instruction">CALL <a href="28696.html">28696</a></td>
+<td class="comment-11" rowspan="1">If Draw Communicate Window / Face Flag is set then draw Communicate Window / Face</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28165"></span>28165</td>
+<td class="instruction">CALL <a href="34265.html">34265</a></td>
+<td class="comment-11" rowspan="1">Set Magic Knight's available action flags and validate I.D. Card if appropriate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28168"></span>28168</td>
+<td class="instruction">LD A,(23701)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28171"></span>28171</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28095.html">28095</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28101">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28172.html">28172</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

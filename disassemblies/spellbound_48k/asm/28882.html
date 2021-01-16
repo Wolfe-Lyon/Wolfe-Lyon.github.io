@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 28882</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28841.html">28841</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28882">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28960.html">28960</a></span></td>
+</tr>
+</table>
+<div class="description">28882: Room Drawing: Draw Picture in Frame (<a href="59548.html#59748">59748</a>)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28882"></span>28882</td>
+<td class="instruction">CALL <a href="29441.html">29441</a></td>
+<td class="comment-11" rowspan="1">Read two bytes AFTER HL position into BC, advancing HL before both reads</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28885"></span>28885</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28886"></span>28886</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28887"></span>28887</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-11" rowspan="1">Load system variable ATTR T with 7 (white INK, black PAPER)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28889"></span>28889</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28892"></span>28892</td>
+<td class="instruction">LD A,64</td>
+<td class="comment-11" rowspan="1">Set current Terrain Interaction Parameter to "preserve attribute"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28894"></span>28894</td>
+<td class="instruction">LD (23483),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28897"></span>28897</td>
+<td class="instruction">LD A,60</td>
+<td class="comment-11" rowspan="1">Draw Picture in Frame (2) [graphic data at <a href="59548.html#59748">59748</a>]...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28899"></span>28899</td>
+<td class="instruction">CALL <a href="29960.html">29960</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28902"></span>28902</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28903"></span>28903</td>
+<td class="instruction">CALL <a href="36569.html">36569</a></td>
+<td class="comment-11" rowspan="1">Update Virtual Attribute Cursor storage location to coordinates x=C y=B and point HL to corresponding Attribute File address</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28906"></span>28906</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Transfer memory address of attribute cursor...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28907"></span>28907</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">...into  IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28909"></span>28909</td>
+<td class="instruction">LD (IX+34),70</td>
+<td class="comment-11" rowspan="1">Set attribute of sun in picture to 70 (yellow INK, black PAPER, BRIGHT) (34 bytes, or 1 character down and 2 characters right from top-left corner of picture)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28913"></span>28913</td>
+<td class="instruction">LD A,67</td>
+<td class="comment-11" rowspan="1">Set attribute to 67 (magenta INK, black PAPER, BRIGHT) for...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28915"></span>28915</td>
+<td class="instruction">LD (IX+37),A</td>
+<td class="comment-11" rowspan="1">...magenta castle in picture (six characters, 3 x 2)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28918"></span>28918</td>
+<td class="instruction">LD (IX+38),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28921"></span>28921</td>
+<td class="instruction">LD (IX+39),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28924"></span>28924</td>
+<td class="instruction">LD (IX+69),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28927"></span>28927</td>
+<td class="instruction">LD (IX+70),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28930"></span>28930</td>
+<td class="instruction">LD (IX+71),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28933"></span>28933</td>
+<td class="instruction">LD A,70</td>
+<td class="comment-11" rowspan="1">Set attribute to 70 (yellow INK, black PAPER, BRIGHT) for...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28935"></span>28935</td>
+<td class="instruction">LD (IX+97),A</td>
+<td class="comment-11" rowspan="1">...sand / yellow land (7 characters, 7 x 1)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28938"></span>28938</td>
+<td class="instruction">LD (IX+98),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28941"></span>28941</td>
+<td class="instruction">LD (IX+99),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28944"></span>28944</td>
+<td class="instruction">LD (IX+100),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28947"></span>28947</td>
+<td class="instruction">LD (IX+101),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28950"></span>28950</td>
+<td class="instruction">LD (IX+102),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28953"></span>28953</td>
+<td class="instruction">LD (IX+103),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28956"></span>28956</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28957"></span>28957</td>
+<td class="instruction">JP <a href="27865.html#28060">28060</a></td>
+<td class="comment-11" rowspan="1">Return to room drawing routine and process next data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28841.html">28841</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28882">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28960.html">28960</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

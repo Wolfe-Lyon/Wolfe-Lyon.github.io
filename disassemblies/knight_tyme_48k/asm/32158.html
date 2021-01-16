@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 32158</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32124.html">32124</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32158">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32200.html">32200</a></span></td>
+</tr>
+</table>
+<div class="description">32158: Prepare Viewscreen for USS Pisces' Arrival at Destination</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="32124.html">32124</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">A destination index</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32158"></span>32158</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Double destination index...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32159"></span>32159</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...and load into BC...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32160"></span>32160</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32162"></span>32162</td>
+<td class="instruction">LD HL,25398</td>
+<td class="comment-11" rowspan="1">Point HL at first attribute entry in Table of Current Planetary Data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32165"></span>32165</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...and add BC as offset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32166"></span>32166</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load A with attribute of planet at new location</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32167"></span>32167</td>
+<td class="instruction">LD (52196),A</td>
+<td class="comment-11" rowspan="1">Set colour of planet on viewscreen to this value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32170"></span>32170</td>
+<td class="instruction">LD (35948),A</td>
+<td class="comment-11" rowspan="1">Prepare to fill a region with the attribute in A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32173"></span>32173</td>
+<td class="instruction">LD HL,6151</td>
+<td class="comment-11" rowspan="1">Set left and right x-coordinates of region to scroll to 7 and 24 (characters) respectively...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32176"></span>32176</td>
+<td class="instruction">LD (23489),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32179"></span>32179</td>
+<td class="instruction">LD HL,36416</td>
+<td class="comment-11" rowspan="1">Set top and bottom y-coordinates of region to scroll to 64 and 142 (pixels) respectively...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32182"></span>32182</td>
+<td class="instruction">LD (23491),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32185"></span>32185</td>
+<td class="instruction">LD HL,2055</td>
+<td class="comment-11" rowspan="1">Set top-left of area to fill to (7, 8) (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32188"></span>32188</td>
+<td class="instruction">LD (23493),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32191"></span>32191</td>
+<td class="instruction">LD HL,4376</td>
+<td class="comment-11" rowspan="1">Set bottom-right of area to fill to (24, 17) (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32194"></span>32194</td>
+<td class="instruction">LD (23495),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32197"></span>32197</td>
+<td class="instruction">JP <a href="35940.html">35940</a></td>
+<td class="comment-11" rowspan="1">Fill a region of Attribute File with specified attribute and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32124.html">32124</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32158">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32200.html">32200</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

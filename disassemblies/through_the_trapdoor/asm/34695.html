@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 34695</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34687.html">34687</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#34695">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="34751.html">34751</a></span></td>
+</tr>
+</table>
+<div class="description">34695: Copy State Data for all Resettable Complex Entities into Table of Initial-State Data for Complex Entities</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="34438.html">34438</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34695"></span>34695</td>
+<td class="instruction">LD IY,34687</td>
+<td class="comment-11" rowspan="1">Point IY at start of Table of Start Addresses of Levels' State Data for Complex Entities</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34699"></span>34699</td>
+<td class="instruction">LD DE,59821</td>
+<td class="comment-11" rowspan="1">Point DE at start of Table of Initial-State Data for Complex Entities</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34702"></span>34702</td>
+<td class="instruction">LD B,4</td>
+<td class="comment-11" rowspan="1">Set B to 4 (as there are 4 levels)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34704"></span>34704</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = remaining number of levels to process)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34705"></span>34705</td>
+<td class="instruction">LD L,(IY+0)</td>
+<td class="comment-11" rowspan="1">Load start address of current level's complex state data into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34708"></span>34708</td>
+<td class="instruction">LD H,(IY+1)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34711"></span>34711</td>
+<td class="instruction">INC IY</td>
+<td class="comment-11" rowspan="1">Advance IY to next entry in list of addresses of complex state data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34713"></span>34713</td>
+<td class="instruction">INC IY</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34715"></span>34715</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Transfer start address of current level's complex state data into IX...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34716"></span>34716</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34718"></span>34718</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">If first byte in current complex state data entry is 255 (End Marker)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34721"></span>34721</td>
+<td class="instruction">CP 255</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34723"></span>34723</td>
+<td class="instruction">JR Z,34747</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34695.html#34747">34747</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34725"></span>34725</td>
+<td class="instruction">LD A,(IX+10)</td>
+<td class="comment-11" rowspan="1">If entity's Can Be Reset Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34728"></span>34728</td>
+<td class="instruction">AND 128</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34730"></span>34730</td>
+<td class="instruction">JR Z,34740</td>
+<td class="comment-11" rowspan="1">...then advance IX by 13 bytes to next entry and loop back to <a href="34695.html#34718">34718</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34732"></span>34732</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Transfer start address of current entry in complex state data into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34734"></span>34734</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34735"></span>34735</td>
+<td class="instruction">LD BC,13</td>
+<td class="comment-11" rowspan="1">Load BC with 13 (as entries in complex state data are 13 bytes wide)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34738"></span>34738</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">Copy current entry in complex state data into Table of Initial-State Data for Complex Entities at <a href="59821.html">59821</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34740"></span>34740</td>
+<td class="instruction">LD BC,13</td>
+<td class="comment-11" rowspan="1">Load BC with 13 (as entries in complex state data are 13 bytes wide)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34743"></span>34743</td>
+<td class="instruction">ADD IX,BC</td>
+<td class="comment-11" rowspan="1">Advance IX to next entry in complex state data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34745"></span>34745</td>
+<td class="instruction">JR 34718</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="34695.html#34718">34718</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34747"></span>34747</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = remaining number of levels to process)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34748"></span>34748</td>
+<td class="instruction">DJNZ 34704</td>
+<td class="comment-11" rowspan="1">Decrease B and loop back to <a href="34695.html#34704">34704</a> to process next level</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34750"></span>34750</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34687.html">34687</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#34695">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="34751.html">34751</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

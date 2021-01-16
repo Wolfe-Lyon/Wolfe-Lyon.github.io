@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 36703</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36692.html">36692</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36703">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36709.html">36709</a></span></td>
+</tr>
+</table>
+<div class="description">36703: Get Start of Next Zero-Terminated String</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="28272.html">28272</a>, <a href="34842.html">34842</a> and <a href="36830.html">36830</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Current position in a list of zero-terminated strings</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Byte immediately after the first zero byte following HL (input) address</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36703"></span>36703</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Get byte at HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36704"></span>36704</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36705"></span>36705</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">Is byte value from old HL position zero?</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36706"></span>36706</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">If so then exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36707"></span>36707</td>
+<td class="instruction">JR 36703</td>
+<td class="comment-11" rowspan="1">If not, then restart this loop with new HL</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36692.html">36692</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36703">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36709.html">36709</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

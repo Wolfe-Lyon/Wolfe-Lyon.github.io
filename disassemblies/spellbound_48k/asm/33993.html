@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 33993</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33935.html">33935</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33993">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="34062.html">34062</a></span></td>
+</tr>
+</table>
+<div class="description">33993: "Command Character to Help" Routine for Elrand</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33993"></span>33993</td>
+<td class="instruction">LD A,169</td>
+<td class="comment-11" rowspan="1">Set last character of "[CHARACTER] CANNOT HELP YOU..." text to 169 ("HERE")...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33995"></span>33995</td>
+<td class="instruction">LD (46710),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33998"></span>33998</td>
+<td class="instruction">LD A,(65529)</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not at The Wall...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34001"></span>34001</td>
+<td class="instruction">CP 29</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34003"></span>34003</td>
+<td class="instruction">JP NZ,<a href="34514.html">34514</a></td>
+<td class="comment-11" rowspan="1">...then display "ELRAND CANNOT HELP YOU" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34006"></span>34006</td>
+<td class="instruction">LD A,170</td>
+<td class="comment-11" rowspan="1">Set last character of "[CHARACTER] CANNOT HELP YOU..." text to 170 ("YET")...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34008"></span>34008</td>
+<td class="instruction">LD (46710),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34011"></span>34011</td>
+<td class="instruction">LD A,(23411)</td>
+<td class="comment-11" rowspan="1">If "Wall broken" flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34014"></span>34014</td>
+<td class="instruction">AND 8</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34016"></span>34016</td>
+<td class="instruction">JP NZ,<a href="33811.html#33875">33875</a></td>
+<td class="comment-11" rowspan="1">...then display "THERE IS NOTHING MORE THAT ELRAND CAN DO TO HELP YOU HERE" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34019"></span>34019</td>
+<td class="instruction">LD A,(23411)</td>
+<td class="comment-11" rowspan="1">If "Tower zapped by Thor" flag is not set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34022"></span>34022</td>
+<td class="instruction">AND 2</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34024"></span>34024</td>
+<td class="instruction">JP Z,<a href="34514.html">34514</a></td>
+<td class="comment-11" rowspan="1">...then display "ELRAND CANNOT HELP YOU" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34027"></span>34027</td>
+<td class="instruction">LD A,(23411)</td>
+<td class="comment-11" rowspan="1">Set "Wall broken" flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34030"></span>34030</td>
+<td class="instruction">OR 8</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34032"></span>34032</td>
+<td class="instruction">LD (23411),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34035"></span>34035</td>
+<td class="instruction">LD HL,53317</td>
+<td class="comment-11" rowspan="1">Change room data pointer for The Wall from 53289 (original version) to 53317 (Wall broken version)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34038"></span>34038</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34039"></span>34039</td>
+<td class="instruction">LD (51971),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34042"></span>34042</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34043"></span>34043</td>
+<td class="instruction">LD (51972),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34046"></span>34046</td>
+<td class="instruction">LD A,29</td>
+<td class="comment-11" rowspan="1">Set both Lumps of Brickwork to be at The Wall...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34048"></span>34048</td>
+<td class="instruction">LD (25539),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34051"></span>34051</td>
+<td class="instruction">LD (25596),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34054"></span>34054</td>
+<td class="instruction">LD HL,44643</td>
+<td class="comment-11" rowspan="1">Display "THE TRUMPET BLOWS AND THE WALL COMES A-TUMBLING DOWN !!" window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34057"></span>34057</td>
+<td class="instruction">LD A,24</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34059"></span>34059</td>
+<td class="instruction">JP <a href="34768.html">34768</a></td>
+<td class="comment-11" rowspan="1">...and return to game</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33935.html">33935</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33993">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="34062.html">34062</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

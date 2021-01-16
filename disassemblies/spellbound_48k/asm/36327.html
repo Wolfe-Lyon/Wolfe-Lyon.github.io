@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 36327</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36275.html">36275</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36327">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36472.html">36472</a></span></td>
+</tr>
+</table>
+<div class="description">36327: Assign a Slot in Room C to Character B</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="26906.html">26906</a>, <a href="30540.html">30540</a>, <a href="33312.html">33312</a> and <a href="55233.html">55233</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">Index of a character</td>
+</tr>
+<tr>
+<td class="register">C</td>
+<td class="register-desc">Room number</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Number of slot assigned (4 if room is full)</td>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">y-coordinate (characters) of slot</td>
+</tr>
+<tr>
+<td class="register">C</td>
+<td class="register-desc">x-coordinate (characters) of slot</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36327"></span>36327</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Load room number into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36328"></span>36328</td>
+<td class="instruction">LD HL,25440</td>
+<td class="comment-11" rowspan="1">Point HL at start of table of current characters' locations (i.e. Gimbal, Thor etc.)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36331"></span>36331</td>
+<td class="instruction">LD DE,25307</td>
+<td class="comment-11" rowspan="1">Point DE at table of characters' slots in their current rooms</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36334"></span>36334</td>
+<td class="instruction">LD IX,36472</td>
+<td class="comment-11" rowspan="1">Point IX at 36472 list of occupied slots...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36338"></span>36338</td>
+<td class="instruction">LD (IX+0),0</td>
+<td class="comment-11" rowspan="1">...and set three bytes there to zeroes...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36342"></span>36342</td>
+<td class="instruction">LD (IX+1),0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36346"></span>36346</td>
+<td class="instruction">LD (IX+2),0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36350"></span>36350</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36351"></span>36351</td>
+<td class="instruction">LD B,8</td>
+<td class="comment-11" rowspan="1">Load B with 8</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36353"></span>36353</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">Compare a character's current screen number with room number passed to this routine (in A)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36354"></span>36354</td>
+<td class="instruction">JR NZ,36364</td>
+<td class="comment-11" rowspan="1">...and if they're not the same then skip ahead to <a href="36327.html#36364">36364</a> (move onto next character, if applicable)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36356"></span>36356</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Swap registers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36357"></span>36357</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">Load character's slot (i.e. order of arrival in the room) into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36358"></span>36358</td>
+<td class="instruction">LD (IX+0),A</td>
+<td class="comment-11" rowspan="1">Copy slot into table at 36472</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36361"></span>36361</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance IX to next entry in this table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36363"></span>36363</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Exchange registers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36364"></span>36364</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL by three bytes (i.e. skip over x- and y-coordinates to get to screen number of next character)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36365"></span>36365</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36366"></span>36366</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36367"></span>36367</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance DE by one byte to get slot of next character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36368"></span>36368</td>
+<td class="instruction">DJNZ 36353</td>
+<td class="comment-11" rowspan="1">Loop back if previous character was not the last</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36370"></span>36370</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36371"></span>36371</td>
+<td class="instruction">LD IX,36472</td>
+<td class="comment-11" rowspan="1">Point IX at list of occupied slots</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36375"></span>36375</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">If one of the characters in room C has a slot of 1...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36377"></span>36377</td>
+<td class="instruction">CP (IX+0)</td>
+<td class="comment-11" rowspan="1">...then jump ahead to <a href="36327.html#36394">36394</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36380"></span>36380</td>
+<td class="instruction">JR Z,36394</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36382"></span>36382</td>
+<td class="instruction">CP (IX+1)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36385"></span>36385</td>
+<td class="instruction">JR Z,36394</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36387"></span>36387</td>
+<td class="instruction">CP (IX+2)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36390"></span>36390</td>
+<td class="instruction">JR Z,36394</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36392"></span>36392</td>
+<td class="instruction">JR 36435</td>
+<td class="comment-11" rowspan="1">...else jump to <a href="36327.html#36435">36435</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36394"></span>36394</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1">If one of the characters in room C has a slot of 2...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36396"></span>36396</td>
+<td class="instruction">CP (IX+0)</td>
+<td class="comment-11" rowspan="1">...then jump ahead to <a href="36327.html#36413">36413</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36399"></span>36399</td>
+<td class="instruction">JR Z,36413</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36401"></span>36401</td>
+<td class="instruction">CP (IX+1)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36404"></span>36404</td>
+<td class="instruction">JR Z,36413</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36406"></span>36406</td>
+<td class="instruction">CP (IX+2)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36409"></span>36409</td>
+<td class="instruction">JR Z,36413</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36411"></span>36411</td>
+<td class="instruction">JR 36435</td>
+<td class="comment-11" rowspan="1">...else jump to <a href="36327.html#36435">36435</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36413"></span>36413</td>
+<td class="instruction">LD A,3</td>
+<td class="comment-11" rowspan="1">If one of the characters in room C has a slot of 3...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36415"></span>36415</td>
+<td class="instruction">CP (IX+0)</td>
+<td class="comment-11" rowspan="1">...then jump ahead to <a href="36327.html#36432">36432</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36418"></span>36418</td>
+<td class="instruction">JR Z,36432</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36420"></span>36420</td>
+<td class="instruction">CP (IX+1)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36423"></span>36423</td>
+<td class="instruction">JR Z,36432</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36425"></span>36425</td>
+<td class="instruction">CP (IX+2)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36428"></span>36428</td>
+<td class="instruction">JR Z,36432</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36430"></span>36430</td>
+<td class="instruction">JR 36435</td>
+<td class="comment-11" rowspan="1">...else jump to <a href="36327.html#36435">36435</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36432"></span>36432</td>
+<td class="instruction">LD A,4</td>
+<td class="comment-11" rowspan="1">Return with A=4...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36434"></span>36434</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="36435"></span>36435</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">Load highest slot among characters plus one in room into E</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36436"></span>36436</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Store DE (E=lowest empty slot)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36437"></span>36437</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B=Character index, C=Room number)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36438"></span>36438</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Decrease A to get index of lowest empty slot...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36439"></span>36439</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...double it...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36440"></span>36440</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">...and load into DE...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36441"></span>36441</td>
+<td class="instruction">LD D,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36443"></span>36443</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">Set B to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36445"></span>36445</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Copy BC into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36446"></span>36446</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">...so that HL contains room number passed to this routine initially</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36447"></span>36447</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">Double room number...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36448"></span>36448</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...add room number again (now three times)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36449"></span>36449</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...and double again to get six times original room number in HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36450"></span>36450</td>
+<td class="instruction">LD BC,53938</td>
+<td class="comment-11" rowspan="1">Point BC at table of coordinates of character positions in rooms</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36453"></span>36453</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Add to six times room number into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36454"></span>36454</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Add to this double (slot - 1) from DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36455"></span>36455</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-11" rowspan="1">Load x- and y-coordinates into BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36456"></span>36456</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36457"></span>36457</td>
+<td class="instruction">LD B,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36458"></span>36458</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Exchange all registers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36459"></span>36459</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B=Character index, C=Room number)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36460"></span>36460</td>
+<td class="instruction">LD HL,25307</td>
+<td class="comment-11" rowspan="1">Point HL at table of characters' slots in their current rooms</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36463"></span>36463</td>
+<td class="instruction">LD D,0</td>
+<td class="comment-11" rowspan="1">Load input character index into DE...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36465"></span>36465</td>
+<td class="instruction">LD E,B</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36466"></span>36466</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Add as offset to HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36467"></span>36467</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Restore (E=lowest empty slot)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36468"></span>36468</td>
+<td class="instruction">LD (HL),E</td>
+<td class="comment-11" rowspan="1">Set this character's slot to be lowest empty slot in this room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36469"></span>36469</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">Set A to slot number just filled</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36470"></span>36470</td>
+<td class="instruction">EXX</td>
+<td class="comment-11" rowspan="1">Exchange all registers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="36471"></span>36471</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="36275.html">36275</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#36327">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="36472.html">36472</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

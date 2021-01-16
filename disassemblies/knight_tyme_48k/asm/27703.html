@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 27703</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="27647.html">27647</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27703">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27750.html">27750</a></span></td>
+</tr>
+</table>
+<div class="description">27703: Draw Top In-Game Window</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="27762.html">27762</a> and <a href="31688.html">31688</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27703"></span>27703</td>
+<td class="instruction">LD A,35</td>
+<td class="comment-11" rowspan="1">Check if Magic Knight is carrying the Mirror (35)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27705"></span>27705</td>
+<td class="instruction">CALL <a href="33645.html">33645</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27708"></span>27708</td>
+<td class="instruction">LD HL,38298</td>
+<td class="comment-11" rowspan="1">Point HL at Info Window Text (not carrying Mirror version)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27711"></span>27711</td>
+<td class="instruction">JR NZ,27716</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not carrying the Mirror then skip ahead to <a href="27703.html#27716">27716</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27713"></span>27713</td>
+<td class="instruction">LD HL,38544</td>
+<td class="comment-11" rowspan="1">Point HL at Info Window Text (carrying Mirror version)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="27716"></span>27716</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to text to print)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27717"></span>27717</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Draw Window 1...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27719"></span>27719</td>
+<td class="instruction">CALL <a href="34990.html">34990</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27722"></span>27722</td>
+<td class="instruction">LD HL,16554</td>
+<td class="comment-11" rowspan="1">Load HL with Display File address corresponding to (10, 5) (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27725"></span>27725</td>
+<td class="instruction">LD (54110),HL</td>
+<td class="comment-11" rowspan="1">...and move Bitmap Virtual Text Cursor here</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27728"></span>27728</td>
+<td class="instruction">LD HL,38357</td>
+<td class="comment-11" rowspan="1">Point HL at "KNIGHT-TYME" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27731"></span>27731</td>
+<td class="instruction">CALL <a href="34762.html">34762</a></td>
+<td class="comment-11" rowspan="1">...and print to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27734"></span>27734</td>
+<td class="instruction">LD HL,16417</td>
+<td class="comment-11" rowspan="1">Load HL with Display File address corresponding to (1, 1) (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27737"></span>27737</td>
+<td class="instruction">LD (54110),HL</td>
+<td class="comment-11" rowspan="1">...and move Bitmap Virtual Text Cursor here</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27740"></span>27740</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to text to print)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27741"></span>27741</td>
+<td class="instruction">CALL <a href="34762.html">34762</a></td>
+<td class="comment-11" rowspan="1">Print window text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27744"></span>27744</td>
+<td class="instruction">CALL <a href="34567.html">34567</a></td>
+<td class="comment-11" rowspan="1">Draw Strength Bar at top of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="27747"></span>27747</td>
+<td class="instruction">JP <a href="34627.html">34627</a></td>
+<td class="comment-11" rowspan="1">Draw objects in Magic Knight's inventory if he is carrying the Mirror then return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="27647.html">27647</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#27703">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="27750.html">27750</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

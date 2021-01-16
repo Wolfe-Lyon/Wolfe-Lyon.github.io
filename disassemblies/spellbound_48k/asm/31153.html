@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 31153</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="30880.html">30880</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31153">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31370.html">31370</a></span></td>
+</tr>
+</table>
+<div class="description">31153: Display and Handle Main In-Game Menu (When Fire is Pressed)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="27176.html">27176</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31153"></span>31153</td>
+<td class="instruction">CALL <a href="38108.html">38108</a></td>
+<td class="comment-11" rowspan="1">Set parameters for and play downward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31156"></span>31156</td>
+<td class="instruction">LD BC,2048</td>
+<td class="comment-11" rowspan="1">Set B = 8 (eight action flags) and C = 0 (count of set flags)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31159"></span>31159</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's action flags part 1 into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31162"></span>31162</td>
+<td class="instruction">RLCA</td>
+<td class="comment-11" rowspan="1">Pop a flag into carry flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31163"></span>31163</td>
+<td class="instruction">JR NC,31166</td>
+<td class="comment-11" rowspan="1">If Magic Knight action flag is not set then skip ahead to <a href="31153.html#31166">31166</a> to repeat loop for next flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31165"></span>31165</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">...else increase count of set flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31166"></span>31166</td>
+<td class="instruction">DJNZ 31162</td>
+<td class="comment-11" rowspan="1">Loop back for next flag until all eight are done</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31168"></span>31168</td>
+<td class="instruction">LD B,8</td>
+<td class="comment-11" rowspan="1">Set B = 8 (another eight action flags)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31170"></span>31170</td>
+<td class="instruction">LD A,(65533)</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's action flags part 2 into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31173"></span>31173</td>
+<td class="instruction">RLCA</td>
+<td class="comment-11" rowspan="1">Pop a flag into carry flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31174"></span>31174</td>
+<td class="instruction">JR NC,31177</td>
+<td class="comment-11" rowspan="1">If Magic Knight action flag is not set then skip ahead to <a href="31153.html#31177">31177</a> to repeat loop for next flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31176"></span>31176</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">...else increase count of set flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31177"></span>31177</td>
+<td class="instruction">DJNZ 31173</td>
+<td class="comment-11" rowspan="1">Loop back for next flag until all eight are done</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31179"></span>31179</td>
+<td class="instruction">LD A,9</td>
+<td class="comment-11" rowspan="1">Load A with 9 (as minimal command window has bottom y-coordinate of 9)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31181"></span>31181</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">Increase A by number of extra commands available</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31182"></span>31182</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load value back into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31183"></span>31183</td>
+<td class="instruction">LD A,(41876)</td>
+<td class="comment-11" rowspan="1">Load A with y-coordinate (characters) of top of menu window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31186"></span>31186</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">Update y-coordinate of bottom of window according to number of extra commands...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31187"></span>31187</td>
+<td class="instruction">LD (41877),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31190"></span>31190</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Display main in-game menu window (window number zero)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31191"></span>31191</td>
+<td class="instruction">CALL <a href="36979.html">36979</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31194"></span>31194</td>
+<td class="instruction">LD HL,44103</td>
+<td class="comment-11" rowspan="1">Print "COMMANDS AVAILABLE:-" followed by first five commands (Pick up, drop, etc.) that are always available...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31197"></span>31197</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31200"></span>31200</td>
+<td class="instruction">LD HL,16608</td>
+<td class="comment-11" rowspan="1">Set "memory location to start printing character" in character printing routine to start of last character row of permanent (yellow) menu options...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31203"></span>31203</td>
+<td class="instruction">LD (36488),HL</td>
+<td class="comment-11" rowspan="1">...(i.e. "E  EXAMINE") in preparation for printing conditional (white) ones, which are [CR]-prefixed so will print to next line down</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31206"></span>31206</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's action flags part 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31209"></span>31209</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">If Command a Character flag is not set then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31211"></span>31211</td>
+<td class="instruction">JR Z,31219</td>
+<td class="comment-11" rowspan="1">...skip ahead to next flag's check</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31213"></span>31213</td>
+<td class="instruction">LD HL,44173</td>
+<td class="comment-11" rowspan="1">Else print "C COMMAND A CHARACTER" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31216"></span>31216</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31219"></span>31219</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's action flags part 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31222"></span>31222</td>
+<td class="instruction">BIT 1,A</td>
+<td class="comment-11" rowspan="1">If Locate a Character flag is not set then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31224"></span>31224</td>
+<td class="instruction">JR Z,31232</td>
+<td class="comment-11" rowspan="1">...skip ahead to next flag's check</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31226"></span>31226</td>
+<td class="instruction">LD HL,44181</td>
+<td class="comment-11" rowspan="1">Print "L LOCATE A CHARACTER" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31229"></span>31229</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31232"></span>31232</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's action flags part 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31235"></span>31235</td>
+<td class="instruction">BIT 2,A</td>
+<td class="comment-11" rowspan="1">If Teleport flag is not set then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31237"></span>31237</td>
+<td class="instruction">JR Z,31245</td>
+<td class="comment-11" rowspan="1">...skip ahead to next flag's check</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31239"></span>31239</td>
+<td class="instruction">LD HL,44189</td>
+<td class="comment-11" rowspan="1">Print "X TELEPORT" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31242"></span>31242</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31245"></span>31245</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's action flags part 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31248"></span>31248</td>
+<td class="instruction">BIT 3,A</td>
+<td class="comment-11" rowspan="1">If Read flag is not set then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31250"></span>31250</td>
+<td class="instruction">JR Z,31258</td>
+<td class="comment-11" rowspan="1">...skip ahead to next flag's check</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31252"></span>31252</td>
+<td class="instruction">LD HL,44194</td>
+<td class="comment-11" rowspan="1">Print "R READ SOMETHING" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31255"></span>31255</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31258"></span>31258</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's action flags part 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31261"></span>31261</td>
+<td class="instruction">BIT 4,A</td>
+<td class="comment-11" rowspan="1">If Throw flag is not set then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31263"></span>31263</td>
+<td class="instruction">JR Z,31271</td>
+<td class="comment-11" rowspan="1">...skip ahead to next flag's check</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31265"></span>31265</td>
+<td class="instruction">LD HL,44200</td>
+<td class="comment-11" rowspan="1">Print "Y THROW SOMETHING" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31268"></span>31268</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31271"></span>31271</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's action flags part 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31274"></span>31274</td>
+<td class="instruction">BIT 5,A</td>
+<td class="comment-11" rowspan="1">If Cast a spell flag is not set then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31276"></span>31276</td>
+<td class="instruction">JR Z,31284</td>
+<td class="comment-11" rowspan="1">...skip ahead to next flag's check</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31278"></span>31278</td>
+<td class="instruction">LD HL,44206</td>
+<td class="comment-11" rowspan="1">Print "S CAST A SPELL" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31281"></span>31281</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31284"></span>31284</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's action flags part 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31287"></span>31287</td>
+<td class="instruction">BIT 6,A</td>
+<td class="comment-11" rowspan="1">If Blow flag is not set then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31289"></span>31289</td>
+<td class="instruction">JR Z,31297</td>
+<td class="comment-11" rowspan="1">...skip ahead to next flag's check</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31291"></span>31291</td>
+<td class="instruction">LD HL,44214</td>
+<td class="comment-11" rowspan="1">Print "B BLOW SOMETHING" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31294"></span>31294</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31297"></span>31297</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's action flags part 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31300"></span>31300</td>
+<td class="instruction">BIT 7,A</td>
+<td class="comment-11" rowspan="1">If Call Lift flag is not set then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31302"></span>31302</td>
+<td class="instruction">JR Z,31310</td>
+<td class="comment-11" rowspan="1">...skip ahead to next flag's check</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31304"></span>31304</td>
+<td class="instruction">LD HL,44224</td>
+<td class="comment-11" rowspan="1">Print "W CALL LIFT" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31307"></span>31307</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31310"></span>31310</td>
+<td class="instruction">LD A,(65533)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's action flags part 2</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31313"></span>31313</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">If Move Lift flag is not set then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31315"></span>31315</td>
+<td class="instruction">JR Z,31323</td>
+<td class="comment-11" rowspan="1">...skip ahead to next menu object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31317"></span>31317</td>
+<td class="instruction">LD HL,44234</td>
+<td class="comment-11" rowspan="1">Print "V MOVE LIFT" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31320"></span>31320</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31323"></span>31323</td>
+<td class="instruction">LD HL,44159</td>
+<td class="comment-11" rowspan="1">Print "Z EXIT MENU" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31326"></span>31326</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31329"></span>31329</td>
+<td class="instruction">CALL <a href="37333.html">37333</a></td>
+<td class="comment-11" rowspan="1">Process keyboard / joystick input for menu, and load ASCII code of shortcut for selected (i.e. SPACE or fire pressed) item into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31332"></span>31332</td>
+<td class="instruction">CP 90</td>
+<td class="comment-11" rowspan="1">If "Z" was pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31334"></span>31334</td>
+<td class="instruction">JP Z,<a href="30222.html#30428">30428</a></td>
+<td class="comment-11" rowspan="1">...reset Gimbal-White-Out Safe Flag, redraw current room and return to main game loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31337"></span>31337</td>
+<td class="instruction">LD HL,41811</td>
+<td class="comment-11" rowspan="1">Point HL at start of string of keyboard shortcuts for commands</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31340"></span>31340</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load ASCII code of key pressed into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31341"></span>31341</td>
+<td class="instruction">LD C,0</td>
+<td class="comment-11" rowspan="1">Set C (selected command number) to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31343"></span>31343</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load keyboard shortcut pointed to by HL into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31344"></span>31344</td>
+<td class="instruction">CP B</td>
+<td class="comment-11" rowspan="1">If key pressed matches currently-pointed-at shortcut...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31345"></span>31345</td>
+<td class="instruction">JP Z,31352</td>
+<td class="comment-11" rowspan="1">...then jump ahead to <a href="31153.html#31352">31352</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31348"></span>31348</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Increase C (advance to next command to check if that was selected instead)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31349"></span>31349</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance to next entry in list of command shortcuts</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31350"></span>31350</td>
+<td class="instruction">JR 31343</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="31153.html#31343">31343</a> to test next command</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31352"></span>31352</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Load double index of selected command into BC...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31353"></span>31353</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31354"></span>31354</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31356"></span>31356</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31357"></span>31357</td>
+<td class="instruction">LD HL,41827</td>
+<td class="comment-11" rowspan="1">Point HL at table of routine start addresses for Magic Knight's main menu commands</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31360"></span>31360</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Add double index of selected command as offset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31361"></span>31361</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load address of appropriate command processing routine into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31362"></span>31362</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31363"></span>31363</td>
+<td class="instruction">LD H,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31364"></span>31364</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31365"></span>31365</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set last key pressed to null...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31366"></span>31366</td>
+<td class="instruction">LD (23560),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31369"></span>31369</td>
+<td class="instruction">JP (HL)</td>
+<td class="comment-11" rowspan="1">Jump to routine to process selected command</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="30880.html">30880</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31153">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31370.html">31370</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

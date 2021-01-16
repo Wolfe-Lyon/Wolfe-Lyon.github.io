@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Data at 60615</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="60487.html">60487</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#60615">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="60889.html">60889</a></span></td>
+</tr>
+</table>
+<div class="description">60615: RLE Attribute Data (Room Layout Graphics)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Run Length Encoded data used to paint attributes, with two bytes per entry (or a one-byte end marker represented by a zero). Records are comprised of:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Byte</th>
+<th colspan="1" rowspan="1">Meaning</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Repeat Count</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Attribute Value</td>
+</tr>
+</table>
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60615"></span>
+<div class="comments">
+<div class="paragraph">
+(00) - No colouring
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60615"></span>60615</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60616"></span>
+<div class="comments">
+<div class="paragraph">
+(01) - Monitor Showing Castle
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60616"></span>60616</td>
+<td class="instruction">DEFB 6,68</td>
+<td class="comment-11" rowspan="1">6 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60618"></span>60618</td>
+<td class="instruction">DEFB 3,70</td>
+<td class="comment-11" rowspan="1">3 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60620"></span>60620</td>
+<td class="instruction">DEFB 2,68</td>
+<td class="comment-11" rowspan="1">2 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60622"></span>60622</td>
+<td class="instruction">DEFB 3,70</td>
+<td class="comment-11" rowspan="1">3 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60624"></span>60624</td>
+<td class="instruction">DEFB 6,68</td>
+<td class="comment-11" rowspan="1">6 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60626"></span>60626</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60627"></span>
+<div class="comments">
+<div class="paragraph">
+(02) - Control Panel
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60627"></span>60627</td>
+<td class="instruction">DEFB 20,71</td>
+<td class="comment-11" rowspan="1">20 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60629"></span>60629</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60630"></span>
+<div class="comments">
+<div class="paragraph">
+(03) - Display Screen
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60630"></span>60630</td>
+<td class="instruction">DEFB 10,71</td>
+<td class="comment-11" rowspan="1">10 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60632"></span>60632</td>
+<td class="instruction">DEFB 1,68</td>
+<td class="comment-11" rowspan="1">1 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60634"></span>60634</td>
+<td class="instruction">DEFB 4,71</td>
+<td class="comment-11" rowspan="1">4 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60636"></span>60636</td>
+<td class="instruction">DEFB 1,68</td>
+<td class="comment-11" rowspan="1">1 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60638"></span>60638</td>
+<td class="instruction">DEFB 4,71</td>
+<td class="comment-11" rowspan="1">4 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60640"></span>60640</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60641"></span>
+<div class="comments">
+<div class="paragraph">
+(04) - Control Console
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60641"></span>60641</td>
+<td class="instruction">DEFB 1,71</td>
+<td class="comment-11" rowspan="1">1 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60643"></span>60643</td>
+<td class="instruction">DEFB 3,69</td>
+<td class="comment-11" rowspan="1">3 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60645"></span>60645</td>
+<td class="instruction">DEFB 1,71</td>
+<td class="comment-11" rowspan="1">1 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60647"></span>60647</td>
+<td class="instruction">DEFB 3,69</td>
+<td class="comment-11" rowspan="1">3 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60649"></span>60649</td>
+<td class="instruction">DEFB 1,71</td>
+<td class="comment-11" rowspan="1">1 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60651"></span>60651</td>
+<td class="instruction">DEFB 3,69</td>
+<td class="comment-11" rowspan="1">3 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60653"></span>60653</td>
+<td class="instruction">DEFB 1,71</td>
+<td class="comment-11" rowspan="1">1 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60655"></span>60655</td>
+<td class="instruction">DEFB 3,69</td>
+<td class="comment-11" rowspan="1">3 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60657"></span>60657</td>
+<td class="instruction">DEFB 1,68</td>
+<td class="comment-11" rowspan="1">1 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60659"></span>60659</td>
+<td class="instruction">DEFB 3,69</td>
+<td class="comment-11" rowspan="1">3 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60661"></span>60661</td>
+<td class="instruction">DEFB 1,68</td>
+<td class="comment-11" rowspan="1">1 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60663"></span>60663</td>
+<td class="instruction">DEFB 3,69</td>
+<td class="comment-11" rowspan="1">3 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60665"></span>60665</td>
+<td class="instruction">DEFB 1,70</td>
+<td class="comment-11" rowspan="1">1 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60667"></span>60667</td>
+<td class="instruction">DEFB 3,69</td>
+<td class="comment-11" rowspan="1">3 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60669"></span>60669</td>
+<td class="instruction">DEFB 2,70</td>
+<td class="comment-11" rowspan="1">2 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60671"></span>60671</td>
+<td class="instruction">DEFB 2,69</td>
+<td class="comment-11" rowspan="1">2 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60673"></span>60673</td>
+<td class="instruction">DEFB 9,70</td>
+<td class="comment-11" rowspan="1">9 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60675"></span>60675</td>
+<td class="instruction">DEFB 3,69</td>
+<td class="comment-11" rowspan="1">3 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60677"></span>60677</td>
+<td class="instruction">DEFB 1,70</td>
+<td class="comment-11" rowspan="1">1 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60679"></span>60679</td>
+<td class="instruction">DEFB 3,69</td>
+<td class="comment-11" rowspan="1">3 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60681"></span>60681</td>
+<td class="instruction">DEFB 1,70</td>
+<td class="comment-11" rowspan="1">1 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60683"></span>60683</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60684"></span>
+<div class="comments">
+<div class="paragraph">
+(05) - Moon
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60684"></span>60684</td>
+<td class="instruction">DEFB 25,71</td>
+<td class="comment-11" rowspan="1">25 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60686"></span>60686</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60687"></span>
+<div class="comments">
+<div class="paragraph">
+(06) - Torch
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60687"></span>60687</td>
+<td class="instruction">DEFB 9,70</td>
+<td class="comment-11" rowspan="1">9 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60689"></span>60689</td>
+<td class="instruction">DEFB 12,67</td>
+<td class="comment-11" rowspan="1">12 x 67 (magenta INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60691"></span>60691</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60692"></span>
+<div class="comments">
+<div class="paragraph">
+(07) - Organon / Organon-like statue
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60692"></span>60692</td>
+<td class="instruction">DEFB 8,71</td>
+<td class="comment-11" rowspan="1">8 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60694"></span>60694</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60695"></span>
+<div class="comments">
+<div class="paragraph">
+(08) - Plant
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60695"></span>60695</td>
+<td class="instruction">DEFB 2,66</td>
+<td class="comment-11" rowspan="1">2 x 66 (red INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60697"></span>60697</td>
+<td class="instruction">DEFB 8,68</td>
+<td class="comment-11" rowspan="1">8 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60699"></span>60699</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60700"></span>
+<div class="comments">
+<div class="paragraph">
+(09) - Axe in Tree Stump
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60700"></span>60700</td>
+<td class="instruction">DEFB 10,70</td>
+<td class="comment-11" rowspan="1">10 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60702"></span>60702</td>
+<td class="instruction">DEFB 3,66</td>
+<td class="comment-11" rowspan="1">3 x 66 (red INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60704"></span>60704</td>
+<td class="instruction">DEFB 2,70</td>
+<td class="comment-11" rowspan="1">2 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60706"></span>60706</td>
+<td class="instruction">DEFB 3,66</td>
+<td class="comment-11" rowspan="1">3 x 66 (red INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60708"></span>60708</td>
+<td class="instruction">DEFB 2,70</td>
+<td class="comment-11" rowspan="1">2 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60710"></span>60710</td>
+<td class="instruction">DEFB 15,68</td>
+<td class="comment-11" rowspan="1">15 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60712"></span>60712</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60713"></span>
+<div class="comments">
+<div class="paragraph">
+(10) - Hut Roof / Top of Well
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60713"></span>60713</td>
+<td class="instruction">DEFB 33,70</td>
+<td class="comment-11" rowspan="1">33 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60715"></span>60715</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60716"></span>
+<div class="comments">
+<div class="paragraph">
+(11) - Well
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60716"></span>60716</td>
+<td class="instruction">DEFB 2,71</td>
+<td class="comment-11" rowspan="1">2 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60718"></span>60718</td>
+<td class="instruction">DEFB 2,70</td>
+<td class="comment-11" rowspan="1">2 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60720"></span>60720</td>
+<td class="instruction">DEFB 7,71</td>
+<td class="comment-11" rowspan="1">7 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60722"></span>60722</td>
+<td class="instruction">DEFB 2,71</td>
+<td class="comment-11" rowspan="1">2 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60724"></span>60724</td>
+<td class="instruction">DEFB 2,70</td>
+<td class="comment-11" rowspan="1">2 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60726"></span>60726</td>
+<td class="instruction">DEFB 7,71</td>
+<td class="comment-11" rowspan="1">7 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60728"></span>60728</td>
+<td class="instruction">DEFB 3,71</td>
+<td class="comment-11" rowspan="1">3 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60730"></span>60730</td>
+<td class="instruction">DEFB 3,69</td>
+<td class="comment-11" rowspan="1">3 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60732"></span>60732</td>
+<td class="instruction">DEFB 5,71</td>
+<td class="comment-11" rowspan="1">5 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60734"></span>60734</td>
+<td class="instruction">DEFB 3,71</td>
+<td class="comment-11" rowspan="1">3 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60736"></span>60736</td>
+<td class="instruction">DEFB 3,69</td>
+<td class="comment-11" rowspan="1">3 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60738"></span>60738</td>
+<td class="instruction">DEFB 5,71</td>
+<td class="comment-11" rowspan="1">5 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60740"></span>60740</td>
+<td class="instruction">DEFB 3,71</td>
+<td class="comment-11" rowspan="1">3 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60742"></span>60742</td>
+<td class="instruction">DEFB 3,69</td>
+<td class="comment-11" rowspan="1">3 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60744"></span>60744</td>
+<td class="instruction">DEFB 5,71</td>
+<td class="comment-11" rowspan="1">5 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60746"></span>60746</td>
+<td class="instruction">DEFB 11,71</td>
+<td class="comment-11" rowspan="1">11 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60748"></span>60748</td>
+<td class="instruction">DEFB 2,71</td>
+<td class="comment-11" rowspan="1">2 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60750"></span>60750</td>
+<td class="instruction">DEFB 6,7</td>
+<td class="comment-11" rowspan="1">6 x 7 (white INK, black PAPER)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60752"></span>60752</td>
+<td class="instruction">DEFB 3,71</td>
+<td class="comment-11" rowspan="1">3 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60754"></span>60754</td>
+<td class="instruction">DEFB 2,71</td>
+<td class="comment-11" rowspan="1">2 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60756"></span>60756</td>
+<td class="instruction">DEFB 6,7</td>
+<td class="comment-11" rowspan="1">6 x 7 (white INK, black PAPER)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60758"></span>60758</td>
+<td class="instruction">DEFB 3,71</td>
+<td class="comment-11" rowspan="1">3 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60760"></span>60760</td>
+<td class="instruction">DEFB 2,71</td>
+<td class="comment-11" rowspan="1">2 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60762"></span>60762</td>
+<td class="instruction">DEFB 6,7</td>
+<td class="comment-11" rowspan="1">6 x 7 (white INK, black PAPER)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60764"></span>60764</td>
+<td class="instruction">DEFB 3,71</td>
+<td class="comment-11" rowspan="1">3 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60766"></span>60766</td>
+<td class="instruction">DEFB 11,39</td>
+<td class="comment-11" rowspan="1">11 x 39 (white INK, green PAPER)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60768"></span>60768</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60769"></span>
+<div class="comments">
+<div class="paragraph">
+(12) - Cracked Column Section 1
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60769"></span>60769</td>
+<td class="instruction">DEFB 28,70</td>
+<td class="comment-11" rowspan="1">28 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60771"></span>60771</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60772"></span>
+<div class="comments">
+<div class="paragraph">
+(13) - Cracked Column Section 2
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60772"></span>60772</td>
+<td class="instruction">DEFB 24,70</td>
+<td class="comment-11" rowspan="1">24 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60774"></span>60774</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60775"></span>
+<div class="comments">
+<div class="paragraph">
+(14) - Jump Chute / Corridor Pad
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60775"></span>60775</td>
+<td class="instruction">DEFB 8,71</td>
+<td class="comment-11" rowspan="1">8 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60777"></span>60777</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60778"></span>
+<div class="comments">
+<div class="paragraph">
+(15) - Plinth
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60778"></span>60778</td>
+<td class="instruction">DEFB 3,67</td>
+<td class="comment-11" rowspan="1">3 x 67 (magenta INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60780"></span>60780</td>
+<td class="instruction">DEFB 6,70</td>
+<td class="comment-11" rowspan="1">6 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60782"></span>60782</td>
+<td class="instruction">DEFB 3,68</td>
+<td class="comment-11" rowspan="1">3 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60784"></span>60784</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60785"></span>
+<div class="comments">
+<div class="paragraph">
+(16) - Fire Bowl
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60785"></span>60785</td>
+<td class="instruction">DEFB 21,70</td>
+<td class="comment-11" rowspan="1">21 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60787"></span>60787</td>
+<td class="instruction">DEFB 28,4</td>
+<td class="comment-11" rowspan="1">28 x  4 (green INK, black PAPER)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60789"></span>60789</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60790"></span>
+<div class="comments">
+<div class="paragraph">
+(17) - Large Stool
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60790"></span>60790</td>
+<td class="instruction">DEFB 4,67</td>
+<td class="comment-11" rowspan="1">4 x 67 (magenta INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60792"></span>60792</td>
+<td class="instruction">DEFB 20,70</td>
+<td class="comment-11" rowspan="1">20 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60794"></span>60794</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60795"></span>
+<div class="comments">
+<div class="paragraph">
+(18) - Jump Chute / Corridor Pad
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60795"></span>60795</td>
+<td class="instruction">DEFB 4,69</td>
+<td class="comment-11" rowspan="1">4 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60797"></span>60797</td>
+<td class="instruction">DEFB 4,71</td>
+<td class="comment-11" rowspan="1">4 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60799"></span>60799</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60800"></span>
+<div class="comments">
+<div class="paragraph">
+(19) - Tree Trunk 1
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60800"></span>60800</td>
+<td class="instruction">DEFB 12,68</td>
+<td class="comment-11" rowspan="1">12 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60802"></span>60802</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60803"></span>
+<div class="comments">
+<div class="paragraph">
+(20) - Tree Trunk 2
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60803"></span>60803</td>
+<td class="instruction">DEFB 21,68</td>
+<td class="comment-11" rowspan="1">21 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60805"></span>60805</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60806"></span>
+<div class="comments">
+<div class="paragraph">
+(21) - Unused
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60806"></span>60806</td>
+<td class="instruction">DEFB 12,68</td>
+<td class="comment-11" rowspan="1">12 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60808"></span>60808</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60809"></span>
+<div class="comments">
+<div class="paragraph">
+(22) - Tree Trunk 3
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60809"></span>60809</td>
+<td class="instruction">DEFB 18,68</td>
+<td class="comment-11" rowspan="1">18 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60811"></span>60811</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60812"></span>
+<div class="comments">
+<div class="paragraph">
+(23) - Flowers
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60812"></span>60812</td>
+<td class="instruction">DEFB 16,68</td>
+<td class="comment-11" rowspan="1">16 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60814"></span>60814</td>
+<td class="instruction">DEFB 1,84</td>
+<td class="comment-11" rowspan="1">1 x 84 (green INK, red PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60816"></span>60816</td>
+<td class="instruction">DEFB 11,68</td>
+<td class="comment-11" rowspan="1">11 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60818"></span>60818</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60819"></span>
+<div class="comments">
+<div class="paragraph">
+(24) - Top of Tree With Face
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60819"></span>60819</td>
+<td class="instruction">DEFB 24,68</td>
+<td class="comment-11" rowspan="1">24 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60821"></span>60821</td>
+<td class="instruction">DEFB 9,68</td>
+<td class="comment-11" rowspan="1">9 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60823"></span>60823</td>
+<td class="instruction">DEFB 1,66</td>
+<td class="comment-11" rowspan="1">1 x 66 (red INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60825"></span>60825</td>
+<td class="instruction">DEFB 2,68</td>
+<td class="comment-11" rowspan="1">2 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60827"></span>60827</td>
+<td class="instruction">DEFB 12,68</td>
+<td class="comment-11" rowspan="1">12 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60829"></span>60829</td>
+<td class="instruction">DEFB 12,68</td>
+<td class="comment-11" rowspan="1">12 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60831"></span>60831</td>
+<td class="instruction">DEFB 2,68</td>
+<td class="comment-11" rowspan="1">2 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60833"></span>60833</td>
+<td class="instruction">DEFB 1,66</td>
+<td class="comment-11" rowspan="1">1 x 66 (red INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60835"></span>60835</td>
+<td class="instruction">DEFB 9,68</td>
+<td class="comment-11" rowspan="1">9 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60837"></span>60837</td>
+<td class="instruction">DEFB 12,68</td>
+<td class="comment-11" rowspan="1">12 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60839"></span>60839</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60840"></span>
+<div class="comments">
+<div class="paragraph">
+(25) - Top of Tree Without Face
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60840"></span>60840</td>
+<td class="instruction">DEFB 35,68</td>
+<td class="comment-11" rowspan="1">35 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60842"></span>60842</td>
+<td class="instruction">DEFB 1,66</td>
+<td class="comment-11" rowspan="1">1 x 66 (red INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60844"></span>60844</td>
+<td class="instruction">DEFB 16,68</td>
+<td class="comment-11" rowspan="1">16 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60846"></span>60846</td>
+<td class="instruction">DEFB 2,66</td>
+<td class="comment-11" rowspan="1">2 x 66 (red INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60848"></span>60848</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60849"></span>
+<div class="comments">
+<div class="paragraph">
+(26) - Top of Tree, Bare
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60849"></span>60849</td>
+<td class="instruction">DEFB 70,68</td>
+<td class="comment-11" rowspan="1">70 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60851"></span>60851</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60852"></span>
+<div class="comments">
+<div class="paragraph">
+(27) - Unused
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60852"></span>60852</td>
+<td class="instruction">DEFB 42,68</td>
+<td class="comment-11" rowspan="1">42 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60854"></span>60854</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60855"></span>
+<div class="comments">
+<div class="paragraph">
+(28) - Grunter / Grunter-like Statue (Green)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60855"></span>60855</td>
+<td class="instruction">DEFB 122,68</td>
+<td class="comment-11" rowspan="1">122 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60857"></span>60857</td>
+<td class="instruction">DEFB 2,70</td>
+<td class="comment-11" rowspan="1">2 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60859"></span>60859</td>
+<td class="instruction">DEFB 4,68</td>
+<td class="comment-11" rowspan="1">4 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60861"></span>60861</td>
+<td class="instruction">DEFB 2,70</td>
+<td class="comment-11" rowspan="1">2 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60863"></span>60863</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60864"></span>
+<div class="comments">
+<div class="paragraph">
+(29) - Half of Teleport
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60864"></span>60864</td>
+<td class="instruction">DEFB 3,7</td>
+<td class="comment-11" rowspan="1">3 x 7 (white INK, black PAPER)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60866"></span>60866</td>
+<td class="instruction">DEFB 3,71</td>
+<td class="comment-11" rowspan="1">3 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60868"></span>60868</td>
+<td class="instruction">DEFB 12,69</td>
+<td class="comment-11" rowspan="1">12 x 69 (cyan INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60870"></span>60870</td>
+<td class="instruction">DEFB 3,71</td>
+<td class="comment-11" rowspan="1">3 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60872"></span>60872</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60873"></span>
+<div class="comments">
+<div class="paragraph">
+(30) - Grunter-like Statue (White)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60873"></span>60873</td>
+<td class="instruction">DEFB 122,71</td>
+<td class="comment-11" rowspan="1">122 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60875"></span>60875</td>
+<td class="instruction">DEFB 2,70</td>
+<td class="comment-11" rowspan="1">2 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60877"></span>60877</td>
+<td class="instruction">DEFB 4,71</td>
+<td class="comment-11" rowspan="1">4 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60879"></span>60879</td>
+<td class="instruction">DEFB 2,70</td>
+<td class="comment-11" rowspan="1">2 x 70 (yellow INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60881"></span>60881</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="60882"></span>
+<div class="comments">
+<div class="paragraph">
+(31) - Sword in Concrete
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60882"></span>60882</td>
+<td class="instruction">DEFB 14,68</td>
+<td class="comment-11" rowspan="1">14 x 68 (green INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60884"></span>60884</td>
+<td class="instruction">DEFB 4,7</td>
+<td class="comment-11" rowspan="1">4 x 7 (white INK, black PAPER)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60886"></span>60886</td>
+<td class="instruction">DEFB 12,71</td>
+<td class="comment-11" rowspan="1">12 x 71 (white INK, black PAPER, BRIGHT)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="60888"></span>60888</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="60487.html">60487</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#60615">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="60889.html">60889</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

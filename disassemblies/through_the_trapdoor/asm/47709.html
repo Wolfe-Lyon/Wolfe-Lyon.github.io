@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 47709</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47682.html">47682</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47709">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47741.html">47741</a></span></td>
+</tr>
+</table>
+<div class="description">47709: Print Half of a Double-Height Text Character</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+The most significant byte of the Attribute File address starts off as 88 for the top third of the screen. In the middle third it becomes 89 and in the lower third it reaches 90. The most significant byte of the Display File address (for the top pixel row of each character row) is 64 in the top third, 72 in the middle third and 80 in the lower third. Generally speaking, therefore, the most significant byte in the Display File address increases by eight for every increase of one in the attribute address most significant byte, so multiplying the latter by eight (giving 192, 200 or 208, values roll over 255-0 boundary with excess truncated) would put it on the same scale as the former (64, 72 or 80).
+</div>
+<div class="paragraph">
+Performing an AND 91 removes the most significant bit, converting the possible values to 64, 72 or 80, so the most significant byte of the Attribute File address has been transformed into the most significant byte of the corresponding Display File address. However, after the multiplication by eight, there is no way that the lowest two bits could be set, so there is no need to mask these with the AND command, so AND 88 would be just as effective (and probably more correct) than an AND 91.
+</div>
+<div class="paragraph">
+See also code at <a href="54144.html#54170">54170-54176</a>.
+</div>
+<div class="paragraph">
+Used by the routine at <a href="47682.html">47682</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">15360 + 8 x character index [+4 for second run-through] (i.e. points to ROM graphic data for the character of interest)</td>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Attribute File address at which to print character</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47709"></span>47709</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47710"></span>47710</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47711"></span>47711</td>
+<td class="instruction">LD A,(34269)</td>
+<td class="comment-11" rowspan="1">Load stored attribute into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47714"></span>47714</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">Write this to Attribute File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47715"></span>47715</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1">Multiply the most significant byte (MSB) of the Attribute File address by eight...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47716"></span>47716</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...to put it on the same scale as the MSB of the Display File address MSB (see notes)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47717"></span>47717</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47718"></span>47718</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47719"></span>47719</td>
+<td class="instruction">AND 91</td>
+<td class="comment-11" rowspan="1">Drop the most significant bit to point to the correct location in Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47721"></span>47721</td>
+<td class="instruction">LD H,A</td>
+<td class="comment-11" rowspan="1">Load back into HL (L is unaffected, as it should be)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47722"></span>47722</td>
+<td class="instruction">LD B,4</td>
+<td class="comment-11" rowspan="1">Set B to 4 (loop counter)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47724"></span>47724</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">Load a byte from the graphic data into C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47725"></span>47725</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47726"></span>47726</td>
+<td class="instruction">SRL C</td>
+<td class="comment-11" rowspan="1">Shift bitmap data left one pixel in C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47728"></span>47728</td>
+<td class="instruction">OR C</td>
+<td class="comment-11" rowspan="1">Merge this into bitmap data already in A to give a "bold" typeface appearance</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47729"></span>47729</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">Drop the leftmost bit to prevent one character touching the next (space between letters)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47731"></span>47731</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">Load the bitmap data into two consecutive rows to provide double-height (2 chars) text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47732"></span>47732</td>
+<td class="instruction">INC H</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47733"></span>47733</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47734"></span>47734</td>
+<td class="instruction">INC H</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47735"></span>47735</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance to next byte of graphic data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47736"></span>47736</td>
+<td class="instruction">DJNZ 47724</td>
+<td class="comment-11" rowspan="1">Repeat for next row of graphic data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47738"></span>47738</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47739"></span>47739</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47740"></span>47740</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47682.html">47682</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47709">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47741.html">47741</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

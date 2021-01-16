@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 46460</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46442.html">46442</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46460">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46481.html">46481</a></span></td>
+</tr>
+</table>
+<div class="description">46460: Graphic Layout Routine (251): Process Graphic Layout Data at Following Address and Return When Complete</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Functionally equivalent to "CALL" instruction. Read current WORD (address) from graphic layout data, load graphic layout data at that address into Primary Display Buffer and return to previous position. Upon returning (via routine at <a href="46418.html">46418</a> when a 255 is encountered), the position of the cursor (i.e. the value in HL) is reset to the base coordinates as stored at <a href="34279.html#34281">34281</a> - see instruction at <a href="46418.html#46422">46422</a>.
+</div>
+<div class="paragraph">
+Used by the routines at <a href="46577.html">46577</a> and <a href="46599.html">46599</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of first parameter in current graphic layout data instruction</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">Do Not Recalculate Display Buffer Address Flag (0)</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46460"></span>46460</td>
+<td class="instruction">LD C,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load BC with destination graphic layout data address...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46463"></span>46463</td>
+<td class="instruction">LD B,(IX+1)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46466"></span>46466</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store IX (current position in graphic layout data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46468"></span>46468</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Transfer address just read into BC into IX...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46469"></span>46469</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46471"></span>46471</td>
+<td class="instruction">CALL <a href="45965.html#46003">46003</a></td>
+<td class="comment-11" rowspan="1">Load graphic layout data from this new location into Primary Display Buffer (recursive call)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46474"></span>46474</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore IX (previously stored position in graphic layout data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46476"></span>46476</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">Prepare to recalculate Display Buffer address</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46478"></span>46478</td>
+<td class="instruction">JP <a href="45965.html#45999">45999</a></td>
+<td class="comment-11" rowspan="1">Advance graphic layout data pointer by two bytes and read / process next data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46442.html">46442</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46460">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46481.html">46481</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

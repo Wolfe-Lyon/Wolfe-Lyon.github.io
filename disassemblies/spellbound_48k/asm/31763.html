@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 31763</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="31722.html">31722</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31763">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31804.html">31804</a></span></td>
+</tr>
+</table>
+<div class="description">31763: Wake Current Character Up if Possible</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31763"></span>31763</td>
+<td class="instruction">LD A,(30615)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31766"></span>31766</td>
+<td class="instruction">LD E,0</td>
+<td class="comment-11" rowspan="1">Point HL at strength...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31768"></span>31768</td>
+<td class="instruction">CALL <a href="34174.html">34174</a></td>
+<td class="comment-11" rowspan="1">...of character whose index is A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31771"></span>31771</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Switch pointer from HL to IX...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31772"></span>31772</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31774"></span>31774</td>
+<td class="instruction">BIT 7,(IX+6)</td>
+<td class="comment-11" rowspan="1">If "Character is Asleep" flag is not set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31778"></span>31778</td>
+<td class="instruction">JP Z,<a href="34496.html">34496</a></td>
+<td class="comment-11" rowspan="1">...then display "[CHARACTER] IS ALREADY AWAKE" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31781"></span>31781</td>
+<td class="instruction">LD A,(IX+2)</td>
+<td class="comment-11" rowspan="1">Load A with stamina of Current Character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31784"></span>31784</td>
+<td class="instruction">CP 30</td>
+<td class="comment-11" rowspan="1">...and if this is anything up to 30...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31786"></span>31786</td>
+<td class="instruction">JP C,<a href="34502.html">34502</a></td>
+<td class="comment-11" rowspan="1">...then display "[CHARACTER] IS TOO TIRED TO WAKE UP" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31789"></span>31789</td>
+<td class="instruction">LD A,(IX+1)</td>
+<td class="comment-11" rowspan="1">Load A with the happiness of Current Character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31792"></span>31792</td>
+<td class="instruction">CP 30</td>
+<td class="comment-11" rowspan="1">...and if this is anything up to 30...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31794"></span>31794</td>
+<td class="instruction">JP C,<a href="34490.html">34490</a></td>
+<td class="comment-11" rowspan="1">...then display "[CHARACTER] DOES NOT WANT TO BE COMMANDED BY YOU" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31797"></span>31797</td>
+<td class="instruction">RES 7,(IX+6)</td>
+<td class="comment-11" rowspan="1">Reset the character's "asleep flag"</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31801"></span>31801</td>
+<td class="instruction">JP <a href="34744.html">34744</a></td>
+<td class="comment-11" rowspan="1">Display "[CHARACTER] HAS WOKEN UP" window and exit</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="31722.html">31722</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31763">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31804.html">31804</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

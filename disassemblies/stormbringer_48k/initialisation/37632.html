@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 37632</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="initialisation-Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Initialisation routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-0">Prev: <a href=""></a></span></td>
+<td class="up">Up: <a href="initialisation.html#37632">Map</a></td>
+<td class="next"><span class="next-0">Next: <a href=""></a></span></td>
+</tr>
+</table>
+<div class="description">37632: Initialise Interrupt Code then Display and Handle Input Device Selection Menu</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37632"></span>37632</td>
+<td class="instruction">LD SP,23808</td>
+<td class="comment-11" rowspan="1">Set Stack Pointer to 23808</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37635"></span>37635</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Load A with zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37636"></span>37636</td>
+<td class="instruction">LD (23364),A</td>
+<td class="comment-11" rowspan="1">Store zero at <a href="../asm/23364.html">23364</a> (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37639"></span>37639</td>
+<td class="instruction">LD (IY+65),A</td>
+<td class="comment-11" rowspan="1">Reset all Interrupt Routine flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37642"></span>37642</td>
+<td class="instruction">LD (IY+87),3</td>
+<td class="comment-11" rowspan="1">Set P-FLAG bits 0 and 1 (OVER 1) (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37646"></span>37646</td>
+<td class="instruction">LD (IY+48),8</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37650"></span>37650</td>
+<td class="instruction">LD A,24</td>
+<td class="comment-11" rowspan="1">Put JR instruction at <a href="../asm/65535.html">65535</a> for jumping to interrupt routine...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37652"></span>37652</td>
+<td class="instruction">LD (65535),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37655"></span>37655</td>
+<td class="instruction">LD A,195</td>
+<td class="comment-11" rowspan="1">Load first byte of interrupt routine with 195...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37657"></span>37657</td>
+<td class="instruction">LD (65524),A</td>
+<td class="comment-11" rowspan="1">...representing "JP"</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37660"></span>37660</td>
+<td class="instruction">LD HL,62178</td>
+<td class="comment-11" rowspan="1">Load following two bytes of interrupt routine with <a href="../asm/62178.html">62178</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37663"></span>37663</td>
+<td class="instruction">LD (65525),HL</td>
+<td class="comment-11" rowspan="1">...to make "JP <a href="../asm/62178.html">62178</a>"</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37666"></span>37666</td>
+<td class="instruction">LD A,59</td>
+<td class="comment-11" rowspan="1">Load A with 59</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37668"></span>37668</td>
+<td class="instruction">DI</td>
+<td class="comment-11" rowspan="1">Disable Interrupts</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37669"></span>37669</td>
+<td class="instruction">LD I,A</td>
+<td class="comment-11" rowspan="1">Load I register with 57 (for interrupt routine)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37671"></span>37671</td>
+<td class="instruction">EI</td>
+<td class="comment-11" rowspan="1">Enable Interrupts</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37672"></span>37672</td>
+<td class="instruction">HALT</td>
+<td class="comment-11" rowspan="1">Wait for interrupt</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37673"></span>37673</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Reset all Interrupt Routine flags...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37674"></span>37674</td>
+<td class="instruction">LD (IY+65),A</td>
+<td class="comment-11" rowspan="1">... (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37677"></span>37677</td>
+<td class="instruction">IM 2</td>
+<td class="comment-11" rowspan="1">Set Interrupt Mode 2</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37679"></span>37679</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Set Player Attribute Update Flag (Player Attribute Update mode)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37681"></span>37681</td>
+<td class="instruction">LD (23706),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37684"></span>37684</td>
+<td class="instruction">CALL <a href="../asm/38003.html">38003</a></td>
+<td class="comment-11" rowspan="1">Set border to black and clear temporary storage area of memory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37687"></span>37687</td>
+<td class="instruction">JR <a href="../asm/37689.html#37702">37702</a></td>
+<td class="comment-11" rowspan="1">Display and handle Input Device Selection Menu</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-0">Prev: <a href=""></a></span></td>
+<td class="up">Up: <a href="initialisation.html#37632">Map</a></td>
+<td class="next"><span class="next-0">Next: <a href=""></a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

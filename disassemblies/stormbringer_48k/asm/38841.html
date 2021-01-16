@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 38841</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38829.html">38829</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38841">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39014.html">39014</a></span></td>
+</tr>
+</table>
+<div class="description">38841: Move Magic Knight into Room A, Draw Room, Objects and Characters and Initialise Room-Specific Data</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="38024.html">38024</a>, <a href="40406.html">40406</a>, <a href="40437.html">40437</a> and <a href="40546.html">40546</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Index of room to move Magic Knight into</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38841"></span>38841</td>
+<td class="instruction">LD (23702),A</td>
+<td class="comment-11" rowspan="1">Update Magic Knight's current room to be room index passed to this routine in A</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="38844"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="38205.html">38205</a>, <a href="39714.html">39714</a> and <a href="64878.html">64878</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38844"></span>38844</td>
+<td class="instruction">LD A,(24768)</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's current strength into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38847"></span>38847</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...and if not zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38848"></span>38848</td>
+<td class="instruction">JR NZ,38865</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="38841.html#38865">38865</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38850"></span>38850</td>
+<td class="instruction">LD A,16</td>
+<td class="comment-11" rowspan="1">If Magic Knight is wearing the Brass Ankh...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38852"></span>38852</td>
+<td class="instruction">CALL <a href="45505.html">45505</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38855"></span>38855</td>
+<td class="instruction">JR Z,38863</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="38841.html#38863">38863</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="38857"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="40153.html">40153</a> and <a href="40201.html">40201</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38857"></span>38857</td>
+<td class="instruction">LD HL,51071</td>
+<td class="comment-11" rowspan="1">Point HL at "YOU DIED OF EXHAUSTION" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38860"></span>38860</td>
+<td class="instruction">JP <a href="64582.html">64582</a></td>
+<td class="comment-11" rowspan="1">Jump to "Game over" window routine and return to Control Selection Menu</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38863"></span>38863</td>
+<td class="instruction">LD A,61</td>
+<td class="comment-11" rowspan="1">Set Magic Knight's current strength to 60...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38865"></span>38865</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38866"></span>38866</td>
+<td class="instruction">LD (24768),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38869"></span>38869</td>
+<td class="instruction">CALL <a href="38780.html">38780</a></td>
+<td class="comment-11" rowspan="1">Draw top in-game window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38872"></span>38872</td>
+<td class="instruction">LD A,71</td>
+<td class="comment-11" rowspan="1">Load A with 71 (white INK, black PAPER, BRIGHT)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38874"></span>38874</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">...and load this value into system variables ATTR T...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38877"></span>38877</td>
+<td class="instruction">LD (23693),A</td>
+<td class="comment-11" rowspan="1">...and ATTR P</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38880"></span>38880</td>
+<td class="instruction">LD A,32</td>
+<td class="comment-11" rowspan="1">Load 32 into "frame number" property of...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38882"></span>38882</td>
+<td class="instruction">LD (46756),A</td>
+<td class="comment-11" rowspan="1">...axe 1...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38885"></span>38885</td>
+<td class="instruction">LD (46764),A</td>
+<td class="comment-11" rowspan="1">...axe 2...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38888"></span>38888</td>
+<td class="instruction">LD (46772),A</td>
+<td class="comment-11" rowspan="1">...axe 3...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38891"></span>38891</td>
+<td class="instruction">LD (46780),A</td>
+<td class="comment-11" rowspan="1">...and axe 4...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38894"></span>38894</td>
+<td class="instruction">CALL <a href="46784.html">46784</a></td>
+<td class="comment-11" rowspan="1">Draw axe(s) to screen if Magic Knight is in an axe room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38897"></span>38897</td>
+<td class="instruction">LD A,(23702)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38900"></span>38900</td>
+<td class="instruction">AND 3</td>
+<td class="comment-11" rowspan="1">Clear all but the lowest two bits to leave a value 0-3...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38902"></span>38902</td>
+<td class="instruction">ADD A,68</td>
+<td class="comment-11" rowspan="1">...add this to 68...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38904"></span>38904</td>
+<td class="instruction">LD (49047),A</td>
+<td class="comment-11" rowspan="1">...and set the border attribute of Window 1 to this value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38907"></span>38907</td>
+<td class="instruction">LD HL,23808</td>
+<td class="comment-11" rowspan="1">Load character rows 0-4 in Terrain Interaction Table with 254...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38910"></span>38910</td>
+<td class="instruction">LD DE,23809</td>
+<td class="comment-11" rowspan="1">...i.e. prevent Magic Knight jumping above ceilings...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38913"></span>38913</td>
+<td class="instruction">LD BC,160</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38916"></span>38916</td>
+<td class="instruction">LD (HL),254</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38918"></span>38918</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38920"></span>38920</td>
+<td class="instruction">LD BC,576</td>
+<td class="comment-11" rowspan="1">Load character rows 5-22 in Terrain Interaction Table with 0...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38923"></span>38923</td>
+<td class="instruction">LD (HL),0</td>
+<td class="comment-11" rowspan="1">...i.e. allow Magic Knight to pass through freely...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38925"></span>38925</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38927"></span>38927</td>
+<td class="instruction">LD BC,31</td>
+<td class="comment-11" rowspan="1">Load character row 23 in Terrain Interaction Table with 254...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38930"></span>38930</td>
+<td class="instruction">LD (HL),254</td>
+<td class="comment-11" rowspan="1">...i.e. prevent Magic Knight falling through floors...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38932"></span>38932</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38934"></span>38934</td>
+<td class="instruction">LD HL,22688</td>
+<td class="comment-11" rowspan="1">Starting at the beginning of the sixth character row (y=5)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38937"></span>38937</td>
+<td class="instruction">LD DE,22689</td>
+<td class="comment-11" rowspan="1">...fill the Attribute File to the end with...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38940"></span>38940</td>
+<td class="instruction">LD BC,607</td>
+<td class="comment-11" rowspan="1">...white INK, black PAPER, BRIGHT...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38943"></span>38943</td>
+<td class="instruction">LD (HL),71</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38945"></span>38945</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38947"></span>38947</td>
+<td class="instruction">LD HL,23368</td>
+<td class="comment-11" rowspan="1">Set all entries in Table of Glowing Attribute File Addresses to zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38950"></span>38950</td>
+<td class="instruction">LD DE,23369</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38953"></span>38953</td>
+<td class="instruction">LD BC,29</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38956"></span>38956</td>
+<td class="instruction">LD (HL),0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38958"></span>38958</td>
+<td class="instruction">LDIR</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38960"></span>38960</td>
+<td class="instruction">LD A,(23702)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38963"></span>38963</td>
+<td class="instruction">LD HL,58841</td>
+<td class="comment-11" rowspan="1">Point HL at start of Table of Room Layout Data Pointers</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38966"></span>38966</td>
+<td class="instruction">CALL <a href="64627.html">64627</a></td>
+<td class="comment-11" rowspan="1">Load address of layout data for Magic Knight's current room into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38969"></span>38969</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to room layout data for Magic Knight's current room)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38970"></span>38970</td>
+<td class="instruction">CALL <a href="47833.html">47833</a></td>
+<td class="comment-11" rowspan="1">Clear lower two thirds, and lower three character rows of upper third of Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38973"></span>38973</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (pointer to room layout data for Magic Knight's current room)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38974"></span>38974</td>
+<td class="instruction">LD (39065),HL</td>
+<td class="comment-11" rowspan="1">Store address of start of room layout data by modifying instruction at <a href="39047.html#39063">39063</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="38977"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="39014.html">39014</a>, <a href="39036.html">39036</a>, <a href="39047.html">39047</a>, <a href="40729.html">40729</a>, <a href="40752.html">40752</a>, <a href="40765.html">40765</a> and <a href="40784.html">40784</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38977"></span>38977</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Read byte of room layout data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38978"></span>38978</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If byte is a zero (i.e. marker for end of layout data)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38979"></span>38979</td>
+<td class="instruction">JP Z,<a href="39047.html">39047</a></td>
+<td class="comment-11" rowspan="1">...then draw floor, paint attributes / Terrain Interaction Data, draw MK, characters and objects then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38982"></span>38982</td>
+<td class="instruction">CP 126</td>
+<td class="comment-11" rowspan="1">If byte is 126 (i.e. vertical block drawing)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38984"></span>38984</td>
+<td class="instruction">JP Z,<a href="39036.html">39036</a></td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="39036.html">39036</a> (skip over block drawing data to start of next instruction)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38987"></span>38987</td>
+<td class="instruction">CP 127</td>
+<td class="comment-11" rowspan="1">If byte is 127 (i.e. horizontal block drawing)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38989"></span>38989</td>
+<td class="instruction">JP Z,<a href="39036.html">39036</a></td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="39036.html">39036</a> (skip over block drawing data to start of next instruction)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38992"></span>38992</td>
+<td class="instruction">BIT 7,A</td>
+<td class="comment-11" rowspan="1">If Bit 7 (Draw Layout Data Fragment Flag) is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38994"></span>38994</td>
+<td class="instruction">JP NZ,<a href="39014.html">39014</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="39014.html">39014</a> (start drawing layout data fragment)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38997"></span>38997</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL by three bytes to x- and y-coordinates...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38998"></span>38998</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38999"></span>38999</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39000"></span>39000</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-11" rowspan="1">Load x- and y-coordinates (characters) for graphic into DE...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39001"></span>39001</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39002"></span>39002</td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39003"></span>39003</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to Mirror Options...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39004"></span>39004</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-11" rowspan="1">...and load into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39005"></span>39005</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to next byte (start of next entry) in Room Layout Data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39006"></span>39006</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (current position in Room Layout Data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39007"></span>39007</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Swap DE (now current position in Room Layout Data) and HL (x- and y-coordinates of graphic to draw)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39008"></span>39008</td>
+<td class="instruction">CALL <a href="40664.html">40664</a></td>
+<td class="comment-11" rowspan="1">Read Graphic Definition from Room Layout Data and Draw</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39011"></span>39011</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (current position in Room Layout Data)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39012"></span>39012</td>
+<td class="instruction">JR 38977</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="38841.html#38977">38977</a> for next byte of room layout data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38829.html">38829</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38841">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39014.html">39014</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

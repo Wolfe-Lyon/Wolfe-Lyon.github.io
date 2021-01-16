@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Data at 49354</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="49282.html">49282</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#49354">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="49690.html">49690</a></span></td>
+</tr>
+</table>
+<div class="description">49354: Table of Object Properties</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Forty-two groups of eight bytes, one group per object (including "Nothing at All"). The values are:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Offset</th>
+<th colspan="1" rowspan="1">Effect</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Weight + Flags</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Use Status Flags</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">Read text (index)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Attribute Flags</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">Terrain Interaction Parameter</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Attribute</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Graphic index in lookup table at <a href="29272.html">29272</a></td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+Byte 0: Objects can have weight values from 0 - 15 inclusive. Weight is defined by the first four bits of the first data field. The remaining bits are for object flags:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Bit</th>
+<th colspan="1" rowspan="1">Effect</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Weight</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Weight</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Weight</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">Weight</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Drop Status (set means cannot be dropped)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">Can Be Read</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Can Be Blown</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+Byte 1:
+</div>
+<div class="paragraph">
+Use Status is comprised of bitwise flags:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Bit</th>
+<th colspan="1" rowspan="1">Effect</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">Can Be Worn</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">Can Be Thrown Flag</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Can Be Thrown and is Lethal Flag</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Can Be Thrown Flag</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+Byte 4:
+</div>
+<div class="paragraph">
+Flags which each specify whether the object's attribute applies to one of the object's four constituent character blocks. This value also effectively specifies which of the four possible character blocks are occupied by the object (i.e. the object's size in characters). This is relevant to the application of the object's Terrain Interaction Parameter. The remaining bits of Byte 4 determine whether or not the object can be smelled. If any of these remaining bits are set then the object will enable the SMELL SOMETHING command, otherwise this command will be disabled.
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Bit</th>
+<th colspan="1" rowspan="1">Effect</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Paint top-left</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Paint top-right</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Paint bottom-left</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">Paint bottom-right</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Can Be Smelled</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">Can Be Smelled</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Can Be Smelled</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Can Be Smelled</td>
+</tr>
+</table>
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49354"></span>49354</td>
+<td class="instruction">DEFB 0,0,0,0,0,0,0,0</td>
+<td class="comment-11" rowspan="1">(00) - Nothing at all</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49362"></span>49362</td>
+<td class="instruction">DEFB 33,8,0,0,15,0,70,7</td>
+<td class="comment-11" rowspan="1">(01) - Disquise</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49370"></span>49370</td>
+<td class="instruction">DEFB 34,0,35,11,15,0,71,16</td>
+<td class="comment-11" rowspan="1">(02) - Crystal Ball</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49378"></span>49378</td>
+<td class="instruction">DEFB 33,0,37,6,9,0,70,17</td>
+<td class="comment-11" rowspan="1">(03) - Wand of Command</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49386"></span>49386</td>
+<td class="instruction">DEFB 33,0,0,2,31,0,70,20</td>
+<td class="comment-11" rowspan="1">(04) - Teddy Bear</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49394"></span>49394</td>
+<td class="instruction">DEFB 33,0,0,8,26,0,69,26</td>
+<td class="comment-11" rowspan="1">(05) - Stick of Dynamite</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49402"></span>49402</td>
+<td class="instruction">DEFB 33,40,85,3,15,0,70,11</td>
+<td class="comment-11" rowspan="1">(06) - Magic Talisman</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49410"></span>49410</td>
+<td class="instruction">DEFB 1,32,0,0,12,0,71,13</td>
+<td class="comment-11" rowspan="1">(07) - Broken Glass</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49418"></span>49418</td>
+<td class="instruction">DEFB 1,32,0,0,12,0,71,13</td>
+<td class="comment-11" rowspan="1">(08) - Broken Glass</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49426"></span>49426</td>
+<td class="instruction">DEFB 1,32,0,0,12,0,71,13</td>
+<td class="comment-11" rowspan="1">(09) - Broken Glass</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49434"></span>49434</td>
+<td class="instruction">DEFB 1,0,0,0,12,0,70,28</td>
+<td class="comment-11" rowspan="1">(10) - Horse Feather</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49442"></span>49442</td>
+<td class="instruction">DEFB 33,8,0,10,31,0,66,27</td>
+<td class="comment-11" rowspan="1">(11) - Power Boots</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49450"></span>49450</td>
+<td class="instruction">DEFB 33,8,0,3,15,0,66,10</td>
+<td class="comment-11" rowspan="1">(12) - Glow Shield</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49458"></span>49458</td>
+<td class="instruction">DEFB 1,0,0,0,31,0,70,12</td>
+<td class="comment-11" rowspan="1">(13) - Chicken</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49466"></span>49466</td>
+<td class="instruction">DEFB 33,32,0,3,12,0,68,25</td>
+<td class="comment-11" rowspan="1">(14) - Boomerang</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49474"></span>49474</td>
+<td class="instruction">DEFB 33,32,0,3,21,0,71,29</td>
+<td class="comment-11" rowspan="1">(15) - Sword</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49482"></span>49482</td>
+<td class="instruction">DEFB 33,8,0,3,15,0,70,19</td>
+<td class="comment-11" rowspan="1">(16) - Brass Ankh</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49490"></span>49490</td>
+<td class="instruction">DEFB 33,32,0,14,26,0,68,14</td>
+<td class="comment-11" rowspan="1">(17) - Bottle of Liquid</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49498"></span>49498</td>
+<td class="instruction">DEFB 33,32,0,15,26,0,68,14</td>
+<td class="comment-11" rowspan="1">(18) - Bottle of Liquid</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49506"></span>49506</td>
+<td class="instruction">DEFB 33,32,0,17,10,0,70,18</td>
+<td class="comment-11" rowspan="1">(19) - Torch</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49514"></span>49514</td>
+<td class="instruction">DEFB 1,0,0,0,15,0,71,5</td>
+<td class="comment-11" rowspan="1">(20) - Mirror</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49522"></span>49522</td>
+<td class="instruction">DEFB 33,32,0,0,15,0,69,3</td>
+<td class="comment-11" rowspan="1">(21) - Gadget X</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49530"></span>49530</td>
+<td class="instruction">DEFB 97,0,0,3,15,0,68,23</td>
+<td class="comment-11" rowspan="1">(22) - Elf-Horn</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49538"></span>49538</td>
+<td class="instruction">DEFB 33,32,0,3,12,0,71,24</td>
+<td class="comment-11" rowspan="1">(23) - Silver Arrow</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49546"></span>49546</td>
+<td class="instruction">DEFB 34,0,0,0,15,0,67,15</td>
+<td class="comment-11" rowspan="1">(24) - Instruction Book</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49554"></span>49554</td>
+<td class="instruction">DEFB 1,32,0,0,12,0,70,22</td>
+<td class="comment-11" rowspan="1">(25) - Magic Missile</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49562"></span>49562</td>
+<td class="instruction">DEFB 33,0,0,7,15,128,70,4</td>
+<td class="comment-11" rowspan="1">(26) - Advert</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49570"></span>49570</td>
+<td class="instruction">DEFB 33,0,0,12,15,0,7,6</td>
+<td class="comment-11" rowspan="1">(27) - Scroll</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49578"></span>49578</td>
+<td class="instruction">DEFB 33,0,0,14,26,0,69,14</td>
+<td class="comment-11" rowspan="1">(28) - Empty Bottle</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49586"></span>49586</td>
+<td class="instruction">DEFB 33,0,0,15,26,0,70,14</td>
+<td class="comment-11" rowspan="1">(29) - Empty Bottle</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49594"></span>49594</td>
+<td class="instruction">DEFB 1,8,0,0,15,0,71,10</td>
+<td class="comment-11" rowspan="1">(30) - Shield</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49602"></span>49602</td>
+<td class="instruction">DEFB 1,0,0,0,12,0,67,21</td>
+<td class="comment-11" rowspan="1">(31) - Teleport Key</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49610"></span>49610</td>
+<td class="instruction">DEFB 1,32,0,0,12,0,69,8</td>
+<td class="comment-11" rowspan="1">(32) - Teleport Pad</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49618"></span>49618</td>
+<td class="instruction">DEFB 33,0,0,1,15,0,71,4</td>
+<td class="comment-11" rowspan="1">(33) - Newspaper</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49626"></span>49626</td>
+<td class="instruction">DEFB 33,0,0,31,15,0,71,6</td>
+<td class="comment-11" rowspan="1">(34) - List of Clues</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49634"></span>49634</td>
+<td class="instruction">DEFB 1,0,0,0,12,0,69,3</td>
+<td class="comment-11" rowspan="1">(35) - Bow</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49642"></span>49642</td>
+<td class="instruction">DEFB 3,32,0,0,15,0,70,9</td>
+<td class="comment-11" rowspan="1">(36) - Golden Egg</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49650"></span>49650</td>
+<td class="instruction">DEFB 2,0,0,0,15,0,71,9</td>
+<td class="comment-11" rowspan="1">(37) - Silver Egg</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49658"></span>49658</td>
+<td class="instruction">DEFB 1,0,0,0,15,0,6,9</td>
+<td class="comment-11" rowspan="1">(38) - Copper Egg</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49666"></span>49666</td>
+<td class="instruction">DEFB 3,32,0,0,15,0,70,9</td>
+<td class="comment-11" rowspan="1">(39) - Golden Egg</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49674"></span>49674</td>
+<td class="instruction">DEFB 2,0,0,0,15,0,71,9</td>
+<td class="comment-11" rowspan="1">(40) - Silver Egg</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="49682"></span>49682</td>
+<td class="instruction">DEFB 1,0,0,0,15,0,6,9</td>
+<td class="comment-11" rowspan="1">(41) - Copper Egg</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="49282.html">49282</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#49354">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="49690.html">49690</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 39971</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="39961.html">39961</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39971">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39998.html">39998</a></span></td>
+</tr>
+</table>
+<div class="description">39971: Move Entity IY Such that its Left Edge is Up to Two Characters Closer to Entity IX's</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="39776.html">39776</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data for Entity A</td>
+</tr>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">Address of complex state data for Entity B</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39971"></span>39971</td>
+<td class="instruction">CALL 39975</td>
+<td class="comment-11" rowspan="1">Move Entity B one character closer (horizontally) to Entity A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39974"></span>39974</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...and if left edges now both at same x-coordinate then return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="39975"></span>
+<div class="comments">
+<div class="paragraph">
+If entities' left edges are not at the same x-coordinate, then proceed into the code block below and move entity B by one additional character.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39975"></span>39975</td>
+<td class="instruction">LD A,(IX+5)</td>
+<td class="comment-11" rowspan="1">If x-coordinates of both entities' left edges are the same...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39978"></span>39978</td>
+<td class="instruction">CP (IY+5)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39981"></span>39981</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39982"></span>39982</td>
+<td class="instruction">JR C,39991</td>
+<td class="comment-11" rowspan="1">If Entity B's left edge is to the right of Entity A's then move Entity B left by one character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39984"></span>39984</td>
+<td class="instruction">INC (IY+5)</td>
+<td class="comment-11" rowspan="1">Move Entity B right by one character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39987"></span>39987</td>
+<td class="instruction">INC (IY+7)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39990"></span>39990</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39991"></span>39991</td>
+<td class="instruction">DEC (IY+5)</td>
+<td class="comment-11" rowspan="1">Move Entity B left by one character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39994"></span>39994</td>
+<td class="instruction">DEC (IY+7)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39997"></span>39997</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="39961.html">39961</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39971">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39998.html">39998</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

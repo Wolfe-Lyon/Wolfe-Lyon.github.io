@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 37613</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37571.html">37571</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37613">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37654.html">37654</a></span></td>
+</tr>
+</table>
+<div class="description">37613: Load ASCII Code of Character in Display File Address Stored at <a href="36475.html#36487">36488</a> into A</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="37333.html">37333</a> and <a href="37552.html">37552</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">ASCII code of character</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37613"></span>37613</td>
+<td class="instruction">LD HL,64252</td>
+<td class="comment-11" rowspan="1">Point HL at start of letter A graphic in character set</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37616"></span>37616</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Swap into DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37617"></span>37617</td>
+<td class="instruction">LD B,26</td>
+<td class="comment-11" rowspan="1">Load B with 26</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37619"></span>37619</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37620"></span>37620</td>
+<td class="instruction">LD HL,(36488)</td>
+<td class="comment-11" rowspan="1">Load (video) memory location to start printing character into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37623"></span>37623</td>
+<td class="instruction">LD BC,2048</td>
+<td class="comment-11" rowspan="1">Load B with 8 and C with zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37626"></span>37626</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">Read a byte of the character's graphic data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37627"></span>37627</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">...compare to what is already displayed in Display File at to-print location...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37628"></span>37628</td>
+<td class="instruction">JR Z,37631</td>
+<td class="comment-11" rowspan="1">...and if they're the same, jump to <a href="37613.html#37631">37631</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37630"></span>37630</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Else increase C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37631"></span>37631</td>
+<td class="instruction">INC H</td>
+<td class="comment-11" rowspan="1">Move down one pixel row (advance by 256 bytes) in Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37632"></span>37632</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance to next pixel row of character of interest</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37633"></span>37633</td>
+<td class="instruction">DJNZ 37626</td>
+<td class="comment-11" rowspan="1">Loop back for next row</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37635"></span>37635</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Copy C into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37636"></span>37636</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...and if it is zero (i.e. current character in character set is same as character at to-print location in Display File)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37637"></span>37637</td>
+<td class="instruction">JR Z,37645</td>
+<td class="comment-11" rowspan="1">...jump ahead to <a href="37613.html#37645">37645</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37639"></span>37639</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37640"></span>37640</td>
+<td class="instruction">DJNZ 37619</td>
+<td class="comment-11" rowspan="1">Loop back for next character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37642"></span>37642</td>
+<td class="instruction">LD A,48</td>
+<td class="comment-11" rowspan="1">Load A with 48</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37644"></span>37644</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37645"></span>37645</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Character in Display File at to-print location is same as character with index (26 - B)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37646"></span>37646</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1">...so load B into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37647"></span>37647</td>
+<td class="instruction">SUB 26</td>
+<td class="comment-11" rowspan="1">...subtract 26...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37649"></span>37649</td>
+<td class="instruction">NEG</td>
+<td class="comment-11" rowspan="1">...and negate to get index of character in A (e.g. A=0, B=1, C=2 ...)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37651"></span>37651</td>
+<td class="instruction">ADD A,65</td>
+<td class="comment-11" rowspan="1">Add 65 to get ASCII index</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37653"></span>37653</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37571.html">37571</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37613">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37654.html">37654</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

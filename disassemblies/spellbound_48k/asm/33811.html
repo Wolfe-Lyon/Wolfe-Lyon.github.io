@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 33811</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33808.html">33808</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33811">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33883.html">33883</a></span></td>
+</tr>
+</table>
+<div class="description">33811: "Command Character to Help" Routine for Thor</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33811"></span>33811</td>
+<td class="instruction">LD A,169</td>
+<td class="comment-11" rowspan="1">Set last character of "[CHARACTER] CANNOT HELP YOU..." text to 169 ("HERE")...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33813"></span>33813</td>
+<td class="instruction">LD (46710),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33816"></span>33816</td>
+<td class="instruction">LD A,(65529)</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not in the Lift...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33819"></span>33819</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33820"></span>33820</td>
+<td class="instruction">JR NZ,33846</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="33811.html#33846">33846</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33822"></span>33822</td>
+<td class="instruction">LD A,(23411)</td>
+<td class="comment-11" rowspan="1">If "Lift fixed" flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33825"></span>33825</td>
+<td class="instruction">AND 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33827"></span>33827</td>
+<td class="instruction">JP NZ,33875</td>
+<td class="comment-11" rowspan="1">...then display "THERE IS NOTHING MORE THAT THOR CAN DO TO HELP HERE" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33830"></span>33830</td>
+<td class="instruction">LD A,(23411)</td>
+<td class="comment-11" rowspan="1">Set "Lift fixed" flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33833"></span>33833</td>
+<td class="instruction">OR 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33835"></span>33835</td>
+<td class="instruction">LD (23411),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33838"></span>33838</td>
+<td class="instruction">LD HL,44278</td>
+<td class="comment-11" rowspan="1">Display "THOR SMASHED THE LIFT CONTROL BOX..." window and return to game</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33841"></span>33841</td>
+<td class="instruction">LD A,24</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33843"></span>33843</td>
+<td class="instruction">JP <a href="34768.html">34768</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33846"></span>33846</td>
+<td class="instruction">CP 9</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not at The Tower...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33848"></span>33848</td>
+<td class="instruction">JP NZ,<a href="34514.html">34514</a></td>
+<td class="comment-11" rowspan="1">...then display "THOR CANNOT HELP YOU" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33851"></span>33851</td>
+<td class="instruction">LD A,(23411)</td>
+<td class="comment-11" rowspan="1">If "Tower zapped by Thor" flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33854"></span>33854</td>
+<td class="instruction">AND 2</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33856"></span>33856</td>
+<td class="instruction">JP NZ,33875</td>
+<td class="comment-11" rowspan="1">...then display "THERE IS NOTHING MORE THAT THOR CAN DO TO HELP HERE" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33859"></span>33859</td>
+<td class="instruction">LD A,(23411)</td>
+<td class="comment-11" rowspan="1">Set "Tower zapped by Thor" flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33862"></span>33862</td>
+<td class="instruction">OR 2</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33864"></span>33864</td>
+<td class="instruction">LD (23411),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33867"></span>33867</td>
+<td class="instruction">LD HL,44349</td>
+<td class="comment-11" rowspan="1">Display "THE TOWER SHOOK AS THOR SENT A BOLT OF HIS BEST LIGHTNING AT IT..." window and return to game</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33870"></span>33870</td>
+<td class="instruction">LD A,24</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33872"></span>33872</td>
+<td class="instruction">JP <a href="34768.html">34768</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="33875"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="33935.html">33935</a>, <a href="33993.html">33993</a> and <a href="34062.html">34062</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33875"></span>33875</td>
+<td class="instruction">LD HL,44244</td>
+<td class="comment-11" rowspan="1">Display "THERE IS NOTHING MORE THAT THOR CAN DO TO HELP HERE" window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33878"></span>33878</td>
+<td class="instruction">LD A,24</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33880"></span>33880</td>
+<td class="instruction">JP <a href="34768.html">34768</a></td>
+<td class="comment-11" rowspan="1">...and return to game</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33808.html">33808</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33811">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33883.html">33883</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

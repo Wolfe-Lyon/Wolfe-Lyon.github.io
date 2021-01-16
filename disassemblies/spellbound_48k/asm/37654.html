@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 37654</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37613.html">37613</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37654">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37703.html">37703</a></span></td>
+</tr>
+</table>
+<div class="description">37654: Print or Update Command Summary Window at Bottom of Screen</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="30222.html">30222</a>, <a href="30602.html">30602</a>, <a href="31370.html">31370</a>, <a href="32035.html">32035</a>, <a href="32194.html">32194</a>, <a href="32655.html">32655</a>, <a href="33036.html">33036</a>, <a href="33312.html">33312</a>, <a href="33593.html">33593</a>, <a href="33663.html">33663</a>, <a href="34914.html">34914</a> and <a href="35141.html">35141</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="37654"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="37654.html">37654</a> represents the index of the window being drawn. This is modified by the instructions at <a href="36987.html#36998">36998</a> and <a href="37654.html#37699">37699</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37654"></span>37654</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Load A with the index of the window being drawn</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37656"></span>37656</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37657"></span>37657</td>
+<td class="instruction">LD HL,(36488)</td>
+<td class="comment-11" rowspan="1">Store current (video) memory location to start printing character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37660"></span>37660</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37661"></span>37661</td>
+<td class="instruction">LD HL,(23493)</td>
+<td class="comment-11" rowspan="1">Store x- &amp; y-coordinates of top-left of currently drawn window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37664"></span>37664</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37665"></span>37665</td>
+<td class="instruction">LD HL,(23494)</td>
+<td class="comment-11" rowspan="1">Store y- &amp; x-coordinates of top-right of currently drawn window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37668"></span>37668</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37669"></span>37669</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Draw window 1 (Command Summary Window at bottom of screen)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37671"></span>37671</td>
+<td class="instruction">CALL <a href="36987.html">36987</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37674"></span>37674</td>
+<td class="instruction">LD HL,43271</td>
+<td class="comment-11" rowspan="1">Point HL to ("COMMAND") text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37677"></span>37677</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...and print text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37680"></span>37680</td>
+<td class="instruction">LD HL,(36488)</td>
+<td class="comment-11" rowspan="1">Copy current (video) memory location to start printing character into memory at 65530...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37683"></span>37683</td>
+<td class="instruction">LD (65530),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37686"></span>37686</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore y- &amp; x-coordinates of top-right of currently drawn window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37687"></span>37687</td>
+<td class="instruction">LD (23494),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37690"></span>37690</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore x- &amp; y-coordinates of top-left of currently drawn window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37691"></span>37691</td>
+<td class="instruction">LD (23493),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37694"></span>37694</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore current (video) memory location to start printing character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37695"></span>37695</td>
+<td class="instruction">LD (36488),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37698"></span>37698</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF (A = index of window being drawn)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37699"></span>37699</td>
+<td class="instruction">LD (37655),A</td>
+<td class="comment-11" rowspan="1">...and store at 37654</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37702"></span>37702</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37613.html">37613</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37654">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37703.html">37703</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

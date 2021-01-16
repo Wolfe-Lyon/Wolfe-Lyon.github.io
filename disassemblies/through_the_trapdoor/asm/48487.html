@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 48487</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="48417.html">48417</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#48487">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="48567.html">48567</a></span></td>
+</tr>
+</table>
+<div class="description">48487: Script Routine (32): Update Berk's Position and State (Flying) Depending Upon Control Input</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+<a href="../reference/pokes.html#infiniteflying">See pokes</a>
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">(Entry at <a href="48487.html">48487</a> only) Address of complex state data (current level) for Berk</td>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">(Entry at <a href="48487.html#48541">48541</a> only) Address of complex state data for an entity</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Address of next script instruction to execute</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="48487"></span>48487</td>
+<td class="instruction">CALL <a href="48388.html">48388</a></td>
+<td class="comment-11" rowspan="1">Decrease remaining time for current power and if zero, exit this routine and run script data for removal of power</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48490"></span>48490</td>
+<td class="instruction">CALL <a href="54768.html">54768</a></td>
+<td class="comment-11" rowspan="1">Check entity at IX for collision with another entity at same depth whose Interaction (11,6) Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48493"></span>48493</td>
+<td class="instruction">CP 130</td>
+<td class="comment-11" rowspan="1">...and if collision was not with entity of class 130 (causes Berk and Drutt to bounce off or bang head)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48495"></span>48495</td>
+<td class="instruction">JR NZ,48507</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="48487.html#48507">48507</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48497"></span>48497</td>
+<td class="instruction">RES 6,(IX+9)</td>
+<td class="comment-11" rowspan="1">Reset entity's Is Flying Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48501"></span>48501</td>
+<td class="instruction">LD HL,35359</td>
+<td class="comment-11" rowspan="1">Load HL with script data address for Berk starting to fall downwards</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48504"></span>48504</td>
+<td class="instruction">JP <a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="48507"></span>48507</td>
+<td class="instruction">LD A,(IX+6)</td>
+<td class="comment-11" rowspan="1">If y-coordinate of Berk's bottom edge is 121 or greater...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48510"></span>48510</td>
+<td class="instruction">CP 121</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48512"></span>48512</td>
+<td class="instruction">JR NC,48527</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="48487.html#48527">48527</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48514"></span>48514</td>
+<td class="instruction">LD A,(34219)</td>
+<td class="comment-11" rowspan="1">Load A with control input</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48517"></span>48517</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">If right pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48519"></span>48519</td>
+<td class="instruction">JP NZ,<a href="48593.html">48593</a></td>
+<td class="comment-11" rowspan="1">...then move Berk right one character, and into new room if appropriate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48522"></span>48522</td>
+<td class="instruction">BIT 1,A</td>
+<td class="comment-11" rowspan="1">If left pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48524"></span>48524</td>
+<td class="instruction">JP NZ,<a href="48641.html">48641</a></td>
+<td class="comment-11" rowspan="1">...then move Berk left one character, and into new room if appropriate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="48527"></span>48527</td>
+<td class="instruction">LD A,(IX+6)</td>
+<td class="comment-11" rowspan="1">If y-coordinate of Berk's bottom edge is less than 98...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48530"></span>48530</td>
+<td class="instruction">CP 98</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48532"></span>48532</td>
+<td class="instruction">JP C,<a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance HL to next script instruction and execute)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48535"></span>48535</td>
+<td class="instruction">CALL <a href="55433.html">55433</a></td>
+<td class="comment-11" rowspan="1">Change Berk's room up one if appropriate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48538"></span>48538</td>
+<td class="instruction">CALL <a href="48710.html">48710</a></td>
+<td class="comment-11" rowspan="1">Move carried entity in front of Berk as he faces out of screen</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="48541"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="37718.html">37718</a>. It is also the start of the routine triggered by instruction 34 in script data.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="48541"></span>48541</td>
+<td class="instruction">DEC (IX+4)</td>
+<td class="comment-11" rowspan="1">Decrease y-coordinates of entity's top and bottom edges by one character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48544"></span>48544</td>
+<td class="instruction">DEC (IX+6)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48547"></span>48547</td>
+<td class="instruction">BIT 4,(IX+9)</td>
+<td class="comment-11" rowspan="1">If entity is Berk and his Carrying Something Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48551"></span>48551</td>
+<td class="instruction">JP Z,<a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance HL to next script instruction and execute)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48554"></span>48554</td>
+<td class="instruction">LD IY,(34260)</td>
+<td class="comment-11" rowspan="1">Load IY with address of complex state data for entity held by Berk...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48558"></span>48558</td>
+<td class="instruction">DEC (IY+4)</td>
+<td class="comment-11" rowspan="1">...and decrease its top and bottom y-coordinates by one character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48561"></span>48561</td>
+<td class="instruction">DEC (IY+6)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48564"></span>48564</td>
+<td class="instruction">JP <a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="48417.html">48417</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#48487">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="48567.html">48567</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

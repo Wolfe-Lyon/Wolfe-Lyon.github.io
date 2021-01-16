@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 46317</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46306.html">46306</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46317">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46347.html">46347</a></span></td>
+</tr>
+</table>
+<div class="description">46317: Graphic Layout Routine (236): Set Graphic Index in Next Instruction to Value Randomly Selected from List</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Read Current Byte (n, random number cap), generate random number m (1 to n inclusive) and copy the m-th byte in following list into position after end of list bytes (i.e. the graphic index field of the next graphic layout data entry), then advance current position to this location.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of first parameter in current graphic layout data instruction</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">Do Not Recalculate Display Buffer Address Flag (0)</td>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of next graphic layout data instruction to process</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46317"></span>46317</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store current position in graphic layout data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46319"></span>46319</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load current byte (Random Number Cap) from graphic layout data into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46322"></span>46322</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">...and copy into E</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46323"></span>46323</td>
+<td class="instruction">CALL <a href="54222.html">54222</a></td>
+<td class="comment-11" rowspan="1">Load BC with a random number, 1-A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46326"></span>46326</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46327"></span>46327</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46328"></span>46328</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46330"></span>46330</td>
+<td class="instruction">ADD IX,BC</td>
+<td class="comment-11" rowspan="1">Advance IX by number of bytes stored in BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46332"></span>46332</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load byte at this location into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46335"></span>46335</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore previous position in graphic layout data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46337"></span>46337</td>
+<td class="instruction">LD C,E</td>
+<td class="comment-11" rowspan="1">Load Random Number Cap into BC...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46338"></span>46338</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">...and add one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46339"></span>46339</td>
+<td class="instruction">ADD IX,BC</td>
+<td class="comment-11" rowspan="1">Advance IX by this number of bytes</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46341"></span>46341</td>
+<td class="instruction">LD (IX+0),A</td>
+<td class="comment-11" rowspan="1">Store byte previously read at current position</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46344"></span>46344</td>
+<td class="instruction">JP <a href="45965.html#46003">46003</a></td>
+<td class="comment-11" rowspan="1">Read / process data at address in IX</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46306.html">46306</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46317">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46347.html">46347</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

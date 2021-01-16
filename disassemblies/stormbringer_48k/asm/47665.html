@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 47665</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47603.html">47603</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47665">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47703.html">47703</a></span></td>
+</tr>
+</table>
+<div class="description">47665: Move Hand Cursor Down and Update Menu Item Highlighting</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="47502.html">47502</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47665"></span>47665</td>
+<td class="instruction">LD A,(23479)</td>
+<td class="comment-11" rowspan="1">Load menu hand cursor's current y-coordinate into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47668"></span>47668</td>
+<td class="instruction">LD HL,23475</td>
+<td class="comment-11" rowspan="1">If height available to Menu Hand Cursor to move down (in pixels, stored at <a href="23475.html">23475</a>) is the same as the cursor's current y-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47671"></span>47671</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">...i.e. the cursor cannot move any further down...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47672"></span>47672</td>
+<td class="instruction">JP Z,<a href="47502.html#47571">47571</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="47502.html#47571">47571</a> (return to menu input handling routine)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47675"></span>47675</td>
+<td class="instruction">LD (23478),A</td>
+<td class="comment-11" rowspan="1">Store y-coordinate (pixels) at <a href="23475.html#23478">23478</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47678"></span>47678</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF (A = Menu Hand Cursor's y-coordinate, in pixels)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47679"></span>47679</td>
+<td class="instruction">ADD A,5</td>
+<td class="comment-11" rowspan="1">Add five (as the "finger" of the cursor naturally points five pixels below the cursor's actual position)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47681"></span>47681</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">Divide this new y-coordinate by eight to get y-coordinate in characters...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47682"></span>47682</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47683"></span>47683</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47684"></span>47684</td>
+<td class="instruction">AND 31</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47686"></span>47686</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load this y-coordinate into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47687"></span>47687</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF (A = Menu Hand Cursor's y-coordinate, in pixels)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47688"></span>47688</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase y-coordinate (pixels) by two...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47689"></span>47689</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47690"></span>47690</td>
+<td class="instruction">LD (23479),A</td>
+<td class="comment-11" rowspan="1">Store new y-coordinate (in pixels)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47693"></span>47693</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (C = y-coordinate, in characters and before move, of Menu Hand Cursor's finger)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47694"></span>47694</td>
+<td class="instruction">CALL <a href="64361.html">64361</a></td>
+<td class="comment-11" rowspan="1">Scroll a region of the Display File down two pixel rows without wrapping...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47697"></span>47697</td>
+<td class="instruction">CALL <a href="64361.html">64361</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47700"></span>47700</td>
+<td class="instruction">JP <a href="47603.html#47635">47635</a></td>
+<td class="comment-11" rowspan="1">Jump to <a href="47603.html#47635">47635</a> (update menu highlighting as appropriate then jump to menu input handling routine)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47603.html">47603</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47665">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47703.html">47703</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

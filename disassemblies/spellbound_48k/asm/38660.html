@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 38660</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38539.html">38539</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38660">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="38674.html">38674</a></span></td>
+</tr>
+</table>
+<div class="description">38660: Get x- and y- Coordinates of Object A (Unused)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Index of required object</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">y-coordinate</td>
+</tr>
+<tr>
+<td class="register">C</td>
+<td class="register-desc">x-coordinate</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38660"></span>38660</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Multiply A by three...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38661"></span>38661</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...as entries in table at <a href="25464.html">25464</a> are three bytes long...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38662"></span>38662</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38663"></span>38663</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">Load value into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38664"></span>38664</td>
+<td class="instruction">LD H,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38666"></span>38666</td>
+<td class="instruction">LD BC,25465</td>
+<td class="comment-11" rowspan="1">Point BC at x-coordinate property of "Nothing at All" in table at <a href="25464.html">25464</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38669"></span>38669</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Add HL as offset to BC (into HL)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38670"></span>38670</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-11" rowspan="1">Load x-coordinate into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38671"></span>38671</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance by one byte</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38672"></span>38672</td>
+<td class="instruction">LD B,(HL)</td>
+<td class="comment-11" rowspan="1">Load y-coordinate into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38673"></span>38673</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38539.html">38539</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38660">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="38674.html">38674</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

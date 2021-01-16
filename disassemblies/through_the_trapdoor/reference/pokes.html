@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Pokes</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Pokes">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Pokes</td>
+</tr>
+</table>
+<ul class="contents">
+<li><a href="#easierspiders">Easier Spiders (Level 1)</a></li>
+<li><a href="#higherjumps">Higher Jumps</a></li>
+<li><a href="#quickerrecoveryafterfall">Quicker Recovery After Fall</a></li>
+<li><a href="#infiniteflying">Infinite Flying Duration</a></li>
+<li><a href="#disablehatch">Disable Hatch (Level 3)</a></li>
+</ul>
+<div><span id="easierspiders"></span></div>
+<div class="box box-1">
+<div class="box-title">Easier Spiders (Level 1)</div>
+<div class="paragraph">
+As outlined on the <a href="facts.html#spidertiming">trivia page</a>, the right-most spider will adapt to a player having difficulty getting past the spider room.
+To extend this behaviour to the other two spiders, the jump at <a href="../asm/37718.html#37733">37733</a> should be removed:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/37718.html#37733">37734</a>,0
+</div>
+<div class="paragraph">
+As the value at <a href="../asm/34221.html#34223">34223</a> controls this behaviour, it too can be manipulated. The higher the value in this location is, the longer the pause between
+subsequent attacks by a spider (normally only the right-most spider, unless the above POKE is also used):
+</div>
+<div class="paragraph">
+POKE <a href="../asm/34221.html#34223">34223</a>,x (where larger x results in a longer pause between attacks)
+</div>
+</div>
+<div><span id="higherjumps"></span></div>
+<div class="box box-2">
+<div class="box-title">Higher Jumps</div>
+<div class="paragraph">
+The routine at <a href="../asm/55421.html">55421</a> handles the increase in velocity for a character's jump. It is capped at 7 by the instruction at <a href="../asm/55421.html#55426">55426</a>. This can be increased
+to 15, allowing significantly higher jumps for both Drutt and Berk:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/55421.html#55426">55427</a>,15
+</div>
+<div class="paragraph">
+Changing the cap to 15 is sufficient to allow Berk and Drutt to jump approximately 5 screens' worth of vertical distance. This allows them to jump as
+high as Level 1's entry door room (two screens above the Trap Door room) from the room at the bottom of the Trap Door shaft.
+</div>
+</div>
+<div><span id="quickerrecoveryafterfall"></span></div>
+<div class="box box-1">
+<div class="box-title">Quicker Recovery After Fall</div>
+<div class="paragraph">
+When Berk falls, the check at <a href="../asm/48934.html#48958">48958</a> determines whether Berk can recover instantly, or whether he is to be stunned. The conditional jump at <a href="../asm/48934.html#48962">48962</a>
+will make Berk enter the stunned state if bit 3 of his velocity factor is set. This conditional jump can be removed, resulting in Berk being able to
+fall any distance and recover instantly:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/48934.html#48962">48963</a>,0
+</div>
+</div>
+<div><span id="infiniteflying"></span></div>
+<div class="box box-2">
+<div class="box-title">Infinite Flying Duration</div>
+<div class="paragraph">
+The CALL at <a href="../asm/48487.html">48487</a> decreases Berk's remaining flying duration. This CALL can be bypassed:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/48487.html">48488</a>,3
+</div>
+</div>
+<div><span id="disablehatch"></span></div>
+<div class="box box-1">
+<div class="box-title">Disable Hatch (Level 3)</div>
+<div class="paragraph">
+The Hatch on Level 3 can be disabled:
+</div>
+<div class="paragraph">
+POKE <a href="../asm/39151.html">39151</a>,201
+</div>
+</div>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

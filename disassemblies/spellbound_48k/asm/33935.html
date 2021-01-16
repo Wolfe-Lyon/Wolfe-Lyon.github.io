@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 33935</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33932.html">33932</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33935">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33993.html">33993</a></span></td>
+</tr>
+</table>
+<div class="description">33935: "Command Character to Help" Routine for Samsun</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33935"></span>33935</td>
+<td class="instruction">LD A,169</td>
+<td class="comment-11" rowspan="1">Set last character of "[CHARACTER] CANNOT HELP YOU..." text to 169 ("HERE")...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33937"></span>33937</td>
+<td class="instruction">LD (46710),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33940"></span>33940</td>
+<td class="instruction">LD A,(65529)</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not at The Pit...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33943"></span>33943</td>
+<td class="instruction">CP 46</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33945"></span>33945</td>
+<td class="instruction">JP NZ,<a href="34514.html">34514</a></td>
+<td class="comment-11" rowspan="1">...then display "SAMSUN CANNOT HELP YOU" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33948"></span>33948</td>
+<td class="instruction">LD A,(23411)</td>
+<td class="comment-11" rowspan="1">If "Platform thrown into Pit" flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33951"></span>33951</td>
+<td class="instruction">AND 16</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33953"></span>33953</td>
+<td class="instruction">JP NZ,<a href="33811.html#33875">33875</a></td>
+<td class="comment-11" rowspan="1">...then display "THERE IS NOTHING MORE THAT SAMSUN CAN DO TO HELP YOU HERE" window and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33956"></span>33956</td>
+<td class="instruction">LD A,(23411)</td>
+<td class="comment-11" rowspan="1">Set "Platform thrown into Pit" flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33959"></span>33959</td>
+<td class="instruction">OR 16</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33961"></span>33961</td>
+<td class="instruction">LD (23411),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33964"></span>33964</td>
+<td class="instruction">LD HL,25420</td>
+<td class="comment-11" rowspan="1">Point HL to start of Samsun's current inventory...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33967"></span>33967</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Remove Platform from Samsun's inventory...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33969"></span>33969</td>
+<td class="instruction">LD C,29</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33971"></span>33971</td>
+<td class="instruction">CALL <a href="38674.html">38674</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33974"></span>33974</td>
+<td class="instruction">LD HL,25551</td>
+<td class="comment-11" rowspan="1">Set the Platform's current location...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33977"></span>33977</td>
+<td class="instruction">LD (HL),46</td>
+<td class="comment-11" rowspan="1">...as being at The Pit...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33979"></span>33979</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33980"></span>33980</td>
+<td class="instruction">LD (HL),15</td>
+<td class="comment-11" rowspan="1">...at x = 15...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33982"></span>33982</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33983"></span>33983</td>
+<td class="instruction">LD (HL),11</td>
+<td class="comment-11" rowspan="1">...y = 11</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33985"></span>33985</td>
+<td class="instruction">LD HL,44583</td>
+<td class="comment-11" rowspan="1">Display "GOOD OLD SAMSUN HAS THROWN A PLATFORM..." window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33988"></span>33988</td>
+<td class="instruction">LD A,24</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33990"></span>33990</td>
+<td class="instruction">JP <a href="34768.html">34768</a></td>
+<td class="comment-11" rowspan="1">...and return to game</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33932.html">33932</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33935">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33993.html">33993</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

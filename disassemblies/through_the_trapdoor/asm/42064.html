@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 42064</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="41961.html">41961</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#42064">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="42233.html">42233</a></span></td>
+</tr>
+</table>
+<div class="description">42064: Update States of Drips (Level 4)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="41211.html">41211</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="42064"></span>42064</td>
+<td class="instruction">LD IX,45521</td>
+<td class="comment-11" rowspan="1">Load IX with address of complex state data for first drip (Level 4)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42068"></span>42068</td>
+<td class="instruction">LD B,6</td>
+<td class="comment-11" rowspan="1">Load B with 6 (as there are 6 drips to process)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="42070"></span>42070</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = Remaining number of drips to process)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42071"></span>42071</td>
+<td class="instruction">LD A,(IX+12)</td>
+<td class="comment-11" rowspan="1">If current drip's velocity factor is not zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42074"></span>42074</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42075"></span>42075</td>
+<td class="instruction">JR NZ,42128</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="42064.html#42128">42128</a> (handle drip's fall)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42077"></span>42077</td>
+<td class="instruction">LD A,(IX+9)</td>
+<td class="comment-11" rowspan="1">If current drip's stage is not 8...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42080"></span>42080</td>
+<td class="instruction">CP 8</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42082"></span>42082</td>
+<td class="instruction">JR NZ,42092</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="42064.html#42092">42092</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="42084"></span>42084</td>
+<td class="instruction">LD A,(IX+8)</td>
+<td class="comment-11" rowspan="1">Reset current drip's complex state data to values stored in Table of Initial-State Data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42087"></span>42087</td>
+<td class="instruction">CALL <a href="53987.html#53994">53994</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42090"></span>42090</td>
+<td class="instruction">JR 42119</td>
+<td class="comment-11" rowspan="1">Advance IX to next entry in complex state data and loop back to <a href="42064.html#42070">42070</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="42092"></span>42092</td>
+<td class="instruction">CP 7</td>
+<td class="comment-11" rowspan="1">If drip's stage is not 7...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42094"></span>42094</td>
+<td class="instruction">JR NZ,42102</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="42064.html#42102">42102</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42096"></span>42096</td>
+<td class="instruction">LD (IX+12),1</td>
+<td class="comment-11" rowspan="1">Set current drip's velocity factor to 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42100"></span>42100</td>
+<td class="instruction">JR 42119</td>
+<td class="comment-11" rowspan="1">Advance IX to next entry in complex state data and loop back to <a href="42064.html#42070">42070</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="42102"></span>42102</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load drip's stage into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42103"></span>42103</td>
+<td class="instruction">LD A,15</td>
+<td class="comment-11" rowspan="1">Load A with a random number, 0-14...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42105"></span>42105</td>
+<td class="instruction">CALL <a href="54222.html">54222</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42108"></span>42108</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If A is not zero (14 in 15 chance)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42109"></span>42109</td>
+<td class="instruction">JR NZ,42119</td>
+<td class="comment-11" rowspan="1">...then advance IX to next entry in complex state data and loop back to <a href="42064.html#42070">42070</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42111"></span>42111</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Load drip's stage back into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42112"></span>42112</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...and add one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42113"></span>42113</td>
+<td class="instruction">LD (IX+9),A</td>
+<td class="comment-11" rowspan="1">Store updated drip stage value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42116"></span>42116</td>
+<td class="instruction">CALL <a href="42251.html">42251</a></td>
+<td class="comment-11" rowspan="1">Set drip's graphic layout data pointer to stage A graphic</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="42119"></span>42119</td>
+<td class="instruction">LD DE,13</td>
+<td class="comment-11" rowspan="1">Load DE with 13 (as entries are 13 bytes wide)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42122"></span>42122</td>
+<td class="instruction">ADD IX,DE</td>
+<td class="comment-11" rowspan="1">Advance IX to next drip's complex state data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42124"></span>42124</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = Remaining number of drips to process)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42125"></span>42125</td>
+<td class="instruction">DJNZ 42070</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="42064.html#42070">42070</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42127"></span>42127</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="42128"></span>
+<div class="comments">
+<div class="paragraph">
+Drip's velocity factor is not zero
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="42128"></span>42128</td>
+<td class="instruction">INC (IX+12)</td>
+<td class="comment-11" rowspan="1">Increase drip's velocity factor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42131"></span>42131</td>
+<td class="instruction">LD (IX+1),1</td>
+<td class="comment-11" rowspan="1">Set drip's depth to 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42135"></span>42135</td>
+<td class="instruction">LD IY,45508</td>
+<td class="comment-11" rowspan="1">Load IY with address of complex state data for Cannon (Level 4)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42139"></span>42139</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load B with drip's velocity factor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="42140"></span>42140</td>
+<td class="instruction">LD A,(IY+0)</td>
+<td class="comment-11" rowspan="1">Load Cannon's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42143"></span>42143</td>
+<td class="instruction">CP (IX+0)</td>
+<td class="comment-11" rowspan="1">If Cannon is in a different room to the drip...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42146"></span>42146</td>
+<td class="instruction">JR NZ,42190</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="42064.html#42190">42190</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42148"></span>42148</td>
+<td class="instruction">LD A,(IY+1)</td>
+<td class="comment-11" rowspan="1">If Cannon's depth is not 1...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42151"></span>42151</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42153"></span>42153</td>
+<td class="instruction">JR NZ,42190</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="42064.html#42190">42190</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42155"></span>42155</td>
+<td class="instruction">LD A,(IY+5)</td>
+<td class="comment-11" rowspan="1">If x-coordinate of Cannon's left side...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42158"></span>42158</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...plus one...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42159"></span>42159</td>
+<td class="instruction">CP (IX+5)</td>
+<td class="comment-11" rowspan="1">...is not the same as the x-coordinate of the drip's left side...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42162"></span>42162</td>
+<td class="instruction">JR NZ,42190</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="42064.html#42190">42190</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42164"></span>42164</td>
+<td class="instruction">LD A,(IY+4)</td>
+<td class="comment-11" rowspan="1">If y-coordinate of top Cannon's top...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42167"></span>42167</td>
+<td class="instruction">CP (IX+4)</td>
+<td class="comment-11" rowspan="1">...is not the same as the y-coordinate of the drip's top...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42170"></span>42170</td>
+<td class="instruction">JR NZ,42215</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="42064.html#42215">42215</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42172"></span>42172</td>
+<td class="instruction">LD A,(34209)</td>
+<td class="comment-11" rowspan="1">Increase Cannon's ammunition level by 10...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42175"></span>42175</td>
+<td class="instruction">ADD A,10</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42177"></span>42177</td>
+<td class="instruction">LD (34209),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42180"></span>42180</td>
+<td class="instruction">SET 2,(IY+9)</td>
+<td class="comment-11" rowspan="1">Set Cannon's Just Loaded Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42184"></span>42184</td>
+<td class="instruction">LD (IY+12),20</td>
+<td class="comment-11" rowspan="1">Set Cannon's Fire Timer to 20</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42188"></span>42188</td>
+<td class="instruction">JR 42084</td>
+<td class="comment-11" rowspan="1">Reset current drip's state and loop back to <a href="42064.html#42070">42070</a> for next drip</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="42190"></span>42190</td>
+<td class="instruction">CALL <a href="54768.html">54768</a></td>
+<td class="comment-11" rowspan="1">Check entity at IX for collision with another entity at same depth whose Interaction (11,6) Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42193"></span>42193</td>
+<td class="instruction">CP 31</td>
+<td class="comment-11" rowspan="1">...and if collision was not with entity of class 31 (Berk)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42195"></span>42195</td>
+<td class="instruction">JR NZ,42215</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="42064.html#42215">42215</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42197"></span>42197</td>
+<td class="instruction">CALL <a href="53667.html">53667</a></td>
+<td class="comment-11" rowspan="1">Set "Berk Has Been Killed" Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="42200"></span>42200</td>
+<td class="instruction">LD A,8</td>
+<td class="comment-11" rowspan="1">Set drip's graphical stage to 8 (exploding on contact)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42202"></span>42202</td>
+<td class="instruction">LD (IX+9),A</td>
+<td class="comment-11" rowspan="1">...and also set drip's stage to 8...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42205"></span>42205</td>
+<td class="instruction">CALL <a href="42251.html">42251</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42208"></span>42208</td>
+<td class="instruction">LD (IX+12),0</td>
+<td class="comment-11" rowspan="1">Set drip's velocity factor to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42212"></span>42212</td>
+<td class="instruction">JP 42119</td>
+<td class="comment-11" rowspan="1">Advance IX to next entry in complex state data and loop back to <a href="42064.html#42070">42070</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="42215"></span>42215</td>
+<td class="instruction">LD A,(IX+4)</td>
+<td class="comment-11" rowspan="1">If y-coordinate of top of drip is 120...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42218"></span>42218</td>
+<td class="instruction">CP 120</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42220"></span>42220</td>
+<td class="instruction">JR Z,42200</td>
+<td class="comment-11" rowspan="1">...then loop back to <a href="42064.html#42200">42200</a> (make drip explode and process next drip)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42222"></span>42222</td>
+<td class="instruction">INC (IX+4)</td>
+<td class="comment-11" rowspan="1">Move drip down one character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42225"></span>42225</td>
+<td class="instruction">INC (IX+6)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42228"></span>42228</td>
+<td class="instruction">DJNZ 42140</td>
+<td class="comment-11" rowspan="1">Decrease B (velocity factor) and loop back to <a href="42064.html#42140">42140</a> if not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42230"></span>42230</td>
+<td class="instruction">JP 42119</td>
+<td class="comment-11" rowspan="1">Advance IX to next entry in complex state data and loop back to <a href="42064.html#42070">42070</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="41961.html">41961</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#42064">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="42233.html">42233</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

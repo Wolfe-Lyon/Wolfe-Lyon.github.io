@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 31370</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="31153.html">31153</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31370">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31636.html">31636</a></span></td>
+</tr>
+</table>
+<div class="description">31370: Process Command to Examine an Object, a Character or Magic Knight</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31370"></span>31370</td>
+<td class="instruction">CALL <a href="38075.html">38075</a></td>
+<td class="comment-11" rowspan="1">Play upward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31373"></span>31373</td>
+<td class="instruction">LD A,(23377)</td>
+<td class="comment-11" rowspan="1">Set Gimbal-White-Out Safe Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31376"></span>31376</td>
+<td class="instruction">OR 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31378"></span>31378</td>
+<td class="instruction">LD (23377),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31381"></span>31381</td>
+<td class="instruction">CALL <a href="37654.html">37654</a></td>
+<td class="comment-11" rowspan="1">Display / update command summary window at bottom of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31384"></span>31384</td>
+<td class="instruction">LD DE,45897</td>
+<td class="comment-11" rowspan="1">Point DE at "EXAMINE" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31387"></span>31387</td>
+<td class="instruction">CALL <a href="38693.html">38693</a></td>
+<td class="comment-11" rowspan="1">...and print in Command Summary Window at bottom of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31390"></span>31390</td>
+<td class="instruction">LD A,16</td>
+<td class="comment-11" rowspan="1">Display "EXAMINE WHAT?" menu window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31392"></span>31392</td>
+<td class="instruction">CALL <a href="36979.html">36979</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31395"></span>31395</td>
+<td class="instruction">LD HL,45899</td>
+<td class="comment-11" rowspan="1">Print "EXAMINE WHAT? ... O OBJECT ... C CHARACTER ... S YOURSELF" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31398"></span>31398</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31401"></span>31401</td>
+<td class="instruction">CALL <a href="37333.html">37333</a></td>
+<td class="comment-11" rowspan="1">Process keyboard / joystick input for menu, and load ASCII code of shortcut for selected (i.e. SPACE or fire pressed) item into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31404"></span>31404</td>
+<td class="instruction">CP 79</td>
+<td class="comment-11" rowspan="1">If "O" pressed (i.e. EXAMINE OBJECT)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31406"></span>31406</td>
+<td class="instruction">JP Z,31548</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="31370.html#31548">31548</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31409"></span>31409</td>
+<td class="instruction">CP 67</td>
+<td class="comment-11" rowspan="1">If "C" pressed (i.e. EXAMINE CHARACTER)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31411"></span>31411</td>
+<td class="instruction">JP Z,31452</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="31370.html#31452">31452</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="31414"></span>
+<div class="comments">
+<div class="paragraph">
+Examine Yourself
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31414"></span>31414</td>
+<td class="instruction">LD DE,46396</td>
+<td class="comment-11" rowspan="1">Point DE at "YOURSELF" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31417"></span>31417</td>
+<td class="instruction">CALL <a href="38693.html">38693</a></td>
+<td class="comment-11" rowspan="1">...and print in Command Summary Window at bottom of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31420"></span>31420</td>
+<td class="instruction">CALL <a href="38725.html">38725</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return if Execute chosen, else exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31423"></span>31423</td>
+<td class="instruction">LD A,18</td>
+<td class="comment-11" rowspan="1">Draw window 18...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31425"></span>31425</td>
+<td class="instruction">CALL <a href="36987.html">36987</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31428"></span>31428</td>
+<td class="instruction">LD A,14</td>
+<td class="comment-11" rowspan="1">Store 14 in current character memory slot...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31430"></span>31430</td>
+<td class="instruction">LD (30615),A</td>
+<td class="comment-11" rowspan="1">...as 14 is the position of "MAGIC KNIGHT" text relative to start of characters' short names in common words table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31433"></span>31433</td>
+<td class="instruction">LD HL,46126</td>
+<td class="comment-11" rowspan="1">Point HL at percentage completion text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31436"></span>31436</td>
+<td class="instruction">LD DE,46138</td>
+<td class="comment-11" rowspan="1">Point DE at time left text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31439"></span>31439</td>
+<td class="instruction">CALL <a href="34268.html">34268</a></td>
+<td class="comment-11" rowspan="1">Insert current time and score into "TIME LEFT" and "PERCENTAGE COMPLETION" texts</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31442"></span>31442</td>
+<td class="instruction">LD HL,25315</td>
+<td class="comment-11" rowspan="1">Point HL at Magic Knight's current stats</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31445"></span>31445</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Load 0 (index of Magic Knight Frame 1 [right] in Graphics Lookup Data table at <a href="42642.html">42642</a>) into instruction at <a href="31370.html#31537">31537</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31446"></span>31446</td>
+<td class="instruction">LD (31538),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31449"></span>31449</td>
+<td class="instruction">JP 31484</td>
+<td class="comment-11" rowspan="1">Skip ahead to <a href="31370.html#31484">31484</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="31452"></span>
+<div class="comments">
+<div class="paragraph">
+Examine Character
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31452"></span>31452</td>
+<td class="instruction">LD HL,44065</td>
+<td class="comment-11" rowspan="1">Point HL at "EXAMINE ?" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31455"></span>31455</td>
+<td class="instruction">LD DE,0</td>
+<td class="comment-11" rowspan="1">Set DE to zero so Command Summary Window is not updated with additional text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31458"></span>31458</td>
+<td class="instruction">CALL <a href="35141.html">35141</a></td>
+<td class="comment-11" rowspan="1">Display and process input for character selection menu (current room's characters only), setting Current Character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31461"></span>31461</td>
+<td class="instruction">CALL <a href="38725.html">38725</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return if Execute chosen, else exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31464"></span>31464</td>
+<td class="instruction">LD A,18</td>
+<td class="comment-11" rowspan="1">Draw window 18...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31466"></span>31466</td>
+<td class="instruction">CALL <a href="36987.html">36987</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31469"></span>31469</td>
+<td class="instruction">LD A,(30615)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current (selected) Character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31472"></span>31472</td>
+<td class="instruction">ADD A,69</td>
+<td class="comment-11" rowspan="1">Add 69 to index of selected character (as 69 is index of first character in Graphics Lookup Data table at <a href="42642.html">42642</a>)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31474"></span>31474</td>
+<td class="instruction">LD (31538),A</td>
+<td class="comment-11" rowspan="1">...and load into instruction at <a href="31370.html#31537">31537</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31477"></span>31477</td>
+<td class="instruction">SUB 69</td>
+<td class="comment-11" rowspan="1">Subtract 69 to revert to index of character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31479"></span>31479</td>
+<td class="instruction">LD E,0</td>
+<td class="comment-11" rowspan="1">Point HL at strength of the character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31481"></span>31481</td>
+<td class="instruction">CALL <a href="34174.html">34174</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31484"></span>31484</td>
+<td class="instruction">CALL <a href="35837.html">35837</a></td>
+<td class="comment-11" rowspan="1">Insert numeric stats (at HL) of a character into "EXAMINE CHARACTER" window text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31487"></span>31487</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (points to start of character's current stats)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31488"></span>31488</td>
+<td class="instruction">LD HL,45924</td>
+<td class="comment-11" rowspan="1">Print Examine Character window text (i.e. "EXAMINE [CHARACTER] ... STRENGTH XX..." text)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31491"></span>31491</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31494"></span>31494</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore IX (points to start of character's current stats)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31496"></span>31496</td>
+<td class="instruction">LD A,(IX+6)</td>
+<td class="comment-11" rowspan="1">If character's Asleep Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31499"></span>31499</td>
+<td class="instruction">BIT 7,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31501"></span>31501</td>
+<td class="instruction">JP NZ,31507</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="31370.html#31507">31507</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31504"></span>31504</td>
+<td class="instruction">LD A,(IX+7)</td>
+<td class="comment-11" rowspan="1">Load A with index of character's Current Status Text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31507"></span>31507</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">Reset bit 7 of A (if character is asleep, then A holds the value from IX+6 with bit 7 set. Resetting bit 7 leaves 12, index of "[CHARACTER] IS ASLEEP" text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31509"></span>31509</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...and load into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31510"></span>31510</td>
+<td class="instruction">LD HL,46116</td>
+<td class="comment-11" rowspan="1">Point HL at start of characters' "current status" texts</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31513"></span>31513</td>
+<td class="instruction">CALL <a href="34842.html#34845">34845</a></td>
+<td class="comment-11" rowspan="1">Advance HL to B-th entry in list of zero-terminated strings</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31516"></span>31516</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">Print text at HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31519"></span>31519</td>
+<td class="instruction">LD A,19</td>
+<td class="comment-11" rowspan="1">Draw window 19...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31521"></span>31521</td>
+<td class="instruction">CALL <a href="36987.html">36987</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31524"></span>31524</td>
+<td class="instruction">LD A,(23493)</td>
+<td class="comment-11" rowspan="1">Load C with x-coordinate of left edge of current window to draw (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31527"></span>31527</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31528"></span>31528</td>
+<td class="instruction">LD A,(23494)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of top edge of current window to draw (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31531"></span>31531</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31532"></span>31532</td>
+<td class="instruction">LD A,71</td>
+<td class="comment-11" rowspan="1">Load system variable ATTR T with 71 (white INK, black PAPER, BRIGHT)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31534"></span>31534</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="31537"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="31370.html#31537">31537</a> represents the graphic index of the selected character. This is modified by the instructions at <a href="31370.html#31446">31446</a> and <a href="31370.html#31474">31474</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31537"></span>31537</td>
+<td class="instruction">LD A,0</td>
+<td class="comment-11" rowspan="1">Draw the selected character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31539"></span>31539</td>
+<td class="instruction">CALL <a href="29960.html">29960</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31542"></span>31542</td>
+<td class="instruction">CALL <a href="38749.html">38749</a></td>
+<td class="comment-11" rowspan="1">Display "PRESS SPACE OR FIRE TO CONTINUE" window and wait for space / fire</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31545"></span>31545</td>
+<td class="instruction">JP <a href="30222.html#30428">30428</a></td>
+<td class="comment-11" rowspan="1">Reset Gimbal-White-Out Safe Flag, redraw current room and return to main game loop</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="31548"></span>
+<div class="comments">
+<div class="paragraph">
+Examine Object
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="31548"></span>31548</td>
+<td class="instruction">LD IX,25395</td>
+<td class="comment-11" rowspan="1">Point IX at Magic Knight's inventory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31552"></span>31552</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (as there are 5 inventory slots)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31554"></span>31554</td>
+<td class="instruction">LD HL,45890</td>
+<td class="comment-11" rowspan="1">Point HL at "EXAMINE WHICH OBJECT?" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31557"></span>31557</td>
+<td class="instruction">LD DE,0</td>
+<td class="comment-11" rowspan="1">Set DE to zero so Command Summary Window is not updated with additional text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31560"></span>31560</td>
+<td class="instruction">CALL <a href="34914.html">34914</a></td>
+<td class="comment-11" rowspan="1">Show list of objects (window or menu) and handle selection if a menu</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31563"></span>31563</td>
+<td class="instruction">LD HL,25395</td>
+<td class="comment-11" rowspan="1">Point HL at Magic Knight's inventory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31566"></span>31566</td>
+<td class="instruction">CALL <a href="34864.html">34864</a></td>
+<td class="comment-11" rowspan="1">Point DE at name of a selected object in object names table and print in command summary window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31569"></span>31569</td>
+<td class="instruction">CALL <a href="38725.html">38725</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return if Execute chosen, else exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31572"></span>31572</td>
+<td class="instruction">LD A,(30467)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31575"></span>31575</td>
+<td class="instruction">LD E,0</td>
+<td class="comment-11" rowspan="1">Load E with 0 (Weight)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31577"></span>31577</td>
+<td class="instruction">CALL <a href="34160.html">34160</a></td>
+<td class="comment-11" rowspan="1">Point HL to weight of object A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31580"></span>31580</td>
+<td class="instruction">CALL <a href="35887.html">35887</a></td>
+<td class="comment-11" rowspan="1">Insert numeric / text stats of an object into "EXAMINE OBJECT" window text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31583"></span>31583</td>
+<td class="instruction">LD A,20</td>
+<td class="comment-11" rowspan="1">Draw window 20...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31585"></span>31585</td>
+<td class="instruction">CALL <a href="36987.html">36987</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31588"></span>31588</td>
+<td class="instruction">LD HL,46033</td>
+<td class="comment-11" rowspan="1">Print "&#160;&#160;&#160;&#160;&#160;&#160;EXAMINE" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31591"></span>31591</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31594"></span>31594</td>
+<td class="instruction">LD A,(30467)</td>
+<td class="comment-11" rowspan="1">Load B with index of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31597"></span>31597</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31598"></span>31598</td>
+<td class="instruction">CALL <a href="34842.html">34842</a></td>
+<td class="comment-11" rowspan="1">Advance HL to B-th entry in object names table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31601"></span>31601</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">Print the object's name</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31604"></span>31604</td>
+<td class="instruction">LD HL,46038</td>
+<td class="comment-11" rowspan="1">Print " EXAMINE" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31607"></span>31607</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31610"></span>31610</td>
+<td class="instruction">LD A,21</td>
+<td class="comment-11" rowspan="1">Draw window 21...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31612"></span>31612</td>
+<td class="instruction">CALL <a href="36987.html">36987</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31615"></span>31615</td>
+<td class="instruction">LD A,(23493)</td>
+<td class="comment-11" rowspan="1">Load C with x-coordinate of left edge of current window to draw (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31618"></span>31618</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31619"></span>31619</td>
+<td class="instruction">LD A,(23494)</td>
+<td class="comment-11" rowspan="1">Load B with y-coordinate of top edge of current window to draw (characters)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31622"></span>31622</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31623"></span>31623</td>
+<td class="instruction">INC B</td>
+<td class="comment-11" rowspan="1">Increase y-coordinate so object is drawn within the window rather than overlapping the upper frame</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31624"></span>31624</td>
+<td class="instruction">LD A,(30467)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31627"></span>31627</td>
+<td class="instruction">CALL <a href="38539.html">38539</a></td>
+<td class="comment-11" rowspan="1">Set Terrain Interaction Data for character blocks spanned by the object and draw the object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31630"></span>31630</td>
+<td class="instruction">CALL <a href="38749.html">38749</a></td>
+<td class="comment-11" rowspan="1">Display "PRESS SPACE OR FIRE TO CONTINUE" window and wait for space / fire</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="31633"></span>31633</td>
+<td class="instruction">JP <a href="30222.html#30428">30428</a></td>
+<td class="comment-11" rowspan="1">reset Gimbal-White-Out Safe Flag, redraw current room and return to main game loop</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="31153.html">31153</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#31370">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="31636.html">31636</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Data at 23675</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="23540.html">23540</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#23675">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="23698.html">23698</a></span></td>
+</tr>
+</table>
+<div class="description">23675: Interrupt Routine Flags</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Bitwise flags which determine which things occur upon executing the Interrupt Routine. The bits are as follows:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Bit</th>
+<th colspan="1" rowspan="1">Effect</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Game In Progress Flag</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Characters Movement Unrestricted Flag / Disable In-Game Glow Flag</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Characters Can't Move Flag</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+The Game In Progress Flag is used to determine whether or not to allow loading and saving of games (which can only be done via Gadget X), and also whether or not to move characters and update the game clock.
+</div>
+<div class="paragraph">
+The Characters Movement Unrestricted Flag determines whether or not characters can enter or leave Magic Knight's current room. When this flag is set, characters will be prevented from entering Magic Knight's current room (see <a href="62778.html#62801">62801</a>) and will be allowed to leave Magic Knight's current room (see <a href="62622.html#62663">62663</a>). When the player is controlling Magic Knight (i.e. not in a menu or information window), this flag is reset and the characters in Magic Knight's current room will be unable to move at all. When the player is navigating menus / windows the flag is set.
+</div>
+<div class="paragraph">
+The Disable In-Game Glow Flag is used to control whether or not glowing cells have their attribute updated.
+</div>
+<div class="paragraph">
+Although both the Characters Movement Unrestricted Flag and the Disable In-Game Glow Flag are co-incident, there is no conflict between them. Both are reset when room drawing is finalised (<a href="39393.html#39541">39541</a>), preventing characters from moving when in the same room as Magic Knight while enabling in-game glow. Both are set when a window is drawn (<a href="47193.html#47199">47199</a>), allowing characters to move freely while disabling in-game glow.
+</div>
+<div class="paragraph">
+The Characters Can't Move Flag prevents characters from moving at all.
+</div>
+<div class="paragraph">
+Note: location 23675 (IY+65) is the least significant byte of the UDG System Variable, being used for a different purpose here.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="23675"></span>23675</td>
+<td class="instruction">DEFB 0</td>
+<td class="comment-10" rowspan="1"></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="23540.html">23540</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#23675">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="23698.html">23698</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

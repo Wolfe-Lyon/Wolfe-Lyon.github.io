@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 61521</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="61418.html">61418</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#61521">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="61625.html">61625</a></span></td>
+</tr>
+</table>
+<div class="description">61521: Room Drawing: Advance HL to next Display File address to be drawn to (Apply Horizontal Mirror Flag set)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used when Apply Horizontal Mirror Flag is set
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">A Display File address</td>
+</tr>
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">1 (if returning via <a href="61418.html#61493">61493</a>, drawing complete), otherwise zero</td>
+</tr>
+<tr>
+<td class="register">F</td>
+<td class="register-desc">Zero Flag reset (if returning via <a href="61418.html#61493">61493</a>, drawing complete)</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61521"></span>61521</td>
+<td class="instruction">LD A,(23449)</td>
+<td class="comment-11" rowspan="1">Increase Pixel Row Counter...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61524"></span>61524</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61525"></span>61525</td>
+<td class="instruction">AND 7</td>
+<td class="comment-11" rowspan="1">...and reset to 7 if it falls below zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61527"></span>61527</td>
+<td class="instruction">LD (23449),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61530"></span>61530</td>
+<td class="instruction">CP 7</td>
+<td class="comment-11" rowspan="1">If new value of Pixel Row Counter is 7 (i.e. we have rolled over to a new character block)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61532"></span>61532</td>
+<td class="instruction">JR Z,61537</td>
+<td class="comment-11" rowspan="1">...then advance HL to next character block to be drawn and return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61534"></span>61534</td>
+<td class="instruction">DEC H</td>
+<td class="comment-11" rowspan="1">Decrease Display File address by 256 bytes (i.e. move to next pixel row up)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61535"></span>61535</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set A to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61536"></span>61536</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="61537"></span>
+<div class="comments">
+<div class="paragraph">
+This next section advances HL to next character block to be drawn
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61537"></span>61537</td>
+<td class="instruction">LD A,(23450)</td>
+<td class="comment-11" rowspan="1">Load A with Horizontal and Vertical Mirror Flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61540"></span>61540</td>
+<td class="instruction">AND 1</td>
+<td class="comment-11" rowspan="1">If Apply Vertical Mirror Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61542"></span>61542</td>
+<td class="instruction">JP NZ,61598</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="61521.html#61598">61598</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61545"></span>61545</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61546"></span>61546</td>
+<td class="instruction">LD A,(23444)</td>
+<td class="comment-11" rowspan="1">Load x-coordinate of character block currently being drawn into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61549"></span>61549</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...increase by one...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61550"></span>61550</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...and load into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61551"></span>61551</td>
+<td class="instruction">LD A,(23410)</td>
+<td class="comment-11" rowspan="1">Load (x-coordinate + 1) of right of graphic being drawn into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61554"></span>61554</td>
+<td class="instruction">CP B</td>
+<td class="comment-11" rowspan="1">If both x-coordinates are the same (i.e. we have moved beyond graphic's right edge)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61555"></span>61555</td>
+<td class="instruction">JR Z,61575</td>
+<td class="comment-11" rowspan="1">...then jump to <a href="61521.html#61575">61575</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61557"></span>61557</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1">Store increased x-coordinate at <a href="23441.html#23444">23444</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61558"></span>61558</td>
+<td class="instruction">LD (23444),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61561"></span>61561</td>
+<td class="instruction">LD BC,(23444)</td>
+<td class="comment-11" rowspan="1">Load BC with coordinates of new character block to draw</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61565"></span>61565</td>
+<td class="instruction">CALL <a href="63203.html">63203</a></td>
+<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61568"></span>61568</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-11" rowspan="1">Advance HL down seven pixel rows to bottom of character block...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61570"></span>61570</td>
+<td class="instruction">ADD A,H</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61571"></span>61571</td>
+<td class="instruction">LD H,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61572"></span>61572</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set A to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61573"></span>61573</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61574"></span>61574</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="61575"></span>
+<div class="comments">
+<div class="paragraph">
+This next section advances HL to next character row to be drawn
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61575"></span>61575</td>
+<td class="instruction">LD A,(23408)</td>
+<td class="comment-11" rowspan="1">Load A with x-coordinate of left of graphic to draw...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61578"></span>61578</td>
+<td class="instruction">LD (23444),A</td>
+<td class="comment-11" rowspan="1">...and set current x-coordinate to match</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61581"></span>61581</td>
+<td class="instruction">LD A,(23445)</td>
+<td class="comment-11" rowspan="1">Load current y-coordinate into C, decreasing by one...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61584"></span>61584</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61585"></span>61585</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61586"></span>61586</td>
+<td class="instruction">LD A,(23409)</td>
+<td class="comment-11" rowspan="1">Load y-coordinate of top of graphic being drawn into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61589"></span>61589</td>
+<td class="instruction">CP C</td>
+<td class="comment-11" rowspan="1">If both y-coordinates are the same (i.e. we have moved beyond graphic's top edge)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61590"></span>61590</td>
+<td class="instruction">JR Z,<a href="61418.html#61489">61489</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="61418.html#61489">61489</a> (load A with 1, reset Zero Flag and return)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61592"></span>61592</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Store increased y-coordinate at <a href="23441.html#23445">23445</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61593"></span>61593</td>
+<td class="instruction">LD (23445),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61596"></span>61596</td>
+<td class="instruction">JR 61561</td>
+<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL then return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="61598"></span>
+<div class="comments">
+<div class="paragraph">
+This next section advances HL to next character block to be drawn where the Apply Vertical Mirror Flag is set
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61598"></span>61598</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61599"></span>61599</td>
+<td class="instruction">LD A,(23444)</td>
+<td class="comment-11" rowspan="1">Load x-coordinate of character block currently being drawn into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61602"></span>61602</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...decrease by one...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61603"></span>61603</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...and load into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61604"></span>61604</td>
+<td class="instruction">LD A,(23408)</td>
+<td class="comment-11" rowspan="1">Load x-coordinate of left of graphic being drawn into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61607"></span>61607</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...and decrease by one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61608"></span>61608</td>
+<td class="instruction">CP B</td>
+<td class="comment-11" rowspan="1">If both x-coordinates are the same (i.e. we have moved beyond graphic's left edge)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61609"></span>61609</td>
+<td class="instruction">JR Z,61618</td>
+<td class="comment-11" rowspan="1">...then jump to <a href="61521.html#61618">61618</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61611"></span>61611</td>
+<td class="instruction">LD A,B</td>
+<td class="comment-11" rowspan="1">Store decreased x-coordinate at <a href="23441.html#23444">23444</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61612"></span>61612</td>
+<td class="instruction">LD (23444),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61615"></span>61615</td>
+<td class="instruction">JP 61561</td>
+<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="61618"></span>61618</td>
+<td class="instruction">LD A,(23410)</td>
+<td class="comment-11" rowspan="1">Load x-coordinate of right of graphic being drawn into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61621"></span>61621</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="61622"></span>61622</td>
+<td class="instruction">JP 61578</td>
+<td class="comment-11" rowspan="1">Move current character position down one character row and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="61418.html">61418</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#61521">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="61625.html">61625</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

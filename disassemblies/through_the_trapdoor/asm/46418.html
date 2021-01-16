@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 46418</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46385.html">46385</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46418">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46427.html">46427</a></span></td>
+</tr>
+</table>
+<div class="description">46418: Graphic Layout Routine (255): Load HL with Stored Coordinates from <a href="34279.html#34281">34281</a> and Return from Drawing</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Note that when returning from another block of graphic layout data, the Current Attribute stored at <a href="34256.html#34270">34270</a> (and set in the called block) is not preserved. Upon returning, the Current Attribute value is cleared.
+</div>
+<div class="paragraph">
+The x- and y-coordinates to start drawing next time are loaded into HL from <a href="34279.html#34281">34281</a> by the routines at <a href="46442.html">46442</a> (Graphic Layout Routine 254) or <a href="45965.html">45965</a> (obtained from simple / complex state data).
+</div>
+<div class="paragraph">
+Used by the routine at <a href="45965.html">45965</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">Do Not Recalculate Display Buffer Address Flag (0)</td>
+</tr>
+<tr>
+<td class="register">H</td>
+<td class="register-desc">Current x-coordinate</td>
+</tr>
+<tr>
+<td class="register">L</td>
+<td class="register-desc">Current y-coordinate</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46418"></span>46418</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set Current Attribute to zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46419"></span>46419</td>
+<td class="instruction">LD (34270),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46422"></span>46422</td>
+<td class="instruction">LD HL,(34281)</td>
+<td class="comment-11" rowspan="1">Load HL with base x- and y-coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46425"></span>46425</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Set B to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46426"></span>46426</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46385.html">46385</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46418">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46427.html">46427</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

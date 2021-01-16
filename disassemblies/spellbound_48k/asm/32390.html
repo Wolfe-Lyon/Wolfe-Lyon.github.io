@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 32390</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32258.html">32258</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32390">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32655.html">32655</a></span></td>
+</tr>
+</table>
+<div class="description">32390: Process and Execute Command to Throw an Object</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32390"></span>32390</td>
+<td class="instruction">LD A,(65532)</td>
+<td class="comment-11" rowspan="1">If "Magic Knight Can Throw" flag is not set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32393"></span>32393</td>
+<td class="instruction">BIT 4,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32395"></span>32395</td>
+<td class="instruction">JP Z,<a href="27176.html#27189">27189</a></td>
+<td class="comment-11" rowspan="1">...then jump into Main Game Loop (process keyboard input and move Magic Knight, enter menus or execute other command)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32398"></span>32398</td>
+<td class="instruction">CALL <a href="38075.html">38075</a></td>
+<td class="comment-11" rowspan="1">Play upward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32401"></span>32401</td>
+<td class="instruction">LD A,(23377)</td>
+<td class="comment-11" rowspan="1">Set Gimbal-White-Out Safe Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32404"></span>32404</td>
+<td class="instruction">OR 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32406"></span>32406</td>
+<td class="instruction">LD (23377),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32409"></span>32409</td>
+<td class="instruction">LD IX,25395</td>
+<td class="comment-11" rowspan="1">Point IX at Magic Knight's inventory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32413"></span>32413</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (as 5 inventory slots)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32415"></span>32415</td>
+<td class="instruction">LD HL,50381</td>
+<td class="comment-11" rowspan="1">Point HL at "THROW WHICH OBJECT" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32418"></span>32418</td>
+<td class="instruction">LD DE,50388</td>
+<td class="comment-11" rowspan="1">Point DE at "THROW" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32421"></span>32421</td>
+<td class="instruction">CALL <a href="34914.html">34914</a></td>
+<td class="comment-11" rowspan="1">Show list of objects (window or menu) and handle selection if a menu</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32424"></span>32424</td>
+<td class="instruction">LD HL,25395</td>
+<td class="comment-11" rowspan="1">Point HL at Magic Knight's inventory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32427"></span>32427</td>
+<td class="instruction">CALL <a href="34864.html">34864</a></td>
+<td class="comment-11" rowspan="1">Point DE at name of a selected object in object names table and print in command summary window</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32430"></span>32430</td>
+<td class="instruction">LD DE,50391</td>
+<td class="comment-11" rowspan="1">Point DE at "AT" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32433"></span>32433</td>
+<td class="instruction">CALL <a href="38693.html">38693</a></td>
+<td class="comment-11" rowspan="1">...and print in Command Summary Window at bottom of screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32436"></span>32436</td>
+<td class="instruction">LD HL,44083</td>
+<td class="comment-11" rowspan="1">Point HL at "THROW AN OBJECT AT ?" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32439"></span>32439</td>
+<td class="instruction">LD DE,0</td>
+<td class="comment-11" rowspan="1">Set DE to zero so Command Summary Window is not updated with additional text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32442"></span>32442</td>
+<td class="instruction">CALL <a href="35141.html">35141</a></td>
+<td class="comment-11" rowspan="1">Display and process input for character selection menu (current room's characters only), setting Current Character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32445"></span>32445</td>
+<td class="instruction">CALL <a href="38725.html">38725</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return if Execute chosen, else exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32448"></span>32448</td>
+<td class="instruction">LD A,(30467)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32451"></span>32451</td>
+<td class="instruction">LD E,0</td>
+<td class="comment-11" rowspan="1">Load E with 0 (Weight)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32453"></span>32453</td>
+<td class="instruction">CALL <a href="34160.html">34160</a></td>
+<td class="comment-11" rowspan="1">Point HL to weight of object A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32456"></span>32456</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Copy HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32457"></span>32457</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">...into IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32459"></span>32459</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load A with object's weight</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32462"></span>32462</td>
+<td class="instruction">CP 12</td>
+<td class="comment-11" rowspan="1">If object has weight greater than 12...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32464"></span>32464</td>
+<td class="instruction">JP NC,32643</td>
+<td class="comment-11" rowspan="1">...then kill Magic Knight and end game</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32467"></span>32467</td>
+<td class="instruction">BIT 4,(IX+4)</td>
+<td class="comment-11" rowspan="1">If bit 4 (object is lethal if thrown) of object's use status is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32471"></span>32471</td>
+<td class="instruction">JP NZ,32649</td>
+<td class="comment-11" rowspan="1">...then kill the character who object was thrown at and end game</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32474"></span>32474</td>
+<td class="instruction">BIT 5,(IX+4)</td>
+<td class="comment-11" rowspan="1">If bit 5 (object is a crystal) of object's use status is not set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32478"></span>32478</td>
+<td class="instruction">JR Z,32487</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32390.html#32487">32487</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32480"></span>32480</td>
+<td class="instruction">LD A,(30615)</td>
+<td class="comment-11" rowspan="1">If target of throw is Gimbal...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32483"></span>32483</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32484"></span>32484</td>
+<td class="instruction">JP Z,32555</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32390.html#32555">32555</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32487"></span>32487</td>
+<td class="instruction">LD A,(30467)</td>
+<td class="comment-11" rowspan="1">If object thrown is not the Glowing Bottle...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32490"></span>32490</td>
+<td class="instruction">CP 16</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32492"></span>32492</td>
+<td class="instruction">JP NZ,32499</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32390.html#32499">32499</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32495"></span>32495</td>
+<td class="instruction">CALL <a href="30540.html">30540</a></td>
+<td class="comment-11" rowspan="1">Remove Glowing Bottle from Magic Knight's inventory, smash it and release Banshee</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32498"></span>32498</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Load index of Broken Glass into A (Current Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32499"></span>32499</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load index of Current Object into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32500"></span>32500</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (C=Current Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32501"></span>32501</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32503"></span>32503</td>
+<td class="instruction">LD HL,25395</td>
+<td class="comment-11" rowspan="1">Point HL at Magic Knight's inventory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32506"></span>32506</td>
+<td class="instruction">CALL <a href="38674.html">38674</a></td>
+<td class="comment-11" rowspan="1">Remove object C from Magic Knight's inventory (and tidy up remainder of slots)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32509"></span>32509</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (C=Current Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32510"></span>32510</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Copy index of Current Object into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32511"></span>32511</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...and multiply by three...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32512"></span>32512</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32513"></span>32513</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Transfer into BC...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32514"></span>32514</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32516"></span>32516</td>
+<td class="instruction">LD HL,25464</td>
+<td class="comment-11" rowspan="1">Point HL to Objects' Current Positions Table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32519"></span>32519</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Add three times Current Object's index as offset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32520"></span>32520</td>
+<td class="instruction">LD A,(65529)</td>
+<td class="comment-11" rowspan="1">Set object's room to be Magic Knight's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32523"></span>32523</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32524"></span>32524</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to object's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32525"></span>32525</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32526"></span>32526</td>
+<td class="instruction">LD A,(30615)</td>
+<td class="comment-11" rowspan="1">Load BC with three times index of character who was target of throw...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32529"></span>32529</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32530"></span>32530</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32531"></span>32531</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32532"></span>32532</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32534"></span>32534</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32535"></span>32535</td>
+<td class="instruction">LD HL,25441</td>
+<td class="comment-11" rowspan="1">Point HL at x-coordinate of first entry in characters' current positions table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32538"></span>32538</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Add BC (three times character index) as offset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32539"></span>32539</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Swap DE (now pointer to Current Character's x-coordinate) and HL (now undefined)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32540"></span>32540</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (pointer to object's x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32541"></span>32541</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">Copy character's x-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32542"></span>32542</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...into object's x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32543"></span>32543</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance to character's y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32544"></span>32544</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance to object's y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32545"></span>32545</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">Copy character's y-coordinate plus three...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32546"></span>32546</td>
+<td class="instruction">ADD A,3</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32548"></span>32548</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...into object's y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32549"></span>32549</td>
+<td class="instruction">CALL <a href="35495.html">35495</a></td>
+<td class="comment-11" rowspan="1">Set Magic Knight's available action flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32552"></span>32552</td>
+<td class="instruction">JP <a href="34724.html">34724</a></td>
+<td class="comment-11" rowspan="1">Display "THE [OBJECT] LANDED ON THE FLOOR BY [CHARACTER]" window and return to game</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32555"></span>32555</td>
+<td class="instruction">LD A,(23378)</td>
+<td class="comment-11" rowspan="1">If "Crystallium Spectralis cast" score flag is not set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32558"></span>32558</td>
+<td class="instruction">AND 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32560"></span>32560</td>
+<td class="instruction">JP Z,<a href="34700.html">34700</a></td>
+<td class="comment-11" rowspan="1">...then display "YOU HEAR A SHORT-RANGE TELEPATHIC WHISPER..." message and return to game</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32563"></span>32563</td>
+<td class="instruction">LD A,(30467)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32566"></span>32566</td>
+<td class="instruction">LD B,223</td>
+<td class="comment-11" rowspan="1">Set Blue and Red Crystal Flags, reset Green Crystal Flag in mask</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32568"></span>32568</td>
+<td class="instruction">CP 21</td>
+<td class="comment-11" rowspan="1">If object is the Green Crystal...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32570"></span>32570</td>
+<td class="instruction">JR Z,32580</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32390.html#32580">32580</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32572"></span>32572</td>
+<td class="instruction">LD B,239</td>
+<td class="comment-11" rowspan="1">Set Green and Blue Crystal Flags, reset Red Crystal Flag in mask</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32574"></span>32574</td>
+<td class="instruction">CP 23</td>
+<td class="comment-11" rowspan="1">If object is the Red Crystal...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32576"></span>32576</td>
+<td class="instruction">JR Z,32580</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="32390.html#32580">32580</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32578"></span>32578</td>
+<td class="instruction">LD B,247</td>
+<td class="comment-11" rowspan="1">Set Green and Red Crystal Flags, reset Blue Crystal Flag in mask</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32580"></span>32580</td>
+<td class="instruction">LD A,(29939)</td>
+<td class="comment-11" rowspan="1">Load Gimbal's current attribute into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32583"></span>32583</td>
+<td class="instruction">AND B</td>
+<td class="comment-11" rowspan="1">...apply mask...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32584"></span>32584</td>
+<td class="instruction">LD (29939),A</td>
+<td class="comment-11" rowspan="1">...and store again</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32587"></span>32587</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF (A=Gimbal's current attribute)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32588"></span>32588</td>
+<td class="instruction">LD A,(30467)</td>
+<td class="comment-11" rowspan="1">Load C with index of Current Object...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32591"></span>32591</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32592"></span>32592</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 as there are 5 inventory slots</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32594"></span>32594</td>
+<td class="instruction">LD HL,25395</td>
+<td class="comment-11" rowspan="1">Point HL at Magic Knight's inventory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32597"></span>32597</td>
+<td class="instruction">CALL <a href="38674.html">38674</a></td>
+<td class="comment-11" rowspan="1">Remove Current Object from Magic Knight's inventory and tidy up slots</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32600"></span>32600</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF (A=current R, G and B Crystal Flags)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32601"></span>32601</td>
+<td class="instruction">CP 71</td>
+<td class="comment-11" rowspan="1">If R, G and B PAPER bits of Gimbal's attribute are not all reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32603"></span>32603</td>
+<td class="instruction">JR NZ,32624</td>
+<td class="comment-11" rowspan="1">...skip ahead to <a href="32390.html#32624">32624</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32605"></span>32605</td>
+<td class="instruction">LD A,(23468)</td>
+<td class="comment-11" rowspan="1">Set Gimbal is Free game progress flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32608"></span>32608</td>
+<td class="instruction">OR 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32610"></span>32610</td>
+<td class="instruction">LD (23468),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32613"></span>32613</td>
+<td class="instruction">LD A,11</td>
+<td class="comment-11" rowspan="1">Set Gimbal's "Examine Character" descriptive text to...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32615"></span>32615</td>
+<td class="instruction">LD (25330),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32618"></span>32618</td>
+<td class="instruction">CALL <a href="33278.html">33278</a></td>
+<td class="comment-11" rowspan="1">Flash border and screen (as in cast a spell)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32621"></span>32621</td>
+<td class="instruction">JP <a href="34646.html">34646</a></td>
+<td class="comment-11" rowspan="1">Display "SUCCESS! GIMBAL IS FREE AT LAST!" window and return to game</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32624"></span>32624</td>
+<td class="instruction">CALL <a href="33278.html">33278</a></td>
+<td class="comment-11" rowspan="1">Flash border and screen (as in cast a spell)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32627"></span>32627</td>
+<td class="instruction">LD A,(30467)</td>
+<td class="comment-11" rowspan="1">Load A with index of Current Object</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32630"></span>32630</td>
+<td class="instruction">CP 22</td>
+<td class="comment-11" rowspan="1">If object is the Blue Crystal...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32632"></span>32632</td>
+<td class="instruction">JP Z,<a href="34706.html">34706</a></td>
+<td class="comment-11" rowspan="1">...then display "THE BLUE CRYSTAL FLEW AT GIMBAL AND BURST..." window and return to game</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32635"></span>32635</td>
+<td class="instruction">CP 23</td>
+<td class="comment-11" rowspan="1">If object is the Red Crystal...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32637"></span>32637</td>
+<td class="instruction">JP Z,<a href="34712.html">34712</a></td>
+<td class="comment-11" rowspan="1">...then display "THE RED CRYSTAL FLEW STRAIGHT AT GIMBAL AND TURNED INTO A GAS..." window and return to game</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32640"></span>32640</td>
+<td class="instruction">JP <a href="34718.html">34718</a></td>
+<td class="comment-11" rowspan="1">Display "THE GREEN CRYSTAL FLEW AT GIMBAL AND SUCKED..." window and return to game</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32643"></span>32643</td>
+<td class="instruction">LD HL,43504</td>
+<td class="comment-11" rowspan="1">Point HL at "YOU KILLED YOURSELF TRYING TO THROW SOMETHING AT [CHARACTER]" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32646"></span>32646</td>
+<td class="instruction">JP <a href="35101.html">35101</a></td>
+<td class="comment-11" rowspan="1">Jump to "Game over" window routine and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="32649"></span>32649</td>
+<td class="instruction">LD HL,43539</td>
+<td class="comment-11" rowspan="1">Point HL at "YOU THREW SOMETHING AND KILLED [CHARACTER]" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="32652"></span>32652</td>
+<td class="instruction">JP <a href="35101.html">35101</a></td>
+<td class="comment-11" rowspan="1">Jump to "Game over" window routine and exit</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="32258.html">32258</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#32390">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="32655.html">32655</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 62317</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62310.html">62310</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#62317">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="62330.html">62330</a></span></td>
+</tr>
+</table>
+<div class="description">62317: Interrupt Routine: Update Glowing Blocks' Attribute to Next Colour in Sequence</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="62178.html">62178</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">E</td>
+<td class="register-desc">New attribute of glowing blocks</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62317"></span>62317</td>
+<td class="instruction">LD A,(23462)</td>
+<td class="comment-11" rowspan="1">Load A with current INK colour of glowing blocks</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62320"></span>62320</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Advance to next colour in sequence</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62321"></span>62321</td>
+<td class="instruction">AND 7</td>
+<td class="comment-11" rowspan="1">Ensure that only INK attributes are used, rolling back over to zero (black) after seven (white)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62323"></span>62323</td>
+<td class="instruction">JR Z,62320</td>
+<td class="comment-11" rowspan="1">We don't want "black" light, so advance from zero (black) to one (blue) if black</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62325"></span>62325</td>
+<td class="instruction">LD (23462),A</td>
+<td class="comment-11" rowspan="1">Place updated attribute back in memory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62328"></span>62328</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">Copy new attribute into E</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62329"></span>62329</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62310.html">62310</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#62317">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="62330.html">62330</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

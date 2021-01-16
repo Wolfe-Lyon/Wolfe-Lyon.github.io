@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 30123</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="30001.html">30001</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30123">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30145.html">30145</a></span></td>
+</tr>
+</table>
+<div class="description">30123: Print Currently Available Additional In-Game Menu Command Options</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="30001.html">30001</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Available In-Game Menu Command Flags (part 1 or part 2)</td>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Points to <a href="38685.html#38734">38734</a> if dealing with Flags part 1. Points to <a href="38685.html#38777">38777</a> if dealing with Flags part 2.</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="30123"></span>30123</td>
+<td class="instruction">LD B,8</td>
+<td class="comment-11" rowspan="1">Load B with 8 (as there are 8 flags)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="30125"></span>30125</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = remaining number of flags to process)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30126"></span>30126</td>
+<td class="instruction">RRCA</td>
+<td class="comment-11" rowspan="1">Rotate least significant bit of A (i.e. current flag) into Carry Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30127"></span>30127</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF (current flag in Carry and remaining flags in A)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30128"></span>30128</td>
+<td class="instruction">CALL <a href="54242.html">54242</a></td>
+<td class="comment-11" rowspan="1">Advance HL to byte after first zero from address in HL onwards</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30131"></span>30131</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF (current flag in Carry and remaining flags in A)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30132"></span>30132</td>
+<td class="instruction">JR NC,30141</td>
+<td class="comment-11" rowspan="1">If current flag is reset then skip ahead to <a href="30123.html#30141">30141</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30134"></span>30134</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (current position in Additional Menu Items texts)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30135"></span>30135</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF (current flag in Carry and remaining flags in A)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30136"></span>30136</td>
+<td class="instruction">CALL <a href="34762.html">34762</a></td>
+<td class="comment-11" rowspan="1">Print text at HL (current additional menu item)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30139"></span>30139</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF (current flag in Carry and remaining flags in A)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30140"></span>30140</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (current position in Additional Menu Items texts)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="30141"></span>30141</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = remaining number of flags to process)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30142"></span>30142</td>
+<td class="instruction">DJNZ 30125</td>
+<td class="comment-11" rowspan="1">Decrease B and loop back to <a href="30123.html#30125">30125</a> for next flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="30144"></span>30144</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="30001.html">30001</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#30123">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="30145.html">30145</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

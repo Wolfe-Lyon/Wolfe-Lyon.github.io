@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 48388</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="48382.html">48382</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#48388">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="48417.html">48417</a></span></td>
+</tr>
+</table>
+<div class="description">48388: Decrease Remaining Time for Current Power and if Zero, Exit Calling Routine and Run Script Data for Removal of Power</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="35689.html">35689</a>, <a href="36542.html">36542</a> and <a href="48487.html">48487</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="48388"></span>48388</td>
+<td class="instruction">LD DE,(34224)</td>
+<td class="comment-11" rowspan="1">Load remaining power time into DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48392"></span>48392</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">Increase E (number of game-cycles power has been in use in current block)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48393"></span>48393</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48394"></span>48394</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48395"></span>48395</td>
+<td class="instruction">CP 15</td>
+<td class="comment-11" rowspan="1">If 16 game-cycles of power use have not yet elapsed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48397"></span>48397</td>
+<td class="instruction">JR NZ,48402</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="48388.html#48402">48402</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48399"></span>48399</td>
+<td class="instruction">LD E,0</td>
+<td class="comment-11" rowspan="1">Reset number of game-cycles power has been in use to zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48401"></span>48401</td>
+<td class="instruction">DEC D</td>
+<td class="comment-11" rowspan="1">...and decrease remaining number of 16-game-cycles</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="48402"></span>48402</td>
+<td class="instruction">LD (34224),DE</td>
+<td class="comment-11" rowspan="1">Store updated remaining power time...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48406"></span>48406</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...and return if this is not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48407"></span>48407</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Remove top value from stack (i.e. return address to routine that called this routine)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48408"></span>48408</td>
+<td class="instruction">CALL <a href="48417.html">48417</a></td>
+<td class="comment-11" rowspan="1">Remove Berk's current power and reset sweet / mushroom / edible eyes / sausage to its original position</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48411"></span>48411</td>
+<td class="instruction">LD HL,35275</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Berk's power expiring...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48414"></span>48414</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="48382.html">48382</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#48388">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="48417.html">48417</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

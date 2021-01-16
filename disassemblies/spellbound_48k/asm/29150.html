@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 29150</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="29089.html">29089</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#29150">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="29184.html">29184</a></span></td>
+</tr>
+</table>
+<div class="description">29150: Room Drawing: Draw Goblet Picture or Character Portrait and Corresponding Picture Frame</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Draw Goblet Picture or Character Portrait and Corresponding Picture Frame
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">y-coordinate of picture</td>
+</tr>
+<tr>
+<td class="register">C</td>
+<td class="register-desc">x-coordinate of picture</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="29150"></span>29150</td>
+<td class="instruction">CALL <a href="29441.html">29441</a></td>
+<td class="comment-11" rowspan="1">Read two bytes AFTER HL position into BC, advancing HL before both reads</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29153"></span>29153</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Read index of graphic to draw into D...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29154"></span>29154</td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29155"></span>29155</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Read attribute for this graphic into E...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29156"></span>29156</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29157"></span>29157</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29158"></span>29158</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (x- and y-coordinates of top left)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29159"></span>29159</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Store DE (index of graphic in graphic lookup table to draw in window is in D)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29160"></span>29160</td>
+<td class="instruction">CALL <a href="36919.html">36919</a></td>
+<td class="comment-11" rowspan="1">Draw window frame for character portraits (2nd floor) and Goblet Picture in Florin's Room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29163"></span>29163</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Restore DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29164"></span>29164</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29165"></span>29165</td>
+<td class="instruction">INC B</td>
+<td class="comment-11" rowspan="1">Increase y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29166"></span>29166</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Increase x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29167"></span>29167</td>
+<td class="instruction">LD A,E</td>
+<td class="comment-11" rowspan="1">Load system variable ATTR T with attribute for graphic to be drawn...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29168"></span>29168</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29171"></span>29171</td>
+<td class="instruction">LD A,64</td>
+<td class="comment-11" rowspan="1">Set current Terrain Interaction Parameter to "preserve attribute"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29173"></span>29173</td>
+<td class="instruction">LD (23483),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29176"></span>29176</td>
+<td class="instruction">LD A,D</td>
+<td class="comment-11" rowspan="1">Draw graphic (e.g. the Goblet in Florin's Room's picture, or a character for their portrait on 2nd Floor)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29177"></span>29177</td>
+<td class="instruction">CALL <a href="29960.html">29960</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29180"></span>29180</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="29181"></span>29181</td>
+<td class="instruction">JP <a href="27865.html#28060">28060</a></td>
+<td class="comment-11" rowspan="1">Return to room drawing routine and process next data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="29089.html">29089</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#29150">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="29184.html">29184</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

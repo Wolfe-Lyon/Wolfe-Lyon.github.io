@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Bugs</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Bugs">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Bugs</td>
+</tr>
+</table>
+<ul class="contents">
+<li><a href="#offsetcandleglow">Offset Candle Glow</a></li>
+<li><a href="#thereisnothinginthisroom">"THERE IS NOTHING IN THIS ROOM" Message Never Shown</a></li>
+<li><a href="#lightinthedark">Light In The Dark</a></li>
+<li><a href="#wandofcommandattributes">Wand of Command Attributes</a></li>
+<li><a href="#magictalismanattributes">Magic Talisman Attributes</a></li>
+<li><a href="#goldgobletattributes">Gold Goblet Attributes</a></li>
+<li><a href="#thewallroomlayout">Doing A Lot More Than Breaking A Wall!</a></li>
+<li><a href="#mkbeforepuffofsmoke">Appearing BEFORE a Thick Puff Of Smoke!</a></li>
+<li><a href="#thorwants">What Does Thor Want?</a></li>
+<li><a href="#undergroundblock">A Block Too Far</a></li>
+<li><a href="#teleportpadexploit">You Can Teleport Anywhere!</a></li>
+<li><a href="#tootiredtohelp">Missing Text End Marker</a></li>
+<li><a href="#removefastblowfuse">Fast Blow Fuse Removed From Wrong Character</a></li>
+<li><a href="#duplicateinstructions">Jump Twice</a></li>
+<li><a href="#elrandhelpflag">Always Ready to Help!</a></li>
+<li><a href="#characterroomcheck">Which Room Am I In?</a></li>
+<li><a href="#magicknightjumpframe">Inconsistent Frame Rendering</a></li>
+<li><a href="#invertedstarmovementinstruction">Starfield Rendering</a></li>
+<li><a href="#illegalterraininteractionparameter">Invalid Terrain Interaction Parameters</a></li>
+<li><a href="#deathbydarkissues">A Powerful Source of Light</a></li>
+<li><a href="#undergroundblock">A Block Too Far Part II</a></li>
+<li><a href="#unnecessaryinstruction">An Unnecessary Instruction</a></li>
+<li><a href="#trappedinawall">Trapped in a Wall</a></li>
+<li><a href="#spelling">Spelling Errors</a></li>
+<li><a href="#graphicissues">Graphic Issue</a></li>
+<li><a href="#missingquote">Missing Closing Quote</a></li>
+</ul>
+<div><span id="offsetcandleglow"></span></div>
+<div class="box box-1">
+<div class="box-title">Offset Candle Glow</div>
+<div class="paragraph">
+On left-facing wall-mounted candles, the "candle flame glow" character blocks (with cycling attributes) don't span the entirety of the flame part of the
+graphic bitmap. The image below highlights the two character blocks that are assigned as "glowing"; there is a single pixel column in the flame bitmap
+that lies to the left of this, and therefore never glows:
+</div>
+<div class="paragraph">
+<img src="../images/bugs/offsetCandleGlow-1-before.png" />
+</div>
+<div class="paragraph">
+The reason for this is that after the first (right-most) flame character block is assigned as glowing, the instruction at <a href="../asm/28747.html#28803">28803</a> increases the address
+in HL (i.e. advances right by one character block into empty space). An empty (i.e. all bitmap bits reset) character block is then assigned as glowing
+but there are no set bits for the glow effect to influence.
+</div>
+<div class="paragraph">
+In order to fix this bug, it is necessary to ensure that after assigning the right-most character block of the flame bitmap as glowing, HL is DECREASED
+(i.e. moved LEFT by one character block). That way, the character block to the left, which contains a very noticeable single column of set pixels, will
+glow in sync with the rest of the flame. The fix involves updating the instruction at <a href="../asm/28747.html#28803">28803</a> from INC HL to DEC HL, i.e.:<br />
+POKE <a href="../asm/28747.html#28803">28803</a>,43
+</div>
+<div class="paragraph">
+<img src="../images/bugs/offsetCandleGlow-2-after.png" />
+</div>
+</div>
+<div><span id="thereisnothinginthisroom"></span></div>
+<div class="box box-2">
+<div class="box-title">"THERE IS NOTHING IN THIS ROOM" Message Never Shown</div>
+<div class="paragraph">
+In the routine at <a href="../asm/30222.html">30222</a> that processes Magic Knight's "PICK UP OBJECT" command, the section of code starting at <a href="../asm/30222.html#30234">30234</a> is intended to count the
+number of objects present in Magic Knight's current room. This count of objects is accumulated in the C register, and after the total (copied into A) is
+compared with zero at <a href="../asm/30222.html#30259">30259</a>, a conditional jump occurs to <a href="../asm/34436.html">34436</a> to display the "THERE IS NOTHING IN THIS ROOM" message window should the total be
+zero. Unfortunately this does not work as intended because the C register is not initialised to zero at the beginning of the count. The instruction at
+<a href="../asm/30222.html#30238">30238</a> actually initialises C to 128, so the count can never equal zero. Additionally, this same instruction should initialise B (the number of objects
+to check to determine whether they are in Magic Knight's current room) to 50 as there are 50 objects in the game; instead B is initialised to 12. So as
+it stands, this routine only counts the number of objects among the first 12 that are in Magic Knight's current room, and adds this total to 128.
+Therefore it is clearly impossible for the count to hold any value outside the range 128 - 140 (i.e. it is never zero), so the "THERE IS NOTHING IN THIS
+ROOM" message is never shown. Instead, the "THERE IS NOTHING NEAR ENOUGH" message is shown:
+</div>
+<div class="paragraph">
+<img src="../images/bugs/thereisnothinginthisroom-1-before.png" />
+</div>
+<div class="paragraph">
+To fix, and ensure that B and C are initialised to 50 and 0 respectively:<br />
+POKE <a href="../asm/30222.html#30238">30239</a>,0
+POKE <a href="../asm/30222.html#30238">30240</a>,50
+</div>
+<div class="paragraph">
+<img src="../images/bugs/thereisnothinginthisroom-2-after.png" />
+</div>
+<div class="paragraph">
+<em>This bug is also present in Knight Tyme</em>
+</div>
+</div>
+<div><span id="lightinthedark"></span></div>
+<div class="box box-1">
+<div class="box-title">Light In The Dark</div>
+<div class="paragraph">
+There are two rooms in the game, The Little Bottle and The Big Bottle, where the "lights" are turned out, yet both have ceiling candles that are clearly
+alight and glowing:
+</div>
+<div class="paragraph">
+<img src="../images/bugs/lightinthedark-1-before.png" />
+</div>
+<div class="paragraph">
+To remove these ceiling candles, the room layout data for the two rooms can be modified. Fortunately in both cases, the instructions to display the
+ceiling candles are near the end of the layout data, so the fix requires relatively few POKEs:
+</div>
+<div class="paragraph">
+The Little Bottle (<a href="../asm/52869.html">52869</a>):<br />
+POKE <a href="../asm/52869.html#52896">52896</a>,230 (to bring instruction from <a href="../asm/52869.html#52902">52902</a> forward)<br />
+POKE <a href="../asm/52869.html#52896">52897</a>,0 (to bring End Marker from <a href="../asm/52869.html#52903">52903</a> forward)
+</div>
+<div class="paragraph">
+The Big Bottle (<a href="../asm/52709.html">52709</a>):<br />
+POKE <a href="../asm/52709.html#52736">52736</a>,230 (to bring instruction from <a href="../asm/52709.html#52742">52742</a> forward)<br />
+POKE <a href="../asm/52709.html#52736">52737</a>,0 (to bring End Marker from <a href="../asm/52709.html#52743">52743</a> forward)
+</div>
+<div class="paragraph">
+In each room's case, doing this will bring the room's layout data end marker forward several bytes, and will leave some former room layout data bytes
+redundant. This should not impact the game's operation, however. Unfortunately the sixth room on the 1st Floor uses the same room layout data as the Big
+Bottle, so it too will lose its ceiling candles as a result of this fix.
+</div>
+<div class="paragraph">
+<img src="../images/bugs/lightinthedark-2-after.png" />
+</div>
+</div>
+<div><span id="wandofcommandattributes"></span></div>
+<div class="box box-2">
+<div class="box-title">Wand of Command Attributes</div>
+<div class="paragraph">
+When Magic Knight walks past the Wand of Command, the "sparklies" at its top-left corner acquire his attribute:
+</div>
+<div class="paragraph">
+<img src="../images/bugs/wandofcommandattributes-1-before.png" />
+</div>
+<div class="paragraph">
+This occurs because the "Preserve Attribute" flag is not set for the top-left character block of the Wand of Command in its graphics lookup table entry.
+The terrain interaction flag value that is set at <a href="../asm/42642.html#42750">42751</a> is 17, which corresponds to preserving attribute on the top-right and bottom-right
+character blocks. In reality, the Wand of Command (unlike the Bottle and Engraved Candle which correctly have a value of 17 here) spans all four
+character blocks. This being the case, all four character blocks should have their attribute preserved. Of course, it is entirely possible that this was
+intentional, perhaps to show Magic Knight exerting some kind of magical influence over the wand as he walks by! To fix:<br />
+POKE <a href="../asm/42642.html#42750">42751</a>,85
+</div>
+<div class="paragraph">
+<img src="../images/bugs/wandofcommandattributes-2-after.png" />
+</div>
+</div>
+<div><span id="magictalismanattributes"></span></div>
+<div class="box box-1">
+<div class="box-title">Magic Talisman Attributes</div>
+<div class="paragraph">
+The Magic Talisman is afflicted with exactly the same issue. It spans all four character blocks, however its Terrain Interaction Parameter (17)
+preserves only the attribute on the two rightmost character blocks. To fix:<br />
+POKE <a href="../asm/42642.html#42766">42767</a>,85
+</div>
+</div>
+<div><span id="goldgobletattributes"></span></div>
+<div class="box box-2">
+<div class="box-title">Gold Goblet Attributes</div>
+<div class="paragraph">
+As in the previous two bugs, the Gold Goblet also has incorrectly set terrain interaction flags, but in a complementary fashion to the previous two
+bugs:
+</div>
+<div class="paragraph">
+<img src="../images/bugs/goldgobletattributes-1-before.png" />
+</div>
+<div class="paragraph">
+The Goblet is only one character wide (or at least the set bits in the graphic data at <a href="../asm/62068.html#62292">62292</a> are confined entirely to the two rightmost character
+blocks). This being the case, the goblet should have a value of 17 for its terrain interaction flags (like the Bottle and Engraved Candle which also
+reside solely in the rightmost character blocks of the 2x2 graphic data). The actual value for the Goblet, however, is 85, which preserves the
+attributes on all four character blocks. The effect of this can be seen as Magic Knight walks into the space occupied by the Goblet's leftmost character
+blocks and which appear empty, yet he is affected by the Goblet's attribute. To fix:<br />
+POKE <a href="../asm/42642.html#42770">42771</a>,17
+</div>
+<div class="paragraph">
+<img src="../images/bugs/goldgobletattributes-2-after.png" />
+</div>
+</div>
+<div><span id="thewallroomlayout"></span></div>
+<div class="box box-1">
+<div class="box-title">Doing A Lot More Than Breaking A Wall!</div>
+<div class="paragraph">
+Initially, the left half of The Wall is quite featureless:
+</div>
+<div class="paragraph">
+<img src="../images/bugs/thewallroomlayout-0-initial.png" />
+</div>
+<div class="paragraph">
+After Elrand helps, not only is the Wall broken, but two portraits appear from nowhere on the left side of the room!
+</div>
+<div class="paragraph">
+<img src="../images/bugs/thewallroomlayout-1-before.png" />
+</div>
+<div class="paragraph">
+These portraits of Florin and Banshee are also present in the room immediately to the left of The Wall, and should not appear twice. In order to fix
+this, the room layout data for the post-Elrand-helping version of The Wall needs to be modified to eliminate the instructions responsible for displaying
+the portraits at <a href="../asm/53317.html#53345">53345</a> and <a href="../asm/53317.html#53350">53350</a>:<br />
+POKE <a href="../asm/53317.html#53345">53345</a>,0 (to bring End Marker from <a href="../asm/53317.html#53355">53355</a> forward)
+</div>
+<div class="paragraph">
+<img src="../images/bugs/thewallroomlayout-2-after.png" />
+</div>
+</div>
+<div><span id="mkbeforepuffofsmoke"></span></div>
+<div class="box box-2">
+<div class="box-title">Appearing BEFORE a Thick Puff Of Smoke!</div>
+<div class="paragraph">
+When the "Animate Magic Knight's Puff of Smoke Appearance on Next Room Redraw" Flag (<a href="../asm/23505.html">23505</a>) is set, Magic Knight is drawn (very) briefly before being
+replaced by the first frame of the Puff of Smoke animation. This occurs as part of the routine at <a href="../asm/28092.html">28092</a>. While it is possible to fix this by removing
+the instruction at <a href="../asm/28092.html#28148">28148</a> that draws Magic Knight before animating the Puff of Smoke, this routine is also used to facilitate other characters'
+appearances. Removing this instruction will therefore cause Magic Knight to disappear during another character's entry, only appearing once the entering
+character appears.
+</div>
+<div class="paragraph">
+To fix one thing and break another:<br />
+POKE <a href="../asm/28092.html#28148">28148</a>,0<br />
+POKE <a href="../asm/28092.html#28148">28149</a>,0<br />
+POKE <a href="../asm/28092.html#28148">28150</a>,0
+</div>
+</div>
+<div><span id="thorwants"></span></div>
+<div class="box box-1">
+<div class="box-title">What Does Thor Want?</div>
+<div class="paragraph">
+There's an error in the text at <a href="../asm/46116.html#46183">46183</a>. It reads "THOR WANT'S HIS HAMMER BACK" (note the apostrophe). Obviously this should be "THOR WANTS HIS HAMMER
+BACK".
+</div>
+</div>
+<div><span id="undergroundblock"></span></div>
+<div class="box box-2">
+<div class="box-title">A Block Too Far</div>
+<div class="paragraph">
+In the rightmost room on the 3rd floor (More Plant Room), you may have noticed a brief flicker towards the lower right of the screen. The reason for
+this is that, when drawing the ledge that Magic Knight must use to reach the upper part of the room, the drawing routine goes too far down:
+</div>
+<div class="paragraph">
+<img src="../images/bugs/undergroundblock-1-before.png" />
+</div>
+<div class="paragraph">
+This is caused by the Room Layout Data "instruction" at <a href="../asm/53100.html#53119">53119</a> which has nine 2x2 blocks of brickwork drawn, one below the other, when only two are
+needed. The third block of these nine, which appears at floor-level and extends below, does not persist as the in-game window at the bottom of the
+screen immediately overwrites it. Because at this point the room drawing routine is in Vertical Brickwork Direction Mode thanks to the instruction at
+<a href="../asm/53100.html#53115">53115</a>, the Room Drawing "Cursor" wraps around from bottom to top, so the remaining six blocks are actually superimposed upon the room's right-hand
+wall. This can be fixed by changing the room layout data to define a column of blocks of length 2, rather than 9:<br />
+POKE <a href="../asm/53100.html#53119">53119</a>,2
+</div>
+</div>
+<div><span id="teleportpadexploit"></span></div>
+<div class="box box-1">
+<div class="box-title">You Can Teleport Anywhere!</div>
+<div class="paragraph">
+Many years ago I discovered an interesting teleport-related exploit that could be used to gain access to certain areas of the game earlier than intended
+(i.e. right of The Tower, and The Wall). The trick is simple; holding the Teleport Pad and Key, walk right up to a wall that you want to get past, then
+drop the Teleport Pad. You will notice that the Teleport Pad's cyan / white attribute will override the attribute of the wall. At this stage, teleport,
+and you will materialise partly within the wall, and the cyan / white attribute will extend to Magic Knight's full height. At this stage, it is possible
+to walk further into the wall, pick up the Teleport Pad and repeat the process a second time. This time the entire width of the wall will be cyan /
+white, allowing Magic Knight free passage to the other side!
+</div>
+</div>
+<div><span id="tootiredtohelp"></span></div>
+<div class="box box-2">
+<div class="box-title">Missing Text End Marker</div>
+<div class="paragraph">
+An end marker is missing from the "[CHARACTER] IS TOO TIRED TO HELP YOU" text at <a href="../asm/46402.html#46712">46712</a>. As a result, the following string, "[CHARACTER] HAS NO FOOD
+LEFT" at <a href="../asm/46402.html#46718">46718</a> is interpreted as part of the same text and is concatenated onto the end of the message.
+</div>
+<div class="paragraph">
+<img src="../images/bugs/tootirednofoodleft-1-before.png" />
+</div>
+</div>
+<div><span id="removefastblowfuse"></span></div>
+<div class="box box-1">
+<div class="box-title">Fast Blow Fuse Removed From Wrong Character</div>
+<div class="paragraph">
+When Rosmar helps at the Secret Tunnel Entrance by placing the Fast Blow Fuse into the Pocket Laser, the former should be removed from her inventory.
+Unfortunately the instructions responsible for this try to remove it from Banshee's inventory instead. As a result, Rosmar is still holding the Fuse
+after helping.
+</div>
+<div class="paragraph">
+The instruction at <a href="../asm/34062.html#34092">34092</a> points HL at <a href="../asm/25395.html#25435">25435</a> (Banshee's inventory) rather than <a href="../asm/25395.html#25430">25430</a> (Rosmar's inventory). To fix:<br />
+POKE <a href="../asm/34062.html#34092">34093</a>,86<br />
+POKE <a href="../asm/34062.html#34092">34094</a>,99
+</div>
+</div>
+<div><span id="duplicateinstructions"></span></div>
+<div class="box box-2">
+<div class="box-title">Jump Twice</div>
+<div class="paragraph">
+The two consecutive instructions at <a href="../asm/30880.html#31032">31032</a> and <a href="../asm/30880.html#31035">31035</a> are jumps and they are identical to one another. Not really a bug as such but it does seem
+strange. This occurs a few times in the routine at <a href="../asm/30880.html">30880</a>.
+</div>
+</div>
+<div><span id="elrandhelpflag"></span></div>
+<div class="box box-1">
+<div class="box-title">Always Ready to Help!</div>
+<div class="paragraph">
+Elrand's "Can Help" flag is set when being given an object, regardless of which object it is. This should only happen when he is given the trumpet. This
+is caused by a missing JP NZ instruction between <a href="../asm/30880.html#31098">31098</a> and <a href="../asm/30880.html#31100">31100</a> to skip over the instructions that set his "Can Help" flag when being given an
+object other than the Trumpet.
+</div>
+<div class="paragraph">
+Consequently, you can for example give Elrand the Advert, and provided Thor has done his bit, Elrand will happily knock down the wall even without his
+Trumpet!
+</div>
+</div>
+<div><span id="characterroomcheck"></span></div>
+<div class="box box-2">
+<div class="box-title">Which Room Am I In?</div>
+<div class="paragraph">
+In the routine at <a href="../asm/55233.html">55233</a> that updates a character's current room if he/she is awake and free to move is a check to determine whether or not that
+character's current room is 99 (<a href="../asm/55233.html#55305">55305</a> - <a href="../asm/55233.html#55307">55307</a>). If the room is not 99, the a jump is made to <a href="../asm/55233.html#55319">55319</a>, otherwise the next instruction is executed.
+This is a check on whether or not the character's room is 100 with a conditional return afterwards. This conditional return will never occur, however,
+because this instruction is only reached if the character's room is 99 (and therefore could never be 100).
+</div>
+</div>
+<div><span id="magicknightjumpframe"></span></div>
+<div class="box box-1">
+<div class="box-title">Inconsistent Frame Rendering</div>
+<div class="paragraph">
+When Magic Knight jumps vertically, his frame changes. To reproduce, walk left or right, take note of the position of Magic Knight's feet, then jump
+upwards - his feet change position.
+</div>
+</div>
+<div><span id="invertedstarmovementinstruction"></span></div>
+<div class="box box-2">
+<div class="box-title">Starfield Rendering</div>
+<div class="paragraph">
+The instruction at <a href="../asm/38795.html#38823">38823</a> is "LD C,A", however it appears the correct instruction should be "LD A,C" as we are checking (in A) that the x-component of
+a star's direction is non-zero when its y-component has already been checked as zero. As it is, the value in A is not modified from instruction at
+<a href="../asm/38795.html#38816">38816</a> where it is set to the y-component. In the existing code, the value of A is set at <a href="../asm/38795.html#38816">38816</a>, then at <a href="../asm/38795.html#38821">38821</a> a conditional jump occurs if the
+value in A is not 87. If the jump does not occur, then the (same) value in A is loaded into C, then another conditional jump occurs only if the
+(unchanged) value in A is equal to 128 (which is can't be, because this instruction is only reached if A is 87!)
+</div>
+<div class="paragraph">
+To fix, change the instruction at <a href="../asm/38795.html#38823">38823</a> from "LD C,A" to "LD A,C":<br />
+POKE <a href="../asm/38795.html#38823">38823</a>,121
+</div>
+<div class="paragraph">
+<!-- Prevents stars going dead right? -->
+</div>
+<div class="paragraph">
+<em>This bug is also present in Knight Tyme</em>
+</div>
+</div>
+<div><span id="illegalterraininteractionparameter"></span></div>
+<div class="box box-1">
+<div class="box-title">Invalid Terrain Interaction Parameters</div>
+<div class="paragraph">
+In the Room Layout Data at <a href="../asm/52795.html">52795</a> for 3rd Floor 1 (The Library) and Ground Floor 3 (Gimbal's Secret Study), the instruction for drawing the books
+(<a href="../asm/52795.html#52850">52850</a>) includes a Terrain Interaction Parameter value of 70, instead of 64. This comprises of a Bit 6 for Preserve Attribute, along with Bits 1 and 2
+which have no meaning in the context of Terrain Interaction Parameters.
+</div>
+</div>
+<div><span id="deathbydarkissues"></span></div>
+<div class="box box-2">
+<div class="box-title">A Powerful Source of Light</div>
+<div class="paragraph">
+The Room-Specific Routine at <a href="../asm/29800.html">29800</a> that kills Magic Knight if he enters a room without illumination (The Little Bottle / The Big Bottle) returns
+without killing Magic Knight if any one of a number of conditions are met:
+</div>
+<div class="paragraph">
+<ul class="">
+<li>Magic Knight is holding the Glowing Bottle</li>
+<li>The Glowing Bottle is somewhere in the Little Bottle room</li>
+<li>Magic Knight is holding the lit Engraved Candle</li>
+<li>The lit Engraved Candle is somewhere in the Little Bottle room</li>
+</ul>
+</div>
+<div class="paragraph">
+Note the conditions regarding objects in the Little Bottle room - these are hard-coded into the routine. But the "Kill Magic Knight in darkness" effect
+that happens in the Big Bottle room is facilitated by exactly the same routine. This means that Magic Knight can safely pass through the Big Bottle room
+without illumination, as long as there is a source of illumination at the Little Bottle!
+</div>
+<div class="paragraph">
+<a href="facts.html#glowingbottleatlittlebottle">See also trivia</a>
+</div>
+</div>
+<div><span id="undergroundblock"></span></div>
+<div class="box box-1">
+<div class="box-title">A Block Too Far Part II</div>
+<div class="paragraph">
+Another problem with room drawing can be seen at The Pit. Like in the A Block Too Far bug above, the room drawing routine also draws brickwork blocks
+too far down at The Pit. Unlike the previous bug, however, the cause of the issue this time is not due to an error in the room layout data.
+</div>
+<div class="paragraph">
+The Pit is unique, in that it is the only room in the game where the lowest row of bricks drawn (typically a room's floor) is not defined as a single
+stretch of 16 brickwork (or other) blocks drawn in Brickwork Drawing Mode 1 (single row mode). The floor is, in fact, divided up into three sections.
+The left and right sections are conventional brickwork, however the middle section is flame.
+</div>
+<div class="paragraph">
+When drawing the left-most stretch of bottom-row bricks, the room drawing routine is correctly in Brickwork Drawing Mode 1 (as specified by the data at
+<a href="../asm/53703.html#53739">53739</a>). However the instructions at <a href="../asm/27865.html#28056">28056</a>-<a href="../asm/27865.html#28057">28057</a> cause the Brickwork Drawing Mode to automatically revert to Mode 0 (draw two rows of bricks) after
+any stretch of brickwork is drawn. Consequently, the middle flame section and the right-most brickwork sections of The Pit's lowest level are drawn in
+Drawing Mode 0. In the case of the flames, this doesn't matter, as the lowest two character blocks in their architecture style (defined at <a href="../asm/54617.html#54677">54677</a>) are
+blank, however in the right-most stretch of 6 blocks it does, and 2x2 blocks of brickwork are drawn as a result:
+</div>
+<div class="paragraph">
+<img src="../images/bugs/undergroundblock2-1-before.png" />
+</div>
+</div>
+<div><span id="unnecessaryinstruction"></span></div>
+<div class="box box-2">
+<div class="box-title">An Unnecessary Instruction</div>
+<div class="paragraph">
+In the routine that processes the command to command a character (<a href="../asm/31636.html">31636</a>), the instruction at <a href="../asm/31636.html#31689">31689</a> loads A with the index of the current (i.e.
+commanded) character, however this value is never used.
+</div>
+</div>
+<div><span id="trappedinawall"></span></div>
+<div class="box box-1">
+<div class="box-title">Trapped in a Wall</div>
+<div class="paragraph">
+As in every other room, there are three character slots at The Wall. Unfortunately the third of these is actually inside The Wall itself:
+</div>
+<div class="paragraph">
+<img src="../images/bugs/trappedinawall-1-before.png" />
+</div>
+<div class="paragraph">
+To fix this, the x-coordinate of the third (right-most) slot needs to be reduced slightly:<br />
+POKE <a href="../asm/53938.html#54112">54116</a>,12
+</div>
+<div class="paragraph">
+<img src="../images/bugs/trappedinawall-2-after.png" />
+</div>
+</div>
+<div><span id="spelling"></span></div>
+<div class="box box-2">
+<div class="box-title">Spelling Errors</div>
+<div class="paragraph">
+"SAXOPHONE" has been spelt "SAXAPHONE" in the texts at <a href="../asm/41236.html#41633">41633</a> and <a href="../asm/47322.html#48903">48903</a>. To fix:<br />
+POKE <a href="../asm/41236.html#41633">41636</a>,79 (change "A" to "O" in Object Names Table at <a href="../asm/41236.html">41236</a>)<br />
+POKE <a href="../asm/47322.html#48928">48933</a>,79 (change "A" to "O" in Saxophone's Read-Text)
+</div>
+<div class="paragraph">
+In the text entry at <a href="../asm/45609.html#45668">45668</a>, "ERUPTS" has been spelt "ERRUPTS".
+</div>
+<div class="paragraph">
+In the text entry at <a href="../asm/47322.html#47493">47493</a>, "RECIPES" has been spelt "RECIPIES". To fix:<br />
+POKE <a href="../asm/47322.html#47623">47628</a>,69 (change "I" to "E")<br />
+POKE <a href="../asm/47322.html#47623">47629</a>,83 (change "E" to "S")<br />
+POKE <a href="../asm/47322.html#47623">47630</a>,32 (change "S" to " ")
+</div>
+<div class="paragraph">
+In the text entry at <a href="../asm/49377.html#50006">50006</a>, "SPIRIT" has been spelt "SPIRT".
+</div>
+<div class="paragraph">
+In the text entry at <a href="../asm/54238.html#54292">54292</a>, "FURTHER" has been spelt "FURTHUR". To fix:<br />
+POKE <a href="../asm/54238.html#54292">54298</a>,69 (change "U" to "E")
+</div>
+</div>
+<div><span id="graphicissues"></span></div>
+<div class="box box-1">
+<div class="box-title">Graphic Issue</div>
+<div class="paragraph">
+The digit "1" on the Lift Control Panel is misaligned. It seems to be very slightly offset to the right as compared to the other digits:
+<table class="udgs">
+<tr>
+<td class="" colspan="1" rowspan="1"><img alt="58460" src="../images/udgs/scenery/58460.png" /></td>
+</tr>
+</table>
+</div>
+</div>
+<div><span id="missingquote"></span></div>
+<div class="box box-2">
+<div class="box-title">Missing Closing Quote</div>
+<div class="paragraph">
+The Banshee's help text at <a href="../asm/44796.html#44935">44935</a> contains some speech which is opened, but not closed, with a quote.
+</div>
+</div>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

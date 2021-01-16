@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 46218</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46170.html">46170</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46218">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46244.html">46244</a></span></td>
+</tr>
+</table>
+<div class="description">46218: Jump to Appropriate Graphic Layout Routine</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="45965.html">45965</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Index of graphic layout data instruction</td>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of current graphic layout data instruction</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46218"></span>46218</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance IX to first parameter byte in graphic layout data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46220"></span>46220</td>
+<td class="instruction">SUB 236</td>
+<td class="comment-11" rowspan="1">Subtract 236 to get zero-based index of required instruction</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46222"></span>46222</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Load double index of graphic layout data instruction into BC...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46223"></span>46223</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46224"></span>46224</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46226"></span>46226</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46227"></span>46227</td>
+<td class="instruction">LD HL,46244</td>
+<td class="comment-11" rowspan="1">Point HL at start of Table of Addresses of Graphic Layout Data Handling Routines</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46230"></span>46230</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Add doubled instruction index as offset to HL to point to address of required routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46231"></span>46231</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Modify JP instruction at <a href="46218.html#46241">46241</a> with this address...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46232"></span>46232</td>
+<td class="instruction">LD (46242),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46235"></span>46235</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46236"></span>46236</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46237"></span>46237</td>
+<td class="instruction">LD (46243),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46240"></span>46240</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46241"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="46218.html#46241">46241</a> represents the addresses of the required graphic layout data handling routine. This is modified by the instruction at <a href="46218.html#46232">46232</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46241"></span>46241</td>
+<td class="instruction">JP 0</td>
+<td class="comment-11" rowspan="1">Jump to appropriate instruction handling routine</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46170.html">46170</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46218">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46244.html">46244</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

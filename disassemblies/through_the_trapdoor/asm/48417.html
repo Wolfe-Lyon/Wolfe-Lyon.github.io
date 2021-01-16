@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 48417</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="48388.html">48388</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#48417">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="48487.html">48487</a></span></td>
+</tr>
+</table>
+<div class="description">48417: Remove Berk's Current Power and Reset Sweet / Mushroom / Edible Eyes / Sausage to its Original Position</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="36390.html">36390</a>, <a href="36471.html">36471</a>, <a href="39151.html">39151</a> and <a href="48388.html">48388</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="48417"></span>48417</td>
+<td class="instruction">LD A,(34220)</td>
+<td class="comment-11" rowspan="1">If Berk has no current power...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48420"></span>48420</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48421"></span>48421</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48422"></span>48422</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48424"></span>48424</td>
+<td class="instruction">CP 6</td>
+<td class="comment-11" rowspan="1">If Berk's current power is not 6 (flying, level 3, 2)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48426"></span>48426</td>
+<td class="instruction">JR NZ,48445</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="48417.html#48445">48445</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48428"></span>48428</td>
+<td class="instruction">LD A,13</td>
+<td class="comment-11" rowspan="1">Reset complex state data for Red Coloured Creature to that stored in Initial-State Table...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48430"></span>48430</td>
+<td class="instruction">CALL <a href="53987.html">53987</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48433"></span>48433</td>
+<td class="instruction">LD A,14</td>
+<td class="comment-11" rowspan="1">Reset complex state data for Yellow Coloured Creature to that stored in Initial-State Table...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48435"></span>48435</td>
+<td class="instruction">CALL <a href="53987.html">53987</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48438"></span>48438</td>
+<td class="instruction">LD A,15</td>
+<td class="comment-11" rowspan="1">Reset complex state data for White Coloured Creature to that stored in Initial-State Table...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48440"></span>48440</td>
+<td class="instruction">CALL <a href="53987.html">53987</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48443"></span>48443</td>
+<td class="instruction">JR 48474</td>
+<td class="comment-11" rowspan="1">Skip ahead to <a href="48417.html#48474">48474</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="48445"></span>48445</td>
+<td class="instruction">CP 10</td>
+<td class="comment-11" rowspan="1">If Berk's current power is not 10 (floating)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48447"></span>48447</td>
+<td class="instruction">JR NZ,48474</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="48417.html#48474">48474</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48449"></span>48449</td>
+<td class="instruction">LD IX,(34240)</td>
+<td class="comment-11" rowspan="1">Load IX with address of current level's complex state data for Berk</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48453"></span>48453</td>
+<td class="instruction">RES 7,(IX+9)</td>
+<td class="comment-11" rowspan="1">Reset Berk's Moving Upwards Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48457"></span>48457</td>
+<td class="instruction">LD (IX+11),192</td>
+<td class="comment-11" rowspan="1">Reset Berk's Walking Right, Walking Left, Unused (11,2), Unused (11,3), Impassable Leftwards and Impassable Rightwards flags and set his Interaction (11,6) and Interaction (11,7) flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48461"></span>48461</td>
+<td class="instruction">RES 7,(IX+8)</td>
+<td class="comment-11" rowspan="1">Reset bit 7 of Berk's class value (change from 159 to 31)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48465"></span>48465</td>
+<td class="instruction">DEC (IX+6)</td>
+<td class="comment-11" rowspan="1">Decrease Berk's bottom y-coordinate by two...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48468"></span>48468</td>
+<td class="instruction">DEC (IX+6)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48471"></span>48471</td>
+<td class="instruction">CALL <a href="55516.html">55516</a></td>
+<td class="comment-11" rowspan="1">Set Berk's Can Fall Flag and set his initial velocity factor to 2</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="48474"></span>48474</td>
+<td class="instruction">LD A,(34220)</td>
+<td class="comment-11" rowspan="1">Reset complex state data for entity responsible for Berk's current power to that stored in Initial-State Table...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48477"></span>48477</td>
+<td class="instruction">CALL <a href="53987.html">53987</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48480"></span>48480</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Clear Berk's current power...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48481"></span>48481</td>
+<td class="instruction">LD (34220),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48484"></span>48484</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48486"></span>48486</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="48388.html">48388</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#48417">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="48487.html">48487</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

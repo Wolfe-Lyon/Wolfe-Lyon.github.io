@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 62443</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62428.html">62428</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#62443">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="62476.html">62476</a></span></td>
+</tr>
+</table>
+<div class="description">62443: Make Chicken Lay an Egg If Possible</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="62330.html">62330</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="62443"></span>62443</td>
+<td class="instruction">LD A,(24852)</td>
+<td class="comment-11" rowspan="1">Load A with index of object in Magic Knight's fifth inventory slot (carrying)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62446"></span>62446</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...and if this is not zero (i.e. Magic Knight's hands are full)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62447"></span>62447</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62448"></span>62448</td>
+<td class="instruction">LD A,13</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not carrying the Chicken...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62450"></span>62450</td>
+<td class="instruction">CALL <a href="45510.html">45510</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62453"></span>62453</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62454"></span>62454</td>
+<td class="instruction">LD A,(23466)</td>
+<td class="comment-11" rowspan="1">If index of next object to be laid by Chicken is 42...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62457"></span>62457</td>
+<td class="instruction">CP 42</td>
+<td class="comment-11" rowspan="1">...i.e. no more eggs...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62459"></span>62459</td>
+<td class="instruction">RET Z</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62460"></span>62460</td>
+<td class="instruction">LD A,(23466)</td>
+<td class="comment-11" rowspan="1">Load C with index of next object to be laid by Chicken...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62463"></span>62463</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62464"></span>62464</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase index of next object to be laid by Chicken...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62465"></span>62465</td>
+<td class="instruction">LD (23466),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62468"></span>62468</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">Load B with 5 (as Magic Knight has five inventory slots)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62470"></span>62470</td>
+<td class="instruction">LD HL,24848</td>
+<td class="comment-11" rowspan="1">Load object in C into Magic Knight's first empty inventory (carrying) slot...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="62473"></span>62473</td>
+<td class="instruction">JP <a href="45380.html#45381">45381</a></td>
+<td class="comment-11" rowspan="1">...and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="62428.html">62428</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#62443">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="62476.html">62476</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 26855</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="26745.html">26745</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#26855">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="26884.html">26884</a></span></td>
+</tr>
+</table>
+<div class="description">26855: Clear Stack and Prepare to Load Data</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="26745.html">26745</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="26855"></span>26855</td>
+<td class="instruction">POP DE</td>
+<td class="comment-11" rowspan="1">Remove return address of calling routine from top of Stack</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26856"></span>26856</td>
+<td class="instruction">LD SP,26240</td>
+<td class="comment-11" rowspan="1">Set Stack Pointer to 26240</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26859"></span>26859</td>
+<td class="instruction">LD HL,27136</td>
+<td class="comment-11" rowspan="1">Load HL with start address of Main Game Loop routine</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26862"></span>26862</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (address of Main Game Loop)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26863"></span>26863</td>
+<td class="instruction">LD (23613),SP</td>
+<td class="comment-11" rowspan="1">Store Stack Pointer address at 23613 (System Variable ERR SP)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26867"></span>26867</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Store HL (return address in routine that called this routine)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26868"></span>26868</td>
+<td class="instruction">CALL <a href="35690.html">35690</a></td>
+<td class="comment-11" rowspan="1">Play upward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26871"></span>26871</td>
+<td class="instruction">CALL <a href="55138.html">55138</a></td>
+<td class="comment-11" rowspan="1">Display "PRESS FIRE TO CONTINUE" Window and Wait for Fire to be Pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26874"></span>26874</td>
+<td class="instruction">LD IX,23296</td>
+<td class="comment-11" rowspan="1">Set base address for load to 23296</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26878"></span>26878</td>
+<td class="instruction">LD DE,23808</td>
+<td class="comment-11" rowspan="1">Set data length to 23808</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26881"></span>26881</td>
+<td class="instruction">LD A,255</td>
+<td class="comment-11" rowspan="1">Load A with 255 to denote a data block</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="26883"></span>26883</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="26745.html">26745</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#26855">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="26884.html">26884</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

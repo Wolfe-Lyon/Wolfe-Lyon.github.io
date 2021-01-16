@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 48246</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="48242.html">48242</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#48246">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="48260.html">48260</a></span></td>
+</tr>
+</table>
+<div class="description">48246: Script Routine (14): Set Berk's Facing Right Flag, and Reset his Facing Into Screen and Facing Left Flags</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">(Entry at <a href="48246.html#48248">48248</a> only) Combination of flags to (re)set</td>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data (current level) for Berk</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="48246"></span>48246</td>
+<td class="instruction">LD B,8</td>
+<td class="comment-11" rowspan="1">Prepare to set Berk's Facing Right Flag, and reset his Facing Into Screen and Facing Left flags</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="48248"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="48234.html">48234</a>, <a href="48238.html">48238</a> and <a href="48242.html">48242</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="48248"></span>48248</td>
+<td class="instruction">LD A,(IX+9)</td>
+<td class="comment-11" rowspan="1">Load A with Berk's flags...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48251"></span>48251</td>
+<td class="instruction">AND 241</td>
+<td class="comment-11" rowspan="1">...clearing Facing Into Screen, Facing Left and Facing Right flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48253"></span>48253</td>
+<td class="instruction">ADD A,B</td>
+<td class="comment-11" rowspan="1">Combine with flags in B...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48254"></span>48254</td>
+<td class="instruction">LD (IX+9),A</td>
+<td class="comment-11" rowspan="1">...and store</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="48257"></span>48257</td>
+<td class="instruction">JP <a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="48242.html">48242</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#48246">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="48260.html">48260</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 64836</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="64829.html">64829</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#64836">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="64878.html">64878</a></span></td>
+</tr>
+</table>
+<div class="description">64836: Select Magic Knight's Room (Cheat / Debug Routine)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="38205.html">38205</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="64836"></span>64836</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Switch AF and AF'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64837"></span>64837</td>
+<td class="instruction">LD A,(23728)</td>
+<td class="comment-11" rowspan="1">If Cheat Mode Enabled Flag is set (<a href="../reference/facts.html#cheatmode">see trivia</a>)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64840"></span>64840</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64841"></span>64841</td>
+<td class="instruction">JR NZ,64845</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="64836.html#64845">64845</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64843"></span>64843</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Switch AF and AF'</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64844"></span>64844</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="64845"></span>64845</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Remove return address from top of Stack</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64846"></span>64846</td>
+<td class="instruction">CALL <a href="47989.html">47989</a></td>
+<td class="comment-11" rowspan="1">Set parameters (for Cheat Routine Sound) and play</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="64849"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="64878.html">64878</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="64849"></span>64849</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1">Set BORDER to red...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64851"></span>64851</td>
+<td class="instruction">OUT (254),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64853"></span>64853</td>
+<td class="instruction">CALL <a href="64034.html">64034</a></td>
+<td class="comment-11" rowspan="1">Capture keyboard or joystick input loading result into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64856"></span>64856</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">If left pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64858"></span>64858</td>
+<td class="instruction">JR NZ,<a href="64883.html">64883</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="64883.html">64883</a> (decrease Magic Knight's current room index by 1, wrapping around to 51 if below zero)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64860"></span>64860</td>
+<td class="instruction">BIT 1,A</td>
+<td class="comment-11" rowspan="1">If right pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64862"></span>64862</td>
+<td class="instruction">JR NZ,<a href="64906.html">64906</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="64906.html">64906</a> (increase Magic Knight's current room index by 1, wrapping around to zero if above 51)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64864"></span>64864</td>
+<td class="instruction">BIT 2,A</td>
+<td class="comment-11" rowspan="1">If up pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64866"></span>64866</td>
+<td class="instruction">JR NZ,<a href="64912.html">64912</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="64912.html">64912</a> (increase Magic Knight's current room index by 8, wrapping around to zero if above 51)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64868"></span>64868</td>
+<td class="instruction">BIT 3,A</td>
+<td class="comment-11" rowspan="1">If down pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64870"></span>64870</td>
+<td class="instruction">JR NZ,<a href="64919.html">64919</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="64919.html">64919</a> (decrease Magic Knight's current room index by 8, wrapping around to 51 if below zero)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64872"></span>64872</td>
+<td class="instruction">BIT 4,A</td>
+<td class="comment-11" rowspan="1">If fire pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64874"></span>64874</td>
+<td class="instruction">JR NZ,<a href="64926.html">64926</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="64926.html">64926</a> (exit Cheat / Debug Mode)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64876"></span>64876</td>
+<td class="instruction">JR 64849</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="64836.html#64849">64849</a></td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="64829.html">64829</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#64836">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="64878.html">64878</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

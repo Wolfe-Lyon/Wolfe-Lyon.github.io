@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 44990</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="44933.html">44933</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#44990">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45094.html">45094</a></span></td>
+</tr>
+</table>
+<div class="description">44990: Process Command to Pull Lever</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="44990"></span>44990</td>
+<td class="instruction">LD B,9</td>
+<td class="comment-11" rowspan="1">Print or update Command Summary Window at top of screen...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44992"></span>44992</td>
+<td class="instruction">CALL <a href="45206.html">45206</a></td>
+<td class="comment-11" rowspan="1">...with "PULL LEVER" text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44995"></span>44995</td>
+<td class="instruction">CALL <a href="64207.html">64207</a></td>
+<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44998"></span>44998</td>
+<td class="instruction">LD A,(23702)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45001"></span>45001</td>
+<td class="instruction">CP 20</td>
+<td class="comment-11" rowspan="1">If current room is 20 (Castle Ground Floor, 3)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45003"></span>45003</td>
+<td class="instruction">JP Z,45073</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="44990.html#45073">45073</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45006"></span>45006</td>
+<td class="instruction">CP 38</td>
+<td class="comment-11" rowspan="1">If current room is 38 (Castle Third Floor, 0, Big White Statue)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45008"></span>45008</td>
+<td class="instruction">JP Z,45080</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="44990.html#45080">45080</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45011"></span>45011</td>
+<td class="instruction">CP 34</td>
+<td class="comment-11" rowspan="1">If current room is 34 (Castle Second Floor, 3, One Way Corridor, 1)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45013"></span>45013</td>
+<td class="instruction">JP Z,45087</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="44990.html#45087">45087</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45016"></span>45016</td>
+<td class="instruction">LD B,64</td>
+<td class="comment-11" rowspan="1">Prepare to set Main Lever 7 Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45018"></span>45018</td>
+<td class="instruction">CP 24</td>
+<td class="comment-11" rowspan="1">If current room is 24 (Castle First Floor, 0, Main Lever 7)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45020"></span>45020</td>
+<td class="instruction">JR Z,45064</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="44990.html#45064">45064</a> (set prepared Main Lever Flag)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45022"></span>45022</td>
+<td class="instruction">LD B,32</td>
+<td class="comment-11" rowspan="1">Prepare to set Main Lever 6 Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45024"></span>45024</td>
+<td class="instruction">CP 25</td>
+<td class="comment-11" rowspan="1">If current room is 25 (Castle First Floor, 1, Main Lever 6)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45026"></span>45026</td>
+<td class="instruction">JR Z,45064</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="44990.html#45064">45064</a> (set prepared Main Lever Flag)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45028"></span>45028</td>
+<td class="instruction">LD B,16</td>
+<td class="comment-11" rowspan="1">Prepare to set Main Lever 5 Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45030"></span>45030</td>
+<td class="instruction">CP 26</td>
+<td class="comment-11" rowspan="1">If current room is 26 (Castle First Floor, 2, Security Door &amp; Main Lever 5)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45032"></span>45032</td>
+<td class="instruction">JR Z,45064</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="44990.html#45064">45064</a> (set prepared Main Lever Flag)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45034"></span>45034</td>
+<td class="instruction">LD B,8</td>
+<td class="comment-11" rowspan="1">Prepare to set Main Lever 4 Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45036"></span>45036</td>
+<td class="instruction">CP 27</td>
+<td class="comment-11" rowspan="1">If current room is 27 (Castle First Floor, 3, Main Lever 4)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45038"></span>45038</td>
+<td class="instruction">JR Z,45064</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="44990.html#45064">45064</a> (set prepared Main Lever Flag)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45040"></span>45040</td>
+<td class="instruction">LD B,4</td>
+<td class="comment-11" rowspan="1">Prepare to set Main Lever 3 Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45042"></span>45042</td>
+<td class="instruction">CP 28</td>
+<td class="comment-11" rowspan="1">If current room is 28 (Castle First Floor, 4, Main Lever 3)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45044"></span>45044</td>
+<td class="instruction">JR Z,45064</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="44990.html#45064">45064</a> (set prepared Main Lever Flag)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45046"></span>45046</td>
+<td class="instruction">LD B,2</td>
+<td class="comment-11" rowspan="1">Prepare to set Main Lever 2 Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45048"></span>45048</td>
+<td class="instruction">CP 29</td>
+<td class="comment-11" rowspan="1">If current room is 29 (Castle First Floor, 5, Main Lever 2)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45050"></span>45050</td>
+<td class="instruction">JR Z,45064</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="44990.html#45064">45064</a> (set prepared Main Lever Flag)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45052"></span>45052</td>
+<td class="instruction">LD B,1</td>
+<td class="comment-11" rowspan="1">Prepare to set Main Lever 1 Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45054"></span>45054</td>
+<td class="instruction">CP 30</td>
+<td class="comment-11" rowspan="1">If current room is 30 (Castle First Floor, 6, Main Lever 1)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45056"></span>45056</td>
+<td class="instruction">JR Z,45064</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="44990.html#45064">45064</a> (set prepared Main Lever Flag)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45058"></span>45058</td>
+<td class="instruction">LD HL,57552</td>
+<td class="comment-11" rowspan="1">Point HL at "THE LEVER SPRUNG BACK INTO POSITION..." text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45061"></span>45061</td>
+<td class="instruction">JP <a href="64297.html">64297</a></td>
+<td class="comment-11" rowspan="1">Display "THE LEVER SPRUNG BACK INTO POSITION..." Window (12), wait for Fire to be pressed then jump to Main Game Loop</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="45064"></span>
+<div class="comments">
+<div class="paragraph">
+Set Prepared Main Lever Flag
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45064"></span>45064</td>
+<td class="instruction">LD A,(23402)</td>
+<td class="comment-11" rowspan="1">Load current Main Lever Flags...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45067"></span>45067</td>
+<td class="instruction">XOR B</td>
+<td class="comment-11" rowspan="1">...merge in set flag prepared in B...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45068"></span>45068</td>
+<td class="instruction">LD (23402),A</td>
+<td class="comment-11" rowspan="1">...and store back at <a href="23402.html">23402</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45071"></span>45071</td>
+<td class="instruction">JR 45058</td>
+<td class="comment-11" rowspan="1">Jump back to <a href="44990.html#45058">45058</a> (show "THE LEVEL SPRUNG BACK..." message and return to Main Game Loop</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="45073"></span>
+<div class="comments">
+<div class="paragraph">
+Room 20 (Castle Ground Floor, 3)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45073"></span>45073</td>
+<td class="instruction">LD A,138</td>
+<td class="comment-11" rowspan="1">Load A with 138 (instruction to draw layout data fragment 10, i.e. blank)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45075"></span>45075</td>
+<td class="instruction">LD (59866),A</td>
+<td class="comment-11" rowspan="1">...and replace Security Door (1/3) instruction at <a href="59841.html#59866">59866</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45078"></span>45078</td>
+<td class="instruction">JR 45058</td>
+<td class="comment-11" rowspan="1">Jump back to <a href="44990.html#45058">45058</a> (show "THE LEVEL SPRUNG BACK..." message and return to Main Game Loop</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="45080"></span>
+<div class="comments">
+<div class="paragraph">
+Room 38 (Castle Third Floor, 0, Big White Statue)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45080"></span>45080</td>
+<td class="instruction">LD A,138</td>
+<td class="comment-11" rowspan="1">Load A with 138 (instruction to draw layout data fragment 10, i.e. blank)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45082"></span>45082</td>
+<td class="instruction">LD (59867),A</td>
+<td class="comment-11" rowspan="1">...and replace Security Door (2/3) instruction at <a href="59841.html#59867">59867</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45085"></span>45085</td>
+<td class="instruction">JR 45058</td>
+<td class="comment-11" rowspan="1">Jump back to <a href="44990.html#45058">45058</a> (show "THE LEVEL SPRUNG BACK..." message and return to Main Game Loop</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="45087"></span>
+<div class="comments">
+<div class="paragraph">
+Room 34 (Castle Second Floor, 3, One Way Corridor, 1)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45087"></span>45087</td>
+<td class="instruction">LD A,138</td>
+<td class="comment-11" rowspan="1">Load A with 138 (instruction to draw layout data fragment 10, i.e. blank)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45089"></span>45089</td>
+<td class="instruction">LD (59868),A</td>
+<td class="comment-11" rowspan="1">...and replace Security Door (3/3) instruction at <a href="59841.html#59868">59868</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45092"></span>45092</td>
+<td class="instruction">JR 45058</td>
+<td class="comment-11" rowspan="1">Jump back to <a href="44990.html#45058">45058</a> (show "THE LEVEL SPRUNG BACK..." message and return to Main Game Loop</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="44933.html">44933</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#44990">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="45094.html">45094</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 38749</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38725.html">38725</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38749">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="38795.html">38795</a></span></td>
+</tr>
+</table>
+<div class="description">38749: Display "PRESS SPACE OR FIRE TO CONTINUE" Window and Wait for Space / Fire</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="29800.html">29800</a>, <a href="29880.html">29880</a>, <a href="30222.html">30222</a>, <a href="30540.html">30540</a>, <a href="30602.html">30602</a>, <a href="31370.html">31370</a>, <a href="32035.html">32035</a>, <a href="32876.html">32876</a>, <a href="34350.html">34350</a>, <a href="34768.html">34768</a>, <a href="35101.html">35101</a> and <a href="35141.html">35141</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38749"></span>38749</td>
+<td class="instruction">CALL <a href="38124.html">38124</a></td>
+<td class="comment-11" rowspan="1">Play hiss-type sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38752"></span>38752</td>
+<td class="instruction">LD A,14</td>
+<td class="comment-11" rowspan="1">Draw window 14...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38754"></span>38754</td>
+<td class="instruction">CALL <a href="36987.html">36987</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38757"></span>38757</td>
+<td class="instruction">LD HL,43166</td>
+<td class="comment-11" rowspan="1">Point HL at "PRESS SPACE OR FIRE" text string</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38760"></span>38760</td>
+<td class="instruction">CALL <a href="36725.html">36725</a></td>
+<td class="comment-11" rowspan="1">Print the text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38763"></span>38763</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Clear key-press buffer...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38764"></span>38764</td>
+<td class="instruction">LD (23560),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38767"></span>38767</td>
+<td class="instruction">CALL <a href="37876.html">37876</a></td>
+<td class="comment-11" rowspan="1">Capture keyboard / joystick input into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38770"></span>38770</td>
+<td class="instruction">BIT 4,A</td>
+<td class="comment-11" rowspan="1">If "FIRE" button / key pressed...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38772"></span>38772</td>
+<td class="instruction">JR NZ,38788</td>
+<td class="comment-11" rowspan="1">...jump to <a href="38749.html#38788">38788</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38774"></span>38774</td>
+<td class="instruction">LD A,(23560)</td>
+<td class="comment-11" rowspan="1">Capture last key pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38777"></span>38777</td>
+<td class="instruction">CP 32</td>
+<td class="comment-11" rowspan="1">If not a space then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38779"></span>38779</td>
+<td class="instruction">JR NZ,38763</td>
+<td class="comment-11" rowspan="1">Go back to start of loop</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38781"></span>38781</td>
+<td class="instruction">CALL <a href="37472.html">37472</a></td>
+<td class="comment-11" rowspan="1">Wait for keyboard to be released</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38784"></span>38784</td>
+<td class="instruction">CALL <a href="38075.html">38075</a></td>
+<td class="comment-11" rowspan="1">Play upward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38787"></span>38787</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="38788"></span>38788</td>
+<td class="instruction">CALL <a href="37486.html">37486</a></td>
+<td class="comment-11" rowspan="1">Wait for fire button / key to be released</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38791"></span>38791</td>
+<td class="instruction">CALL <a href="38075.html">38075</a></td>
+<td class="comment-11" rowspan="1">Play upward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="38794"></span>38794</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="38725.html">38725</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#38749">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="38795.html">38795</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

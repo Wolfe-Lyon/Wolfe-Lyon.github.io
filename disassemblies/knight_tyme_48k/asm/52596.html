@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 52596</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52566.html">52566</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52596">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52635.html">52635</a></span></td>
+</tr>
+</table>
+<div class="description">52596: Room Drawing: Set "Apply Vertical Mirror" Mode on, "Apply Horizontal Mirror" Mode on and Draw a Graphic</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="28631.html">28631</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52596"></span>52596</td>
+<td class="instruction">LD A,205</td>
+<td class="comment-11" rowspan="1">Load <a href="52635.html#52672">52672</a> with opcode for "CALL"...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52598"></span>52598</td>
+<td class="instruction">LD (52672),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52601"></span>52601</td>
+<td class="instruction">LD HL,52924</td>
+<td class="comment-11" rowspan="1">Load <a href="52635.html#52672">52673</a> (i.e. operand of instruction at <a href="52635.html#52672">52672</a>) with address of start of "Reverse the order of the bits in A" routine...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52604"></span>52604</td>
+<td class="instruction">LD (52673),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52607"></span>52607</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-11" rowspan="1">Set Pixel Row Counter to 7...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52609"></span>52609</td>
+<td class="instruction">LD (23449),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52612"></span>52612</td>
+<td class="instruction">LD A,3</td>
+<td class="comment-11" rowspan="1">Set both Horizontal and Vertical Mirror Flags...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52614"></span>52614</td>
+<td class="instruction">LD (23450),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52617"></span>52617</td>
+<td class="instruction">LD BC,(23495)</td>
+<td class="comment-11" rowspan="1">Load BC with coordinates (each +1) of bottom-right of graphic to draw</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52621"></span>52621</td>
+<td class="instruction">DEC C</td>
+<td class="comment-11" rowspan="1">Decrease x-coordinate by one</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="52622"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="52566.html">52566</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="52622"></span>52622</td>
+<td class="instruction">LD (23444),BC</td>
+<td class="comment-11" rowspan="1">Store coordinates at which to draw graphic at <a href="23444.html">23444</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52626"></span>52626</td>
+<td class="instruction">CALL <a href="54132.html">54132</a></td>
+<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52629"></span>52629</td>
+<td class="instruction">LD A,7</td>
+<td class="comment-11" rowspan="1">Advance HL down to bottom pixel row in its current character block (as we are drawing up from the bottom)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52631"></span>52631</td>
+<td class="instruction">ADD A,H</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52632"></span>52632</td>
+<td class="instruction">LD H,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="52633"></span>52633</td>
+<td class="instruction">JR <a href="52635.html#52642">52642</a></td>
+<td class="comment-11" rowspan="1">Jump to <a href="52635.html#52642">52642</a> (draw the graphic then return)</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="52566.html">52566</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#52596">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="52635.html">52635</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

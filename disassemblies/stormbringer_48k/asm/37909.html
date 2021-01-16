@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 37909</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37880.html">37880</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37909">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37951.html">37951</a></span></td>
+</tr>
+</table>
+<div class="description">37909: Draw Input Device Selection Menu and Update Currently Selected Input Device</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="37689.html">37689</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37909"></span>37909</td>
+<td class="instruction">CALL <a href="47856.html">47856</a></td>
+<td class="comment-11" rowspan="1">Clear Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37912"></span>37912</td>
+<td class="instruction">LD A,70</td>
+<td class="comment-11" rowspan="1">Load system variable ATTR T with 70 (yellow INK, black PAPER, BRIGHT)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37914"></span>37914</td>
+<td class="instruction">LD (23695),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37917"></span>37917</td>
+<td class="instruction">CALL <a href="47881.html">47881</a></td>
+<td class="comment-11" rowspan="1">...and flood Attribute File with this attribute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37920"></span>37920</td>
+<td class="instruction">LD A,5</td>
+<td class="comment-11" rowspan="1">Draw Window 5 ("STORMBRINGER A TRUE GRAPHIC ADVENTURE...")...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37922"></span>37922</td>
+<td class="instruction">CALL <a href="47193.html">47193</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37925"></span>37925</td>
+<td class="instruction">LD HL,50640</td>
+<td class="comment-11" rowspan="1">Point HL at "STORMBRINGER A TRUE GRAPHIC ADVENTURE..." text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37928"></span>37928</td>
+<td class="instruction">CALL <a href="46902.html">46902</a></td>
+<td class="comment-11" rowspan="1">...and print to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37931"></span>37931</td>
+<td class="instruction">LD A,6</td>
+<td class="comment-11" rowspan="1">Draw Control Selection Menu Window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37933"></span>37933</td>
+<td class="instruction">CALL <a href="47185.html">47185</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37936"></span>37936</td>
+<td class="instruction">LD HL,50090</td>
+<td class="comment-11" rowspan="1">Point HL at Initial Control Selection Menu text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37939"></span>37939</td>
+<td class="instruction">CALL <a href="46902.html">46902</a></td>
+<td class="comment-11" rowspan="1">...and print to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37942"></span>37942</td>
+<td class="instruction">CALL <a href="47930.html">47930</a></td>
+<td class="comment-11" rowspan="1">Play downward scale sound</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37945"></span>37945</td>
+<td class="instruction">LD A,(63653)</td>
+<td class="comment-11" rowspan="1">Load index of currently selected input device into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37948"></span>37948</td>
+<td class="instruction">JP <a href="63598.html">63598</a></td>
+<td class="comment-11" rowspan="1">Update currently selected input device and return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37880.html">37880</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37909">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37951.html">37951</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

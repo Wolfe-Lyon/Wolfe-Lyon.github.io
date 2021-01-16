@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 28716</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28696.html">28696</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28716">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28730.html">28730</a></span></td>
+</tr>
+</table>
+<div class="description">28716: Wait for Interrupt then Flood 7th - 22nd Rows of Attribute File with Attribute in HL</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="27762.html">27762</a> and <a href="27951.html">27951</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Attribute to use</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="28716"></span>28716</td>
+<td class="instruction">HALT</td>
+<td class="comment-11" rowspan="1">Wait for interrupt</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28717"></span>28717</td>
+<td class="instruction">LD (35670),SP</td>
+<td class="comment-11" rowspan="1">Store stack pointer at <a href="35649.html#35669">35670</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28721"></span>28721</td>
+<td class="instruction">LD SP,23264</td>
+<td class="comment-11" rowspan="1">Point stack pointer at start of last row of Attribute File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28724"></span>28724</td>
+<td class="instruction">LD BC,4098</td>
+<td class="comment-11" rowspan="1">Load B with 16 (repeat inner loop 16 times) and C with 2 (repeat outer loop twice)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="28727"></span>28727</td>
+<td class="instruction">JP <a href="35649.html#35663">35663</a></td>
+<td class="comment-11" rowspan="1">Clear 7th to 23rd rows of Attribute File</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="28696.html">28696</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#28716">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="28730.html">28730</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

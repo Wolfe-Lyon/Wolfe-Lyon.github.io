@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 37085</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37062.html">37062</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37085">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37205.html">37205</a></span></td>
+</tr>
+</table>
+<div class="description">37085: Update State of Bat (Level 1)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="37062.html">37062</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">(always <a href="43333.html#43463">43463</a>, entry in Level 1 complex state data for Bat)</td>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Current position in Bat's script data</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37085"></span>37085</td>
+<td class="instruction">CALL <a href="54768.html">54768</a></td>
+<td class="comment-11" rowspan="1">Check entity at IX for collision with another entity at same depth whose Interaction (11,6) Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37088"></span>37088</td>
+<td class="instruction">JR C,37104</td>
+<td class="comment-11" rowspan="1">...and if no collision occurred, then skip ahead to <a href="37085.html#37104">37104</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37090"></span>37090</td>
+<td class="instruction">CP 31</td>
+<td class="comment-11" rowspan="1">If collision was not with entity of class 31 (Berk)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37092"></span>37092</td>
+<td class="instruction">JR NZ,37100</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="37085.html#37100">37100</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37094"></span>37094</td>
+<td class="instruction">CALL <a href="53667.html">53667</a></td>
+<td class="comment-11" rowspan="1">Set "Berk Has Been Killed" Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37097"></span>37097</td>
+<td class="instruction">JP <a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37100"></span>37100</td>
+<td class="instruction">CP 18</td>
+<td class="comment-11" rowspan="1">If collision was with entity of class 18 (Drutt)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37102"></span>37102</td>
+<td class="instruction">JR Z,37111</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="37085.html#37111">37111</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37104"></span>37104</td>
+<td class="instruction">CALL <a href="54890.html">54890</a></td>
+<td class="comment-11" rowspan="1">Check entity at IX for collision with another entity (in reverse order) at next depth level into screen whose Interaction (11,7) Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37107"></span>37107</td>
+<td class="instruction">CP 18</td>
+<td class="comment-11" rowspan="1">...and if collision was not with entity of class 18 (Drutt)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37109"></span>37109</td>
+<td class="instruction">JR NZ,37128</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="37085.html#37128">37128</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37111"></span>37111</td>
+<td class="instruction">BIT 6,(IY+10)</td>
+<td class="comment-11" rowspan="1">If Drutt's Can Fall Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37115"></span>37115</td>
+<td class="instruction">JR NZ,37128</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="37085.html#37128">37128</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37117"></span>37117</td>
+<td class="instruction">SET 6,(IY+10)</td>
+<td class="comment-11" rowspan="1">Set Drutt's Can Fall Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37121"></span>37121</td>
+<td class="instruction">LD (IY+12),2</td>
+<td class="comment-11" rowspan="1">Set Drutt's Velocity Factor to 2</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37125"></span>37125</td>
+<td class="instruction">JP <a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37128"></span>37128</td>
+<td class="instruction">BIT 0,(IX+9)</td>
+<td class="comment-11" rowspan="1">If Bat's Paralysed Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37132"></span>37132</td>
+<td class="instruction">JP NZ,<a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance HL to next script instruction and execute)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37135"></span>37135</td>
+<td class="instruction">LD A,(34208)</td>
+<td class="comment-11" rowspan="1">If Drutt Mode Flag is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37138"></span>37138</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37140"></span>37140</td>
+<td class="instruction">JR NZ,37148</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="37085.html#37148">37148</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37142"></span>37142</td>
+<td class="instruction">LD IY,(34240)</td>
+<td class="comment-11" rowspan="1">Load IY with address of current level's complex state data for Berk</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37146"></span>37146</td>
+<td class="instruction">JR 37152</td>
+<td class="comment-11" rowspan="1">Skip ahead to <a href="37085.html#37152">37152</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37148"></span>37148</td>
+<td class="instruction">LD IY,(34242)</td>
+<td class="comment-11" rowspan="1">Load IY with address of current level's complex state data for Drutt</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="37152"></span>
+<div class="comments">
+<div class="paragraph">
+At this point, IY points to the complex state data entry for the current character.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37152"></span>37152</td>
+<td class="instruction">LD A,(IY+0)</td>
+<td class="comment-11" rowspan="1">If current character's current room is not the same as the Bat's...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37155"></span>37155</td>
+<td class="instruction">CP (IX+0)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37158"></span>37158</td>
+<td class="instruction">JP NZ,<a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance HL to next script instruction and execute)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37161"></span>37161</td>
+<td class="instruction">LD A,(IY+7)</td>
+<td class="comment-11" rowspan="1">If the current character's right side...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37164"></span>37164</td>
+<td class="instruction">CP (IX+5)</td>
+<td class="comment-11" rowspan="1">...is to the left of the Bat's left side...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37167"></span>37167</td>
+<td class="instruction">JR C,37194</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="37085.html#37194">37194</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37169"></span>37169</td>
+<td class="instruction">LD A,(IX+7)</td>
+<td class="comment-11" rowspan="1">If the Bat's right side...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37172"></span>37172</td>
+<td class="instruction">CP (IY+5)</td>
+<td class="comment-11" rowspan="1">...is to the left of the current character's left side...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37175"></span>37175</td>
+<td class="instruction">JR C,37183</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="37085.html#37183">37183</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37177"></span>37177</td>
+<td class="instruction">LD HL,37024</td>
+<td class="comment-11" rowspan="1">Point HL at script data for Bat attacking...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37180"></span>37180</td>
+<td class="instruction">JP <a href="48096.html#48098">48098</a></td>
+<td class="comment-11" rowspan="1">...and execute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37183"></span>37183</td>
+<td class="instruction">LD A,(IX+7)</td>
+<td class="comment-11" rowspan="1">If the x-coordinate of the Bat's right side is less than 130...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37186"></span>37186</td>
+<td class="instruction">CP 130</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37188"></span>37188</td>
+<td class="instruction">JP C,<a href="48593.html#48615">48615</a></td>
+<td class="comment-11" rowspan="1">...then move Bat right by one character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37191"></span>37191</td>
+<td class="instruction">JP <a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="37194"></span>37194</td>
+<td class="instruction">LD A,101</td>
+<td class="comment-11" rowspan="1">If the x-coordinate of the Bat's left side is greater than 101...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37196"></span>37196</td>
+<td class="instruction">CP (IX+5)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37199"></span>37199</td>
+<td class="instruction">JP C,<a href="48641.html#48660">48660</a></td>
+<td class="comment-11" rowspan="1">...then move Bat left by one character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="37202"></span>37202</td>
+<td class="instruction">JP <a href="48096.html">48096</a></td>
+<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="37062.html">37062</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#37085">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="37205.html">37205</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

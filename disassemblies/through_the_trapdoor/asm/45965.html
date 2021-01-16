@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 45965</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45899.html">45899</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45965">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46170.html">46170</a></span></td>
+</tr>
+</table>
+<div class="description">45965: Populate Primary Display Buffer with Graphic Layout Data for Entity Whose Simple / Complex State Data is at Address in IX</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="45899.html">45899</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data for an entity</td>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">(Entry at <a href="45965.html#45999">45999</a>, <a href="45965.html#46001">46001</a> or <a href="45965.html#46003">46003</a> only) Address of graphic layout data to draw</td>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">(Entry at <a href="45965.html#45999">45999</a>, <a href="45965.html#46001">46001</a> or <a href="45965.html#46003">46003</a> only) 0 if current position in Display Buffer needs to be recalculated. 1 otherwise.</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45965"></span>45965</td>
+<td class="instruction">LD E,(IX+2)</td>
+<td class="comment-11" rowspan="1">Load DE with address of graphic layout data for entity...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45968"></span>45968</td>
+<td class="instruction">LD D,(IX+3)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45971"></span>45971</td>
+<td class="instruction">LD A,(34233)</td>
+<td class="comment-11" rowspan="1">Load A with y-coordinate of top edge of current character's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45974"></span>45974</td>
+<td class="instruction">ADD A,(IX+4)</td>
+<td class="comment-11" rowspan="1">...add y-coordinate of graphic element to draw as offset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45977"></span>45977</td>
+<td class="instruction">SUB 100</td>
+<td class="comment-11" rowspan="1">...subtract 100...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45979"></span>45979</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...and load into L</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45980"></span>45980</td>
+<td class="instruction">LD A,(34231)</td>
+<td class="comment-11" rowspan="1">Load A with x-coordinate of left edge of current character's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45983"></span>45983</td>
+<td class="instruction">ADD A,(IX+5)</td>
+<td class="comment-11" rowspan="1">...add x-coordinate of graphic element to draw as offset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45986"></span>45986</td>
+<td class="instruction">SUB 100</td>
+<td class="comment-11" rowspan="1">...subtract 100...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45988"></span>45988</td>
+<td class="instruction">LD H,A</td>
+<td class="comment-11" rowspan="1">...and load into H</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45989"></span>45989</td>
+<td class="instruction">LD (34281),HL</td>
+<td class="comment-11" rowspan="1">Store x- and y-coordinates at <a href="34279.html#34281">34281</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45992"></span>45992</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Transfer address of graphic layout data in simple/complex state data from DE...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45993"></span>45993</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">...into IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45995"></span>45995</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">Reset Do Not Recalculate Display Buffer Address Flag, as address not yet calculated</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="45997"></span>45997</td>
+<td class="instruction">JR 46003</td>
+<td class="comment-11" rowspan="1">Jump to <a href="45965.html#46003">46003</a> (read / process data at address in IX)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="45999"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="46427.html">46427</a>, <a href="46442.html">46442</a>, <a href="46460.html">46460</a> and <a href="46599.html">46599</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="45999"></span>45999</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance IX by one byte</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46001"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="46284.html">46284</a>, <a href="46295.html">46295</a> and <a href="46306.html">46306</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46001"></span>46001</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance IX by one byte</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46003"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routines at <a href="46317.html">46317</a>, <a href="46347.html">46347</a>, <a href="46363.html">46363</a>, <a href="46460.html">46460</a>, <a href="46481.html">46481</a>, <a href="46495.html">46495</a>, <a href="46611.html">46611</a>, <a href="46628.html">46628</a>, <a href="46647.html">46647</a> and <a href="46664.html">46664</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46003"></span>46003</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">If first byte of graphic layout data entry is at least 236...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46006"></span>46006</td>
+<td class="instruction">CP 236</td>
+<td class="comment-11" rowspan="1">...i.e. IX points to an instruction...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46008"></span>46008</td>
+<td class="instruction">JP NC,<a href="46218.html">46218</a></td>
+<td class="comment-11" rowspan="1">...then jump to appropriate graphic layout routine</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46011"></span>
+<div class="comments">
+<div class="paragraph">
+At this point, the graphic layout data pointed to by IX is graphical data, not an instruction. We only draw the graphics if they lie within the display area (i.e. have x- and y-coordinates less than 32 and 24 respectively, <a href="../reference/facts.html#graphicswiderthandisplay">see trivia</a>).
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46011"></span>46011</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1">If x-coordinate of graphic to draw is 32 or more...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46012"></span>46012</td>
+<td class="instruction">CP 32</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46014"></span>46014</td>
+<td class="instruction">JP NC,46151</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="45965.html#46151">46151</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46017"></span>46017</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">If y-coordinate of graphic to draw is 24 or more...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46018"></span>46018</td>
+<td class="instruction">CP 24</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46020"></span>46020</td>
+<td class="instruction">JP NC,46151</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="45965.html#46151">46151</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46023"></span>46023</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (H = x-coordinate to draw to, L = y-coordinate to draw to)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46024"></span>46024</td>
+<td class="instruction">DEC B</td>
+<td class="comment-11" rowspan="1">Decrease value of Don't Recalculate Display Buffer Address Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46025"></span>46025</td>
+<td class="instruction">JP Z,46051</td>
+<td class="comment-11" rowspan="1">If B is zero (i.e. we don't need to recalculate current position in display buffer), then skip ahead to <a href="45965.html#46051">46051</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46028"></span>
+<div class="comments">
+<div class="paragraph">
+If B was 1, then we need to load DE with the address of the current position in the Primary Display Buffer.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46028"></span>46028</td>
+<td class="instruction">LD A,H</td>
+<td class="comment-11" rowspan="1">Load C with three times entity's x-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46029"></span>46029</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46030"></span>46030</td>
+<td class="instruction">ADD A,H</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46031"></span>46031</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46032"></span>46032</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">Load DE with double entity's y-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46033"></span>46033</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46034"></span>46034</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46035"></span>46035</td>
+<td class="instruction">LD D,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46037"></span>46037</td>
+<td class="instruction">LD B,D</td>
+<td class="comment-11" rowspan="1">Set B to zero (BC now holds three times x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46038"></span>46038</td>
+<td class="instruction">LD HL,46170</td>
+<td class="comment-11" rowspan="1">Point HL at start of Table of Multiples of 96</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46041"></span>46041</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Add double y-coordinate as offset</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46042"></span>46042</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-11" rowspan="1">Load DE with corresponding multiple of 96...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46043"></span>46043</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46044"></span>46044</td>
+<td class="instruction">LD D,(HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46045"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="45965.html#46045">46045</a> represents the address of the Primary Display Buffer. This is modified by the instruction at <a href="45899.html#45902">45902</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46045"></span>46045</td>
+<td class="instruction">LD HL,0</td>
+<td class="comment-11" rowspan="1">Load HL with start address of Primary Display Buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46048"></span>46048</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">Move HL to position in Primary Display Buffer corresponding to x- and y-coordinates of entity...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46049"></span>46049</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46050"></span>46050</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Switch DE (now points to position in Primary Display Buffer for current entity) and HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46051"></span>46051</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">Load A with Graphic Set Index plus one from this entry in Primary Display Buffer...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46052"></span>46052</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">...and if value is now zero (i.e. old value was 255 corresponding to a block outside dimensions of room)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46053"></span>46053</td>
+<td class="instruction">JP Z,46150</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="45965.html#46150">46150</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46056"></span>46056</td>
+<td class="instruction">LD A,(34268)</td>
+<td class="comment-11" rowspan="1">Load current Graphic Set Index into this location in Primary Display Buffer...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46059"></span>46059</td>
+<td class="instruction">LD (DE),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46060"></span>46060</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance to Graphic Index in current character block's entry in Primary Display Buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46061"></span>46061</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load Graphic Index into current Display Buffer location...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46064"></span>46064</td>
+<td class="instruction">LD (DE),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46065"></span>46065</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance to next byte in current character block's display buffer entry (Attribute)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46066"></span>46066</td>
+<td class="instruction">LD A,(34270)</td>
+<td class="comment-11" rowspan="1">Load Current Attribute into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46069"></span>46069</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...and if not zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46070"></span>46070</td>
+<td class="instruction">JR NZ,46077</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="45965.html#46077">46077</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46072"></span>
+<div class="comments">
+<div class="paragraph">
+Current Attribute is zero (i.e. not set) so DE points to attribute data
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46072"></span>46072</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance IX to next byte in graphic layout data (attribute)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46074"></span>46074</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">...and load into A</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46077"></span>
+<div class="comments">
+<div class="paragraph">
+At this point, A holds an attribute value either from the graphic layout data, or the Current Attribute as stored at <a href="34256.html#34270">34270</a>. This attribute is to be applied to the current display buffer location.
+</div>
+<div class="paragraph">
+IX (current position in graphic layout data) is pointing to either the graphic index (if the Current Attribute at <a href="34256.html#34270">34270</a> is set) or the attribute data (if the Current Attribute is not set). In either case, IX+1 is the address of the Cursor Shift byte. Bit 7 of the Cursor Shift byte is the Override Attribute Flag.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46077"></span>46077</td>
+<td class="instruction">BIT 7,(IX+1)</td>
+<td class="comment-11" rowspan="1">If bit 7 (Override Attribute Flag) is set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46081"></span>46081</td>
+<td class="instruction">JP NZ,46111</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="45965.html#46111">46111</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46084"></span>
+<div class="comments">
+<div class="paragraph">
+Override Attribute Flag reset
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46084"></span>46084</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">Load L with attribute value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46085"></span>46085</td>
+<td class="instruction">AND 56</td>
+<td class="comment-11" rowspan="1">Check PAPER bits</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46087"></span>46087</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">Restore attribute value to A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46088"></span>46088</td>
+<td class="instruction">JP NZ,46111</td>
+<td class="comment-11" rowspan="1">If PAPER is not zero (i.e. black) then skip ahead to <a href="45965.html#46111">46111</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46091"></span>
+<div class="comments">
+<div class="paragraph">
+The instructions between <a href="45965.html#46091">46091</a> and <a href="45965.html#46110">46110</a> (inclusive) are executed only when the PAPER component of the attribute in A (and L) is black. If the Preserve INK Flag is reset in the attribute value loaded (at <a href="45965.html#46098">46098</a>) from the Display Buffer, then the instruction at <a href="45965.html#46107">46107</a> will leave the reset (i.e. black) PAPER bits in A. If the Preserve INK Flag is set, then the instructions between <a href="45965.html#46104">46104</a> and <a href="45965.html#46106">46106</a> (inclusive) will shift the bits used for INK into the PAPER positions and this PAPER colour (originally INK colour) will be preserved when the instruction at <a href="45965.html#46107">46107</a> is executed.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46091"></span>46091</td>
+<td class="instruction">AND 192</td>
+<td class="comment-11" rowspan="1">Reset all bits except Preserve INK and Mirror flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46093"></span>46093</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load B with Preserve INK and Mirror flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46094"></span>46094</td>
+<td class="instruction">LD A,L</td>
+<td class="comment-11" rowspan="1">Restore attribute value to A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46095"></span>46095</td>
+<td class="instruction">AND 63</td>
+<td class="comment-11" rowspan="1">Reset bits Preserve INK and Mirror flags</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46097"></span>46097</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load C with INK and PAPER bits of attribute value</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46098"></span>46098</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">Load value currently in Display Buffer into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46099"></span>46099</td>
+<td class="instruction">BIT 6,A</td>
+<td class="comment-11" rowspan="1">...and if Preserve INK Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46101"></span>46101</td>
+<td class="instruction">JP Z,46107</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="45965.html#46107">46107</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46104"></span>
+<div class="comments">
+<div class="paragraph">
+Preserve INK Flag set in Display Buffer
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46104"></span>46104</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Shift INK bits into PAPER bits...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46105"></span>46105</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46106"></span>46106</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46107"></span>46107</td>
+<td class="instruction">AND 56</td>
+<td class="comment-11" rowspan="1">Reset all except PAPER bits</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46109"></span>46109</td>
+<td class="instruction">OR B</td>
+<td class="comment-11" rowspan="1">(Re)set Preserve INK and Mirror flags as stored in B previously</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46110"></span>46110</td>
+<td class="instruction">OR C</td>
+<td class="comment-11" rowspan="1">Set INK bits as stored in C previously (PAPER was black)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46111"></span>46111</td>
+<td class="instruction">LD (DE),A</td>
+<td class="comment-11" rowspan="1">Load attribute in A into Display Buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46112"></span>46112</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (H = x-coordinate to draw to, L = y-coordinate to draw to)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46113"></span>
+<div class="comments">
+<div class="paragraph">
+Read Cursor Shift byte. Bits 0-6 of this byte control where the cursor to write to Primary Display Buffer is moved to after writing the current character block. A value of 33 advances the cursor right by one character. A value, n, less than 33 moves the cursor down a character row, and left by 33-(n+1) characters. A value greater than 33 moves the cursor right by (n+1)-33 characters.
+</div>
+<div class="paragraph">
+Bit 7 is the Override Attribute Flag.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46113"></span>46113</td>
+<td class="instruction">LD A,(IX+1)</td>
+<td class="comment-11" rowspan="1">Load A with Cursor Shift byte...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46116"></span>46116</td>
+<td class="instruction">CP 255</td>
+<td class="comment-11" rowspan="1">...and if this is 255 (End Marker)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46118"></span>46118</td>
+<td class="instruction">JP Z,<a href="46418.html">46418</a></td>
+<td class="comment-11" rowspan="1">...then jump to <a href="46418.html">46418</a> (load HL with stored coordinates from <a href="34279.html#34281">34281</a> and return from drawing)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46121"></span>46121</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">Reset bit 7 (Override Attribute Flag)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46123"></span>46123</td>
+<td class="instruction">SUB 33</td>
+<td class="comment-11" rowspan="1">Subtract 33, and if remaining value is 0 (i.e. original value was 33)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46125"></span>46125</td>
+<td class="instruction">JP Z,46140</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="45965.html#46140">46140</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46128"></span>46128</td>
+<td class="instruction">JP NC,46132</td>
+<td class="comment-11" rowspan="1">...else, if value was greater than 33 then skip ahead to <a href="45965.html#46132">46132</a></td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46131"></span>
+<div class="comments">
+<div class="paragraph">
+Cursor Shift byte was less than 33 (move the cursor down a character row, and left by 33-(n+1) characters)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46131"></span>46131</td>
+<td class="instruction">INC L</td>
+<td class="comment-11" rowspan="1">Increase y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46132"></span>46132</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Increase A (x-coordinate offset) and add to x-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46133"></span>46133</td>
+<td class="instruction">ADD A,H</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46134"></span>46134</td>
+<td class="instruction">LD H,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46135"></span>46135</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">Prepare to recalculate Display Buffer address as change in coordinates is non-trivial</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46137"></span>46137</td>
+<td class="instruction">JP 45999</td>
+<td class="comment-11" rowspan="1">Advance graphic layout data pointer by two bytes and read / process next data</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46140"></span>
+<div class="comments">
+<div class="paragraph">
+Cursor Shift byte was 33 (move the cursor right by one character)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46140"></span>46140</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance pointer to start of next entry in Primary Display Buffer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46141"></span>46141</td>
+<td class="instruction">INC H</td>
+<td class="comment-11" rowspan="1">Increase x-coordinate by one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46142"></span>46142</td>
+<td class="instruction">JP Z,46135</td>
+<td class="comment-11" rowspan="1">If x-coordinate is zero then jump back to <a href="45965.html#46135">46135</a> (<a href="../reference/facts.html#redundantinstructionsv">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46145"></span>46145</td>
+<td class="instruction">LD B,1</td>
+<td class="comment-11" rowspan="1">Prepare to skip over recalculation of Display Buffer address as we moved right one character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46147"></span>46147</td>
+<td class="instruction">JP 45999</td>
+<td class="comment-11" rowspan="1">Advance graphic layout data pointer by two bytes and read / process next data</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="46150"></span>
+<div class="comments">
+<div class="paragraph">
+First byte in Primary Display Buffer entry for current position is 255 (i.e. outside dimensions of room)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46150"></span>46150</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (H = x-coordinate to draw to, L = y-coordinate to draw to)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46151"></span>46151</td>
+<td class="instruction">LD A,(34270)</td>
+<td class="comment-11" rowspan="1">Load Current Attribute into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46154"></span>46154</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...and if not zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46155"></span>46155</td>
+<td class="instruction">JP NZ,46160</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="45965.html#46160">46160</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46158"></span>46158</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance IX to next byte in graphic layout data (attribute)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46160"></span>46160</td>
+<td class="instruction">LD A,(IX+1)</td>
+<td class="comment-11" rowspan="1">Load A with Cursor Shift byte...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46163"></span>46163</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">Reset bit 7 (Override Attribute Flag)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46165"></span>46165</td>
+<td class="instruction">SUB 33</td>
+<td class="comment-11" rowspan="1">Subtract 33...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46167"></span>46167</td>
+<td class="instruction">JP 46128</td>
+<td class="comment-11" rowspan="1">...and jump back to <a href="45965.html#46128">46128</a> to update current drawing position</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="45899.html">45899</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#45965">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46170.html">46170</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Data at 43333</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="43146.html">43146</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#43333">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="43815.html">43815</a></span></td>
+</tr>
+</table>
+<div class="description">43333: State Data for Complex Entities (Level 1)</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+For more details on individual bits, <a href="../reference/facts.html#flagsgalore">see trivia</a>.
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Offset</th>
+<th colspan="1" rowspan="1">Meaning</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Room index</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Depth (distance from screen)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2 &amp; 3</td>
+<td class="" colspan="1" rowspan="1">Address of graphic layout data</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Top edge y-coordinate + 100 (chars)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">Left edge x-coordinate + 100 (chars)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Bottom edge y-coordinate + 100 (chars)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Right edge x-coordinate + 100 (chars)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">8</td>
+<td class="" colspan="1" rowspan="1">Entity class (e.g. Berk = 31)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">9</td>
+<td class="" colspan="1" rowspan="1">Flags / Destination level for exit doors</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">10</td>
+<td class="" colspan="1" rowspan="1">Flags / Duration of powerup (bits 0-4 only)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">11</td>
+<td class="" colspan="1" rowspan="1">Flags</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">12</td>
+<td class="" colspan="1" rowspan="1">Entity data (velocity factor, timer for Spiders (Level 1), Cannon (Level 4) etc.</td>
+</tr>
+</table>
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43333"></span>43333</td>
+<td class="instruction">DEFB 10, 2, 231, 197, 100, 112, 108, 119,  33,  0,   0,   0,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50663.html">50663</a>) Entry door (above Trap Door Room, where Berk emerges at the end of the game)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43346"></span>43346</td>
+<td class="instruction">DEFB 10, 1, 112, 198, 120, 100, 121, 131, 129,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50792.html#50800">50800</a>) Marker (makes Berk and Drutt fall)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43359"></span>43359</td>
+<td class="instruction">DEFB 11, 1, 112, 198, 120, 100, 121, 131, 129,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50792.html#50800">50800</a>) Marker (makes Berk and Drutt fall)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43372"></span>43372</td>
+<td class="instruction">DEFB  9, 2, 231, 197, 112, 124, 120, 131,  33,  2,   0, 192,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50663.html">50663</a>) Exit door</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43385"></span>43385</td>
+<td class="instruction">DEFB  9, 2, 147, 197, 107, 123, 120, 124,  30,  0,   0,  48,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50579.html">50579</a>) Wall, horizontal bricks</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43398"></span>43398</td>
+<td class="instruction">DEFB  9, 2, 147, 197, 107, 131, 120, 132,  30,  0,   0,  48,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50579.html">50579</a>) Wall, horizontal bricks</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43411"></span>43411</td>
+<td class="instruction">DEFB  6, 2, 147, 197, 107, 107, 120, 108,  30,  0,   0,  48,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50579.html">50579</a>) Wall, horizontal bricks</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43424"></span>43424</td>
+<td class="instruction">DEFB  6, 1, 112, 198, 121, 102, 121, 102,  50,  0,   0,  48,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50792.html#50800">50800</a>) Marker (makes Drutt swap depth levels)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43437"></span>43437</td>
+<td class="instruction">DEFB  0, 1, 107, 196, 114, 112, 121, 119, 129,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50008.html#50283">50283</a>) Open Trap Door (also acts as marker, makes Berk and Drutt fall)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43450"></span>43450</td>
+<td class="instruction">DEFB  1, 1, 112, 198, 114, 120, 121, 120, 128,  0,   0,  48,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50792.html#50800">50800</a>) Marker (prevents Berk and Drutt passing)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43463"></span>43463</td>
+<td class="instruction">DEFB  6, 1,  85, 145,  93, 115,  98, 118,  30,  0, 128, 192,   0</td>
+<td class="comment-11" rowspan="1">(<a href="37205.html">37205</a>) Bat</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43476"></span>43476</td>
+<td class="instruction">DEFB  7, 1, 112, 198, 120, 106, 121, 125, 129,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50792.html#50800">50800</a>) Marker (makes Berk and Drutt fall)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43489"></span>43489</td>
+<td class="instruction">DEFB  8, 1, 177, 197, 100,  96, 100, 105, 130,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50579.html#50609">50609</a>) Ceiling (left section)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43502"></span>43502</td>
+<td class="instruction">DEFB  8, 1, 177, 197, 100, 126, 100, 135, 130,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50579.html#50609">50609</a>) Ceiling (right section)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43515"></span>43515</td>
+<td class="instruction">DEFB  8, 2, 210, 197, 107, 119, 108, 122,  35,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50579.html#50642">50642</a>) Pit Platform</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43528"></span>43528</td>
+<td class="instruction">DEFB  8, 2, 112, 198, 107, 114, 108, 118, 129,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50792.html#50800">50800</a>) Marker (makes Berk and Drutt fall)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43541"></span>43541</td>
+<td class="instruction">DEFB  8, 2, 112, 198, 107, 123, 108, 127, 129,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50792.html#50800">50800</a>) Marker (makes Berk and Drutt fall)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43554"></span>43554</td>
+<td class="instruction">DEFB  8, 2, 112, 198, 109, 119, 109, 122, 130,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50792.html#50800">50800</a>) Marker (makes Berk and Drutt bounce off or bang head)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43567"></span>43567</td>
+<td class="instruction">DEFB  8, 2, 147, 197, 101, 104, 120, 105,  30,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50579.html">50579</a>) Wall, horizontal bricks</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43580"></span>43580</td>
+<td class="instruction">DEFB  8, 2, 147, 197, 101, 126, 120, 127,  30,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50579.html">50579</a>) Wall, horizontal bricks</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43593"></span>43593</td>
+<td class="instruction">DEFB  1, 1, 228, 221, 115, 123, 121, 128,  31,  0, 128, 192,   0</td>
+<td class="comment-11" rowspan="1">(<a href="56731.html#56804">56804</a>) Berk</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43606"></span>43606</td>
+<td class="instruction">DEFB  1, 2, 141, 196, 108, 115, 111, 116,  19,  0, 128,   0,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50304.html#50317">50317</a>) Boni</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43619"></span>43619</td>
+<td class="instruction">DEFB  1, 2, 114, 200, 124, 115, 128, 116,  30,  0, 128, 192,   0</td>
+<td class="comment-11" rowspan="1">(<a href="51286.html#51314">51314</a>) Flying Skeleton Creature</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43632"></span>43632</td>
+<td class="instruction">DEFB  6, 2, 104, 198, 105, 103, 105, 104,  17,  0, 128, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50792.html">50792</a>) Key</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43645"></span>43645</td>
+<td class="instruction">DEFB  9, 2, 128, 197, 105, 103, 105, 104,   4,  0, 131, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50560.html">50560</a>) Red Sweet (Flying, duration = 3)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43658"></span>43658</td>
+<td class="instruction">DEFB  8, 1, 133, 197, 121, 104, 121, 105,   1,  0, 128, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50560.html#50565">50565</a>) Green Sweet (Jumping, duration = permanent)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43671"></span>43671</td>
+<td class="instruction">DEFB  1, 1, 193, 204, 121, 129, 121, 129,  18,  0, 128, 192,   0</td>
+<td class="comment-11" rowspan="1">(<a href="52371.html#52417">52417</a>) Drutt</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43684"></span>43684</td>
+<td class="instruction">DEFB  0, 0,  92, 208, 121, 109, 121, 110,  24,  0, 128,   0,   0</td>
+<td class="comment-11" rowspan="1">(<a href="53340.html">53340</a>) Worm</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43697"></span>43697</td>
+<td class="instruction">DEFB  2, 1, 112, 198, 120, 100, 121, 131, 129,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50792.html#50800">50800</a>) Marker (makes Berk and Drutt fall)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43710"></span>43710</td>
+<td class="instruction">DEFB  3, 1, 112, 198, 120, 100, 121, 131, 129,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50792.html#50800">50800</a>) Marker (makes Berk and Drutt fall)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43723"></span>43723</td>
+<td class="instruction">DEFB  4, 1, 177, 197, 100,  99, 100, 108, 130,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50579.html#50609">50609</a>) Ceiling, left section</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43736"></span>43736</td>
+<td class="instruction">DEFB  4, 1, 177, 197, 100, 123, 100, 132, 130,  0,   0, 240,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50579.html#50609">50609</a>) Ceiling, right section</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43749"></span>43749</td>
+<td class="instruction">DEFB  5, 2,   0, 148, 103, 118, 106, 120,  27,  0, 128,   0,   0</td>
+<td class="comment-11" rowspan="1">(<a href="37872.html#37888">37888</a>) Spider</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43762"></span>43762</td>
+<td class="instruction">DEFB  5, 2,   0, 148, 103, 110, 106, 112,  28,  0, 128,   0,   0</td>
+<td class="comment-11" rowspan="1">(<a href="37872.html#37888">37888</a>) Spider</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43775"></span>43775</td>
+<td class="instruction">DEFB  5, 2,   0, 148, 103, 102, 106, 104,  29,  0, 128,   0,   0</td>
+<td class="comment-11" rowspan="1">(<a href="37872.html#37888">37888</a>) Spider</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43788"></span>43788</td>
+<td class="instruction">DEFB  5, 2,  88, 195, 100, 100,   0,   0,  30,  0,   0,   0,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50008.html">50008</a>) Spiders' Webs</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43801"></span>43801</td>
+<td class="instruction">DEFB  5, 2, 196, 195, 100, 100,   0,   0,  30,  0,   0,   0,   0</td>
+<td class="comment-11" rowspan="1">(<a href="50008.html#50116">50116</a>) Spiders' Arches</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43814"></span>43814</td>
+<td class="instruction">DEFB 255</td>
+<td class="comment-11" rowspan="1">End Marker</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="43146.html">43146</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#43333">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="43815.html">43815</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

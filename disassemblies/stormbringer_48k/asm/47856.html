@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 47856</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47833.html">47833</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47856">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47881.html">47881</a></span></td>
+</tr>
+</table>
+<div class="description">47856: Clear Display File</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+When this routine is entered via <a href="47856.html">47856</a> and <a href="47856.html#47862">47862</a>, B is set to zero. Upon reaching the DJNZ instruction (end of inner loop) at <a href="47856.html#47871">47871</a>, B is already zero, so the loop will execute 256 times, clearing one twelfth of the Display File (two bytes cleared per PUSH, 256 PUSHes per loop).
+</div>
+<div class="paragraph">
+Used by the routine at <a href="37909.html">37909</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47856"></span>47856</td>
+<td class="instruction">LD HL,0</td>
+<td class="comment-11" rowspan="1">Load zero (all bits reset) into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47859"></span>47859</td>
+<td class="instruction">LD BC,12</td>
+<td class="comment-11" rowspan="1">Load B with 0 (repeat inner loop 256 times) and C with 12 (repeat outer loop 12 times)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="47862"></span>
+<div class="comments">
+<div class="paragraph">
+This entry point is used by the routine at <a href="47833.html">47833</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47862"></span>47862</td>
+<td class="instruction">DI</td>
+<td class="comment-11" rowspan="1">Disable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47863"></span>47863</td>
+<td class="instruction">LD (47877),SP</td>
+<td class="comment-11" rowspan="1">Store stack pointer at <a href="47856.html#47876">47877</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47867"></span>47867</td>
+<td class="instruction">LD SP,22528</td>
+<td class="comment-11" rowspan="1">Point stack pointer at start of attribute section of video memory</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="47870"></span>47870</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Decrease current stack pointer position by two and load two zeroes into it</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47871"></span>47871</td>
+<td class="instruction">DJNZ 47870</td>
+<td class="comment-11" rowspan="1">Loop back for next iteration</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47873"></span>47873</td>
+<td class="instruction">DEC C</td>
+<td class="comment-11" rowspan="1">Decrease C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47874"></span>47874</td>
+<td class="instruction">JR NZ,47870</td>
+<td class="comment-11" rowspan="1">...and repeat if C is still greater than zero, to clear the remaining eleven twelfths of the Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47876"></span>47876</td>
+<td class="instruction">LD SP,0</td>
+<td class="comment-11" rowspan="1">Restore stack pointer to original value [Operand set by instruction at <a href="47856.html#47863">47863</a>]</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47879"></span>47879</td>
+<td class="instruction">EI</td>
+<td class="comment-11" rowspan="1">Enable interrupts</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="47880"></span>47880</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="47833.html">47833</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#47856">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="47881.html">47881</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

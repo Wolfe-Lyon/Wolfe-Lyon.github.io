@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 46560</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46490.html">46490</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46560">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46742.html">46742</a></span></td>
+</tr>
+</table>
+<div class="description">46560: Update Position of Axe, Display, and Decrease Magic Knight's Strength if in Contact</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="40235.html">40235</a> and <a href="40239.html">40239</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Axe number (0, 1, 2 or 3)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46560"></span>46560</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Multiply value of A by eight...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46561"></span>46561</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46562"></span>46562</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46563"></span>46563</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Store in C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46564"></span>46564</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">Set B to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46566"></span>46566</td>
+<td class="instruction">LD IX,46752</td>
+<td class="comment-11" rowspan="1">Set IX to point to data for axes</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46570"></span>46570</td>
+<td class="instruction">ADD IX,BC</td>
+<td class="comment-11" rowspan="1">Add eight times axe number as offset to IX pointer</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46572"></span>46572</td>
+<td class="instruction">LD C,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load axe's x-coordinate into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46575"></span>46575</td>
+<td class="instruction">LD B,(IX+1)</td>
+<td class="comment-11" rowspan="1">Load axe's y-coordinate into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46578"></span>46578</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46579"></span>46579</td>
+<td class="instruction">LD (23677),BC</td>
+<td class="comment-11" rowspan="1">Load BC into system variable "COORDS"</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46583"></span>46583</td>
+<td class="instruction">LD A,(IX+4)</td>
+<td class="comment-11" rowspan="1">Load A with axe's current frame number</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46586"></span>46586</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46588"></span>46588</td>
+<td class="instruction">CALL <a href="63040.html">63040</a></td>
+<td class="comment-11" rowspan="1">Draw axe to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46591"></span>46591</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46593"></span>46593</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46594"></span>46594</td>
+<td class="instruction">LD A,(IX+2)</td>
+<td class="comment-11" rowspan="1">Load x-velocity into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46597"></span>46597</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">Add x-coordinate to A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46598"></span>46598</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load new x-coordinate back into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46599"></span>46599</td>
+<td class="instruction">LD A,(IX+3)</td>
+<td class="comment-11" rowspan="1">Load y-velocity into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46602"></span>46602</td>
+<td class="instruction">ADD A,B</td>
+<td class="comment-11" rowspan="1">Add y-coordinate to A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46603"></span>46603</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load new y-coordinate back into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46604"></span>46604</td>
+<td class="instruction">LD (IX+0),C</td>
+<td class="comment-11" rowspan="1">Update data with new x-...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46607"></span>46607</td>
+<td class="instruction">LD (IX+1),B</td>
+<td class="comment-11" rowspan="1">...and y-coordinates</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46610"></span>46610</td>
+<td class="instruction">LD (23677),BC</td>
+<td class="comment-11" rowspan="1">Update "COORDS" system variable</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46614"></span>46614</td>
+<td class="instruction">LD A,(IX+4)</td>
+<td class="comment-11" rowspan="1">Load A with axe frame data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46617"></span>46617</td>
+<td class="instruction">SUB 116</td>
+<td class="comment-11" rowspan="1">Subtract 116 (i.e. frame number of first axe frame) to get "absolute frame number" (<a href="../reference/facts.html#axeframenumbers">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46619"></span>46619</td>
+<td class="instruction">INC A</td>
+<td class="comment-11" rowspan="1">Advance absolute frame number by one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46620"></span>46620</td>
+<td class="instruction">AND 3</td>
+<td class="comment-11" rowspan="1">Cap absolute frame number to 3, and wrap round from 3 to 0 as there are only four frames</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46622"></span>46622</td>
+<td class="instruction">ADD A,116</td>
+<td class="comment-11" rowspan="1">Add 116 to absolute frame number to give relative frame number again</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46624"></span>46624</td>
+<td class="instruction">LD (IX+4),A</td>
+<td class="comment-11" rowspan="1">Store new frame number</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46627"></span>46627</td>
+<td class="instruction">PUSH IX</td>
+<td class="comment-11" rowspan="1">Store IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46629"></span>46629</td>
+<td class="instruction">CALL <a href="63040.html">63040</a></td>
+<td class="comment-11" rowspan="1">Draw axe to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46632"></span>46632</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">Restore IX</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46634"></span>46634</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load x-coordinate of axe</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46637"></span>46637</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If x-coordinate is zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46638"></span>46638</td>
+<td class="instruction">CALL Z,<a href="46742.html">46742</a></td>
+<td class="comment-11" rowspan="1">...multiply x "velocity" by minus one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46641"></span>46641</td>
+<td class="instruction">CP 244</td>
+<td class="comment-11" rowspan="1">If x-coordinate is 244...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46643"></span>46643</td>
+<td class="instruction">CALL Z,<a href="46742.html">46742</a></td>
+<td class="comment-11" rowspan="1">...multiply x "velocity" by minus one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46646"></span>46646</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Temporarily advance IX pointer to work with y "velocities"</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46648"></span>46648</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load y-coordinate of axe</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46651"></span>46651</td>
+<td class="instruction">CP 172</td>
+<td class="comment-11" rowspan="1">If y-coordinate is 172...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46653"></span>46653</td>
+<td class="instruction">CALL Z,<a href="46742.html">46742</a></td>
+<td class="comment-11" rowspan="1">...multiply y "velocity" by minus one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46656"></span>46656</td>
+<td class="instruction">CP 100</td>
+<td class="comment-11" rowspan="1">If y-coordinate is 100...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46658"></span>46658</td>
+<td class="instruction">CALL Z,<a href="46742.html">46742</a></td>
+<td class="comment-11" rowspan="1">...multiply y "velocity" by minus one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46661"></span>46661</td>
+<td class="instruction">DEC IX</td>
+<td class="comment-11" rowspan="1">Move IX back one again (reversing instruction at <a href="46560.html#46646">46646</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46663"></span>46663</td>
+<td class="instruction">LD A,(24840)</td>
+<td class="comment-11" rowspan="1">Load A with Magic Knight's current x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46666"></span>46666</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Copy into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46667"></span>46667</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load A with x-coordinate of axe</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46670"></span>46670</td>
+<td class="instruction">ADD A,6</td>
+<td class="comment-11" rowspan="1">Add 6 to x-coordinate of axe</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46672"></span>46672</td>
+<td class="instruction">SUB B</td>
+<td class="comment-11" rowspan="1">Subtract B to get x-distance between Magic Knight and the axe, plus 6</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46673"></span>46673</td>
+<td class="instruction">CP 21</td>
+<td class="comment-11" rowspan="1">If this value is not less than 21 then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46675"></span>46675</td>
+<td class="instruction">JP NC,46741</td>
+<td class="comment-11" rowspan="1">...return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46678"></span>46678</td>
+<td class="instruction">LD A,(24841)</td>
+<td class="comment-11" rowspan="1">Else, load B with Magic Knight's y-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46681"></span>46681</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46682"></span>46682</td>
+<td class="instruction">LD A,(IX+1)</td>
+<td class="comment-11" rowspan="1">Load A with y-coordinate of axe (uses same coordinate system as PLOT command, i.e. y=0 is at bottom of screen)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46685"></span>46685</td>
+<td class="instruction">SUB B</td>
+<td class="comment-11" rowspan="1">Subtract B to get y-distance between Magic Knight and the axe</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46686"></span>46686</td>
+<td class="instruction">CP 39</td>
+<td class="comment-11" rowspan="1">If this value is not less than 39 then...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46688"></span>46688</td>
+<td class="instruction">JP NC,46741</td>
+<td class="comment-11" rowspan="1">...return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46691"></span>46691</td>
+<td class="instruction">LD A,30</td>
+<td class="comment-11" rowspan="1">If Magic Knight is wearing the Shield...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46693"></span>46693</td>
+<td class="instruction">CALL <a href="45505.html">45505</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46696"></span>46696</td>
+<td class="instruction">JP Z,46719</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="46560.html#46719">46719</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46699"></span>46699</td>
+<td class="instruction">LD A,(24768)</td>
+<td class="comment-11" rowspan="1">Else, decrease Magic Knight's current strength by one...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46702"></span>46702</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46703"></span>46703</td>
+<td class="instruction">LD (24768),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46706"></span>46706</td>
+<td class="instruction">CALL <a href="46463.html">46463</a></td>
+<td class="comment-11" rowspan="1">Print Magic Knight's current strength at (6, 2) as text if he is carrying the Mirror</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46709"></span>46709</td>
+<td class="instruction">LD A,(24768)</td>
+<td class="comment-11" rowspan="1">Load Magic Knight's current strength into A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46712"></span>46712</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">If Magic Knight's strength is zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46713"></span>46713</td>
+<td class="instruction">LD HL,51071</td>
+<td class="comment-11" rowspan="1">...point HL to "YOU DIED OF EXHAUSTION" text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46716"></span>46716</td>
+<td class="instruction">JP Z,<a href="64582.html">64582</a></td>
+<td class="comment-11" rowspan="1">...and jump to "Game over" window routine and exit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46719"></span>46719</td>
+<td class="instruction">LD C,32</td>
+<td class="comment-11" rowspan="1">Set C to 32 (number of times to repeat loop below)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46721"></span>46721</td>
+<td class="instruction">LD A,16</td>
+<td class="comment-11" rowspan="1">Set speaker bit...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46723"></span>46723</td>
+<td class="instruction">OUT (254),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46725"></span>46725</td>
+<td class="instruction">LD A,R</td>
+<td class="comment-11" rowspan="1">Load A with random number between 0 - 15 (as R register increases with each instruction executed)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46727"></span>46727</td>
+<td class="instruction">AND 15</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46729"></span>46729</td>
+<td class="instruction">LD B,A</td>
+<td class="comment-11" rowspan="1">Load value into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46730"></span>46730</td>
+<td class="instruction">DJNZ 46730</td>
+<td class="comment-11" rowspan="1">Pause by repeating this line B times</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46732"></span>46732</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Set A to zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46733"></span>46733</td>
+<td class="instruction">OUT (254),A</td>
+<td class="comment-11" rowspan="1">Reset speaker bit</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46735"></span>46735</td>
+<td class="instruction">DEC C</td>
+<td class="comment-11" rowspan="1">Decrease C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46736"></span>46736</td>
+<td class="instruction">JR NZ,46721</td>
+<td class="comment-11" rowspan="1">...and repeat loop if C is not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46738"></span>46738</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Reset speaker bit...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="46739"></span>46739</td>
+<td class="instruction">OUT (254),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="46741"></span>46741</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="46490.html">46490</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#46560">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="46742.html">46742</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 53585</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="53573.html">53573</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#53585">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="53703.html">53703</a></span></td>
+</tr>
+</table>
+<div class="description">53585: Update All Characters' Stats (Deteriorate or Regenerate) and Wake Up / Send to Sleep if Required</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="53498.html">53498</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53585"></span>53585</td>
+<td class="instruction">LD DE,8</td>
+<td class="comment-11" rowspan="1">Load DE with 8 (as data is 8 bytes long)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53588"></span>53588</td>
+<td class="instruction">LD HL,53955</td>
+<td class="comment-11" rowspan="1">Point HL at start of characters' Stat Regeneration Data Table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53591"></span>53591</td>
+<td class="instruction">LD IX,25028</td>
+<td class="comment-11" rowspan="1">Point IX at Gordon's current stats (2nd entry in Characters' Current Stats Table, as first is Magic Knight's)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53595"></span>53595</td>
+<td class="instruction">LD B,16</td>
+<td class="comment-11" rowspan="1">Load B with 16 (16 characters) (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53597"></span>53597</td>
+<td class="instruction">BIT 7,(IX+6)</td>
+<td class="comment-11" rowspan="1">If current character is awake...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53601"></span>53601</td>
+<td class="instruction">JR Z,53607</td>
+<td class="comment-11" rowspan="1">...then skip ahead to 53607</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53603"></span>53603</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL by four bytes to stat deterioration data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53604"></span>53604</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53605"></span>53605</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53606"></span>53606</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53607"></span>53607</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-11" rowspan="1">Load stat change value into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53608"></span>53608</td>
+<td class="instruction">LD A,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load current character's strength into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53611"></span>53611</td>
+<td class="instruction">CALL <a href="53703.html">53703</a></td>
+<td class="comment-11" rowspan="1">Update character's strength as they tire (awake) or regenerate (asleep)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53614"></span>53614</td>
+<td class="instruction">LD (IX+0),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53617"></span>53617</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to next (happiness) data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53618"></span>53618</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-11" rowspan="1">Load stat change value into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53619"></span>53619</td>
+<td class="instruction">LD A,(IX+1)</td>
+<td class="comment-11" rowspan="1">Load current character's happiness into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53622"></span>53622</td>
+<td class="instruction">CALL <a href="53703.html">53703</a></td>
+<td class="comment-11" rowspan="1">Update character's happiness as they tire (awake) or regenerate (asleep)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53625"></span>53625</td>
+<td class="instruction">LD (IX+1),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53628"></span>53628</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to next (stamina) data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53629"></span>53629</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-11" rowspan="1">Load stat change value into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53630"></span>53630</td>
+<td class="instruction">LD A,(IX+2)</td>
+<td class="comment-11" rowspan="1">Load current character's stamina into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53633"></span>53633</td>
+<td class="instruction">CALL <a href="53703.html">53703</a></td>
+<td class="comment-11" rowspan="1">Update character's stamina as they tire (awake) or regenerate (asleep)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53636"></span>53636</td>
+<td class="instruction">LD (IX+2),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53639"></span>53639</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to next (charisma) data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53640"></span>53640</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-11" rowspan="1">Load stat change value into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53641"></span>53641</td>
+<td class="instruction">LD A,(IX+3)</td>
+<td class="comment-11" rowspan="1">Load current character's charisma into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53644"></span>53644</td>
+<td class="instruction">CALL <a href="53703.html">53703</a></td>
+<td class="comment-11" rowspan="1">Update character's charisma as they tire (awake) or regenerate (asleep)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53647"></span>53647</td>
+<td class="instruction">LD (IX+3),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53650"></span>53650</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to next block of data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53651"></span>53651</td>
+<td class="instruction">BIT 7,(IX+6)</td>
+<td class="comment-11" rowspan="1">If current character is asleep...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53655"></span>53655</td>
+<td class="instruction">JR NZ,53661</td>
+<td class="comment-11" rowspan="1">...then we have already moved into data for next character, so skip ahead to 53661</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53657"></span>53657</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Else, we are now in same character's "asleep" data, so need to advance HL by four bytes to get to next character's data...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53658"></span>53658</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53659"></span>53659</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53660"></span>53660</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53661"></span>53661</td>
+<td class="instruction">ADD IX,DE</td>
+<td class="comment-11" rowspan="1">Advance IX by eight bytes to next character's stats</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53663"></span>53663</td>
+<td class="instruction">DJNZ 53597</td>
+<td class="comment-11" rowspan="1">Loop back to 53597</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53665"></span>53665</td>
+<td class="instruction">LD DE,8</td>
+<td class="comment-11" rowspan="1">Load DE with 8</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53668"></span>53668</td>
+<td class="instruction">LD IX,25028</td>
+<td class="comment-11" rowspan="1">Point IX to Gordon's current stats</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53672"></span>53672</td>
+<td class="instruction">LD B,16</td>
+<td class="comment-11" rowspan="1">Load B with 16 (16 characters) (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53674"></span>53674</td>
+<td class="instruction">LD C,0</td>
+<td class="comment-11" rowspan="1">Load C with zero (to denote first character, Gordon)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53676"></span>53676</td>
+<td class="instruction">LD A,(IX+2)</td>
+<td class="comment-11" rowspan="1">Load current character's stamina into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53679"></span>53679</td>
+<td class="instruction">AND 127</td>
+<td class="comment-11" rowspan="1">If stamina (bits 0-6) is not zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53681"></span>53681</td>
+<td class="instruction">JR NZ,53689</td>
+<td class="comment-11" rowspan="1">...then skip ahead to 53689</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53683"></span>53683</td>
+<td class="instruction">SET 7,(IX+6)</td>
+<td class="comment-11" rowspan="1">Else send character to sleep</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53687"></span>53687</td>
+<td class="instruction">JR 53697</td>
+<td class="comment-11" rowspan="1">Skip ahead to 53697</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53689"></span>53689</td>
+<td class="instruction">CP 100</td>
+<td class="comment-11" rowspan="1">If stamina is not 100...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53691"></span>53691</td>
+<td class="instruction">JR NZ,53697</td>
+<td class="comment-11" rowspan="1">...then skip ahead to 53697</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53693"></span>53693</td>
+<td class="instruction">RES 7,(IX+6)</td>
+<td class="comment-11" rowspan="1">Else wake character up</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="53697"></span>53697</td>
+<td class="instruction">ADD IX,DE</td>
+<td class="comment-11" rowspan="1">Advance IX to next character's stats</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53699"></span>53699</td>
+<td class="instruction">INC C</td>
+<td class="comment-11" rowspan="1">Increase C for next character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53700"></span>53700</td>
+<td class="instruction">DJNZ 53676</td>
+<td class="comment-11" rowspan="1">Loop back to 53676 for next character</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="53702"></span>53702</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="53573.html">53573</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#53585">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="53703.html">53703</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 33657</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33645.html">33645</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33657">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33725.html">33725</a></span></td>
+</tr>
+</table>
+<div class="description">33657: Insert Current Time and Score into "Time Left" and "Percentage Completion" Texts</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="30145.html">30145</a> and <a href="55685.html">55685</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">HL</td>
+<td class="register-desc">Points to percentage completion text (<a href="47491.html#47492">47501</a> or <a href="44506.html">44530</a>)</td>
+</tr>
+<tr>
+<td class="register">DE</td>
+<td class="register-desc">Points to time left text (<a href="47491.html#47492">47513</a> or <a href="44506.html">44542</a>)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33657"></span>33657</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Store DE</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33658"></span>33658</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33659"></span>33659</td>
+<td class="instruction">LD HL,23502</td>
+<td class="comment-11" rowspan="1">Point HL at Visited Rooms table</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33662"></span>33662</td>
+<td class="instruction">LD BC,12800</td>
+<td class="comment-11" rowspan="1">Set B=50, C=0 (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33665"></span>33665</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load A with value at HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33666"></span>33666</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">Add this to C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33667"></span>33667</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33668"></span>33668</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance to next byte</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33669"></span>33669</td>
+<td class="instruction">DJNZ 33665</td>
+<td class="comment-11" rowspan="1">Loop back to <a href="33657.html#33665">33665</a> (adding together 50 values from <a href="23502.html">23502</a> onwards to get score for exploring rooms)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33671"></span>33671</td>
+<td class="instruction">DEC C</td>
+<td class="comment-11" rowspan="1">Decrease exploration score by one (due to no score for The Transporter Room)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33672"></span>33672</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">Double count of rooms visited...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33673"></span>33673</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33674"></span>33674</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33675"></span>33675</td>
+<td class="instruction">LD A,(23451)</td>
+<td class="comment-11" rowspan="1">If I.D. Card Validated Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33678"></span>33678</td>
+<td class="instruction">BIT 4,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33680"></span>33680</td>
+<td class="instruction">JP Z,33687</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="33657.html#33687">33687</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33683"></span>33683</td>
+<td class="instruction">LD A,10</td>
+<td class="comment-11" rowspan="1">Add ten percent to score in C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33685"></span>33685</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33686"></span>33686</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33687"></span>33687</td>
+<td class="instruction">LD A,(23451)</td>
+<td class="comment-11" rowspan="1">If Transporter Repaired Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33690"></span>33690</td>
+<td class="instruction">AND 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33692"></span>33692</td>
+<td class="instruction">JR Z,33698</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="33657.html#33698">33698</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33694"></span>33694</td>
+<td class="instruction">LD A,10</td>
+<td class="comment-11" rowspan="1">Add ten percent to score in C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33696"></span>33696</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33697"></span>33697</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33698"></span>33698</td>
+<td class="instruction">LD A,(23403)</td>
+<td class="comment-11" rowspan="1">If Barriers Removed Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33701"></span>33701</td>
+<td class="instruction">AND 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33703"></span>33703</td>
+<td class="instruction">JR Z,33709</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="33657.html#33709">33709</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33705"></span>33705</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1">Add two percent to score in C...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33707"></span>33707</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33708"></span>33708</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="33709"></span>33709</td>
+<td class="instruction">LD A,(23397)</td>
+<td class="comment-11" rowspan="1">Add Bonus Score to total...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33712"></span>33712</td>
+<td class="instruction">ADD A,C</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33713"></span>33713</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1"></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33714"></span>33714</td>
+<td class="instruction">CALL <a href="34697.html">34697</a></td>
+<td class="comment-11" rowspan="1">Splice numeric data A as a string into a string at HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33717"></span>33717</td>
+<td class="instruction">LD A,(23457)</td>
+<td class="comment-11" rowspan="1">Load A with number of days left</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33720"></span>33720</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (originally DE, time left text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33721"></span>33721</td>
+<td class="instruction">CALL <a href="34697.html">34697</a></td>
+<td class="comment-11" rowspan="1">Splice numeric data A as a string into a string at HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="33724"></span>33724</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="33645.html">33645</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#33657">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="33725.html">33725</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

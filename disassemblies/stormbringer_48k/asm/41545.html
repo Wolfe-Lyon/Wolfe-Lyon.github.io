@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 41545</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="41504.html">41504</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#41545">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="41578.html">41578</a></span></td>
+</tr>
+</table>
+<div class="description">41545: Copy 2x4 (Characters) Region from Temporary Storage at <a href="23299.html">23299</a> into Display File</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="39958.html">39958</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41545"></span>41545</td>
+<td class="instruction">LD DE,23299</td>
+<td class="comment-11" rowspan="1">Load DE with start address of temporary storage area</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="41548"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="41545.html#41548">41548</a> represents the x- and y-coordinates at which to copy the previously stored bitmap data into the Display File. This is modified by the instruction at <a href="41504.html#41514">41514</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41548"></span>41548</td>
+<td class="instruction">LD BC,0</td>
+<td class="comment-11" rowspan="1">Load B and C with the y- and x-coordinates to copy to, respectively</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41551"></span>41551</td>
+<td class="instruction">LD A,4</td>
+<td class="comment-11" rowspan="1">Load A with 4 (as characters are 4 characters high)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41553"></span>41553</td>
+<td class="instruction">PUSH AF</td>
+<td class="comment-11" rowspan="1">Store AF (A = remaining height in characters to copy)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41554"></span>41554</td>
+<td class="instruction">INC B</td>
+<td class="comment-11" rowspan="1">Increase destination y-coordinate by one</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41555"></span>41555</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-11" rowspan="1">Store BC (B = current y-coordinate, C = current x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41556"></span>41556</td>
+<td class="instruction">CALL <a href="63203.html">63203</a></td>
+<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41559"></span>41559</td>
+<td class="instruction">LD B,8</td>
+<td class="comment-11" rowspan="1">Load B with 8 (as there are eight pixel rows per character)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="41561"></span>41561</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">Copy byte from temporary storage area starting at <a href="23299.html">23299</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41562"></span>41562</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...to current location in Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41563"></span>41563</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance right one character in Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41564"></span>41564</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance to next byte in temporary storage area</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41565"></span>41565</td>
+<td class="instruction">LD A,(DE)</td>
+<td class="comment-11" rowspan="1">Copy byte from temporary storage area starting at <a href="23299.html">23299</a>...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41566"></span>41566</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...to current location in Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41567"></span>41567</td>
+<td class="instruction">INC DE</td>
+<td class="comment-11" rowspan="1">Advance to next byte in temporary storage area</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41568"></span>41568</td>
+<td class="instruction">DEC HL</td>
+<td class="comment-11" rowspan="1">Move left one character...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41569"></span>41569</td>
+<td class="instruction">INC H</td>
+<td class="comment-11" rowspan="1">...and down one pixel in Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41570"></span>41570</td>
+<td class="instruction">DJNZ 41561</td>
+<td class="comment-11" rowspan="1">Decrease B (remaining number of pixel rows) and loop back to <a href="41545.html#41561">41561</a> if not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41572"></span>41572</td>
+<td class="instruction">POP BC</td>
+<td class="comment-11" rowspan="1">Restore BC (B = current y-coordinate, C = current x-coordinate)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41573"></span>41573</td>
+<td class="instruction">POP AF</td>
+<td class="comment-11" rowspan="1">Restore AF (A = remaining height in characters to copy)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41574"></span>41574</td>
+<td class="instruction">DEC A</td>
+<td class="comment-11" rowspan="1">Decrease remaining height to copy...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41575"></span>41575</td>
+<td class="instruction">JR NZ,41553</td>
+<td class="comment-11" rowspan="1">...and loop back to <a href="41545.html#41553">41553</a> if not zero</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="41577"></span>41577</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="41504.html">41504</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#41545">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="41578.html">41578</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

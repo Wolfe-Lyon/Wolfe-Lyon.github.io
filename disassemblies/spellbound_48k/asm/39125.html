@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Routine at 39125</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="39081.html">39081</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39125">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39175.html">39175</a></span></td>
+</tr>
+</table>
+<div class="description">39125: Draw Odd Ball to Screen</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="35993.html">35993</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Frame Number (32, 116, 117, 118 or 119)</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39125"></span>39125</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39126"></span>39126</td>
+<td class="instruction">LD DE,64500</td>
+<td class="comment-11" rowspan="1">Point DE at 64500</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39129"></span>39129</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Double A...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39130"></span>39130</td>
+<td class="instruction">LD H,0</td>
+<td class="comment-11" rowspan="1">...Load into HL...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39132"></span>39132</td>
+<td class="instruction">LD L,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39133"></span>39133</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...Double again...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39134"></span>39134</td>
+<td class="instruction">ADD HL,HL</td>
+<td class="comment-11" rowspan="1">...and again to get 8 times original A value...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39135"></span>39135</td>
+<td class="instruction">ADD HL,DE</td>
+<td class="comment-11" rowspan="1">...and add DE to this to point to one of the five sets of Odd Ball frame graphic data (<a href="64756.html">64756</a>, <a href="65428.html">65428</a>, <a href="65428.html#65436">65436</a>, <a href="65428.html#65444">65444</a> or <a href="65428.html#65452">65452</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39136"></span>39136</td>
+<td class="instruction">EX DE,HL</td>
+<td class="comment-11" rowspan="1">Swap so DE now points to an Odd Ball graphic and HL holds 64500</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39137"></span>39137</td>
+<td class="instruction">PUSH DE</td>
+<td class="comment-11" rowspan="1">Copy DE into IX...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39138"></span>39138</td>
+<td class="instruction">POP IX</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39140"></span>39140</td>
+<td class="instruction">LD BC,(23677)</td>
+<td class="comment-11" rowspan="1">Load system variable COORDS into BC (holds x- and y-coordinates of Odd Ball)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39144"></span>39144</td>
+<td class="instruction">CALL 8874</td>
+<td class="comment-11" rowspan="1">Call ROM routine (Get Pixel Address) - Loads HL with Display File address corresponding to pixel at coordinates BC, and A with the location of that pixel within the byte</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39147"></span>39147</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">Load pixel-within-byte "address" into C</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39148"></span>39148</td>
+<td class="instruction">LD B,8</td>
+<td class="comment-11" rowspan="1">Load 8 into B (as Odd Ball graphic data comprises 8 pixel rows)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="39150"></span>39150</td>
+<td class="instruction">LD D,(IX+0)</td>
+<td class="comment-11" rowspan="1">Load a byte of Odd Ball graphic data into D</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39153"></span>39153</td>
+<td class="instruction">CALL <a href="39175.html">39175</a></td>
+<td class="comment-11" rowspan="1">Shift Odd Ball graphic data right by C pixels and load into D (LHS) and A' (RHS)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39156"></span>39156</td>
+<td class="instruction">LD A,D</td>
+<td class="comment-11" rowspan="1">Load left part of Odd Ball graphic data into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39157"></span>39157</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-11" rowspan="1">Load E with graphic data currently at Odd Ball's position on screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39158"></span>39158</td>
+<td class="instruction">XOR E</td>
+<td class="comment-11" rowspan="1">Blend Odd Ball graphic data with what is already on screen at its position to make things look more natural...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39159"></span>39159</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...and write new graphic data back to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39160"></span>39160</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance right one byte in Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39161"></span>39161</td>
+<td class="instruction">EX AF,AF'</td>
+<td class="comment-11" rowspan="1">Switch registers to restore right part of Odd Ball graphic data to A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39162"></span>39162</td>
+<td class="instruction">LD E,(HL)</td>
+<td class="comment-11" rowspan="1">Load E with graphic data currently at Odd Ball's position on screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39163"></span>39163</td>
+<td class="instruction">XOR E</td>
+<td class="comment-11" rowspan="1">Blend Odd Ball graphic data with what is already on screen at its position to make things look more natural...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39164"></span>39164</td>
+<td class="instruction">LD (HL),A</td>
+<td class="comment-11" rowspan="1">...and write new graphic data back to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39165"></span>39165</td>
+<td class="instruction">DEC HL</td>
+<td class="comment-11" rowspan="1">Move left one byte in Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39166"></span>39166</td>
+<td class="instruction">INC IX</td>
+<td class="comment-11" rowspan="1">Advance IX to next row of Odd Ball graphic data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39168"></span>39168</td>
+<td class="instruction">CALL <a href="39200.html">39200</a></td>
+<td class="comment-11" rowspan="1">Advance HL down one pixel row in Display File</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39171"></span>39171</td>
+<td class="instruction">DJNZ 39150</td>
+<td class="comment-11" rowspan="1">Loop back to draw next row of Odd Ball data</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39173"></span>39173</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="39174"></span>39174</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="39081.html">39081</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#39125">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="39175.html">39175</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

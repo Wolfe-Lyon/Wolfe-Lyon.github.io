@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 64042</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="64034.html">64034</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#64042">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="64091.html">64091</a></span></td>
+</tr>
+</table>
+<div class="description">64042: Capture Keyboard Input</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="64034.html">64034</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">A</td>
+<td class="register-desc">Stored keypress (bits: 0=LEFT, 1=RIGHT, 2=UP, 3=DOWN, 4=FIRE)</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="64042"></span>64042</td>
+<td class="instruction">LD C,254</td>
+<td class="comment-11" rowspan="1">Load C with 254 (as all keyboard half-row "input addresses" have C = 254)</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="64044"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="64042.html#64044">64044</a> represents the MSB of the "input address" to use in reading the keyboard for the currently defined LEFT key. It is modified by the routine at <a href="63740.html">63740</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64044"></span>64044</td>
+<td class="instruction">LD B,127</td>
+<td class="comment-11" rowspan="1">Load B with MSB of "input address"</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64046"></span>64046</td>
+<td class="instruction">IN A,(C)</td>
+<td class="comment-11" rowspan="1">Read keyboard</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="4">
+<span id="64048"></span>
+<div class="comments">
+<div class="paragraph">
+The operand of the instruction at <a href="64042.html#64048">64048</a> represents the index of the bit to use in reading the keyboard. It is modified by the routine at <a href="63740.html">63740</a>.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64048"></span>64048</td>
+<td class="instruction">BIT 3,A</td>
+<td class="comment-11" rowspan="1">"N" key pressed so...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64050"></span>64050</td>
+<td class="instruction">CALL Z,<a href="64192.html">64192</a></td>
+<td class="comment-11" rowspan="1">...store a LEFT input from control device</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64053"></span>64053</td>
+<td class="instruction">LD B,127</td>
+<td class="comment-11" rowspan="1">Load B with MSB of "input address"</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64055"></span>64055</td>
+<td class="instruction">IN A,(C)</td>
+<td class="comment-11" rowspan="1">Read keyboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64057"></span>64057</td>
+<td class="instruction">BIT 2,A</td>
+<td class="comment-11" rowspan="1">"M" key pressed so...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64059"></span>64059</td>
+<td class="instruction">CALL Z,<a href="64195.html">64195</a></td>
+<td class="comment-11" rowspan="1">...store a RIGHT input from control device</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64062"></span>64062</td>
+<td class="instruction">LD B,253</td>
+<td class="comment-11" rowspan="1">IN 65022 reads the half row A to G...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64064"></span>64064</td>
+<td class="instruction">IN A,(C)</td>
+<td class="comment-11" rowspan="1">Read keyboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64066"></span>64066</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">"A" key pressed so...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64068"></span>64068</td>
+<td class="instruction">CALL Z,<a href="64198.html">64198</a></td>
+<td class="comment-11" rowspan="1">...store an UP input from control device</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64071"></span>64071</td>
+<td class="instruction">LD B,254</td>
+<td class="comment-11" rowspan="1">IN 65278 reads the half row CAPS SHIFT to V</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64073"></span>64073</td>
+<td class="instruction">IN A,(C)</td>
+<td class="comment-11" rowspan="1">Read keyboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64075"></span>64075</td>
+<td class="instruction">BIT 1,A</td>
+<td class="comment-11" rowspan="1">"Z" key pressed so...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64077"></span>64077</td>
+<td class="instruction">CALL Z,<a href="64201.html">64201</a></td>
+<td class="comment-11" rowspan="1">...store a DOWN input from control device</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64080"></span>64080</td>
+<td class="instruction">LD B,127</td>
+<td class="comment-11" rowspan="1">IN 32766 reads the half row SPACE to B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64082"></span>64082</td>
+<td class="instruction">IN A,(C)</td>
+<td class="comment-11" rowspan="1">Read keyboard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64084"></span>64084</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">SPACE bar pressed so...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64086"></span>64086</td>
+<td class="instruction">CALL Z,<a href="64204.html">64204</a></td>
+<td class="comment-11" rowspan="1">...store a FIRE input from control device</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64089"></span>64089</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">Load stored input into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="64090"></span>64090</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="64034.html">64034</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#64042">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="64091.html">64091</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

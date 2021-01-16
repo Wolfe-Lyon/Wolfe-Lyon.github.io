@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Through the Trap Door: Routine at 54456</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
+<script type="text/javascript" src="../classDataXML.js"></script>
+<script type="text/javascript" src="../classGLDCanvas.js"></script>
+<script type="text/javascript" src="../classImageLoader.js"></script>
+<script type="text/javascript" src="../classDisplayBuffer.js"></script>
+<script type="text/javascript" src="../classBufferPair.js"></script>
+<script type="text/javascript" src="../classGLDDrawer.js"></script>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="54434.html">54434</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#54456">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="54480.html">54480</a></span></td>
+</tr>
+</table>
+<div class="description">54456: Paint Red Areas Outside Current Character's Room if IX Points to Current Character's Complex State Data</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="54383.html">54383</a>, <a href="54419.html">54419</a>, <a href="55433.html">55433</a> and <a href="55616.html">55616</a>.
+</div>
+</div>
+<table class="input-1">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+<tr>
+<td class="register">IX</td>
+<td class="register-desc">Address of complex state data for an entity</td>
+</tr>
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="54456"></span>54456</td>
+<td class="instruction">LD A,(34208)</td>
+<td class="comment-11" rowspan="1">Set Zero Flag if Drutt Mode Flag is reset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54459"></span>54459</td>
+<td class="instruction">BIT 0,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54461"></span>54461</td>
+<td class="instruction">LD A,(IX+8)</td>
+<td class="comment-11" rowspan="1">Load Entity Class Value of entity at IX into A</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54464"></span>54464</td>
+<td class="instruction">JR NZ,54471</td>
+<td class="comment-11" rowspan="1">If Zero Flag is reset (i.e. Drutt Mode) then skip ahead to <a href="54456.html#54471">54471</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54466"></span>54466</td>
+<td class="instruction">CP 31</td>
+<td class="comment-11" rowspan="1">If Entity Class is 31 (i.e. Berk)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54468"></span>54468</td>
+<td class="instruction">JR Z,54474</td>
+<td class="comment-11" rowspan="1">...then paint red areas outside accessible areas of current character's current room and return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54470"></span>54470</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="54471"></span>54471</td>
+<td class="instruction">CP 18</td>
+<td class="comment-11" rowspan="1">If Entity Class is not 18 (i.e. Drutt)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54473"></span>54473</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="54474"></span>54474</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54475"></span>54475</td>
+<td class="instruction">CALL <a href="53887.html">53887</a></td>
+<td class="comment-11" rowspan="1">Paint red areas outside accessible areas of current character's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54478"></span>54478</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="54479"></span>54479</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="54434.html">54434</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#54456">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="54480.html">54480</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+</footer>
+</body>
+</html>

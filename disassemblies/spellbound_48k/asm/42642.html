@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spellbound (48k): Data at 42642</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../spellbound.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-b">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Data</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="42242.html">42242</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#42642">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="43090.html">43090</a></span></td>
+</tr>
+</table>
+<div class="description">42642: Graphic Lookup Table</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Three values per graphic. First two are BYTEs and third is a WORD. The values are:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Offset</th>
+<th colspan="1" rowspan="1">Meaning</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Width (characters) or object flag</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Height (characters) or Terrain Interaction Flags</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Memory address of graphic data (WORD)</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+All objects have height and width of two characters and this is encoded as a 255 value in the width field. The height field is then freed up to hold additional data, i.e. Terrain Interaction Flags. As an object is composed of 4 character blocks in a 2x2 square, two bits can be allocated to the Terrain Interaction Flags for each square individually. Only the two highest bits in the Terrain Interaction Parameters are used, and these are bit 6 for Preserve Attribute and bit 7 for impassable Vertically. Therefore the Terrain Interaction bits for object entries (used by the routine at <a href="38539.html">38539</a>) are:
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Offset</th>
+<th colspan="1" rowspan="1">Meaning</th>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Impassable vertically (top-left character)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Preserve Attribute (top-left character)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">Impassable vertically (top-right character)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Preserve Attribute (top-right character)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">Impassable vertically (bottom-left character)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Preserve Attribute (bottom-left character)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Impassable vertically (bottom-right character)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Preserve Attribute (bottom-right character)</td>
+</tr>
+</table>
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42642"></span>42642</td>
+<td class="instruction">DEFB 2,4,244,247</td>
+<td class="comment-11" rowspan="1">(000) - Graphics (<a href="63412.html#63476">63476</a>) - Magic Knight Frame 1 (Right)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42646"></span>42646</td>
+<td class="instruction">DEFB 6,6,148,246</td>
+<td class="comment-11" rowspan="1">(001) - Graphics (<a href="63124.html">63124</a>) - "Locate a Character" Compass</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42650"></span>42650</td>
+<td class="instruction">DEFB 2,2,173,213</td>
+<td class="comment-11" rowspan="1">(002) - Graphics (<a href="54701.html">54701</a>) - Menu Cursor (Hand)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42654"></span>42654</td>
+<td class="instruction">DEFB 255,85,52,245</td>
+<td class="comment-11" rowspan="1">(003) - Graphics (<a href="62068.html#62772">62772</a>) - Crystal (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42658"></span>42658</td>
+<td class="instruction">DEFB 255,85,84,245</td>
+<td class="comment-11" rowspan="1">(004) - Graphics (<a href="62068.html#62804">62804</a>) - Shield (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42662"></span>42662</td>
+<td class="instruction">DEFB 255,85,116,245</td>
+<td class="comment-11" rowspan="1">(005) - Graphics (<a href="62068.html#62836">62836</a>) - Cannon / Crystal Ball (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42666"></span>42666</td>
+<td class="instruction">DEFB 255,17,148,245</td>
+<td class="comment-11" rowspan="1">(006) - Graphics (<a href="62068.html#62868">62868</a>) - Bottle (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42670"></span>42670</td>
+<td class="instruction">DEFB 255,85,180,245</td>
+<td class="comment-11" rowspan="1">(007) - Graphics (<a href="62068.html#62900">62900</a>) - Ancient Scroll (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42674"></span>42674</td>
+<td class="instruction">DEFB 255,5,212,245</td>
+<td class="comment-11" rowspan="1">(008) - Graphics (<a href="62068.html#62932">62932</a>) - Red Herring (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42678"></span>42678</td>
+<td class="instruction">DEFB 255,0,244,245</td>
+<td class="comment-11" rowspan="1">(009) - Graphics (<a href="62068.html#62964">62964</a>) - Teleport Pad (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42682"></span>42682</td>
+<td class="instruction">DEFB 255,0,20,246</td>
+<td class="comment-11" rowspan="1">(010) - Graphics (<a href="62068.html#62996">62996</a>) - Pool of Liquid (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42686"></span>42686</td>
+<td class="instruction">DEFB 255,85,52,246</td>
+<td class="comment-11" rowspan="1">(011) - Graphics (<a href="62068.html#63028">63028</a>) - Loaf of Bread (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42690"></span>42690</td>
+<td class="instruction">DEFB 255,5,84,246</td>
+<td class="comment-11" rowspan="1">(012) - Graphics (<a href="62068.html#63060">63060</a>) - (Teleport) Key (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42694"></span>42694</td>
+<td class="instruction">DEFB 255,5,116,246</td>
+<td class="comment-11" rowspan="1">(013) - Graphics (<a href="62068.html#63092">63092</a>) - Brick / Gold Bar (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42698"></span>42698</td>
+<td class="instruction">DEFB 255,85,212,243</td>
+<td class="comment-11" rowspan="1">(014) - Graphics (<a href="62068.html#62420">62420</a>) - Mirror (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42702"></span>42702</td>
+<td class="instruction">DEFB 255,85,244,243</td>
+<td class="comment-11" rowspan="1">(015) - Graphics (<a href="62068.html#62452">62452</a>) - Axe (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42706"></span>42706</td>
+<td class="instruction">DEFB 255,85,20,244</td>
+<td class="comment-11" rowspan="1">(016) - Graphics (<a href="62068.html#62484">62484</a>) - Miolnir (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42710"></span>42710</td>
+<td class="instruction">DEFB 255,85,52,244</td>
+<td class="comment-11" rowspan="1">(017) - Graphics (<a href="62068.html#62516">62516</a>) - Runestone (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42714"></span>42714</td>
+<td class="instruction">DEFB 255,85,84,244</td>
+<td class="comment-11" rowspan="1">(018) - Graphics (<a href="62068.html#62548">62548</a>) - Book (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42718"></span>42718</td>
+<td class="instruction">DEFB 255,5,116,244</td>
+<td class="comment-11" rowspan="1">(019) - Graphics (<a href="62068.html#62580">62580</a>) - Pocket Laser (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42722"></span>42722</td>
+<td class="instruction">DEFB 255,85,148,244</td>
+<td class="comment-11" rowspan="1">(020) - Graphics (<a href="62068.html#62612">62612</a>) - White Gold Ring (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42726"></span>42726</td>
+<td class="instruction">DEFB 255,85,180,244</td>
+<td class="comment-11" rowspan="1">(021) - Graphics (<a href="62068.html#62644">62644</a>) - Pewter Tankard (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42730"></span>42730</td>
+<td class="instruction">DEFB 255,17,212,244</td>
+<td class="comment-11" rowspan="1">(022) - Graphics (<a href="62068.html#62676">62676</a>) - Engraved Candle (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42734"></span>42734</td>
+<td class="instruction">DEFB 255,85,244,244</td>
+<td class="comment-11" rowspan="1">(023) - Graphics (<a href="62068.html#62708">62708</a>) - Elf Horn (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42738"></span>42738</td>
+<td class="instruction">DEFB 255,0,20,245</td>
+<td class="comment-11" rowspan="1">(024) - Graphics (<a href="62068.html#62740">62740</a>) - Broken Glass (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42742"></span>42742</td>
+<td class="instruction">DEFB 255,255,116,242</td>
+<td class="comment-11" rowspan="1">(025) - Graphics (<a href="62068.html">62068</a>) - Lump of Brickwork (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42746"></span>42746</td>
+<td class="instruction">DEFB 255,5,148,242</td>
+<td class="comment-11" rowspan="1">(026) - Graphics (<a href="62068.html#62100">62100</a>) - Sticky Bun (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42750"></span>42750</td>
+<td class="instruction">DEFB 255,17,180,242</td>
+<td class="comment-11" rowspan="1">(027) - Graphics (<a href="62068.html#62132">62132</a>) - Wand of Command (Object) [<a href="../reference/bugs.html#wandofcommandattributes">bug</a>]</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42754"></span>42754</td>
+<td class="instruction">DEFB 255,85,212,242</td>
+<td class="comment-11" rowspan="1">(028) - Graphics (<a href="62068.html#62164">62164</a>) - Javelin (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42758"></span>42758</td>
+<td class="instruction">DEFB 255,5,244,242</td>
+<td class="comment-11" rowspan="1">(029) - Graphics (<a href="62068.html#62196">62196</a>) - Tube of Glue (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42762"></span>42762</td>
+<td class="instruction">DEFB 255,5,20,243</td>
+<td class="comment-11" rowspan="1">(030) - Graphics (<a href="62068.html#62228">62228</a>) - Broken Talisman (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42766"></span>42766</td>
+<td class="instruction">DEFB 255,17,52,243</td>
+<td class="comment-11" rowspan="1">(031) - Graphics (<a href="62068.html#62260">62260</a>) - Magic Talisman (Object) [<a href="../reference/bugs.html#magictalismanattributes">bug</a>]</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42770"></span>42770</td>
+<td class="instruction">DEFB 255,85,84,243</td>
+<td class="comment-11" rowspan="1">(032) - Graphics (<a href="62068.html#62292">62292</a>) - Goblet (Object) [<a href="../reference/bugs.html#goldgobletattributes">bug</a>]</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42774"></span>42774</td>
+<td class="instruction">DEFB 255,85,116,243</td>
+<td class="comment-11" rowspan="1">(033) - Graphics (<a href="62068.html#62324">62324</a>) - Willow Rod (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42778"></span>42778</td>
+<td class="instruction">DEFB 255,85,148,243</td>
+<td class="comment-11" rowspan="1">(034) - Graphics (<a href="62068.html#62356">62356</a>) - Power Pong Plant (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42782"></span>42782</td>
+<td class="instruction">DEFB 255,85,180,243</td>
+<td class="comment-11" rowspan="1">(035) - Graphics (<a href="62068.html#62388">62388</a>) - Saxophone (Object)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42786"></span>42786</td>
+<td class="instruction">DEFB 255,85,20,241</td>
+<td class="comment-11" rowspan="1">(036) - Graphics (<a href="61716.html">61716</a>) - Trumpet</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42790"></span>42790</td>
+<td class="instruction">DEFB 255,85,52,241</td>
+<td class="comment-11" rowspan="1">(037) - Graphics (<a href="61716.html#61748">61748</a>) - Four Leaf Clover</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42794"></span>42794</td>
+<td class="instruction">DEFB 255,85,84,241</td>
+<td class="comment-11" rowspan="1">(038) - Graphics (<a href="61716.html#61780">61780</a>) - Advert</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42798"></span>42798</td>
+<td class="instruction">DEFB 255,85,116,241</td>
+<td class="comment-11" rowspan="1">(039) - Graphics (<a href="61716.html#61812">61812</a>) - Prism</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42802"></span>42802</td>
+<td class="instruction">DEFB 2,2,148,241</td>
+<td class="comment-11" rowspan="1">(040) - Graphics (<a href="61844.html">61844</a>) - Plant Pot (1)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42806"></span>42806</td>
+<td class="instruction">DEFB 2,1,180,241</td>
+<td class="comment-11" rowspan="1">(041) - Graphics (<a href="61844.html#61876">61876</a>) - Plant Pot (2)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42810"></span>42810</td>
+<td class="instruction">DEFB 2,2,196,241</td>
+<td class="comment-11" rowspan="1">(042) - Graphics (<a href="61844.html#61892">61892</a>) - Plant Pot (3)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42814"></span>42814</td>
+<td class="instruction">DEFB 2,3,228,241</td>
+<td class="comment-11" rowspan="1">(043) - Graphics (<a href="61844.html#61924">61924</a>) - Goblet (from Picture in Florin's Room)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42818"></span>42818</td>
+<td class="instruction">DEFB 2,3,20,242</td>
+<td class="comment-11" rowspan="1">(044) - Graphics (<a href="61844.html#61972">61972</a>) - Plant Pot (4)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42822"></span>42822</td>
+<td class="instruction">DEFB 2,3,68,242</td>
+<td class="comment-11" rowspan="1">(045) - Graphics (<a href="61844.html#62020">62020</a>) - Plant (7)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42826"></span>42826</td>
+<td class="instruction">DEFB 0,0,0,0</td>
+<td class="comment-11" rowspan="1">(046) - Unused</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42830"></span>42830</td>
+<td class="instruction">DEFB 8,5,212,239</td>
+<td class="comment-11" rowspan="1">(047) - Graphics (<a href="59548.html#61396">61396</a>) - Tree Trunk (2)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42834"></span>42834</td>
+<td class="instruction">DEFB 8,5,84,237</td>
+<td class="comment-11" rowspan="1">(048) - Graphics (<a href="59548.html#60756">60756</a>) - Tree Top (2)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42838"></span>42838</td>
+<td class="instruction">DEFB 8,5,148,238</td>
+<td class="comment-11" rowspan="1">(049) - Graphics (<a href="59548.html#61076">61076</a>) - Tree Top (3)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42842"></span>42842</td>
+<td class="instruction">DEFB 2,5,116,236</td>
+<td class="comment-11" rowspan="1">(050) - Graphics (<a href="59548.html#60532">60532</a>) - Plant (3)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42846"></span>42846</td>
+<td class="instruction">DEFB 2,3,196,236</td>
+<td class="comment-11" rowspan="1">(051) - Graphics (<a href="59548.html#60612">60612</a>) - Plant (4)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42850"></span>42850</td>
+<td class="instruction">DEFB 2,3,244,236</td>
+<td class="comment-11" rowspan="1">(052) - Graphics (<a href="59548.html#60660">60660</a>) - Plant (5)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42854"></span>42854</td>
+<td class="instruction">DEFB 2,3,36,237</td>
+<td class="comment-11" rowspan="1">(053) - Graphics (<a href="59548.html#60708">60708</a>) - Plant (6)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42858"></span>42858</td>
+<td class="instruction">DEFB 2,4,164,235</td>
+<td class="comment-11" rowspan="1">(054) - Graphics (<a href="59548.html#60324">60324</a>) - Wall Bracketed Candle</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42862"></span>42862</td>
+<td class="instruction">DEFB 3,2,228,235</td>
+<td class="comment-11" rowspan="1">(055) - Graphics (<a href="59548.html#60388">60388</a>) - Right-Facing Candle Wall Bracket</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42866"></span>42866</td>
+<td class="instruction">DEFB 1,3,20,236</td>
+<td class="comment-11" rowspan="1">(056) - Graphics (<a href="59548.html#60436">60436</a>) - Right-Facing Candle Wall Bracket Plate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42870"></span>42870</td>
+<td class="instruction">DEFB 3,2,44,236</td>
+<td class="comment-11" rowspan="1">(057) - Graphics (<a href="59548.html#60460">60460</a>) - Left-Facing Candle Wall Bracket</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42874"></span>42874</td>
+<td class="instruction">DEFB 1,3,92,236</td>
+<td class="comment-11" rowspan="1">(058) - Graphics (<a href="59548.html#60508">60508</a>) - Left-Facing Candle Wall Bracket Plate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42878"></span>42878</td>
+<td class="instruction">DEFB 5,5,156,232</td>
+<td class="comment-11" rowspan="1">(059) - Graphics (<a href="59548.html">59548</a>) - Picture in Frame (1)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42882"></span>42882</td>
+<td class="instruction">DEFB 9,5,100,233</td>
+<td class="comment-11" rowspan="1">(060) - Graphics (<a href="59548.html#59748">59748</a>) - Picture in Frame (2)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42886"></span>42886</td>
+<td class="instruction">DEFB 3,2,204,234</td>
+<td class="comment-11" rowspan="1">(061) - Graphics (<a href="59548.html#60108">60108</a>) - Landscape 1 (from framed picture)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42890"></span>42890</td>
+<td class="instruction">DEFB 7,3,252,234</td>
+<td class="comment-11" rowspan="1">(062) - Graphics (<a href="59548.html#60156">60156</a>) - Landscape 2 (from framed picture)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42894"></span>42894</td>
+<td class="instruction">DEFB 2,3,124,231</td>
+<td class="comment-11" rowspan="1">(063) - Graphics (<a href="59260.html">59260</a>) - Puff of Smoke Frame 1</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42898"></span>42898</td>
+<td class="instruction">DEFB 2,3,172,231</td>
+<td class="comment-11" rowspan="1">(064) - Graphics (<a href="59260.html#59308">59308</a>) - Puff of Smoke Frame 2</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42902"></span>42902</td>
+<td class="instruction">DEFB 2,3,220,231</td>
+<td class="comment-11" rowspan="1">(065) - Graphics (<a href="59260.html#59356">59356</a>) - Puff of Smoke Frame 3</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42906"></span>42906</td>
+<td class="instruction">DEFB 2,3,12,232</td>
+<td class="comment-11" rowspan="1">(066) - Graphics (<a href="59260.html#59404">59404</a>) - Puff of Smoke Frame 4</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42910"></span>42910</td>
+<td class="instruction">DEFB 2,3,60,232</td>
+<td class="comment-11" rowspan="1">(067) - Graphics (<a href="59260.html#59452">59452</a>) - Puff of Smoke Frame 5</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42914"></span>42914</td>
+<td class="instruction">DEFB 2,3,108,232</td>
+<td class="comment-11" rowspan="1">(068) - Graphics (<a href="59260.html#59500">59500</a>) - Puff of Smoke Frame 6</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42918"></span>42918</td>
+<td class="instruction">DEFB 2,4,124,229</td>
+<td class="comment-11" rowspan="1">(069) - Graphics (<a href="58748.html">58748</a>) - Gimbal the Wizard</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42922"></span>42922</td>
+<td class="instruction">DEFB 2,4,188,229</td>
+<td class="comment-11" rowspan="1">(070) - Graphics (<a href="58748.html#58812">58812</a>) - Thor</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42926"></span>42926</td>
+<td class="instruction">DEFB 2,4,252,229</td>
+<td class="comment-11" rowspan="1">(071) - Graphics (<a href="58748.html#58876">58876</a>) - Florin the Dwarf</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42930"></span>42930</td>
+<td class="instruction">DEFB 2,4,60,230</td>
+<td class="comment-11" rowspan="1">(072) - Graphics (<a href="58748.html#58940">58940</a>) - Orik the Cleric</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42934"></span>42934</td>
+<td class="instruction">DEFB 2,4,124,230</td>
+<td class="comment-11" rowspan="1">(073) - Graphics (<a href="58748.html#59004">59004</a>) - Samsun the Strong</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42938"></span>42938</td>
+<td class="instruction">DEFB 2,4,188,230</td>
+<td class="comment-11" rowspan="1">(074) - Graphics (<a href="58748.html#59068">59068</a>) - Elrand Halfelven</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42942"></span>42942</td>
+<td class="instruction">DEFB 2,4,252,230</td>
+<td class="comment-11" rowspan="1">(075) - Graphics (<a href="58748.html#59132">59132</a>) - Lady Rosmar</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42946"></span>42946</td>
+<td class="instruction">DEFB 2,4,60,231</td>
+<td class="comment-11" rowspan="1">(076) - Graphics (<a href="58748.html#59196">59196</a>) - The Banshee</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42950"></span>42950</td>
+<td class="instruction">DEFB 4,9,92,228</td>
+<td class="comment-11" rowspan="1">(077) - Graphics (<a href="55716.html#58460">58460</a>) - Lift Control Panel</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42954"></span>42954</td>
+<td class="instruction">DEFB 2,2,148,227</td>
+<td class="comment-11" rowspan="1">(078) - Graphics (<a href="55716.html#58260">58260</a>) - Mushroom (1)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42958"></span>42958</td>
+<td class="instruction">DEFB 2,2,180,227</td>
+<td class="comment-11" rowspan="1">(079) - Graphics (<a href="55716.html#58292">58292</a>) - Mushroom (2)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42962"></span>42962</td>
+<td class="instruction">DEFB 2,2,212,227</td>
+<td class="comment-11" rowspan="1">(080) - Graphics (<a href="55716.html#58324">58324</a>) - Mushroom (3)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42966"></span>42966</td>
+<td class="instruction">DEFB 2,2,244,227</td>
+<td class="comment-11" rowspan="1">(081) - Graphics (<a href="55716.html#58356">58356</a>) - Mushroom (4)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42970"></span>42970</td>
+<td class="instruction">DEFB 3,3,20,228</td>
+<td class="comment-11" rowspan="1">(082) - Graphics (<a href="55716.html#58388">58388</a>) - Large Mushroom</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42974"></span>42974</td>
+<td class="instruction">DEFB 2,4,84,227</td>
+<td class="comment-11" rowspan="1">(083) - Graphics (<a href="55716.html#58196">58196</a>) - Lift Door</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42978"></span>42978</td>
+<td class="instruction">DEFB 6,4,244,225</td>
+<td class="comment-11" rowspan="1">(084) - Graphics (<a href="55716.html#57844">57844</a>) - Tree Top (1)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42982"></span>42982</td>
+<td class="instruction">DEFB 4,5,180,226</td>
+<td class="comment-11" rowspan="1">(085) - Graphics (<a href="55716.html#58036">58036</a>) - Tree Trunk (1)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42986"></span>42986</td>
+<td class="instruction">DEFB 8,5,180,224</td>
+<td class="comment-11" rowspan="1">(086) - Graphics (<a href="55716.html#57524">57524</a>) - Wall axes</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42990"></span>42990</td>
+<td class="instruction">DEFB 2,5,164,223</td>
+<td class="comment-11" rowspan="1">(087) - Graphics (<a href="55716.html#57252">57252</a>) - Unknown</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42994"></span>42994</td>
+<td class="instruction">DEFB 2,2,244,223</td>
+<td class="comment-11" rowspan="1">(088) - Graphics (<a href="55716.html#57332">57332</a>) - Unknown</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="42998"></span>42998</td>
+<td class="instruction">DEFB 2,5,20,224</td>
+<td class="comment-11" rowspan="1">(089) - Graphics (<a href="55716.html#57364">57364</a>) - Plant (1)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43002"></span>43002</td>
+<td class="instruction">DEFB 2,5,100,224</td>
+<td class="comment-11" rowspan="1">(090) - Graphics (<a href="55716.html#57444">57444</a>) - Plant (2)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43006"></span>43006</td>
+<td class="instruction">DEFB 3,10,180,222</td>
+<td class="comment-11" rowspan="1">(091) - Graphics (<a href="55716.html#57012">57012</a>) - Wall clock</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43010"></span>43010</td>
+<td class="instruction">DEFB 6,7,100,221</td>
+<td class="comment-11" rowspan="1">(092) - Graphics (<a href="55716.html#56676">56676</a>) - Stag's Head</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43014"></span>43014</td>
+<td class="instruction">DEFB 4,4,36,220</td>
+<td class="comment-11" rowspan="1">(093) - Graphics (<a href="55716.html#56356">56356</a>) - Big Bottle Top</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43018"></span>43018</td>
+<td class="instruction">DEFB 4,4,164,220</td>
+<td class="comment-11" rowspan="1">(094) - Graphics (<a href="55716.html#56484">56484</a>) - Big / Little Bottle Body</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43022"></span>43022</td>
+<td class="instruction">DEFB 4,2,36,221</td>
+<td class="comment-11" rowspan="1">(095) - Graphics (<a href="55716.html#56612">56612</a>) - Little Bottle Top</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43026"></span>43026</td>
+<td class="instruction">DEFB 3,6,148,219</td>
+<td class="comment-11" rowspan="1">(096) - Graphics (<a href="55716.html#56212">56212</a>) - Ceiling Candles</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43030"></span>43030</td>
+<td class="instruction">DEFB 5,2,4,218</td>
+<td class="comment-11" rowspan="1">(097) - Graphics (<a href="55716.html#55812">55812</a>) - Books (1)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43034"></span>43034</td>
+<td class="instruction">DEFB 5,3,84,218</td>
+<td class="comment-11" rowspan="1">(098) - Graphics (<a href="55716.html#55892">55892</a>) - Books (2)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43038"></span>43038</td>
+<td class="instruction">DEFB 5,3,204,218</td>
+<td class="comment-11" rowspan="1">(099) - Graphics (<a href="55716.html#56012">56012</a>) - Books (3)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43042"></span>43042</td>
+<td class="instruction">DEFB 5,2,68,219</td>
+<td class="comment-11" rowspan="1">(100) - Graphics (<a href="55716.html#56132">56132</a>) - Books (4)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43046"></span>43046</td>
+<td class="instruction">DEFB 3,2,164,217</td>
+<td class="comment-11" rowspan="1">(101) - Graphics (<a href="55716.html">55716</a>) - Right bookend</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="43050"></span>43050</td>
+<td class="instruction">DEFB 3,2,212,217</td>
+<td class="comment-11" rowspan="1">(102) - Graphics (<a href="55716.html#55764">55764</a>) - Left bookend</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="42242.html">42242</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#42642">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="43090.html">43090</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

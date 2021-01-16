@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stormbringer (48k): Routine at 44615</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../stormbringer.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="44337.html">44337</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#44615">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="44635.html">44635</a></span></td>
+</tr>
+</table>
+<div class="description">44615: Load BC with Coordinates of Character's Arrival Point When Summoned and Set Zero Flag if Character Refuses</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routine at <a href="44337.html">44337</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-1">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+<tr>
+<td class="register">B</td>
+<td class="register-desc">Destination y-coordinate</td>
+</tr>
+<tr>
+<td class="register">C</td>
+<td class="register-desc">Destination x-coordinate</td>
+</tr>
+<tr>
+<td class="register">F</td>
+<td class="register-desc">Zero Flag set if character does not want to come to room, otherwise reset</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="44615"></span>44615</td>
+<td class="instruction">LD A,(23702)</td>
+<td class="comment-11" rowspan="1">Load A with index of Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44618"></span>44618</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44619"></span>44619</td>
+<td class="instruction">ADD A,A</td>
+<td class="comment-11" rowspan="1">Double index of Magic Knight's current room</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44620"></span>44620</td>
+<td class="instruction">LD HL,49690</td>
+<td class="comment-11" rowspan="1">Load HL with start address of Table of x- and y-Coordinates of Positions Taken by Summoned Characters in Each Room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44623"></span>44623</td>
+<td class="instruction">LD C,A</td>
+<td class="comment-11" rowspan="1">...and add double room index as offset...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44624"></span>44624</td>
+<td class="instruction">LD B,0</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44626"></span>44626</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44627"></span>44627</td>
+<td class="instruction">LD C,(HL)</td>
+<td class="comment-11" rowspan="1">Load C with destination x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44628"></span>44628</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to destination y-coordinate...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44629"></span>44629</td>
+<td class="instruction">LD B,(HL)</td>
+<td class="comment-11" rowspan="1">...and load into B</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44630"></span>44630</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44631"></span>44631</td>
+<td class="instruction">LD A,C</td>
+<td class="comment-11" rowspan="1">If destination x-coordinate is 99...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44632"></span>44632</td>
+<td class="instruction">CP 99</td>
+<td class="comment-11" rowspan="1">...then set Zero Flag</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="44634"></span>44634</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="44337.html">44337</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#44615">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="44635.html">44635</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>

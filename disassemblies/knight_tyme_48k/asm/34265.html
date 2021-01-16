@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight Tyme (48k): Routine at 34265</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../spectrum.css" />
+<link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</head>
+<body class="Asm-c">
+<table class="header">
+<tr>
+<td class="logo"><a href="../index.html"><img alt="logo" src="../images/logo.png" /></a></td>
+<td class="page-header">Routines</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34122.html">34122</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#34265">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="34484.html">34484</a></span></td>
+</tr>
+</table>
+<div class="description">34265: Set Magic Knight's Available Action Flags and Validate I.D. Card if Appropriate</div>
+<table class="disassembly">
+<tr>
+<td class="routine-comment" colspan="4">
+<div class="details">
+<div class="paragraph">
+Used by the routines at <a href="26997.html">26997</a>, <a href="28101.html">28101</a>, <a href="29330.html">29330</a> and <a href="30001.html">30001</a>.
+</div>
+</div>
+<table class="input-0">
+<tr class="asm-input-header">
+<th colspan="2">Input</th>
+</tr>
+
+</table>
+<table class="output-0">
+<tr class="asm-output-header">
+<th colspan="2">Output</th>
+</tr>
+
+</table>
+</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34265"></span>34265</td>
+<td class="instruction">LD HL,1</td>
+<td class="comment-11" rowspan="1">Reset all Available In-Game Menu Command Flags except "COMMAND A CHARACTER" which is always set...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34268"></span>34268</td>
+<td class="instruction">LD (23698),HL</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34271"></span>34271</td>
+<td class="instruction">LD A,(25024)</td>
+<td class="comment-11" rowspan="1">If Magic Knight's Magic Level is zero...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34274"></span>34274</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34275"></span>34275</td>
+<td class="instruction">JR Z,34281</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34281">34281</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34277"></span>34277</td>
+<td class="instruction">SET 5,(IY+88)</td>
+<td class="comment-11" rowspan="1">Set "CAST A SPELL" Menu Command Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34281"></span>34281</td>
+<td class="instruction">LD A,(23701)</td>
+<td class="comment-11" rowspan="1">If Magic Knight's current room is not 1 (The Bridge, USS Pisces 1)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34284"></span>34284</td>
+<td class="instruction">CP 1</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34286"></span>34286</td>
+<td class="instruction">JR NZ,34320</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34320">34320</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34288"></span>34288</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">If Magic Knight is wearing the Cloak of Invisibility (01)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34290"></span>34290</td>
+<td class="instruction">CALL <a href="33640.html">33640</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34293"></span>34293</td>
+<td class="instruction">JR Z,34320</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34320">34320</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34295"></span>34295</td>
+<td class="instruction">LD A,3</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not wearing the Valid ID Card (03)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34297"></span>34297</td>
+<td class="instruction">CALL <a href="33640.html">33640</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34300"></span>34300</td>
+<td class="instruction">JR NZ,34320</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34320">34320</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34302"></span>34302</td>
+<td class="instruction">SET 2,(IY+89)</td>
+<td class="comment-11" rowspan="1">Set "COMMUNICATE" Menu Command Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34306"></span>34306</td>
+<td class="instruction">LD HL,25174</td>
+<td class="comment-11" rowspan="1">If Gordon is not carrying the Star Map...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34309"></span>34309</td>
+<td class="instruction">LD A,6</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34311"></span>34311</td>
+<td class="instruction">CALL <a href="33645.html#33648">33648</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34314"></span>34314</td>
+<td class="instruction">JR NZ,34320</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34320">34320</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34316"></span>34316</td>
+<td class="instruction">SET 0,(IY+89)</td>
+<td class="comment-11" rowspan="1">Set "MOVE STARSHIP" Menu Command Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34320"></span>34320</td>
+<td class="instruction">LD A,(23701)</td>
+<td class="comment-11" rowspan="1">Load E with Magic Knight's current room...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34323"></span>34323</td>
+<td class="instruction">LD E,A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34324"></span>34324</td>
+<td class="instruction">LD BC,4</td>
+<td class="comment-11" rowspan="1">Load BC with 4 (as each Transporter Pad Location entry is composed of 4 bytes)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34327"></span>34327</td>
+<td class="instruction">LD HL,32577</td>
+<td class="comment-11" rowspan="1">Point HL at Table of Transporter Pad Locations (<a href="32577.html">32577</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34330"></span>34330</td>
+<td class="instruction">ADD HL,BC</td>
+<td class="comment-11" rowspan="1">Advance HL by four bytes to next entry</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34331"></span>34331</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-11" rowspan="1">If first byte (Room Number) is 255 (End Marker)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34332"></span>34332</td>
+<td class="instruction">CP 255</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34334"></span>34334</td>
+<td class="instruction">JR Z,34363</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34363">34363</a> (end of data reached)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34336"></span>34336</td>
+<td class="instruction">CP E</td>
+<td class="comment-11" rowspan="1">If current transporter pad's room is not in the same room as Magic Knight...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34337"></span>34337</td>
+<td class="instruction">JR NZ,34330</td>
+<td class="comment-11" rowspan="1">...then loop back to <a href="34265.html#34330">34330</a> for next transporter pad</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34339"></span>34339</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to pad's left x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34340"></span>34340</td>
+<td class="instruction">LD A,(25156)</td>
+<td class="comment-11" rowspan="1">If Magic Knight's current x-coordinate (pixels) is less than this...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34343"></span>34343</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34344"></span>34344</td>
+<td class="instruction">JP C,34363</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34363">34363</a> (Magic Knight not on a transporter pad)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34347"></span>34347</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to pad's right x-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34348"></span>34348</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">If Magic Knight's current x-coordinate (pixels) is not less than this...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34349"></span>34349</td>
+<td class="instruction">JP NC,34363</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34363">34363</a> (Magic Knight not on a transporter pad)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34352"></span>34352</td>
+<td class="instruction">INC HL</td>
+<td class="comment-11" rowspan="1">Advance HL to pad's y-coordinate</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34353"></span>34353</td>
+<td class="instruction">LD A,(25157)</td>
+<td class="comment-11" rowspan="1">If Magic Knight's current y-coordinate (pixels) is not the same as this...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34356"></span>34356</td>
+<td class="instruction">CP (HL)</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34357"></span>34357</td>
+<td class="instruction">JR NZ,34363</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34363">34363</a> (Magic Knight not on a transporter pad)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34359"></span>34359</td>
+<td class="instruction">SET 1,(IY+89)</td>
+<td class="comment-11" rowspan="1">Set "USE TRANSPORTER" Menu Command Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34363"></span>34363</td>
+<td class="instruction">XOR A</td>
+<td class="comment-11" rowspan="1">Load C with weights / flags of all Magic Knight's carried objects, OR-ed Together...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34364"></span>34364</td>
+<td class="instruction">CALL <a href="34484.html">34484</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34367"></span>34367</td>
+<td class="instruction">BIT 5,C</td>
+<td class="comment-11" rowspan="1">...and if Can Be Read Flag is not set for any of the objects...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34369"></span>34369</td>
+<td class="instruction">JR Z,34375</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34375">34375</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34371"></span>34371</td>
+<td class="instruction">SET 3,(IY+88)</td>
+<td class="comment-11" rowspan="1">Set "READ SOMETHING" Menu Command Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34375"></span>34375</td>
+<td class="instruction">LD A,1</td>
+<td class="comment-11" rowspan="1">Load C with flags (2) of all Magic Knight's carried objects, OR-ed Together...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34377"></span>34377</td>
+<td class="instruction">CALL <a href="34484.html">34484</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34380"></span>34380</td>
+<td class="instruction">BIT 3,C</td>
+<td class="comment-11" rowspan="1">...and if Can Be Worn Flag is set for at least one of the objects...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34382"></span>34382</td>
+<td class="instruction">JR NZ,34390</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34390">34390</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34384"></span>34384</td>
+<td class="instruction">LD A,(25169)</td>
+<td class="comment-11" rowspan="1">If Magic Knight's first inventory slot (wearing) is empty...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34387"></span>34387</td>
+<td class="instruction">OR A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34388"></span>34388</td>
+<td class="instruction">JR Z,34394</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34394">34394</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34390"></span>34390</td>
+<td class="instruction">SET 7,(IY+88)</td>
+<td class="comment-11" rowspan="1">Set "WEAR/UNWEAR OBJECT" Menu Command Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34394"></span>34394</td>
+<td class="instruction">LD A,2</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not carrying the Blank I.D. Card (02)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34396"></span>34396</td>
+<td class="instruction">CALL <a href="33645.html">33645</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34399"></span>34399</td>
+<td class="instruction">JR NZ,34473</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34473">34473</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34401"></span>34401</td>
+<td class="instruction">LD A,10</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not carrying the Pot of Glue (10)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34403"></span>34403</td>
+<td class="instruction">CALL <a href="33645.html">33645</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34406"></span>34406</td>
+<td class="instruction">JR NZ,34473</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34473">34473</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34408"></span>34408</td>
+<td class="instruction">LD A,5</td>
+<td class="comment-11" rowspan="1">If Magic Knight is not carrying the Photograph (of Magic Knight) (05)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34410"></span>34410</td>
+<td class="instruction">CALL <a href="33645.html">33645</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34413"></span>34413</td>
+<td class="instruction">JR NZ,34473</td>
+<td class="comment-11" rowspan="1">...then skip ahead to <a href="34265.html#34473">34473</a></td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34415"></span>34415</td>
+<td class="instruction">LD C,5</td>
+<td class="comment-11" rowspan="1">Remove Photograph (of Magic Knight) from Magic Knight's current inventory (carrying)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34417"></span>34417</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34419"></span>34419</td>
+<td class="instruction">LD HL,25164</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34422"></span>34422</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">...storing HL (pointer to start of Magic Knight's current inventory)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34423"></span>34423</td>
+<td class="instruction">CALL <a href="36254.html">36254</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34426"></span>34426</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">...and restoring HL (pointer to start of Magic Knight's current inventory)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34427"></span>34427</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to start of Magic Knight's current inventory)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34428"></span>34428</td>
+<td class="instruction">LD C,2</td>
+<td class="comment-11" rowspan="1">Remove Blank ID Card from Magic Knight's current inventory...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34430"></span>34430</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34432"></span>34432</td>
+<td class="instruction">CALL <a href="36254.html">36254</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34435"></span>34435</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (pointer to start of Magic Knight's current inventory)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34436"></span>34436</td>
+<td class="instruction">LD C,3</td>
+<td class="comment-11" rowspan="1">Load Valid ID Card into the first empty inventory slot of Magic Knight...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34438"></span>34438</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34440"></span>34440</td>
+<td class="instruction">CALL <a href="33516.html">33516</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34443"></span>34443</td>
+<td class="instruction">LD A,(23451)</td>
+<td class="comment-11" rowspan="1">Set I.D. Card Validated Flag...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34446"></span>34446</td>
+<td class="instruction">OR 16</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34448"></span>34448</td>
+<td class="instruction">LD (23451),A</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34451"></span>34451</td>
+<td class="instruction">LD HL,45771</td>
+<td class="comment-11" rowspan="1">Point HL at "YOU HAVE HAD AN ACCIDENT WITH THE GLUE..." text</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34454"></span>34454</td>
+<td class="instruction">LD DE,37227</td>
+<td class="comment-11" rowspan="1">Adjust height of window 17 to accommodate text...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34457"></span>34457</td>
+<td class="instruction">CALL <a href="33774.html">33774</a></td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34460"></span>34460</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-11" rowspan="1">Store HL (pointer to start of text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34461"></span>34461</td>
+<td class="instruction">LD A,17</td>
+<td class="comment-11" rowspan="1">Draw Window 17 as a Menu Window...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34463"></span>34463</td>
+<td class="instruction">CALL <a href="34982.html">34982</a></td>
+<td class="comment-11" rowspan="1">... (<a href="../reference/bugs.html#wrongwindowtype">bug</a>)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34466"></span>34466</td>
+<td class="instruction">POP HL</td>
+<td class="comment-11" rowspan="1">Restore HL (pointer to start of text)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34467"></span>34467</td>
+<td class="instruction">CALL <a href="34762.html">34762</a></td>
+<td class="comment-11" rowspan="1">Print text to screen</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34470"></span>34470</td>
+<td class="instruction">CALL <a href="55138.html">55138</a></td>
+<td class="comment-11" rowspan="1">Display "PRESS FIRE TO CONTINUE" Window and Wait for Fire to be Pressed</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-2"><span id="34473"></span>34473</td>
+<td class="instruction">LD A,(23701)</td>
+<td class="comment-11" rowspan="1">If Magic Knight's current room is not 24 (The Control Column, USS Pisces, 6A)...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34476"></span>34476</td>
+<td class="instruction">CP 24</td>
+<td class="comment-11" rowspan="1">...</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34478"></span>34478</td>
+<td class="instruction">RET NZ</td>
+<td class="comment-11" rowspan="1">...then return</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34479"></span>34479</td>
+<td class="instruction">SET 1,(IY+88)</td>
+<td class="comment-11" rowspan="1">Set "LAUNCH TYME MACHINE" Menu Command Flag (IY = 23610)</td>
+</tr>
+<tr>
+<td class="asm-label-0"></td>
+<td class="address-1"><span id="34483"></span>34483</td>
+<td class="instruction">RET</td>
+<td class="comment-11" rowspan="1">Return</td>
+</tr>
+</table>
+<table class="asm-navigation">
+<tr>
+<td class="prev"><span class="prev-1">Prev: <a href="34122.html">34122</a></span></td>
+<td class="up">Up: <a href="../maps/all.html#34265">Map</a></td>
+<td class="next"><span class="next-1">Next: <a href="34484.html">34484</a></span></td>
+</tr>
+</table>
+<footer>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+</footer>
+</body>
+</html>
