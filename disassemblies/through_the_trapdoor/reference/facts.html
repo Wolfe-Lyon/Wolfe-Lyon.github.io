@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Trivia</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Facts">
 <table class="header">
@@ -21,60 +19,61 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#redundantinstructionsi">Redundant Instructions / Code I</a></li>
-<li><a href="#colouredcreatureslots">Coloured Creatures' Slots</a></li>
-<li><a href="#redundantinstructionsii">Redundant Instructions / Code II</a></li>
-<li><a href="#spidertiming">Spiders' Timing</a></li>
-<li><a href="#redundantinstructionsiii">Redundant Instructions / Code III</a></li>
-<li><a href="#skeletonwidth">Width of Skeleton</a></li>
-<li><a href="#flagsgalore">Flags Galore</a></li>
-<li><a href="#redundantinstructionsiv">Redundant Instructions / Code IV</a></li>
-<li><a href="#heightofweight">Height of Weight</a></li>
-<li><a href="#graphicswiderthandisplay">Graphics Wider than Display</a></li>
-<li><a href="#redundantinstructionsv">Redundant Instructions / Code V</a></li>
-<li><a href="#redundantinstructionsvi">Redundant Instructions / Code VI</a></li>
-<li><a href="#redundantinstructionsvii">Redundant Instructions / Code VII</a></li>
-<li><a href="#redundantinstructionsviii">Redundant Instructions / Code VIII</a></li>
-<li><a href="#redundantinstructionsix">Redundant Instructions / Code IX</a></li>
-<li><a href="#unusedskeletonscript">Unused Skeleton Script</a></li>
-<li><a href="#unusedroomindex">Unused Room Index</a></li>
-<li><a href="#unusedpositioningroutine">Unused Routine</a></li>
-<li><a href="#unusedsounds">Unused Sounds</a></li>
-<li><a href="#redundantinstructionsx">Redundant Instructions / Code X</a></li>
+<li><a href="#redundantinstructionsi">Redundant instructions / code, part 1</a></li>
+<li><a href="#colouredcreatureslots">Coloured creatures' slots</a></li>
+<li><a href="#redundantinstructionsii">Redundant instructions / code, part 2</a></li>
+<li><a href="#spidertiming">Spiders' timing</a></li>
+<li><a href="#redundantinstructionsiii">Redundant instructions / code, part 3</a></li>
+<li><a href="#skeletonwidth">Width of skeleton</a></li>
+<li><a href="#flagsgalore">Flags galore</a></li>
+<li><a href="#redundantinstructionsiv">Redundant instructions / code, part 4</a></li>
+<li><a href="#heightofweight">Height of weight</a></li>
+<li><a href="#graphicswiderthandisplay">Graphics wider than display</a></li>
+<li><a href="#redundantinstructionsv">Redundant instructions / code, part 5</a></li>
+<li><a href="#redundantinstructionsvi">Redundant instructions / code, part 6</a></li>
+<li><a href="#redundantinstructionsvii">Redundant instructions / code, part 7</a></li>
+<li><a href="#redundantinstructionsviii">Redundant instructions / code, part 8</a></li>
+<li><a href="#redundantinstructionsix">Redundant instructions / code, part 9</a></li>
+<li><a href="#unusedskeletonscript">Unused skeleton script</a></li>
+<li><a href="#unusedroomindex">Unused room index</a></li>
+<li><a href="#unusedpositioningroutine">Unused routine</a></li>
+<li><a href="#unusedsounds">Unused sounds</a></li>
+<li><a href="#redundantinstructionsx">Redundant instructions / code, part 10</a></li>
 </ul>
 <div><span id="redundantinstructionsi"></span></div>
 <div class="box box-1">
-<div class="box-title">Redundant Instructions / Code I</div>
+<div class="box-title">Redundant instructions / code, part 1</div>
 <div class="paragraph">
-Upon loading, a call is made (at <a href="../initialisation/34428.html">34428</a>) to <a href="../initialisation/59831.html">59831</a> which contains the value 201, corresponding to the RET instruction,
-so this call effectively does nothing. Because this address lies near the beginning of a block of memory that at this point is not in use, it seems
-reasonable to assume that call was originally used in debugging or testing.
+Upon loading, a call is made (at <a href="../initialisation/34428.html">34428</a>) to <a href="../initialisation/59831.html">59831</a> which contains the value 201, corresponding to the <span class="instruction">RET</span>
+instruction, so this call effectively does nothing. Because this address lies near the beginning of a block of memory that at this point is not in use,
+it seems reasonable to assume that call was originally used in debugging or testing.
 </div>
 </div>
 <div><span id="colouredcreatureslots"></span></div>
 <div class="box box-2">
-<div class="box-title">Coloured Creatures' Slots</div>
+<div class="box-title">Coloured creatures' slots</div>
 <div class="paragraph">
-The three coloured creatures' slots on Level 3 are defined as entities at <a href="../asm/44608.html#44803">44803</a> (red), <a href="../asm/44608.html#44816">44816</a> (yellow) and <a href="../asm/44608.html#44829">44829</a> (white). At these locations, both
+The three coloured creatures' slots on level 3 are defined as entities at <a href="../asm/44608.html#44803">44803</a> (red), <a href="../asm/44608.html#44816">44816</a> (yellow) and <a href="../asm/44608.html#44829">44829</a> (white). At these locations, both
 the top and bottom y-coordinates are given as 115. This means that the slots are considered to be only one character high in the game's logic, despite
 the graphic layout data for the three slots at <a href="../asm/40040.html#40138">40138</a> (red), <a href="../asm/40040.html#40143">40143</a> (yellow) and <a href="../asm/40040.html#40148">40148</a> (white) displaying them as six characters high.
 </div>
 </div>
 <div><span id="redundantinstructionsii"></span></div>
 <div class="box box-1">
-<div class="box-title">Redundant Instructions / Code II</div>
+<div class="box-title">Redundant instructions / code, part 2</div>
 <div class="paragraph">
 If Berk has collided with an entity of class 129 (as checked at <a href="../asm/36116.html#36249">36249</a>) causing him to fall to the right, he is made to drop any entity he is carrying
-by the CALL to <a href="../asm/36296.html">36296</a> at <a href="../asm/36116.html#36253">36253</a>. After this, the instruction at <a href="../asm/36116.html#36256">36256</a> loads IY with the address of the definition of the entity Berk has just
-dropped. However the routine at <a href="../asm/36296.html">36296</a>, which has just been CALLed has already loaded IY with this very same value (instruction at <a href="../asm/36296.html#36305">36305</a>), making the
-instruction at <a href="../asm/36116.html#36256">36256</a> redundant. This redundant load does not occur in the analogous block of code (starting at <a href="../asm/36116.html#36171">36171</a>) when Berk falls to the left.
+by the CALL to <a href="../asm/36296.html">36296</a> at <a href="../asm/36116.html#36253">36253</a>. After this, the instruction at <a href="../asm/36116.html#36256">36256</a> loads <span class="register">IY</span> with the address of the definition of the entity Berk has just
+dropped. However the routine at <a href="../asm/36296.html">36296</a>, which has just been called has already loaded <span class="register">IY</span> with this very same value (instruction at <a href="../asm/36296.html#36305">36305</a>), making
+the instruction at <a href="../asm/36116.html#36256">36256</a> redundant. This redundant load does not occur in the analogous block of code (starting at <a href="../asm/36116.html#36171">36171</a>) when Berk falls to the
+left.
 </div>
 </div>
 <div><span id="spidertiming"></span></div>
 <div class="box box-2">
-<div class="box-title">Spiders' Timing</div>
+<div class="box-title">Spiders' timing</div>
 <div class="paragraph">
-It can be tricky to get past the three spiders on Level 1; fortunately, players who have difficulty are given some consideration. In the routine at
+It can be tricky to get past the three spiders on level 1; fortunately, players who have difficulty are given some consideration. In the routine at
 <a href="../asm/37718.html">37718</a> that controls the spiders' return to their homes, there is a check on the number of times Berk has been killed by a spider, as stored at
 <a href="../asm/34221.html#34223">34223</a>. The greater this value is, the longer the right-most spider will wait at its home position before beginning its next attack. A
 <a href="pokes.html#easierspiders">poke</a> will ensure that the other two spiders behave in the same way.
@@ -82,17 +81,17 @@ It can be tricky to get past the three spiders on Level 1; fortunately, players 
 </div>
 <div><span id="redundantinstructionsiii"></span></div>
 <div class="box box-1">
-<div class="box-title">Redundant Instructions / Code III</div>
+<div class="box-title">Redundant instructions / code, part 3</div>
 <div class="paragraph">
-The instruction at <a href="../asm/38592.html#38617">38617</a> is a CALL to the routine at <a href="../asm/38756.html">38756</a> that moves a stalactite down one character and loads A with the updated y-coordinate of
-its top edge (see <a href="../asm/38756.html#38762">38762</a>). The instruction (at <a href="../asm/38592.html#38620">38620</a>) subsequent to this CALL loads A with the same value.
+The instruction at <a href="../asm/38592.html#38617">38617</a> is a call to the routine at <a href="../asm/38756.html">38756</a> that moves a stalactite down one character and loads <span class="register">A</span> with the updated y-coordinate
+of its top edge (see <a href="../asm/38756.html#38762">38762</a>). The instruction (at <a href="../asm/38592.html#38620">38620</a>) subsequent to this <span class="instruction">CALL</span> loads <span class="register">A</span> with the same value.
 </div>
 </div>
 <div><span id="skeletonwidth"></span></div>
 <div class="box box-2">
-<div class="box-title">Width of Skeleton</div>
+<div class="box-title">Width of skeleton</div>
 <div class="paragraph">
-Level 4's Skeleton is defined in an entry at <a href="../asm/45274.html#45404">45404</a> to have a width of two characters (left and right edges at 128 and 129 respectively), when it is
+Level 4's skeleton is defined in an entry at <a href="../asm/45274.html#45404">45404</a> to have a width of two characters (left and right edges at 128 and 129 respectively), when it is
 clearly significantly wider. In fact when checking for a collision between the skeleton and Berk, this reduced width has to be compensated for by a
 subtraction at <a href="../asm/41498.html#41528">41528</a>.
 </div>
@@ -102,12 +101,12 @@ It is possible that this was done so that the cannon's projectile has to visibly
 </div>
 <div><span id="flagsgalore"></span></div>
 <div class="box box-1">
-<div class="box-title">Flags Galore</div>
+<div class="box-title">Flags galore</div>
 <div class="paragraph">
 A large number of flags are used to support the logic of Through the Trap Door. These flags are represented by individual bits in the various entities'
 complex state data. Although many of these flags are applicable to all entities and use the same bit for each entity, many are applicable only to a
-single entity, or a subset of entities. For example, bit 6 of byte 10 of an entity's complex state data generally represents that entity's "Can Fall"
-Flag, however bit 4 of byte 9 is the "Is Carrying an Object" Flag for Berk only. Some bits are used for several different purposes. Here is a list of
+single entity, or a subset of entities. For example, bit 6 of byte 10 of an entity's complex state data generally represents that entity's can-fall
+flag, however bit 4 of byte 9 is the carrying-something flag for Berk only. Some bits are used for several different purposes. Here is a list of
 the more significant flags, along with the entity / entities to which they apply:
 </div>
 <div class="paragraph">
@@ -121,133 +120,133 @@ the more significant flags, along with the entity / entities to which they apply
 <tr>
 <td class="centre" colspan="1" rowspan="1">8</td>
 <td class="" colspan="1" rowspan="1">7</td>
-<td class="" colspan="1" rowspan="1">"Spans Full Depth" Flag</td>
-<td class="" colspan="1" rowspan="1">Entity is considered to occupy both depth levels as far as collision detection is concerned. For example, this flag is set for Berk when the floating powerup is active. It is also set for markers involved in Berk / Drutt's falls.</td>
+<td class="" colspan="1" rowspan="1">Spans-full-depth flag</td>
+<td class="" colspan="1" rowspan="1">Entity is considered to occupy both depth levels as far as collision detection is concerned. For example, this flag is set for Berk when the floating power-up is active. It is also set for markers involved in Berk / Drutt's falls.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">9</td>
 <td class="" colspan="1" rowspan="1">0</td>
-<td class="" colspan="1" rowspan="1">(1 / 2) "Must Process Script Data" Flag</td>
+<td class="" colspan="1" rowspan="1">(1 / 2) Must-process-current-script-data flag</td>
 <td class="" colspan="1" rowspan="1">If set for an entity, then that entity cannot move except as scripted. Berk, for example, will ignore control input while this flag is set, e.g. while he is eating.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">9</td>
 <td class="" colspan="1" rowspan="1">0</td>
-<td class="" colspan="1" rowspan="1">(2 / 2) "Ghost Moving Upwards" Flag</td>
-<td class="" colspan="1" rowspan="1">Used to denote that Level 4's Ghost is moving upwards (see routine at <a href="../asm/41633.html">41633</a>)</td>
+<td class="" colspan="1" rowspan="1">(2 / 2) Ghost's moving-upwards flag</td>
+<td class="" colspan="1" rowspan="1">Used to denote that level 4's ghost is moving upwards (see routine at <a href="../asm/41633.html">41633</a>)</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">9</td>
 <td class="" colspan="1" rowspan="1">1</td>
-<td class="" colspan="1" rowspan="1">"Inactive" Flag</td>
-<td class="" colspan="1" rowspan="1">Applies to the Flying Skeleton Creature on Level 1 only. Plays a role in the logic controlling Boni's kidnap and the behaviour of the Trap Door.</td>
+<td class="" colspan="1" rowspan="1">Inactive flag</td>
+<td class="" colspan="1" rowspan="1">Applies to the flying skeleton creature on level 1 only. Plays a role in the logic controlling Boni's kidnap and the behaviour of the Trap Door.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">9</td>
 <td class="" colspan="1" rowspan="1">2</td>
-<td class="" colspan="1" rowspan="1">"Trapdoor Opened" Flag</td>
-<td class="" colspan="1" rowspan="1">Applies to the Flying Skeleton Creature on Level 1 only. Plays a role in the logic controlling Boni's kidnap and the behaviour of the Trap Door.</td>
+<td class="" colspan="1" rowspan="1">Trap-Door-opened flag</td>
+<td class="" colspan="1" rowspan="1">Applies to the flying skeleton creature on level 1 only. Plays a role in the logic controlling Boni's kidnap and the behaviour of the Trap Door.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">9</td>
 <td class="" colspan="1" rowspan="1">3</td>
-<td class="" colspan="1" rowspan="1">(1 / 2) "Berk and Drutt Through Trapdoor" Flag</td>
-<td class="" colspan="1" rowspan="1">Applies to the Flying Skeleton Creature on Level 1 only. Plays a role in the logic controlling Boni's kidnap and the behaviour of the Trap Door.</td>
+<td class="" colspan="1" rowspan="1">(1 / 2) Berk-and-Drutt-through-Trap-Door flag</td>
+<td class="" colspan="1" rowspan="1">Applies to the flying skeleton creature on level 1 only. Plays a role in the logic controlling Boni's kidnap and the behaviour of the Trap Door.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">9</td>
 <td class="" colspan="1" rowspan="1">3</td>
-<td class="" colspan="1" rowspan="1">(2 / 2) "Harmless" Flag</td>
-<td class="" colspan="1" rowspan="1">Applies to Bubo (Level 2) only. Used to denote that Berk has obtained the "Bubo Harmless" powerup.</td>
+<td class="" colspan="1" rowspan="1">(2 / 2) Harmless flag</td>
+<td class="" colspan="1" rowspan="1">Applies to Bubo (level 2) only. Used to denote that Berk has obtained the "Bubo harmless" power-up.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">9</td>
 <td class="" colspan="1" rowspan="1">4</td>
-<td class="" colspan="1" rowspan="1">"Is Carrying an Object" Flag</td>
+<td class="" colspan="1" rowspan="1">Carrying-something flag</td>
 <td class="" colspan="1" rowspan="1">Applies to Berk only. Used to denote that Berk is carrying something.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">9</td>
 <td class="" colspan="1" rowspan="1">5</td>
-<td class="" colspan="1" rowspan="1">"Do Not Update State" Flag</td>
-<td class="" colspan="1" rowspan="1">Applies to Berk only. Used in routines that control Large Yellow Creature (Level 3) attacking Berk.</td>
+<td class="" colspan="1" rowspan="1">Do-not-update-state flag</td>
+<td class="" colspan="1" rowspan="1">Applies to Berk only. Used in routines that control large yellow creature (level 3) attacking Berk.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">9</td>
 <td class="" colspan="1" rowspan="1">6</td>
-<td class="" colspan="1" rowspan="1">"Is Flying" Flag</td>
-<td class="" colspan="1" rowspan="1">Applies to Berk only. Used to denote that Berk is flying.</td>
+<td class="" colspan="1" rowspan="1">Is-flying flag</td>
+<td class="" colspan="1" rowspan="1">Applies to Berk only. Used to denote that Berk is-flying.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">9</td>
 <td class="" colspan="1" rowspan="1">7</td>
-<td class="" colspan="1" rowspan="1">"Moving Upwards" Flag</td>
-<td class="" colspan="1" rowspan="1">Applies to Berk only. Used to denote that Berk is moving upwards when the floating powerup is active.</td>
+<td class="" colspan="1" rowspan="1">Moving-upwards flag</td>
+<td class="" colspan="1" rowspan="1">Applies to Berk only. Used to denote that Berk is moving upwards when the floating power-up is active.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">10</td>
 <td class="" colspan="1" rowspan="1">2</td>
-<td class="" colspan="1" rowspan="1">"Back to Level 1" Flag</td>
-<td class="" colspan="1" rowspan="1">Applies to Berk only. Used to denote that Berk has returned to Level 1.</td>
+<td class="" colspan="1" rowspan="1">Back-to-level-1 flag</td>
+<td class="" colspan="1" rowspan="1">Applies to Berk only. Used to denote that Berk has returned to level 1.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">10</td>
 <td class="" colspan="1" rowspan="1">3</td>
-<td class="" colspan="1" rowspan="1">"All Home" Flag</td>
+<td class="" colspan="1" rowspan="1">All-home flag</td>
 <td class="" colspan="1" rowspan="1">Applies to Berk only. Used to denote that Berk, Boni and Drutt have all returned home at the end of the game.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">10</td>
 <td class="" colspan="1" rowspan="1">5</td>
-<td class="" colspan="1" rowspan="1">"Is Being Carried" Flag</td>
+<td class="" colspan="1" rowspan="1">Is-being-carried flag</td>
 <td class="" colspan="1" rowspan="1">Used to denote that the entity is being carried by Berk.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">10</td>
 <td class="" colspan="1" rowspan="1">6</td>
-<td class="" colspan="1" rowspan="1">"Can Fall" Flag</td>
+<td class="" colspan="1" rowspan="1">Can-fall flag</td>
 <td class="" colspan="1" rowspan="1">Used to denote that the entity should respect gravity and fall. If reset then the entity will not fall.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">11</td>
 <td class="" colspan="1" rowspan="1">0</td>
-<td class="" colspan="1" rowspan="1">"Walking Right" Flag</td>
+<td class="" colspan="1" rowspan="1">Walking-right flag</td>
 <td class="" colspan="1" rowspan="1">Used to denote that the entity is walking / moving right.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">11</td>
 <td class="" colspan="1" rowspan="1">1</td>
-<td class="" colspan="1" rowspan="1">"Walking Left" Flag</td>
+<td class="" colspan="1" rowspan="1">Walking-left flag</td>
 <td class="" colspan="1" rowspan="1">Used to denote that the entity is walking / moving left.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">11</td>
 <td class="" colspan="1" rowspan="1">4</td>
-<td class="" colspan="1" rowspan="1">"Impassable Leftwards" Flag</td>
+<td class="" colspan="1" rowspan="1">Impassable-leftwards flag</td>
 <td class="" colspan="1" rowspan="1">Used to denote that the entity cannot be passed in a leftward direction but may be pushed.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">11</td>
 <td class="" colspan="1" rowspan="1">5</td>
-<td class="" colspan="1" rowspan="1">"Impassable Rightwards" Flag</td>
+<td class="" colspan="1" rowspan="1">Impassable-rightwards flag</td>
 <td class="" colspan="1" rowspan="1">Used to denote that the entity cannot be passed in a rightward direction but may be pushed.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">11</td>
 <td class="" colspan="1" rowspan="1">6</td>
-<td class="" colspan="1" rowspan="1">Interaction (11,6) Flag</td>
+<td class="" colspan="1" rowspan="1">Interaction-(11,6) flag</td>
 <td class="" colspan="1" rowspan="1">Used in collision detection routines.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">11</td>
 <td class="" colspan="1" rowspan="1">7</td>
-<td class="" colspan="1" rowspan="1">Interaction (11,7) Flag</td>
+<td class="" colspan="1" rowspan="1">Interaction-(11,7) flag</td>
 <td class="" colspan="1" rowspan="1">Used in collision detection routines.</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">12</td>
 <td class="" colspan="1" rowspan="1">7</td>
-<td class="" colspan="1" rowspan="1">Is Jumping Flag</td>
+<td class="" colspan="1" rowspan="1">Is-jumping flag</td>
 <td class="" colspan="1" rowspan="1">Applies to Berk and Drutt only. Used to denote that Berk / Drutt is jumping.</td>
 </tr>
 </table>
@@ -255,9 +254,9 @@ the more significant flags, along with the entity / entities to which they apply
 </div>
 <div><span id="redundantinstructionsiv"></span></div>
 <div class="box box-2">
-<div class="box-title">Redundant Instructions / Code IV</div>
+<div class="box-title">Redundant instructions / code, part 4</div>
 <div class="paragraph">
-The address <a href="../asm/49705.html#49934">49934</a> lies within a block of graphic layout data responsible for defining Level 3's glowing tangleweeds. The rendering instructions at
+The address <a href="../asm/49705.html#49934">49934</a> lies within a block of graphic layout data responsible for defining level 3's glowing tangleweeds. The rendering instructions at
 this address are used by several different variants of tangleweed. The instruction at this location is one that selects an address at random from a list
 and jumps to it; this is used to make the tangleweeds blink between green and yellow at random. The random selection is weighted so that green is twice
 as likely to be selected as yellow, however this is done by defining the green tangleweed twice (at <a href="../asm/49705.html#49942">49942</a> and again at <a href="../asm/49705.html#49952">49952</a>). The same effect could
@@ -285,16 +284,16 @@ The same situation exists further on, at <a href="../asm/49705.html#49971">49971
 </div>
 <div><span id="heightofweight"></span></div>
 <div class="box box-1">
-<div class="box-title">Height of Weight</div>
+<div class="box-title">Height of weight</div>
 <div class="paragraph">
-The weight on Level 3 is defined as being three characters high in its complex definition data at <a href="../asm/44608.html#44933">44933</a>, yet its graphic layout data at <a href="../asm/41175.html">41175</a>
+The weight on level 3 is defined as being three characters high in its complex definition data at <a href="../asm/44608.html#44933">44933</a>, yet its graphic layout data at <a href="../asm/41175.html">41175</a>
 contains instructions for drawing four character rows of UDGs. As a result, the top of the weight is one character above where it should be when held by
 Berk. This is not a bug, however, and the resulting effect looks quite natural given that the weight is apparently bottom-heavy.
 </div>
 </div>
 <div><span id="graphicswiderthandisplay"></span></div>
 <div class="box box-2">
-<div class="box-title">Graphics Wider than Display</div>
+<div class="box-title">Graphics wider than display</div>
 <div class="paragraph">
 Parts of some graphics (e.g. the stalactites defined at <a href="../asm/50801.html#51202">51202</a>) lie outside the displayed area. Such graphics may still be partially displayed when
 assigned to a simple or complex entity, as long as that entity's top and left edges are positioned such that part of the graphic falls into the display
@@ -308,33 +307,33 @@ x-coordinate of -4 will show the last eight stalactites, with the first being of
 </div>
 <div><span id="redundantinstructionsv"></span></div>
 <div class="box box-1">
-<div class="box-title">Redundant Instructions / Code V</div>
+<div class="box-title">Redundant instructions / code, part 5</div>
 <div class="paragraph">
-The routine at <a href="../asm/45965.html">45965</a> populates the Primary Display Buffer with graphic layout data for an entity. During this population process, a check is done at
-<a href="../asm/45965.html#46142">46142</a> to determine whether the x-coordinate we are currently drawing to is zero after incrementing (i.e. was previously 255). However it appears that
+The routine at <a href="../asm/45965.html">45965</a> populates the primary display buffer with graphic layout data for an entity. During this population process, a check is done at
+<a href="../asm/45999.html#46142">46142</a> to determine whether the x-coordinate we are currently drawing to is zero after incrementing (i.e. was previously 255). However it appears that
 there is no way for this to be the case, so this check is redundant.
 </div>
 </div>
 <div><span id="redundantinstructionsvi"></span></div>
 <div class="box box-2">
-<div class="box-title">Redundant Instructions / Code VI</div>
+<div class="box-title">Redundant instructions / code, part 6</div>
 <div class="paragraph">
-If a Kempston joystick is present and functioning, then the instruction at <a href="../asm/46830.html#46930">46930</a> loads A with 1. This value is stored at <a href="../asm/34298.html">34298</a> (Joystick Mode Flag)
-by the next instruction. Then a jump occurs at <a href="../asm/46830.html#46935">46935</a> to <a href="../asm/46830.html#46938">46938</a>, at which point the value is stored at <a href="../asm/34298.html">34298</a> a second time. Ideally, the instruction
-at <a href="../asm/46830.html#46932">46932</a> should be removed entirely.
+If a Kempston joystick is present and functioning, then the instruction at <a href="../asm/46830.html#46930">46930</a> loads <span class="register">A</span> with 1. This value is stored at <a href="../asm/34298.html">34298</a> (joystick-mode
+flag) by the next instruction. Then a jump occurs at <a href="../asm/46830.html#46935">46935</a> to <a href="../asm/46830.html#46938">46938</a>, at which point the value is stored at <a href="../asm/34298.html">34298</a> a second time. Ideally, the
+instruction at <a href="../asm/46830.html#46932">46932</a> should be removed entirely.
 </div>
 </div>
 <div><span id="redundantinstructionsvii"></span></div>
 <div class="box box-1">
-<div class="box-title">Redundant Instructions / Code VII</div>
+<div class="box-title">Redundant instructions / code, part 7</div>
 <div class="paragraph">
-In the routine at <a href="../asm/52193.html">52193</a> that advances the position of an entity pushed right by Drutt, A is loaded with zero at <a href="../asm/52193.html#52233">52233</a> for no apparent reason. There
-is no such instruction in the equivalent routine (at <a href="../asm/52098.html">52098</a>) for an entity pushed left.
+In the routine at <a href="../asm/52193.html">52193</a> that advances the position of an entity pushed right by Drutt, <span class="register">A</span> is loaded with zero at <a href="../asm/52193.html#52233">52233</a> for no apparent reason.
+There is no such instruction in the equivalent routine (at <a href="../asm/52098.html">52098</a>) for an entity pushed left.
 </div>
 </div>
 <div><span id="redundantinstructionsviii"></span></div>
 <div class="box box-2">
-<div class="box-title">Redundant Instructions / Code VIII</div>
+<div class="box-title">Redundant instructions / code, part 8</div>
 <div class="paragraph">
 The routine at <a href="../asm/52315.html">52315</a> handles Drutt's change of depth levels. A check is done at <a href="../asm/52315.html">52315</a>, and if Drutt's current depth level is not 1, then we jump to
 <a href="../asm/52315.html#52351">52351</a> where another check is done to see if Drutt's depth level is 1. Since each of these conditions is the inverse of the other, there is no way for
@@ -343,7 +342,7 @@ them both to be satisfied simultaneously and therefore there is no point in chec
 </div>
 <div><span id="redundantinstructionsix"></span></div>
 <div class="box box-1">
-<div class="box-title">Redundant Instructions / Code IX</div>
+<div class="box-title">Redundant instructions / code, part 9</div>
 <div class="paragraph">
 The motion of Berk's feet when walking is defined in the graphic layout data at <a href="../asm/55698.html#55743">55743</a> (walking right) and <a href="../asm/56210.html#56284">56284</a> (walking left). At both of these
 locations, there is a list of graphic layout data addresses to be rendered sequentially to give the illusion of motion. Each of these lists contains
@@ -367,15 +366,15 @@ When restored, these additional frames make Berk's walk look slightly more awkwa
 </div>
 <div><span id="unusedskeletonscript"></span></div>
 <div class="box box-2">
-<div class="box-title">Unused Skeleton Script</div>
+<div class="box-title">Unused skeleton script</div>
 <div class="paragraph">
-Level 4's Skeleton has an unused block of script data at <a href="../asm/41240.html">41240</a>. This script data instructs the Skeleton to take a step forward, pause for a random
+Level 4's skeleton has an unused block of script data at <a href="../asm/41240.html">41240</a>. This script data instructs the skeleton to take a step forward, pause for a random
 (1-10) number of cycles then step back again.
 </div>
 </div>
 <div><span id="unusedroomindex"></span></div>
 <div class="box box-1">
-<div class="box-title">Unused Room Index</div>
+<div class="box-title">Unused room index</div>
 <div class="paragraph">
 Level 2's accessible rooms are numbered 1, 2, 3, 4, 6 and 7. There is no room with an index of 5 in the horizontal or vertical connectivity blocks,
 however there is in the room dimension data (<a href="../asm/44436.html#44456">44456</a>). There is also a ceiling (<a href="../asm/43993.html#44097">44097</a>) and a floor (<a href="../asm/43896.html#43968">43968</a>) defined for this room.
@@ -383,39 +382,39 @@ however there is in the room dimension data (<a href="../asm/44436.html#44456">4
 </div>
 <div><span id="unusedpositioningroutine"></span></div>
 <div class="box box-2">
-<div class="box-title">Unused Routine</div>
+<div class="box-title">Unused routine</div>
 <div class="paragraph">
-The routine at <a href="../asm/48791.html">48791</a> is unused. As it deals primarily with data offset by 4, 5, 6 and 7 bytes from the values in the IX and IY registers, it is
-reasonable to assume that IX and IY hold the addresses of complex state data for two entities. This is supported by the instructions at <a href="../asm/48791.html#48838">48838</a> and
-<a href="../asm/48791.html#48841">48841</a> which do a check on the value of the data eight bytes on from the address in IX (the class field in complex state data); this check looks for a
-value of 31 which is Berk's class value.
+The routine at <a href="../asm/48791.html">48791</a> is unused. As it deals primarily with data offset by 4, 5, 6 and 7 bytes from the values in the <span class="register">IX</span> and <span class="register">IY</span> registers, it
+is reasonable to assume that <span class="register">IX</span> and <span class="register">IY</span> hold the addresses of complex state data for two entities. This is supported by the instructions at
+<a href="../asm/48791.html#48838">48838</a> and <a href="../asm/48791.html#48841">48841</a> which do a check on the value of the data eight bytes on from the address in <span class="register">IX</span> (the class field in complex state data); this
+check looks for a value of 31 which is Berk's class value.
 </div>
 <div class="paragraph">
-It is possible that this routine was intended for use with the Clawed Foot on Level 3, with IY representing the foot and IX representing the entity
-being picked up by the foot. Given the check at <a href="../asm/48791.html#48838">48838-48841</a> it seems that originally the Clawed Foot may have been capable of picking up more
-than just Berk. Perhaps the Coloured Creatures puzzle was originally intended to be complicated by the Clawed Foot rearranging the creatures as well as
-attacking Berk. If this was the case, it may be that this was deemed too problematic to implement, and so the idea of having the creatures spontaneously
-switch positions was developed instead.
+It is possible that this routine was intended for use with the clawed foot on level 3, with <span class="register">IY</span> representing the foot and <span class="register">IX</span> representing the
+entity being picked up by the foot. Given the check at <a href="../asm/48791.html#48838">48838-48841</a> it seems that originally the clawed foot may have been capable of picking up
+more than just Berk. Perhaps the coloured creatures puzzle was originally intended to be complicated by the clawed foot rearranging the creatures as
+well as attacking Berk. If this was the case, it may be that this was deemed too problematic to implement, and so the idea of having the creatures
+spontaneously switch positions was developed instead.
 </div>
 </div>
 <div><span id="unusedsounds"></span></div>
 <div class="box box-1">
-<div class="box-title">Unused Sounds</div>
+<div class="box-title">Unused sounds</div>
 <div class="paragraph">
-In the Table of Sound Parameters at <a href="../asm/59634.html">59634</a>, there are three unused sounds (<a href="../asm/59634.html#59650">03</a>, <a href="../asm/59634.html#59706">10</a> and <a href="../asm/59634.html#59714">11</a>).
+In the table of sound parameters at <a href="../asm/59634.html">59634</a>, there are three unused sounds (<a href="../asm/59634.html#59650">03</a>, <a href="../asm/59634.html#59706">10</a> and <a href="../asm/59634.html#59714">11</a>).
 </div>
 </div>
 <div><span id="redundantinstructionsx"></span></div>
 <div class="box box-2">
-<div class="box-title">Redundant Instructions / Code X</div>
+<div class="box-title">Redundant instructions / code, part 10</div>
 <div class="paragraph">
-Script Routine 31 (at <a href="../asm/48976.html">48976</a>) is not used. Furthermore, the code within is identical in function to the code at <a href="../asm/48934.html#48958">48958-48973</a>.
+Script routine 31 (at <a href="../asm/48976.html">48976</a>) is not used. Furthermore, the code within is identical in function to the code at <a href="../asm/48934.html#48958">48958-48973</a>.
 </div>
 </div>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

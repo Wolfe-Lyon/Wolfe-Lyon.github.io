@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 39760</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,82 +20,72 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39699.html">39699</a></span></td>
+<td class="prev">
+Prev: <a href="39699.html">39699</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39760">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39776.html">39776</a></span></td>
+<td class="next">
+Next: <a href="39776.html">39776</a>
+</td>
 </tr>
 </table>
-<div class="description">39760: Present Reward for Getting Coloured Creatures Home</div>
+<div class="description">39760: Present reward for getting coloured creatures home</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="39601.html">39601</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39760"></span>39760</td>
 <td class="instruction">CALL <a href="36616.html">36616</a></td>
-<td class="comment-11" rowspan="1">Cycle attributes (full-screen), clear display buffers and paint red areas outside current room</td>
+<td class="comment-1" rowspan="1">Cycle attributes (full-screen), clear display buffers and paint red areas outside current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39763"></span>39763</td>
 <td class="instruction">LD IX,44972</td>
-<td class="comment-11" rowspan="1">Load IX with address of complex state data for edible eyes (normally hidden off-screen)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with address of complex state data for edible eyes (normally hidden off-screen)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39767"></span>39767</td>
 <td class="instruction">CALL <a href="55516.html">55516</a></td>
-<td class="comment-11" rowspan="1">...and set their "Can Fall" Flag and set initial velocity factor to 2</td>
+<td class="comment-1" rowspan="1">...and set their can-fall flag and set initial velocity factor to 2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39770"></span>39770</td>
 <td class="instruction">LD A,4</td>
-<td class="comment-11" rowspan="1">Set Coloured Creatures' Reward Given Flag...</td>
+<td class="comment-1" rowspan="1">Set coloured-creatures-reward-given flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39772"></span>39772</td>
 <td class="instruction">LD (44903),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39775"></span>39775</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39699.html">39699</a></span></td>
+<td class="prev">
+Prev: <a href="39699.html">39699</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39760">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39776.html">39776</a></span></td>
+<td class="next">
+Next: <a href="39776.html">39776</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

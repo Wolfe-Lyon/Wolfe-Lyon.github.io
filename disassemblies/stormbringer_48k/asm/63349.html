@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 63349</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="63332.html">63332</a></span></td>
+<td class="prev">
+Prev: <a href="63332.html">63332</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#63349">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="63388.html">63388</a></span></td>
+<td class="next">
+Next: <a href="63388.html">63388</a>
+</td>
 </tr>
 </table>
-<div class="description">63349: Print Text at DE (Command Summary) in Command Summary Window at Top of Screen</div>
+<div class="description">63349: Print text at <span class="register">DE</span> (command summary) in command summary window at top of screen</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="41578.html">41578</a>, <a href="41924.html">41924</a>, <a href="42257.html">42257</a>, <a href="42638.html">42638</a>, <a href="43043.html">43043</a>, <a href="43636.html">43636</a>, <a href="43874.html">43874</a>, <a href="44100.html">44100</a>, <a href="44337.html">44337</a>, <a href="45206.html">45206</a>, <a href="45781.html">45781</a> and <a href="63388.html">63388</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,122 +47,114 @@ Used by the routines at <a href="41578.html">41578</a>, <a href="41924.html">419
 <td class="register-desc">Points to command text</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63349"></span>63349</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE (Pointer to command text to print)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span> (pointer to command text to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63350"></span>63350</td>
 <td class="instruction">LD A,70</td>
-<td class="comment-11" rowspan="1">Set ATTR T system variable to 70 (yellow INK, black PAPER, BRIGHT)...</td>
+<td class="comment-1" rowspan="1">Store 70 (yellow INK, black PAPER, BRIGHT) at <a href="23693.html#23695">23695</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63352"></span>63352</td>
 <td class="instruction">LD (23695),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63355"></span>63355</td>
 <td class="instruction">LD HL,(63018)</td>
-<td class="comment-11" rowspan="1">Load HL with address of Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63358"></span>63358</td>
 <td class="instruction">EX (SP),HL</td>
-<td class="comment-11" rowspan="1">Swap registers so that HL points to text to be printed, and (SP) i.e. PUSHed value) contains Display File address to start printing character</td>
+<td class="comment-1" rowspan="1">Swap registers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="routine-comment" colspan="5">
+<span id="63359"></span>
+<div class="comments">
+<div class="paragraph">
+At this point, <span class="register">HL</span> points to text to be printed, and (<span class="register">SP</span>), i.e. PUSHed value, contains display file address to start printing character
+</div>
+</div>
+</td>
+</tr>
+<tr>
 <td class="address-1"><span id="63359"></span>63359</td>
 <td class="instruction">LD DE,(23704)</td>
-<td class="comment-11" rowspan="1">Load DE with new Display File address to print character...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with new display file address to print character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63363"></span>63363</td>
 <td class="instruction">LD (63018),DE</td>
-<td class="comment-11" rowspan="1">...and update Bitmap Virtual Text Cursor with this location</td>
+<td class="comment-1" rowspan="1">...and update bitmap virtual text cursor with this location</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63367"></span>63367</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to text to be printed)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to text to be printed)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63368"></span>63368</td>
 <td class="instruction">CALL <a href="63443.html">63443</a></td>
-<td class="comment-11" rowspan="1">Swap x- and y-coordinates of current window with those of Command Summary Window in temporary storage at <a href="23404.html#23418">23418</a></td>
+<td class="comment-1" rowspan="1">Swap x- and y-coordinates of current window with those of command summary window in temporary storage at <a href="23418.html">23418</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63371"></span>63371</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to text to be printed)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to text to be printed)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63372"></span>63372</td>
 <td class="instruction">CALL <a href="46902.html">46902</a></td>
-<td class="comment-11" rowspan="1">Print text to screen</td>
+<td class="comment-1" rowspan="1">Print text to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63375"></span>63375</td>
 <td class="instruction">CALL <a href="63443.html">63443</a></td>
-<td class="comment-11" rowspan="1">Restore x- and y-coordinates of current window from temporary storage at <a href="23404.html#23418">23418</a></td>
+<td class="comment-1" rowspan="1">Restore x- and y-coordinates of current window from temporary storage at <a href="23418.html">23418</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63378"></span>63378</td>
 <td class="instruction">LD HL,(63018)</td>
-<td class="comment-11" rowspan="1">Load HL with new address in Bitmap Virtual Text Cursor (i.e. after text just printed)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with new address in bitmap virtual text cursor (i.e. after text just printed)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63381"></span>63381</td>
 <td class="instruction">LD (23704),HL</td>
-<td class="comment-11" rowspan="1">...and store back at <a href="23704.html">23704</a></td>
+<td class="comment-1" rowspan="1">...and store back at <a href="23704.html">23704</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63384"></span>63384</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (Display File address to start printing character as swapped by instruction at <a href="63349.html#63358">63358</a>)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (display file address to start printing character as swapped by instruction at <a href="63349.html#63358">63358</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63385"></span>63385</td>
 <td class="instruction">JP <a href="63247.html#63259">63259</a></td>
-<td class="comment-11" rowspan="1">Store the updated address of Bitmap Virtual Text Cursor and return</td>
+<td class="comment-1" rowspan="1">Store the updated address of bitmap virtual text cursor and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="63332.html">63332</a></span></td>
+<td class="prev">
+Prev: <a href="63332.html">63332</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#63349">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="63388.html">63388</a></span></td>
+<td class="next">
+Next: <a href="63388.html">63388</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

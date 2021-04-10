@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 45450</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45434.html">45434</a></span></td>
+<td class="prev">
+Prev: <a href="45434.html">45434</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45450">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45466.html">45466</a></span></td>
+<td class="next">
+Next: <a href="45466.html">45466</a>
+</td>
 </tr>
 </table>
-<div class="description">45450: Point IX at Current Inventory of Character A</div>
+<div class="description">45450: Point <span class="register">IX</span> at current inventory of character <span class="register">A</span></div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a href="41924.html">41924</a>, <a href="42036.html">42036</a>, <a href="42157.html">42157</a>, <a href="42257.html">42257</a> and <a href="45670.html">45670</a>.
+Used by the routines at <a href="41924.html">41924</a>, <a href="42036.html">42036</a>, <a href="42157.html">42157</a> and <a href="42257.html">42257</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,95 +47,88 @@ Used by the routines at <a href="41924.html">41924</a>, <a href="42036.html">420
 <td class="register-desc">Index of a character</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">IX</td>
-<td class="register-desc">Points to current inventory of character A</td>
+<td class="register-desc">Points to current inventory of character <span class="register">A</span></td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="45450"></span>45450</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45451"></span>45451</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">Multiply character index by five (as each character has five inventory slots)...</td>
+<td class="comment-1" rowspan="1">Multiply character index by five (as each character has five inventory slots)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45452"></span>45452</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45453"></span>45453</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45454"></span>45454</td>
 <td class="instruction">ADD A,E</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45455"></span>45455</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...and load into DE...</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">DE</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45456"></span>45456</td>
 <td class="instruction">LD D,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45458"></span>45458</td>
 <td class="instruction">LD IX,24858</td>
-<td class="comment-11" rowspan="1">Point IX at Off-White Knight's entry in Characters' Current Inventories Table (i.e. first entry for non-player characters)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at Off-White Knight's entry in characters' current inventories table (i.e. first entry for non-player characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45462"></span>45462</td>
 <td class="instruction">ADD IX,DE</td>
-<td class="comment-11" rowspan="1">Add five times character index to this as offset</td>
+<td class="comment-1" rowspan="1">Add five times character index to this as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45464"></span>45464</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45465"></span>45465</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45434.html">45434</a></span></td>
+<td class="prev">
+Prev: <a href="45434.html">45434</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45450">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45466.html">45466</a></span></td>
+<td class="next">
+Next: <a href="45466.html">45466</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

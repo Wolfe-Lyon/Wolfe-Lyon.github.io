@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Data at 51483</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-b">
 <table class="header">
@@ -22,34 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="51286.html">51286</a></span></td>
+<td class="prev">
+Prev: <a href="51286.html">51286</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#51483">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="51518.html">51518</a></span></td>
+<td class="next">
+Next: <a href="51518.html">51518</a>
+</td>
 </tr>
 </table>
-<div class="description">51483: Graphic Layout Data: Explosion (Bubo's Projectile, Fallen Drips and Firing Cannon, Level 4)</div>
+<div class="description">51483: Graphic layout data: Explosion (Bubo's projectile, fallen drips and firing cannon, level 4)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="51483"></span>
 <div class="comments">
 <div class="paragraph">
@@ -59,71 +48,86 @@
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51483"></span>51483</td>
 <td class="instruction">DEFB 237,4</td>
-<td class="comment-11" rowspan="1">Set sound 4 (explosion) as pending</td>
+<td class="comment-1" rowspan="1">Set sound 4 as pending</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51485"></span>51485</td>
 <td class="instruction">DEFB 244,9</td>
-<td class="comment-11" rowspan="1">Set current graphic set to 9</td>
+<td class="comment-1" rowspan="1">Set current graphic set to 9</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51487"></span>51487</td>
 <td class="instruction">DEFB 250,255,255</td>
-<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by -1 and -1 characters respectively</td>
+<td class="comment-1" rowspan="1">Change cursor's x- and y-coordinates by -1 and -1 characters respectively</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51490"></span>51490</td>
-<td class="instruction">DEFB 40,7,33,41,7,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 40,7,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="51493"></span>51493</td>
+<td class="instruction">DEFB 41,7,33</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="51496"></span>51496</td>
-<td class="instruction">DEFB 40,135,30,42,7,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 40,135,30</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="51499"></span>51499</td>
+<td class="instruction">DEFB 42,7,33</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="51502"></span>51502</td>
-<td class="instruction">DEFB 43,120,33,42,135,30</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 43,120,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="51505"></span>51505</td>
+<td class="instruction">DEFB 42,135,30</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="51508"></span>51508</td>
-<td class="instruction">DEFB 45,7,33,46,7,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 45,7,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="51511"></span>51511</td>
+<td class="instruction">DEFB 46,7,33</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="51514"></span>51514</td>
 <td class="instruction">DEFB 45,135,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51517"></span>51517</td>
 <td class="instruction">DEFB 255</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="51286.html">51286</a></span></td>
+<td class="prev">
+Prev: <a href="51286.html">51286</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#51483">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="51518.html">51518</a></span></td>
+<td class="next">
+Next: <a href="51518.html">51518</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

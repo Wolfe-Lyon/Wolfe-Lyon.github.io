@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 42616</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,143 +20,130 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="42494.html">42494</a></span></td>
+<td class="prev">
+Prev: <a href="42494.html">42494</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#42616">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="42638.html">42638</a></span></td>
+<td class="next">
+Next: <a href="42638.html">42638</a>
+</td>
 </tr>
 </table>
-<div class="description">42616: Print Currently Available Additional In-Game Menu Command Options</div>
+<div class="description">42616: Print currently available additional in-game menu command options</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="42494.html">42494</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">A</td>
-<td class="register-desc">Available In-Game Menu Command Flags (part 1 or part 2)</td>
+<td class="register-desc">Available in-game menu command flags (part 1 or part 2)</td>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">Points to <a href="51434.html#51486">51486</a> if dealing with Flags part 1. Points to <a href="51434.html#51527">51527</a> if dealing with Flags part 2.</td>
+<td class="register-desc">Points to <a href="51434.html#51486">51486</a> if dealing with flags, part 1. Points to <a href="51434.html#51527">51527</a> if dealing with flags, part 2.</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42616"></span>42616</td>
 <td class="instruction">LD B,8</td>
-<td class="comment-11" rowspan="1">Load B with 8 (as there are 8 flags)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 8 (as there are 8 flags)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42618"></span>42618</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = remaining number of flags to process)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = remaining number of flags to process)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42619"></span>42619</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">Rotate least significant bit of A (i.e. current flag) into Carry Flag</td>
+<td class="comment-1" rowspan="1">Rotate least significant bit of <span class="register">A</span> (i.e. current flag) into carry flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42620"></span>42620</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (current flag in Carry and remaining flags in A)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (current flag in carry and remaining flags in <span class="register">A</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42621"></span>42621</td>
 <td class="instruction">CALL <a href="63313.html">63313</a></td>
-<td class="comment-11" rowspan="1">Advance HL to byte after first zero from address in HL onwards</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to byte after first zero from address in <span class="register">HL</span> onwards</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42624"></span>42624</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (current flag in Carry and remaining flags in A)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (current flag in carry and remaining flags in <span class="register">A</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42625"></span>42625</td>
 <td class="instruction">JR NC,42634</td>
-<td class="comment-11" rowspan="1">If current flag is reset then skip ahead to <a href="42616.html#42634">42634</a></td>
+<td class="comment-1" rowspan="1">If current flag is reset then skip ahead to <a href="42616.html#42634">42634</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42627"></span>42627</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (current position in Additional Menu Items texts)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (current position in additional menu items texts)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42628"></span>42628</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (current flag in Carry and remaining flags in A)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (current flag in carry and remaining flags in <span class="register">A</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42629"></span>42629</td>
 <td class="instruction">CALL <a href="46902.html">46902</a></td>
-<td class="comment-11" rowspan="1">Print text at HL (current additional menu item)</td>
+<td class="comment-1" rowspan="1">Print text at <span class="register">HL</span> (current additional menu item)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42632"></span>42632</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (current flag in Carry and remaining flags in A)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (current flag in carry and remaining flags in <span class="register">A</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42633"></span>42633</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (current position in Additional Menu Items texts)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (current position in additional menu items texts)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42634"></span>42634</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = remaining number of flags to process)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = remaining number of flags to process)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42635"></span>42635</td>
 <td class="instruction">DJNZ 42618</td>
-<td class="comment-11" rowspan="1">Decrease B and loop back to <a href="42616.html#42618">42618</a> for next flag</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> and loop back to <a href="42616.html#42618">42618</a> for next flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42637"></span>42637</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="42494.html">42494</a></span></td>
+<td class="prev">
+Prev: <a href="42494.html">42494</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#42616">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="42638.html">42638</a></span></td>
+<td class="next">
+Next: <a href="42638.html">42638</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

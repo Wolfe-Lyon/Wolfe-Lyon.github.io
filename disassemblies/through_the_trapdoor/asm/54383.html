@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 54383</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54348.html">54348</a></span></td>
+<td class="prev">
+Prev: <a href="54348.html">54348</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54383">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54398.html">54398</a></span></td>
+<td class="next">
+Next: <a href="54398.html">54398</a>
+</td>
 </tr>
 </table>
-<div class="description">54383: Move Entity at IX into Room to Right of its Current Room and Update Position of Carried Entity if Moving Entity is Berk</div>
+<div class="description">54383: Move entity at <span class="register">IX</span> into room to right of its current room and update position of carried entity if moving entity is Berk</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="48593.html">48593</a>, <a href="54283.html">54283</a> and <a href="54313.html">54313</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -45,62 +47,54 @@ Used by the routines at <a href="48593.html">48593</a>, <a href="54283.html">542
 <td class="register-desc">Address of complex state data for an entity</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54383"></span>54383</td>
 <td class="instruction">CALL <a href="54398.html">54398</a></td>
-<td class="comment-11" rowspan="1">Set character's position to be left-hand side of new room to right</td>
+<td class="comment-1" rowspan="1">Set character's position to be left-hand side of new room to right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54386"></span>54386</td>
 <td class="instruction">CALL <a href="54456.html">54456</a></td>
-<td class="comment-11" rowspan="1">Paint red areas outside current character's room if IX points to current character's complex state data</td>
+<td class="comment-1" rowspan="1">Paint red areas outside current character's room if <span class="register">IX</span> points to current character's complex state data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54389"></span>54389</td>
 <td class="instruction">BIT 7,(IX+9)</td>
-<td class="comment-11" rowspan="1">If entity is Berk and his Moving Upwards Flag (floating) is set...</td>
+<td class="comment-1" rowspan="1">If entity is Berk and his moving-upwards flag (floating) is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54393"></span>54393</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54394"></span>54394</td>
 <td class="instruction">CALL <a href="48727.html">48727</a></td>
-<td class="comment-11" rowspan="1">If entity is Berk then move carried entity to Berk's right as he faces right</td>
+<td class="comment-1" rowspan="1">If entity is Berk then move carried entity to Berk's right as he faces right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54397"></span>54397</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54348.html">54348</a></span></td>
+<td class="prev">
+Prev: <a href="54348.html">54348</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54383">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54398.html">54398</a></span></td>
+<td class="next">
+Next: <a href="54398.html">54398</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 35141</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="35101.html">35101</a></span></td>
+<td class="prev">
+Prev: <a href="35101.html">35101</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#35141">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="35293.html">35293</a></span></td>
+<td class="next">
+Next: <a href="35293.html">35293</a>
+</td>
 </tr>
 </table>
-<div class="description">35141: Display and Process Input for Character Selection Menu (Current Room's Characters Only)</div>
+<div class="description">35141: Display and process input for character selection menu (current room's characters only)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="30602.html">30602</a>, <a href="30880.html">30880</a>, <a href="31370.html">31370</a>, <a href="31636.html">31636</a> and <a href="32390.html">32390</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,458 +51,383 @@ Used by the routines at <a href="30602.html">30602</a>, <a href="30880.html">308
 <td class="register-desc">Pointer to secondary text</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35141"></span>35141</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35142"></span>35142</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35143"></span>35143</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35145"></span>35145</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35146"></span>35146</td>
 <td class="instruction">CALL <a href="38116.html">38116</a></td>
-<td class="comment-11" rowspan="1">Play short downward scale sound</td>
+<td class="comment-1" rowspan="1">Play short downward scale sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35149"></span>35149</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35150"></span>35150</td>
 <td class="instruction">LD A,D</td>
-<td class="comment-11" rowspan="1">If DE is zero...</td>
+<td class="comment-1" rowspan="1">If <span class="register">DE</span> is zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35151"></span>35151</td>
 <td class="instruction">OR E</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35152"></span>35152</td>
 <td class="instruction">JR Z,35162</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="35141.html#35162">35162</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="35141.html#35162">35162</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35154"></span>35154</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35155"></span>35155</td>
 <td class="instruction">CALL <a href="37654.html">37654</a></td>
-<td class="comment-11" rowspan="1">Display / update command summary window at bottom of screen</td>
+<td class="comment-1" rowspan="1">Display / update command summary window at bottom of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35158"></span>35158</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35159"></span>35159</td>
 <td class="instruction">CALL <a href="38693.html">38693</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at bottom of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at bottom of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35162"></span>35162</td>
 <td class="instruction">LD A,(65529)</td>
-<td class="comment-11" rowspan="1">Load A with Magic Knight's current room</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Magic Knight's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35165"></span>35165</td>
 <td class="instruction">CALL <a href="35931.html">35931</a></td>
-<td class="comment-11" rowspan="1">Load number of characters in this room into C and load their indices into table at 23464</td>
+<td class="comment-1" rowspan="1">Load number of characters in this room into <span class="register">C</span> and load their indices into table at <a href="23464.html">23464</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35168"></span>35168</td>
 <td class="instruction">JR NZ,35199</td>
-<td class="comment-11" rowspan="1">If there are characters present then jump to <a href="35141.html#35199">35199</a></td>
+<td class="comment-1" rowspan="1">If there are characters present then jump to <a href="35141.html#35199">35199</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35170"></span>35170</td>
 <td class="instruction">LD HL,44035</td>
-<td class="comment-11" rowspan="1">Point HL at "THERE IS NOBODY IN THIS ROOM" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "THERE IS NOBODY IN THIS ROOM" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35173"></span>35173</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load text height (rows) into A...</td>
+<td class="comment-1" rowspan="1">Load text height (rows) into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35174"></span>35174</td>
 <td class="instruction">LD (41981),A</td>
-<td class="comment-11" rowspan="1">...and then into stored bottom y-coordinate of window #13</td>
+<td class="comment-1" rowspan="1">...and then into stored bottom y-coordinate of window #13</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35177"></span>35177</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to next byte (start of actual text)</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next byte (start of actual text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35178"></span>35178</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35179"></span>35179</td>
 <td class="instruction">LD A,13</td>
-<td class="comment-11" rowspan="1">Draw window 13...</td>
+<td class="comment-1" rowspan="1">Draw window 13...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35181"></span>35181</td>
 <td class="instruction">CALL <a href="36987.html">36987</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35184"></span>35184</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35185"></span>35185</td>
 <td class="instruction">CALL <a href="36725.html">36725</a></td>
-<td class="comment-11" rowspan="1">Print "THERE IS NOBODY IN THIS ROOM" text to screen</td>
+<td class="comment-1" rowspan="1">Print "THERE IS NOBODY IN THIS ROOM" text to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35188"></span>35188</td>
 <td class="instruction">CALL <a href="38749.html">38749</a></td>
-<td class="comment-11" rowspan="1">Display "PRESS SPACE OR FIRE TO CONTINUE" window and wait for space / fire</td>
+<td class="comment-1" rowspan="1">Display "PRESS SPACE OR FIRE TO CONTINUE" window and wait for space / fire</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35191"></span>35191</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35193"></span>35193</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35194"></span>35194</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35195"></span>35195</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL again (as this routine was CALLed, but we are not RETurning from it, so need to keep stack tidy!)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> again (as this routine was called, but we are not returning from it, so need to keep stack tidy!)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35196"></span>35196</td>
 <td class="instruction">JP <a href="30222.html#30428">30428</a></td>
-<td class="comment-11" rowspan="1">Reset Gimbal-White-Out Safe Flag, redraw current room and return to main game loop</td>
+<td class="comment-1" rowspan="1">Reset Gimbal-white-out-safe flag, redraw current room and return to main game loop</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35199"></span>35199</td>
 <td class="instruction">ADD A,4</td>
-<td class="comment-11" rowspan="1">Add four to number of characters in current room (for menu size padding)</td>
+<td class="comment-1" rowspan="2">Add four to number of characters in current room (for menu size padding) and load value into "bottom position (characters)" field of fourth window in windows data table at <a href="41874.html">41874</a> (i.e. adjust window's height to accommodate all the characters present)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35201"></span>35201</td>
 <td class="instruction">LD (41901),A</td>
-<td class="comment-11" rowspan="1">Load value into "bottom position (characters)" field of fourth window in windows data table at <a href="41874.html">41874</a> (i.e. adjust window's height to accommodate all the characters present)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35204"></span>35204</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35206"></span>35206</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35207"></span>35207</td>
 <td class="instruction">LD A,3</td>
-<td class="comment-11" rowspan="1">Draw "WHO DO YOU WANT TO COMMAND?" menu window...</td>
+<td class="comment-1" rowspan="1">Draw "WHO DO YOU WANT TO COMMAND?" menu window...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35209"></span>35209</td>
 <td class="instruction">CALL <a href="36979.html">36979</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35212"></span>35212</td>
 <td class="instruction">LD HL,44017</td>
-<td class="comment-11" rowspan="1">Point HL at "WHO DO YOU WANT TO COMMAND?" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "WHO DO YOU WANT TO COMMAND?" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35215"></span>35215</td>
 <td class="instruction">CALL <a href="36725.html">36725</a></td>
-<td class="comment-11" rowspan="1">Print text in window</td>
+<td class="comment-1" rowspan="1">Print text in window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35218"></span>35218</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (primary text, as at beginning of this routine)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (primary text, as at beginning of this routine)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35219"></span>35219</td>
 <td class="instruction">CALL <a href="36725.html">36725</a></td>
-<td class="comment-11" rowspan="1">Print text in window</td>
+<td class="comment-1" rowspan="1">Print text in window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35222"></span>35222</td>
 <td class="instruction">LD HL,43221</td>
-<td class="comment-11" rowspan="1">Point HL at "0]" text (i.e. letters corresponding to menu items)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "0]" text (i.e. letters corresponding to menu items)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35225"></span>35225</td>
 <td class="instruction">LD A,64</td>
-<td class="comment-11" rowspan="1">Set this character to ASCII code 64 (character immediately before "A")...</td>
+<td class="comment-1" rowspan="1">Set this character to ASCII code 64 (character immediately before "A")...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35227"></span>35227</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35228"></span>35228</td>
 <td class="instruction">LD IX,23464</td>
-<td class="comment-11" rowspan="1">Point IX at table of indices of characters in current room</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at <a href="23464.html">list of indices of characters in current room</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35232"></span>35232</td>
 <td class="instruction">LD B,3</td>
-<td class="comment-11" rowspan="1">Load 3 into B (as we can have up to three characters in this room)</td>
+<td class="comment-1" rowspan="1">Load 3 into <span class="register">B</span> (as we can have up to three characters in this room)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35234"></span>35234</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35235"></span>35235</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load index of next character in room...</td>
+<td class="comment-1" rowspan="1">Load index of next character in room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35238"></span>35238</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">...compare with 255 (i.e. empty slot)...</td>
+<td class="comment-1" rowspan="1">...compare with 255 (i.e. empty slot)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35240"></span>35240</td>
 <td class="instruction">JP Z,35282</td>
-<td class="comment-11" rowspan="1">...and if this is an empty slot (i.e. no more characters) then jump to <a href="35141.html#35282">35282</a></td>
+<td class="comment-1" rowspan="1">...and if this is an empty slot (i.e. no more characters) then jump to <a href="35141.html#35282">35282</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35243"></span>35243</td>
 <td class="instruction">LD HL,43221</td>
-<td class="comment-11" rowspan="1">Point HL at "0]" text (i.e. letters corresponding to menu items)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "0]" text (i.e. letters corresponding to menu items)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35246"></span>35246</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load the first text character into A...</td>
+<td class="comment-1" rowspan="1">Load the first text character into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35247"></span>35247</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...increment...</td>
+<td class="comment-1" rowspan="1">...increment...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35248"></span>35248</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...and write back to location HL (i.e. advance to next letter, as menu choices are labelled A, B, C, etc.)</td>
+<td class="comment-1" rowspan="1">...and write back to location <span class="register">HL</span> (i.e. advance to next letter, as menu choices are labelled "A", "B", "C", etc.)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35249"></span>35249</td>
 <td class="instruction">LD HL,43220</td>
-<td class="comment-11" rowspan="1">Point to beginning of this modified string...</td>
+<td class="comment-1" rowspan="1">Point to beginning of this modified string...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35252"></span>35252</td>
 <td class="instruction">CALL <a href="36725.html">36725</a></td>
-<td class="comment-11" rowspan="1">...and print it to screen</td>
+<td class="comment-1" rowspan="1">...and print it to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35255"></span>35255</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load index of character into A again...</td>
+<td class="comment-1" rowspan="1">Load index of character into <span class="register">A</span> again...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35258"></span>35258</td>
 <td class="instruction">LD (30615),A</td>
-<td class="comment-11" rowspan="1">...and set this as the Current Character</td>
+<td class="comment-1" rowspan="1">...and set this as the Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35261"></span>35261</td>
 <td class="instruction">LD HL,34905</td>
-<td class="comment-11" rowspan="1">Point HL to code to print full name of Current Character...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> to code to print full name of Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35264"></span>35264</td>
 <td class="instruction">CALL <a href="36725.html">36725</a></td>
-<td class="comment-11" rowspan="1">...and print it to screen</td>
+<td class="comment-1" rowspan="1">...and print it to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35267"></span>35267</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to next character</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to next character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35269"></span>35269</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35270"></span>35270</td>
 <td class="instruction">DJNZ 35234</td>
-<td class="comment-11" rowspan="1">Repeat loop if we have not yet reached the third character</td>
+<td class="comment-1" rowspan="1">Repeat loop if we have not yet reached the third character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35272"></span>35272</td>
 <td class="instruction">CALL <a href="37333.html">37333</a></td>
-<td class="comment-11" rowspan="1">Process keyboard / joystick input for menu, and load ASCII code of shortcut for selected (i.e. SPACE or fire pressed) item into A</td>
+<td class="comment-1" rowspan="1">Process input for menu, and load ASCII code of shortcut for selected (i.e. SPACE or fire pressed) item into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35275"></span>35275</td>
 <td class="instruction">CALL <a href="34883.html">34883</a></td>
-<td class="comment-11" rowspan="1">Update Current Character based upon selection made in menu</td>
+<td class="comment-1" rowspan="1">Update Current Character based upon selection made in menu</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35278"></span>35278</td>
 <td class="instruction">CALL <a href="35393.html">35393</a></td>
-<td class="comment-11" rowspan="1">Display warning and abort if command is not safe while Gimbal whited-out</td>
+<td class="comment-1" rowspan="1">Display warning and abort if command is not safe while Gimbal whited-out</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35281"></span>35281</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35282"></span>35282</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35283"></span>35283</td>
 <td class="instruction">CALL <a href="37333.html">37333</a></td>
-<td class="comment-11" rowspan="1">Process keyboard / joystick input for menu, and load ASCII code of shortcut for selected (i.e. SPACE or fire pressed) item into A</td>
+<td class="comment-1" rowspan="1">Process input for menu, and load ASCII code of shortcut for selected (i.e. SPACE or fire pressed) item into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35286"></span>35286</td>
 <td class="instruction">CALL <a href="34883.html">34883</a></td>
-<td class="comment-11" rowspan="1">Update Current Character based upon selection made in menu</td>
+<td class="comment-1" rowspan="1">Update Current Character based upon selection made in menu</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35289"></span>35289</td>
 <td class="instruction">CALL <a href="35393.html">35393</a></td>
-<td class="comment-11" rowspan="1">Display warning and abort if command is not safe while Gimbal whited-out</td>
+<td class="comment-1" rowspan="1">Display warning and abort if command is not safe while Gimbal whited-out</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35292"></span>35292</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="35101.html">35101</a></span></td>
+<td class="prev">
+Prev: <a href="35101.html">35101</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#35141">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="35293.html">35293</a></span></td>
+<td class="next">
+Next: <a href="35293.html">35293</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 34484</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34265.html">34265</a></span></td>
+<td class="prev">
+Prev: <a href="34265.html">34265</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34484">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34512.html">34512</a></span></td>
+<td class="next">
+Next: <a href="34512.html">34512</a>
+</td>
 </tr>
 </table>
-<div class="description">34484: Load C with Property of Index A for All Magic Knight's Carried Objects, OR-ed Together</div>
+<div class="description">34484: Load <span class="register">C</span> with property of index <span class="register">A</span> for all Magic Knight's carried objects, <span class="instruction">OR</span>-ed together</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="34265.html">34265</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,55 +47,49 @@ Used by the routine at <a href="34265.html">34265</a>.
 <td class="register-desc">Index of required property of objects</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">C</td>
-<td class="register-desc">Flags of all objects held, OR-ed together</td>
+<td class="register-desc">Flags of all objects held, <span class="instruction">OR</span>-ed together</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34484"></span>34484</td>
 <td class="instruction">LD (34500),A</td>
-<td class="comment-11" rowspan="1">Modify instruction at <a href="34484.html#34499">34499</a> with index of required property</td>
+<td class="comment-1" rowspan="1">Modify instruction at <a href="34484.html#34499">34499</a> with index of required property</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34487"></span>34487</td>
 <td class="instruction">LD IX,25164</td>
-<td class="comment-11" rowspan="1">Point IX at Magic Knight's current inventory (carrying)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at Magic Knight's current inventory (carrying)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34491"></span>34491</td>
 <td class="instruction">LD BC,1280</td>
-<td class="comment-11" rowspan="1">Load B with 5 and C with 0 (i.e. reset all bits in C)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 5 and <span class="register">C</span> with 0 (i.e. reset all bits in <span class="register">C</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34494"></span>34494</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">If Magic Knight's current inventory slot is empty...</td>
+<td class="comment-1" rowspan="1">If Magic Knight's current inventory slot is empty...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34497"></span>34497</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34498"></span>34498</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34499"></span>
 <div class="comments">
 <div class="paragraph">
@@ -100,65 +99,61 @@ The operand of the instruction at <a href="34484.html#34499">34499</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34499"></span>34499</td>
 <td class="instruction">LD E,1</td>
-<td class="comment-11" rowspan="1">Load E with index of required property</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with index of required property</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34501"></span>34501</td>
 <td class="instruction">CALL <a href="33525.html">33525</a></td>
-<td class="comment-11" rowspan="1">Point HL to the E-th byte of the A-th record in Object Properties Table</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> to the <span class="register">E</span>-th byte of the <span class="register">A</span>-th record in object properties table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34504"></span>34504</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load A with value of required property (flags)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with value of required property (flags)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34505"></span>34505</td>
 <td class="instruction">OR C</td>
-<td class="comment-11" rowspan="1">...and set corresponding bits of C...</td>
+<td class="comment-1" rowspan="1">...and set corresponding bits of <span class="register">C</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34506"></span>34506</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34507"></span>34507</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to next inventory slot...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to next inventory slot...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34509"></span>34509</td>
 <td class="instruction">DJNZ 34494</td>
-<td class="comment-11" rowspan="1">...and loop back to <a href="34484.html#34494">34494</a> for next object</td>
+<td class="comment-1" rowspan="1">...and loop back to <a href="34484.html#34494">34494</a> for next object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34511"></span>34511</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34265.html">34265</a></span></td>
+<td class="prev">
+Prev: <a href="34265.html">34265</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34484">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34512.html">34512</a></span></td>
+<td class="next">
+Next: <a href="34512.html">34512</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

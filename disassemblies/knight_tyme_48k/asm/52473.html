@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Data at 52473</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,18 +20,22 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="52397.html">52397</a></span></td>
+<td class="prev">
+Prev: <a href="52397.html">52397</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#52473">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="52513.html">52513</a></span></td>
+<td class="next">
+Next: <a href="52513.html">52513</a>
+</td>
 </tr>
 </table>
-<div class="description">52473: RLE Terrain Interaction Parameter Data (Room Layout Graphics)</div>
+<div class="description">52473: RLE terrain interaction parameter data (room layout graphics)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Run Length Encoded data used to paint terrain interaction parameters, with two bytes per entry (or a one-byte end marker represented by a zero). Records are comprised of:
+Run-length encoded data used to paint terrain interaction parameters, with two bytes per entry (or a one-byte end marker represented by a zero). Records are comprised of:
 </div>
 <div class="paragraph">
 <table class="default">
@@ -40,11 +45,11 @@ Run Length Encoded data used to paint terrain interaction parameters, with two b
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">0</td>
-<td class="" colspan="1" rowspan="1">Repeat Count</td>
+<td class="" colspan="1" rowspan="1">Repeat count</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">1</td>
-<td class="" colspan="1" rowspan="1">Terrain Interaction Parameter</td>
+<td class="" colspan="1" rowspan="1">Terrain interaction parameter</td>
 </tr>
 </table>
 </div>
@@ -52,256 +57,224 @@ Run Length Encoded data used to paint terrain interaction parameters, with two b
 Note, entry numbers correspond to indices of records in table at <a href="52397.html">52397</a>, and so do not necessarily start at zero.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52473"></span>
 <div class="comments">
 <div class="paragraph">
-(02) - Large Chair
+(02) Large chair
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52473"></span>52473</td>
 <td class="instruction">DEFB 9,0</td>
-<td class="comment-11" rowspan="1">9 x 0 (no interaction)</td>
+<td class="comment-1" rowspan="1">9 &times; 0 (no interaction)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52475"></span>52475</td>
 <td class="instruction">DEFB 1,255</td>
-<td class="comment-11" rowspan="1">1 x 255 (impassable horizontally, upwards and downwards / preserve attribute)</td>
+<td class="comment-1" rowspan="1">1 &times; 255 (impassable horizontally, upwards and downwards / preserve attribute)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52477"></span>52477</td>
 <td class="instruction">DEFB 3,0</td>
-<td class="comment-11" rowspan="1">3 x 0 (no interaction)</td>
+<td class="comment-1" rowspan="1">3 &times; 0 (no interaction)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52479"></span>52479</td>
 <td class="instruction">DEFB 2,255</td>
-<td class="comment-11" rowspan="1">2 x 255 (impassable horizontally, upwards and downwards / preserve attribute)</td>
+<td class="comment-1" rowspan="1">2 &times; 255 (impassable horizontally, upwards and downwards / preserve attribute)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52481"></span>52481</td>
 <td class="instruction">DEFB 5,0</td>
-<td class="comment-11" rowspan="1">5 x 0 (no interaction)</td>
+<td class="comment-1" rowspan="1">5 &times; 0 (no interaction)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52483"></span>52483</td>
 <td class="instruction">DEFB 5,128</td>
-<td class="comment-11" rowspan="1">5 x 128 (impassable downwards)</td>
+<td class="comment-1" rowspan="1">5 &times; 128 (impassable downwards)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52485"></span>52485</td>
 <td class="instruction">DEFB 0</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52486"></span>
 <div class="comments">
 <div class="paragraph">
-(05) - Table
+(05) Table
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52486"></span>52486</td>
 <td class="instruction">DEFB 7,128</td>
-<td class="comment-11" rowspan="1">7 x 128 (impassable downwards)</td>
+<td class="comment-1" rowspan="1">7 &times; 128 (impassable downwards)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52488"></span>52488</td>
 <td class="instruction">DEFB 0</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52489"></span>
 <div class="comments">
 <div class="paragraph">
-(07) - Transporter Pad
+(07) Transporter pad
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52489"></span>52489</td>
 <td class="instruction">DEFB 7,0</td>
-<td class="comment-11" rowspan="1">7 x 0 (no interaction)</td>
+<td class="comment-1" rowspan="1">7 &times; 0 (no interaction)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52491"></span>52491</td>
 <td class="instruction">DEFB 5,128</td>
-<td class="comment-11" rowspan="1">5 x 128 (impassable downwards)</td>
+<td class="comment-1" rowspan="1">5 &times; 128 (impassable downwards)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52493"></span>52493</td>
 <td class="instruction">DEFB 0</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52494"></span>
 <div class="comments">
 <div class="paragraph">
-(13) - Barrier
+(13) Barrier
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52494"></span>52494</td>
 <td class="instruction">DEFB 32,96</td>
-<td class="comment-11" rowspan="1">32 x 96 (impassable horizontally / preserve attribute)</td>
+<td class="comment-1" rowspan="1">32 &times; 96 (impassable horizontally / preserve attribute)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52496"></span>52496</td>
 <td class="instruction">DEFB 0</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52497"></span>
 <div class="comments">
 <div class="paragraph">
-(14 / 15) - Wall (1, full-length) / Wall (2, short)
+(14 / 15) Wall (1, full-length / 2, short)
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52497"></span>52497</td>
 <td class="instruction">DEFB 17,96</td>
-<td class="comment-11" rowspan="1">17 x 96 (impassable horizontally / preserve attribute)</td>
+<td class="comment-1" rowspan="1">17 &times; 96 (impassable horizontally / preserve attribute)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52499"></span>52499</td>
 <td class="instruction">DEFB 0</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52500"></span>
 <div class="comments">
 <div class="paragraph">
-(16) - Cargo Container
+(16) Cargo container
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52500"></span>52500</td>
 <td class="instruction">DEFB 3,0</td>
-<td class="comment-11" rowspan="1">3 x 0 (no interaction)</td>
+<td class="comment-1" rowspan="1">3 &times; 0 (no interaction)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52502"></span>52502</td>
 <td class="instruction">DEFB 3,128</td>
-<td class="comment-11" rowspan="1">3 x 128 (impassable downwards)</td>
+<td class="comment-1" rowspan="1">3 &times; 128 (impassable downwards)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52504"></span>52504</td>
 <td class="instruction">DEFB 0</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52505"></span>
 <div class="comments">
 <div class="paragraph">
-(17) - Half of Planet
+(17) Half of planet
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52505"></span>52505</td>
 <td class="instruction">DEFB 27,127</td>
-<td class="comment-11" rowspan="1">27 x 127 (impassable horizontally and upwards / preserve attribute)</td>
+<td class="comment-1" rowspan="1">27 &times; 127 (impassable horizontally and upwards / preserve attribute)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52507"></span>52507</td>
 <td class="instruction">DEFB 0</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52508"></span>
 <div class="comments">
 <div class="paragraph">
-(18) - Tyme Guardians' Symbol (2)
+(18) Tyme Guardians' symbol (2)
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52508"></span>52508</td>
 <td class="instruction">DEFB 12,0</td>
-<td class="comment-11" rowspan="1">12 x 0 (no interaction)</td>
+<td class="comment-1" rowspan="1">12 &times; 0 (no interaction)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52510"></span>52510</td>
 <td class="instruction">DEFB 6,128</td>
-<td class="comment-11" rowspan="1">6 x 128 (impassable downwards)</td>
+<td class="comment-1" rowspan="1">6 &times; 128 (impassable downwards)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52512"></span>52512</td>
 <td class="instruction">DEFB 0</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="52397.html">52397</a></span></td>
+<td class="prev">
+Prev: <a href="52397.html">52397</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#52473">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="52513.html">52513</a></span></td>
+<td class="next">
+Next: <a href="52513.html">52513</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

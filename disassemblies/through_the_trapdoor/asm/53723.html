@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 53723</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,184 +20,157 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53684.html">53684</a></span></td>
+<td class="prev">
+Prev: <a href="53684.html">53684</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53723">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53782.html">53782</a></span></td>
+<td class="next">
+Next: <a href="53782.html">53782</a>
+</td>
 </tr>
 </table>
-<div class="description">53723: If Berk Has Been Killed then Reset his Position and State, Flash Screen and Decrease Time / Lives</div>
+<div class="description">53723: If Berk has been killed then reset his position and state, flash screen and decrease time / lives</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="34438.html">34438</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53723"></span>53723</td>
 <td class="instruction">LD HL,34208</td>
-<td class="comment-11" rowspan="1">Point HL at Game Flags</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at game flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53726"></span>53726</td>
 <td class="instruction">RES 3,(HL)</td>
-<td class="comment-11" rowspan="1">Reset "Reset Spiders to Initial State" Flag</td>
+<td class="comment-1" rowspan="1">Reset reset-spiders-to-initial-state flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53728"></span>53728</td>
 <td class="instruction">BIT 2,(HL)</td>
-<td class="comment-11" rowspan="1">If "Berk Has Been Killed" Flag is not set...</td>
+<td class="comment-1" rowspan="1">If Berk-has-been-killed flag is not set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53730"></span>53730</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53731"></span>53731</td>
 <td class="instruction">RES 2,(HL)</td>
-<td class="comment-11" rowspan="1">Reset "Berk Has Been Killed" Flag</td>
+<td class="comment-1" rowspan="1">Reset Berk-has-been-killed flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53733"></span>53733</td>
 <td class="instruction">SET 3,(HL)</td>
-<td class="comment-11" rowspan="1">Set "Reset Spiders to Initial State" Flag</td>
+<td class="comment-1" rowspan="1">Set reset-spiders-to-initial-state flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53735"></span>53735</td>
 <td class="instruction">LD IX,(34240)</td>
-<td class="comment-11" rowspan="1">Load IX with address of current level's complex state data for Berk</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with address of current level's complex state data for Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53739"></span>53739</td>
 <td class="instruction">CALL <a href="36296.html">36296</a></td>
-<td class="comment-11" rowspan="1">Make Berk drop the entity he is holding and load IY with its complex state data address</td>
+<td class="comment-1" rowspan="1">Make Berk drop the entity he is holding and load <span class="register">IY</span> with its complex state data address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53742"></span>53742</td>
 <td class="instruction">LD DE,53674</td>
-<td class="comment-11" rowspan="1">Point DE at location two bytes (1 WORD) before start of Table of Addresses of Berk Reset Data</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at location two bytes (1 WORD) before start of table of addresses of Berk reset data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53745"></span>53745</td>
 <td class="instruction">LD A,(34207)</td>
-<td class="comment-11" rowspan="1">Load current level number into A</td>
+<td class="comment-1" rowspan="1">Load current level number into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53748"></span>53748</td>
 <td class="instruction">CALL <a href="53814.html">53814</a></td>
-<td class="comment-11" rowspan="1">Load DE with that level's address (from table at <a href="53676.html">53676</a>) for complex state data to revert Berk to after he is killed</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with that level's address (from table at <a href="53676.html">53676</a>) for complex state data to revert Berk to after he is killed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53751"></span>53751</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Swap HL (now address of complex state data to revert to) and DE</td>
+<td class="comment-1" rowspan="1">Swap <span class="register">HL</span> (now address of complex state data to revert to) and <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53752"></span>53752</td>
 <td class="instruction">LD DE,(34240)</td>
-<td class="comment-11" rowspan="1">Load DE with address of current level's complex state data for Berk</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with address of current level's complex state data for Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53756"></span>53756</td>
 <td class="instruction">LD BC,13</td>
-<td class="comment-11" rowspan="1">Overwrite Berk's current complex state data...</td>
+<td class="comment-1" rowspan="1">Overwrite Berk's current complex state data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53759"></span>53759</td>
 <td class="instruction">LDIR</td>
-<td class="comment-11" rowspan="1">...with reset data from table at <a href="53684.html">53684</a> for current level</td>
+<td class="comment-1" rowspan="1">...with reset data from table at <a href="53684.html">53684</a> for current level</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53761"></span>53761</td>
 <td class="instruction">LD HL,35363</td>
-<td class="comment-11" rowspan="1">Load HL with address of script data for Berk starting to fall...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of script data for Berk starting to fall...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53764"></span>53764</td>
 <td class="instruction">LD (35687),HL</td>
-<td class="comment-11" rowspan="1">...and store at <a href="35687.html">35687</a> (as current position in Berk's script data)</td>
+<td class="comment-1" rowspan="1">...and store at <a href="35687.html">35687</a> (as current position in Berk's script data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53767"></span>53767</td>
 <td class="instruction">CALL <a href="53577.html">53577</a></td>
-<td class="comment-11" rowspan="1">Cycle attributes (long, full-screen) and clear display buffers</td>
+<td class="comment-1" rowspan="1">Cycle attributes (long, full-screen) and clear display buffers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53770"></span>53770</td>
 <td class="instruction">LD A,127</td>
-<td class="comment-11" rowspan="1">Fill top 22 rows of Attribute File with white PAPER and white INK, BRIGHT...</td>
+<td class="comment-1" rowspan="1">Fill top 22 rows of attribute file with white INK, white PAPER, BRIGHT...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53772"></span>53772</td>
 <td class="instruction">CALL <a href="53649.html">53649</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53775"></span>53775</td>
 <td class="instruction">CALL <a href="53887.html">53887</a></td>
-<td class="comment-11" rowspan="1">Paint red areas outside accessible areas of current character's current room</td>
+<td class="comment-1" rowspan="1">Paint red areas outside accessible areas of current character's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53778"></span>53778</td>
 <td class="instruction">CALL <a href="47468.html#47485">47485</a></td>
-<td class="comment-11" rowspan="1">Decrease current time / lives by one if greater than zero and redraw Timer Figures</td>
+<td class="comment-1" rowspan="1">Decrease current time / lives by one if greater than zero and redraw timer figures</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53781"></span>53781</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53684.html">53684</a></span></td>
+<td class="prev">
+Prev: <a href="53684.html">53684</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53723">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53782.html">53782</a></span></td>
+<td class="next">
+Next: <a href="53782.html">53782</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

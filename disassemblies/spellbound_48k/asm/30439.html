@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 30439</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,88 +20,73 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="30222.html">30222</a></span></td>
+<td class="prev">
+Prev: <a href="30222.html">30222</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#30439">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="30540.html">30540</a></span></td>
+<td class="next">
+Next: <a href="30540.html">30540</a>
+</td>
 </tr>
 </table>
-<div class="description">30439: Process Command to Drop an Object</div>
+<div class="description">30439: Process command to drop an object</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routines at <a href="27176.html">27176</a> and <a href="31153.html">31153</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30439"></span>30439</td>
 <td class="instruction">CALL <a href="38075.html">38075</a></td>
-<td class="comment-11" rowspan="1">Play upward scale sound</td>
+<td class="comment-1" rowspan="1">Play upward scale sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30442"></span>30442</td>
 <td class="instruction">LD IX,25395</td>
-<td class="comment-11" rowspan="1">Point IX at start of Magic Knight's inventory</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at start of Magic Knight's inventory</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30446"></span>30446</td>
 <td class="instruction">LD B,5</td>
-<td class="comment-11" rowspan="1">Load B with 5, as there are five inventory slots to check</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 5, as there are five inventory slots to check</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30448"></span>30448</td>
 <td class="instruction">LD HL,45429</td>
-<td class="comment-11" rowspan="1">Point HL at "DROP WHICH OBJECT?" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "DROP WHICH OBJECT?" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30451"></span>30451</td>
 <td class="instruction">LD DE,45440</td>
-<td class="comment-11" rowspan="1">Point DE at "DROP" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at "DROP" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30454"></span>30454</td>
 <td class="instruction">CALL <a href="34914.html">34914</a></td>
-<td class="comment-11" rowspan="1">Show list of objects (window or menu) and handle selection if a menu</td>
+<td class="comment-1" rowspan="1">Show list of objects (window or menu) and handle selection if a menu</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30457"></span>30457</td>
 <td class="instruction">LD HL,25395</td>
-<td class="comment-11" rowspan="1">Point HL at start of Magic Knight's current inventory</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of Magic Knight's current inventory</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30460"></span>30460</td>
 <td class="instruction">CALL <a href="34864.html">34864</a></td>
-<td class="comment-11" rowspan="1">Point DE at name of a selected object in object names table and print in command summary window</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at name of a selected object in object names table and print in command summary window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30463"></span>30463</td>
 <td class="instruction">CALL <a href="38725.html">38725</a></td>
-<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return if Execute chosen, else exit</td>
+<td class="comment-1" rowspan="1">Display execute / reject command window and return if execute chosen, else exit</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="30466"></span>
 <div class="comments">
 <div class="paragraph">
@@ -110,251 +96,216 @@ The operand of the instruction at <a href="30439.html#30466">30466</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30466"></span>30466</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30468"></span>30468</td>
 <td class="instruction">LD E,1</td>
-<td class="comment-11" rowspan="1">Load E with 1 (Drop status)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with 1 (drop-status)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30470"></span>30470</td>
 <td class="instruction">CALL <a href="34160.html">34160</a></td>
-<td class="comment-11" rowspan="1">Point HL to drop status of object A</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> to drop-status of object <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30473"></span>30473</td>
 <td class="instruction">BIT 0,(HL)</td>
-<td class="comment-11" rowspan="1">If drop status is not zero, i.e. object can't be dropped then...</td>
+<td class="comment-1" rowspan="1">If drop-status is not zero, i.e. object can't be dropped then...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30475"></span>30475</td>
 <td class="instruction">JP NZ,<a href="34442.html">34442</a></td>
-<td class="comment-11" rowspan="1">...jump to <a href="34442.html">34442</a> (display "YOU CAN'T DROP THAT OBJECT" window and return to game)</td>
+<td class="comment-1" rowspan="1">...jump to <a href="34442.html">34442</a> (display "YOU CAN'T DROP THAT OBJECT" window and return to game)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30478"></span>30478</td>
 <td class="instruction">LD A,(30467)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30481"></span>30481</td>
 <td class="instruction">CP 16</td>
-<td class="comment-11" rowspan="1">If not object 16 (i.e. not Glowing Bottle)...</td>
+<td class="comment-1" rowspan="1">If not object 16 (i.e. not Glowing Bottle)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30483"></span>30483</td>
 <td class="instruction">JR NZ,30490</td>
-<td class="comment-11" rowspan="1">...skip ahead to <a href="30439.html#30490">30490</a>...</td>
+<td class="comment-1" rowspan="1">...skip ahead to <a href="30439.html#30490">30490</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30485"></span>30485</td>
 <td class="instruction">CALL <a href="30540.html">30540</a></td>
-<td class="comment-11" rowspan="1">...else smash Glowing Bottle and release Banshee...</td>
+<td class="comment-1" rowspan="1">...else smash Glowing Bottle and release Banshee...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30488"></span>30488</td>
 <td class="instruction">JR 30504</td>
-<td class="comment-11" rowspan="1">...and skip ahead to <a href="30439.html#30504">30504</a></td>
+<td class="comment-1" rowspan="1">...and skip ahead to <a href="30439.html#30504">30504</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30490"></span>30490</td>
 <td class="instruction">LD A,(30467)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30493"></span>30493</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Copy into C</td>
+<td class="comment-1" rowspan="1">Copy into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30494"></span>30494</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30495"></span>30495</td>
 <td class="instruction">LD B,5</td>
-<td class="comment-11" rowspan="1">Load B with 5</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 5</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30497"></span>30497</td>
 <td class="instruction">LD HL,25395</td>
-<td class="comment-11" rowspan="1">Point HL at start of Magic Knight's current inventory</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of Magic Knight's current inventory</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30500"></span>30500</td>
 <td class="instruction">CALL <a href="38674.html">38674</a></td>
-<td class="comment-11" rowspan="1">Remove object C from Magic Knight's inventory (and tidy up remainder of slots)</td>
+<td class="comment-1" rowspan="1">Remove object <span class="register">C</span> from Magic Knight's inventory (and tidy up remainder of slots)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30503"></span>30503</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30504"></span>30504</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Load Current Object's index into A</td>
+<td class="comment-1" rowspan="1">Load Current Object's index into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30505"></span>30505</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">Multiply object index by 3...</td>
+<td class="comment-1" rowspan="1">Multiply object index by 3...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30506"></span>30506</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30507"></span>30507</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...and load back into C</td>
+<td class="comment-1" rowspan="1">...and load back into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30508"></span>30508</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">Load B with zero</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30510"></span>30510</td>
 <td class="instruction">LD HL,25464</td>
-<td class="comment-11" rowspan="1">Point HL at start of Objects' Current Positions Table at <a href="25464.html">25464</a></td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of objects' current positions table at <a href="25464.html">25464</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30513"></span>30513</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">Add three times Current Object's index as offset to point HL at position data of Current Object</td>
+<td class="comment-1" rowspan="1">Add three times Current Object's index as offset to point <span class="register">HL</span> at position data of Current Object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30514"></span>30514</td>
 <td class="instruction">LD A,(65529)</td>
-<td class="comment-11" rowspan="1">Load A with Magic Knight's current room</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Magic Knight's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30517"></span>30517</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Set object's current room to be same as Magic Knight's</td>
+<td class="comment-1" rowspan="1">Set object's current room to be same as Magic Knight's</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30518"></span>30518</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to x-coordinate of object</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to x-coordinate of object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30519"></span>30519</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">Set B to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">B</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30521"></span>30521</td>
 <td class="instruction">LD A,(25387)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current x-coordinate into A</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's current x-coordinate into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30524"></span>30524</td>
 <td class="instruction">AND 7</td>
-<td class="comment-11" rowspan="1">Get x-coordinate in terms of pixels within current character block (i.e. lowest 3 bits of x-coordinate)</td>
+<td class="comment-1" rowspan="1">Get x-coordinate in terms of pixels within current character block (i.e. lowest 3 bits of x-coordinate)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30526"></span>30526</td>
 <td class="instruction">JR Z,30529</td>
-<td class="comment-11" rowspan="1">If this is zero (i.e. Magic Knight at left-most pixel in character block) then skip ahead to <a href="30439.html#30529">30529</a>...</td>
+<td class="comment-1" rowspan="1">If this is zero (i.e. Magic Knight at left-most pixel in character block) then skip ahead to <a href="30439.html#30529">30529</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30528"></span>30528</td>
 <td class="instruction">INC B</td>
-<td class="comment-11" rowspan="1">...else increase B</td>
+<td class="comment-1" rowspan="1">...else increase <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30529"></span>30529</td>
 <td class="instruction">CALL <a href="34385.html">34385</a></td>
-<td class="comment-11" rowspan="1">Load Magic Knight's coordinates (in characters) into DE</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's coordinates (in characters) into <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30532"></span>30532</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Load B into A</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30533"></span>30533</td>
 <td class="instruction">ADD A,E</td>
-<td class="comment-11" rowspan="1">Add Magic Knight's x-coordinate to A</td>
+<td class="comment-1" rowspan="1">Add Magic Knight's x-coordinate to <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30534"></span>30534</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Set this as object's x-coordinate</td>
+<td class="comment-1" rowspan="1">Set this as object's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30535"></span>30535</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to y-coordinate of object</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to y-coordinate of object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30536"></span>30536</td>
 <td class="instruction">LD (HL),D</td>
-<td class="comment-11" rowspan="1">Set this to same as Magic Knight's y-coordinate</td>
+<td class="comment-1" rowspan="1">Set this to same as Magic Knight's y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30537"></span>30537</td>
 <td class="instruction">JP <a href="30222.html#30410">30410</a></td>
-<td class="comment-11" rowspan="1">Display Magic Knight's current inventory and return to game</td>
+<td class="comment-1" rowspan="1">Display Magic Knight's current inventory and return to game</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="30222.html">30222</a></span></td>
+<td class="prev">
+Prev: <a href="30222.html">30222</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#30439">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="30540.html">30540</a></span></td>
+<td class="next">
+Next: <a href="30540.html">30540</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

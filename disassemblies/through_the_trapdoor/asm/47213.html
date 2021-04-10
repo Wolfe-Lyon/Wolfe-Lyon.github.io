@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 47213</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,60 +20,48 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47198.html">47198</a></span></td>
+<td class="prev">
+Prev: <a href="47198.html">47198</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47213">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47241.html">47241</a></span></td>
+<td class="next">
+Next: <a href="47241.html">47241</a>
+</td>
 </tr>
 </table>
-<div class="description">47213: Print "HOME SWEET HOME" String</div>
+<div class="description">47213: Print "HOME SWEET HOME" string</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="34438.html">34438</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47213"></span>47213</td>
 <td class="instruction">LD B,15</td>
-<td class="comment-11" rowspan="1">Set string length to 15</td>
+<td class="comment-1" rowspan="1">Set string length to 15</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47215"></span>47215</td>
 <td class="instruction">LD A,68</td>
-<td class="comment-11" rowspan="1">Set attribute to green INK on black PAPER, BRIGHT</td>
+<td class="comment-1" rowspan="1">Set attribute to green INK, black PAPER, BRIGHT</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47217"></span>47217</td>
 <td class="instruction">LD IX,47198</td>
-<td class="comment-11" rowspan="1">Point IX at "HOME SWEET HOME" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at "HOME SWEET HOME" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47221"></span>47221</td>
 <td class="instruction">LD HL,22792</td>
-<td class="comment-11" rowspan="1">Point HL at Attribute File address at which to print text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at attribute file address at which to print text</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="47224"></span>
 <div class="comments">
 <div class="paragraph">
@@ -85,71 +71,66 @@ This entry point is used by the routines at <a href="47140.html">47140</a> and <
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47224"></span>47224</td>
 <td class="instruction">LD (34269),A</td>
-<td class="comment-11" rowspan="1">Store attribute at <a href="34256.html#34269">34269</a></td>
+<td class="comment-1" rowspan="1">Store attribute at <a href="34256.html#34269">34269</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47227"></span>47227</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B=remaining length of text)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span>=remaining length of text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47228"></span>47228</td>
 <td class="instruction">LD E,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load character of text to print into E</td>
+<td class="comment-1" rowspan="1">Load character of text to print into <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47231"></span>47231</td>
 <td class="instruction">CALL <a href="47682.html">47682</a></td>
-<td class="comment-11" rowspan="1">Print double-height text character in E</td>
+<td class="comment-1" rowspan="1">Print double-height text character in <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47234"></span>47234</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to next text character to print</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to next text character to print</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47236"></span>47236</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to next Attribute File address at which to print</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next attribute file address at which to print</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47237"></span>47237</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = remaining length of text)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = remaining length of text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47238"></span>47238</td>
 <td class="instruction">DJNZ 47227</td>
-<td class="comment-11" rowspan="1">Decrease remaining length of text by one and repeat loop for next character</td>
+<td class="comment-1" rowspan="1">Decrease remaining length of text by one and repeat loop for next character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47240"></span>47240</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47198.html">47198</a></span></td>
+<td class="prev">
+Prev: <a href="47198.html">47198</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47213">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47241.html">47241</a></span></td>
+<td class="next">
+Next: <a href="47241.html">47241</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

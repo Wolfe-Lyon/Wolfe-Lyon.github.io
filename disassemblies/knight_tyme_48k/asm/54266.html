@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 54266</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54261.html">54261</a></span></td>
+<td class="prev">
+Prev: <a href="54261.html">54261</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54266">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54283.html">54283</a></span></td>
+<td class="next">
+Next: <a href="54283.html">54283</a>
+</td>
 </tr>
 </table>
-<div class="description">54266: Point HL at B-th Entry in Table of Object Names</div>
+<div class="description">54266: Point <span class="register">HL</span> at <span class="register">B</span>-th entry in table of object names</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="30145.html">30145</a> and <a href="33952.html">33952</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,25 +51,24 @@ Used by the routines at <a href="30145.html">30145</a> and <a href="33952.html">
 <td class="register-desc">(entry via <a href="54266.html#54269">54269</a>) address of start of a table of zero-terminated strings</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">Points to string of index B (input)</td>
+<td class="register-desc">Points to string of index <span class="register">B</span> (input)</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54266"></span>54266</td>
 <td class="instruction">LD HL,42373</td>
-<td class="comment-11" rowspan="1">Point HL at start of Table of Object Names</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of table of object names</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="54269"></span>
 <div class="comments">
 <div class="paragraph">
@@ -74,77 +78,71 @@ This entry point is used by the routines at <a href="28172.html">28172</a>, <a h
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54269"></span>54269</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Load string index into A</td>
+<td class="comment-1" rowspan="1">Load string index into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54270"></span>54270</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">Return if index is zero...</td>
+<td class="comment-1" rowspan="1">Return if index is zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54271"></span>54271</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54272"></span>54272</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54273"></span>54273</td>
 <td class="instruction">LD BC,65535</td>
-<td class="comment-11" rowspan="1">Load BC (loop counter) with 65535</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> (loop counter) with 65535</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54276"></span>54276</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54277"></span>54277</td>
 <td class="instruction">CPIR</td>
-<td class="comment-11" rowspan="1">Advance HL to start of next zero-terminated string</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to start of next zero-terminated string</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54279"></span>54279</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54280"></span>54280</td>
 <td class="instruction">DJNZ 54272</td>
-<td class="comment-11" rowspan="1">Decrease B (remaining number of object names to skip over) and loop back to <a href="54266.html#54272">54272</a></td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (remaining number of object names to skip over) and loop back to <a href="54266.html#54272">54272</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54282"></span>54282</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54261.html">54261</a></span></td>
+<td class="prev">
+Prev: <a href="54261.html">54261</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54266">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54283.html">54283</a></span></td>
+<td class="next">
+Next: <a href="54283.html">54283</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

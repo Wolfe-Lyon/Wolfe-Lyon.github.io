@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 54377</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,103 +20,90 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54333.html">54333</a></span></td>
+<td class="prev">
+Prev: <a href="54333.html">54333</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54377">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54406.html">54406</a></span></td>
+<td class="next">
+Next: <a href="54406.html">54406</a>
+</td>
 </tr>
 </table>
-<div class="description">54377: Swap x- and y-coordinates of current window / graphic with values in temporary storage (at <a href="23426.html">23426</a>)</div>
+<div class="description">54377: Swap x- and y-coordinates of current window / graphic with values in temporary storage</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-This routine is used when there are two windows being updated (e.g. Command Summary Window at top of screen, and "EXAMINE" window). It is used to keep track of the dimensions of two windows simultaneously
+This routine is used when there are two windows being updated (e.g. command summary window at top of screen, and "EXAMINE" window). It is used to keep track of the dimensions of two windows simultaneously
 </div>
 <div class="paragraph">
 Used by the routines at <a href="54283.html">54283</a> and <a href="54333.html">54333</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54377"></span>54377</td>
 <td class="instruction">LD HL,(23426)</td>
-<td class="comment-11" rowspan="1">Swap x- and y-coordinates of top-left of window / graphic currently at <a href="23487.html#23493">23493</a> with values in temporary store at <a href="23426.html">23426</a>...</td>
+<td class="comment-1" rowspan="1">Swap x- and y-coordinates of top-left of window / graphic currently at <a href="23487.html#23493">23493</a> with values in temporary store at <a href="23426.html">23426</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54380"></span>54380</td>
 <td class="instruction">LD DE,(23493)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54384"></span>54384</td>
 <td class="instruction">LD (23426),DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54388"></span>54388</td>
 <td class="instruction">LD (23493),HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54391"></span>54391</td>
 <td class="instruction">LD HL,(23428)</td>
-<td class="comment-11" rowspan="1">Swap x- and y-coordinates of bottom-right of window / graphic currently at <a href="23487.html#23495">23495</a> with values in temporary store at <a href="23426.html#23428">23428</a>...</td>
+<td class="comment-1" rowspan="1">Swap x- and y-coordinates of bottom-right of window / graphic currently at <a href="23487.html#23495">23495</a> with values in temporary store at <a href="23426.html#23428">23428</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54394"></span>54394</td>
 <td class="instruction">LD DE,(23495)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54398"></span>54398</td>
 <td class="instruction">LD (23428),DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54402"></span>54402</td>
 <td class="instruction">LD (23495),HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54405"></span>54405</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54333.html">54333</a></span></td>
+<td class="prev">
+Prev: <a href="54333.html">54333</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54377">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54406.html">54406</a></span></td>
+<td class="next">
+Next: <a href="54406.html">54406</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

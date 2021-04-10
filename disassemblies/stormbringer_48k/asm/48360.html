@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 48360</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48341.html">48341</a></span></td>
+<td class="prev">
+Prev: <a href="48341.html">48341</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48360">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48389.html">48389</a></span></td>
+<td class="next">
+Next: <a href="48389.html">48389</a>
+</td>
 </tr>
 </table>
-<div class="description">48360: Draw a Line From (C, B) to (E, D)</div>
+<div class="description">48360: Draw a line from (<span class="register">C</span>, <span class="register">B</span>) to (<span class="register">E</span>, <span class="register">D</span>)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a href="40008.html">40008</a> and <a href="40765.html">40765</a>.
+Used by the routine at <a href="40008.html">40008</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -54,134 +59,114 @@ Used by the routines at <a href="40008.html">40008</a> and <a href="40765.html">
 <td class="register-desc">x-coordinate of end of line</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48360"></span>48360</td>
 <td class="instruction">LD (23677),DE</td>
-<td class="comment-11" rowspan="1">Load contents of DE into system variable COORDS (start point of line)</td>
+<td class="comment-1" rowspan="1">Load contents of <span class="register">DE</span> into <a href="23677.html">coordinate storage</a> (start point of line)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48364"></span>48364</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Subtract y-coordinate of start of line from y-coordinate of end of line...</td>
+<td class="comment-1" rowspan="1">Subtract y-coordinate of start of line from y-coordinate of end of line...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48365"></span>48365</td>
 <td class="instruction">SUB D</td>
-<td class="comment-11" rowspan="1">...to get delta-y</td>
+<td class="comment-1" rowspan="1">...to get delta-y</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48366"></span>48366</td>
 <td class="instruction">LD D,1</td>
-<td class="comment-11" rowspan="1">Set direction of vertical change to +1 (upward)</td>
+<td class="comment-1" rowspan="1">Set direction of vertical change to +1 (upward)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48368"></span>48368</td>
 <td class="instruction">JR NC,48374</td>
-<td class="comment-11" rowspan="1">If delta-y is positive (i.e. upward) then skip ahead to <a href="48360.html#48374">48374</a></td>
+<td class="comment-1" rowspan="1">If delta-y is positive (i.e. upward) then skip ahead to <a href="48360.html#48374">48374</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48370"></span>48370</td>
 <td class="instruction">CPL</td>
-<td class="comment-11" rowspan="1">Multiply delta-y by -1 (downward) to get absolute magnitude...</td>
+<td class="comment-1" rowspan="1">Multiply delta-y by -1 (downward) to get absolute magnitude...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48371"></span>48371</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48372"></span>48372</td>
 <td class="instruction">LD D,255</td>
-<td class="comment-11" rowspan="1">Set direction of vertical change to -1 (downward)</td>
+<td class="comment-1" rowspan="1">Set direction of vertical change to -1 (downward)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48374"></span>48374</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load B with magnitude of difference in y-coordinate between start and end of line</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with magnitude of difference in y-coordinate between start and end of line</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48375"></span>48375</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Subtract x-coordinate of start of line from y-coordinate of end of line...</td>
+<td class="comment-1" rowspan="1">Subtract x-coordinate of start of line from y-coordinate of end of line...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48376"></span>48376</td>
 <td class="instruction">SUB E</td>
-<td class="comment-11" rowspan="1">...to get delta-x</td>
+<td class="comment-1" rowspan="1">...to get delta-x</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48377"></span>48377</td>
 <td class="instruction">LD E,1</td>
-<td class="comment-11" rowspan="1">Set direction of horizontal change to +1 (rightward)</td>
+<td class="comment-1" rowspan="1">Set direction of horizontal change to +1 (rightward)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48379"></span>48379</td>
 <td class="instruction">JR NC,48385</td>
-<td class="comment-11" rowspan="1">If delta-x is positive (i.e. rightward) then skip ahead to <a href="48360.html#48385">48385</a></td>
+<td class="comment-1" rowspan="1">If delta-x is positive (i.e. rightward) then skip ahead to <a href="48360.html#48385">48385</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48381"></span>48381</td>
 <td class="instruction">CPL</td>
-<td class="comment-11" rowspan="1">Multiply delta-x by -1 (leftward) to get absolute magnitude...</td>
+<td class="comment-1" rowspan="1">Multiply delta-x by -1 (leftward) to get absolute magnitude...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48382"></span>48382</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48383"></span>48383</td>
 <td class="instruction">LD E,255</td>
-<td class="comment-11" rowspan="1">Set direction of vertical change to -1 (leftward)</td>
+<td class="comment-1" rowspan="1">Set direction of vertical change to -1 (leftward)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48385"></span>48385</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load C with magnitude of difference in x-coordinate between start and end of line</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with magnitude of difference in x-coordinate between start and end of line</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48386"></span>48386</td>
 <td class="instruction">JP 9402</td>
-<td class="comment-11" rowspan="1">Draw the line (ROM routine) and return</td>
+<td class="comment-1" rowspan="1">Draw the line (ROM routine) and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48341.html">48341</a></span></td>
+<td class="prev">
+Prev: <a href="48341.html">48341</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48360">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48389.html">48389</a></span></td>
+<td class="next">
+Next: <a href="48389.html">48389</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

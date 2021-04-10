@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 55219</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55218.html">55218</a></span></td>
+<td class="prev">
+Prev: <a href="55218.html">55218</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55219">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55233.html">55233</a></span></td>
+<td class="next">
+Next: <a href="55233.html">55233</a>
+</td>
 </tr>
 </table>
-<div class="description">55219: Update Characters' Stats as They Tire (Awake) or Regenerate (Asleep)</div>
+<div class="description">55219: Update characters' stats as they tire or regenerate</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="55077.html">55077</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,7 +51,7 @@ Used by the routine at <a href="55077.html">55077</a>.
 <td class="register-desc">An increment (while asleep) or decrement (while awake) for that stat</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -58,77 +63,71 @@ Used by the routine at <a href="55077.html">55077</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55219"></span>55219</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">Add stat and data together</td>
+<td class="comment-1" rowspan="1">Add stat and data together</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55220"></span>55220</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">(Re)set sign flag</td>
+<td class="comment-1" rowspan="1">Check sign flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55221"></span>55221</td>
 <td class="instruction">JP P,55226</td>
-<td class="comment-11" rowspan="1">If sign flag reset (i.e. MSB is reset and result is positive) then jump ahead to <a href="55219.html#55226">55226</a></td>
+<td class="comment-1" rowspan="1">If sign flag reset (i.e. MSB is reset and result is positive) then jump ahead to <a href="55219.html#55226">55226</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55224"></span>55224</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">else stat must have dropped below zero, so set stat to zero (as it can't be less than 0)</td>
+<td class="comment-1" rowspan="1">else stat must have dropped below zero, so set stat to zero (as it can't be less than 0)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55225"></span>55225</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55226"></span>55226</td>
 <td class="instruction">CP 100</td>
-<td class="comment-11" rowspan="1">If new value of stat is less than or equal to 100...</td>
+<td class="comment-1" rowspan="1">If new value of stat is less than or equal to 100...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55228"></span>55228</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return...</td>
+<td class="comment-1" rowspan="1">...then return...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55229"></span>55229</td>
 <td class="instruction">RET C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55230"></span>55230</td>
 <td class="instruction">LD A,100</td>
-<td class="comment-11" rowspan="1">...else set stat to 100 (as it can't be greater than 100)</td>
+<td class="comment-1" rowspan="1">...else set stat to 100 (as it can't be greater than 100)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55232"></span>55232</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55218.html">55218</a></span></td>
+<td class="prev">
+Prev: <a href="55218.html">55218</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55219">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55233.html">55233</a></span></td>
+<td class="next">
+Next: <a href="55233.html">55233</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

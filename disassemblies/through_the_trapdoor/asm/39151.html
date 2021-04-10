@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 39151</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39150.html">39150</a></span></td>
+<td class="prev">
+Prev: <a href="39150.html">39150</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39151">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39278.html">39278</a></span></td>
+<td class="next">
+Next: <a href="39278.html">39278</a>
+</td>
 </tr>
 </table>
-<div class="description">39151: Update State of Hatch (Level 3)</div>
+<div class="description">39151: Update state of hatch (level 3)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="39137.html">39137</a>.
@@ -39,204 +41,165 @@ Used by the routine at <a href="39137.html">39137</a>.
 <a href="../reference/pokes.html#disablehatch">See pokes</a>
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39151"></span>39151</td>
 <td class="instruction">LD IX,(34240)</td>
-<td class="comment-11" rowspan="1">Load IX with address of current level's complex state data for Berk</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with address of current level's complex state data for Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39155"></span>39155</td>
 <td class="instruction">LD HL,39150</td>
-<td class="comment-11" rowspan="1">If Hatch State Index is zero...</td>
+<td class="comment-1" rowspan="1">If hatch state index is zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39158"></span>39158</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39159"></span>39159</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39160"></span>39160</td>
 <td class="instruction">JR Z,39176</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39151.html#39176">39176</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39151.html#39176">39176</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39162"></span>
 <div class="comments">
 <div class="paragraph">
-Hatch State Index is not zero
+Hatch state index is not zero
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39162"></span>39162</td>
 <td class="instruction">INC (HL)</td>
-<td class="comment-11" rowspan="1">Increase Hatch State Index</td>
+<td class="comment-1" rowspan="1">Increase hatch state index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39163"></span>39163</td>
 <td class="instruction">CP 2</td>
-<td class="comment-11" rowspan="1">If Hatch State Index is 2 (Berk was thrown 1 cycle ago)...</td>
+<td class="comment-1" rowspan="1">If hatch state index is 2 (Berk was thrown 1 cycle ago)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39165"></span>39165</td>
 <td class="instruction">JR Z,39264</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39151.html#39264">39264</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39151.html#39264">39264</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39167"></span>39167</td>
 <td class="instruction">CP 10</td>
-<td class="comment-11" rowspan="1">If Hatch State Index is 10 (Berk was thrown 9 cycles ago)...</td>
+<td class="comment-1" rowspan="1">If hatch state index is 10 (Berk was thrown 9 cycles ago)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39169"></span>39169</td>
 <td class="instruction">JR Z,39259</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39151.html#39259">39259</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39151.html#39259">39259</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39171"></span>39171</td>
 <td class="instruction">CP 11</td>
-<td class="comment-11" rowspan="1">If Hatch State Index is 11 (Berk was thrown 10 cycles ago)...</td>
+<td class="comment-1" rowspan="1">If hatch state index is 11 (Berk was thrown 10 cycles ago)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39173"></span>39173</td>
 <td class="instruction">JR Z,39269</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39151.html#39269">39269</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39151.html#39269">39269</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39175"></span>39175</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39176"></span>
 <div class="comments">
 <div class="paragraph">
-Hatch State Index is zero
+Hatch state index is zero
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39176"></span>39176</td>
 <td class="instruction">BIT 0,(IX+9)</td>
-<td class="comment-11" rowspan="1">If Berk's Must Process Current Script Data Flag is set...</td>
+<td class="comment-1" rowspan="1">If Berk's must-process-current-script-data flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39180"></span>39180</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39181"></span>39181</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">If Berk's room is not 4 (Hatch Room)...</td>
+<td class="comment-1" rowspan="1">If Berk's room is not 4 (hatch room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39184"></span>39184</td>
 <td class="instruction">CP 4</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39186"></span>39186</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39187"></span>39187</td>
 <td class="instruction">LD A,(IX+6)</td>
-<td class="comment-11" rowspan="1">If y-coordinate of Berk's bottom edge is not 121...</td>
+<td class="comment-1" rowspan="1">If y-coordinate of Berk's bottom edge is not 121...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39190"></span>39190</td>
 <td class="instruction">CP 121</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39192"></span>39192</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39193"></span>39193</td>
 <td class="instruction">LD A,(IX+5)</td>
-<td class="comment-11" rowspan="1">If x-coordinate of Berk's left edge is less than 109...</td>
+<td class="comment-1" rowspan="1">If x-coordinate of Berk's left edge is less than 109...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39196"></span>39196</td>
 <td class="instruction">CP 109</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39198"></span>39198</td>
 <td class="instruction">RET C</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39199"></span>39199</td>
 <td class="instruction">LD A,(IX+7)</td>
-<td class="comment-11" rowspan="1">If x-coordinate of Berk's right edge is 120 or greater...</td>
+<td class="comment-1" rowspan="1">If x-coordinate of Berk's right edge is 120 or greater...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39202"></span>39202</td>
 <td class="instruction">CP 120</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39204"></span>39204</td>
 <td class="instruction">RET NC</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39205"></span>
 <div class="comments">
 <div class="paragraph">
@@ -246,215 +209,191 @@ At this point, Berk is standing on the hatch
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39205"></span>39205</td>
 <td class="instruction">LD A,(34221)</td>
-<td class="comment-11" rowspan="1">If Berk is holding the weight...</td>
+<td class="comment-1" rowspan="1">If Berk is holding the weight...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39208"></span>39208</td>
 <td class="instruction">CP 12</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39210"></span>39210</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39211"></span>39211</td>
 <td class="instruction">INC (HL)</td>
-<td class="comment-11" rowspan="1">Increase Hatch State Index to 1</td>
+<td class="comment-1" rowspan="1">Increase hatch state index to 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39212"></span>39212</td>
 <td class="instruction">CALL <a href="36296.html">36296</a></td>
-<td class="comment-11" rowspan="1">Make Berk drop the entity he is holding and load IY with its complex state data address</td>
+<td class="comment-1" rowspan="1">Make Berk drop the entity he is holding and load <span class="register">IY</span> with its complex state data address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39215"></span>39215</td>
 <td class="instruction">LD A,(34220)</td>
-<td class="comment-11" rowspan="1">If Berk's current power is not invisibility (Level 3)...</td>
+<td class="comment-1" rowspan="1">If Berk's current power is not invisibility (level 3)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39218"></span>39218</td>
 <td class="instruction">CP 11</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39220"></span>39220</td>
 <td class="instruction">JR NZ,39225</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39151.html#39225">39225</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39151.html#39225">39225</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39222"></span>39222</td>
 <td class="instruction">CALL <a href="48417.html">48417</a></td>
-<td class="comment-11" rowspan="1">Remove Berk's invisibility and reset corresponding edible eyes to their original position</td>
+<td class="comment-1" rowspan="1">Remove Berk's invisibility and reset corresponding edible eyes to their original position</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39225"></span>39225</td>
 <td class="instruction">LD B,4</td>
-<td class="comment-11" rowspan="1">Move Berk up four characters...</td>
+<td class="comment-1" rowspan="1">Move Berk up four characters...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39227"></span>39227</td>
 <td class="instruction">CALL <a href="39278.html#39442">39442</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39230"></span>39230</td>
 <td class="instruction">DJNZ 39227</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39232"></span>39232</td>
 <td class="instruction">LD (IX+5),107</td>
-<td class="comment-11" rowspan="1">Set x-coordinate of Berk's left edge to 107</td>
+<td class="comment-1" rowspan="1">Set x-coordinate of Berk's left edge to 107</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39236"></span>39236</td>
 <td class="instruction">LD (IX+7),112</td>
-<td class="comment-11" rowspan="1">Set x-coordinate of Berk's right edge to 112</td>
+<td class="comment-1" rowspan="1">Set x-coordinate of Berk's right edge to 112</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39240"></span>39240</td>
 <td class="instruction">SET 0,(IX+9)</td>
-<td class="comment-11" rowspan="1">Set Berk's Must Process Current Script Data Flag</td>
+<td class="comment-1" rowspan="1">Set Berk's must-process-current-script-data flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39244"></span>39244</td>
 <td class="instruction">LD HL,59048</td>
-<td class="comment-11" rowspan="1">Set Berk's graphic layout data address to <a href="58119.html#59048">59048</a>...</td>
+<td class="comment-1" rowspan="1">Set Berk's graphic layout data address to <a href="58119.html#59048">59048</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39247"></span>39247</td>
 <td class="instruction">LD (IX+2),L</td>
-<td class="comment-11" rowspan="1">...(Berk being thrown left)...</td>
+<td class="comment-1" rowspan="1">...(Berk being thrown left)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39250"></span>39250</td>
 <td class="instruction">LD (IX+3),H</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39253"></span>39253</td>
 <td class="instruction">LD HL,35523</td>
-<td class="comment-11" rowspan="1">Set current position in Berk's script data to <a href="35523.html">35523</a>...</td>
+<td class="comment-1" rowspan="1">Set current position in Berk's script data to <a href="35523.html">35523</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39256"></span>39256</td>
 <td class="instruction">LD (35687),HL</td>
-<td class="comment-11" rowspan="1">(Berk being thrown left by Hatch)</td>
+<td class="comment-1" rowspan="1">(Berk being thrown left by hatch)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39259"></span>
 <div class="comments">
 <div class="paragraph">
-Hatch State Index is 10 (Berk was thrown 9 cycles ago)
+Hatch state index is 10 (Berk was thrown 9 cycles ago)
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39259"></span>39259</td>
 <td class="instruction">LD HL,41115</td>
-<td class="comment-11" rowspan="1">Load HL with graphic layout data address of Hatch half open with Bat (Animated)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with graphic layout data address of hatch half open with bat (animated)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39262"></span>39262</td>
 <td class="instruction">JR 39274</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="39151.html#39274">39274</a> (set Hatch's GLD address to value in HL and return)</td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="39151.html#39274">39274</a> (set hatch's GLD address to value in <span class="register">HL</span> and return)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39264"></span>
 <div class="comments">
 <div class="paragraph">
-Hatch State Index is 2 (Berk was thrown 1 cycle ago)
+Hatch state index is 2 (Berk was thrown 1 cycle ago)
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39264"></span>39264</td>
 <td class="instruction">LD HL,41099</td>
-<td class="comment-11" rowspan="1">Load HL with graphic layout data address of Hatch fully open With Bat (Animated)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with graphic layout data address of hatch fully open with bat (animated)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39267"></span>39267</td>
 <td class="instruction">JR 39274</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="39151.html#39274">39274</a> (set Hatch's GLD address to value in HL and return)</td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="39151.html#39274">39274</a> (set hatch's GLD address to value in <span class="register">HL</span> and return)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39269"></span>
 <div class="comments">
 <div class="paragraph">
-Hatch State Index is 11 (Berk was thrown 10 cycles ago)
+Hatch state index is 11 (Berk was thrown 10 cycles ago)
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39269"></span>39269</td>
 <td class="instruction">LD (HL),0</td>
-<td class="comment-11" rowspan="1">Set Hatch State Index to zero</td>
+<td class="comment-1" rowspan="1">Set hatch state index to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39271"></span>39271</td>
 <td class="instruction">LD HL,41090</td>
-<td class="comment-11" rowspan="1">Load HL with graphic layout data address of Hatch closed</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with graphic layout data address of hatch closed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39274"></span>39274</td>
 <td class="instruction">LD (44792),HL</td>
-<td class="comment-11" rowspan="1">Set Hatch's graphic layout data address to value in HL</td>
+<td class="comment-1" rowspan="1">Set hatch's graphic layout data address to value in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39277"></span>39277</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39150.html">39150</a></span></td>
+<td class="prev">
+Prev: <a href="39150.html">39150</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39151">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39278.html">39278</a></span></td>
+<td class="next">
+Next: <a href="39278.html">39278</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

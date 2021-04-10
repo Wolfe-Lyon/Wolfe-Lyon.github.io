@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 48285</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,30 +20,37 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48274.html">48274</a></span></td>
+<td class="prev">
+Prev: <a href="48274.html">48274</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48285">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48295.html">48295</a></span></td>
+<td class="next">
+Next: <a href="48295.html">48295</a>
+</td>
 </tr>
 </table>
-<div class="description">48285: Script Routine (01): Load HL (Script Data Pointer) with New Address</div>
+<div class="description">48285: Script routine: (01) Load <span class="register">HL</span> (script data pointer) with new address</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Functionality analogous to JP instruction.
+Functionality analogous to <span class="instruction">JP</span> instruction.
+</div>
+<div class="paragraph">
+Used by the routine at <a href="48096.html">48096</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">Address in script data</td>
+<td class="register-desc">Current address in script data</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -57,19 +62,16 @@ Functionality analogous to JP instruction.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48285"></span>48285</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance Script Data Pointer by two bytes...</td>
+<td class="comment-1" rowspan="2">Advance script data pointer by two bytes</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48286"></span>48286</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="48287"></span>
 <div class="comments">
 <div class="paragraph">
@@ -79,53 +81,46 @@ This entry point is used by the routine at <a href="48274.html">48274</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48287"></span>48287</td>
 <td class="instruction">LD C,(HL)</td>
-<td class="comment-11" rowspan="1">Read WORD at this location into HL...</td>
+<td class="comment-1" rowspan="6">Load <span class="register">HL</span> with address at this location (i.e. update script data pointer to this address) and execute script instruction at this location</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48288"></span>48288</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...(i.e. update Script Data Pointer to this address)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48289"></span>48289</td>
 <td class="instruction">LD B,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48290"></span>48290</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48291"></span>48291</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48292"></span>48292</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute script instruction at this location</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48274.html">48274</a></span></td>
+<td class="prev">
+Prev: <a href="48274.html">48274</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48285">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48295.html">48295</a></span></td>
+<td class="next">
+Next: <a href="48295.html">48295</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

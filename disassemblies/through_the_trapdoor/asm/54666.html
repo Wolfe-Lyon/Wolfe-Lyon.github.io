@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 54666</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54569.html">54569</a></span></td>
+<td class="prev">
+Prev: <a href="54569.html">54569</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54666">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54764.html">54764</a></span></td>
+<td class="next">
+Next: <a href="54764.html">54764</a>
+</td>
 </tr>
 </table>
-<div class="description">54666: Check Entity at IX for Collision With Another (Impassable / Pushable) Entity Immediately to the Left</div>
+<div class="description">54666: Check entity at <span class="register">IX</span> for collision with another (impassable / pushable) entity immediately to the left</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="36116.html">36116</a>, <a href="52053.html">52053</a>, <a href="52098.html">52098</a>, <a href="52870.html">52870</a>, <a href="52914.html">52914</a>, <a href="54348.html">54348</a> and <a href="55041.html">55041</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -45,13 +47,13 @@ Used by the routines at <a href="36116.html">36116</a>, <a href="52053.html">520
 <td class="register-desc">Address of complex state data for an entity</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">F</td>
-<td class="register-desc">Carry Flag set if no entity found, reset otherwise</td>
+<td class="register-desc">Carry flag set if no entity found, reset otherwise</td>
 </tr>
 <tr>
 <td class="register">A</td>
@@ -65,251 +67,216 @@ Used by the routines at <a href="36116.html">36116</a>, <a href="52053.html">520
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54666"></span>54666</td>
 <td class="instruction">LD DE,13</td>
-<td class="comment-11" rowspan="1">Load DE with 13 (as entries in complex state data are 13 bytes wide)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with 13 (as entries in complex state data are 13 bytes wide)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54669"></span>54669</td>
 <td class="instruction">LD IY,(34238)</td>
-<td class="comment-11" rowspan="1">Load start address of current level's complex state data into IY</td>
+<td class="comment-1" rowspan="1">Load start address of current level's complex state data into <span class="register">IY</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54673"></span>54673</td>
 <td class="instruction">LD A,(IY+0)</td>
-<td class="comment-11" rowspan="1">Load A with room index for current IY entity</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with room index for current <span class="register">IY</span> entity</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54676"></span>54676</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">If this is not 255 (i.e. End Marker)...</td>
+<td class="comment-1" rowspan="1">If this is not 255 (i.e. end marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54678"></span>54678</td>
 <td class="instruction">JR NZ,54682</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="54666.html#54682">54682</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="54666.html#54682">54682</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54680"></span>54680</td>
 <td class="instruction">SCF</td>
-<td class="comment-11" rowspan="1">Set Carry Flag</td>
+<td class="comment-1" rowspan="1">Set carry flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54681"></span>54681</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54682"></span>54682</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">If room of entity at IX is not the same as room of entity at IY...</td>
+<td class="comment-1" rowspan="1">If room of entity at <span class="register">IX</span> is not the same as room of entity at <span class="register">IY</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54685"></span>54685</td>
 <td class="instruction">CP (IY+0)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54688"></span>54688</td>
 <td class="instruction">JR NZ,54760</td>
-<td class="comment-11" rowspan="1">...then advance IY to next entity</td>
+<td class="comment-1" rowspan="1">...then advance <span class="register">IY</span> to next entity</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54690"></span>54690</td>
 <td class="instruction">BIT 5,(IY+10)</td>
-<td class="comment-11" rowspan="1">If current entity at IY has its Is Being Carried Flag set...</td>
+<td class="comment-1" rowspan="1">If current entity at <span class="register">IY</span> has its is-being-carried flag set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54694"></span>54694</td>
 <td class="instruction">JP NZ,54760</td>
-<td class="comment-11" rowspan="1">...then advance IY to next entity</td>
+<td class="comment-1" rowspan="1">...then advance <span class="register">IY</span> to next entity</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54697"></span>54697</td>
 <td class="instruction">LD A,(IY+8)</td>
-<td class="comment-11" rowspan="1">If current entity at IY has a class which is the same as the entity at IX...</td>
+<td class="comment-1" rowspan="1">If current entity at <span class="register">IY</span> has a class which is the same as the entity at <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54700"></span>54700</td>
 <td class="instruction">CP (IX+8)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54703"></span>54703</td>
 <td class="instruction">JP Z,54760</td>
-<td class="comment-11" rowspan="1">...then advance IY to next entity</td>
+<td class="comment-1" rowspan="1">...then advance <span class="register">IY</span> to next entity</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54706"></span>54706</td>
 <td class="instruction">BIT 7,A</td>
-<td class="comment-11" rowspan="1">If entity at IY has its "Spans Full Depth" Flag is set...</td>
+<td class="comment-1" rowspan="1">If entity at <span class="register">IY</span> has its spans-full-depth flag set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54708"></span>54708</td>
 <td class="instruction">JR NZ,54718</td>
-<td class="comment-11" rowspan="1">...then skip over depth check to <a href="54569.html#54620">54620</a></td>
+<td class="comment-1" rowspan="1">...then skip over depth check to <a href="54569.html#54620">54620</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54710"></span>54710</td>
 <td class="instruction">LD A,(IY+1)</td>
-<td class="comment-11" rowspan="1">If entity at IY has a depth which is not the same as the depth of the entity at IX...</td>
+<td class="comment-1" rowspan="1">If entity at <span class="register">IY</span> has a depth which is not the same as the depth of the entity at <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54713"></span>54713</td>
 <td class="instruction">CP (IX+1)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54716"></span>54716</td>
 <td class="instruction">JR NZ,54760</td>
-<td class="comment-11" rowspan="1">...then advance IY to next entity</td>
+<td class="comment-1" rowspan="1">...then advance <span class="register">IY</span> to next entity</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54718"></span>54718</td>
 <td class="instruction">LD A,(IY+11)</td>
-<td class="comment-11" rowspan="1">If entity at IY has its "Impassable / Pushable Leftwards" Flag reset...</td>
+<td class="comment-1" rowspan="1">If entity at <span class="register">IY</span> has its impassable/pushable-leftwards flag reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54721"></span>54721</td>
 <td class="instruction">AND 16</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54723"></span>54723</td>
 <td class="instruction">JP Z,54760</td>
-<td class="comment-11" rowspan="1">...then advance IY to next entity</td>
+<td class="comment-1" rowspan="1">...then advance <span class="register">IY</span> to next entity</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54726"></span>54726</td>
 <td class="instruction">LD A,(IX+5)</td>
-<td class="comment-11" rowspan="1">If the left side of entity at IX...</td>
+<td class="comment-1" rowspan="1">If the left side of entity at <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54729"></span>54729</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54730"></span>54730</td>
 <td class="instruction">CP (IY+7)</td>
-<td class="comment-11" rowspan="1">...is not immediately to the right of the right side of the entity at IY...</td>
+<td class="comment-1" rowspan="1">...is not immediately to the right of the right side of the entity at <span class="register">IY</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54733"></span>54733</td>
 <td class="instruction">JR NZ,54760</td>
-<td class="comment-11" rowspan="1">...then advance IY to next entity</td>
+<td class="comment-1" rowspan="1">...then advance <span class="register">IY</span> to next entity</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54735"></span>54735</td>
 <td class="instruction">LD A,(IX+6)</td>
-<td class="comment-11" rowspan="1">If the bottom of the entity at IX...</td>
+<td class="comment-1" rowspan="1">If the bottom of the entity at <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54738"></span>54738</td>
 <td class="instruction">CP (IY+4)</td>
-<td class="comment-11" rowspan="1">...is above the top of the entity at IY...</td>
+<td class="comment-1" rowspan="1">...is above the top of the entity at <span class="register">IY</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54741"></span>54741</td>
 <td class="instruction">JR C,54760</td>
-<td class="comment-11" rowspan="1">...then advance IY to next entity</td>
+<td class="comment-1" rowspan="1">...then advance <span class="register">IY</span> to next entity</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54743"></span>54743</td>
 <td class="instruction">LD A,(IY+6)</td>
-<td class="comment-11" rowspan="1">If the bottom of the entity at IY...</td>
+<td class="comment-1" rowspan="1">If the bottom of the entity at <span class="register">IY</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54746"></span>54746</td>
 <td class="instruction">CP (IX+4)</td>
-<td class="comment-11" rowspan="1">...is above the top of the entity at IX...</td>
+<td class="comment-1" rowspan="1">...is above the top of the entity at <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54749"></span>54749</td>
 <td class="instruction">JR C,54760</td>
-<td class="comment-11" rowspan="1">...then advance IY to next entity</td>
+<td class="comment-1" rowspan="1">...then advance <span class="register">IY</span> to next entity</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54751"></span>54751</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero to reset Carry Flag</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero to reset carry flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54752"></span>54752</td>
 <td class="instruction">LD (34258),IY</td>
-<td class="comment-11" rowspan="1">Store pointer to current entity at <a href="34256.html#34258">34258</a></td>
+<td class="comment-1" rowspan="1">Store pointer to current entity at <a href="34256.html#34258">34258</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54756"></span>54756</td>
 <td class="instruction">LD A,(IY+8)</td>
-<td class="comment-11" rowspan="1">Load A with class of entity at IY</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with class of entity at <span class="register">IY</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54759"></span>54759</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54760"></span>54760</td>
 <td class="instruction">ADD IY,DE</td>
-<td class="comment-11" rowspan="1">Advance IY pointer to next entity in complex state data block</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IY</span> pointer to next entity in complex state data block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54762"></span>54762</td>
 <td class="instruction">JR 54673</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="54666.html#54673">54673</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="54666.html#54673">54673</a></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54569.html">54569</a></span></td>
+<td class="prev">
+Prev: <a href="54569.html">54569</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54666">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54764.html">54764</a></span></td>
+<td class="next">
+Next: <a href="54764.html">54764</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

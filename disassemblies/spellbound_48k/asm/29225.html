@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 29225</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,230 +20,197 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29205.html">29205</a></span></td>
+<td class="prev">
+Prev: <a href="29205.html">29205</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29225">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29291.html">29291</a></span></td>
+<td class="next">
+Next: <a href="29291.html">29291</a>
+</td>
 </tr>
 </table>
-<div class="description">29225: Room Drawing: Draw Wall Axes</div>
+<div class="description">29225: Room drawing: Draw wall axes</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="27865.html">27865</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29225"></span>29225</td>
 <td class="instruction">CALL <a href="29441.html">29441</a></td>
-<td class="comment-11" rowspan="1">Read two bytes AFTER HL position into BC, advancing HL before both reads</td>
+<td class="comment-1" rowspan="1">Read two bytes AFTER <span class="register">HL</span> position into <span class="register">BC</span>, advancing <span class="register">HL</span> before both reads</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29228"></span>29228</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29229"></span>29229</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29230"></span>29230</td>
 <td class="instruction">LD A,70</td>
-<td class="comment-11" rowspan="1">Load system variable ATTR T with 70 (yellow INK, black PAPER, BRIGHT)...</td>
+<td class="comment-1" rowspan="1">Store 70 (yellow INK, black PAPER, BRIGHT) at <a href="23695.html">23695</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29232"></span>29232</td>
 <td class="instruction">LD (23695),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29235"></span>29235</td>
 <td class="instruction">LD A,64</td>
-<td class="comment-11" rowspan="1">Set current Terrain Interaction Parameter to "preserve attribute"...</td>
+<td class="comment-1" rowspan="1">Set current terrain interaction parameter to preserve-attribute...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29237"></span>29237</td>
 <td class="instruction">LD (23483),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29240"></span>29240</td>
 <td class="instruction">LD A,86</td>
-<td class="comment-11" rowspan="1">Draw Wall Axes...</td>
+<td class="comment-1" rowspan="1">Draw wall axes...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29242"></span>29242</td>
 <td class="instruction">CALL <a href="29960.html">29960</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29245"></span>29245</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29246"></span>29246</td>
 <td class="instruction">INC B</td>
-<td class="comment-11" rowspan="1">Increase y-coordinate by two...</td>
+<td class="comment-1" rowspan="1">Increase y-coordinate by two...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29247"></span>29247</td>
 <td class="instruction">INC B</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29248"></span>29248</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">Increase x-coordinate by three...</td>
+<td class="comment-1" rowspan="1">Increase x-coordinate by three...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29249"></span>29249</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29250"></span>29250</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29251"></span>29251</td>
 <td class="instruction">CALL <a href="36569.html">36569</a></td>
-<td class="comment-11" rowspan="1">Update Virtual Attribute Cursor storage location to coordinates x=C y=B and point HL to corresponding Attribute File address</td>
+<td class="comment-1" rowspan="1">Update virtual attribute cursor storage location to position (<span class="register">C</span>, <span class="register">B</span>) and point <span class="register">HL</span> to corresponding attribute file address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29254"></span>29254</td>
 <td class="instruction">LD A,69</td>
-<td class="comment-11" rowspan="1">Set attribute at this location to 69 (cyan INK, black PAPER, BRIGHT) for top of axe handles...</td>
+<td class="comment-1" rowspan="1">Set attribute at this location to 69 (cyan INK, black PAPER, BRIGHT) for top of axe handles...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29256"></span>29256</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29257"></span>29257</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Transfer memory address of attribute cursor...</td>
+<td class="comment-1" rowspan="1">Transfer memory address of attribute cursor...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29258"></span>29258</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">...into  IX</td>
+<td class="comment-1" rowspan="1">...into <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29260"></span>29260</td>
 <td class="instruction">LD (IX+1),A</td>
-<td class="comment-11" rowspan="1">Set attribute of rest of handles to 69 (cyan INK, black PAPER, BRIGHT)...</td>
+<td class="comment-1" rowspan="1">Set attribute of rest of handles to 69 (cyan INK, black PAPER, BRIGHT)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29263"></span>29263</td>
 <td class="instruction">LD (IX+31),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29266"></span>29266</td>
 <td class="instruction">LD (IX+32),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29269"></span>29269</td>
 <td class="instruction">LD (IX+33),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29272"></span>29272</td>
 <td class="instruction">LD (IX+34),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29275"></span>29275</td>
 <td class="instruction">LD (IX+63),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29278"></span>29278</td>
 <td class="instruction">LD (IX+64),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29281"></span>29281</td>
 <td class="instruction">LD (IX+65),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29284"></span>29284</td>
 <td class="instruction">LD (IX+66),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29287"></span>29287</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29288"></span>29288</td>
 <td class="instruction">JP <a href="27865.html#28060">28060</a></td>
-<td class="comment-11" rowspan="1">Return to room drawing routine and process next data</td>
+<td class="comment-1" rowspan="1">Return to room drawing routine and process next data</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29205.html">29205</a></span></td>
+<td class="prev">
+Prev: <a href="29205.html">29205</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29225">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29291.html">29291</a></span></td>
+<td class="next">
+Next: <a href="29291.html">29291</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

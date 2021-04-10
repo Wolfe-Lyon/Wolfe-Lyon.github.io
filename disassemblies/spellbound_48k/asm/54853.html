@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 54853</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,258 +20,221 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54753.html">54753</a></span></td>
+<td class="prev">
+Prev: <a href="54753.html">54753</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54853">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54955.html">54955</a></span></td>
+<td class="next">
+Next: <a href="54955.html">54955</a>
+</td>
 </tr>
 </table>
-<div class="description">54853: Call Time-Dependent Routines [Main Interrupt Routine]</div>
+<div class="description">54853: Call time-dependent routines (main interrupt routine)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="65524.html">65524</a>.
 </div>
 </div>
-<table class="input-0">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54853"></span>54853</td>
 <td class="instruction">CALL <a href="55546.html">55546</a></td>
-<td class="comment-11" rowspan="1">Store all registers on the stack</td>
+<td class="comment-1" rowspan="1">Store all registers on the stack</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54856"></span>54856</td>
 <td class="instruction">LD A,(37655)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Window...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Window...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54859"></span>54859</td>
 <td class="instruction">CP 6</td>
-<td class="comment-11" rowspan="1">...and if this is 6 (Control Selection Window)...</td>
+<td class="comment-1" rowspan="1">...and if this is 6 (control selection window)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54861"></span>54861</td>
 <td class="instruction">JP Z,<a href="54955.html">54955</a></td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="54955.html">54955</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="54955.html">54955</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54864"></span>54864</td>
 <td class="instruction">BIT 0,(IY+65)</td>
-<td class="comment-11" rowspan="1">If "Update Game Time and Locate Arrow Glow" flag is reset...</td>
+<td class="comment-1" rowspan="1">If update-game-time-and-locate-arrow-glow flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54868"></span>54868</td>
 <td class="instruction">JP Z,54949</td>
-<td class="comment-11" rowspan="1">...then skip to end of interrupt routine</td>
+<td class="comment-1" rowspan="1">...then skip to end of interrupt routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54871"></span>54871</td>
 <td class="instruction">CALL <a href="54996.html">54996</a></td>
-<td class="comment-11" rowspan="1">Update game time, time left and (every minute) read-text of Crystal Ball</td>
+<td class="comment-1" rowspan="1">Update game time, time left and (every minute) read-text of Crystal Ball</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54874"></span>54874</td>
 <td class="instruction">LD BC,(23462)</td>
-<td class="comment-11" rowspan="1">Load x- &amp; y- coordinate of top-left character of currently glowing "Locate Compass" component into BC</td>
+<td class="comment-1" rowspan="1">Load x- &amp; y- coordinate of top-left character of currently glowing "locate compass" component into <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54878"></span>54878</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">If this is zero (i.e. compass not glowing because Magic Knight isn't "locating")...</td>
+<td class="comment-1" rowspan="1">If this is zero (i.e. compass not glowing because Magic Knight isn't "locating")...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54879"></span>54879</td>
 <td class="instruction">OR C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54880"></span>54880</td>
 <td class="instruction">JP Z,54916</td>
-<td class="comment-11" rowspan="1">...jump to <a href="54853.html#54916">54916</a>...</td>
+<td class="comment-1" rowspan="1">...jump to <a href="54853.html#54916">54916</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54883"></span>54883</td>
 <td class="instruction">LD A,(23408)</td>
-<td class="comment-11" rowspan="1">Else, load "Compass Glow Update Flag" into A</td>
+<td class="comment-1" rowspan="1">Else, load compass-glow-update flag into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54886"></span>54886</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">Invert Compass Glow Update Flag</td>
+<td class="comment-1" rowspan="1">Invert compass-glow-update flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54887"></span>54887</td>
 <td class="instruction">AND 1</td>
-<td class="comment-11" rowspan="1">Store back at 23408 and if Compass Glow Update Flag is set...</td>
+<td class="comment-1" rowspan="1">Store back at 23408 and if compass-glow-update flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54889"></span>54889</td>
 <td class="instruction">LD (23408),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54892"></span>54892</td>
 <td class="instruction">JR NZ,54916</td>
-<td class="comment-11" rowspan="1">...then skip over glow attribute update section to <a href="54853.html#54916">54916</a> (don't update glowing attributes this time)</td>
+<td class="comment-1" rowspan="1">...then skip over glow attribute update section to <a href="54853.html#54916">54916</a> (don't update glowing attributes this time)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54894"></span>54894</td>
 <td class="instruction">CALL <a href="36569.html">36569</a></td>
-<td class="comment-11" rowspan="1">Update Virtual Attribute Cursor storage location to coordinates x=C y=B and point HL to corresponding Attribute File address</td>
+<td class="comment-1" rowspan="1">Update virtual attribute cursor storage location to position (<span class="register">C</span>, <span class="register">B</span>) and point <span class="register">HL</span> to corresponding attribute file address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54897"></span>54897</td>
 <td class="instruction">CALL <a href="54983.html">54983</a></td>
-<td class="comment-11" rowspan="1">Update glowing blocks' attribute to next colour in sequence and load into E</td>
+<td class="comment-1" rowspan="1">Update glowing blocks' attribute to next colour in sequence and load into <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54900"></span>54900</td>
 <td class="instruction">CALL <a href="54976.html">54976</a></td>
-<td class="comment-11" rowspan="1">Write current attribute for a glowing block to Attribute File (HL) and advance HL</td>
+<td class="comment-1" rowspan="1">Write current attribute for a glowing block to attribute file (<span class="register">HL</span>) and advance <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54903"></span>54903</td>
 <td class="instruction">CALL <a href="54976.html">54976</a></td>
-<td class="comment-11" rowspan="1">Write current attribute for a glowing block to Attribute File (HL) and advance HL</td>
+<td class="comment-1" rowspan="1">Write current attribute for a glowing block to attribute file (<span class="register">HL</span>) and advance <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54906"></span>54906</td>
 <td class="instruction">LD BC,30</td>
-<td class="comment-11" rowspan="1">Advance Attribute File address (HL) down to next row, to the block immediately below the first one updated at instruction <a href="54853.html#54900">54900</a>...</td>
+<td class="comment-1" rowspan="2">Advance attribute file address (<span class="register">HL</span>) down to next row, to the block immediately below the first one updated at instruction <a href="54853.html#54900">54900</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54909"></span>54909</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54910"></span>54910</td>
 <td class="instruction">CALL <a href="54976.html">54976</a></td>
-<td class="comment-11" rowspan="1">Write current attribute for a glowing block to Attribute File (HL) and advance HL</td>
+<td class="comment-1" rowspan="1">Write current attribute for a glowing block to attribute file (<span class="register">HL</span>) and advance <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54913"></span>54913</td>
 <td class="instruction">CALL <a href="54976.html">54976</a></td>
-<td class="comment-11" rowspan="1">Write current attribute for a glowing block to Attribute File (HL) and advance HL</td>
+<td class="comment-1" rowspan="1">Write current attribute for a glowing block to attribute file (<span class="register">HL</span>) and advance <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54916"></span>54916</td>
 <td class="instruction">BIT 1,(IY+65)</td>
-<td class="comment-11" rowspan="1">If "Disable In-Game Glow" flag is set...</td>
+<td class="comment-1" rowspan="1">If disable-in-game-glow flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54920"></span>54920</td>
 <td class="instruction">JP NZ,54949</td>
-<td class="comment-11" rowspan="1">...then skip to end of interrupt routine</td>
+<td class="comment-1" rowspan="1">...then skip to end of interrupt routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54923"></span>54923</td>
 <td class="instruction">LD IX,23383</td>
-<td class="comment-11" rowspan="1">Point IX at table of Attribute File addresses that are glowing</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at table of attribute file addresses that are glowing</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54927"></span>54927</td>
 <td class="instruction">CALL <a href="54983.html">54983</a></td>
-<td class="comment-11" rowspan="1">Update glowing blocks' attribute to next colour in sequence and load into E</td>
+<td class="comment-1" rowspan="1">Update glowing blocks' attribute to next colour in sequence and load into <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54930"></span>54930</td>
 <td class="instruction">LD L,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load a glowing Attribute File address into HL...</td>
+<td class="comment-1" rowspan="1">Load a glowing attribute file address into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54933"></span>54933</td>
 <td class="instruction">LD H,(IX+1)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54936"></span>54936</td>
 <td class="instruction">LD A,L</td>
-<td class="comment-11" rowspan="1">If HL is zero...</td>
+<td class="comment-1" rowspan="1">If <span class="register">HL</span> is zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54937"></span>54937</td>
 <td class="instruction">OR H</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54938"></span>54938</td>
 <td class="instruction">JR Z,54949</td>
-<td class="comment-11" rowspan="1">...then jump to <a href="54853.html#54949">54949</a> (to exit loop)</td>
+<td class="comment-1" rowspan="1">...then jump to <a href="54853.html#54949">54949</a> (to exit loop)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54940"></span>54940</td>
 <td class="instruction">CALL <a href="54976.html">54976</a></td>
-<td class="comment-11" rowspan="1">Write current attribute for a glowing block to Attribute File (HL) and advance HL</td>
+<td class="comment-1" rowspan="1">Write current attribute for a glowing block to attribute file (<span class="register">HL</span>) and advance <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54943"></span>54943</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance to next Attribute File address in list of glowing blocks...</td>
+<td class="comment-1" rowspan="1">Advance to next attribute file address in list of glowing blocks...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54945"></span>54945</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54947"></span>54947</td>
 <td class="instruction">JR 54930</td>
-<td class="comment-11" rowspan="1">Jump back to <a href="54853.html#54930">54930</a> to update next block</td>
+<td class="comment-1" rowspan="1">Jump back to <a href="54853.html#54930">54930</a> to update next block</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="54949"></span>
 <div class="comments">
 <div class="paragraph">
@@ -280,29 +244,31 @@ This entry point is used by the routine at <a href="54955.html">54955</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54949"></span>54949</td>
 <td class="instruction">CALL <a href="55574.html">55574</a></td>
-<td class="comment-11" rowspan="1">Restore all registers from the stack</td>
+<td class="comment-1" rowspan="1">Restore all registers from the stack</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54952"></span>54952</td>
 <td class="instruction">JP 56</td>
-<td class="comment-11" rowspan="1">Jump to ROM maskable interrupt routine (update frame counter, read keyboard and then return to main game code where the interrupt was triggered)</td>
+<td class="comment-1" rowspan="1">Jump to ROM maskable interrupt routine (update frame counter, read keyboard and then return from interrupt routine)</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54753.html">54753</a></span></td>
+<td class="prev">
+Prev: <a href="54753.html">54753</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54853">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54955.html">54955</a></span></td>
+<td class="next">
+Next: <a href="54955.html">54955</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

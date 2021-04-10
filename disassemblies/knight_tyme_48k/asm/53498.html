@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 53498</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,250 +20,212 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53479.html">53479</a></span></td>
+<td class="prev">
+Prev: <a href="53479.html">53479</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53498">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53573.html">53573</a></span></td>
+<td class="next">
+Next: <a href="53573.html">53573</a>
+</td>
 </tr>
 </table>
-<div class="description">53498: Update Game Time, Time Left and Move Characters if Appropriate</div>
+<div class="description">53498: Update game time, time left and move characters if appropriate</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="53479.html">53479</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53498"></span>53498</td>
 <td class="instruction">LD A,(23460)</td>
-<td class="comment-11" rowspan="1">If number of 1/50 seconds elapsed in current minute is divisible by eight...</td>
+<td class="comment-1" rowspan="1">If number of 1/50 seconds elapsed in current minute is divisible by eight...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53501"></span>53501</td>
 <td class="instruction">AND 7</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53503"></span>53503</td>
 <td class="instruction">CALL Z,<a href="53731.html">53731</a></td>
-<td class="comment-11" rowspan="1">...then move character whose turn it is to move, if allowed</td>
+<td class="comment-1" rowspan="1">...then move character whose turn it is to move, if allowed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53506"></span>53506</td>
 <td class="instruction">LD A,(23460)</td>
-<td class="comment-11" rowspan="1">[EVERY 1/50 SECOND] Increase number of elapsed 1/50 seconds</td>
+<td class="comment-1" rowspan="1">[EVERY 1/50 SECOND] Increase number of elapsed 1/50 seconds</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53509"></span>53509</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53510"></span>53510</td>
 <td class="instruction">LD (23460),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53513"></span>53513</td>
 <td class="instruction">CP 50</td>
-<td class="comment-11" rowspan="1">If new value isn't 50...</td>
+<td class="comment-1" rowspan="1">If new value isn't 50...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53515"></span>53515</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53516"></span>53516</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">[EVERY 1 SECOND] Else, set the value to zero (start of next full second)...</td>
+<td class="comment-1" rowspan="1">[EVERY 1 SECOND] Else, set the value to zero (start of next full second)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53517"></span>53517</td>
 <td class="instruction">LD (23460),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53520"></span>53520</td>
 <td class="instruction">LD A,(23459)</td>
-<td class="comment-11" rowspan="1">Increase number of seconds elapsed...</td>
+<td class="comment-1" rowspan="1">Increase number of seconds elapsed...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53523"></span>53523</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53524"></span>53524</td>
 <td class="instruction">LD (23459),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53527"></span>53527</td>
 <td class="instruction">CP 60</td>
-<td class="comment-11" rowspan="1">If new value isn't 60...</td>
+<td class="comment-1" rowspan="1">If new value isn't 60...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53529"></span>53529</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53530"></span>53530</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">[EVERY 1 MINUTE] Else, set the value to zero (start of next minute)...</td>
+<td class="comment-1" rowspan="1">[EVERY 1 MINUTE] Else, set the value to zero (start of next minute)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53531"></span>53531</td>
 <td class="instruction">LD (23459),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53534"></span>53534</td>
 <td class="instruction">CALL <a href="53585.html">53585</a></td>
-<td class="comment-11" rowspan="1">Update All Characters' Stats (Deteriorate or Regenerate) and Wake Up / Send to Sleep if Required</td>
+<td class="comment-1" rowspan="1">Update all characters' stats (deteriorate or regenerate) and wake up / send to sleep if required</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53537"></span>53537</td>
 <td class="instruction">CALL <a href="53573.html">53573</a></td>
-<td class="comment-11" rowspan="1">Increase Magic Knight's current Magic Level by 10 (capped at 100)</td>
+<td class="comment-1" rowspan="1">Increase Magic Knight's current magic level by 10 (capped at 100)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53540"></span>53540</td>
 <td class="instruction">LD A,12</td>
-<td class="comment-11" rowspan="1">If Magic Knight is wearing the Magic Talisman (12)...</td>
+<td class="comment-1" rowspan="1">If Magic Knight is wearing the Magic Talisman (12)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53542"></span>53542</td>
 <td class="instruction">CALL <a href="33640.html">33640</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53545"></span>53545</td>
 <td class="instruction">CALL Z,<a href="53573.html">53573</a></td>
-<td class="comment-11" rowspan="1">...then increase Magic Knight's current Magic Level by another 10 (capped at 100)</td>
+<td class="comment-1" rowspan="1">...then increase Magic Knight's current magic level by another 10 (capped at 100)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53548"></span>53548</td>
 <td class="instruction">LD A,(23458)</td>
-<td class="comment-11" rowspan="1">Increase number of minutes elapsed...</td>
+<td class="comment-1" rowspan="1">Increase number of minutes elapsed...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53551"></span>53551</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53552"></span>53552</td>
 <td class="instruction">LD (23458),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53555"></span>53555</td>
 <td class="instruction">CP 5</td>
-<td class="comment-11" rowspan="1">If new value isn't 5...</td>
+<td class="comment-1" rowspan="1">If new value isn't 5...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53557"></span>53557</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53558"></span>53558</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">[EVERY 5 MINUTES] Else, set the value to zero (start of next "day")...</td>
+<td class="comment-1" rowspan="1">[EVERY 5 MINUTES] Else, set the value to zero (start of next "day")...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53559"></span>53559</td>
 <td class="instruction">LD (23458),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53562"></span>53562</td>
 <td class="instruction">LD A,(23457)</td>
-<td class="comment-11" rowspan="1">Decrease number of days left...</td>
+<td class="comment-1" rowspan="1">Decrease number of days left...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53565"></span>53565</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53566"></span>53566</td>
 <td class="instruction">LD (23457),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53569"></span>53569</td>
 <td class="instruction">JP Z,<a href="53937.html">53937</a></td>
-<td class="comment-11" rowspan="1">If zero then show "Out of time" game over message and return to Control Selection Menu</td>
+<td class="comment-1" rowspan="1">If zero then show "out of time" game over message and return to control selection menu</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53572"></span>53572</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53479.html">53479</a></span></td>
+<td class="prev">
+Prev: <a href="53479.html">53479</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53498">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53573.html">53573</a></span></td>
+<td class="next">
+Next: <a href="53573.html">53573</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

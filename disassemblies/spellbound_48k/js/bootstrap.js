@@ -2,8 +2,8 @@ require.config({
     baseUrl: "../"
 });
 
-require(["spellbound/main"], function(Main) {
-    window.onload = function() {
+require(["js/domReady", "spellbound/main"], function(domReady, Main) {
+    domReady(function() {
         Main.Main.initialise();
-    }
+    });
 });

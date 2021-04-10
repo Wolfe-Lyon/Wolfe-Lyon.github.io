@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 61297</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,96 +20,74 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="61267.html">61267</a></span></td>
+<td class="prev">
+Prev: <a href="61267.html">61267</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#61297">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="61336.html">61336</a></span></td>
+<td class="next">
+Next: <a href="61336.html">61336</a>
+</td>
 </tr>
 </table>
-<div class="description">61297: Room Drawing: Set "Apply Vertical Mirror" Mode on, "Apply Horizontal Mirror" Mode on and Draw a Graphic</div>
+<div class="description">61297: Room drawing: Set apply-vertical-mirror flag, set apply-horizontal-mirror flag and draw a graphic</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="40664.html">40664</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="61297"></span>61297</td>
 <td class="instruction">LD A,205</td>
-<td class="comment-11" rowspan="1">Load <a href="61336.html#61373">61373</a> with opcode for "CALL"...</td>
+<td class="comment-1" rowspan="2">Load <a href="61336.html#61373">61373</a> with opcode for <span class="instruction">CALL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61299"></span>61299</td>
 <td class="instruction">LD (61373),A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61302"></span>61302</td>
 <td class="instruction">LD HL,61625</td>
-<td class="comment-11" rowspan="1">Load <a href="61336.html#61373">61374</a> (i.e. operand of instruction at <a href="61336.html#61373">61373</a>) with address of start of "Reverse the order of the bits in A" routine...</td>
+<td class="comment-1" rowspan="2">Load <a href="61336.html#61373">61374</a> (i.e. operand of instruction at <a href="61336.html#61373">61373</a>) with address of start of "reverse the order of the bits in <span class="register">A</span>" routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61305"></span>61305</td>
 <td class="instruction">LD (61374),HL</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61308"></span>61308</td>
 <td class="instruction">LD A,7</td>
-<td class="comment-11" rowspan="1">Set Pixel Row Counter to 7...</td>
+<td class="comment-1" rowspan="2">Set pixel row counter to 7</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61310"></span>61310</td>
 <td class="instruction">LD (23449),A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61313"></span>61313</td>
 <td class="instruction">LD A,3</td>
-<td class="comment-11" rowspan="1">Set both Horizontal and Vertical Mirror Flags...</td>
+<td class="comment-1" rowspan="2">Set both apply-horizontal-mirror and apply-vertical-mirror flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61315"></span>61315</td>
 <td class="instruction">LD (23450),A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61318"></span>61318</td>
 <td class="instruction">LD BC,(23410)</td>
-<td class="comment-11" rowspan="1">Load BC with coordinates (each +1) of bottom-right of graphic to draw</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with coordinates (each +1) of bottom-right of graphic to draw</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61322"></span>61322</td>
 <td class="instruction">DEC C</td>
-<td class="comment-11" rowspan="1">Decrease x-coordinate by one</td>
+<td class="comment-1" rowspan="1">Decrease x-coordinate by one</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="61323"></span>
 <div class="comments">
 <div class="paragraph">
@@ -118,53 +97,49 @@ This entry point is used by the routine at <a href="61267.html">61267</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="61323"></span>61323</td>
 <td class="instruction">LD (23444),BC</td>
-<td class="comment-11" rowspan="1">Store coordinates at which to draw graphic at <a href="23441.html#23444">23444</a></td>
+<td class="comment-1" rowspan="1">Store coordinates at which to draw graphic at <a href="23441.html#23444">23444</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61327"></span>61327</td>
 <td class="instruction">CALL <a href="63203.html">63203</a></td>
-<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+<td class="comment-1" rowspan="1">Move virtual cursor (bitmap) to display file address for coordinates x=<span class="register">C</span>, y=<span class="register">B</span> and load address into <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61330"></span>61330</td>
 <td class="instruction">LD A,7</td>
-<td class="comment-11" rowspan="1">Advance HL down to bottom pixel row in its current character block (as we are drawing up from the bottom)...</td>
+<td class="comment-1" rowspan="3">Advance <span class="register">HL</span> down to bottom pixel row in its current character block (as we are drawing up from the bottom)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61332"></span>61332</td>
 <td class="instruction">ADD A,H</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61333"></span>61333</td>
 <td class="instruction">LD H,A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61334"></span>61334</td>
 <td class="instruction">JR <a href="61336.html#61343">61343</a></td>
-<td class="comment-11" rowspan="1">Jump to <a href="61336.html#61343">61343</a> (draw the graphic then return)</td>
+<td class="comment-1" rowspan="1">Jump to <a href="61336.html#61343">61343</a> (draw the graphic then return)</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="61267.html">61267</a></span></td>
+<td class="prev">
+Prev: <a href="61267.html">61267</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#61297">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="61336.html">61336</a></span></td>
+<td class="next">
+Next: <a href="61336.html">61336</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

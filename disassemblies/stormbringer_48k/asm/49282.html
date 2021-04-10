@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Data at 49282</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="49034.html">49034</a></span></td>
+<td class="prev">
+Prev: <a href="49034.html">49034</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#49282">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="49354.html">49354</a></span></td>
+<td class="next">
+Next: <a href="49354.html">49354</a>
+</td>
 </tr>
 </table>
-<div class="description">49282: Characters' Initial Stats</div>
+<div class="description">49282: Characters' initial stats</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Nine groups of eight bytes, one group per character (including Magic Knight). The values are capped at 100:
@@ -52,7 +57,7 @@ Nine groups of eight bytes, one group per character (including Magic Knight). Th
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">3</td>
-<td class="" colspan="1" rowspan="1">Magic Level (bits 0-6) / Can Help Flag (bit 7)</td>
+<td class="" colspan="1" rowspan="1">Magic level (bits 0-6) / can-help flag (bit 7)</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">4</td>
@@ -60,11 +65,11 @@ Nine groups of eight bytes, one group per character (including Magic Knight). Th
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">5</td>
-<td class="" colspan="1" rowspan="1">Character Graphic Index (if zero, then character is not drawn)</td>
+<td class="" colspan="1" rowspan="1">Character graphic index (if zero, then character is not drawn)</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">6</td>
-<td class="" colspan="1" rowspan="1">Food Level (bits 0-6) / Asleep Flag (bit 7)</td>
+<td class="" colspan="1" rowspan="1">Food level (bits 0-6) / asleep flag (bit 7, reset = awake, set = asleep)</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">7</td>
@@ -73,89 +78,72 @@ Nine groups of eight bytes, one group per character (including Magic Knight). Th
 </table>
 </div>
 <div class="paragraph">
-See also Characters' Current Stats at <a href="24768.html">24768</a>.
+See also characters' current stats at <a href="24768.html">24768</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49282"></span>49282</td>
 <td class="instruction">DEFB 70,17,82,62,0,37,0,1</td>
-<td class="comment-11" rowspan="1">Magic Knight</td>
+<td class="comment-1" rowspan="1">Magic Knight</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49290"></span>49290</td>
 <td class="instruction">DEFB 100,100,100,127,7,37,100,2</td>
-<td class="comment-11" rowspan="1">Off-White Knight</td>
+<td class="comment-1" rowspan="1">Off-White Knight</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49298"></span>49298</td>
 <td class="instruction">DEFB 70,50,20,178,69,52,100,3</td>
-<td class="comment-11" rowspan="1">Aramis le Peux</td>
+<td class="comment-1" rowspan="1">Aramis Le Peux</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49306"></span>49306</td>
 <td class="instruction">DEFB 60,45,75,60,68,53,100,4</td>
-<td class="comment-11" rowspan="1">Robin of Shylock</td>
+<td class="comment-1" rowspan="1">Robin of Shylock</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49314"></span>49314</td>
 <td class="instruction">DEFB 80,40,76,5,0,0,100,5</td>
-<td class="comment-11" rowspan="1">Reggie the Rat</td>
+<td class="comment-1" rowspan="1">Reggie the Rat</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49322"></span>49322</td>
 <td class="instruction">DEFB 90,70,30,178,70,54,100,6</td>
-<td class="comment-11" rowspan="1">Rachel of Amazonia</td>
+<td class="comment-1" rowspan="1">Rachel of Amazonia</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49330"></span>49330</td>
 <td class="instruction">DEFB 90,70,100,100,0,0,100,7</td>
-<td class="comment-11" rowspan="1">Barker the Ent</td>
+<td class="comment-1" rowspan="1">Barker the Ent</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49338"></span>49338</td>
 <td class="instruction">DEFB 90,70,30,0,0,0,100,8</td>
-<td class="comment-11" rowspan="1">Organon the Guard</td>
+<td class="comment-1" rowspan="1">Organon the Guard</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49346"></span>49346</td>
 <td class="instruction">DEFB 90,70,30,100,0,0,100,9</td>
-<td class="comment-11" rowspan="1">Grunter the Bearwoolf</td>
+<td class="comment-1" rowspan="1">Grunter the Bearwoolf</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="49034.html">49034</a></span></td>
+<td class="prev">
+Prev: <a href="49034.html">49034</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#49282">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="49354.html">49354</a></span></td>
+<td class="next">
+Next: <a href="49354.html">49354</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

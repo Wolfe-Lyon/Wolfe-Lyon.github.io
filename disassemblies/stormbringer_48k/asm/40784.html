@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Unused RAM at 40784</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40765.html">40765</a></span></td>
+<td class="prev">
+Prev: <a href="40765.html">40765</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40784">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40832.html">40832</a></span></td>
+<td class="next">
+Next: <a href="40832.html">40832</a>
+</td>
 </tr>
 </table>
 <div class="description">40784: Unused routine</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 This is a room drawing routine. It draws a horizontal line.
@@ -36,200 +41,164 @@ This is a room drawing routine. It draws a horizontal line.
 (<a href="../reference/facts.html#redundantinstructions">See trivia</a>)
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40784"></span>40784</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance data pointer by three bytes...</td>
+<td class="comment-1" rowspan="1">Advance data pointer by three bytes...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40785"></span>40785</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40786"></span>40786</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40787"></span>40787</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Transfer current position in room layout data from HL to IX...</td>
+<td class="comment-1" rowspan="1">Transfer current position in room layout data from <span class="register">HL</span> to <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40788"></span>40788</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40790"></span>40790</td>
 <td class="instruction">LD L,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load HL with y-coordinate (pixels)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with y-coordinate (pixels)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40793"></span>40793</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40795"></span>40795</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...and double</td>
+<td class="comment-1" rowspan="1">...and double</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40796"></span>40796</td>
 <td class="instruction">LD BC,65140</td>
-<td class="comment-11" rowspan="1">Point BC at Table of Display File Addresses of Start of Each Pixel Row...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">BC</span> at table of display file addresses of start of each pixel row...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40799"></span>40799</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...and add doubled y-coordinate as offset in HL</td>
+<td class="comment-1" rowspan="1">...and add doubled y-coordinate as offset in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40800"></span>40800</td>
 <td class="instruction">CALL <a href="64627.html#64632">64632</a></td>
-<td class="comment-11" rowspan="1">Load address corresponding to start of pixel row at this coordinate into HL</td>
+<td class="comment-1" rowspan="1">Load address corresponding to start of pixel row at this coordinate into <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40803"></span>40803</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance layout data pointer to next byte</td>
+<td class="comment-1" rowspan="1">Advance layout data pointer to next byte</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40805"></span>40805</td>
 <td class="instruction">LD C,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load BC with x-coordinate of start of line (characters)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with x-coordinate of start of line (characters)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40808"></span>40808</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40810"></span>40810</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...and add to HL as offset</td>
+<td class="comment-1" rowspan="1">...and add to <span class="register">HL</span> as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40811"></span>40811</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance layout data pointer to next byte</td>
+<td class="comment-1" rowspan="1">Advance layout data pointer to next byte</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40813"></span>40813</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load A with x-coordinate of end of line (characters)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with x-coordinate of end of line (characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40816"></span>40816</td>
 <td class="instruction">SUB C</td>
-<td class="comment-11" rowspan="1">Subtract start coord. from end coord. and add one to get width...</td>
+<td class="comment-1" rowspan="1">Subtract start coordinate from end coordinate and add one to get width...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40817"></span>40817</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40818"></span>40818</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...and load into B</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40819"></span>40819</td>
 <td class="instruction">LD A,255</td>
-<td class="comment-11" rowspan="1">Load A with 255 (i.e. all bits set)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 255 (i.e. all bits set)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="40821"></span>40821</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Write a row of eight set pixels to the Display File...</td>
+<td class="comment-1" rowspan="1">Write a row of eight set pixels to the display file...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40822"></span>40822</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...and advance to next character to the right</td>
+<td class="comment-1" rowspan="1">...and advance to next character to the right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40823"></span>40823</td>
 <td class="instruction">DJNZ 40821</td>
-<td class="comment-11" rowspan="1">Decrease B (remaining number of character blocks to draw to) and loop back to <a href="40784.html#40821">40821</a></td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (remaining number of character blocks to draw to) and loop back to <a href="40784.html#40821">40821</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40825"></span>40825</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Transfer current position in room layout data from IX to HL...</td>
+<td class="comment-1" rowspan="1">Transfer current position in room layout data from <span class="register">IX</span> to <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40827"></span>40827</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40828"></span>40828</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance room layout data pointer to next instruction in layout data</td>
+<td class="comment-1" rowspan="1">Advance room layout data pointer to next instruction in layout data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40829"></span>40829</td>
 <td class="instruction">JP <a href="38841.html#38977">38977</a></td>
-<td class="comment-11" rowspan="1">Jump back to <a href="38841.html#38977">38977</a> for next byte of room layout data</td>
+<td class="comment-1" rowspan="1">Jump back to <a href="38841.html#38977">38977</a> for next byte of room layout data</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40765.html">40765</a></span></td>
+<td class="prev">
+Prev: <a href="40765.html">40765</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40784">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40832.html">40832</a></span></td>
+<td class="next">
+Next: <a href="40832.html">40832</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

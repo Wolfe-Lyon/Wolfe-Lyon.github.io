@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Data at 55950</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,592 +20,498 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55918.html">55918</a></span></td>
+<td class="prev">
+Prev: <a href="55918.html">55918</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55950">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="56310.html">56310</a></span></td>
+<td class="next">
+Next: <a href="56310.html">56310</a>
+</td>
 </tr>
 </table>
-<div class="description">55950: Graphic Lookup Data</div>
+<div class="description">55950: Graphic lookup data</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Table of addresses of start of graphic data for game graphics.
 </div>
 <div class="paragraph">
-In some cases (marked "Graphics (Standard)"), entries comprise of a pair of WORD values. The first of these is the address of the actual bitmap graphic data while the second value is the address of that graphic's mask bitmap data. The masks are used to allow, for example, background scenery to show behind objects that do not span the entire 2x2 character blocks when drawn. These standard graphics are generally for entities that can move, e.g. objects and characters, and are drawn by the routine at <a href="54411.html">54411</a>.
+In some cases (marked "Graphics (standard)"), entries comprise of a pair of WORD values. The first of these is the address of the actual bitmap graphic data while the second value is the address of that graphic's mask bitmap data. The masks are used to allow, for example, background scenery to show behind objects that do not span the entire 2 &times; 2 character blocks when drawn. These standard graphics are generally for entities that can move, e.g. objects and characters, and are drawn by the routine at <a href="54411.html">54411</a>.
 </div>
 <div class="paragraph">
-In other cases (marked "Graphics (Compacted)", entries comprise of a width value and a height value (both in characters) and an address for compacted graphic data. These compacted graphics are generally for static entities, such as scenery and terrain, and are drawn by the routine at <a href="28631.html">28631</a>.
+In other cases (marked "Graphics (compacted)", entries comprise of a width value and a height value (both in characters) and an address for compacted graphic data. These compacted graphics are generally for static entities, such as scenery and terrain, and are drawn by the routine at <a href="28631.html">28631</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55950"></span>55950</td>
 <td class="instruction">DEFW <a href="63220.html">63220</a>,<a href="63220.html">63220</a></td>
-<td class="comment-11" rowspan="1">(00) - Graphics (Standard): (03 x 04) Magic Knight Facing Right, Frame 1</td>
+<td class="comment-1" rowspan="1">(00) Graphics (standard): (03 &times; 04) Magic Knight facing right, frame 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55954"></span>55954</td>
 <td class="instruction">DEFW 0,0</td>
-<td class="comment-11" rowspan="1">(01) - Unused</td>
+<td class="comment-1" rowspan="1">(01) Unused</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55958"></span>55958</td>
 <td class="instruction">DEFW <a href="56310.html">56310</a>,<a href="56310.html">56310</a></td>
-<td class="comment-11" rowspan="1">(02) - Graphics (Standard): (02 x 02) Menu Hand Cursor</td>
+<td class="comment-1" rowspan="1">(02) Graphics (standard): (02 &times; 02) Menu hand cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55962"></span>55962</td>
 <td class="instruction">DEFW <a href="56342.html">56342</a>,56374</td>
-<td class="comment-11" rowspan="1">(03) - Graphics (Standard): (02 x 02) Chocolate Heart and mask</td>
+<td class="comment-1" rowspan="1">(03) Graphics (standard): (02 &times; 02) Chocolate Heart and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55966"></span>55966</td>
 <td class="instruction">DEFW <a href="56342.html#56406">56406</a>,56438</td>
-<td class="comment-11" rowspan="1">(04) - Graphics (Standard): (02 x 02) Advert and mask</td>
+<td class="comment-1" rowspan="1">(04) Graphics (standard): (02 &times; 02) Advert and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55970"></span>55970</td>
 <td class="instruction">DEFW <a href="56342.html#56470">56470</a>,56438</td>
-<td class="comment-11" rowspan="1">(05) - Graphics (Standard): (02 x 02) Mirror and mask</td>
+<td class="comment-1" rowspan="1">(05) Graphics (standard): (02 &times; 02) Mirror and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55974"></span>55974</td>
 <td class="instruction">DEFW <a href="56342.html#56502">56502</a>,56438</td>
-<td class="comment-11" rowspan="1">(06) - Graphics (Standard): (02 x 02) Photograph (inside of starship) and mask</td>
+<td class="comment-1" rowspan="1">(06) Graphics (standard): (02 &times; 02) Photograph (inside of starship) and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55978"></span>55978</td>
 <td class="instruction">DEFW <a href="56342.html#56534">56534</a>,56438</td>
-<td class="comment-11" rowspan="1">(07) - Graphics (Standard): (02 x 02) Photograph (Magic Knight) and mask</td>
+<td class="comment-1" rowspan="1">(07) Graphics (standard): (02 &times; 02) Photograph (Magic Knight) and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55982"></span>55982</td>
 <td class="instruction">DEFW <a href="56342.html#56566">56566</a>,56438</td>
-<td class="comment-11" rowspan="1">(08) - Graphics (Standard): (02 x 02) Star Map and mask</td>
+<td class="comment-1" rowspan="1">(08) Graphics (standard): (02 &times; 02) Star Map and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55986"></span>55986</td>
 <td class="instruction">DEFW <a href="56342.html#56598">56598</a>,56438</td>
-<td class="comment-11" rowspan="1">(09) - Graphics (Standard): (02 x 02) Ancient Scroll and mask</td>
+<td class="comment-1" rowspan="1">(09) Graphics (standard): (02 &times; 02) Ancient Scroll and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55990"></span>55990</td>
 <td class="instruction">DEFW <a href="56342.html#56630">56630</a>,56438</td>
-<td class="comment-11" rowspan="1">(10) - Graphics (Standard): (02 x 02) Starfleet Manual and mask</td>
+<td class="comment-1" rowspan="1">(10) Graphics (standard): (02 &times; 02) Starfleet Manual and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55994"></span>55994</td>
 <td class="instruction">DEFW <a href="56342.html#56662">56662</a>,56694</td>
-<td class="comment-11" rowspan="1">(11) - Graphics (Standard): (02 x 02) Pair of Boots and mask</td>
+<td class="comment-1" rowspan="1">(11) Graphics (standard): (02 &times; 02) Pair of Boots and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55998"></span>55998</td>
 <td class="instruction">DEFW <a href="56342.html#56726">56726</a>,56758</td>
-<td class="comment-11" rowspan="1">(12) - Graphics (Standard): (02 x 02) Camera and mask</td>
+<td class="comment-1" rowspan="1">(12) Graphics (standard): (02 &times; 02) Camera and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56002"></span>56002</td>
 <td class="instruction">DEFW <a href="56342.html#56790">56790</a>,56822</td>
-<td class="comment-11" rowspan="1">(13) - Graphics (Standard): (02 x 02) Blank / Valid ID Card and mask</td>
+<td class="comment-1" rowspan="1">(13) Graphics (standard): (02 &times; 02) Blank / Valid I.D. Card and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56006"></span>56006</td>
 <td class="instruction">DEFW <a href="56342.html#56854">56854</a>,56886</td>
-<td class="comment-11" rowspan="1">(14) - Graphics (Standard): (02 x 02) Shield and mask</td>
+<td class="comment-1" rowspan="1">(14) Graphics (standard): (02 &times; 02) Shield and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56010"></span>56010</td>
 <td class="instruction">DEFW <a href="56342.html#56918">56918</a>,56950</td>
-<td class="comment-11" rowspan="1">(15) - Graphics (Standard): (02 x 02) Magic Talisman / 10MW Laser and mask</td>
+<td class="comment-1" rowspan="1">(15) Graphics (standard): (02 &times; 02) Magic Talisman / 10MW Laser and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56014"></span>56014</td>
 <td class="instruction">DEFW <a href="56342.html#56982">56982</a>,57014</td>
-<td class="comment-11" rowspan="1">(16) - Graphics (Standard): (02 x 02) Golden Sundial of Alpha and mask</td>
+<td class="comment-1" rowspan="1">(16) Graphics (standard): (02 &times; 02) Golden Sundial of Alpha and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56018"></span>56018</td>
 <td class="instruction">DEFW <a href="56342.html#57046">57046</a>,57078</td>
-<td class="comment-11" rowspan="1">(17) - Graphics (Standard): (02 x 02) Tower Fish and mask</td>
+<td class="comment-1" rowspan="1">(17) Graphics (standard): (02 &times; 02) Tower Fish and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56022"></span>56022</td>
 <td class="instruction">DEFW <a href="56342.html#57110">57110</a>,57142</td>
-<td class="comment-11" rowspan="1">(18) - Graphics (Standard): (02 x 02) Bag of Runes / Potatoes and mask</td>
+<td class="comment-1" rowspan="1">(18) Graphics (standard): (02 &times; 02) Bag of Runes / Potatoes and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56026"></span>56026</td>
 <td class="instruction">DEFW <a href="56342.html#57174">57174</a>,57206</td>
-<td class="comment-11" rowspan="1">(19) - Graphics (Standard): (02 x 02) Wrist Terminal and mask</td>
+<td class="comment-1" rowspan="1">(19) Graphics (standard): (02 &times; 02) Wrist Terminal and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56030"></span>56030</td>
 <td class="instruction">DEFW <a href="56342.html#57238">57238</a>,57270</td>
-<td class="comment-11" rowspan="1">(20) - Graphics (Standard): (02 x 02) Instant Film and mask</td>
+<td class="comment-1" rowspan="1">(20) Graphics (standard): (02 &times; 02) Instant Film and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56034"></span>56034</td>
 <td class="instruction">DEFW <a href="56342.html#57302">57302</a>,57334</td>
-<td class="comment-11" rowspan="1">(21) - Graphics (Standard): (02 x 02) Pot of Glue and mask</td>
+<td class="comment-1" rowspan="1">(21) Graphics (standard): (02 &times; 02) Pot of Glue and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56038"></span>56038</td>
 <td class="instruction">DEFW <a href="56342.html#57366">57366</a>,57398</td>
-<td class="comment-11" rowspan="1">(22) - Graphics (Standard): (02 x 02) 5W Resistor and mask</td>
+<td class="comment-1" rowspan="1">(22) Graphics (standard): (02 &times; 02) 5W Resistor and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56042"></span>56042</td>
 <td class="instruction">DEFW <a href="56342.html#57430">57430</a>,57462</td>
-<td class="comment-11" rowspan="1">(23) - Graphics (Standard): (02 x 02) Brass Ankh and mask</td>
+<td class="comment-1" rowspan="1">(23) Graphics (standard): (02 &times; 02) Brass Ankh and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56046"></span>56046</td>
 <td class="instruction">DEFW <a href="56342.html#57494">57494</a>,57526</td>
-<td class="comment-11" rowspan="1">(24) - Graphics (Standard): (02 x 02) Pewter Tankard and mask</td>
+<td class="comment-1" rowspan="1">(24) Graphics (standard): (02 &times; 02) Pewter Tankard and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56050"></span>56050</td>
 <td class="instruction">DEFW <a href="56342.html#57558">57558</a>,57590</td>
-<td class="comment-11" rowspan="1">(25) - Graphics (Standard): (02 x 02) Quark Bomb and mask</td>
+<td class="comment-1" rowspan="1">(25) Graphics (standard): (02 &times; 02) Quark Bomb and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56054"></span>56054</td>
 <td class="instruction">DEFW <a href="56342.html#57622">57622</a>,57654</td>
-<td class="comment-11" rowspan="1">(26) - Graphics (Standard): (02 x 02) Axe and mask</td>
+<td class="comment-1" rowspan="1">(26) Graphics (standard): (02 &times; 02) Axe and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56058"></span>56058</td>
 <td class="instruction">DEFW <a href="56342.html#57686">57686</a>,57718</td>
-<td class="comment-11" rowspan="1">(27) - Graphics (Standard): (02 x 02) McTablet Food and mask</td>
+<td class="comment-1" rowspan="1">(27) Graphics (standard): (02 &times; 02) McTablet Food and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56062"></span>56062</td>
 <td class="instruction">DEFW <a href="56342.html#57750">57750</a>,57782</td>
-<td class="comment-11" rowspan="1">(28) - Graphics (Standard): (02 x 02) Broken Glass and mask</td>
+<td class="comment-1" rowspan="1">(28) Graphics (standard): (02 &times; 02) Broken Glass and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56066"></span>56066</td>
 <td class="instruction">DEFW <a href="56342.html#57814">57814</a>,57846</td>
-<td class="comment-11" rowspan="1">(29) - Graphics (Standard): (02 x 02) Gadget X and mask</td>
+<td class="comment-1" rowspan="1">(29) Graphics (standard): (02 &times; 02) Gadget X and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56070"></span>56070</td>
 <td class="instruction">DEFW <a href="56342.html#57878">57878</a>,57910</td>
-<td class="comment-11" rowspan="1">(30) - Graphics (Standard): (02 x 02) Torch and mask</td>
+<td class="comment-1" rowspan="1">(30) Graphics (standard): (02 &times; 02) Torch and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56074"></span>56074</td>
 <td class="instruction">DEFW <a href="56342.html#57942">57942</a>,57974</td>
-<td class="comment-11" rowspan="1">(31) - Graphics (Standard): (02 x 02) Part of a Sundial and mask</td>
+<td class="comment-1" rowspan="1">(31) Graphics (standard): (02 &times; 02) Part of a Sundial and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56078"></span>56078</td>
 <td class="instruction">DEFW <a href="56342.html#58006">58006</a>,58038</td>
-<td class="comment-11" rowspan="1">(32) - Graphics (Standard): (02 x 02) Gas Mask and mask</td>
+<td class="comment-1" rowspan="1">(32) Graphics (standard): (02 &times; 02) Gas Mask and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56082"></span>56082</td>
 <td class="instruction">DEFW <a href="56342.html#56438">56438</a>,55918</td>
-<td class="comment-11" rowspan="1">(33) - Unknown / Unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">(33) Unknown / unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56086"></span>56086</td>
 <td class="instruction">DEFW 56698,56538</td>
-<td class="comment-11" rowspan="1">(34) - Unknown / Unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">(34) Unknown / unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56090"></span>56090</td>
 <td class="instruction">DEFW 56730,56538</td>
-<td class="comment-11" rowspan="1">(35) - Unknown / Unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">(35) Unknown / unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56094"></span>56094</td>
 <td class="instruction">DEFW 56762,56794</td>
-<td class="comment-11" rowspan="1">(36) - Unknown / Unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">(36) Unknown / unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56098"></span>56098</td>
 <td class="instruction">DEFW 56826,56858</td>
-<td class="comment-11" rowspan="1">(37) - Unknown / Unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">(37) Unknown / unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56102"></span>56102</td>
 <td class="instruction">DEFW 56890,56922</td>
-<td class="comment-11" rowspan="1">(38) - Unknown / Unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">(38) Unknown / unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56106"></span>56106</td>
 <td class="instruction">DEFW 56954,56986</td>
-<td class="comment-11" rowspan="1">(39) - Unknown / Unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">(39) Unknown / unused (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56110"></span>56110</td>
 <td class="instruction">DEFW 1035,58070</td>
-<td class="comment-11" rowspan="1">(40) - Graphics (Compacted): (11 x 04) Gordon / Sarab at Control Panel</td>
+<td class="comment-1" rowspan="1">(40) Graphics (compacted): (11 &times; 04) Gordon or Sarab at helm</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56114"></span>56114</td>
 <td class="instruction">DEFW 1030,58339</td>
-<td class="comment-11" rowspan="1">(41) - Graphics (Compacted): (06 x 04) Transporter Pad</td>
+<td class="comment-1" rowspan="1">(41) Graphics (compacted): (06 &times; 04) Transporter pad</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56118"></span>56118</td>
 <td class="instruction">DEFW 1283,58405</td>
-<td class="comment-11" rowspan="1">(42) - Graphics (Compacted): (03 x 05) Cavern Ceiling Part (1)</td>
+<td class="comment-1" rowspan="1">(42) Graphics (compacted): (03 &times; 05) Cavern ceiling, part 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56122"></span>56122</td>
 <td class="instruction">DEFW 770,58497</td>
-<td class="comment-11" rowspan="1">(43) - Graphics (Compacted): (02 x 03) Cavern Ceiling Part (2)</td>
+<td class="comment-1" rowspan="1">(43) Graphics (compacted): (02 &times; 03) Cavern ceiling, part 2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56126"></span>56126</td>
 <td class="instruction">DEFW 1027,58528</td>
-<td class="comment-11" rowspan="1">(44) - Graphics (Compacted): (03 x 04) Cavern Ceiling Part (3)</td>
+<td class="comment-1" rowspan="1">(44) Graphics (compacted): (03 &times; 04) Cavern ceiling, part 3</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56130"></span>56130</td>
 <td class="instruction">DEFW 514,58598</td>
-<td class="comment-11" rowspan="1">(45) - Graphics (Compacted): (02 x 02) Cavern Ceiling Part (4)</td>
+<td class="comment-1" rowspan="1">(45) Graphics (compacted): (02 &times; 02) Cavern ceiling, part 4</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56134"></span>56134</td>
 <td class="instruction">DEFW 769,58622</td>
-<td class="comment-11" rowspan="1">(46) - Graphics (Compacted): (01 x 03) Cavern Ceiling Part (5)</td>
+<td class="comment-1" rowspan="1">(46) Graphics (compacted): (01 &times; 03) Cavern ceiling, part 5</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56138"></span>56138</td>
 <td class="instruction">DEFW 1283,58644</td>
-<td class="comment-11" rowspan="1">(47) - Graphics (Compacted): (03 x 05) Cavern Ceiling Part (6)</td>
+<td class="comment-1" rowspan="1">(47) Graphics (compacted): (03 &times; 05) Cavern ceiling, part 6</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56142"></span>56142</td>
 <td class="instruction">DEFW 1028,58707</td>
-<td class="comment-11" rowspan="1">(48) - Graphics (Compacted): (04 x 04) Cavern Ceiling Part (7)</td>
+<td class="comment-1" rowspan="1">(48) Graphics (compacted): (04 &times; 04) Cavern ceiling, part 7</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56146"></span>56146</td>
 <td class="instruction">DEFW 1026,58793</td>
-<td class="comment-11" rowspan="1">(49) - Graphics (Compacted): (02 x 04) Wall-Mounted Telephone</td>
+<td class="comment-1" rowspan="1">(49) Graphics (compacted): (02 &times; 04) Wall-mounted telephone</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56150"></span>56150</td>
 <td class="instruction">DEFW 777,58849</td>
-<td class="comment-11" rowspan="1">(50) - Graphics (Compacted): (09 x 03) Left Half of Planet (as shown on viewscreen)</td>
+<td class="comment-1" rowspan="1">(50) Graphics (compacted): (09 &times; 03) Left half of planet (as shown on viewscreen)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56154"></span>56154</td>
 <td class="instruction">DEFW 773,59031</td>
-<td class="comment-11" rowspan="1">(51) - Graphics (Compacted): (05 x 03) Security Camera</td>
+<td class="comment-1" rowspan="1">(51) Graphics (compacted): (05 &times; 03) Security camera</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56158"></span>56158</td>
 <td class="instruction">DEFW 1797,59149</td>
-<td class="comment-11" rowspan="1">(52) - Graphics (Compacted): (05 x 07) Large Chair</td>
+<td class="comment-1" rowspan="1">(52) Graphics (compacted): (05 &times; 07) Large chair</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56162"></span>56162</td>
 <td class="instruction">DEFW 2306,59296</td>
-<td class="comment-11" rowspan="1">(53) - Graphics (Compacted): (02 x 09) Wall-Mounted Rifle</td>
+<td class="comment-1" rowspan="1">(53) Graphics (compacted): (02 &times; 09) Wall-mounted rifle</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56166"></span>56166</td>
 <td class="instruction">DEFW 1795,59429</td>
-<td class="comment-11" rowspan="1">(54) - Graphics (Compacted): (03 x 07) Chandelier</td>
+<td class="comment-1" rowspan="1">(54) Graphics (compacted): (03 &times; 07) Chandelier</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56170"></span>56170</td>
 <td class="instruction">DEFW 1031,59585</td>
-<td class="comment-11" rowspan="1">(55) - Graphics (Compacted): (07 x 04) Table</td>
+<td class="comment-1" rowspan="1">(55) Graphics (compacted): (07 &times; 04) Table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56174"></span>56174</td>
 <td class="instruction">DEFW 2563,59677</td>
-<td class="comment-11" rowspan="1">(56) - Graphics (Compacted): (03 x 10) Half Transputer Panel</td>
+<td class="comment-1" rowspan="1">(56) Graphics (compacted): (03 &times; 10) Half transputer panel</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56178"></span>56178</td>
 <td class="instruction">DEFW 2057,59879</td>
-<td class="comment-11" rowspan="1">(57) - Graphics (Compacted): (09 x 08) Cargo Container</td>
+<td class="comment-1" rowspan="1">(57) Graphics (compacted): (09 &times; 08) Cargo container</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56182"></span>56182</td>
 <td class="instruction">DEFW 0,0</td>
-<td class="comment-11" rowspan="1">(58) - Unused</td>
+<td class="comment-1" rowspan="1">(58) Unused</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56186"></span>56186</td>
 <td class="instruction">DEFW 1798,60186</td>
-<td class="comment-11" rowspan="1">(59) - Graphics (Compacted): (06 x 07) Hooper</td>
+<td class="comment-1" rowspan="1">(59) Graphics (compacted): (06 &times; 07) Hooper</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56190"></span>56190</td>
 <td class="instruction">DEFW 514,60432</td>
-<td class="comment-11" rowspan="1">(60) - Graphics (Compacted): (02 x 02) Wall-Mounted Plaque</td>
+<td class="comment-1" rowspan="1">(60) Graphics (compacted): (02 &times; 02) Wall-mounted plaque</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56194"></span>56194</td>
 <td class="instruction">DEFW 2817,60459</td>
-<td class="comment-11" rowspan="1">(61) - Graphics (Compacted): (01 x 11) Left Edge of Viewscreen</td>
+<td class="comment-1" rowspan="1">(61) Graphics (compacted): (01 &times; 11) Left edge of viewscreen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56198"></span>56198</td>
 <td class="instruction">DEFW 1286,60541</td>
-<td class="comment-11" rowspan="1">(62) - Graphics (Compacted): (06 x 05) Face (shown upon Communicate command)</td>
+<td class="comment-1" rowspan="1">(62) Graphics (compacted): (06 &times; 05) Face (shown upon communicate command)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56202"></span>56202</td>
 <td class="instruction">DEFW 1284,60735</td>
-<td class="comment-11" rowspan="1">(63) - Graphics (Compacted): (04 x 05) Wall-Mounted Helmet</td>
+<td class="comment-1" rowspan="1">(63) Graphics (compacted): (04 &times; 05) Wall-mounted helmet</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56206"></span>56206</td>
 <td class="instruction">DEFW 1028,60871</td>
-<td class="comment-11" rowspan="1">(64) - Graphics (Compacted): (04 x 04) Left Half of USS Pisces Picture</td>
+<td class="comment-1" rowspan="1">(64) Graphics (compacted): (04 &times; 04) Left half of USS Pisces picture</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56210"></span>56210</td>
 <td class="instruction">DEFW 771,60970</td>
-<td class="comment-11" rowspan="1">(65) - Graphics (Compacted): (03 x 03) Transputer Base (Left Half)</td>
+<td class="comment-1" rowspan="1">(65) Graphics (compacted): (03 &times; 03) Transputer base (left half)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56214"></span>56214</td>
 <td class="instruction">DEFW 1286,61021</td>
-<td class="comment-11" rowspan="1">(66) - Graphics (Compacted): (06 x 05) Plant</td>
+<td class="comment-1" rowspan="1">(66) Graphics (compacted): (06 &times; 05) Plant</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56218"></span>56218</td>
 <td class="instruction">DEFW 514,61209</td>
-<td class="comment-11" rowspan="1">(67) - Graphics (Compacted): (02 x 02) Plant Pot / Tyme Machine Control Column block</td>
+<td class="comment-1" rowspan="1">(67) Graphics (compacted): (02 &times; 02) Plant pot / Tyme Machine Control Column block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56222"></span>56222</td>
 <td class="instruction">DEFW 1284,61237</td>
-<td class="comment-11" rowspan="1">(68) - Graphics (Compacted): (04 x 05) Balls Picture</td>
+<td class="comment-1" rowspan="1">(68) Graphics (compacted): (04 &times; 05) Balls picture</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56226"></span>56226</td>
 <td class="instruction">DEFW <a href="61392.html">61392</a>,61456</td>
-<td class="comment-11" rowspan="1">(69) - Graphics (Standard): (02 x 04) Sharon and mask</td>
+<td class="comment-1" rowspan="1">(69) Graphics (standard): (02 &times; 04) Sharon and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56230"></span>56230</td>
 <td class="instruction">DEFW <a href="61392.html#61520">61520</a>,61584</td>
-<td class="comment-11" rowspan="1">(70) - Graphics (Standard): (02 x 04) S3 E3 / Klink and mask</td>
+<td class="comment-1" rowspan="1">(70) Graphics (standard): (02 &times; 04) S3 E3 / Klink and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56234"></span>56234</td>
 <td class="instruction">DEFW <a href="61392.html#61648">61648</a>,61712</td>
-<td class="comment-11" rowspan="1">(71) - Graphics (Standard): (02 x 04) Swiftfoot and mask</td>
+<td class="comment-1" rowspan="1">(71) Graphics (standard): (02 &times; 04) Swiftfoot and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56238"></span>56238</td>
 <td class="instruction">DEFW <a href="61392.html#61776">61776</a>,61840</td>
-<td class="comment-11" rowspan="1">(72) - Graphics (Standard): (02 x 04) Murphy / Julie 8 and mask</td>
+<td class="comment-1" rowspan="1">(72) Graphics (standard): (02 &times; 04) Murphy / Julie 8 and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56242"></span>56242</td>
 <td class="instruction">DEFW 1284,61904</td>
-<td class="comment-11" rowspan="1">(73) - Graphics (Compacted): (04 x 05) Tyme Guardian</td>
+<td class="comment-1" rowspan="1">(73) Graphics (compacted): (04 &times; 05) Tyme Guardian</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56246"></span>56246</td>
 <td class="instruction">DEFW 1026,58893</td>
-<td class="comment-11" rowspan="1">(74) - Graphics (Compacted): (02 x 04) Middle Section of Planet (unused)</td>
+<td class="comment-1" rowspan="1">(74) Graphics (compacted): (02 &times; 04) Middle section of planet (unused)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56250"></span>56250</td>
 <td class="instruction">DEFW 1284,62013</td>
-<td class="comment-11" rowspan="1">(75) - Graphics (Compacted): (04 x 05) Control Panel</td>
+<td class="comment-1" rowspan="1">(75) Graphics (compacted): (04 &times; 05) Control panel</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56254"></span>56254</td>
 <td class="instruction">DEFW 773,59131</td>
-<td class="comment-11" rowspan="1">(76) - Graphics (Compacted): (05 x 03) Unused</td>
+<td class="comment-1" rowspan="1">(76) Graphics (compacted): (05 &times; 03) Unused</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56258"></span>56258</td>
 <td class="instruction">DEFW 1027,62181</td>
-<td class="comment-11" rowspan="1">(77) - Graphics (Compacted): (03 x 04) Wall-Mounted Device</td>
+<td class="comment-1" rowspan="1">(77) Graphics (compacted): (03 &times; 04) Wall-mounted device</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56262"></span>56262</td>
 <td class="instruction">DEFW 2306,59396</td>
-<td class="comment-11" rowspan="1">(78) - Graphics (Compacted): (02 x 09) Unused</td>
+<td class="comment-1" rowspan="1">(78) Graphics (compacted): (02 &times; 09) Unused</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56266"></span>56266</td>
 <td class="instruction">DEFW 1795,59529</td>
-<td class="comment-11" rowspan="1">(79) - Graphics (Compacted): (03 x 07) Unused</td>
+<td class="comment-1" rowspan="1">(79) Graphics (compacted): (03 &times; 07) Unused</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56270"></span>56270</td>
 <td class="instruction">DEFW <a href="62278.html">62278</a>,62342</td>
-<td class="comment-11" rowspan="1">(80) - Graphics (Standard): (02 x 04) Forbin and mask</td>
+<td class="comment-1" rowspan="1">(80) Graphics (standard): (02 &times; 04) Forbin and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56274"></span>56274</td>
 <td class="instruction">DEFW <a href="62278.html#62406">62406</a>,62470</td>
-<td class="comment-11" rowspan="1">(81) - Graphics (Standard): (02 x 04) Hectorr and mask</td>
+<td class="comment-1" rowspan="1">(81) Graphics (standard): (02 &times; 04) Hectorr and mask</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56278"></span>56278</td>
 <td class="instruction">DEFW 1539,62534</td>
-<td class="comment-11" rowspan="1">(82) - Graphics (Compacted): (03 x 06) Patterned Column</td>
+<td class="comment-1" rowspan="1">(82) Graphics (compacted): (03 &times; 06) Patterned column</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56282"></span>56282</td>
 <td class="instruction">DEFW 0,0</td>
-<td class="comment-11" rowspan="1">(83) - Unused</td>
+<td class="comment-1" rowspan="1">(83) Unused</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56286"></span>56286</td>
 <td class="instruction">DEFW 773,62658</td>
-<td class="comment-11" rowspan="1">(84) - Graphics (Compacted): (05 x 03) Picture (1)</td>
+<td class="comment-1" rowspan="1">(84) Graphics (compacted): (05 &times; 03) Picture (1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56290"></span>56290</td>
 <td class="instruction">DEFW 773,62760</td>
-<td class="comment-11" rowspan="1">(85) - Graphics (Compacted): (05 x 03) Picture (2)</td>
+<td class="comment-1" rowspan="1">(85) Graphics (compacted): (05 &times; 03) Picture (2)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56294"></span>56294</td>
 <td class="instruction">DEFW 2817,60559</td>
-<td class="comment-11" rowspan="1">(86) - Graphics (Compacted): (01 x 11) Unused</td>
+<td class="comment-1" rowspan="1">(86) Graphics (compacted): (01 &times; 11) Unused</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56298"></span>56298</td>
 <td class="instruction">DEFW 1027,62869</td>
-<td class="comment-11" rowspan="1">(87) - Graphics (Compacted): (03 x 04) Left half of Reel-to-Reel Tape Device</td>
+<td class="comment-1" rowspan="1">(87) Graphics (compacted): (03 &times; 04) Left half of reel-to-reel tape device</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56302"></span>56302</td>
 <td class="instruction">DEFW 1283,62978</td>
-<td class="comment-11" rowspan="1">(88) - Graphics (Compacted): (03 x 05) Left half of Tyme Guardians' Symbol (1)</td>
+<td class="comment-1" rowspan="1">(88) Graphics (compacted): (03 &times; 05) Left half of Tyme Guardians' symbol (1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="56306"></span>56306</td>
 <td class="instruction">DEFW 774,63088</td>
-<td class="comment-11" rowspan="1">(89) - Graphics (Compacted): (06 x 03) Tyme Guardians' Symbol (2)</td>
+<td class="comment-1" rowspan="1">(89) Graphics (compacted): (06 &times; 03) Tyme Guardians' symbol (2)</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55918.html">55918</a></span></td>
+<td class="prev">
+Prev: <a href="55918.html">55918</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55950">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="56310.html">56310</a></span></td>
+<td class="next">
+Next: <a href="56310.html">56310</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 39776</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,230 +20,193 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39760.html">39760</a></span></td>
+<td class="prev">
+Prev: <a href="39760.html">39760</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39776">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39933.html">39933</a></span></td>
+<td class="next">
+Next: <a href="39933.html">39933</a>
+</td>
 </tr>
 </table>
-<div class="description">39776: Update State of Large Yellow Creature (Level 3)</div>
+<div class="description">39776: Update state of large yellow creature (level 3)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="39137.html">39137</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39776"></span>39776</td>
 <td class="instruction">LD IY,44868</td>
-<td class="comment-11" rowspan="1">Load IY with address of complex state data for Large Yellow Creature (Level 3)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with address of complex state data for large yellow creature (level 3)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39780"></span>39780</td>
 <td class="instruction">LD IX,(34240)</td>
-<td class="comment-11" rowspan="1">Load IX with address of current level's complex state data for Berk</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with address of current level's complex state data for Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39784"></span>39784</td>
 <td class="instruction">LD HL,44877</td>
-<td class="comment-11" rowspan="1">Load HL with address of Large Yellow Creature's flags...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of large yellow creature's flags...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39787"></span>39787</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...and load flags into A</td>
+<td class="comment-1" rowspan="1">...and load flags into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39788"></span>39788</td>
 <td class="instruction">CP 2</td>
-<td class="comment-11" rowspan="1">If creature is in "Rising From Floor" mode...</td>
+<td class="comment-1" rowspan="1">If creature is in "rising from floor" mode...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39790"></span>39790</td>
 <td class="instruction">JR Z,39831</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39776.html#39831">39831</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39776.html#39831">39831</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39792"></span>39792</td>
 <td class="instruction">CP 4</td>
-<td class="comment-11" rowspan="1">If creature is in "Hunting" mode...</td>
+<td class="comment-1" rowspan="1">If creature is in "hunting" mode...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39794"></span>39794</td>
 <td class="instruction">JR Z,39845</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39776.html#39845">39845</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39776.html#39845">39845</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39796"></span>39796</td>
 <td class="instruction">CP 8</td>
-<td class="comment-11" rowspan="1">If creature is in "Attacking" mode...</td>
+<td class="comment-1" rowspan="1">If creature is in "attacking" mode...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39798"></span>39798</td>
 <td class="instruction">JR Z,39918</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39776.html#39918">39918</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39776.html#39918">39918</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39800"></span>39800</td>
 <td class="instruction">CP 16</td>
-<td class="comment-11" rowspan="1">If creature is in "Just Attacked" mode...</td>
+<td class="comment-1" rowspan="1">If creature is in "just attacked" mode...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39802"></span>39802</td>
 <td class="instruction">JP Z,<a href="39934.html">39934</a></td>
-<td class="comment-11" rowspan="1">...then set creature's mode to "Returning Home", set Berk's "Has Been Killed" Flag and return</td>
+<td class="comment-1" rowspan="1">...then set creature's mode to "returning home", set Berk-has-been-killed flag and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39805"></span>39805</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">If Berk's current room is not 3 (Yellow Creature's Room)...</td>
+<td class="comment-1" rowspan="1">If Berk's current room is not 3 (large yellow creature's room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39808"></span>39808</td>
 <td class="instruction">CP 3</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39810"></span>39810</td>
 <td class="instruction">JP NZ,<a href="39998.html">39998</a></td>
-<td class="comment-11" rowspan="1">...then set creature's mode to "Returning Home", move one step closer to home and return</td>
+<td class="comment-1" rowspan="1">...then set creature's mode to "returning home", move one step closer to home and return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39813"></span>
 <div class="comments">
 <div class="paragraph">
-"Returning Home" mode
+"Returning home" mode
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39813"></span>39813</td>
 <td class="instruction">LD A,(IY+5)</td>
-<td class="comment-11" rowspan="1">If x-coordinate of creature's left side...</td>
+<td class="comment-1" rowspan="1">If x-coordinate of creature's left side...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39816"></span>39816</td>
 <td class="instruction">CP (IX+5)</td>
-<td class="comment-11" rowspan="1">...is the same as that of Berk's left side...</td>
+<td class="comment-1" rowspan="1">...is the same as that of Berk's left side...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39819"></span>39819</td>
 <td class="instruction">JR Z,39828</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39776.html#39828">39828</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39776.html#39828">39828</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39821"></span>39821</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">If x-coordinate of creature's left side...</td>
+<td class="comment-1" rowspan="1">If x-coordinate of creature's left side...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39822"></span>39822</td>
 <td class="instruction">CP (IX+5)</td>
-<td class="comment-11" rowspan="1">...is not one character to the right of Berk's left side...</td>
+<td class="comment-1" rowspan="1">...is not one character to the right of Berk's left side...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39825"></span>39825</td>
 <td class="instruction">JP NZ,<a href="39998.html">39998</a></td>
-<td class="comment-11" rowspan="1">...then set creature's mode to "Returning Home", move one step closer to home and return</td>
+<td class="comment-1" rowspan="1">...then set creature's mode to "returning home", move one step closer to home and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39828"></span>39828</td>
 <td class="instruction">LD A,2</td>
-<td class="comment-11" rowspan="1">Set creature's mode to "Rising from Floor"...</td>
+<td class="comment-1" rowspan="1">Set creature's mode to "rising from floor"...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39830"></span>39830</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39831"></span>
 <div class="comments">
 <div class="paragraph">
-"Rising from Floor" mode
+"Rising from floor" mode
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39831"></span>39831</td>
 <td class="instruction">CALL <a href="39971.html">39971</a></td>
-<td class="comment-11" rowspan="1">Move creature such that its left edge is up to two characters closer to Berk's</td>
+<td class="comment-1" rowspan="1">Move creature such that its left edge is up to two characters closer to Berk's</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39834"></span>39834</td>
 <td class="instruction">CALL <a href="39961.html">39961</a></td>
-<td class="comment-11" rowspan="1">Move creature up by two characters</td>
+<td class="comment-1" rowspan="1">Move creature up by two characters</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39837"></span>39837</td>
 <td class="instruction">LD A,(IY+4)</td>
-<td class="comment-11" rowspan="1">If y-coordinate of creature's top...</td>
+<td class="comment-1" rowspan="1">If y-coordinate of creature's top...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39840"></span>39840</td>
 <td class="instruction">CP 108</td>
-<td class="comment-11" rowspan="1">...is 108 or greater...</td>
+<td class="comment-1" rowspan="1">...is 108 or greater...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39842"></span>39842</td>
 <td class="instruction">RET NC</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39843"></span>39843</td>
 <td class="instruction">LD (HL),4</td>
-<td class="comment-11" rowspan="1">Set creature's mode to "Hunting"</td>
+<td class="comment-1" rowspan="1">Set creature's mode to "hunting"</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39845"></span>
 <div class="comments">
 <div class="paragraph">
@@ -255,157 +216,132 @@ Used by the routine at <a href="39137.html">39137</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39845"></span>39845</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">If Berk's current room is not 3 (Yellow Creature's Room)...</td>
+<td class="comment-1" rowspan="1">If Berk's current room is not 3 (large yellow creature's room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39848"></span>39848</td>
 <td class="instruction">CP 3</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39850"></span>39850</td>
 <td class="instruction">JP NZ,<a href="39998.html">39998</a></td>
-<td class="comment-11" rowspan="1">...then set creature's mode to "Returning Home", move one step closer to home and return</td>
+<td class="comment-1" rowspan="1">...then set creature's mode to "returning home", move one step closer to home and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39853"></span>39853</td>
 <td class="instruction">LD A,(34220)</td>
-<td class="comment-11" rowspan="1">If Berk's current power is invisibility (Level 3)...</td>
+<td class="comment-1" rowspan="1">If Berk's current power is invisibility (level 3)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39856"></span>39856</td>
 <td class="instruction">CP 11</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39858"></span>39858</td>
 <td class="instruction">JR Z,39909</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39776.html#39909">39909</a> ("confused" mode)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39776.html#39909">39909</a> ("confused" mode)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39860"></span>39860</td>
 <td class="instruction">LD A,(IX+4)</td>
-<td class="comment-11" rowspan="1">If y-coordinate of Berk's top...</td>
+<td class="comment-1" rowspan="1">If y-coordinate of Berk's top...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39863"></span>39863</td>
 <td class="instruction">CP 103</td>
-<td class="comment-11" rowspan="1">...is less than 103...</td>
+<td class="comment-1" rowspan="1">...is less than 103...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39865"></span>39865</td>
 <td class="instruction">JR C,39909</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39776.html#39909">39909</a> ("confused" mode)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39776.html#39909">39909</a> ("confused" mode)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39867"></span>39867</td>
 <td class="instruction">CALL <a href="39971.html">39971</a></td>
-<td class="comment-11" rowspan="1">Move creature such that its left edge is up to two characters closer to Berk's</td>
+<td class="comment-1" rowspan="1">Move creature such that its left edge is up to two characters closer to Berk's</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39870"></span>39870</td>
 <td class="instruction">LD A,(IY+4)</td>
-<td class="comment-11" rowspan="1">If creature's top...</td>
+<td class="comment-1" rowspan="1">If creature's top...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39873"></span>39873</td>
 <td class="instruction">ADD A,4</td>
-<td class="comment-11" rowspan="1">...is four characters above Berk's top...</td>
+<td class="comment-1" rowspan="1">...is four characters above Berk's top...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39875"></span>39875</td>
 <td class="instruction">CP (IX+4)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39878"></span>39878</td>
 <td class="instruction">JR Z,39890</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39776.html#39890">39890</a> (set "Attacking" mode)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39776.html#39890">39890</a> (set "attacking" mode)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39880"></span>39880</td>
 <td class="instruction">JR NC,<a href="39961.html">39961</a></td>
-<td class="comment-11" rowspan="1">If creature's top is less than 4 characters above Berk's top then move creature up by two characters and return</td>
+<td class="comment-1" rowspan="1">If creature's top is less than 4 characters above Berk's top then move creature up by two characters and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39882"></span>39882</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">If creature's top is five characters above Berk's top...</td>
+<td class="comment-1" rowspan="1">If creature's top is five characters above Berk's top...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39883"></span>39883</td>
 <td class="instruction">CP (IX+4)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39886"></span>39886</td>
 <td class="instruction">JR Z,39890</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39776.html#39890">39890</a> (set "Attacking" mode)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39776.html#39890">39890</a> (set "attacking" mode)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39888"></span>39888</td>
 <td class="instruction">JR C,<a href="39951.html">39951</a></td>
-<td class="comment-11" rowspan="1">If creature's top is more than five characters above Berk's top then move creature down two characters and return</td>
+<td class="comment-1" rowspan="1">If creature's top is more than five characters above Berk's top then move creature down two characters and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39890"></span>39890</td>
 <td class="instruction">LD (HL),8</td>
-<td class="comment-11" rowspan="1">Set creature's mode to "Attacking"</td>
+<td class="comment-1" rowspan="1">Set creature's mode to "attacking"</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39892"></span>39892</td>
 <td class="instruction">LD (IY+1),1</td>
-<td class="comment-11" rowspan="1">Set creature's depth to 1</td>
+<td class="comment-1" rowspan="1">Set creature's depth to 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39896"></span>39896</td>
 <td class="instruction">SET 5,(IX+9)</td>
-<td class="comment-11" rowspan="1">Set Berk's "Do Not Update State" Flag</td>
+<td class="comment-1" rowspan="1">Set Berk's do-not-update-state flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39900"></span>39900</td>
 <td class="instruction">LD BC,40442</td>
-<td class="comment-11" rowspan="1">Set graphic layout data address for creature to <a href="40442.html">40442</a> (Large Yellow Creature with mouth open)...</td>
+<td class="comment-1" rowspan="1">Set graphic layout data address for creature to <a href="40442.html">40442</a> (large yellow creature with mouth open)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39903"></span>39903</td>
 <td class="instruction">CALL <a href="39944.html">39944</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39906"></span>39906</td>
 <td class="instruction">JP <a href="36296.html">36296</a></td>
-<td class="comment-11" rowspan="1">Make Berk drop the entity he is holding, load IY with its complex state data address and return</td>
+<td class="comment-1" rowspan="1">Make Berk drop the entity he is holding, load <span class="register">IY</span> with its complex state data address and return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39909"></span>
 <div class="comments">
 <div class="paragraph">
@@ -415,25 +351,22 @@ Used by the routine at <a href="39137.html">39137</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39909"></span>39909</td>
 <td class="instruction">LD BC,40485</td>
-<td class="comment-11" rowspan="1">Set graphic layout data address for creature to <a href="40442.html#40485">40485</a> (Large Yellow Creature, animated, confused)...</td>
+<td class="comment-1" rowspan="1">Set graphic layout data address for creature to <a href="40442.html#40485">40485</a> (large yellow creature, animated, confused)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39912"></span>39912</td>
 <td class="instruction">CALL <a href="39944.html">39944</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39915"></span>39915</td>
 <td class="instruction">JP <a href="40008.html">40008</a></td>
-<td class="comment-11" rowspan="1">Move creature one step closer to x (left) = 113, y (top) &gt; 111 if not already there, and return</td>
+<td class="comment-1" rowspan="1">Move creature one step closer to x (left) = 113, y (top) &gt; 111 if not already there, and return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39918"></span>
 <div class="comments">
 <div class="paragraph">
@@ -443,47 +376,46 @@ Used by the routine at <a href="39137.html">39137</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39918"></span>39918</td>
 <td class="instruction">CALL <a href="39951.html">39951</a></td>
-<td class="comment-11" rowspan="1">Move creature down two characters</td>
+<td class="comment-1" rowspan="1">Move creature down two characters</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39921"></span>39921</td>
 <td class="instruction">LD (IX+1),0</td>
-<td class="comment-11" rowspan="1">Set Berk's depth to zero</td>
+<td class="comment-1" rowspan="1">Set Berk's depth to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39925"></span>39925</td>
 <td class="instruction">LD (HL),16</td>
-<td class="comment-11" rowspan="1">Set creature's mode to "Just Attacked"</td>
+<td class="comment-1" rowspan="1">Set creature's mode to "just attacked"</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39927"></span>39927</td>
 <td class="instruction">LD BC,40451</td>
-<td class="comment-11" rowspan="1">Set graphic layout data address for creature to <a href="40442.html#40451">40451</a> (Large Yellow Creature with mouth closed)...</td>
+<td class="comment-1" rowspan="1">Set graphic layout data address for creature to <a href="40442.html#40451">40451</a> (large yellow creature with mouth closed)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39930"></span>39930</td>
 <td class="instruction">JP <a href="39944.html">39944</a></td>
-<td class="comment-11" rowspan="1">...and return</td>
+<td class="comment-1" rowspan="1">...and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39760.html">39760</a></span></td>
+<td class="prev">
+Prev: <a href="39760.html">39760</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39776">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39933.html">39933</a></span></td>
+<td class="next">
+Next: <a href="39933.html">39933</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

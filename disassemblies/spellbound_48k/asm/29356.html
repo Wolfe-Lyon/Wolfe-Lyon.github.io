@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 29356</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29291.html">29291</a></span></td>
+<td class="prev">
+Prev: <a href="29291.html">29291</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29356">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29375.html">29375</a></span></td>
+<td class="next">
+Next: <a href="29375.html">29375</a>
+</td>
 </tr>
 </table>
-<div class="description">29356: Room Drawing: Point Bitmap Virtual Cursor and Terrain Interaction Cursor to Coordinates x=C, y=B</div>
+<div class="description">29356: Room drawing: Point bitmap virtual cursor and terrain interaction cursor to coordinates x=<span class="register">C</span>, y=<span class="register">B</span></div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Point Bitmap Virtual Cursor and Terrain Interaction Cursor to Coordinates x=C, y=B
+Used by the routine at <a href="27865.html">27865</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,80 +51,69 @@ Point Bitmap Virtual Cursor and Terrain Interaction Cursor to Coordinates x=C, y
 <td class="register-desc">x-coordinate (characters)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29356"></span>29356</td>
 <td class="instruction">CALL <a href="29441.html">29441</a></td>
-<td class="comment-11" rowspan="1">Read two bytes AFTER HL position into BC, advancing HL before both reads</td>
+<td class="comment-1" rowspan="1">Read two bytes AFTER <span class="register">HL</span> position into <span class="register">BC</span>, advancing <span class="register">HL</span> before both reads</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29359"></span>29359</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29360"></span>29360</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29361"></span>29361</td>
 <td class="instruction">CALL <a href="36551.html">36551</a></td>
-<td class="comment-11" rowspan="1">Move Virtual Bitmap Cursor to Display File address for coordinates x=C, y=B</td>
+<td class="comment-1" rowspan="1">Move virtual bitmap cursor to display file address for coordinates x=<span class="register">C</span>, y=<span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29364"></span>29364</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29365"></span>29365</td>
 <td class="instruction">CALL <a href="36586.html">36586</a></td>
-<td class="comment-11" rowspan="1">Point HL at Terrain Interaction Data for character coordinates x=C, y=B</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at terrain interaction data for character coordinates x=<span class="register">C</span>, y=<span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29368"></span>29368</td>
 <td class="instruction">LD (23481),HL</td>
-<td class="comment-11" rowspan="1">...and store this pointed-to location</td>
+<td class="comment-1" rowspan="1">...and store this pointed-to location</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29371"></span>29371</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29372"></span>29372</td>
 <td class="instruction">JP <a href="27865.html#28060">28060</a></td>
-<td class="comment-11" rowspan="1">Return to room drawing routine and process next data</td>
+<td class="comment-1" rowspan="1">Return to room drawing routine and process next data</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29291.html">29291</a></span></td>
+<td class="prev">
+Prev: <a href="29291.html">29291</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29356">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29375.html">29375</a></span></td>
+<td class="next">
+Next: <a href="29375.html">29375</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

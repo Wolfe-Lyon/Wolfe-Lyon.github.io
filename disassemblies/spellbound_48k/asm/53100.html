@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Data at 53100</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,202 +20,169 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53027.html">53027</a></span></td>
+<td class="prev">
+Prev: <a href="53027.html">53027</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53100">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53188.html">53188</a></span></td>
+<td class="next">
+Next: <a href="53188.html">53188</a>
+</td>
 </tr>
 </table>
-<div class="description">53100: Room Layout Data: 3rd Floor 8 (More Plant Room)</div>
+<div class="description">53100: Room layout data: 3rd Floor 8 (More Plant Room)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-<img alt="53100" src="../images/udgs/rooms/53100.png" />
+<img alt="53100" src="../images/rooms/53100.png" />
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53100"></span>53100</td>
 <td class="instruction">DEFB 232</td>
-<td class="comment-11" rowspan="1">Set brickwork drawing mode 2 (draw one row and blank row beneath)</td>
+<td class="comment-1" rowspan="1">Set brickwork drawing mode 2 (draw one row and blank row beneath)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53101"></span>53101</td>
 <td class="instruction">DEFB 16,19,7</td>
-<td class="comment-11" rowspan="1">Draw ceiling (16 blocks, architecture style 19, attribute 7)</td>
+<td class="comment-1" rowspan="1">Using attribute 7 (white INK, black PAPER), draw 16 2-by-2 blocks of style 19 (ceiling)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53104"></span>53104</td>
 <td class="instruction">DEFB 48,0</td>
-<td class="comment-11" rowspan="1">Draw 48 2-by-2 blocks of nothing</td>
+<td class="comment-1" rowspan="1">Draw 48 2-by-2 blocks of nothing</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53106"></span>53106</td>
 <td class="instruction">DEFB 12,19,7</td>
-<td class="comment-11" rowspan="1">Draw horizontal platform holding plants (12 blocks, architecture style 19, attribute 7)</td>
+<td class="comment-1" rowspan="1">Using attribute 7 (white INK, black PAPER), draw 12 2-by-2 blocks of style 19</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53109"></span>53109</td>
 <td class="instruction">DEFB 68,0</td>
-<td class="comment-11" rowspan="1">Draw 68 2-by-2 blocks of nothing</td>
+<td class="comment-1" rowspan="1">Draw 68 2-by-2 blocks of nothing</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53111"></span>53111</td>
 <td class="instruction">DEFB 231</td>
-<td class="comment-11" rowspan="1">Set brickwork drawing mode 1 (draw one row only)</td>
+<td class="comment-1" rowspan="1">Set brickwork drawing mode 1 (draw one row only)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53112"></span>53112</td>
 <td class="instruction">DEFB 16,19,7</td>
-<td class="comment-11" rowspan="1">Draw floor (16 blocks, architecture style 19, attribute 7)</td>
+<td class="comment-1" rowspan="1">Using attribute 7 (white INK, black PAPER), draw 16 2-by-2 blocks of style 19 (floor)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53115"></span>53115</td>
 <td class="instruction">DEFB 230</td>
-<td class="comment-11" rowspan="1">Set Brickwork Direction Mode to vertical and reset pointers to beginning of display</td>
+<td class="comment-1" rowspan="1">Set brickwork direction mode to vertical and reset pointers to beginning of display</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53116"></span>53116</td>
 <td class="instruction">DEFB 250,28,14</td>
-<td class="comment-11" rowspan="1">Point bitmap and terrain interaction pointers to (28, 14) (near bottom-right of screen)</td>
+<td class="comment-1" rowspan="1">Point bitmap and terrain interaction pointers to (28, 14)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53119"></span>53119</td>
 <td class="instruction">DEFB 9,19,7</td>
-<td class="comment-11" rowspan="1">Draw wall protrusion / platform (9 blocks, architecture style 19, attribute 7) [<a href="../reference/bugs.html#undergroundblock">bug</a>! Should only be 2 blocks!]</td>
+<td class="comment-1" rowspan="1">Using attribute 7 (white INK, black PAPER), draw 9 2-by-2 blocks of style 19 (<a href="../reference/bugs.html#undergroundblock">bug</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53122"></span>53122</td>
 <td class="instruction">DEFB 250,30,0</td>
-<td class="comment-11" rowspan="1">Point bitmap and terrain interaction pointers to (30, 0)</td>
+<td class="comment-1" rowspan="1">Point bitmap and terrain interaction pointers to (30, 0)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53125"></span>53125</td>
 <td class="instruction">DEFB 9,19,7</td>
-<td class="comment-11" rowspan="1">Draw right wall (9 blocks, architecture style 19, attribute 7)</td>
+<td class="comment-1" rowspan="1">Using attribute 7 (white INK, black PAPER), draw 9 2-by-2 blocks of style 19 (right wall)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53128"></span>53128</td>
 <td class="instruction">DEFB 237,29,3</td>
-<td class="comment-11" rowspan="1">Draw left-facing wall-candle at coordinates (29, 3)</td>
+<td class="comment-1" rowspan="1">Draw left-facing wall-candle at (29, 3)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53131"></span>53131</td>
 <td class="instruction">DEFB 251,6,3,68,64,52</td>
-<td class="comment-11" rowspan="1">Draw Plant (5) at ( 6, 3) with attribute of 68, preserve attribute</td>
+<td class="comment-1" rowspan="1">Draw plant 5 (52) at (6, 3) with attribute of 68, preserve attribute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53137"></span>53137</td>
 <td class="instruction">DEFB 251,10,4,68,64,52</td>
-<td class="comment-11" rowspan="1">Draw Plant (5) at (10, 4) with attribute of 68, preserve attribute</td>
+<td class="comment-1" rowspan="1">Draw plant 5 (52) at (10, 4) with attribute of 68, preserve attribute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53143"></span>53143</td>
 <td class="instruction">DEFB 251,14,1,68,64,50</td>
-<td class="comment-11" rowspan="1">Draw Plant (3) at (14, 1) with attribute of 68, preserve attribute</td>
+<td class="comment-1" rowspan="1">Draw plant 3 (50) at (14, 1) with attribute of 68, preserve attribute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53149"></span>53149</td>
 <td class="instruction">DEFB 251,6,6,70,64,40</td>
-<td class="comment-11" rowspan="1">Draw Plant Pot (1) at ( 6, 6) with attribute of 70, preserve attribute</td>
+<td class="comment-1" rowspan="1">Draw plant pot 1 (40) at (6, 6) with attribute of 70, preserve attribute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53155"></span>53155</td>
 <td class="instruction">DEFB 251,10,7,66,64,41</td>
-<td class="comment-11" rowspan="1">Draw Plant Pot (2) at (10, 7) with attribute of 66, preserve attribute</td>
+<td class="comment-1" rowspan="1">Draw plant pot 2 (41) at (10, 7) with attribute of 66, preserve attribute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53161"></span>53161</td>
 <td class="instruction">DEFB 251,14,6,69,64,42</td>
-<td class="comment-11" rowspan="1">Draw Plant Pot (3) at (14, 6) with attribute of 69, preserve attribute</td>
+<td class="comment-1" rowspan="1">Draw plant pot 3 (42) at (14, 6) with attribute of 69, preserve attribute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53167"></span>53167</td>
 <td class="instruction">DEFB 251,18,2,68,64,52</td>
-<td class="comment-11" rowspan="1">Draw Plant (5) at (18, 2) with attribute of 68, preserve attribute</td>
+<td class="comment-1" rowspan="1">Draw plant 5 (52) at (18, 2) with attribute of 68, preserve attribute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53173"></span>53173</td>
 <td class="instruction">DEFB 251,18,5,66,64,44</td>
-<td class="comment-11" rowspan="1">Draw Plant Pot (4) at (18, 5) with attribute of 68, preserve attribute</td>
+<td class="comment-1" rowspan="1">Draw plant pot 4 (44) at (18, 5) with attribute of 66, preserve attribute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53179"></span>53179</td>
 <td class="instruction">DEFB 245</td>
-<td class="comment-11" rowspan="1">Begin attribute painting block</td>
+<td class="comment-1" rowspan="4">Paint attribute 67 at (14, 1) and 67 at (15, 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53180"></span>53180</td>
 <td class="instruction">DEFB 67,14,1</td>
-<td class="comment-11" rowspan="1">Paint attribute 67 at (14, 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53183"></span>53183</td>
 <td class="instruction">DEFB 67,15,1</td>
-<td class="comment-11" rowspan="1">Paint attribute 67 at (15, 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53186"></span>53186</td>
 <td class="instruction">DEFB 245</td>
-<td class="comment-11" rowspan="1">End attribute painting block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53187"></span>53187</td>
 <td class="instruction">DEFB 0</td>
-<td class="comment-11" rowspan="1">End of room data</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53027.html">53027</a></span></td>
+<td class="prev">
+Prev: <a href="53027.html">53027</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53100">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53188.html">53188</a></span></td>
+<td class="next">
+Next: <a href="53188.html">53188</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

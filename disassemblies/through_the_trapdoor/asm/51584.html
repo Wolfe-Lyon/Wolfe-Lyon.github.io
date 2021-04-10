@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Data at 51584</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-b">
 <table class="header">
@@ -22,112 +20,97 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="51562.html">51562</a></span></td>
+<td class="prev">
+Prev: <a href="51562.html">51562</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#51584">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="51608.html">51608</a></span></td>
+<td class="next">
+Next: <a href="51608.html">51608</a>
+</td>
 </tr>
 </table>
-<div class="description">51584: Script Data: Move Drutt and Any Pushed Entity Left By a Hop of Size Four</div>
+<div class="description">51584: Script data: Move Drutt and any pushed entity left by a hop of size four</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 If Drutt is not pushing anything, then he will hop left by four characters. If he is pushing something, then Drutt and the pushed entity will move left in alternate steps, traversing half the distance (two characters) on average.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51584"></span>51584</td>
 <td class="instruction">DEFB 11,0</td>
-<td class="comment-11" rowspan="1">Set Drutt's Walking Left Flag</td>
+<td class="comment-1" rowspan="1">Set walking-left flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51586"></span>51586</td>
-<td class="instruction">DEFB 43,205</td>
-<td class="comment-11" rowspan="1"><a href="52371.html#52523">52523</a> (Drutt, facing left, legs bent)</td>
+<td class="instruction">DEFW <a href="52371.html#52523">52523</a></td>
+<td class="comment-1" rowspan="1"><canvas class="graphicLayoutData" data-graphic-layout-data-address="52523"></canvas></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51588"></span>51588</td>
 <td class="instruction">DEFB 46,0</td>
-<td class="comment-11" rowspan="1">Move Drutt, or entity he is pushing left one character and start pushed entity falling if appropriate</td>
+<td class="comment-1" rowspan="1">Move Drutt, or entity he is pushing left one character and start pushed entity falling if appropriate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51590"></span>51590</td>
-<td class="instruction">DEFB 61,205</td>
-<td class="comment-11" rowspan="1"><a href="52371.html#52541">52541</a> (Drutt, facing left, legs extended back, jumping)</td>
+<td class="instruction">DEFW <a href="52371.html#52541">52541</a></td>
+<td class="comment-1" rowspan="1"><canvas class="graphicLayoutData" data-graphic-layout-data-address="52541"></canvas></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51592"></span>51592</td>
 <td class="instruction">DEFB 46,0</td>
-<td class="comment-11" rowspan="1">Move Drutt, or entity he is pushing left one character and start pushed entity falling if appropriate</td>
+<td class="comment-1" rowspan="1">Move Drutt, or entity he is pushing left one character and start pushed entity falling if appropriate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51594"></span>51594</td>
-<td class="instruction">DEFB 77,205</td>
-<td class="comment-11" rowspan="1"><a href="52371.html#52557">52557</a> (Drutt, facing left, legs bent, airborne)</td>
+<td class="instruction">DEFW <a href="52371.html#52557">52557</a></td>
+<td class="comment-1" rowspan="1"><canvas class="graphicLayoutData" data-graphic-layout-data-address="52557"></canvas></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51596"></span>51596</td>
 <td class="instruction">DEFB 46,0</td>
-<td class="comment-11" rowspan="1">Move Drutt, or entity he is pushing left one character and start pushed entity falling if appropriate</td>
+<td class="comment-1" rowspan="1">Move Drutt, or entity he is pushing left one character and start pushed entity falling if appropriate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51598"></span>51598</td>
-<td class="instruction">DEFB 90,205</td>
-<td class="comment-11" rowspan="1"><a href="52371.html#52570">52570</a> (Drutt, facing left, legs bent, landing)</td>
+<td class="instruction">DEFW <a href="52371.html#52570">52570</a></td>
+<td class="comment-1" rowspan="1"><canvas class="graphicLayoutData" data-graphic-layout-data-address="52570"></canvas></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51600"></span>51600</td>
 <td class="instruction">DEFB 46,0</td>
-<td class="comment-11" rowspan="1">Move Drutt, or entity he is pushing left one character and start pushed entity falling if appropriate</td>
+<td class="comment-1" rowspan="1">Move Drutt, or entity he is pushing left one character and start pushed entity falling if appropriate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51602"></span>51602</td>
 <td class="instruction">DEFB 4,0,9,0</td>
-<td class="comment-11" rowspan="1">If current character and target entity are in the same room then set pending sound to 9 (Drutt hopping)</td>
+<td class="comment-1" rowspan="1">If in the same room as current character then set sound 9 as pending</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51606"></span>51606</td>
 <td class="instruction">DEFB 43,0</td>
-<td class="comment-11" rowspan="1">Select next action for Drutt depending upon control input</td>
+<td class="comment-1" rowspan="1">Select next action for Drutt depending upon control input</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="51562.html">51562</a></span></td>
+<td class="prev">
+Prev: <a href="51562.html">51562</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#51584">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="51608.html">51608</a></span></td>
+<td class="next">
+Next: <a href="51608.html">51608</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Data at 23755</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,118 +20,101 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="23635.html">23635</a></span></td>
+<td class="prev">
+Prev: <a href="23635.html">23635</a>
+</td>
 <td class="up">Up: <a href="loader.html#23755">Map</a></td>
-<td class="next"><span class="next-0">Next: <a href=""></a></span></td>
+<td class="next">
+</td>
 </tr>
 </table>
-<div class="description">23755: Basic loader</div>
+<div class="description">23755: BASIC loader</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-The basic loader is set to auto-run from line 10, which loads a block of code of length 6940 bytes to address 16384. This code block contains the loading screen and additional loading code at <a href="23296.html">23296</a>. This loading code is called, before we jump to the start-up routine at <a href="../initialisation/26627.html">26627</a>. The listing has a disguised address for the start-up routine, <a href="../initialisation/26624.html">26624</a>, which would take us to the "HELLO HACKER" routine.
+The BASIC loader is set to auto-run from line 10, and does the following:
+</div>
+<div class="paragraph">
+<ul class="">
+<li>sets the RAMTOP system variable to 26060</li>
+<li>sets the value at <a href="../asm/23693.html">23693</a> to 71 (white INK, black PAPER, BRIGHT)</li>
+<li>loads the loading screen and <a href="23296.html">loader code</a></li>
+<li>calls the loader code, loading the main game code (39470 bytes to address 26064)</li>
+<li>jumps to the <a href="../initialisation/26627.html">start of the initialisation code</a></li>
+</ul>
+</div>
+<div class="paragraph">
+The listing has a disguised address for the initialisation routine, <a href="../initialisation/26624.html">26624</a>, which would take us to the "HELLO HACKER" routine.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23755"></span>23755</td>
 <td class="instruction">DEFB 0,10,90,0,253,50,54,48</td>
-<td class="comment-11" rowspan="12"><pre style="white-space: pre-wrap;">  10 CLEAR 26060: POKE 23693,71: BORDER 0: CLS : LOAD ""CODE 16384: RANDOMIZE USR 23296: RANDOMIZE USR 26624{26627}</pre></td>
+<td class="comment-1" rowspan="12"><pre style="white-space: pre-wrap;">  10 CLEAR 26060: POKE 23693,71: BORDER 0: CLS : LOAD ""CODE 16384: RANDOMIZE USR 23296: RANDOMIZE USR 26624{26627}</pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23763"></span>23763</td>
 <td class="instruction">DEFB 54,48,14,0,0,204,101,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23771"></span>23771</td>
 <td class="instruction">DEFB 58,244,50,51,54,57,51,14</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23779"></span>23779</td>
 <td class="instruction">DEFB 0,0,141,92,0,44,55,49</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23787"></span>23787</td>
 <td class="instruction">DEFB 14,0,0,71,0,0,58,231</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23795"></span>23795</td>
 <td class="instruction">DEFB 48,14,0,0,0,0,0,58</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23803"></span>23803</td>
 <td class="instruction">DEFB 251,58,239,34,34,175,49,54</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23811"></span>23811</td>
 <td class="instruction">DEFB 51,56,52,14,0,0,0,64</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23819"></span>23819</td>
 <td class="instruction">DEFB 0,58,249,192,50,51,50,57</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23827"></span>23827</td>
 <td class="instruction">DEFB 54,14,0,0,0,91,0,58</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23835"></span>23835</td>
 <td class="instruction">DEFB 249,192,50,54,54,50,52,14</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23843"></span>23843</td>
 <td class="instruction">DEFB 0,0,3,104,0,13</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="23635.html">23635</a></span></td>
+<td class="prev">
+Prev: <a href="23635.html">23635</a>
+</td>
 <td class="up">Up: <a href="loader.html#23755">Map</a></td>
-<td class="next"><span class="next-0">Next: <a href=""></a></span></td>
+<td class="next">
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

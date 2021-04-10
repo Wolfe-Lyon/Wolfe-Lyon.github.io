@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 54097</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54079.html">54079</a></span></td>
+<td class="prev">
+Prev: <a href="54079.html">54079</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54097">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54132.html">54132</a></span></td>
+<td class="next">
+Next: <a href="54132.html">54132</a>
+</td>
 </tr>
 </table>
-<div class="description">54097: Print text/graphic character in A and advance Bitmap Virtual Text Cursor</div>
+<div class="description">54097: Print text/graphic character in <span class="register">A</span> and advance bitmap virtual text cursor</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="28730.html">28730</a>, <a href="28753.html">28753</a>, <a href="32694.html">32694</a>, <a href="35123.html">35123</a>, <a href="36602.html">36602</a>, <a href="54231.html">54231</a>, <a href="54598.html">54598</a> and <a href="54647.html">54647</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,168 +47,144 @@ Used by the routines at <a href="28730.html">28730</a>, <a href="28753.html">287
 <td class="register-desc">Index of character to print</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54097"></span>54097</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54098"></span>54098</td>
 <td class="instruction">LD DE,64500</td>
-<td class="comment-11" rowspan="1">Point to (effective) start Character Set graphics</td>
+<td class="comment-1" rowspan="1">Point to (effective) start of character set graphics</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54101"></span>54101</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">Load index of character into HL and multiply by 8...</td>
+<td class="comment-1" rowspan="1">Load index of character into <span class="register">HL</span> and multiply by 8...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54102"></span>54102</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54104"></span>54104</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54105"></span>54105</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54106"></span>54106</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54107"></span>54107</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">...and add to DE to obtain memory location of required character in the character set</td>
+<td class="comment-1" rowspan="1">...and add to <span class="register">DE</span> to obtain memory location of required character in the character set</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54108"></span>54108</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Swap values (DE now holds memory location of character to print and HL holds 64500)</td>
+<td class="comment-1" rowspan="1">Swap values (<span class="register">DE</span> now holds memory location of character to print and <span class="register">HL</span> holds 64500)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="54109"></span>
 <div class="comments">
 <div class="paragraph">
-The operand of the instruction at <a href="54097.html#54109">54109</a> represents the address of the Bitmap Virtual Text Cursor. This is modified by the instructions at <a href="27703.html#27725">27725</a>, <a href="27703.html#27737">27737</a>, <a href="27750.html#27753">27753</a>, <a href="27951.html#27966">27966</a>, <a href="28172.html#28180">28180</a>, <a href="28172.html#28230">28230</a>, <a href="34990.html#35119">35119</a>, <a href="35123.html#35206">35206</a>, <a href="35627.html#35630">35630</a>, <a href="36731.html#36742">36742</a>, <a href="54176.html#54188">54188</a>, <a href="54283.html#54297">54297</a>, <a href="54505.html#54532">54532</a> and <a href="54505.html#54549">54549</a>.
+The operand of the instruction at <a href="54097.html#54109">54109</a> represents the address of the bitmap virtual text cursor. This is modified by the instructions at <a href="27703.html#27725">27725</a>, <a href="27703.html#27737">27737</a>, <a href="27750.html#27753">27753</a>, <a href="27951.html#27966">27966</a>, <a href="28172.html#28180">28180</a>, <a href="28172.html#28230">28230</a>, <a href="34990.html#35119">35119</a>, <a href="35123.html#35206">35206</a>, <a href="35627.html#35630">35630</a>, <a href="36731.html#36742">36742</a>, <a href="54176.html#54188">54188</a>, <a href="54283.html#54297">54297</a>, <a href="54505.html#54532">54532</a> and <a href="54505.html#54549">54549</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54109"></span>54109</td>
 <td class="instruction">LD HL,0</td>
-<td class="comment-11" rowspan="1">Load (video) memory location to start printing character into HL</td>
+<td class="comment-1" rowspan="1">Load (video) memory location to start printing character into <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54112"></span>54112</td>
 <td class="instruction">LD B,8</td>
-<td class="comment-11" rowspan="1">For eight bytes (i.e. full height of character)...</td>
+<td class="comment-1" rowspan="1">For eight bytes (i.e. full height of character)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54114"></span>54114</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...get graphic data from character set...</td>
+<td class="comment-1" rowspan="1">...get graphic data from character set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54115"></span>54115</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...and load into video memory...</td>
+<td class="comment-1" rowspan="1">...and load into video memory...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54116"></span>54116</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...move to next pixel row in character set...</td>
+<td class="comment-1" rowspan="1">...move to next pixel row in character set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54117"></span>54117</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">...and move to next pixel row in video memory</td>
+<td class="comment-1" rowspan="1">...and move to next pixel row in video memory</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54118"></span>54118</td>
 <td class="instruction">DJNZ 54114</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="54097.html#54114">54114</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="54097.html#54114">54114</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54120"></span>54120</td>
 <td class="instruction">CALL <a href="54215.html">54215</a></td>
-<td class="comment-11" rowspan="1">Update Attribute Virtual Text Cursor based upon current Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">Update attribute virtual text cursor based upon current bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54123"></span>54123</td>
 <td class="instruction">LD A,(23695)</td>
-<td class="comment-11" rowspan="1">Obtain attribute data stored previously (71 = bright white)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with attribute stored at <a href="23694.html#23695">23695</a> (71 = BRIGHT white)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54126"></span>54126</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Apply attribute to character just printed</td>
+<td class="comment-1" rowspan="1">Apply attribute to character just printed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54127"></span>54127</td>
 <td class="instruction">CALL <a href="54176.html">54176</a></td>
-<td class="comment-11" rowspan="1">Advance Bitmap Virtual Text Cursor right by one character</td>
+<td class="comment-1" rowspan="1">Advance bitmap virtual text cursor right by one character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54130"></span>54130</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54131"></span>54131</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54079.html">54079</a></span></td>
+<td class="prev">
+Prev: <a href="54079.html">54079</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54097">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54132.html">54132</a></span></td>
+<td class="next">
+Next: <a href="54132.html">54132</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

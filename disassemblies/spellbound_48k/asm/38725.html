@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 38725</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,106 +20,92 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38693.html">38693</a></span></td>
+<td class="prev">
+Prev: <a href="38693.html">38693</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38725">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38749.html">38749</a></span></td>
+<td class="next">
+Next: <a href="38749.html">38749</a>
+</td>
 </tr>
 </table>
-<div class="description">38725: Display Execute / Reject Command Window and Return if Execute Chosen, Else Exit</div>
+<div class="description">38725: Display execute / reject command window and return if execute chosen, otherwise exit</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="30222.html">30222</a>, <a href="30439.html">30439</a>, <a href="30602.html">30602</a>, <a href="30880.html">30880</a>, <a href="31370.html">31370</a>, <a href="31636.html">31636</a>, <a href="32035.html">32035</a>, <a href="32194.html">32194</a>, <a href="32258.html">32258</a>, <a href="32390.html">32390</a>, <a href="32655.html">32655</a>, <a href="33036.html">33036</a>, <a href="33312.html">33312</a>, <a href="33574.html">33574</a>, <a href="33593.html">33593</a> and <a href="33663.html">33663</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38725"></span>38725</td>
 <td class="instruction">CALL <a href="38124.html">38124</a></td>
-<td class="comment-11" rowspan="1">Play hiss-type sound</td>
+<td class="comment-1" rowspan="1">Play hiss-type sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38728"></span>38728</td>
 <td class="instruction">LD A,11</td>
-<td class="comment-11" rowspan="1">Set window index to draw as 11...</td>
+<td class="comment-1" rowspan="1">Set window index to draw as 11...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38730"></span>38730</td>
 <td class="instruction">CALL <a href="36979.html">36979</a></td>
-<td class="comment-11" rowspan="1">...and draw</td>
+<td class="comment-1" rowspan="1">...and draw</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38733"></span>38733</td>
 <td class="instruction">LD HL,43196</td>
-<td class="comment-11" rowspan="1">Point to "E] EXECUTE COMMAND..." text</td>
+<td class="comment-1" rowspan="1">Point to "E] EXECUTE COMMAND..." text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38736"></span>38736</td>
 <td class="instruction">CALL <a href="36725.html">36725</a></td>
-<td class="comment-11" rowspan="1">Print the text</td>
+<td class="comment-1" rowspan="1">Print the text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38739"></span>38739</td>
 <td class="instruction">CALL <a href="37333.html">37333</a></td>
-<td class="comment-11" rowspan="1">Process keyboard / joystick input for menu, and load ASCII code of shortcut for selected (i.e. SPACE or fire pressed) item into A...</td>
+<td class="comment-1" rowspan="1">Process input for menu, and load ASCII code of shortcut for selected (i.e. SPACE or fire pressed) item into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38742"></span>38742</td>
 <td class="instruction">CP 69</td>
-<td class="comment-11" rowspan="1">...and if this is "E" (i.e. Execute Command)...</td>
+<td class="comment-1" rowspan="1">...and if this is "E" (i.e. execute command)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38744"></span>38744</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...return...</td>
+<td class="comment-1" rowspan="1">...return...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38745"></span>38745</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">...else restore HL and...</td>
+<td class="comment-1" rowspan="1">...else restore <span class="register">HL</span> and...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38746"></span>38746</td>
 <td class="instruction">JP <a href="30222.html#30428">30428</a></td>
-<td class="comment-11" rowspan="1">...reset Gimbal-White-Out Safe Flag, redraw current room and return to main game loop</td>
+<td class="comment-1" rowspan="1">...reset Gimbal-white-out-safe flag, redraw current room and return to main game loop</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38693.html">38693</a></span></td>
+<td class="prev">
+Prev: <a href="38693.html">38693</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38725">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38749.html">38749</a></span></td>
+<td class="next">
+Next: <a href="38749.html">38749</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

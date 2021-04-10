@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 53731</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53703.html">53703</a></span></td>
+<td class="prev">
+Prev: <a href="53703.html">53703</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53731">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53861.html">53861</a></span></td>
+<td class="next">
+Next: <a href="53861.html">53861</a>
+</td>
 </tr>
 </table>
-<div class="description">53731: Move Character Whose Turn it is to Move, if Allowed</div>
+<div class="description">53731: Move character whose turn it is to move, if allowed</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Alternate characters move in opposite directions on alternate days.
@@ -36,202 +41,169 @@ Alternate characters move in opposite directions on alternate days.
 Used by the routine at <a href="53498.html">53498</a>.
 </div>
 </div>
-<table class="input-0">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53731"></span>53731</td>
 <td class="instruction">CALL <a href="53871.html">53871</a></td>
-<td class="comment-11" rowspan="1">Update index of character whose turn it is to be updated and load into A</td>
+<td class="comment-1" rowspan="1">Update index of character whose turn it is to be updated and load into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53734"></span>53734</td>
 <td class="instruction">LD E,6</td>
-<td class="comment-11" rowspan="1">Point HL at this character's flags...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at this character's flags...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53736"></span>53736</td>
 <td class="instruction">CALL <a href="33541.html">33541</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53739"></span>53739</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...and load flags into A</td>
+<td class="comment-1" rowspan="1">...and load flags into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53740"></span>53740</td>
 <td class="instruction">AND 192</td>
-<td class="comment-11" rowspan="1">If character is asleep, or character can't move...</td>
+<td class="comment-1" rowspan="1">If character is asleep, or character can't move...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53742"></span>53742</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53743"></span>53743</td>
 <td class="instruction">LD E,2</td>
-<td class="comment-11" rowspan="1">Point HL at Gordon's stamina (A=0)... (<a href="../reference/facts.html#debugcode002">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at Gordon's stamina (<span class="register">A</span>=0)... (<a href="../reference/facts.html#debugcode002">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53745"></span>53745</td>
 <td class="instruction">CALL <a href="33541.html">33541</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53748"></span>53748</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...and load into A</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53749"></span>53749</td>
 <td class="instruction">BIT 7,A</td>
-<td class="comment-11" rowspan="1">If Bit 7 of Gordon's stamina is set...</td>
+<td class="comment-1" rowspan="1">If bit 7 of Gordon's stamina is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53751"></span>53751</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53752"></span>53752</td>
 <td class="instruction">LD A,(23455)</td>
-<td class="comment-11" rowspan="1">Load BC with three times index of character whose turn it is to be updated...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with three times index of character whose turn it is to be updated...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53755"></span>53755</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53756"></span>53756</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53757"></span>53757</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53758"></span>53758</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53759"></span>53759</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53761"></span>53761</td>
 <td class="instruction">LD HL,25244</td>
-<td class="comment-11" rowspan="1">Point HL at start of Table of Characters' Current Positions at <a href="25244.html">25244</a></td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of table of characters' current positions at <a href="25244.html">25244</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53764"></span>53764</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">Add BC to HL as offset</td>
+<td class="comment-1" rowspan="1">Add <span class="register">BC</span> to <span class="register">HL</span> as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53765"></span>53765</td>
 <td class="instruction">LD A,(23701)</td>
-<td class="comment-11" rowspan="1">If Magic Knight is not in the same room as this character...</td>
+<td class="comment-1" rowspan="1">If Magic Knight is not in the same room as this character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53768"></span>53768</td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53769"></span>53769</td>
 <td class="instruction">JP NZ,53777</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="53731.html#53777">53777</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="53731.html#53777">53777</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53772"></span>53772</td>
 <td class="instruction">BIT 1,(IY+65)</td>
-<td class="comment-11" rowspan="1">If Characters Free to Move Flag is reset (IY = 23610)...</td>
+<td class="comment-1" rowspan="1">If characters-free-to-move flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53776"></span>53776</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53777"></span>53777</td>
 <td class="instruction">LD A,(23455)</td>
-<td class="comment-11" rowspan="1">Load B with index of character whose turn it is to be updated...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with index of character whose turn it is to be updated...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53780"></span>53780</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53781"></span>53781</td>
 <td class="instruction">LD A,(23457)</td>
-<td class="comment-11" rowspan="1">Load A with number of days left...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with number of days left...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53784"></span>53784</td>
 <td class="instruction">ADD A,B</td>
-<td class="comment-11" rowspan="1">...and add index of character to be updated</td>
+<td class="comment-1" rowspan="1">...and add index of character to be updated</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53785"></span>53785</td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="1">If result is even...</td>
+<td class="comment-1" rowspan="1">If result is even...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53787"></span>53787</td>
 <td class="instruction">JP Z,53824</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="53731.html#53824">53824</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="53731.html#53824">53824</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="53790"></span>
 <div class="comments">
 <div class="paragraph">
@@ -241,79 +213,67 @@ Move character left
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53790"></span>53790</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load A with character's current room</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with character's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53791"></span>53791</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to character's current room)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to character's current room)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53792"></span>53792</td>
 <td class="instruction">LD HL,37022</td>
-<td class="comment-11" rowspan="1">Point HL to left exit value of first entry in Room Connectivity Data Table</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> to left exit value of first entry in room connectivity data table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53795"></span>53795</td>
 <td class="instruction">CALL <a href="53861.html">53861</a></td>
-<td class="comment-11" rowspan="1">Get index of destination room for character and load into A and instruction at <a href="53731.html#53812">53812</a></td>
+<td class="comment-1" rowspan="1">Get index of destination room for character and load into <span class="register">A</span> and instruction at <a href="53731.html#53812">53812</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53798"></span>53798</td>
 <td class="instruction">LD (53813),A</td>
-<td class="comment-11" rowspan="1">Load value into instruction at <a href="53731.html#53812">53812</a> (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">Load value into instruction at <a href="53731.html#53812">53812</a> (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53801"></span>53801</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to character's current room)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to character's current room)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53802"></span>53802</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to character's x-coordinate</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to character's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53803"></span>53803</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load x-coordinate into A...</td>
+<td class="comment-1" rowspan="1">Load x-coordinate into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53804"></span>53804</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">...and decrease</td>
+<td class="comment-1" rowspan="1">...and decrease</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53805"></span>53805</td>
 <td class="instruction">CALL <a href="53886.html">53886</a></td>
-<td class="comment-11" rowspan="1">If character has a disallowed x-coordinate in the "Barrier Room" then return to routine that called this one</td>
+<td class="comment-1" rowspan="1">If character has a disallowed x-coordinate in the "barrier room" then return to routine that called this one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53808"></span>53808</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If character's x-coordinate is not zero...</td>
+<td class="comment-1" rowspan="1">If character's x-coordinate is not zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53809"></span>53809</td>
 <td class="instruction">JP NZ,53859</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="53731.html#53859">53859</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="53731.html#53859">53859</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="53812"></span>
 <div class="comments">
 <div class="paragraph">
@@ -323,61 +283,52 @@ The operand of the instruction at <a href="53731.html#53812">53812</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53812"></span>53812</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Load B with character's destination room...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with character's destination room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53814"></span>53814</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53815"></span>53815</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">...and if this is 255 (i.e. no room available)...</td>
+<td class="comment-1" rowspan="1">...and if this is 255 (i.e. no room available)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53817"></span>53817</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53818"></span>53818</td>
 <td class="instruction">LD A,29</td>
-<td class="comment-11" rowspan="1">Set character's x-coordinate to 29 (right-hand side of new room)...</td>
+<td class="comment-1" rowspan="1">Set character's x-coordinate to 29 (right-hand side of new room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53820"></span>53820</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53821"></span>53821</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move HL back to character's room</td>
+<td class="comment-1" rowspan="1">Move <span class="register">HL</span> back to character's room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53822"></span>53822</td>
 <td class="instruction">LD (HL),B</td>
-<td class="comment-11" rowspan="1">Set current room to new room index</td>
+<td class="comment-1" rowspan="1">Set current room to new room index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53823"></span>53823</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="53824"></span>
 <div class="comments">
 <div class="paragraph">
@@ -387,79 +338,67 @@ Move character right
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53824"></span>53824</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load A with character's current room</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with character's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53825"></span>53825</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to character's current room)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to character's current room)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53826"></span>53826</td>
 <td class="instruction">LD HL,37023</td>
-<td class="comment-11" rowspan="1">Point HL to right exit value of first entry in Room Connectivity Data Table</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> to right exit value of first entry in room connectivity data table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53829"></span>53829</td>
 <td class="instruction">CALL <a href="53861.html">53861</a></td>
-<td class="comment-11" rowspan="1">Get index of destination room for character and load into A and instruction at <a href="53731.html#53812">53812</a></td>
+<td class="comment-1" rowspan="1">Get index of destination room for character and load into <span class="register">A</span> and instruction at <a href="53731.html#53812">53812</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53832"></span>53832</td>
 <td class="instruction">LD (53848),A</td>
-<td class="comment-11" rowspan="1">Load value into instruction at <a href="53731.html#53847">53847</a></td>
+<td class="comment-1" rowspan="1">Load value into instruction at <a href="53731.html#53847">53847</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53835"></span>53835</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to character's current room)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to character's current room)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53836"></span>53836</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to character's x-coordinate</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to character's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53837"></span>53837</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load x-coordinate into A...</td>
+<td class="comment-1" rowspan="1">Load x-coordinate into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53838"></span>53838</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...and increase</td>
+<td class="comment-1" rowspan="1">...and increase</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53839"></span>53839</td>
 <td class="instruction">CALL <a href="53886.html">53886</a></td>
-<td class="comment-11" rowspan="1">If character has a disallowed x-coordinate in the "Barrier Room" then return to routine that called this one</td>
+<td class="comment-1" rowspan="1">If character has a disallowed x-coordinate in the "barrier room" then return to routine that called this one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53842"></span>53842</td>
 <td class="instruction">CP 30</td>
-<td class="comment-11" rowspan="1">If character's x-coordinate is not 30...</td>
+<td class="comment-1" rowspan="1">If character's x-coordinate is not 30...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53844"></span>53844</td>
 <td class="instruction">JP NZ,53859</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="53731.html#53859">53859</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="53731.html#53859">53859</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="53847"></span>
 <div class="comments">
 <div class="paragraph">
@@ -469,83 +408,76 @@ The operand of the instruction at <a href="53731.html#53847">53847</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53847"></span>53847</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Load B with character's destination room...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with character's destination room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53849"></span>53849</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53850"></span>53850</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">...and if this is 255 (i.e. no room available)...</td>
+<td class="comment-1" rowspan="1">...and if this is 255 (i.e. no room available)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53852"></span>53852</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53853"></span>53853</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Set character's x-coordinate to 1 (left-hand side of new room)...</td>
+<td class="comment-1" rowspan="1">Set character's x-coordinate to 1 (left-hand side of new room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53855"></span>53855</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53856"></span>53856</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move HL back to character's room</td>
+<td class="comment-1" rowspan="1">Move <span class="register">HL</span> back to character's room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53857"></span>53857</td>
 <td class="instruction">LD (HL),B</td>
-<td class="comment-11" rowspan="1">Set current room to new room index</td>
+<td class="comment-1" rowspan="1">Set current room to new room index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53858"></span>53858</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53859"></span>53859</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Store updated x-coordinate for character</td>
+<td class="comment-1" rowspan="1">Store updated x-coordinate for character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53860"></span>53860</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53703.html">53703</a></span></td>
+<td class="prev">
+Prev: <a href="53703.html">53703</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53731">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53861.html">53861</a></span></td>
+<td class="next">
+Next: <a href="53861.html">53861</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

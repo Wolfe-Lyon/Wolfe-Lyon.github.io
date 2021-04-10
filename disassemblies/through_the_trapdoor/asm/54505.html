@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 54505</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54499.html">54499</a></span></td>
+<td class="prev">
+Prev: <a href="54499.html">54499</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54505">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54533.html">54533</a></span></td>
+<td class="next">
+Next: <a href="54533.html">54533</a>
+</td>
 </tr>
 </table>
-<div class="description">54505: Load B with Index of Room to Right of an Entity's Current Room</div>
+<div class="description">54505: Load <span class="register">B</span> with index of room to right of an entity's current room</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="48593.html">48593</a>, <a href="52193.html">52193</a>, <a href="54283.html">54283</a> and <a href="54313.html">54313</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -45,15 +47,11 @@ Used by the routines at <a href="48593.html">48593</a>, <a href="52193.html">521
 <td class="register-desc">Address of complex state data for an entity</td>
 </tr>
 <tr>
-<td class="register">IY</td>
-<td class="register-desc">(entry at <a href="54505.html#54512">54512</a> only) An entry in a room connectivity table</td>
-</tr>
-<tr>
 <td class="register">D</td>
-<td class="register-desc">(entry at <a href="54505.html#54508">54508</a> and <a href="54505.html#54512">54512</a> only) Index of base room for check</td>
+<td class="register-desc">(entry at <a href="54505.html#54508">54508</a> only) Index of base room for check</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -63,19 +61,18 @@ Used by the routines at <a href="48593.html">48593</a>, <a href="52193.html">521
 </tr>
 <tr>
 <td class="register">F</td>
-<td class="register-desc">Zero Flag set if there is no room to the right, reset otherwise</td>
+<td class="register-desc">Zero flag set if there is no room to the right, reset otherwise</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54505"></span>54505</td>
 <td class="instruction">LD D,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load current room of entity pointed to by IX into D</td>
+<td class="comment-1" rowspan="1">Load current room of entity pointed to by <span class="register">IX</span> into <span class="register">D</span></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="54508"></span>
 <div class="comments">
 <div class="paragraph">
@@ -85,99 +82,81 @@ This entry point is used by the routine at <a href="53194.html">53194</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54508"></span>54508</td>
 <td class="instruction">LD IY,(34250)</td>
-<td class="comment-11" rowspan="1">Load start address of current level's Horizontal Room Connectivity Data into IY</td>
+<td class="comment-1" rowspan="1">Load start address of current level's horizontal room connectivity data into <span class="register">IY</span></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
-<span id="54512"></span>
-<div class="comments">
-<div class="paragraph">
-This entry point is used by the routine at <a href="54499.html">54499</a>.
-</div>
-</div>
-</td>
-</tr>
-<tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54512"></span>54512</td>
 <td class="instruction">LD A,(IY+0)</td>
-<td class="comment-11" rowspan="1">Load first byte (left room index) of current entry into A</td>
+<td class="comment-1" rowspan="1">Load first byte (left room index) of current entry into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54515"></span>54515</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">If byte is 255 (i.e. the End Marker)...</td>
+<td class="comment-1" rowspan="1">If byte is 255 (i.e. the end marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54517"></span>54517</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54518"></span>54518</td>
 <td class="instruction">CP D</td>
-<td class="comment-11" rowspan="1">If byte is not the same as the room index in D...</td>
+<td class="comment-1" rowspan="1">If byte is not the same as the room index in <span class="register">D</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54519"></span>54519</td>
 <td class="instruction">JR NZ,54527</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="54505.html#54527">54527</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="54505.html#54527">54527</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54521"></span>54521</td>
 <td class="instruction">LD B,(IY+1)</td>
-<td class="comment-11" rowspan="1">Load second byte (right room index) of current entry into B</td>
+<td class="comment-1" rowspan="1">Load second byte (right room index) of current entry into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54524"></span>54524</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">Reset zero flag (as current room cannot be 255)</td>
+<td class="comment-1" rowspan="1">Reset zero flag (as current room cannot be 255)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54526"></span>54526</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54527"></span>54527</td>
 <td class="instruction">INC IY</td>
-<td class="comment-11" rowspan="1">Advance by two bytes to the next entry...</td>
+<td class="comment-1" rowspan="1">Advance by two bytes to the next entry...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54529"></span>54529</td>
 <td class="instruction">INC IY</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54531"></span>54531</td>
 <td class="instruction">JR 54512</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="54505.html#54512">54512</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="54505.html#54512">54512</a></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54499.html">54499</a></span></td>
+<td class="prev">
+Prev: <a href="54499.html">54499</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54505">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54533.html">54533</a></span></td>
+<td class="next">
+Next: <a href="54533.html">54533</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

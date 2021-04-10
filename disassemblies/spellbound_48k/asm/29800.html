@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 29800</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,232 +20,206 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29799.html">29799</a></span></td>
+<td class="prev">
+Prev: <a href="29799.html">29799</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29800">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29874.html">29874</a></span></td>
+<td class="next">
+Next: <a href="29874.html">29874</a>
+</td>
 </tr>
 </table>
-<div class="description">29800: Room-Specific Routine: Kill Magic Knight if he is in a Dark Room Without Illumination</div>
+<div class="description">29800: Room-specific routine: Kill Magic Knight if he is in a dark room without illumination</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Used by the routine at <a href="29797.html">29797</a>.
+Used by the routines at <a href="29763.html">29763</a> and <a href="29797.html">29797</a>.
 </div>
 </div>
-<table class="input-0">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29800"></span>29800</td>
 <td class="instruction">LD A,(23467)</td>
-<td class="comment-11" rowspan="1">If "Armouris Photonicus cast" flag is set...</td>
+<td class="comment-1" rowspan="1">If Armouris-Photonicus-cast flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29803"></span>29803</td>
 <td class="instruction">BIT 2,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29805"></span>29805</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29806"></span>29806</td>
 <td class="instruction">LD A,16</td>
-<td class="comment-11" rowspan="1">Load A with index of Glowing Bottle</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Glowing Bottle</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29808"></span>29808</td>
 <td class="instruction">CALL <a href="34256.html">34256</a></td>
-<td class="comment-11" rowspan="1">Check to see if this object is in Magic Knight's inventory...</td>
+<td class="comment-1" rowspan="1">Check to see if this object is in Magic Knight's inventory...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29811"></span>29811</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...and if so, return</td>
+<td class="comment-1" rowspan="1">...and if so, return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29812"></span>29812</td>
 <td class="instruction">LD A,(25512)</td>
-<td class="comment-11" rowspan="1">Get current "screen" location of Glowing Bottle</td>
+<td class="comment-1" rowspan="1">Get current "screen" location of Glowing Bottle</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29815"></span>29815</td>
 <td class="instruction">CP 18</td>
-<td class="comment-11" rowspan="1">If Glowing Bottle is in "The Little Bottle" room, then... (<a href="../reference/bugs.html#deathbydarkissues">Bug</a>. <a href="../reference/facts.html#glowingbottleatlittlebottle">See also trivia</a>)</td>
+<td class="comment-1" rowspan="1">If Glowing Bottle is in "The Little Bottle" room, then...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29817"></span>29817</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...return as room is lit (although not sure how bottle can actually get here!)</td>
+<td class="comment-1" rowspan="1">...return as room is lit (<a href="../reference/bugs.html#deathbydarkissues">Bug</a>. <a href="../reference/facts.html#glowingbottleatlittlebottle">See also trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29818"></span>29818</td>
 <td class="instruction">LD A,33</td>
-<td class="comment-11" rowspan="1">Load A with index of Engraved Candle</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Engraved Candle</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29820"></span>29820</td>
 <td class="instruction">CALL <a href="34256.html">34256</a></td>
-<td class="comment-11" rowspan="1">Check to see if this object is in Magic Knight's inventory...</td>
+<td class="comment-1" rowspan="1">Check to see if this object is in Magic Knight's inventory...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29823"></span>29823</td>
 <td class="instruction">JR Z,29832</td>
-<td class="comment-11" rowspan="1">...and if so, skip ahead to <a href="29800.html#29832">29832</a> (to check if it is lit)</td>
+<td class="comment-1" rowspan="1">...and if so, skip ahead to <a href="29800.html#29832">29832</a> (to check if it is lit)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29825"></span>29825</td>
 <td class="instruction">LD A,(25563)</td>
-<td class="comment-11" rowspan="1">Get current "screen" location of Engraved Candle</td>
+<td class="comment-1" rowspan="1">Get current "screen" location of Engraved Candle</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29828"></span>29828</td>
 <td class="instruction">CP 18</td>
-<td class="comment-11" rowspan="1">If Engraved Candle is NOT in "The Little Bottle" room then...</td>
+<td class="comment-1" rowspan="1">If Engraved Candle is NOT in "The Little Bottle" room then...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29830"></span>29830</td>
 <td class="instruction">JR NZ,29838</td>
-<td class="comment-11" rowspan="1">...skip ahead to "You have died" section of routine</td>
+<td class="comment-1" rowspan="1">...skip ahead to "you have died" section of routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29832"></span>29832</td>
 <td class="instruction">LD A,(23467)</td>
-<td class="comment-11" rowspan="1">If the Engraved Candle is lit...</td>
+<td class="comment-1" rowspan="1">If the Engraved Candle is lit...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29835"></span>29835</td>
 <td class="instruction">BIT 1,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29837"></span>29837</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29838"></span>29838</td>
 <td class="instruction">RES 0,(IY+65)</td>
-<td class="comment-11" rowspan="1">Reset "Update Game Time and Locate Arrow Glow" flag</td>
+<td class="comment-1" rowspan="1">Reset update-game-time-and-locate-arrow-glow flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29842"></span>29842</td>
 <td class="instruction">LD HL,22528</td>
-<td class="comment-11" rowspan="1">Point to start of Attribute File...</td>
+<td class="comment-1" rowspan="1">Point to start of attribute file...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29845"></span>29845</td>
 <td class="instruction">LD DE,22529</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29848"></span>29848</td>
 <td class="instruction">LD BC,607</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29851"></span>29851</td>
 <td class="instruction">LD (HL),L</td>
-<td class="comment-11" rowspan="1">L is zero as HL is 22528</td>
+<td class="comment-1" rowspan="1"><span class="register">L</span> is zero as <span class="register">HL</span> is 22528</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29852"></span>29852</td>
 <td class="instruction">LDIR</td>
-<td class="comment-11" rowspan="1">Fill top 19 (i.e. 608 / 32) rows of Attribute File with zeroes (i.e. make the room black dark!)</td>
+<td class="comment-1" rowspan="1">Fill top 19 (i.e. 608 / 32) rows of attribute file with zeroes (i.e. make the room black dark!)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29854"></span>29854</td>
 <td class="instruction">LD A,31</td>
-<td class="comment-11" rowspan="1">Draw window 31 ("Death info" window, i.e. have entered a dark room without illumination)...</td>
+<td class="comment-1" rowspan="1">Draw window 31 ("death info" window, i.e. have entered a dark room without illumination)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29856"></span>29856</td>
 <td class="instruction">CALL <a href="36987.html">36987</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29859"></span>29859</td>
 <td class="instruction">LD HL,51457</td>
-<td class="comment-11" rowspan="1">Point to "Somebody switched off the light..." text</td>
+<td class="comment-1" rowspan="1">Point to "somebody switched off the light..." text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29862"></span>29862</td>
 <td class="instruction">CALL <a href="36725.html">36725</a></td>
-<td class="comment-11" rowspan="1">Print the text</td>
+<td class="comment-1" rowspan="1">Print the text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29865"></span>29865</td>
 <td class="instruction">CALL <a href="38749.html">38749</a></td>
-<td class="comment-11" rowspan="1">Display "PRESS SPACE OR FIRE TO CONTINUE" window and wait for space / fire</td>
+<td class="comment-1" rowspan="1">Display "PRESS SPACE OR FIRE TO CONTINUE" window and wait for space / fire</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29868"></span>29868</td>
 <td class="instruction">LD HL,43467</td>
-<td class="comment-11" rowspan="1">Point HL at "YOU HURT YOURSELF MOVING AROUND IN THE DARK" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "YOU HURT YOURSELF MOVING AROUND IN THE DARK" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29871"></span>29871</td>
 <td class="instruction">JP <a href="35101.html">35101</a></td>
-<td class="comment-11" rowspan="1">Jump to "Game over" window routine and exit</td>
+<td class="comment-1" rowspan="1">Jump to "game over" window routine and exit</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29799.html">29799</a></span></td>
+<td class="prev">
+Prev: <a href="29799.html">29799</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29800">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29874.html">29874</a></span></td>
+<td class="next">
+Next: <a href="29874.html">29874</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

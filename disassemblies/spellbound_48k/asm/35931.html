@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 35931</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="35887.html">35887</a></span></td>
+<td class="prev">
+Prev: <a href="35887.html">35887</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#35931">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="35993.html">35993</a></span></td>
+<td class="next">
+Next: <a href="35993.html">35993</a>
+</td>
 </tr>
 </table>
-<div class="description">35931: Get Number of Characters in a Room, and Load Their Indices into Table at <a href="23464.html">23464</a></div>
+<div class="description">35931: Get number of characters in room <span class="register">A</span> and load their indices into list</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="35141.html">35141</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,141 +47,122 @@ Used by the routine at <a href="35141.html">35141</a>.
 <td class="register-desc">Room number</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">A</td>
-<td class="register-desc">number of characters in room A (input)</td>
+<td class="register-desc">number of characters in room <span class="register">A</span> (input)</td>
 </tr>
 <tr>
 <td class="register">C</td>
-<td class="register-desc">number of characters in room A (input)</td>
+<td class="register-desc">number of characters in room <span class="register">A</span> (input)</td>
 </tr>
 <tr>
 <td class="register">F</td>
-<td class="register-desc">Zero Flag reset if characters are present in room, set otherwise</td>
+<td class="register-desc">Zero flag reset if characters are present in room, set otherwise</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35931"></span>35931</td>
 <td class="instruction">LD (35967),A</td>
-<td class="comment-11" rowspan="1">Store room index in instruction at <a href="35931.html#35966">35966</a></td>
+<td class="comment-1" rowspan="1">Store room index in instruction at <a href="35931.html#35966">35966</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35934"></span>35934</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35935"></span>35935</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35936"></span>35936</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35937"></span>35937</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35939"></span>35939</td>
 <td class="instruction">LD A,255</td>
-<td class="comment-11" rowspan="1">Load A with 255</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 255</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35941"></span>35941</td>
 <td class="instruction">LD HL,23466</td>
-<td class="comment-11" rowspan="1">Clear "characters in current room" data table at <a href="23464.html">23464</a>...</td>
+<td class="comment-1" rowspan="1">Clear <a href="23464.html">list of indices of characters in current room</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35944"></span>35944</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35945"></span>35945</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35946"></span>35946</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35947"></span>35947</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35948"></span>35948</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35949"></span>35949</td>
 <td class="instruction">LD IX,25440</td>
-<td class="comment-11" rowspan="1">Point IX at characters' current positions table</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at characters' current positions table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35953"></span>35953</td>
 <td class="instruction">LD D,0</td>
-<td class="comment-11" rowspan="1">Set D to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">D</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35955"></span>35955</td>
 <td class="instruction">LD BC,1792</td>
-<td class="comment-11" rowspan="1">Set B to 7 (as we have seven characters, excluding Banshee so loop back seven times) and C to 0</td>
+<td class="comment-1" rowspan="1">Set <span class="register">B</span> to 7 (as we have seven characters, excluding Banshee so loop back seven times) and <span class="register">C</span> to 0</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35958"></span>35958</td>
 <td class="instruction">LD A,(23467)</td>
-<td class="comment-11" rowspan="1">If Banshee has not been released, then...</td>
+<td class="comment-1" rowspan="1">If Banshee has not been released, then...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35961"></span>35961</td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35963"></span>35963</td>
 <td class="instruction">JR Z,35966</td>
-<td class="comment-11" rowspan="1">...skip ahead to <a href="35931.html#35966">35966</a>...</td>
+<td class="comment-1" rowspan="1">...skip ahead to <a href="35931.html#35966">35966</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35965"></span>35965</td>
 <td class="instruction">INC B</td>
-<td class="comment-11" rowspan="1">...else increase B by one to take into account presence of Banshee</td>
+<td class="comment-1" rowspan="1">...else increase <span class="register">B</span> by one to take into account presence of Banshee</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="35966"></span>
 <div class="comments">
 <div class="paragraph">
@@ -186,125 +172,111 @@ The operand of the instruction at <a href="35931.html#35966">35966</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35966"></span>35966</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Load A with room number</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with room number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35968"></span>35968</td>
 <td class="instruction">CP (IX+0)</td>
-<td class="comment-11" rowspan="1">Compare to room number of current character...</td>
+<td class="comment-1" rowspan="1">Compare to room number of current character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35971"></span>35971</td>
 <td class="instruction">JR NZ,35976</td>
-<td class="comment-11" rowspan="1">...and if not the same, then jump to <a href="35931.html#35976">35976</a> (i.e. move onto next character)</td>
+<td class="comment-1" rowspan="1">...and if not the same, then jump to <a href="35931.html#35976">35976</a> (i.e. move onto next character)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35973"></span>35973</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">Increase C (number of characters in current room) by one</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">C</span> (number of characters in current room) by one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35974"></span>35974</td>
 <td class="instruction">LD (HL),D</td>
-<td class="comment-11" rowspan="1">Store character index in table at <a href="23464.html">23464</a></td>
+<td class="comment-1" rowspan="1">Store character index in list at <a href="23464.html">23464</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35975"></span>35975</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35976"></span>35976</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX by three bytes, to next character's entry...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> by three bytes, to next character's entry...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35978"></span>35978</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35980"></span>35980</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35982"></span>35982</td>
 <td class="instruction">INC D</td>
-<td class="comment-11" rowspan="1">Increase D (index of current character)</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">D</span> (index of current character)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35983"></span>35983</td>
 <td class="instruction">DJNZ 35966</td>
-<td class="comment-11" rowspan="1">Loop back for next character</td>
+<td class="comment-1" rowspan="1">Loop back for next character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35985"></span>35985</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Load A with number of characters in current room</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with number of characters in current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35986"></span>35986</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">Set zero flag if no characters present</td>
+<td class="comment-1" rowspan="1">Set zero flag if no characters present</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35987"></span>35987</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35989"></span>35989</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35990"></span>35990</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35991"></span>35991</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35992"></span>35992</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="35887.html">35887</a></span></td>
+<td class="prev">
+Prev: <a href="35887.html">35887</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#35931">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="35993.html">35993</a></span></td>
+<td class="next">
+Next: <a href="35993.html">35993</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

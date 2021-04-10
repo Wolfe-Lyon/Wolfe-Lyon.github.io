@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 28510</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,244 +20,207 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="28344.html">28344</a></span></td>
+<td class="prev">
+Prev: <a href="28344.html">28344</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#28510">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="28561.html">28561</a></span></td>
+<td class="next">
+Next: <a href="28561.html">28561</a>
+</td>
 </tr>
 </table>
-<div class="description">28510: Blank Out Bitmap and Set Attribute to Current Value (ATTR T) for 2-by-2 Character Block</div>
+<div class="description">28510: Blank out bitmap and set attribute to stored value for 2-by-2 character block</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="28344.html">28344</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="28510"></span>28510</td>
 <td class="instruction">LD HL,(36488)</td>
-<td class="comment-11" rowspan="1">Load HL with Display File address to draw character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with display file address to draw character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28513"></span>28513</td>
 <td class="instruction">LD DE,(36488)</td>
-<td class="comment-11" rowspan="1">Load DE with Display File address to draw character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with display file address to draw character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28517"></span>28517</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Advance DE by one byte</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">DE</span> by one byte</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28518"></span>28518</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28519"></span>28519</td>
 <td class="instruction">LD B,8</td>
-<td class="comment-11" rowspan="1">Load loop counter with 8</td>
+<td class="comment-1" rowspan="1">Load loop counter with 8</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="28521"></span>28521</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Draw blank space to Display File addresses HL...</td>
+<td class="comment-1" rowspan="1">Draw blank space to display file addresses <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28522"></span>28522</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">...and DE</td>
+<td class="comment-1" rowspan="1">...and <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28523"></span>28523</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">Advance HL and DE down one pixel row (by adding 256 to Display File address), drawing down from top...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> and <span class="register">DE</span> down one pixel row (by adding 256 to display file address), drawing down from top...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28524"></span>28524</td>
 <td class="instruction">INC D</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28525"></span>28525</td>
 <td class="instruction">DJNZ 28521</td>
-<td class="comment-11" rowspan="1">Repeat loop for remaining pixel rows</td>
+<td class="comment-1" rowspan="1">Repeat loop for remaining pixel rows</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28527"></span>28527</td>
 <td class="instruction">LD A,L</td>
-<td class="comment-11" rowspan="1">Add 32 to HL and DE to move them both down by eight pixel rows...</td>
+<td class="comment-1" rowspan="1">Add 32 to <span class="register">HL</span> and <span class="register">DE</span> to move them both down by eight pixel rows...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28528"></span>28528</td>
 <td class="instruction">ADD A,32</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28530"></span>28530</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28531"></span>28531</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28532"></span>28532</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28533"></span>28533</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28534"></span>28534</td>
 <td class="instruction">LD B,8</td>
-<td class="comment-11" rowspan="1">Load loop counter with 8</td>
+<td class="comment-1" rowspan="1">Load loop counter with 8</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="28536"></span>28536</td>
 <td class="instruction">DEC H</td>
-<td class="comment-11" rowspan="1">Advance HL and DE up one pixel row (by subtracting 256 from Display File address), drawing up from bottom...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> and <span class="register">DE</span> up one pixel row (by subtracting 256 from display file address), drawing up from bottom...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28537"></span>28537</td>
 <td class="instruction">DEC D</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28538"></span>28538</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Draw blank space to Display File addresses HL...</td>
+<td class="comment-1" rowspan="1">Draw blank space to display file addresses <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28539"></span>28539</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">...and DE</td>
+<td class="comment-1" rowspan="1">...and <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28540"></span>28540</td>
 <td class="instruction">DJNZ 28536</td>
-<td class="comment-11" rowspan="1">Repeat loop for remaining pixel rows</td>
+<td class="comment-1" rowspan="1">Repeat loop for remaining pixel rows</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28542"></span>28542</td>
 <td class="instruction">CALL <a href="36709.html">36709</a></td>
-<td class="comment-11" rowspan="1">Store and point HL at Attribute File address for character just printed</td>
+<td class="comment-1" rowspan="1">Store and point <span class="register">HL</span> at attribute file address for character just printed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28545"></span>28545</td>
 <td class="instruction">LD A,(23695)</td>
-<td class="comment-11" rowspan="1">Load system variable ATTR T into A...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with attribute stored at <a href="23695.html">23695</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28548"></span>28548</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...and set attribute of four character block just rendered to match this value...</td>
+<td class="comment-1" rowspan="1">...and set attribute of four character block just rendered to match this value...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28549"></span>28549</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28550"></span>28550</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28551"></span>28551</td>
 <td class="instruction">LD BC,31</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28554"></span>28554</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28555"></span>28555</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28556"></span>28556</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28557"></span>28557</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28558"></span>28558</td>
 <td class="instruction">JP <a href="28344.html#28471">28471</a></td>
-<td class="comment-11" rowspan="1">Move location to print and Terrain Interaction Cursor down two character rows observing y-wrap, then return</td>
+<td class="comment-1" rowspan="1">Move location to print and terrain interaction cursor down two character rows observing y-wrap, then return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="28344.html">28344</a></span></td>
+<td class="prev">
+Prev: <a href="28344.html">28344</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#28510">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="28561.html">28561</a></span></td>
+<td class="next">
+Next: <a href="28561.html">28561</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 29396</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,98 +20,87 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29375.html">29375</a></span></td>
+<td class="prev">
+Prev: <a href="29375.html">29375</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29396">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29414.html">29414</a></span></td>
+<td class="next">
+Next: <a href="29414.html">29414</a>
+</td>
 </tr>
 </table>
-<div class="description">29396: Room Drawing: Read Sequence of Architecture Styles and Draw Appropriate 2-by-2 Blocks of Brickwork</div>
+<div class="description">29396: Room drawing: Read sequence of architecture styles and draw appropriate 2-by-2 blocks of brickwork</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="27865.html">27865</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29396"></span>29396</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Read data into system variable ATTR T...</td>
+<td class="comment-1" rowspan="1">Read data into <a href="23695.html">23695</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29397"></span>29397</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29398"></span>29398</td>
 <td class="instruction">LD (23695),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29401"></span>29401</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29402"></span>29402</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Read next data (architecture style)...</td>
+<td class="comment-1" rowspan="1">Read next data (architecture style)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29403"></span>29403</td>
 <td class="instruction">CP 254</td>
-<td class="comment-11" rowspan="1">...and if this is 254...</td>
+<td class="comment-1" rowspan="1">...and if this is 254...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29405"></span>29405</td>
 <td class="instruction">JP Z,<a href="27865.html#28056">28056</a></td>
-<td class="comment-11" rowspan="1">...then return to room drawing routine, setting brickwork drawing mode to two rows</td>
+<td class="comment-1" rowspan="1">...then return to room drawing routine, setting brickwork drawing mode to two rows</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29408"></span>29408</td>
 <td class="instruction">CALL <a href="28344.html">28344</a></td>
-<td class="comment-11" rowspan="1">Draw a 2-by-2 block of brickwork, depending upon brickwork drawing mode, with architecture style A</td>
+<td class="comment-1" rowspan="1">Draw a 2-by-2 block of brickwork, depending upon brickwork drawing mode, with architecture style <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29411"></span>29411</td>
 <td class="instruction">JP 29401</td>
-<td class="comment-11" rowspan="1">Repeat loop for next data byte</td>
+<td class="comment-1" rowspan="1">Repeat loop for next data byte</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29375.html">29375</a></span></td>
+<td class="prev">
+Prev: <a href="29375.html">29375</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29396">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29414.html">29414</a></span></td>
+<td class="next">
+Next: <a href="29414.html">29414</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

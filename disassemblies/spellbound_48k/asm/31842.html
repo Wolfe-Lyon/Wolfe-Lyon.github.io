@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 31842</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,224 +20,192 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31804.html">31804</a></span></td>
+<td class="prev">
+Prev: <a href="31804.html">31804</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31842">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="31904.html">31904</a></span></td>
+<td class="next">
+Next: <a href="31904.html">31904</a>
+</td>
 </tr>
 </table>
-<div class="description">31842: Execute Current Character's Help Routine if Possible</div>
+<div class="description">31842: Execute current character's help routine if possible</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="31636.html">31636</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31842"></span>31842</td>
 <td class="instruction">CALL <a href="34350.html">34350</a></td>
-<td class="comment-11" rowspan="1">Check if Current Character is asleep and display "[CHARACTER] IS ASLEEP" window if so</td>
+<td class="comment-1" rowspan="1">Check if Current Character is asleep and display "[CHARACTER] IS ASLEEP" window if so</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31845"></span>31845</td>
 <td class="instruction">LD A,32</td>
-<td class="comment-11" rowspan="1">Set last character of "[CHARACTER] CANNOT HELP YOU..." text to a space (32)...</td>
+<td class="comment-1" rowspan="1">Set last character of "[CHARACTER] CANNOT HELP YOU..." text to a space (32)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31847"></span>31847</td>
 <td class="instruction">LD (46710),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31850"></span>31850</td>
 <td class="instruction">LD A,(30615)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31853"></span>31853</td>
 <td class="instruction">CP 7</td>
-<td class="comment-11" rowspan="1">If character is 7 (Banshee)...</td>
+<td class="comment-1" rowspan="1">If character is 7 (Banshee)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31855"></span>31855</td>
 <td class="instruction">JR Z,31888</td>
-<td class="comment-11" rowspan="1">...jump ahead to <a href="31842.html#31888">31888</a> (overriding following section, as Banshee always has zero strength)</td>
+<td class="comment-1" rowspan="1">...jump ahead to <a href="31842.html#31888">31888</a> (overriding following section, as Banshee always has zero strength)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31857"></span>31857</td>
 <td class="instruction">LD E,0</td>
-<td class="comment-11" rowspan="1">Point HL at strength...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at strength...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31859"></span>31859</td>
 <td class="instruction">CALL <a href="34174.html">34174</a></td>
-<td class="comment-11" rowspan="1">...of character whose index is A</td>
+<td class="comment-1" rowspan="1">...of character whose index is <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31862"></span>31862</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Switch pointer from HL to IX...</td>
+<td class="comment-1" rowspan="1">Switch pointer from <span class="register">HL</span> to <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31863"></span>31863</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31865"></span>31865</td>
 <td class="instruction">LD A,(IX+5)</td>
-<td class="comment-11" rowspan="1">Load A with character's "can help" flag</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with character's can-help flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31868"></span>31868</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If "can help" flag is reset...</td>
+<td class="comment-1" rowspan="1">If can-help flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31869"></span>31869</td>
 <td class="instruction">JP Z,<a href="34514.html">34514</a></td>
-<td class="comment-11" rowspan="1">...then display "[CHARACTER] CANNOT HELP YOU" window and return to game</td>
+<td class="comment-1" rowspan="1">...then display "[CHARACTER] CANNOT HELP YOU" window and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31872"></span>31872</td>
 <td class="instruction">LD A,(IX+2)</td>
-<td class="comment-11" rowspan="1">Load A with stamina of Current Character...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with stamina of Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31875"></span>31875</td>
 <td class="instruction">CP 10</td>
-<td class="comment-11" rowspan="1">...and if this is anything up to 20...</td>
+<td class="comment-1" rowspan="1">...and if this is anything up to 20...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31877"></span>31877</td>
 <td class="instruction">JP C,<a href="34520.html">34520</a></td>
-<td class="comment-11" rowspan="1">...then display "[CHARACTER] IS TOO TIRED TO HELP YOU" window and exit</td>
+<td class="comment-1" rowspan="1">...then display "[CHARACTER] IS TOO TIRED TO HELP YOU" window and exit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31880"></span>31880</td>
 <td class="instruction">LD A,(IX+1)</td>
-<td class="comment-11" rowspan="1">Load A with the happiness of Current Character...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with the happiness of Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31883"></span>31883</td>
 <td class="instruction">CP 10</td>
-<td class="comment-11" rowspan="1">...and if this is anything up to 10...</td>
+<td class="comment-1" rowspan="1">...and if this is anything up to 10...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31885"></span>31885</td>
 <td class="instruction">JP C,<a href="34490.html">34490</a></td>
-<td class="comment-11" rowspan="1">...then display "[CHARACTER] DOES NOT WANT TO BE COMMANDED BY YOU" window and exit</td>
+<td class="comment-1" rowspan="1">...then display "[CHARACTER] DOES NOT WANT TO BE COMMANDED BY YOU" window and exit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31888"></span>31888</td>
 <td class="instruction">LD A,(30615)</td>
-<td class="comment-11" rowspan="1">Load DE with double the index of the Current Character...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with double the index of the Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31891"></span>31891</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31892"></span>31892</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31893"></span>31893</td>
 <td class="instruction">LD D,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31895"></span>31895</td>
 <td class="instruction">LD HL,31904</td>
-<td class="comment-11" rowspan="1">Point HL at table of help routine addresses</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at table of help routine addresses</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31898"></span>31898</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">...and add double the character index to get specific entry for that character</td>
+<td class="comment-1" rowspan="1">...and add double the character index to get specific entry for that character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31899"></span>31899</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load the routine's address into HL...</td>
+<td class="comment-1" rowspan="1">Load the routine's address into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31900"></span>31900</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31901"></span>31901</td>
 <td class="instruction">LD H,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31902"></span>31902</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31903"></span>31903</td>
 <td class="instruction">JP (HL)</td>
-<td class="comment-11" rowspan="1">...and jump to it</td>
+<td class="comment-1" rowspan="1">...and jump to it</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31804.html">31804</a></span></td>
+<td class="prev">
+Prev: <a href="31804.html">31804</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31842">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="31904.html">31904</a></span></td>
+<td class="next">
+Next: <a href="31904.html">31904</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

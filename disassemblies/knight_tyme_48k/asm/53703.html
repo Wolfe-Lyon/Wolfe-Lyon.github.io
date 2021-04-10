@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 53703</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53585.html">53585</a></span></td>
+<td class="prev">
+Prev: <a href="53585.html">53585</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53703">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53731.html">53731</a></span></td>
+<td class="next">
+Next: <a href="53731.html">53731</a>
+</td>
 </tr>
 </table>
-<div class="description">53703: Update Characters' Stats as They Tire (Awake) or Regenerate (Asleep)</div>
+<div class="description">53703: Update characters' stats as they tire or regenerate</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="29756.html">29756</a>, <a href="31280.html">31280</a>, <a href="33569.html">33569</a>, <a href="53573.html">53573</a> and <a href="53585.html">53585</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,7 +51,7 @@ Used by the routines at <a href="29756.html">29756</a>, <a href="31280.html">312
 <td class="register-desc">An increment (while asleep) or decrement (while awake) for that stat</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -58,123 +63,111 @@ Used by the routines at <a href="29756.html">29756</a>, <a href="31280.html">312
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53703"></span>53703</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = value of character's stat)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = value of character's stat)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53704"></span>53704</td>
 <td class="instruction">AND 128</td>
-<td class="comment-11" rowspan="1">Capture MSB in stat value and store in instruction at <a href="53703.html#53728">53728</a>...</td>
+<td class="comment-1" rowspan="1">Capture MSB in stat value and store in instruction at <a href="53703.html#53728">53728</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53706"></span>53706</td>
 <td class="instruction">LD (53729),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53709"></span>53709</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = value of character's stat)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = value of character's stat)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53710"></span>53710</td>
 <td class="instruction">AND 127</td>
-<td class="comment-11" rowspan="1">Discard MSB of stat value</td>
+<td class="comment-1" rowspan="1">Discard MSB of stat value</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53712"></span>53712</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">Add change value</td>
+<td class="comment-1" rowspan="1">Add change value</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53713"></span>53713</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">Check Sign Flag</td>
+<td class="comment-1" rowspan="1">Check sign flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53714"></span>53714</td>
 <td class="instruction">JP P,53720</td>
-<td class="comment-11" rowspan="1">If sign flag reset (i.e. MSB of result is reset and result is positive) then jump ahead to <a href="53703.html#53720">53720</a></td>
+<td class="comment-1" rowspan="1">If sign flag reset (i.e. MSB of result is reset and result is positive) then jump ahead to <a href="53703.html#53720">53720</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53717"></span>53717</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">else stat must have dropped below zero, so set stat to zero (as it can't be less than 0)</td>
+<td class="comment-1" rowspan="1">else stat must have dropped below zero, so set stat to zero (as it can't be less than 0)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53718"></span>53718</td>
 <td class="instruction">JR 53728</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="53703.html#53728">53728</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="53703.html#53728">53728</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53720"></span>53720</td>
 <td class="instruction">CP 100</td>
-<td class="comment-11" rowspan="1">If new value of stat is less than or equal to 100...</td>
+<td class="comment-1" rowspan="1">If new value of stat is less than or equal to 100...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53722"></span>53722</td>
 <td class="instruction">JR Z,53728</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="53703.html#53728">53728</a>...</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="53703.html#53728">53728</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53724"></span>53724</td>
 <td class="instruction">JR C,53728</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53726"></span>53726</td>
 <td class="instruction">LD A,100</td>
-<td class="comment-11" rowspan="1">...else set stat to 100 (as it can't be greater than 100)</td>
+<td class="comment-1" rowspan="1">...else set stat to 100 (as it can't be greater than 100)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="53728"></span>
 <div class="comments">
 <div class="paragraph">
-The operand of the instruction at <a href="53703.html#53728">53728</a> represents bit 7 of the input value in A. This is modified by the instruction at <a href="53703.html#53706">53706</a>.
+The operand of the instruction at <a href="53703.html#53728">53728</a> represents bit 7 of the input value in <span class="register">A</span>. This is modified by the instruction at <a href="53703.html#53706">53706</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53728"></span>53728</td>
 <td class="instruction">OR 0</td>
-<td class="comment-11" rowspan="1">Restore previously stored MSB state</td>
+<td class="comment-1" rowspan="1">Restore previously stored MSB state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53730"></span>53730</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53585.html">53585</a></span></td>
+<td class="prev">
+Prev: <a href="53585.html">53585</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53703">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53731.html">53731</a></span></td>
+<td class="next">
+Next: <a href="53731.html">53731</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 42938</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="42638.html">42638</a></span></td>
+<td class="prev">
+Prev: <a href="42638.html">42638</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#42938">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="43000.html">43000</a></span></td>
+<td class="next">
+Next: <a href="43000.html">43000</a>
+</td>
 </tr>
 </table>
-<div class="description">42938: Insert Numeric Stats (at HL) of a Character into "Examine Character" Window Text</div>
+<div class="description">42938: Insert numeric stats (at <span class="register">HL</span>) of a character into "examine character" window text</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="42638.html">42638</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,248 +47,209 @@ Used by the routine at <a href="42638.html">42638</a>.
 <td class="register-desc">Address of start of a character's current stats</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42938"></span>42938</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (address of start of character's stats)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (address of start of character's stats)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42939"></span>42939</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load character's Strength into A...</td>
+<td class="comment-1" rowspan="1">Load character's strength into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42940"></span>42940</td>
 <td class="instruction">AND 127</td>
-<td class="comment-11" rowspan="1">...and remove bit 7 (unused)</td>
+<td class="comment-1" rowspan="1">...and remove bit 7 (unused)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42942"></span>42942</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (Strength position in character's stats)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (strength position in character's stats)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42943"></span>42943</td>
 <td class="instruction">LD HL,52187</td>
-<td class="comment-11" rowspan="1">Point HL at start of " 99 " segment for Strength in Character's Stats Text at <a href="52158.html#52180">52180</a></td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of " 99 " segment for strength in character's stats text at <a href="52158.html#52180">52180</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42946"></span>42946</td>
 <td class="instruction">CALL <a href="46837.html">46837</a></td>
-<td class="comment-11" rowspan="1">Splice numeric Strength data as a string into Character's Stats Text</td>
+<td class="comment-1" rowspan="1">Splice numeric strength data as a string into character's stats text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42949"></span>42949</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (Strength position in character's stats)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (strength position in character's stats)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42950"></span>42950</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to Happiness position</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to happiness position</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42951"></span>42951</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load character's Happiness into A...</td>
+<td class="comment-1" rowspan="1">Load character's happiness into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42952"></span>42952</td>
 <td class="instruction">AND 127</td>
-<td class="comment-11" rowspan="1">...and remove bit 7 (unused)</td>
+<td class="comment-1" rowspan="1">...and remove bit 7 (unused)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42954"></span>42954</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (Happiness position in character's stats)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (happiness position in character's stats)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42955"></span>42955</td>
 <td class="instruction">LD HL,52203</td>
-<td class="comment-11" rowspan="1">Point HL at start of " 99 " segment for Happiness in Character's Stats Text at <a href="52158.html#52180">52180</a></td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of " 99 " segment for happiness in character's stats text at <a href="52158.html#52180">52180</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42958"></span>42958</td>
 <td class="instruction">CALL <a href="46837.html">46837</a></td>
-<td class="comment-11" rowspan="1">Splice numeric Happiness data as a string into Character's Stats Text</td>
+<td class="comment-1" rowspan="1">Splice numeric happiness data as a string into character's stats text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42961"></span>42961</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (Happiness position in character's stats)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (happiness position in character's stats)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42962"></span>42962</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to Stamina position</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to stamina position</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42963"></span>42963</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load character's Stamina into A...</td>
+<td class="comment-1" rowspan="1">Load character's stamina into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42964"></span>42964</td>
 <td class="instruction">AND 127</td>
-<td class="comment-11" rowspan="1">...and remove bit 7 (unused)</td>
+<td class="comment-1" rowspan="1">...and remove bit 7 (unused)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42966"></span>42966</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (Stamina position in character's stats)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (stamina position in character's stats)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42967"></span>42967</td>
 <td class="instruction">LD HL,52217</td>
-<td class="comment-11" rowspan="1">Point HL at start of " 99 " segment for Stamina in Character's Stats Text at <a href="52158.html#52180">52180</a></td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of " 99 " segment for stamina in character's stats text at <a href="52158.html#52180">52180</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42970"></span>42970</td>
 <td class="instruction">CALL <a href="46837.html">46837</a></td>
-<td class="comment-11" rowspan="1">Splice numeric Stamina data as a string into Character's Stats Text</td>
+<td class="comment-1" rowspan="1">Splice numeric stamina data as a string into character's stats text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42973"></span>42973</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (Stamina position in character's stats)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (stamina position in character's stats)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42974"></span>42974</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to Magic Level position</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to magic level position</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42975"></span>42975</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load character's Magic Level into A...</td>
+<td class="comment-1" rowspan="1">Load character's magic level into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42976"></span>42976</td>
 <td class="instruction">AND 127</td>
-<td class="comment-11" rowspan="1">...and remove bit 7 (Can Help Flag)</td>
+<td class="comment-1" rowspan="1">...and remove bit 7 (can-help flag)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42978"></span>42978</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (Magic Level position in character's stats)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (magic level position in character's stats)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42979"></span>42979</td>
 <td class="instruction">LD HL,52229</td>
-<td class="comment-11" rowspan="1">Point HL at start of " 99 " segment for Magic Level in Character's Stats Text at <a href="52158.html#52180">52180</a></td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of " 99 " segment for magic level in character's stats text at <a href="52158.html#52180">52180</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42982"></span>42982</td>
 <td class="instruction">CALL <a href="46837.html">46837</a></td>
-<td class="comment-11" rowspan="1">Splice numeric Magic Level data as a string into Character's Stats Text</td>
+<td class="comment-1" rowspan="1">Splice numeric magic level data as a string into character's stats text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42985"></span>42985</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (Magic Level position in character's stats)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (magic level position in character's stats)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42986"></span>42986</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to Food Level position...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to food level position...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42987"></span>42987</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42988"></span>42988</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42989"></span>42989</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load character's Food Level into A...</td>
+<td class="comment-1" rowspan="1">Load character's food level into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42990"></span>42990</td>
 <td class="instruction">AND 127</td>
-<td class="comment-11" rowspan="1">...and remove bit 7 (Asleep Flag)</td>
+<td class="comment-1" rowspan="1">...and remove bit 7 (asleep flag)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42992"></span>42992</td>
 <td class="instruction">LD HL,52245</td>
-<td class="comment-11" rowspan="1">Point HL at start of " 99 " segment for Magic Level in Character's Stats Text at <a href="52158.html#52180">52180</a></td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of " 99 " segment for magic level in character's stats text at <a href="52158.html#52180">52180</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42995"></span>42995</td>
 <td class="instruction">CALL <a href="46837.html">46837</a></td>
-<td class="comment-11" rowspan="1">Splice numeric Magic Level data as a string into Character's Stats Text</td>
+<td class="comment-1" rowspan="1">Splice numeric magic level data as a string into character's stats text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42998"></span>42998</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (address of start of character's stats)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (address of start of character's stats)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42999"></span>42999</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="42638.html">42638</a></span></td>
+<td class="prev">
+Prev: <a href="42638.html">42638</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#42938">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="43000.html">43000</a></span></td>
+<td class="next">
+Next: <a href="43000.html">43000</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

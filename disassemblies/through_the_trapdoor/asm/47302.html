@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 47302</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,79 +20,76 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47241.html">47241</a></span></td>
+<td class="prev">
+Prev: <a href="47241.html">47241</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47302">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47315.html">47315</a></span></td>
+<td class="next">
+Next: <a href="47315.html">47315</a>
+</td>
 </tr>
 </table>
-<div class="description">47302: If Show Score Flag Reset then Draw Pair of Timer Figure Eyes (Closed) at Attribute File Address IX and Advance IX by Two Bytes</div>
+<div class="description">47302: If show-score flag reset then draw pair of timer figure eyes (closed) at attribute file address <span class="register">IX</span> and advance <span class="register">IX</span> by two bytes</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="47241.html">47241</a> and <a href="47363.html">47363</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">IX</td>
-<td class="register-desc">Pointer to a location in Attribute File</td>
+<td class="register-desc">Pointer to a location in attribute file</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47302"></span>47302</td>
 <td class="instruction">CALL <a href="47355.html">47355</a></td>
-<td class="comment-11" rowspan="1">If Show Score Flag is set then return, else proceed ahead to <a href="47302.html#47305">47305</a></td>
+<td class="comment-1" rowspan="1">If show-score flag is set then return, else proceed ahead to <a href="47302.html#47305">47305</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47305"></span>47305</td>
 <td class="instruction">LD A,(34226)</td>
-<td class="comment-11" rowspan="1">Load A with the attribute of the current character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with the attribute of the current character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47308"></span>47308</td>
 <td class="instruction">LD C,28</td>
-<td class="comment-11" rowspan="1">Load C with 28 (graphic index of timer figures' closed eyes)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with 28 (graphic index of timer figures' closed eyes)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47310"></span>47310</td>
 <td class="instruction">CALL <a href="47323.html#47333">47333</a></td>
-<td class="comment-11" rowspan="1">Draw the left (closed) eye at Attribute File address in IX and advance IX by one byte</td>
+<td class="comment-1" rowspan="1">Draw the left (closed) eye at attribute file address in <span class="register">IX</span> and advance <span class="register">IX</span> by one byte</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47313"></span>47313</td>
 <td class="instruction">JR <a href="47323.html#47333">47333</a></td>
-<td class="comment-11" rowspan="1">Draw the right (closed) eye at Attribute File address in IX, advance IX by one byte and return</td>
+<td class="comment-1" rowspan="1">Draw the right (closed) eye at attribute file address in <span class="register">IX</span>, advance <span class="register">IX</span> by one byte and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47241.html">47241</a></span></td>
+<td class="prev">
+Prev: <a href="47241.html">47241</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47302">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47315.html">47315</a></span></td>
+<td class="next">
+Next: <a href="47315.html">47315</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

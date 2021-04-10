@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 34864</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34859.html">34859</a></span></td>
+<td class="prev">
+Prev: <a href="34859.html">34859</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34864">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34883.html">34883</a></span></td>
+<td class="next">
+Next: <a href="34883.html">34883</a>
+</td>
 </tr>
 </table>
-<div class="description">34864: Point DE at Name of a Selected Object in Object Names Table and Print in Command Summary Window</div>
+<div class="description">34864: Point <span class="register">DE</span> at name of a selected object in object names table and print in command summary window</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="30439.html">30439</a>, <a href="30602.html">30602</a>, <a href="30880.html">30880</a>, <a href="31370.html">31370</a>, <a href="32258.html">32258</a>, <a href="32390.html">32390</a> and <a href="33312.html">33312</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,92 +51,79 @@ Used by the routines at <a href="30439.html">30439</a>, <a href="30602.html">306
 <td class="register-desc">Points to start of a character's inventory</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34864"></span>34864</td>
 <td class="instruction">SUB 65</td>
-<td class="comment-11" rowspan="1">Convert A from ASCII code to inventory slot number</td>
+<td class="comment-1" rowspan="1">Convert <span class="register">A</span> from ASCII code to inventory slot number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34866"></span>34866</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">Load inventory slot number into DE...</td>
+<td class="comment-1" rowspan="1">Load inventory slot number into <span class="register">DE</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34867"></span>34867</td>
 <td class="instruction">LD D,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34869"></span>34869</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Add to HL as offset</td>
+<td class="comment-1" rowspan="1">Add to <span class="register">HL</span> as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34870"></span>34870</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load index of object in that slot into A</td>
+<td class="comment-1" rowspan="1">Load index of object in that slot into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34871"></span>34871</td>
 <td class="instruction">LD (30467),A</td>
-<td class="comment-11" rowspan="1">Set this object as the Current Object</td>
+<td class="comment-1" rowspan="1">Set this object as the Current Object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34874"></span>34874</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Also load index into B</td>
+<td class="comment-1" rowspan="1">Also load index into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34875"></span>34875</td>
 <td class="instruction">CALL <a href="34842.html">34842</a></td>
-<td class="comment-11" rowspan="1">Point HL at name of object in object names table</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at name of object in object names table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34878"></span>34878</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Switch registers so DE points to object name and HL contains inventory slot number</td>
+<td class="comment-1" rowspan="1">Switch registers so <span class="register">DE</span> points to object name and <span class="register">HL</span> contains inventory slot number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34879"></span>34879</td>
 <td class="instruction">CALL <a href="38693.html">38693</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at bottom of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at bottom of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34882"></span>34882</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34859.html">34859</a></span></td>
+<td class="prev">
+Prev: <a href="34859.html">34859</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34864">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34883.html">34883</a></span></td>
+<td class="next">
+Next: <a href="34883.html">34883</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

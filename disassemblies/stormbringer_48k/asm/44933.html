@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 44933</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,182 +20,157 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="44861.html">44861</a></span></td>
+<td class="prev">
+Prev: <a href="44861.html">44861</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#44933">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="44990.html">44990</a></span></td>
+<td class="next">
+Next: <a href="44990.html">44990</a>
+</td>
 </tr>
 </table>
-<div class="description">44933: Process Command to Tickle a Character</div>
+<div class="description">44933: Process command to tickle a character</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="64623.html">64623</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="44933"></span>44933</td>
 <td class="instruction">LD HL,51408</td>
-<td class="comment-11" rowspan="1">Point HL at "[Current Command] ?" text (end of sub-menu title, after "WHO DO YOU WANT TO ")</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "[Current Command] ?" text (end of sub-menu title, after "WHO DO YOU WANT TO ")</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44936"></span>44936</td>
 <td class="instruction">LD DE,56502</td>
-<td class="comment-11" rowspan="1">Point DE at "TICKLE " text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at "TICKLE " text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44939"></span>44939</td>
 <td class="instruction">CALL <a href="45963.html">45963</a></td>
-<td class="comment-11" rowspan="1">Display and process input for Character Selection Menu (current room's characters only), setting Current Character</td>
+<td class="comment-1" rowspan="1">Display and process input for character selection menu (current room's characters only), setting Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44942"></span>44942</td>
 <td class="instruction">JP Z,<a href="41578.html#41742">41742</a></td>
-<td class="comment-11" rowspan="1">If there are no characters in the room then set MK's available action flags and jump to start of Main Game Loop (<a href="41578.html#41742">41742</a>)</td>
+<td class="comment-1" rowspan="1">If there are no characters in the room then return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44945"></span>44945</td>
 <td class="instruction">CALL <a href="64207.html">64207</a></td>
-<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display execute / reject command window and return here if execute chosen, else exit to main game loop</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44948"></span>44948</td>
 <td class="instruction">CALL <a href="45723.html">45723</a></td>
-<td class="comment-11" rowspan="1">End the game if Current Character is Off-White or Grunter</td>
+<td class="comment-1" rowspan="1">End the game if Current Character is Off-White or Grunter</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44951"></span>44951</td>
 <td class="instruction">CALL <a href="45552.html">45552</a></td>
-<td class="comment-11" rowspan="1">Display "[Character] IS ASLEEP" Window and jump to Main Game Loop if Current Character is asleep, else return here and continue</td>
+<td class="comment-1" rowspan="1">Display "[Character] IS ASLEEP" window and jump to main game loop if Current Character is asleep, else return here and continue</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44954"></span>44954</td>
 <td class="instruction">LD A,(41937)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44957"></span>44957</td>
 <td class="instruction">LD E,0</td>
-<td class="comment-11" rowspan="1">Point HL at character's current strength...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at character's current strength...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44959"></span>44959</td>
 <td class="instruction">CALL <a href="45406.html">45406</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44962"></span>44962</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Transfer address from HL...</td>
+<td class="comment-1" rowspan="1">Transfer address from <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44963"></span>44963</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">...into IX</td>
+<td class="comment-1" rowspan="1">...into <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44965"></span>44965</td>
 <td class="instruction">LD A,(41937)</td>
-<td class="comment-11" rowspan="1">Load DE with index of Current Character...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with index of Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44968"></span>44968</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44969"></span>44969</td>
 <td class="instruction">LD D,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44971"></span>44971</td>
 <td class="instruction">LD HL,43486</td>
-<td class="comment-11" rowspan="1">Load HL with start address of Table of Characters' Default Happiness Levels...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with start address of table of characters' default happiness levels...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44974"></span>44974</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">...and add DE as offset</td>
+<td class="comment-1" rowspan="1">...and add <span class="register">DE</span> as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44975"></span>44975</td>
 <td class="instruction">LD A,(IX+1)</td>
-<td class="comment-11" rowspan="1">Load A with character's current happiness...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with character's current happiness...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44978"></span>44978</td>
 <td class="instruction">AND 128</td>
-<td class="comment-11" rowspan="1">...and reset all but Bit 7 (unused)</td>
+<td class="comment-1" rowspan="1">...and reset all but bit 7 (unused)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44980"></span>44980</td>
 <td class="instruction">OR (HL)</td>
-<td class="comment-11" rowspan="1">Add in character's default happiness...</td>
+<td class="comment-1" rowspan="1">Add in character's default happiness...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44981"></span>44981</td>
 <td class="instruction">LD (IX+1),A</td>
-<td class="comment-11" rowspan="1">...and set as character's current happiness</td>
+<td class="comment-1" rowspan="1">...and set as character's current happiness</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44984"></span>44984</td>
 <td class="instruction">LD HL,56505</td>
-<td class="comment-11" rowspan="1">Point HL at "[Current Character's short name] GIGGLES AND BURSTS INTO LAUGHTER..." text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "[Current Character's short name] GIGGLES AND BURSTS INTO LAUGHTER..." text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="44987"></span>44987</td>
 <td class="instruction">JP <a href="64313.html">64313</a></td>
-<td class="comment-11" rowspan="1">Display "[Character's] GIGGLES AND BURSTS INTO LAUGHTER..." window (29), wait for Fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display "[Character] GIGGLES AND BURSTS INTO LAUGHTER..." window (29) and return to game</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="44861.html">44861</a></span></td>
+<td class="prev">
+Prev: <a href="44861.html">44861</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#44933">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="44990.html">44990</a></span></td>
+<td class="next">
+Next: <a href="44990.html">44990</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

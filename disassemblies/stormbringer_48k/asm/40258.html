@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 40258</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,218 +20,196 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40239.html">40239</a></span></td>
+<td class="prev">
+Prev: <a href="40239.html">40239</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40258">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40326.html">40326</a></span></td>
+<td class="next">
+Next: <a href="40326.html">40326</a>
+</td>
 </tr>
 </table>
-<div class="description">40258: Room-Specific Routine: Kill Magic Knight if he is in a Dark Room Without Illumination</div>
+<div class="description">40258: Room-specific routine: Kill Magic Knight if he is in a dark room without illumination</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="40190.html">40190</a>.
 </div>
-<table class="input-0">
+</div>
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="40258"></span>40258</td>
 <td class="instruction">LD A,19</td>
-<td class="comment-11" rowspan="1">If Magic Knight is carrying the Torch (19)...</td>
+<td class="comment-1" rowspan="1">If Magic Knight is carrying the Torch (19)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40260"></span>40260</td>
 <td class="instruction">CALL <a href="45510.html">45510</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40263"></span>40263</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40264"></span>40264</td>
 <td class="instruction">LD A,12</td>
-<td class="comment-11" rowspan="1">If Magic Knight is carrying the Glow Shield (12)...</td>
+<td class="comment-1" rowspan="1">If Magic Knight is carrying the Glow Shield (12)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40266"></span>40266</td>
 <td class="instruction">CALL <a href="45510.html">45510</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40269"></span>40269</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40270"></span>40270</td>
 <td class="instruction">LD A,19</td>
-<td class="comment-11" rowspan="1">If the Torch is in Magic Knight's current room...</td>
+<td class="comment-1" rowspan="1">If the Torch is in Magic Knight's current room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40272"></span>40272</td>
 <td class="instruction">CALL <a href="40326.html">40326</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40275"></span>40275</td>
 <td class="instruction">LD A,(23702)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40278"></span>40278</td>
 <td class="instruction">CP B</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40279"></span>40279</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40280"></span>40280</td>
 <td class="instruction">LD A,12</td>
-<td class="comment-11" rowspan="1">If the Glow Shield is in Magic Knight's current room...</td>
+<td class="comment-1" rowspan="1">If the Glow Shield is in Magic Knight's current room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40282"></span>40282</td>
 <td class="instruction">CALL <a href="40326.html">40326</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40285"></span>40285</td>
 <td class="instruction">LD A,(23702)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40288"></span>40288</td>
 <td class="instruction">CP B</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40289"></span>40289</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40290"></span>40290</td>
 <td class="instruction">RES 0,(IY+65)</td>
-<td class="comment-11" rowspan="1">Reset Game In Progress Flag (IY = 23610)</td>
+<td class="comment-1" rowspan="1">Reset game-in-progress flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40294"></span>40294</td>
 <td class="instruction">LD HL,22720</td>
-<td class="comment-11" rowspan="1">Load HL with Attribute File address for cell at (0, 6)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with attribute file address for cell at (0, 6)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40297"></span>40297</td>
 <td class="instruction">LD DE,22721</td>
-<td class="comment-11" rowspan="1">Load DE with Attribute File address for cell at (1, 6)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with attribute file address for cell at (1, 6)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40300"></span>40300</td>
 <td class="instruction">LD BC,575</td>
-<td class="comment-11" rowspan="1">Load BC with 575 (prepare to write to remainder of Attribute File)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with 575 (prepare to write to remainder of attribute file)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40303"></span>40303</td>
 <td class="instruction">LD (HL),L</td>
-<td class="comment-11" rowspan="1">Set Attribute File byte at HL to (L = 192) (black INK, black PAPER, BRIGHT, FLASH)</td>
+<td class="comment-1" rowspan="1">Set attribute file byte at <span class="register">HL</span> to (<span class="register">L</span> = 192) (black INK, black PAPER, BRIGHT, FLASH)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40304"></span>40304</td>
 <td class="instruction">LDIR</td>
-<td class="comment-11" rowspan="1">Flood remainder of Attribute File with attribute value 192</td>
+<td class="comment-1" rowspan="1">Flood remainder of attribute file with attribute value 192</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40306"></span>40306</td>
 <td class="instruction">LD A,26</td>
-<td class="comment-11" rowspan="1">Draw Window 26...</td>
+<td class="comment-1" rowspan="1">Draw window 26...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40308"></span>40308</td>
 <td class="instruction">CALL <a href="47193.html">47193</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40311"></span>40311</td>
 <td class="instruction">LD HL,57269</td>
-<td class="comment-11" rowspan="1">Point HL at "SOMEBODY SWITCHED OUT THE LIGHT..." text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "SOMEBODY SWITCHED OUT THE LIGHT..." text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40314"></span>40314</td>
 <td class="instruction">CALL <a href="46902.html">46902</a></td>
-<td class="comment-11" rowspan="1">...and print</td>
+<td class="comment-1" rowspan="1">...and print</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40317"></span>40317</td>
 <td class="instruction">CALL <a href="64230.html">64230</a></td>
-<td class="comment-11" rowspan="1">Wait for Interrupt then display "PRESS FIRE TO CONTINUE" Window and wait for Fire to be pressed</td>
+<td class="comment-1" rowspan="1">Wait for interrupt then display "PRESS FIRE TO CONTINUE" window and wait for fire to be pressed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40320"></span>40320</td>
 <td class="instruction">LD HL,50817</td>
-<td class="comment-11" rowspan="1">Point HL at "YOU HURT YOURSELF MOVING AROUND IN THE DARK" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "YOU HURT YOURSELF MOVING AROUND IN THE DARK" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40323"></span>40323</td>
 <td class="instruction">JP <a href="64582.html">64582</a></td>
-<td class="comment-11" rowspan="1">Display Cyan "Game Over" Window and Return to Control Selection Menu</td>
+<td class="comment-1" rowspan="1">Display cyan "game over" window and return to control selection menu</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40239.html">40239</a></span></td>
+<td class="prev">
+Prev: <a href="40239.html">40239</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40258">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40326.html">40326</a></span></td>
+<td class="next">
+Next: <a href="40326.html">40326</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

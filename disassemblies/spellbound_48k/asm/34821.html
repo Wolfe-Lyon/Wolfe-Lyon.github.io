@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 34821</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,27 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34816.html">34816</a></span></td>
+<td class="prev">
+Prev: <a href="34816.html">34816</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34821">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34838.html">34838</a></span></td>
+<td class="next">
+Next: <a href="34842.html">34842</a>
+</td>
 </tr>
 </table>
-<div class="description">34821: Update Magic Knight's Current Frame Based on x-Coordinate (Walking Left)</div>
+<div class="description">34821: Update Magic Knight's current frame based on x-coordinate</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="27176.html">27176</a>, <a href="27495.html">27495</a> and <a href="28092.html">28092</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -51,91 +50,106 @@ Used by the routines at <a href="27176.html">27176</a>, <a href="27495.html">274
 </td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34821"></span>
 <div class="comments">
 <div class="paragraph">
-The operand of the instruction at <a href="34821.html">34821</a> represents the address of the appropriate "walking" routine to jump to (either <a href="34821.html#34824">34824</a> for walking left or <a href="34838.html">34838</a> for walking right). This is modified by the instructions at <a href="27176.html#27327">27327</a>, <a href="29514.html#29527">29527</a>, <a href="29546.html#29549">29549</a> and <a href="29546.html#29565">29565</a>.
+The operand of the instruction at <a href="34821.html">34821</a> represents the address of the appropriate "walking" routine to jump to (either <a href="34821.html#34824">34824</a> for walking left or <a href="34821.html#34838">34838</a> for walking right). This is modified by the instructions at <a href="27176.html#27327">27327</a>, <a href="29514.html#29527">29527</a>, <a href="29546.html#29549">29549</a> and <a href="29546.html#29565">29565</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34821"></span>34821</td>
 <td class="instruction">JP 34824</td>
-<td class="comment-11" rowspan="1">Jump to walking left or walking right version of routine</td>
+<td class="comment-1" rowspan="1">Jump to walking left or walking right version of routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
-<td class="address-2"><span id="34824"></span>34824</td>
-<td class="instruction">LD B,5</td>
-<td class="comment-11" rowspan="1">Load B with 5 (as first graphic frame of Magic Knight walking left is frame number 5)</td>
-</tr>
-<tr>
-<td class="routine-comment" colspan="4">
-<span id="34826"></span>
+<td class="routine-comment" colspan="5">
+<span id="34824"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routine at <a href="34838.html">34838</a>.
+Update Magic Knight's current frame based on x-coordinate (walking left)
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-2"><span id="34824"></span>34824</td>
+<td class="instruction">LD B,5</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 5 (as first graphic frame of Magic Knight walking left is frame number 5)</td>
+</tr>
+<tr>
 <td class="address-2"><span id="34826"></span>34826</td>
 <td class="instruction">LD HL,25387</td>
-<td class="comment-11" rowspan="1">Point HL at Magic Knight's current data (x- and y-coordinates, etc.)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at Magic Knight's current data (x- and y-coordinates, etc.)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34829"></span>34829</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load A with Magic Knight's x-coordinate</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Magic Knight's x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34830"></span>34830</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">Divide Magic Knight's x-coordinate by 2...</td>
+<td class="comment-1" rowspan="1">Divide Magic Knight's x-coordinate by 2...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34831"></span>34831</td>
 <td class="instruction">AND 3</td>
-<td class="comment-11" rowspan="1">...and take lowest two bits (0 - 3)</td>
+<td class="comment-1" rowspan="1">...and take lowest two bits (0 - 3)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34833"></span>34833</td>
 <td class="instruction">ADD A,B</td>
-<td class="comment-11" rowspan="1">Add result to B (1 for walking right frames or 5 for walking left frames) to get current required frame</td>
+<td class="comment-1" rowspan="1">Add result to <span class="register">B</span> (1 for walking right frames or 5 for walking left frames) to get current required frame</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34834"></span>34834</td>
 <td class="instruction">LD (25390),A</td>
-<td class="comment-11" rowspan="1">Load frame number into Magic Knight's properties</td>
+<td class="comment-1" rowspan="1">Load frame number into Magic Knight's properties</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34837"></span>34837</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="34838"></span>
+<div class="comments">
+<div class="paragraph">
+Update Magic Knight's current frame based on x-coordinate (walking right)
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="34838"></span>34838</td>
+<td class="instruction">LD B,1</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 1 (as first graphic frame of Magic Knight walking right is frame number 1)</td>
+</tr>
+<tr>
+<td class="address-1"><span id="34840"></span>34840</td>
+<td class="instruction">JR 34826</td>
+<td class="comment-1" rowspan="1">Return to routine at <a href="34821.html">34821</a></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34816.html">34816</a></span></td>
+<td class="prev">
+Prev: <a href="34816.html">34816</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34821">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34838.html">34838</a></span></td>
+<td class="next">
+Next: <a href="34842.html">34842</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

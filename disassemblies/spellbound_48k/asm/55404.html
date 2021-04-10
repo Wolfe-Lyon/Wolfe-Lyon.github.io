@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 55404</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,28 +20,32 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55349.html">55349</a></span></td>
+<td class="prev">
+Prev: <a href="55349.html">55349</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55404">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55461.html">55461</a></span></td>
+<td class="next">
+Next: <a href="55461.html">55461</a>
+</td>
 </tr>
 </table>
-<div class="description">55404: Load A with New Room Index for a Character to Move into</div>
+<div class="description">55404: Load <span class="register">A</span> with new room index for a character to move into</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-This routine causes a character to leave his / her current room and move to an adjacent room if that character has a current room index not equal to 99. In this case, the value of A upon entering this routine is the index of that character's current room.
+This routine causes a character to leave his / her current room and move to an adjacent room if that character has a current room index not equal to 99. In this case, the value of <span class="register">A</span> upon entering this routine is the index of that character's current room.
 </div>
 <div class="paragraph">
-If the character's current room index IS equal to 99 (set by commanding the character to go away), then A instead holds the value ((4 x character index) + 5), which means each character has his or her own room to which they go away (although they don't immediately appear in that room as their room index is set to 99). He or she will reappear next time it is his or her turn to move, appearing in one of the two rooms connected to this one (if possible). The table below shows which room is the "Go Away Base Room" for each character:
+If the character's current room index IS equal to 99 (set by commanding the character to go away), then <span class="register">A</span> instead holds the value ((4 &times; character index) + 5), which means each character has his or her own room to which they go away (although they don't immediately appear in that room as their room index is set to 99). He or she will reappear next time it is his or her turn to move, appearing in one of the two rooms connected to this one (if possible). The table below shows which room is the "go away base room" for each character:
 </div>
 <div class="paragraph">
 <table class="default">
 <tr>
 <th colspan="1" rowspan="1">Character</th>
 <th colspan="1" rowspan="1">Index</th>
-<th colspan="1" rowspan="1">A Input (Room)</th>
+<th colspan="1" rowspan="1"><span class="register">A</span> input (room)</th>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">Gimbal</td>
@@ -88,16 +93,16 @@ If the character's current room index IS equal to 99 (set by commanding the char
 Used by the routine at <a href="55233.html">55233</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">A</td>
-<td class="register-desc">Character's current room index, or ((4 x character index) + 5)</td>
+<td class="register-desc">Character's current room index, or ((4 &times; character index) + 5)</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -109,227 +114,196 @@ Used by the routine at <a href="55233.html">55233</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55404"></span>55404</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55405"></span>55405</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55406"></span>55406</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">Load double A (now either "character to move" index x 8 + 10, or double a room index) into E...</td>
+<td class="comment-1" rowspan="1">Load double <span class="register">A</span> (now either "character to move" index &times; 8 + 10, or double a room index) into <span class="register">E</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55407"></span>55407</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55408"></span>55408</td>
 <td class="instruction">LD A,(55218)</td>
-<td class="comment-11" rowspan="1">Load "character to move" index into A</td>
+<td class="comment-1" rowspan="1">Load "character to move" index into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55411"></span>55411</td>
 <td class="instruction">AND 1</td>
-<td class="comment-11" rowspan="1">Discard all but bit 0 (odd / even)</td>
+<td class="comment-1" rowspan="1">Discard all but bit 0 (odd / even)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55413"></span>55413</td>
 <td class="instruction">LD D,A</td>
-<td class="comment-11" rowspan="1">Load 0 for even-numbered character (EC), or 1 for odd-numbered character (OC) into D</td>
+<td class="comment-1" rowspan="1">Load 0 for even-numbered character (EC), or 1 for odd-numbered character (OC) into <span class="register">D</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55414"></span>55414</td>
 <td class="instruction">LD A,(23404)</td>
-<td class="comment-11" rowspan="1">Load A with number of hours left</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with number of hours left</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55417"></span>55417</td>
 <td class="instruction">AND 1</td>
-<td class="comment-11" rowspan="1">Set A to 0 for even number of hours left (EH), or 1 for odd number of hours left (OH)</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to 0 for even number of hours left (EH), or 1 for odd number of hours left (OH)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55419"></span>55419</td>
 <td class="instruction">XOR D</td>
-<td class="comment-11" rowspan="1">Set A to 0 for EH / EC or OH/OH, and 1 for EH / OC or OH / EC</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to 0 for EH / EC or OH/OH, and 1 for EH / OC or OH / EC</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55420"></span>55420</td>
 <td class="instruction">ADD A,E</td>
-<td class="comment-11" rowspan="1">Add A (0 or 1, i.e. left or right) to double room index in DE...</td>
+<td class="comment-1" rowspan="1">Add <span class="register">A</span> (0 or 1, i.e. left or right) to double room index in <span class="register">DE</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55421"></span>55421</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55422"></span>55422</td>
 <td class="instruction">LD D,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55424"></span>55424</td>
 <td class="instruction">LD HL,41711</td>
-<td class="comment-11" rowspan="1">Point HL at table of room connectivity data</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at table of room connectivity data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55427"></span>55427</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Add DE as offset</td>
+<td class="comment-1" rowspan="1">Add <span class="register">DE</span> as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55428"></span>55428</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load room index off current room's exit of interest</td>
+<td class="comment-1" rowspan="1">Load room index off current room's exit of interest</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55429"></span>55429</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">If 255 (i.e. no exit from room)...</td>
+<td class="comment-1" rowspan="1">If 255 (i.e. no exit from room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55431"></span>55431</td>
 <td class="instruction">JR Z,55456</td>
-<td class="comment-11" rowspan="1">...return with A = 255</td>
+<td class="comment-1" rowspan="1">...return with <span class="register">A</span> = 255</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55433"></span>55433</td>
 <td class="instruction">CP 34</td>
-<td class="comment-11" rowspan="1">If 34 (i.e. "The Gas Room")...</td>
+<td class="comment-1" rowspan="1">If 34 (i.e. "The Gas Room")...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55435"></span>55435</td>
 <td class="instruction">JR Z,55456</td>
-<td class="comment-11" rowspan="1">...return with A = 255</td>
+<td class="comment-1" rowspan="1">...return with <span class="register">A</span> = 255</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55437"></span>55437</td>
 <td class="instruction">CP 18</td>
-<td class="comment-11" rowspan="1">If 18 (i.e. "The Little Bottle")...</td>
+<td class="comment-1" rowspan="1">If 18 (i.e. "The Little Bottle")...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55439"></span>55439</td>
 <td class="instruction">JR Z,55456</td>
-<td class="comment-11" rowspan="1">...return with A = 255</td>
+<td class="comment-1" rowspan="1">...return with <span class="register">A</span> = 255</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55441"></span>55441</td>
 <td class="instruction">CP 46</td>
-<td class="comment-11" rowspan="1">If 46 (i.e. "The Pit")...</td>
+<td class="comment-1" rowspan="1">If 46 (i.e. "The Pit")...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55443"></span>55443</td>
 <td class="instruction">JR Z,55456</td>
-<td class="comment-11" rowspan="1">...return with A = 255</td>
+<td class="comment-1" rowspan="1">...return with <span class="register">A</span> = 255</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55445"></span>55445</td>
 <td class="instruction">CP 9</td>
-<td class="comment-11" rowspan="1">If 9 (i.e. "The Tower")...</td>
+<td class="comment-1" rowspan="1">If 9 (i.e. "The Tower")...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55447"></span>55447</td>
 <td class="instruction">JR Z,55456</td>
-<td class="comment-11" rowspan="1">...return with A = 255</td>
+<td class="comment-1" rowspan="1">...return with <span class="register">A</span> = 255</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55449"></span>55449</td>
 <td class="instruction">CP 29</td>
-<td class="comment-11" rowspan="1">If 29 (i.e. "The Wall")...</td>
+<td class="comment-1" rowspan="1">If 29 (i.e. "The Wall")...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55451"></span>55451</td>
 <td class="instruction">JR Z,55456</td>
-<td class="comment-11" rowspan="1">...return with A = 255</td>
+<td class="comment-1" rowspan="1">...return with <span class="register">A</span> = 255</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55453"></span>55453</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55454"></span>55454</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55455"></span>55455</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55456"></span>55456</td>
 <td class="instruction">LD A,255</td>
-<td class="comment-11" rowspan="1">Set A to 255 (to denote that chosen room exit is impassable)</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to 255 (to denote that chosen room exit is impassable)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55458"></span>55458</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55459"></span>55459</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55460"></span>55460</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55349.html">55349</a></span></td>
+<td class="prev">
+Prev: <a href="55349.html">55349</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55404">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55461.html">55461</a></span></td>
+<td class="next">
+Next: <a href="55461.html">55461</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

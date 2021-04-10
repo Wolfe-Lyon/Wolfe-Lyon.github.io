@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Data at 23755</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,127 +20,107 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="23635.html">23635</a></span></td>
+<td class="prev">
+Prev: <a href="23635.html">23635</a>
+</td>
 <td class="up">Up: <a href="loader.html#23755">Map</a></td>
-<td class="next"><span class="next-0">Next: <a href=""></a></span></td>
+<td class="next">
+</td>
 </tr>
 </table>
-<div class="description">23755: Basic loader</div>
+<div class="description">23755: BASIC loader</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-The basic loader is set to auto-run from line 0. Line 20 loads the loading screen, and line 30 loads a block of code of length 39290 bytes to address 26240. This code block contains the main game code, and after loading it, we jump to the start-up routine at <a href="../initialisation/26624.html">26624</a>.
+The BASIC loader is set to auto-run from line 0, and does the following:
+</div>
+<div class="paragraph">
+<ul class="">
+<li>sets the RAMTOP system variable to 26200</li>
+<li>loads the loading screen</li>
+<li>loads the main game code (39290 bytes to address 26240)</li>
+<li>jumps to the <a href="../initialisation/26624.html">start of the initialisation code</a></li>
+</ul>
+</div>
+<div class="paragraph">
+After loading the loading screen, the printing position is set to 6,1. This is intended to ensure that the printing of the main code's block type and name does not corrupt the loading screen. Unfortunately that is exactly what it does. Setting the printing position to 5,1 instead will resolve this issue.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23755"></span>23755</td>
 <td class="instruction">DEFB 0,10,22,0,253,50,54,50</td>
-<td class="comment-11" rowspan="13"><pre style="white-space: pre-wrap;">  10 CLEAR 26200: BORDER 0
+<td class="comment-1" rowspan="13"><pre style="white-space: pre-wrap;">  10 CLEAR 26200: BORDER 0
   20 LOAD "KT$"SCREEN$ 
   30 PAPER 0: INK 0: PRINT AT 6,1: LOAD ""CODE 
   40 RANDOMIZE USR 26624</pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23763"></span>23763</td>
 <td class="instruction">DEFB 48,48,14,0,0,88,102,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23771"></span>23771</td>
 <td class="instruction">DEFB 58,231,48,14,0,0,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23779"></span>23779</td>
 <td class="instruction">DEFB 0,13,0,20,8,0,239,34</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23787"></span>23787</td>
 <td class="instruction">DEFB 75,84,36,34,170,13,0,30</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23795"></span>23795</td>
 <td class="instruction">DEFB 41,0,218,48,14,0,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23803"></span>23803</td>
 <td class="instruction">DEFB 0,0,58,217,48,14,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23811"></span>23811</td>
 <td class="instruction">DEFB 0,0,0,58,245,172,54,14</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23819"></span>23819</td>
 <td class="instruction">DEFB 0,0,6,0,0,44,49,14</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23827"></span>23827</td>
 <td class="instruction">DEFB 0,0,1,0,0,58,239,34</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23835"></span>23835</td>
 <td class="instruction">DEFB 34,175,13,0,40,14,0,249</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23843"></span>23843</td>
 <td class="instruction">DEFB 192,50,54,54,50,52,14,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23851"></span>23851</td>
 <td class="instruction">DEFB 0,0,104,0,13</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="23635.html">23635</a></span></td>
+<td class="prev">
+Prev: <a href="23635.html">23635</a>
+</td>
 <td class="up">Up: <a href="loader.html#23755">Map</a></td>
-<td class="next"><span class="next-0">Next: <a href=""></a></span></td>
+<td class="next">
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

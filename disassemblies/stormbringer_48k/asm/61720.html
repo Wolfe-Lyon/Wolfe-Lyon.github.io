@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 61720</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,244 +20,207 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="61638.html">61638</a></span></td>
+<td class="prev">
+Prev: <a href="61638.html">61638</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#61720">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="61774.html">61774</a></span></td>
+<td class="next">
+Next: <a href="61774.html">61774</a>
+</td>
 </tr>
 </table>
-<div class="description">61720: Overlay Graphic Data for MK's Current Frame on Table of Bitmap Data for MK at his Current Location</div>
+<div class="description">61720: Overlay graphic data for Magic Knight's current frame on table of bitmap data for Magic Knight at his current location</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="61860.html">61860</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="61720"></span>61720</td>
 <td class="instruction">LD A,(24843)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current frame index into A...</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's current frame index into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61723"></span>61723</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...multiply by 48...</td>
+<td class="comment-1" rowspan="1">...multiply by 48...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61724"></span>61724</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61725"></span>61725</td>
 <td class="instruction">ADD A,B</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61726"></span>61726</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61727"></span>61727</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61728"></span>61728</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61729"></span>61729</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61730"></span>61730</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...load into HL...</td>
+<td class="comment-1" rowspan="1">...load into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61731"></span>61731</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61733"></span>61733</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...and double again to give 96 times original value, as graphic data for MK's frames are 96 bytes each</td>
+<td class="comment-1" rowspan="1">...and double again to give 96 times original value, as graphic data for Magic Knight's frames are 96 bytes each</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61734"></span>61734</td>
 <td class="instruction">LD A,(23417)</td>
-<td class="comment-11" rowspan="1">If Magic Knight Facing Left Flag is reset...</td>
+<td class="comment-1" rowspan="1">If Magic-Knight-facing-left flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61737"></span>61737</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61738"></span>61738</td>
 <td class="instruction">JR Z,61744</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="61720.html#61744">61744</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="61720.html#61744">61744</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61740"></span>61740</td>
 <td class="instruction">LD BC,384</td>
-<td class="comment-11" rowspan="1">Advance HL by 384 bytes...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> by 384 bytes...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61743"></span>61743</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...i.e. prepare to use left-facing graphic data, rather than right-facing...</td>
+<td class="comment-1" rowspan="1">...i.e. prepare to use left-facing graphic data, rather than right-facing...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="61744"></span>61744</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Copy value in HL to IX...</td>
+<td class="comment-1" rowspan="1">Copy value in <span class="register">HL</span> to <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61745"></span>61745</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61747"></span>61747</td>
 <td class="instruction">LD DE,26968</td>
-<td class="comment-11" rowspan="1">Point DE at start of graphic data for Magic Knight facing right, frame 1 (mask)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at start of graphic data for Magic Knight facing right, frame 1 (mask)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61750"></span>61750</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Add HL as offset in HL (HL now points to start of graphic data for Magic Knight's current frame mask)</td>
+<td class="comment-1" rowspan="1">Add <span class="register">HL</span> as offset in <span class="register">HL</span> (<span class="register">HL</span> now points to start of graphic data for Magic Knight's current frame mask)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61751"></span>61751</td>
 <td class="instruction">LD DE,26200</td>
-<td class="comment-11" rowspan="1">Point DE at start of graphic data for Magic Knight facing right, frame 1</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at start of graphic data for Magic Knight facing right, frame 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61754"></span>61754</td>
 <td class="instruction">ADD IX,DE</td>
-<td class="comment-11" rowspan="1">Add IX as offset in IX (IX now points to start of graphic data for Magic Knight's current frame)</td>
+<td class="comment-1" rowspan="1">Add <span class="register">IX</span> as offset in <span class="register">IX</span> (<span class="register">IX</span> now points to start of graphic data for Magic Knight's current frame)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61756"></span>61756</td>
 <td class="instruction">LD DE,24576</td>
-<td class="comment-11" rowspan="1">Point DE at Table of Bitmap Data for Magic Knight at his Current Location</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at table of bitmap data for Magic Knight at his current location</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61759"></span>61759</td>
 <td class="instruction">LD B,96</td>
-<td class="comment-11" rowspan="1">Load B with 96, as Magic Knight's bitmap graphic data is 96 bytes per frame</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 96, as Magic Knight's bitmap graphic data is 96 bytes per frame</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="61761"></span>61761</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Load current background bitmap byte into A</td>
+<td class="comment-1" rowspan="1">Load current background bitmap byte into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61762"></span>61762</td>
 <td class="instruction">AND (HL)</td>
-<td class="comment-11" rowspan="1">Apply mask to bitmap data</td>
+<td class="comment-1" rowspan="1">Apply mask to bitmap data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61763"></span>61763</td>
 <td class="instruction">OR (IX+0)</td>
-<td class="comment-11" rowspan="1">Overlay Magic Knight bitmap graphic data</td>
+<td class="comment-1" rowspan="1">Overlay Magic Knight bitmap graphic data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61766"></span>61766</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">Store result back into Table of Background Bitmap Data</td>
+<td class="comment-1" rowspan="1">Store result back into table of background bitmap data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61767"></span>61767</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to next byte in Magic Knight mask bitmap data</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next byte in Magic Knight mask bitmap data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61768"></span>61768</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Advance DE to next byte in background graphic bitmap data</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">DE</span> to next byte in background graphic bitmap data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61769"></span>61769</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to next byte in Magic Knight graphic bitmap data</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to next byte in Magic Knight graphic bitmap data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61771"></span>61771</td>
 <td class="instruction">DJNZ 61761</td>
-<td class="comment-11" rowspan="1">Decrease B (remaining number of bytes to process) and loop back to <a href="61720.html#61761">61761</a></td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (remaining number of bytes to process) and loop back to <a href="61720.html#61761">61761</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61773"></span>61773</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="61638.html">61638</a></span></td>
+<td class="prev">
+Prev: <a href="61638.html">61638</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#61720">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="61774.html">61774</a></span></td>
+<td class="next">
+Next: <a href="61774.html">61774</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

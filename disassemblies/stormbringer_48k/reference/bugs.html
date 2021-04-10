@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Bugs</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -18,20 +19,20 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#sixthpuffofsmokeframe">Missing Puff of Smoke Frame</a></li>
-<li><a href="#offwhitetakeroutine">Off-White Doesn't Kill on Taking an Object</a></li>
-<li><a href="#grunteroffwhitegiveroutine">Off-White and Grunter Don't Kill on Giving an Object</a></li>
-<li><a href="#2x2blockterrainpaintingbitmap">2x2 Block Drawing</a></li>
-<li><a href="#spellingandpunctuation">Spelling and Punctuation</a></li>
-<li><a href="#textnevershown">Text Never Shown</a></li>
+<li><a href="#sixthpuffofsmokeframe">Missing puff of smoke frame</a></li>
+<li><a href="#offwhitetakeroutine">Off-White doesn't kill on taking an object</a></li>
+<li><a href="#grunteroffwhitegiveroutine">Off-White and Grunter don't kill on giving an object</a></li>
+<li><a href="#2x2blockterrainpaintingbitmap">2 × 2 block drawing</a></li>
+<li><a href="#spellingandpunctuation">Spelling and punctuation</a></li>
+<li><a href="#textnevershown">Text never shown</a></li>
 </ul>
 <div><span id="sixthpuffofsmokeframe"></span></div>
 <div class="box box-1">
-<div class="box-title">Missing Puff of Smoke Frame</div>
+<div class="box-title">Missing puff of smoke frame</div>
 <div class="paragraph">
-The routine at <a href="../asm/39958.html">39958</a> is responsible for animating the Puff of Smoke. The instruction at <a href="../asm/39958.html#39972">39972</a> initialises a loop counter to five with the intention
-of iterating over all Puff of Smoke graphic frames at <a href="../asm/31377.html">31377</a>. There are, however, six frames, so the sixth is never drawn. It is possible that this bug
-is related to the fact that in Spellbound (which uses the same Puff of Smoke graphics), the routine that draws all six frames uses a somewhat different
+The routine at <a href="../asm/39958.html">39958</a> is responsible for animating the puff of smoke. The instruction at <a href="../asm/39958.html#39972">39972</a> initialises a loop counter to five with the intention
+of iterating over all puff of smoke graphic frames at <a href="../asm/31377.html">31377</a>. There are, however, six frames, so the sixth is never drawn. It is possible that this bug
+is related to the fact that in Spellbound (which uses the same puff of smoke graphics), the routine that draws all six frames uses a somewhat different
 mechanism to do so; the Spellbound drawing method uses a loop counter initialised to five to draw six frames.
 </div>
 <div class="paragraph">
@@ -41,7 +42,7 @@ POKE <a href="../asm/39958.html#39972">39973</a>,6
 </div>
 <div><span id="offwhitetakeroutine"></span></div>
 <div class="box box-2">
-<div class="box-title">Off-White Doesn't Kill on Taking an Object</div>
+<div class="box-title">Off-White doesn't kill on taking an object</div>
 <div class="paragraph">
 When Magic Knight takes an object from a character, that character's "take an object" routine is executed. The start addresses of these routines are
 listed in a table at <a href="../asm/42069.html">42069</a>, and Off-White's routine is located at <a href="../asm/42085.html">42085</a>. All Off-White's routine does, however, is to check whether the object being
@@ -56,7 +57,7 @@ POKE <a href="../asm/42069.html">42070</a>,165
 </div>
 <div><span id="grunteroffwhitegiveroutine"></span></div>
 <div class="box box-1">
-<div class="box-title">Off-White and Grunter Don't Kill on Giving an Object</div>
+<div class="box-title">Off-White and Grunter don't kill on giving an object</div>
 <div class="paragraph">
 When Magic Knight gives an object to a character, that character's "give an object" routine is executed. The start addresses of these routines are
 listed in a table at <a href="../asm/42413.html">42413</a>; Off-White's routine is located at <a href="../asm/42429.html">42429</a> and Grunter's routine is located at <a href="../asm/42488.html">42488</a>.
@@ -83,15 +84,15 @@ POKE <a href="../asm/42413.html">42414</a>,165
 </div>
 <div><span id="2x2blockterrainpaintingbitmap"></span></div>
 <div class="box box-2">
-<div class="box-title">2x2 Block Drawing</div>
+<div class="box-title">2 × 2 block drawing</div>
 <div class="paragraph">
-The routine at <a href="../asm/41271.html">41271</a> draws 2x2 blocks as defined in the table at <a href="../asm/49794.html">49794</a>. These definitions include a bitmap that determines which of the four
-character cells spanned by the block have a terrain interaction parameter applied. The routine functions correctly up to <a href="../asm/41271.html#41398">41398</a>, by which point the
-upper two cells have had their terrain interaction parameters correctly applied. The instructions from <a href="../asm/41271.html#41398">41398</a> are intended to advance the terrain
-interaction data pointer down one character row and paint the lower two cells, however the instructions are in the wrong order. The instructions at
-<a href="../asm/41271.html#41398">41398</a> - <a href="../asm/41271.html#41402">41402</a> load B with the Terrain Interaction Painting Bitmap and A with the terrain interaction parameter to apply. Then the instructions at
-<a href="../asm/41271.html#41405">41405</a> - <a href="../asm/41271.html#41411">41411</a> advance the terrain interaction data pointer by 32 bytes by adding 32 in BC. When BC is loaded with 32 at <a href="../asm/41271.html#41408">41408</a>, the Terrain
-Interaction Painting Bitmap value is lost, and therefore from <a href="../asm/41271.html#41412">41412</a> onwards the value in B is zero.
+The routine at <a href="../asm/41271.html">41271</a> draws 2 × 2 blocks as defined in the table at <a href="../asm/49794.html">49794</a>. These definitions include a bitmap that determines which of
+the four character cells spanned by the block have a terrain interaction parameter applied. The routine functions correctly up to <a href="../asm/41271.html#41398">41398</a>, by which
+point the upper two cells have had their terrain interaction parameters correctly applied. The instructions from <a href="../asm/41271.html#41398">41398</a> are intended to advance the
+terrain interaction data pointer down one character row and paint the lower two cells, however the instructions are in the wrong order. The instructions
+at <a href="../asm/41271.html#41398">41398</a> - <a href="../asm/41271.html#41402">41402</a> load <span class="register">B</span> with the terrain interaction painting bitmap and <span class="register">A</span> with the terrain interaction parameter to apply. Then the
+instructions at <a href="../asm/41271.html#41405">41405</a> - <a href="../asm/41271.html#41411">41411</a> advance the terrain interaction data pointer by 32 bytes by adding 32 in <span class="register">BC</span>. When <span class="register">BC</span> is loaded with 32 at
+<a href="../asm/41271.html#41408">41408</a>, the terrain interaction painting bitmap value is lost, and therefore from <a href="../asm/41271.html#41412">41412</a> onwards the value in <span class="register">B</span> is zero.
 </div>
 <div class="paragraph">
 In order to fix this bug, the two blocks of code, <a href="../asm/41271.html#41398">41398</a> - <a href="../asm/41271.html#41402">41402</a> inclusive, and <a href="../asm/41271.html#41405">41405</a> - <a href="../asm/41271.html#41411">41411</a> inclusive, should be switched in position.
@@ -99,16 +100,16 @@ In order to fix this bug, the two blocks of code, <a href="../asm/41271.html#413
 </div>
 <div><span id="spellingandpunctuation"></span></div>
 <div class="box box-1">
-<div class="box-title">Spelling and Punctuation</div>
+<div class="box-title">Spelling and punctuation</div>
 <div class="paragraph">
 There are a number of spelling and punctuation issues:
 <ul class="">
-<li>The text entry at <a href="../asm/52878.html#53258">53258</a> contains "EXTREEME" instead of "EXTREME"</li>
-<li>The text entry at <a href="../asm/52878.html#53607">53607</a> contains "HUNNEY" instead of "HONEY" (or "HUNNY", <a href="facts.html#undreadableteddybear">see trivia</a>)</li>
-<li>The text entry at <a href="../asm/54586.html#54837">54837</a> contains "THROW" instead of "THROWN"</li>
-<li>The text entry at <a href="../asm/54902.html#55083">55083</a> contains "DISQUISE" instead of "DISGUISES"</li>
-<li>The text entries at <a href="../asm/56843.html#56850">56850</a> and <a href="../asm/57693.html#58256">58256</a> are missing apostrophes</li>
-<li>The text entry at <a href="../asm/57693.html#57867">57867</a> contains "DISQUISE" instead of "DISGUISE"</li>
+<li>the text entry at <a href="../asm/52878.html#53258">53258</a> contains "EXTREEME" instead of "EXTREME"</li>
+<li>the text entry at <a href="../asm/52878.html#53607">53607</a> contains "HUNNEY" instead of "HONEY" (or "HUNNY", <a href="facts.html#undreadableteddybear">see trivia</a>)</li>
+<li>the text entry at <a href="../asm/54586.html#54837">54837</a> contains "THROW" instead of "THROWN"</li>
+<li>the text entry at <a href="../asm/54902.html#55083">55083</a> contains "DISQUISE" instead of "DISGUISES"</li>
+<li>the text entries at <a href="../asm/56843.html#56850">56850</a> and <a href="../asm/57693.html#58256">58256</a> are missing apostrophes</li>
+<li>the text entry at <a href="../asm/57693.html#57867">57867</a> contains "DISQUISE" instead of "DISGUISE"</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -117,16 +118,16 @@ For reasons of consistency, "disquise" is used in place of "disguise" throughout
 </div>
 <div><span id="textnevershown"></span></div>
 <div class="box box-2">
-<div class="box-title">Text Never Shown</div>
+<div class="box-title">Text never shown</div>
 <div class="paragraph">
 The byte at <a href="../asm/23709.html#23714">23714</a> determines the index of the current Scroll substring from the list of strings at <a href="../asm/54902.html">54902</a>. This index is capped at 7, however there
 is an eighth (and therefore unused) substring at <a href="../asm/54902.html#55139">55139</a>.
 </div>
 </div>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

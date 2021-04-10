@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 47355</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,76 +20,67 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47323.html">47323</a></span></td>
+<td class="prev">
+Prev: <a href="47323.html">47323</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47355">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47363.html">47363</a></span></td>
+<td class="next">
+Next: <a href="47363.html">47363</a>
+</td>
 </tr>
 </table>
-<div class="description">47355: If Show Score Flag is Reset then Return to Calling Routine, else Return to Routine that Called Calling Routine</div>
+<div class="description">47355: If show-score flag is reset then return to calling routine, else return to routine that called calling routine</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="47302.html">47302</a> and <a href="47315.html">47315</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47355"></span>47355</td>
 <td class="instruction">LD A,(34208)</td>
-<td class="comment-11" rowspan="1">If Show Score Flag is reset...</td>
+<td class="comment-1" rowspan="1">If show-score flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47358"></span>47358</td>
 <td class="instruction">BIT 7,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47360"></span>47360</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47361"></span>47361</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Remove return address from stack...</td>
+<td class="comment-1" rowspan="1">Remove return address from stack...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47362"></span>47362</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">...and return to routine that called the calling routine</td>
+<td class="comment-1" rowspan="1">...and return to routine that called the calling routine</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47323.html">47323</a></span></td>
+<td class="prev">
+Prev: <a href="47323.html">47323</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47355">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47363.html">47363</a></span></td>
+<td class="next">
+Next: <a href="47363.html">47363</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

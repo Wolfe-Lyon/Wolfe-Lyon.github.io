@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 32764</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,184 +20,157 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="32655.html">32655</a></span></td>
+<td class="prev">
+Prev: <a href="32655.html">32655</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#32764">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="32823.html">32823</a></span></td>
+<td class="next">
+Next: <a href="32823.html">32823</a>
+</td>
 </tr>
 </table>
-<div class="description">32764: Cast Crystallium Spectralis if Possible, else Display Failure Message</div>
+<div class="description">32764: Cast Crystallium Spectralis if possible, otherwise display failure message</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="32655.html">32655</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="32764"></span>32764</td>
 <td class="instruction">LD A,(23468)</td>
-<td class="comment-11" rowspan="1">If "Gimbal is free" flag is set...</td>
+<td class="comment-1" rowspan="1">If Gimbal-is-free flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32767"></span>32767</td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32769"></span>32769</td>
 <td class="instruction">JP NZ,<a href="34664.html">34664</a></td>
-<td class="comment-11" rowspan="1">...then display "GIMBAL IS ALREADY FREE..." window and exit</td>
+<td class="comment-1" rowspan="1">...then display "GIMBAL IS ALREADY FREE..." window and exit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32772"></span>32772</td>
 <td class="instruction">LD A,(65529)</td>
-<td class="comment-11" rowspan="1">...else load A with Magic Knight's current room</td>
+<td class="comment-1" rowspan="1">...else load <span class="register">A</span> with Magic Knight's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32775"></span>32775</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Copy into B</td>
+<td class="comment-1" rowspan="1">Copy into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32776"></span>32776</td>
 <td class="instruction">LD A,(25440)</td>
-<td class="comment-11" rowspan="1">Load A with Gimbal's current room</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Gimbal's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32779"></span>32779</td>
 <td class="instruction">CP B</td>
-<td class="comment-11" rowspan="1">Check if Gimbal and Magic Knight are in the same room...</td>
+<td class="comment-1" rowspan="1">Check if Gimbal and Magic Knight are in the same room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32780"></span>32780</td>
 <td class="instruction">JP NZ,<a href="34634.html">34634</a></td>
-<td class="comment-11" rowspan="1">...and if they aren't then display "THAT SPELL CANNOT YET BE CAST..." window and exit</td>
+<td class="comment-1" rowspan="1">...and if they aren't then display "THAT SPELL CANNOT YET BE CAST..." window and exit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32783"></span>32783</td>
 <td class="instruction">LD A,(25449)</td>
-<td class="comment-11" rowspan="1">Load A with Orik's current room</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Orik's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32786"></span>32786</td>
 <td class="instruction">CP B</td>
-<td class="comment-11" rowspan="1">Check if Orik and Magic Knight are in the same room...</td>
+<td class="comment-1" rowspan="1">Check if Orik and Magic Knight are in the same room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32787"></span>32787</td>
 <td class="instruction">JP NZ,<a href="34634.html">34634</a></td>
-<td class="comment-11" rowspan="1">...and if they aren't then display "THAT SPELL CANNOT YET BE CAST..." window and exit</td>
+<td class="comment-1" rowspan="1">...and if they aren't then display "THAT SPELL CANNOT YET BE CAST..." window and exit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32790"></span>32790</td>
 <td class="instruction">LD A,6</td>
-<td class="comment-11" rowspan="1">Load A with 6 (index for Crystal Ball)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 6 (index for Crystal Ball)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32792"></span>32792</td>
 <td class="instruction">LD HL,25415</td>
-<td class="comment-11" rowspan="1">Point HL at Orik's current inventory</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at Orik's current inventory</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32795"></span>32795</td>
 <td class="instruction">CALL <a href="34256.html#34259">34259</a></td>
-<td class="comment-11" rowspan="1">If Orik is not carrying the Crystal Ball then...</td>
+<td class="comment-1" rowspan="1">If Orik is not carrying the Crystal Ball then...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32798"></span>32798</td>
 <td class="instruction">JP NZ,<a href="34634.html">34634</a></td>
-<td class="comment-11" rowspan="1">...display "THAT SPELL CANNOT YET BE CAST..." window and exit</td>
+<td class="comment-1" rowspan="1">...display "THAT SPELL CANNOT YET BE CAST..." window and exit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32801"></span>32801</td>
 <td class="instruction">LD A,32</td>
-<td class="comment-11" rowspan="1">Load A with index of object 32 (White Gold Ring)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of object 32 (White Gold Ring)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32803"></span>32803</td>
 <td class="instruction">CALL <a href="34256.html">34256</a></td>
-<td class="comment-11" rowspan="1">Check whether Magic Knight is carrying the White Gold Ring...</td>
+<td class="comment-1" rowspan="1">Check whether Magic Knight is carrying the White Gold Ring...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32806"></span>32806</td>
 <td class="instruction">JP NZ,<a href="34634.html">34634</a></td>
-<td class="comment-11" rowspan="1">...and if not, display "THAT SPELL CANNOT YET BE CAST..." window and exit</td>
+<td class="comment-1" rowspan="1">...and if not, display "THAT SPELL CANNOT YET BE CAST..." window and exit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32809"></span>32809</td>
 <td class="instruction">CALL <a href="33278.html">33278</a></td>
-<td class="comment-11" rowspan="1">Flash border and screen (as in cast a spell)</td>
+<td class="comment-1" rowspan="1">Flash border and screen (as in cast a spell)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32812"></span>32812</td>
 <td class="instruction">LD A,(23378)</td>
-<td class="comment-11" rowspan="1">Set bit 0 of score progress flags...</td>
+<td class="comment-1" rowspan="1">Set bit 0 of score progress flags...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32815"></span>32815</td>
 <td class="instruction">OR 1</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32817"></span>32817</td>
 <td class="instruction">LD (23378),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32820"></span>32820</td>
 <td class="instruction">JP <a href="34640.html">34640</a></td>
-<td class="comment-11" rowspan="1">Display "THE SPELL HAS WORKED!  GIMBAL IS NEARLY FREE" window and return to game</td>
+<td class="comment-1" rowspan="1">Display "THE SPELL HAS WORKED!  GIMBAL IS NEARLY FREE" window and return to game</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="32655.html">32655</a></span></td>
+<td class="prev">
+Prev: <a href="32655.html">32655</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#32764">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="32823.html">32823</a></span></td>
+<td class="next">
+Next: <a href="32823.html">32823</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

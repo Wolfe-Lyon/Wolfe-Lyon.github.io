@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 36367</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36296.html">36296</a></span></td>
+<td class="prev">
+Prev: <a href="36296.html">36296</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36367">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36385.html">36385</a></span></td>
+<td class="next">
+Next: <a href="36385.html">36385</a>
+</td>
 </tr>
 </table>
-<div class="description">36367: If Berk is Neither Facing into the Screen nor Walking then Exit Calling Routine and Have Berk Turn into Screen</div>
+<div class="description">36367: If Berk is neither facing into the screen nor walking then exit calling routine and have Berk turn into screen</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="35735.html">35735</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -45,74 +47,64 @@ Used by the routine at <a href="35735.html">35735</a>.
 <td class="register-desc">Address of complex state data (current level) for Berk</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36367"></span>36367</td>
 <td class="instruction">BIT 1,(IX+9)</td>
-<td class="comment-11" rowspan="1">If Berk's Facing Into Screen Flag is set...</td>
+<td class="comment-1" rowspan="1">If Berk's facing-into-screen flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36371"></span>36371</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36372"></span>36372</td>
 <td class="instruction">LD A,(IX+11)</td>
-<td class="comment-11" rowspan="1">If either of Berk's Walking Left or Walking Right flags is set...</td>
+<td class="comment-1" rowspan="1">If either of Berk's walking-left or walking-right flags is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36375"></span>36375</td>
 <td class="instruction">AND 3</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36377"></span>36377</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36378"></span>36378</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Remove top value from stack (i.e. return address to routine that called this routine)</td>
+<td class="comment-1" rowspan="1">Remove top value from stack (i.e. return address to routine that called this routine)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36379"></span>36379</td>
 <td class="instruction">LD HL,35105</td>
-<td class="comment-11" rowspan="1">Point HL at script data for Berk turning (facing out of screen to facing into screen)...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at script data for Berk turning (facing out of screen to facing into screen)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36382"></span>36382</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute</td>
+<td class="comment-1" rowspan="1">...and execute</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36296.html">36296</a></span></td>
+<td class="prev">
+Prev: <a href="36296.html">36296</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36367">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36385.html">36385</a></span></td>
+<td class="next">
+Next: <a href="36385.html">36385</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

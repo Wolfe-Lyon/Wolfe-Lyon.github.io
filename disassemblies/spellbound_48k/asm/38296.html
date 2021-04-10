@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 38296</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,274 +20,232 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38242.html">38242</a></span></td>
+<td class="prev">
+Prev: <a href="38242.html">38242</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38296">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38356.html">38356</a></span></td>
+<td class="next">
+Next: <a href="38356.html">38356</a>
+</td>
 </tr>
 </table>
-<div class="description">38296: Scroll Hand Cursor Up a Unit</div>
+<div class="description">38296: Scroll hand cursor up a unit</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="37497.html">37497</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38296"></span>38296</td>
 <td class="instruction">LD A,(23491)</td>
-<td class="comment-11" rowspan="1">Load y-coordinate of top of hand cursor into A</td>
+<td class="comment-1" rowspan="1">Load y-coordinate of top of hand cursor into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38299"></span>38299</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Copy into C</td>
+<td class="comment-1" rowspan="1">Copy into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38300"></span>38300</td>
 <td class="instruction">LD DE,26064</td>
-<td class="comment-11" rowspan="1">Point DE at table of Display File addresses of starts of each pixel row</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at table of display file addresses of starts of each pixel row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38303"></span>38303</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">Load y-coordinate into HL...</td>
+<td class="comment-1" rowspan="1">Load y-coordinate into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38305"></span>38305</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38306"></span>38306</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">Double it</td>
+<td class="comment-1" rowspan="1">Double it</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38307"></span>38307</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">And add as offset to table of Display File addresses of starts of each pixel row</td>
+<td class="comment-1" rowspan="1">And add as offset to table of display file addresses of starts of each pixel row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38308"></span>38308</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Transfer value into IX...</td>
+<td class="comment-1" rowspan="1">Transfer value into <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38309"></span>38309</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38311"></span>38311</td>
 <td class="instruction">LD A,(23492)</td>
-<td class="comment-11" rowspan="1">Load y-coordinate of bottom of window into A</td>
+<td class="comment-1" rowspan="1">Load y-coordinate of bottom of window into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38314"></span>38314</td>
 <td class="instruction">SUB C</td>
-<td class="comment-11" rowspan="1">Subtract y-coordinate of top of hand cursor</td>
+<td class="comment-1" rowspan="1">Subtract y-coordinate of top of hand cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38315"></span>38315</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">Decrease by one, so now holds distance between top of hand cursor and bottom of window</td>
+<td class="comment-1" rowspan="1">Decrease by one, so now holds distance between top of hand cursor and bottom of window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38316"></span>38316</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Exchange A register</td>
+<td class="comment-1" rowspan="1">Exchange <span class="register">A</span> register</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38317"></span>38317</td>
 <td class="instruction">LD A,(23490)</td>
-<td class="comment-11" rowspan="1">Load x-coordinate of left of interior of window (characters) into A</td>
+<td class="comment-1" rowspan="1">Load x-coordinate of left of interior of window (characters) into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38320"></span>38320</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Copy into BC...</td>
+<td class="comment-1" rowspan="1">Copy into <span class="register">BC</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38321"></span>38321</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38323"></span>38323</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Switch A register</td>
+<td class="comment-1" rowspan="1">Switch <span class="register">A</span> register</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38324"></span>38324</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Switch A register (now holds y-coordinate of top of interior of window on first pass)</td>
+<td class="comment-1" rowspan="1">Switch <span class="register">A</span> register (now holds y-coordinate of top of interior of window on first pass)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38325"></span>38325</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX by two bytes...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> by two bytes...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38327"></span>38327</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38329"></span>38329</td>
 <td class="instruction">LD L,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load HL with Display File address of start of pixel row 1...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with display file address of start of pixel row 1...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38332"></span>38332</td>
 <td class="instruction">LD H,(IX+1)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38335"></span>38335</td>
 <td class="instruction">LD E,(IX+2)</td>
-<td class="comment-11" rowspan="1">Load DE with Display File address of start of pixel row 2...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with display file address of start of pixel row 2...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38338"></span>38338</td>
 <td class="instruction">LD D,(IX+3)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38341"></span>38341</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">Add x-coordinate of left of interior of window to Display File address</td>
+<td class="comment-1" rowspan="1">Add x-coordinate of left of interior of window to display file address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38342"></span>38342</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Swap addresses</td>
+<td class="comment-1" rowspan="1">Swap addresses</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38343"></span>38343</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">Add x-coordinate of left of interior of window to Display File address</td>
+<td class="comment-1" rowspan="1">Add x-coordinate of left of interior of window to display file address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38344"></span>38344</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Swap addresses back (HL points to upper row and DE points to lower row)</td>
+<td class="comment-1" rowspan="1">Swap addresses back (<span class="register">HL</span> points to upper row and <span class="register">DE</span> points to lower row)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38345"></span>38345</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Read Display File data from lower row...</td>
+<td class="comment-1" rowspan="1">Read display file data from lower row...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38346"></span>38346</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...and copy into upper row</td>
+<td class="comment-1" rowspan="1">...and copy into upper row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38347"></span>38347</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Increase DE and HL (as hand cursor is two characters wide)...</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">DE</span> and <span class="register">HL</span> (as hand cursor is two characters wide)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38348"></span>38348</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38349"></span>38349</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Read Display File data from lower row...</td>
+<td class="comment-1" rowspan="1">Read display file data from lower row...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38350"></span>38350</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...and copy into upper row</td>
+<td class="comment-1" rowspan="1">...and copy into upper row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38351"></span>38351</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Swap A register (holds remaining distance between top of hand cursor and bottom of window)</td>
+<td class="comment-1" rowspan="1">Swap <span class="register">A</span> register (holds remaining distance between top of hand cursor and bottom of window)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38352"></span>38352</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">Decrease A, as one less pixel row to scroll up</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">A</span>, as one less pixel row to scroll up</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38353"></span>38353</td>
 <td class="instruction">JR NZ,38324</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="38296.html#38324">38324</a> for next pixel row</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="38296.html#38324">38324</a> for next pixel row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38355"></span>38355</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38242.html">38242</a></span></td>
+<td class="prev">
+Prev: <a href="38242.html">38242</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38296">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38356.html">38356</a></span></td>
+<td class="next">
+Next: <a href="38356.html">38356</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

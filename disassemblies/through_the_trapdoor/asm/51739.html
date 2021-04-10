@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 51739</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,100 +20,87 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="51732.html">51732</a></span></td>
+<td class="prev">
+Prev: <a href="51732.html">51732</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#51739">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="51765.html">51765</a></span></td>
+<td class="next">
+Next: <a href="51765.html">51765</a>
+</td>
 </tr>
 </table>
-<div class="description">51739: Update States of Drutt and Worm and Store Current Positions in Script Data</div>
+<div class="description">51739: Update states of Drutt and worm and store current positions in script data</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="34438.html">34438</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="51739"></span>51739</td>
 <td class="instruction">CALL <a href="52837.html">52837</a></td>
-<td class="comment-11" rowspan="1">Update state of Worm and store current position in script data</td>
+<td class="comment-1" rowspan="1">Update state of worm and store current position in script data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51742"></span>51742</td>
 <td class="instruction">LD IX,(34242)</td>
-<td class="comment-11" rowspan="1">Load IX with address of current level's complex state data for Drutt</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with address of current level's complex state data for Drutt</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51746"></span>51746</td>
 <td class="instruction">CALL <a href="53825.html#53848">53848</a></td>
-<td class="comment-11" rowspan="1">Store room size data for Drutt's current room</td>
+<td class="comment-1" rowspan="1">Store room size data for Drutt's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51749"></span>51749</td>
 <td class="instruction">LD HL,(51518)</td>
-<td class="comment-11" rowspan="1">Load current position in Drutt's script data from <a href="51518.html">51518</a> into HL...</td>
+<td class="comment-1" rowspan="1">Load current position in Drutt's script data from <a href="51518.html">51518</a> into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51752"></span>51752</td>
 <td class="instruction">LD (34277),HL</td>
-<td class="comment-11" rowspan="1">...and store at <a href="34277.html">34277</a> as position in script currently running</td>
+<td class="comment-1" rowspan="1">...and store at <a href="34277.html">34277</a> as position in script currently running</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51755"></span>51755</td>
 <td class="instruction">CALL <a href="51765.html">51765</a></td>
-<td class="comment-11" rowspan="1">Update state of Drutt</td>
+<td class="comment-1" rowspan="1">Update state of Drutt</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51758"></span>51758</td>
 <td class="instruction">LD HL,(34277)</td>
-<td class="comment-11" rowspan="1">Store address (current position in script data) stored at <a href="34277.html">34277</a>...</td>
+<td class="comment-1" rowspan="1">Store address (current position in script data) stored at <a href="34277.html">34277</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51761"></span>51761</td>
 <td class="instruction">LD (51518),HL</td>
-<td class="comment-11" rowspan="1">...at <a href="51518.html">51518</a> as current position in Drutt's script data</td>
+<td class="comment-1" rowspan="1">...at <a href="51518.html">51518</a> as current position in Drutt's script data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="51764"></span>51764</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="51732.html">51732</a></span></td>
+<td class="prev">
+Prev: <a href="51732.html">51732</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#51739">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="51765.html">51765</a></span></td>
+<td class="next">
+Next: <a href="51765.html">51765</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 39278</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,508 +20,433 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39151.html">39151</a></span></td>
+<td class="prev">
+Prev: <a href="39151.html">39151</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39278">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39584.html">39584</a></span></td>
+<td class="next">
+Next: <a href="39584.html">39584</a>
+</td>
 </tr>
 </table>
-<div class="description">39278: Update State of Clawed Foot (Level 3)</div>
+<div class="description">39278: Update state of clawed foot (level 3)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="39137.html">39137</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39278"></span>39278</td>
 <td class="instruction">LD A,(34228)</td>
-<td class="comment-11" rowspan="1">If Clawed Foot's Attack Timer is zero...</td>
+<td class="comment-1" rowspan="1">If clawed foot's attack timer is zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39281"></span>39281</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39282"></span>39282</td>
 <td class="instruction">JR Z,39289</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39289">39289</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39289">39289</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39284"></span>39284</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">Decrease Clawed Foot's Attack Timer...</td>
+<td class="comment-1" rowspan="1">Decrease clawed foot's attack timer...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39285"></span>39285</td>
 <td class="instruction">LD (34228),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39288"></span>39288</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39289"></span>
 <div class="comments">
 <div class="paragraph">
-Clawed Foot is attacking
+Clawed foot is attacking
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39289"></span>39289</td>
 <td class="instruction">LD IY,44881</td>
-<td class="comment-11" rowspan="1">Load IY with address of complex state data for Clawed Foot (Level 3)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with address of complex state data for clawed foot (level 3)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39293"></span>39293</td>
 <td class="instruction">LD IX,(34240)</td>
-<td class="comment-11" rowspan="1">Load IX with address of current level's complex state data for Berk</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with address of current level's complex state data for Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39297"></span>39297</td>
 <td class="instruction">CALL <a href="53825.html#53848">53848</a></td>
-<td class="comment-11" rowspan="1">Store room size data for Berk's current room</td>
+<td class="comment-1" rowspan="1">Store room size data for Berk's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39300"></span>39300</td>
 <td class="instruction">LD A,(44890)</td>
-<td class="comment-11" rowspan="1">Load A with Clawed Foot's flags...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with clawed foot's flags...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39303"></span>39303</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...and if any are set...</td>
+<td class="comment-1" rowspan="1">...and if any are set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39304"></span>39304</td>
 <td class="instruction">JR NZ,39337</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39337">39337</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39337">39337</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39306"></span>
 <div class="comments">
 <div class="paragraph">
-Clawed Foot attack not yet started
+Clawed foot attack not yet started
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39306"></span>39306</td>
 <td class="instruction">LD A,(IY+0)</td>
-<td class="comment-11" rowspan="1">If the Clawed Foot's room...</td>
+<td class="comment-1" rowspan="1">If the clawed foot's room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39309"></span>39309</td>
 <td class="instruction">CP (IX+0)</td>
-<td class="comment-11" rowspan="1">...is not the same as Berk's room...</td>
+<td class="comment-1" rowspan="1">...is not the same as Berk's room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39312"></span>39312</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39313"></span>39313</td>
 <td class="instruction">LD A,(IX+11)</td>
-<td class="comment-11" rowspan="1">If Berk's Walking Left Flag or Walking Right Flag is set...</td>
+<td class="comment-1" rowspan="1">If Berk's walking-left flag or walking-right flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39316"></span>39316</td>
 <td class="instruction">AND 3</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39318"></span>39318</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39319"></span>39319</td>
 <td class="instruction">LD A,(IX+5)</td>
-<td class="comment-11" rowspan="1">Set the Clawed Foot's left edge...</td>
+<td class="comment-1" rowspan="1">Set the clawed foot's left edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39322"></span>39322</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...to be one character to the right of Berk's left edge...</td>
+<td class="comment-1" rowspan="1">...to be one character to the right of Berk's left edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39323"></span>39323</td>
 <td class="instruction">LD (IY+5),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39326"></span>39326</td>
 <td class="instruction">ADD A,2</td>
-<td class="comment-11" rowspan="1">Set the Clawed Foot's right edge...</td>
+<td class="comment-1" rowspan="1">Set the clawed foot's right edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39328"></span>39328</td>
 <td class="instruction">LD (IY+7),A</td>
-<td class="comment-11" rowspan="1">...to be two characters to the right of its left edge</td>
+<td class="comment-1" rowspan="1">...to be two characters to the right of its left edge</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39331"></span>39331</td>
 <td class="instruction">SET 1,(IY+9)</td>
-<td class="comment-11" rowspan="1">Set Clawed Foot's Moving Down Flag</td>
+<td class="comment-1" rowspan="1">Set clawed foot's moving-down flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39335"></span>39335</td>
 <td class="instruction">JR 39341</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="39278.html#39341">39341</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="39278.html#39341">39341</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39337"></span>
 <div class="comments">
 <div class="paragraph">
-Clawed Foot attack underway
+Clawed foot attack underway
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39337"></span>39337</td>
 <td class="instruction">BIT 1,A</td>
-<td class="comment-11" rowspan="1">If Clawed Foot's Moving Down Flag is reset...</td>
+<td class="comment-1" rowspan="1">If clawed foot's moving-down flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39339"></span>39339</td>
 <td class="instruction">JR Z,39420</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39420">39420</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39420">39420</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39341"></span>39341</td>
 <td class="instruction">LD B,3</td>
-<td class="comment-11" rowspan="1">Load B with 3 (as the Clawed Foot moves down three characters at time)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 3 (as the clawed foot moves down three characters at time)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39343"></span>39343</td>
 <td class="instruction">INC (IY+4)</td>
-<td class="comment-11" rowspan="1">Advance Clawed Foot one character down...</td>
+<td class="comment-1" rowspan="1">Advance clawed foot one character down...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39346"></span>39346</td>
 <td class="instruction">INC (IY+6)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39349"></span>39349</td>
 <td class="instruction">LD A,(IY+6)</td>
-<td class="comment-11" rowspan="1">If y-coordinate of bottom edge of Clawed Foot is 115...</td>
+<td class="comment-1" rowspan="1">If y-coordinate of bottom edge of clawed foot is 115...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39352"></span>39352</td>
 <td class="instruction">CP 115</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39354"></span>39354</td>
 <td class="instruction">JR Z,39359</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39359">39359</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39359">39359</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39356"></span>39356</td>
 <td class="instruction">DJNZ 39343</td>
-<td class="comment-11" rowspan="1">Decrease remaining number of characters to move and loop back to <a href="39278.html#39343">39343</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease remaining number of characters to move and loop back to <a href="39278.html#39343">39343</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39358"></span>39358</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39359"></span>
 <div class="comments">
 <div class="paragraph">
-Clawed Foot attempting to grab Berk
+Clawed foot attempting to grab Berk
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39359"></span>39359</td>
 <td class="instruction">BIT 6,(IX+9)</td>
-<td class="comment-11" rowspan="1">If Berk is flying...</td>
+<td class="comment-1" rowspan="1">If Berk is flying...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39363"></span>39363</td>
 <td class="instruction">JR NZ,39386</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39386">39386</a> (set Clawed Foot's Moving Up Flag and return)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39386">39386</a> (set clawed foot's moving-up flag and return)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39365"></span>39365</td>
 <td class="instruction">BIT 6,(IX+10)</td>
-<td class="comment-11" rowspan="1">If Berk is falling...</td>
+<td class="comment-1" rowspan="1">If Berk is falling...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39369"></span>39369</td>
 <td class="instruction">JR NZ,39386</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39386">39386</a> (set Clawed Foot's Moving Up Flag and return)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39386">39386</a> (set clawed foot's moving-up flag and return)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39371"></span>39371</td>
 <td class="instruction">LD A,(IY+5)</td>
-<td class="comment-11" rowspan="1">If Clawed Foot's left edge...</td>
+<td class="comment-1" rowspan="1">If clawed foot's left edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39374"></span>39374</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">...is one character to the right of Berk's left edge...</td>
+<td class="comment-1" rowspan="1">...is one character to the right of Berk's left edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39375"></span>39375</td>
 <td class="instruction">CP (IX+5)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39378"></span>39378</td>
 <td class="instruction">JR Z,39391</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39391">39391</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39391">39391</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39380"></span>39380</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">If Clawed Foot's left edge...</td>
+<td class="comment-1" rowspan="1">If clawed foot's left edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39381"></span>39381</td>
 <td class="instruction">CP (IX+5)</td>
-<td class="comment-11" rowspan="1">...is two characters to the right of Berk's left edge...</td>
+<td class="comment-1" rowspan="1">...is two characters to the right of Berk's left edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39384"></span>39384</td>
 <td class="instruction">JR Z,39391</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39391">39391</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39391">39391</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39386"></span>
 <div class="comments">
 <div class="paragraph">
-Berk is flying or falling, or Clawed Foot has missed
+Berk is flying or falling, or clawed foot has missed
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39386"></span>39386</td>
 <td class="instruction">LD (IY+9),4</td>
-<td class="comment-11" rowspan="1">Set Clawed Foot's Moving Up Flag</td>
+<td class="comment-1" rowspan="1">Set clawed foot's moving-up flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39390"></span>39390</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39391"></span>
 <div class="comments">
 <div class="paragraph">
-Make Clawed Foot grab Berk (Clawed Foot is one or two characters to the right of Berk's left edge)
+Make clawed foot grab Berk (clawed foot is one or two characters to the right of Berk's left edge)
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39391"></span>39391</td>
 <td class="instruction">LD BC,35515</td>
-<td class="comment-11" rowspan="1">Set current position in Berk's script data to...</td>
+<td class="comment-1" rowspan="1">Set current position in Berk's script data to...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39394"></span>39394</td>
 <td class="instruction">LD (35687),BC</td>
-<td class="comment-11" rowspan="1">...Berk in floating position</td>
+<td class="comment-1" rowspan="1">...Berk in floating position</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39398"></span>39398</td>
 <td class="instruction">SET 0,(IX+9)</td>
-<td class="comment-11" rowspan="1">Set Berk's Must Process Current Script Data Flag</td>
+<td class="comment-1" rowspan="1">Set Berk's must-process-current-script-data flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39402"></span>39402</td>
 <td class="instruction">LD A,12</td>
-<td class="comment-11" rowspan="1">Set Clawed Foot's Moving Up Flag and Holding Berk Flag...</td>
+<td class="comment-1" rowspan="1">Set clawed foot's moving-up flag and holding-Berk flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39404"></span>39404</td>
 <td class="instruction">LD (IY+9),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39407"></span>39407</td>
 <td class="instruction">LD BC,40368</td>
-<td class="comment-11" rowspan="1">Set Clawed Foot's graphic layout data address to point to <a href="40320.html#40368">40368</a> (Reaching, Closed)...</td>
+<td class="comment-1" rowspan="1">Set clawed foot's graphic layout data address to point to <a href="40320.html#40368">40368</a> (reaching, closed)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39410"></span>39410</td>
 <td class="instruction">LD (IY+2),C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39413"></span>39413</td>
 <td class="instruction">LD (IY+3),B</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39416"></span>39416</td>
 <td class="instruction">CALL <a href="36296.html">36296</a></td>
-<td class="comment-11" rowspan="1">Make Berk drop the entity he is holding and load IY with its complex state data address</td>
+<td class="comment-1" rowspan="1">Make Berk drop the entity he is holding and load <span class="register">IY</span> with its complex state data address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39419"></span>39419</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39420"></span>
 <div class="comments">
 <div class="paragraph">
-Check Clawed Foot's Moving Up Flag
+Check clawed foot's moving-up flag
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39420"></span>39420</td>
 <td class="instruction">BIT 2,A</td>
-<td class="comment-11" rowspan="1">If Clawed Foot's Moving Up Flag is reset...</td>
+<td class="comment-1" rowspan="1">If clawed foot's moving-up flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39422"></span>39422</td>
 <td class="instruction">JR Z,39532</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39532">39532</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39532">39532</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39424"></span>39424</td>
 <td class="instruction">DEC (IY+4)</td>
-<td class="comment-11" rowspan="1">Move Clawed Foot up one character...</td>
+<td class="comment-1" rowspan="1">Move clawed foot up one character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39427"></span>39427</td>
 <td class="instruction">DEC (IY+6)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39430"></span>39430</td>
 <td class="instruction">LD A,(IY+6)</td>
-<td class="comment-11" rowspan="1">If y-coordinate of bottom of Clawed Foot...</td>
+<td class="comment-1" rowspan="1">If y-coordinate of bottom of clawed foot...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39433"></span>39433</td>
 <td class="instruction">CP 95</td>
-<td class="comment-11" rowspan="1">...is 95...</td>
+<td class="comment-1" rowspan="1">...is 95...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39435"></span>39435</td>
 <td class="instruction">JR Z,39449</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39449">39449</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39449">39449</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39437"></span>39437</td>
 <td class="instruction">BIT 3,(IY+9)</td>
-<td class="comment-11" rowspan="1">If Clawed Foot's Holding Berk Flag is reset...</td>
+<td class="comment-1" rowspan="1">If clawed foot's holding-Berk flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39441"></span>39441</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39442"></span>
 <div class="comments">
 <div class="paragraph">
@@ -533,399 +456,346 @@ This entry point is used by the routine at <a href="39151.html">39151</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39442"></span>39442</td>
 <td class="instruction">DEC (IX+4)</td>
-<td class="comment-11" rowspan="1">Move entity at IX (Berk) up one character...</td>
+<td class="comment-1" rowspan="1">Move entity at <span class="register">IX</span> (Berk) up one character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39445"></span>39445</td>
 <td class="instruction">DEC (IX+6)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39448"></span>39448</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39449"></span>39449</td>
 <td class="instruction">BIT 3,(IY+9)</td>
-<td class="comment-11" rowspan="1">If Clawed Foot's Holding Berk Flag is reset...</td>
+<td class="comment-1" rowspan="1">If clawed foot's holding-Berk flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39453"></span>39453</td>
 <td class="instruction">JR Z,39527</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39527">39527</a> (Reset Clawed Foot to inactive state and return)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39527">39527</a> (reset clawed foot to inactive state and return)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39455"></span>39455</td>
 <td class="instruction">LD A,(34229)</td>
-<td class="comment-11" rowspan="1">Increase Clawed Foot's Action Index...</td>
+<td class="comment-1" rowspan="1">Increase clawed foot's action index...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39458"></span>39458</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39459"></span>39459</td>
 <td class="instruction">LD (34229),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39462"></span>39462</td>
 <td class="instruction">CP 7</td>
-<td class="comment-11" rowspan="1">...and if less than 7...</td>
+<td class="comment-1" rowspan="1">...and if less than 7...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39464"></span>39464</td>
 <td class="instruction">JR C,39470</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39470">39470</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39470">39470</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39466"></span>39466</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Set Clawed Foot's Action Index to 1...</td>
+<td class="comment-1" rowspan="1">Set clawed foot's action index to 1...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39468"></span>39468</td>
 <td class="instruction">JR 39459</td>
-<td class="comment-11" rowspan="1">...and jump to <a href="39278.html#39470">39470</a> (via <a href="39278.html#39459">39459</a>)</td>
+<td class="comment-1" rowspan="1">...and jump to <a href="39278.html#39470">39470</a> (via <a href="39278.html#39459">39459</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39470"></span>39470</td>
 <td class="instruction">CP 3</td>
-<td class="comment-11" rowspan="1">If Clawed Foot's Action Index is less than 3...</td>
+<td class="comment-1" rowspan="1">If clawed foot's action index is less than 3...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39472"></span>39472</td>
 <td class="instruction">JR C,39501</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39501">39501</a> (i.e. make clawed foot release Berk, and return)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39501">39501</a> (i.e. make clawed foot release Berk, and return)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39474"></span>39474</td>
 <td class="instruction">CP 5</td>
-<td class="comment-11" rowspan="1">If Clawed Foot's Action Index is less than 5...</td>
+<td class="comment-1" rowspan="1">If clawed foot's action index is less than 5...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39476"></span>39476</td>
 <td class="instruction">JR C,39482</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39482">39482</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39482">39482</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39478"></span>39478</td>
 <td class="instruction">LD E,112</td>
-<td class="comment-11" rowspan="1">Load E with 112 (prepare to set Clawed Foot's destination x-coordinate)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with 112 (prepare to set clawed foot's destination x-coordinate)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39480"></span>39480</td>
 <td class="instruction">JR 39484</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="39278.html#39484">39484</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="39278.html#39484">39484</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39482"></span>39482</td>
 <td class="instruction">LD E,122</td>
-<td class="comment-11" rowspan="1">Load E with 122 (prepare to set Clawed Foot's destination x-coordinate)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with 122 (prepare to set clawed foot's destination x-coordinate)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39484"></span>39484</td>
 <td class="instruction">LD (IX+12),E</td>
-<td class="comment-11" rowspan="1">Store destination x-coordinate in byte 12 of Berk's complex state data</td>
+<td class="comment-1" rowspan="1">Store destination x-coordinate in byte 12 of Berk's complex state data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39487"></span>39487</td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="1">If Clawed Foot's Action Index is even...</td>
+<td class="comment-1" rowspan="1">If clawed foot's action index is even...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39489"></span>39489</td>
 <td class="instruction">JR Z,39496</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39496">39496</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39496">39496</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39491"></span>39491</td>
 <td class="instruction">LD (IY+9),16</td>
-<td class="comment-11" rowspan="1">Set Clawed Foot's Move Left Flag</td>
+<td class="comment-1" rowspan="1">Set clawed foot's moving-left flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39495"></span>39495</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39496"></span>39496</td>
 <td class="instruction">LD (IY+9),32</td>
-<td class="comment-11" rowspan="1">Set Clawed Foot's Move Right Flag</td>
+<td class="comment-1" rowspan="1">Set clawed foot's moving-right flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39500"></span>39500</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39501"></span>
 <div class="comments">
 <div class="paragraph">
-The instructions between <a href="39278.html#39501">39501</a> and <a href="39278.html#39531">39531</a> make the Clawed Foot release Berk.
+The instructions between <a href="39278.html#39501">39501</a> and <a href="39278.html#39531">39531</a> make the clawed foot release Berk.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39501"></span>39501</td>
 <td class="instruction">LD A,100</td>
-<td class="comment-11" rowspan="1">Set Clawed Foot's Attack Timer to 100...</td>
+<td class="comment-1" rowspan="1">Set clawed foot's attack timer to 100...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39503"></span>39503</td>
 <td class="instruction">LD (34228),A</td>
-<td class="comment-11" rowspan="1">...i.e. Clawed Foot will attack again in 100 cycles</td>
+<td class="comment-1" rowspan="1">...i.e. clawed foot will attack again in 100 cycles</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39506"></span>39506</td>
 <td class="instruction">SET 6,(IX+10)</td>
-<td class="comment-11" rowspan="1">Set Berk's "Can Fall" flag</td>
+<td class="comment-1" rowspan="1">Set Berk's can-fall flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39510"></span>39510</td>
 <td class="instruction">LD (IX+12),2</td>
-<td class="comment-11" rowspan="1">Set Berk's velocity factor to 2</td>
+<td class="comment-1" rowspan="1">Set Berk's velocity factor to 2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39514"></span>39514</td>
 <td class="instruction">LD BC,35359</td>
-<td class="comment-11" rowspan="1">Set current position in Berk's script data to...</td>
+<td class="comment-1" rowspan="1">Set current position in Berk's script data to...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39517"></span>39517</td>
 <td class="instruction">LD (35687),BC</td>
-<td class="comment-11" rowspan="1">...Berk starting to fall downwards</td>
+<td class="comment-1" rowspan="1">...Berk starting to fall downwards</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39521"></span>39521</td>
 <td class="instruction">LD BC,40320</td>
-<td class="comment-11" rowspan="1">Set Clawed Foot's graphic layout data address to point to <a href="40320.html">40320</a> (Reaching, Open)...</td>
+<td class="comment-1" rowspan="1">Set clawed foot's graphic layout data address to point to <a href="40320.html">40320</a> (reaching, open)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39524"></span>39524</td>
 <td class="instruction">CALL 39410</td>
-<td class="comment-11" rowspan="1">...make Berk drop the entity he is holding and load IY with its complex state data address</td>
+<td class="comment-1" rowspan="1">...make Berk drop the entity he is holding and load <span class="register">IY</span> with its complex state data address</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39527"></span>
 <div class="comments">
 <div class="paragraph">
-Reset Clawed Foot to inactive state
+Reset clawed foot to inactive state
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39527"></span>39527</td>
 <td class="instruction">LD (IY+9),0</td>
-<td class="comment-11" rowspan="1">Reset Clawed Foot's Flags</td>
+<td class="comment-1" rowspan="1">Reset clawed foot's flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39531"></span>39531</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39532"></span>
 <div class="comments">
 <div class="paragraph">
-Check Clawed Foot's Moving Left Flag
+Check clawed foot's moving-left flag
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39532"></span>39532</td>
 <td class="instruction">BIT 4,A</td>
-<td class="comment-11" rowspan="1">If Clawed Foot's Move Left Flag is reset...</td>
+<td class="comment-1" rowspan="1">If clawed foot's moving-left flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39534"></span>39534</td>
 <td class="instruction">JR Z,39552</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39278.html#39552">39552</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39278.html#39552">39552</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39536"></span>39536</td>
 <td class="instruction">DEC (IX+5)</td>
-<td class="comment-11" rowspan="1">Move Berk one character left...</td>
+<td class="comment-1" rowspan="1">Move Berk one character left...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39539"></span>39539</td>
 <td class="instruction">DEC (IX+7)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39542"></span>39542</td>
 <td class="instruction">CALL <a href="54348.html">54348</a></td>
-<td class="comment-11" rowspan="1">Move Berk into room to the left, if appropriate</td>
+<td class="comment-1" rowspan="1">Move Berk into room to the left, if appropriate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39545"></span>39545</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">If Berk's room is 5 (room to the left of the Coloured Creatures' Room)...</td>
+<td class="comment-1" rowspan="1">If Berk's room is 5 (room to the left of the coloured creatures' room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39548"></span>39548</td>
 <td class="instruction">CP 5</td>
-<td class="comment-11" rowspan="1">...then set Zero Flag</td>
+<td class="comment-1" rowspan="1">...then set zero flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39550"></span>39550</td>
 <td class="instruction">JR 39569</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="39278.html#39569">39569</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="39278.html#39569">39569</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39552"></span>
 <div class="comments">
 <div class="paragraph">
-Check Clawed Foot's Moving Right Flag
+Check clawed foot's moving-right flag
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39552"></span>39552</td>
 <td class="instruction">BIT 5,A</td>
-<td class="comment-11" rowspan="1">If Clawed Foot's Move Right Flag is reset...</td>
+<td class="comment-1" rowspan="1">If clawed foot's moving-right flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39554"></span>39554</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39555"></span>39555</td>
 <td class="instruction">INC (IX+5)</td>
-<td class="comment-11" rowspan="1">Move Berk one character right...</td>
+<td class="comment-1" rowspan="1">Move Berk one character right...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39558"></span>39558</td>
 <td class="instruction">INC (IX+7)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39561"></span>39561</td>
 <td class="instruction">CALL <a href="54313.html">54313</a></td>
-<td class="comment-11" rowspan="1">Move Berk into room to the right, if appropriate</td>
+<td class="comment-1" rowspan="1">Move Berk into room to the right, if appropriate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39564"></span>39564</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">If Berk's room is 7 (room to the right of the Coloured Creatures' Room)...</td>
+<td class="comment-1" rowspan="1">If Berk's room is 7 (room to the right of the coloured creatures' room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39567"></span>39567</td>
 <td class="instruction">CP 7</td>
-<td class="comment-11" rowspan="1">...then set Zero Flag</td>
+<td class="comment-1" rowspan="1">...then set zero flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39569"></span>39569</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">If Zero Flag is not set (i.e. Berk is not in Room 5 or Room 7) then return</td>
+<td class="comment-1" rowspan="1">If zero flag is not set (i.e. Berk is not in room 5 or room 7) then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39570"></span>39570</td>
 <td class="instruction">LD A,(IX+12)</td>
-<td class="comment-11" rowspan="1">If the x-coordinate of Berk's left edge...</td>
+<td class="comment-1" rowspan="1">If the x-coordinate of Berk's left edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39573"></span>39573</td>
 <td class="instruction">CP (IX+5)</td>
-<td class="comment-11" rowspan="1">...is not the same as the Clawed Foot's destination x-coordinate...</td>
+<td class="comment-1" rowspan="1">...is not the same as the clawed foot's destination x-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39576"></span>39576</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39577"></span>39577</td>
 <td class="instruction">LD IY,44881</td>
-<td class="comment-11" rowspan="1">Load IY with address of complex state data for Clawed Foot (Level 3)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with address of complex state data for clawed foot (level 3)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39581"></span>39581</td>
 <td class="instruction">JP 39501</td>
-<td class="comment-11" rowspan="1">Make Clawed Foot release Berk, and return</td>
+<td class="comment-1" rowspan="1">Make clawed foot release Berk, and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39151.html">39151</a></span></td>
+<td class="prev">
+Prev: <a href="39151.html">39151</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39278">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39584.html">39584</a></span></td>
+<td class="next">
+Next: <a href="39584.html">39584</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

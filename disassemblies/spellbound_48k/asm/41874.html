@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Data at 41874</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="41859.html">41859</a></span></td>
+<td class="prev">
+Prev: <a href="41859.html">41859</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#41874">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="42170.html">42170</a></span></td>
+<td class="next">
+Next: <a href="42170.html">42170</a>
+</td>
 </tr>
 </table>
-<div class="description">41874: Window Data</div>
+<div class="description">41874: Window data</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Eight bytes per window. The meaning of the data is:
@@ -56,19 +61,19 @@ Eight bytes per window. The meaning of the data is:
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">4</td>
-<td class="" colspan="1" rowspan="1">Border Style</td>
+<td class="" colspan="1" rowspan="1">Border style</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">5</td>
-<td class="" colspan="1" rowspan="1">Border Attribute</td>
+<td class="" colspan="1" rowspan="1">Border attribute</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">6</td>
-<td class="" colspan="1" rowspan="1">Initial (and minimum allowed) y-coordinate of Hand Cursor (characters)</td>
+<td class="" colspan="1" rowspan="1">Initial (and minimum allowed) y-coordinate of hand cursor (characters)</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">7</td>
-<td class="" colspan="1" rowspan="1">Content Attribute</td>
+<td class="" colspan="1" rowspan="1">Content attribute</td>
 </tr>
 </table>
 </div>
@@ -76,254 +81,209 @@ Eight bytes per window. The meaning of the data is:
 The border style data refers to the index of the first window frame graphic element in a group (of eight) which are part of the character set at <a href="63988.html">63988</a>. Character number 93 is the first element of the first window frame group. This is followed by 101, 109, 117. 93 and 109 appear to be unused.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41874"></span>41874</td>
 <td class="instruction">DEFB 0,23,0,14,117,79,1,79</td>
-<td class="comment-11" rowspan="1">(00) Main (Game) Window</td>
+<td class="comment-1" rowspan="1">(00) Main (game) window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41882"></span>41882</td>
 <td class="instruction">DEFB 0,31,19,23,101,67,0,79</td>
-<td class="comment-11" rowspan="1">(01) Command Summary Window</td>
+<td class="comment-1" rowspan="1">(01) Command summary window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41890"></span>41890</td>
 <td class="instruction">DEFB 0,25,0,9,117,68,0,79</td>
-<td class="comment-11" rowspan="1">(02) Window showing an object's read text (i.e. "READ OBJECT successful" window)</td>
+<td class="comment-1" rowspan="1">(02) Window showing an object's read text (i.e. "READ OBJECT successful" window)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41898"></span>41898</td>
 <td class="instruction">DEFB 0,22,0,12,117,68,2,79</td>
-<td class="comment-11" rowspan="1">(03) Character Selection Window</td>
+<td class="comment-1" rowspan="1">(03) Character selection window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41906"></span>41906</td>
 <td class="instruction">DEFB 0,23,0,8,117,70,1,79</td>
-<td class="comment-11" rowspan="1">(04) List of objects window (menu or info)</td>
+<td class="comment-1" rowspan="1">(04) List of objects window (menu or info)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41914"></span>41914</td>
 <td class="instruction">DEFB 5,26,1,6,101,70,0,0</td>
-<td class="comment-11" rowspan="1">(05) "SPELLBOUND A TRUE GRAPHIC ADVENTURE BY DAVID JONES COPYRIGHT 1985" window above Control Selection Window</td>
+<td class="comment-1" rowspan="1">(05) "SPELLBOUND A TRUE GRAPHIC ADVENTURE BY DAVID JONES COPYRIGHT 1985" window above control selection window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41922"></span>41922</td>
 <td class="instruction">DEFB 0,31,10,19,101,70,0,69</td>
-<td class="comment-11" rowspan="1">(06) Control Selection Window</td>
+<td class="comment-1" rowspan="1">(06) Control selection window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41930"></span>41930</td>
 <td class="instruction">DEFB 0,31,10,21,117,70,0,79</td>
-<td class="comment-11" rowspan="1">(07) Instructions Window (1/3)</td>
+<td class="comment-1" rowspan="1">(07) Instructions window (1/3)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41938"></span>41938</td>
 <td class="instruction">DEFB 3,28,9,19,117,84,0,14</td>
-<td class="comment-11" rowspan="1">(08) Instructions Window (2/3)</td>
+<td class="comment-1" rowspan="1">(08) Instructions window (2/3)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41946"></span>41946</td>
 <td class="instruction">DEFB 5,26,8,22,117,115,0,69</td>
-<td class="comment-11" rowspan="1">(09) Instructions Window (3/3)</td>
+<td class="comment-1" rowspan="1">(09) Instructions window (3/3)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41954"></span>41954</td>
 <td class="instruction">DEFB 0,0,0,0,117,7,0,7</td>
-<td class="comment-11" rowspan="1">(10) 2nd Floor portraits and Florin's Room Picture frame</td>
+<td class="comment-1" rowspan="1">(10) 2nd floor portraits and Florin's room picture frame</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41962"></span>41962</td>
 <td class="instruction">DEFB 0,19,0,4,117,76,0,70</td>
-<td class="comment-11" rowspan="1">(11) "EXECUTE / REJECT COMMAND" Window</td>
+<td class="comment-1" rowspan="1">(11) "EXECUTE / REJECT COMMAND" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41970"></span>41970</td>
 <td class="instruction">DEFB 0,15,0,4,117,98,0,104</td>
-<td class="comment-11" rowspan="1">(12) "THERE IS NO WRITING FOR ME TO READ" window</td>
+<td class="comment-1" rowspan="1">(12) "THERE IS NO WRITING FOR ME TO READ" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41978"></span>41978</td>
 <td class="instruction">DEFB 0,18,0,3,117,67,0,78</td>
-<td class="comment-11" rowspan="1">(13) Pick Up / Drop / Give / Take failed (including "THOR IS ANGRY...") messages window</td>
+<td class="comment-1" rowspan="1">(13) Pick Up / Drop / Give / Take failed (including "THOR IS ANGRY...") messages window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41986"></span>41986</td>
 <td class="instruction">DEFB 0,18,15,18,117,70,0,205</td>
-<td class="comment-11" rowspan="1">(14) "PRESS SPACE OR FIRE TO CONTINUE" window</td>
+<td class="comment-1" rowspan="1">(14) "PRESS SPACE OR FIRE TO CONTINUE" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41994"></span>41994</td>
 <td class="instruction">DEFB 0,31,19,23,101,78,0,69</td>
-<td class="comment-11" rowspan="1">(15) In-game window at bottom of screen ("SPELLBOUND COPYRIGHT MASTERTRONIC..." / Magic Knight's strength and inventory if carrying mirror)</td>
+<td class="comment-1" rowspan="1">(15) In-game window at bottom of screen ("SPELLBOUND COPYRIGHT MASTERTRONIC..." / Magic Knight's strength and inventory if carrying Mirror)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42002"></span>42002</td>
 <td class="instruction">DEFB 0,15,0,6,117,98,1,112</td>
-<td class="comment-11" rowspan="1">(16) "EXAMINE WHAT?" Window</td>
+<td class="comment-1" rowspan="1">(16) "EXAMINE WHAT?" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42010"></span>42010</td>
 <td class="instruction">DEFB 0,16,0,4,117,67,0,78</td>
-<td class="comment-11" rowspan="1">(17) "IT IS NOT SAFE TO TELEPORT..." window</td>
+<td class="comment-1" rowspan="1">(17) "IT IS NOT SAFE TO TELEPORT..." window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42018"></span>42018</td>
 <td class="instruction">DEFB 0,22,0,12,117,67,0,120</td>
-<td class="comment-11" rowspan="1">(18) "EXAMINE YOURSELF" / "EXAMINE CHARACTER" Window</td>
+<td class="comment-1" rowspan="1">(18) "EXAMINE YOURSELF" / "EXAMINE CHARACTER" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42026"></span>42026</td>
 <td class="instruction">DEFB 2,5,3,8,117,68,0,71</td>
-<td class="comment-11" rowspan="1">(19) Frame around portrait of character on "EXAMINE CHARACTER" and "EXAMINE YOURSELF" windows</td>
+<td class="comment-1" rowspan="1">(19) Frame around portrait of character on "EXAMINE CHARACTER" and "EXAMINE YOURSELF" windows</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42034"></span>42034</td>
 <td class="instruction">DEFB 0,22,0,9,117,67,0,120</td>
-<td class="comment-11" rowspan="1">(20) "EXAMINE OBJECT" Window</td>
+<td class="comment-1" rowspan="1">(20) "EXAMINE OBJECT" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42042"></span>42042</td>
 <td class="instruction">DEFB 2,5,4,7,117,69,0,69</td>
-<td class="comment-11" rowspan="1">(21) Frame around object in "EXAMINE OBJECT" Window</td>
+<td class="comment-1" rowspan="1">(21) Frame around object in "EXAMINE OBJECT" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42050"></span>42050</td>
 <td class="instruction">DEFB 0,11,0,11,117,78,0,71</td>
-<td class="comment-11" rowspan="1">(22) "LOCATE A CHARACTER" Window</td>
+<td class="comment-1" rowspan="1">(22) "LOCATE A CHARACTER" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42058"></span>42058</td>
 <td class="instruction">DEFB 0,22,0,10,117,77,2,78</td>
-<td class="comment-11" rowspan="1">(23) "WHICH COMMAND DO YOU WANT TO USE?" ("COMMAND [CHARACTER] TO...") Window</td>
+<td class="comment-1" rowspan="1">(23) "WHICH COMMAND DO YOU WANT TO USE?" ("COMMAND [CHARACTER] TO...") window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42066"></span>42066</td>
 <td class="instruction">DEFB 0,21,0,2,117,98,0,120</td>
-<td class="comment-11" rowspan="1">(24) "Command a character to help successful" window / Lift Messages Window</td>
+<td class="comment-1" rowspan="1">(24) "Command a character to help successful" window / lift messages window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42074"></span>42074</td>
 <td class="instruction">DEFB 0,16,0,10,117,77,1,71</td>
-<td class="comment-11" rowspan="1">(25) "TAKE LIFT TO:" Window</td>
+<td class="comment-1" rowspan="1">(25) "TAKE LIFT TO:" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42082"></span>42082</td>
 <td class="instruction">DEFB 0,23,0,10,117,67,0,71</td>
-<td class="comment-11" rowspan="1">(26) "YOU DROPPED THE BOTTLE TO THE GROUND..." Window</td>
+<td class="comment-1" rowspan="1">(26) "YOU DROPPED THE BOTTLE TO THE GROUND..." window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42090"></span>42090</td>
 <td class="instruction">DEFB 0,15,0,5,117,115,0,112</td>
-<td class="comment-11" rowspan="1">(27) "WHAT A RACKET" / "WHAT A LOT OF DUST" Window</td>
+<td class="comment-1" rowspan="1">(27) "WHAT A RACKET" / "WHAT A LOT OF DUST" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42098"></span>42098</td>
 <td class="instruction">DEFB 0,22,0,3,117,68,2,71</td>
-<td class="comment-11" rowspan="1">(28) Summoning messages</td>
+<td class="comment-1" rowspan="1">(28) Summoning messages</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42106"></span>42106</td>
 <td class="instruction">DEFB 0,19,0,3,117,68,2,71</td>
-<td class="comment-11" rowspan="1">(29) "Result of commanding a character" Window</td>
+<td class="comment-1" rowspan="1">(29) "Result of commanding a character" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42114"></span>42114</td>
 <td class="instruction">DEFB 0,26,0,1,117,87,2,87</td>
-<td class="comment-11" rowspan="1">(30) Spell Selection Window</td>
+<td class="comment-1" rowspan="1">(30) Spell selection window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42122"></span>42122</td>
 <td class="instruction">DEFB 4,27,1,12,117,87,0,87</td>
-<td class="comment-11" rowspan="1">(31) Red death information window</td>
+<td class="comment-1" rowspan="1">(31) Red death information window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42130"></span>42130</td>
 <td class="instruction">DEFB 0,31,0,10,117,96,0,96</td>
-<td class="comment-11" rowspan="1">(32) Green "GIMBAL IS NOT YET RELEASED..." Window</td>
+<td class="comment-1" rowspan="1">(32) Green "GIMBAL IS NOT YET RELEASED..." window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42138"></span>42138</td>
 <td class="instruction">DEFB 4,27,1,12,117,104,0,104</td>
-<td class="comment-11" rowspan="1">(33) Game Over Window</td>
+<td class="comment-1" rowspan="1">(33) Game over window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42146"></span>42146</td>
 <td class="instruction">DEFB 0,10,0,3,117,104,0,104</td>
-<td class="comment-11" rowspan="1">(34) "[CHARACTER] IS ASLEEP" window</td>
+<td class="comment-1" rowspan="1">(34) "[CHARACTER] IS ASLEEP" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42154"></span>42154</td>
 <td class="instruction">DEFB 0,23,0,3,117,68,0,71</td>
-<td class="comment-11" rowspan="1">(35) "Result of casting a spell (or failing)" Window</td>
+<td class="comment-1" rowspan="1">(35) "Result of casting a spell (or failing)" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42162"></span>42162</td>
 <td class="instruction">DEFB 0,31,16,23,101,67,0,79</td>
-<td class="comment-11" rowspan="1">(36) "WELL DONE MAGIC KNIGHT..." window</td>
+<td class="comment-1" rowspan="1">(36) "WELL DONE MAGIC KNIGHT..." window</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="41859.html">41859</a></span></td>
+<td class="prev">
+Prev: <a href="41859.html">41859</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#41874">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="42170.html">42170</a></span></td>
+<td class="next">
+Next: <a href="42170.html">42170</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

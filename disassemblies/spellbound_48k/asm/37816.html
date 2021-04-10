@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 37816</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,138 +20,112 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="37782.html">37782</a></span></td>
+<td class="prev">
+Prev: <a href="37782.html">37782</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#37816">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="37841.html">37841</a></span></td>
+<td class="next">
+Next: <a href="37841.html">37841</a>
+</td>
 </tr>
 </table>
-<div class="description">37816: Clear Display File</div>
+<div class="description">37816: Clear display file</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="26747.html">26747</a> and <a href="26906.html">26906</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="37816"></span>37816</td>
 <td class="instruction">LD HL,0</td>
-<td class="comment-11" rowspan="1">Load zero (all bits reset) into HL</td>
+<td class="comment-1" rowspan="1">Load zero (all bits reset) into <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37819"></span>37819</td>
 <td class="instruction">LD BC,12</td>
-<td class="comment-11" rowspan="1">Load 0 into B and 12 into C to repeat outer loop 12 times</td>
+<td class="comment-1" rowspan="1">Load 0 into <span class="register">B</span> and 12 into <span class="register">C</span> to repeat outer loop 12 times</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37822"></span>37822</td>
 <td class="instruction">DI</td>
-<td class="comment-11" rowspan="1">Disable interrupts</td>
+<td class="comment-1" rowspan="1">Disable interrupts</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37823"></span>37823</td>
 <td class="instruction">LD (37837),SP</td>
-<td class="comment-11" rowspan="1">Store stack pointer at 37837</td>
+<td class="comment-1" rowspan="1">Store stack pointer at 37837</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37827"></span>37827</td>
 <td class="instruction">LD SP,22528</td>
-<td class="comment-11" rowspan="1">Point stack pointer at start of Attribute File</td>
+<td class="comment-1" rowspan="1">Point stack pointer at start of attribute file</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
-<span id="37830"></span>
-<div class="comments">
-<div class="paragraph">
-This entry point is used by the routine at <a href="37782.html">37782</a>.
-</div>
-</div>
-</td>
-</tr>
-<tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="37830"></span>37830</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Decrease current stack pointer position by two and load two zeroes into it</td>
+<td class="comment-1" rowspan="1">Decrease current stack pointer position by two and load two zeroes into it</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37831"></span>37831</td>
 <td class="instruction">DJNZ 37830</td>
-<td class="comment-11" rowspan="1">As B is already zero, this will "decrease" B to 255 and thus run through loop 256 times</td>
+<td class="comment-1" rowspan="1">As <span class="register">B</span> is already zero, this will "decrease" <span class="register">B</span> to 255 and thus run through loop 256 times</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37833"></span>37833</td>
 <td class="instruction">DEC C</td>
-<td class="comment-11" rowspan="1">Decrease C...</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">C</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37834"></span>37834</td>
 <td class="instruction">JR NZ,37830</td>
-<td class="comment-11" rowspan="1">...and repeat if C is still greater than zero</td>
+<td class="comment-1" rowspan="1">...and repeat if <span class="register">C</span> is still greater than zero</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="37836"></span>
 <div class="comments">
 <div class="paragraph">
-The operand of the instruction at <a href="37816.html#37836">37836</a> represents the original value in SP stored previously. This is modified by the instructions at <a href="37782.html#37806">37806</a> and <a href="37816.html#37823">37823</a>.
+The operand of the instruction at <a href="37816.html#37836">37836</a> represents the original value in <span class="register">SP</span> stored previously. This is modified by the instruction at <a href="37816.html#37823">37823</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37836"></span>37836</td>
 <td class="instruction">LD SP,0</td>
-<td class="comment-11" rowspan="1">Restore stack pointer to original value</td>
+<td class="comment-1" rowspan="1">Restore stack pointer to original value</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37839"></span>37839</td>
 <td class="instruction">EI</td>
-<td class="comment-11" rowspan="1">Enable interrupts</td>
+<td class="comment-1" rowspan="1">Enable interrupts</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37840"></span>37840</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="37782.html">37782</a></span></td>
+<td class="prev">
+Prev: <a href="37782.html">37782</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#37816">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="37841.html">37841</a></span></td>
+<td class="next">
+Next: <a href="37841.html">37841</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

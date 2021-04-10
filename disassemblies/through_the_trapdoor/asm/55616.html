@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 55616</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55525.html">55525</a></span></td>
+<td class="prev">
+Prev: <a href="55525.html">55525</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55616">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55698.html">55698</a></span></td>
+<td class="next">
+Next: <a href="55698.html">55698</a>
+</td>
 </tr>
 </table>
-<div class="description">55616: Change Entity's Room Down One if Appropriate</div>
+<div class="description">55616: Change entity's room down one if appropriate</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="55196.html">55196</a> and <a href="55525.html">55525</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -45,266 +47,224 @@ Used by the routines at <a href="55196.html">55196</a> and <a href="55525.html">
 <td class="register-desc">Address of complex state data for an entity</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55616"></span>55616</td>
 <td class="instruction">LD A,122</td>
-<td class="comment-11" rowspan="1">If y-coordinate of bottom of entity is smaller than 122 (i.e. bottom of entity is above bottom of room)...</td>
+<td class="comment-1" rowspan="1">If y-coordinate of bottom of entity is smaller than 122 (i.e. bottom of entity is above bottom of room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55618"></span>55618</td>
 <td class="instruction">CP (IX+6)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55621"></span>55621</td>
 <td class="instruction">RET NC</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55622"></span>55622</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55623"></span>55623</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55624"></span>55624</td>
 <td class="instruction">LD IY,(34254)</td>
-<td class="comment-11" rowspan="1">Load start address of current level's Vertical Room Connectivity Data into IY</td>
+<td class="comment-1" rowspan="1">Load start address of current level's vertical room connectivity data into <span class="register">IY</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55628"></span>55628</td>
 <td class="instruction">LD D,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load current room of entity into D</td>
+<td class="comment-1" rowspan="1">Load current room of entity into <span class="register">D</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55631"></span>55631</td>
 <td class="instruction">LD A,(IY+0)</td>
-<td class="comment-11" rowspan="1">Load first byte (upper room index) of current entry into A</td>
+<td class="comment-1" rowspan="1">Load first byte (upper room index) of current entry into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55634"></span>55634</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">If byte is 255 (i.e. the End Marker)...</td>
+<td class="comment-1" rowspan="1">If byte is 255 (i.e. the end marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55636"></span>55636</td>
 <td class="instruction">JR Z,55695</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55616.html#55695">55695</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55616.html#55695">55695</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55638"></span>55638</td>
 <td class="instruction">CP D</td>
-<td class="comment-11" rowspan="1">If byte is the same as the entity's current room...</td>
+<td class="comment-1" rowspan="1">If byte is the same as the entity's current room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55639"></span>55639</td>
 <td class="instruction">JR Z,55647</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55616.html#55647">55647</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55616.html#55647">55647</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55641"></span>55641</td>
 <td class="instruction">INC IY</td>
-<td class="comment-11" rowspan="1">Advance by two bytes to the next entry...</td>
+<td class="comment-1" rowspan="1">Advance by two bytes to the next entry...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55643"></span>55643</td>
 <td class="instruction">INC IY</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55645"></span>55645</td>
 <td class="instruction">JR 55631</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="55616.html#55631">55631</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="55616.html#55631">55631</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55647"></span>55647</td>
 <td class="instruction">LD B,(IY+1)</td>
-<td class="comment-11" rowspan="1">Load second byte (lower room index) of current entry into B</td>
+<td class="comment-1" rowspan="1">Load second byte (lower room index) of current entry into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55650"></span>55650</td>
 <td class="instruction">LD A,(34231)</td>
-<td class="comment-11" rowspan="1">Load position (chars) of left side of current room (old, that entity is leaving) into D...</td>
+<td class="comment-1" rowspan="1">Load position (chars) of left side of current room (old, that entity is leaving) into <span class="register">D</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55653"></span>55653</td>
 <td class="instruction">LD D,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55654"></span>55654</td>
 <td class="instruction">CALL <a href="54480.html">54480</a></td>
-<td class="comment-11" rowspan="1">Set room of entity to B, store room size data for new room and load E with entity's width minus one</td>
+<td class="comment-1" rowspan="1">Set room of entity to <span class="register">B</span>, store room size data for new room and load <span class="register">E</span> with entity's width minus one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55657"></span>55657</td>
 <td class="instruction">LD A,(34231)</td>
-<td class="comment-11" rowspan="1">Load position (chars) of left side of current room (new, that entity has entered) into A</td>
+<td class="comment-1" rowspan="1">Load position (chars) of left side of current room (new, that entity has entered) into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55660"></span>55660</td>
 <td class="instruction">SUB D</td>
-<td class="comment-11" rowspan="1">Subtract x-coordinate of old room's left edge from x-coordinate of new room's left edge...</td>
+<td class="comment-1" rowspan="1">Subtract x-coordinate of old room's left edge from x-coordinate of new room's left edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55661"></span>55661</td>
 <td class="instruction">LD D,A</td>
-<td class="comment-11" rowspan="1">...and place result in D</td>
+<td class="comment-1" rowspan="1">...and place result in <span class="register">D</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55662"></span>55662</td>
 <td class="instruction">LD A,(IX+5)</td>
-<td class="comment-11" rowspan="1">Load A with x-coordinate of left of entity...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with x-coordinate of left of entity...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55665"></span>55665</td>
 <td class="instruction">SUB D</td>
-<td class="comment-11" rowspan="1">...subtract difference in positions of rooms' left edges...</td>
+<td class="comment-1" rowspan="1">...subtract difference in positions of rooms' left edges...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55666"></span>55666</td>
 <td class="instruction">LD (IX+5),A</td>
-<td class="comment-11" rowspan="1">...and store</td>
+<td class="comment-1" rowspan="1">...and store</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55669"></span>55669</td>
 <td class="instruction">ADD A,E</td>
-<td class="comment-11" rowspan="1">Update x-coordinate of right of entity by adding entity's (width - 1) value...</td>
+<td class="comment-1" rowspan="1">Update x-coordinate of right of entity by adding entity's (width - 1) value...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55670"></span>55670</td>
 <td class="instruction">LD (IX+7),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55673"></span>55673</td>
 <td class="instruction">LD A,(IX+4)</td>
-<td class="comment-11" rowspan="1">Subtract 20 from y-coordinate of top of entity...</td>
+<td class="comment-1" rowspan="1">Subtract 20 from y-coordinate of top of entity...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55676"></span>55676</td>
 <td class="instruction">SUB 20</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55678"></span>55678</td>
 <td class="instruction">LD (IX+4),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55681"></span>55681</td>
 <td class="instruction">LD A,(IX+6)</td>
-<td class="comment-11" rowspan="1">Subtract 20 from y-coordinate of bottom of entity...</td>
+<td class="comment-1" rowspan="1">Subtract 20 from y-coordinate of bottom of entity...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55684"></span>55684</td>
 <td class="instruction">SUB 20</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55686"></span>55686</td>
 <td class="instruction">LD (IX+6),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55689"></span>55689</td>
 <td class="instruction">CALL <a href="54456.html">54456</a></td>
-<td class="comment-11" rowspan="1">Paint red areas outside current character's room if IX points to current character's complex state data</td>
+<td class="comment-1" rowspan="1">Paint red areas outside current character's room if <span class="register">IX</span> points to current character's complex state data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55692"></span>55692</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55693"></span>55693</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55694"></span>55694</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55695"></span>55695</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55696"></span>55696</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55697"></span>55697</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55525.html">55525</a></span></td>
+<td class="prev">
+Prev: <a href="55525.html">55525</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55616">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55698.html">55698</a></span></td>
+<td class="next">
+Next: <a href="55698.html">55698</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

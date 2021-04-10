@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 48081</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,222 +20,183 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48027.html">48027</a></span></td>
+<td class="prev">
+Prev: <a href="48027.html">48027</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48081">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48164.html">48164</a></span></td>
+<td class="next">
+Next: <a href="48164.html">48164</a>
+</td>
 </tr>
 </table>
-<div class="description">48081: Blank the Interior of an Area of the Display File (i.e. Set Bytes to Zero)</div>
+<div class="description">48081: Blank the interior of an area of the display file (i.e. set bytes to zero)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="47193.html">47193</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48081"></span>48081</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48083"></span>48083</td>
 <td class="instruction">LD BC,(23408)</td>
-<td class="comment-11" rowspan="1">Load B with y-coordinate of top, and C with x-coordinate of left of area to fill</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with y-coordinate of top, and <span class="register">C</span> with x-coordinate of left of area to fill</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48087"></span>48087</td>
 <td class="instruction">LD DE,(23410)</td>
-<td class="comment-11" rowspan="1">Load D with y-coordinate of bottom, and E with x-coordinate of right of area to fill</td>
+<td class="comment-1" rowspan="1">Load <span class="register">D</span> with y-coordinate of bottom, and <span class="register">E</span> with x-coordinate of right of area to fill</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48091"></span>48091</td>
 <td class="instruction">LD L,C</td>
-<td class="comment-11" rowspan="1">Load HL with x-coordinate of left of area to fill...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with x-coordinate of left of area to fill...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48092"></span>48092</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48094"></span>48094</td>
 <td class="instruction">LD (48141),HL</td>
-<td class="comment-11" rowspan="1">...and store as operand of instruction at <a href="48081.html#48140">48140</a></td>
+<td class="comment-1" rowspan="1">...and store as operand of instruction at <a href="48081.html#48140">48140</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48097"></span>48097</td>
 <td class="instruction">LD A,D</td>
-<td class="comment-11" rowspan="1">Load A with y-coordinate of bottom of area to fill...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with y-coordinate of bottom of area to fill...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48098"></span>48098</td>
 <td class="instruction">SUB B</td>
-<td class="comment-11" rowspan="1">...subtract B (y-coordinate of top of area to fill)...</td>
+<td class="comment-1" rowspan="1">...subtract <span class="register">B</span> (y-coordinate of top of area to fill)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48099"></span>48099</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...and add one to give number of rows to fill</td>
+<td class="comment-1" rowspan="1">...and add one to give number of rows to fill</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48100"></span>48100</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">Multiply A by eight to get number of pixel rows to fill...</td>
+<td class="comment-1" rowspan="1">Multiply <span class="register">A</span> by eight to get number of pixel rows to fill...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48101"></span>48101</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48102"></span>48102</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48103"></span>48103</td>
 <td class="instruction">LD (48132),A</td>
-<td class="comment-11" rowspan="1">...and store as operand of instruction at <a href="48081.html#48131">48131</a></td>
+<td class="comment-1" rowspan="1">...and store as operand of instruction at <a href="48081.html#48131">48131</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48106"></span>48106</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Load A with y-coordinate of top of area to fill (characters)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with y-coordinate of top of area to fill (characters)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48107"></span>48107</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...and multiply by eight to get y-coordinate in pixels...</td>
+<td class="comment-1" rowspan="1">...and multiply by eight to get y-coordinate in pixels...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48108"></span>48108</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48109"></span>48109</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48110"></span>48110</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">Load y-coordinate (pixels) into HL...</td>
+<td class="comment-1" rowspan="1">Load y-coordinate (pixels) into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48111"></span>48111</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48113"></span>48113</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">Double HL (as entries in table at <a href="65140.html">65140</a> are two bytes wide)</td>
+<td class="comment-1" rowspan="1">Double <span class="register">HL</span> (as entries in table at <a href="65140.html">65140</a> are two bytes wide)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48114"></span>48114</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE (coordinates of bottom right of area to fill)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span> (coordinates of bottom right of area to fill)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48115"></span>48115</td>
 <td class="instruction">LD DE,65140</td>
-<td class="comment-11" rowspan="1">Point DE at Table of Display File Addresses of Start of Each Pixel Row</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at table of display file addresses of start of each pixel row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48118"></span>48118</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Add HL as offset, in HL</td>
+<td class="comment-1" rowspan="1">Add <span class="register">HL</span> as offset, in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48119"></span>48119</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE (coordinates of bottom right of area to fill)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span> (coordinates of bottom right of area to fill)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48120"></span>48120</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Copy pointer to entry in table of Display File addresses for start of pixel row at top of area to fill from HL to IX...</td>
+<td class="comment-1" rowspan="1">Copy pointer to entry in table of display file addresses for start of pixel row at top of area to fill from <span class="register">HL</span> to <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48121"></span>48121</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48123"></span>48123</td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="1">Load A with x-coordinate of right of area to fill (characters)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with x-coordinate of right of area to fill (characters)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48124"></span>48124</td>
 <td class="instruction">SUB C</td>
-<td class="comment-11" rowspan="1">...subtract C (x-coordinate of left of area to fill)...</td>
+<td class="comment-1" rowspan="1">...subtract <span class="register">C</span> (x-coordinate of left of area to fill)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48125"></span>48125</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...and load into HL...</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48126"></span>48126</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48128"></span>48128</td>
 <td class="instruction">LD (48148),HL</td>
-<td class="comment-11" rowspan="1">...and store as operand of instruction at <a href="48081.html#48147">48147</a></td>
+<td class="comment-1" rowspan="1">...and store as operand of instruction at <a href="48081.html#48147">48147</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="48131"></span>
 <div class="comments">
 <div class="paragraph">
@@ -244,31 +206,27 @@ The operand of the instruction at <a href="48081.html#48131">48131</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48131"></span>48131</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">Load B with number of pixel rows to fill</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with number of pixel rows to fill</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48133"></span>48133</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = remaining number of pixel rows to fill)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = remaining number of pixel rows to fill)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48134"></span>48134</td>
 <td class="instruction">LD L,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load HL with Display File address of start of current pixel row...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with display file address of start of current pixel row...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48137"></span>48137</td>
 <td class="instruction">LD H,(IX+1)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="48140"></span>
 <div class="comments">
 <div class="paragraph">
@@ -278,37 +236,32 @@ The operand of the instruction at <a href="48081.html#48140">48140</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48140"></span>48140</td>
 <td class="instruction">LD BC,0</td>
-<td class="comment-11" rowspan="1">Load BC with x-coordinate of area to fill (characters)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with x-coordinate of area to fill (characters)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48143"></span>48143</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...and add to HL as offset</td>
+<td class="comment-1" rowspan="1">...and add to <span class="register">HL</span> as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48144"></span>48144</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Copy Display File address of left-most byte of top pixel row of area to fill from HL to DE...</td>
+<td class="comment-1" rowspan="1">Copy display file address of left-most byte of top pixel row of area to fill from <span class="register">HL</span> to <span class="register">DE</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48145"></span>48145</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48146"></span>48146</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Advance DE to next address in Display File</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">DE</span> to next address in display file</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="48147"></span>
 <div class="comments">
 <div class="paragraph">
@@ -318,71 +271,66 @@ The operand of the instruction at <a href="48081.html#48147">48147</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48147"></span>48147</td>
 <td class="instruction">LD BC,0</td>
-<td class="comment-11" rowspan="1">Load BC with width, minus 1, of area to fill (characters)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with width, minus 1, of area to fill (characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48150"></span>48150</td>
 <td class="instruction">LD (HL),0</td>
-<td class="comment-11" rowspan="1">Set content of this address to zero...</td>
+<td class="comment-1" rowspan="1">Set content of this address to zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48152"></span>48152</td>
 <td class="instruction">LDIR</td>
-<td class="comment-11" rowspan="1">...and repeat for remaining BC addresses, clearing entire pixel row within specified x-coordinates</td>
+<td class="comment-1" rowspan="1">...and repeat for remaining <span class="register">BC</span> addresses, clearing entire pixel row within specified x-coordinates</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48154"></span>48154</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = remaining number of pixel rows to fill)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = remaining number of pixel rows to fill)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48155"></span>48155</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX by two bytes to point to start address of next pixel row down in Display File...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> by two bytes to point to start address of next pixel row down in display file...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48157"></span>48157</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48159"></span>48159</td>
 <td class="instruction">DJNZ 48133</td>
-<td class="comment-11" rowspan="1">Decrease B (remaining number of pixel rows to fill) and loop back to <a href="48081.html#48133">48133</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (remaining number of pixel rows to fill) and loop back to <a href="48081.html#48133">48133</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48161"></span>48161</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48163"></span>48163</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48027.html">48027</a></span></td>
+<td class="prev">
+Prev: <a href="48027.html">48027</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48081">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48164.html">48164</a></span></td>
+<td class="next">
+Next: <a href="48164.html">48164</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

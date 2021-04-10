@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 45206</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,109 +20,101 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45149.html">45149</a></span></td>
+<td class="prev">
+Prev: <a href="45149.html">45149</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45206">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45224.html">45224</a></span></td>
+<td class="next">
+Next: <a href="45224.html">45224</a>
+</td>
 </tr>
 </table>
-<div class="description">45206: Print Name of B-th Conditional Command in Command Summary Window</div>
+<div class="description">45206: Print name of <span class="register">B</span>-th conditional command in command summary window</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="43874.html">43874</a>, <a href="44861.html">44861</a>, <a href="44990.html">44990</a>, <a href="45131.html">45131</a> and <a href="45149.html">45149</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">B</td>
-<td class="register-desc">Index of conditional command to print in Command Summary Window</td>
+<td class="register-desc">Index of conditional command to print in command summary window</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="45206"></span>45206</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = index of conditional command to print)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = index of conditional command to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45207"></span>45207</td>
 <td class="instruction">CALL <a href="63399.html">63399</a></td>
-<td class="comment-11" rowspan="1">Print or update Command Summary Window at top of screen</td>
+<td class="comment-1" rowspan="1">Print or update command summary window at top of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45210"></span>45210</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = index of conditional command to print)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = index of conditional command to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45211"></span>45211</td>
 <td class="instruction">LD HL,51487</td>
-<td class="comment-11" rowspan="1">Point HL at text for first of conditional Main Menu options</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at text for first of conditional main menu options</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45214"></span>45214</td>
 <td class="instruction">CALL <a href="63332.html#63335">63335</a></td>
-<td class="comment-11" rowspan="1">Advance HL to B-th entry in list of zero-terminated strings starting at HL</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to <span class="register">B</span>-th entry in list of zero-terminated strings starting at <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45217"></span>45217</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Skip over formatting codes to first text character...</td>
+<td class="comment-1" rowspan="1">Skip over formatting codes to first text character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45218"></span>45218</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45219"></span>45219</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Transfer address from HL...</td>
+<td class="comment-1" rowspan="1">Transfer address from <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45220"></span>45220</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">...to DE</td>
+<td class="comment-1" rowspan="1">...to <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45221"></span>45221</td>
 <td class="instruction">JP <a href="63349.html">63349</a></td>
-<td class="comment-11" rowspan="1">Print text at DE (Command Summary) in Command Summary Window at top of screen and return</td>
+<td class="comment-1" rowspan="1">Print text at <span class="register">DE</span> (command summary) in command summary window at top of screen and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45149.html">45149</a></span></td>
+<td class="prev">
+Prev: <a href="45149.html">45149</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45206">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45224.html">45224</a></span></td>
+<td class="next">
+Next: <a href="45224.html">45224</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

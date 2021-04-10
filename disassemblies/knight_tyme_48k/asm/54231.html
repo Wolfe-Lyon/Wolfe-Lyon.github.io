@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 54231</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54215.html">54215</a></span></td>
+<td class="prev">
+Prev: <a href="54215.html">54215</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54231">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54242.html">54242</a></span></td>
+<td class="next">
+Next: <a href="54242.html">54242</a>
+</td>
 </tr>
 </table>
-<div class="description">54231: Draw a Run of Characters (e.g. Edge of Frame of a Window)</div>
+<div class="description">54231: Draw a run of characters (e.g. edge of frame of a window)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="27951.html">27951</a>, <a href="28172.html">28172</a>, <a href="35285.html">35285</a>, <a href="35627.html">35627</a> and <a href="54505.html">54505</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,34 +47,25 @@ Used by the routines at <a href="27951.html">27951</a>, <a href="28172.html">281
 <td class="register-desc">Repeat count for printing character (e.g. width of window in characters minus 1)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54231"></span>54231</td>
 <td class="instruction">LD A,H</td>
-<td class="comment-11" rowspan="1">Check whether remaining window's width is zero...</td>
+<td class="comment-1" rowspan="1">Check whether remaining window's width is zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54232"></span>54232</td>
 <td class="instruction">OR L</td>
-<td class="comment-11" rowspan="1">...and if it is...</td>
+<td class="comment-1" rowspan="1">...and if it is...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54233"></span>54233</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return without doing anything</td>
+<td class="comment-1" rowspan="1">...then return without doing anything</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="54234"></span>
 <div class="comments">
 <div class="paragraph">
@@ -79,41 +75,41 @@ The operand of the instruction at <a href="54231.html#54234">54234</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54234"></span>54234</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Else, load A with the character index</td>
+<td class="comment-1" rowspan="1">Else, load <span class="register">A</span> with the character index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54236"></span>54236</td>
 <td class="instruction">CALL <a href="54097.html">54097</a></td>
-<td class="comment-11" rowspan="1">Print text/graphic character in A and advance Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">Print text/graphic character in <span class="register">A</span> and advance bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54239"></span>54239</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Decrease remaining width</td>
+<td class="comment-1" rowspan="1">Decrease remaining width</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54240"></span>54240</td>
 <td class="instruction">JR 54231</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="54231.html">54231</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="54231.html">54231</a></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54215.html">54215</a></span></td>
+<td class="prev">
+Prev: <a href="54215.html">54215</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54231">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54242.html">54242</a></span></td>
+<td class="next">
+Next: <a href="54242.html">54242</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

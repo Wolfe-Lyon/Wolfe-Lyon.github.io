@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 34916</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,224 +20,192 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34902.html">34902</a></span></td>
+<td class="prev">
+Prev: <a href="34902.html">34902</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34916">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34977.html">34977</a></span></td>
+<td class="next">
+Next: <a href="34977.html">34977</a>
+</td>
 </tr>
 </table>
-<div class="description">34916: If Fire Pressed, or Character Swap Pending Flag Set, then Swap Characters</div>
+<div class="description">34916: If fire pressed, or character-swap-pending flag set, then swap characters</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="34438.html">34438</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34916"></span>34916</td>
 <td class="instruction">LD HL,34208</td>
-<td class="comment-11" rowspan="1">If Character Swap Pending Flag is reset...</td>
+<td class="comment-1" rowspan="1">If character-swap-pending flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34919"></span>34919</td>
 <td class="instruction">BIT 6,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34921"></span>34921</td>
 <td class="instruction">JR Z,34927</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34916.html#34927">34927</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34916.html#34927">34927</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34923"></span>34923</td>
 <td class="instruction">RES 6,(HL)</td>
-<td class="comment-11" rowspan="1">Reset Character Swap Pending Flag</td>
+<td class="comment-1" rowspan="1">Reset character-swap-pending flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34925"></span>34925</td>
 <td class="instruction">JR 34944</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="34916.html#34944">34944</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="34916.html#34944">34944</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34927"></span>34927</td>
 <td class="instruction">LD A,(34219)</td>
-<td class="comment-11" rowspan="1">Load A with control input</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with control input</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34930"></span>34930</td>
 <td class="instruction">BIT 4,A</td>
-<td class="comment-11" rowspan="1">If fire was pressed...</td>
+<td class="comment-1" rowspan="1">If fire was pressed...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34932"></span>34932</td>
 <td class="instruction">JR NZ,34940</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34916.html#34940">34940</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34916.html#34940">34940</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34934"></span>34934</td>
 <td class="instruction">RES 1,(HL)</td>
-<td class="comment-11" rowspan="1">Reset Characters Already Swapped Flag</td>
+<td class="comment-1" rowspan="1">Reset characters-already-swapped flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34936"></span>34936</td>
 <td class="instruction">CALL <a href="53825.html">53825</a></td>
-<td class="comment-11" rowspan="1">Copy room dimension data entry for current character's current room to temporary store location (<a href="34230.html">34230</a>)</td>
+<td class="comment-1" rowspan="1">Copy room dimension data entry for current character's current room to temporary store location (<a href="34230.html">34230</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34939"></span>34939</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34940"></span>
 <div class="comments">
 <div class="paragraph">
-[Fire pressed]
+Fire pressed
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34940"></span>34940</td>
 <td class="instruction">BIT 1,(HL)</td>
-<td class="comment-11" rowspan="1">If Characters Already Swapped Flag set (i.e. FIRE hasn't been released since last swap)...</td>
+<td class="comment-1" rowspan="1">If characters-already-swapped flag set (i.e. FIRE hasn't been released since last swap)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34942"></span>34942</td>
 <td class="instruction">JR NZ,34936</td>
-<td class="comment-11" rowspan="1">...then jump back to <a href="34916.html#34936">34936</a></td>
+<td class="comment-1" rowspan="1">...then jump back to <a href="34916.html#34936">34936</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34944"></span>34944</td>
 <td class="instruction">SET 1,(HL)</td>
-<td class="comment-11" rowspan="1">Set Characters Already Swapped Flag</td>
+<td class="comment-1" rowspan="1">Set characters-already-swapped flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34946"></span>34946</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load Game Flags into A</td>
+<td class="comment-1" rowspan="1">Invert Drutt-mode flag and store...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34947"></span>34947</td>
 <td class="instruction">XOR 1</td>
-<td class="comment-11" rowspan="1">Flip bit 7 (Berk / Drutt flag)...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34949"></span>34949</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34950"></span>34950</td>
 <td class="instruction">BIT 0,(HL)</td>
-<td class="comment-11" rowspan="1">If current character is now Berk (0)...</td>
+<td class="comment-1" rowspan="1">If current character is now Berk (0)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34952"></span>34952</td>
 <td class="instruction">JR Z,34958</td>
-<td class="comment-11" rowspan="1">...then jump ahead to <a href="34916.html#34958">34958</a></td>
+<td class="comment-1" rowspan="1">...then jump ahead to <a href="34916.html#34958">34958</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34954"></span>34954</td>
 <td class="instruction">LD A,6</td>
-<td class="comment-11" rowspan="1">Load A with 6 (attribute for Drutt's timer indicator figures)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 6 (attribute for Drutt's timer indicator figures)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34956"></span>34956</td>
 <td class="instruction">JR 34960</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="34916.html#34960">34960</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="34916.html#34960">34960</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34958"></span>34958</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Load A with 1 (attribute for Berk's timer indicator figures)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 1 (attribute for Berk's timer indicator figures)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34960"></span>34960</td>
 <td class="instruction">LD (34226),A</td>
-<td class="comment-11" rowspan="1">Set attribute of timer indicator figures to value in A</td>
+<td class="comment-1" rowspan="1">Set attribute of timer indicator figures to value in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34963"></span>34963</td>
 <td class="instruction">CALL <a href="53887.html">53887</a></td>
-<td class="comment-11" rowspan="1">Paint red areas outside accessible areas of current character's current room</td>
+<td class="comment-1" rowspan="1">Paint red areas outside accessible areas of current character's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34966"></span>34966</td>
 <td class="instruction">LD HL,34208</td>
-<td class="comment-11" rowspan="1">If Show Score Flag is set...</td>
+<td class="comment-1" rowspan="1">If show-score flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34969"></span>34969</td>
 <td class="instruction">BIT 7,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34971"></span>34971</td>
 <td class="instruction">JP NZ,<a href="47628.html">47628</a></td>
-<td class="comment-11" rowspan="1">...then print SCORE / TOTAL / HI-SC string in current character's colours and return</td>
+<td class="comment-1" rowspan="1">...then print SCORE / TOTAL / HI-SC string in current character's colours and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34974"></span>34974</td>
 <td class="instruction">JP <a href="47241.html">47241</a></td>
-<td class="comment-11" rowspan="1">Reset Show Score Flag, draw timer figures bar and return</td>
+<td class="comment-1" rowspan="1">Reset show-score flag, draw timer figures bar and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34902.html">34902</a></span></td>
+<td class="prev">
+Prev: <a href="34902.html">34902</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34916">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34977.html">34977</a></span></td>
+<td class="next">
+Next: <a href="34977.html">34977</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

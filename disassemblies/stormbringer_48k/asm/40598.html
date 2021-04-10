@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 40598</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,102 +20,92 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40546.html">40546</a></span></td>
+<td class="prev">
+Prev: <a href="40546.html">40546</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40598">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40614.html">40614</a></span></td>
+<td class="next">
+Next: <a href="40614.html">40614</a>
+</td>
 </tr>
 </table>
-<div class="description">40598: Room-Specific Routine: Kill Magic Knight if he is Too Close to Bearwoolf</div>
+<div class="description">40598: Room-specific routine: Kill Magic Knight if he is too close to Bearwoolf</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="40190.html">40190</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="40598"></span>40598</td>
 <td class="instruction">LD A,(24840)</td>
-<td class="comment-11" rowspan="1">If Magic Knight's current x-coordinate (pixels) is 128 or greater...</td>
+<td class="comment-1" rowspan="1">If Magic Knight's current x-coordinate (pixels) is 128 or greater...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40601"></span>40601</td>
 <td class="instruction">CP 128</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40603"></span>40603</td>
 <td class="instruction">RET NC</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="40604"></span>
 <div class="comments">
 <div class="paragraph">
-The operand of the instruction at <a href="40598.html#40604">40604</a> represents the Bearwoolf Removed Flag. This is modified by the instructions at <a href="38024.html#38106">38106</a> and <a href="45256.html#45290">45290</a>.
+The operand of the instruction at <a href="40598.html#40604">40604</a> represents the Bearwoolf-removed flag. This is modified by the instructions at <a href="38024.html#38106">38106</a> and <a href="45256.html#45290">45290</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40604"></span>40604</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Load A with Bearwoolf Removed Flag...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Bearwoolf-removed flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40606"></span>40606</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...and if this is set...</td>
+<td class="comment-1" rowspan="1">...and if this is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40607"></span>40607</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40608"></span>40608</td>
 <td class="instruction">LD HL,57374</td>
-<td class="comment-11" rowspan="1">Point HL at "YOU STOOD FAR TOO CLOSE TO BEARWOOLF..." text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "YOU STOOD FAR TOO CLOSE TO BEARWOOLF..." text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40611"></span>40611</td>
 <td class="instruction">JP <a href="64582.html">64582</a></td>
-<td class="comment-11" rowspan="1">Display Cyan "Game Over" Window and Return to Control Selection Menu</td>
+<td class="comment-1" rowspan="1">Display cyan "game over" window and return to control selection menu</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40546.html">40546</a></span></td>
+<td class="prev">
+Prev: <a href="40546.html">40546</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40598">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40614.html">40614</a></span></td>
+<td class="next">
+Next: <a href="40614.html">40614</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

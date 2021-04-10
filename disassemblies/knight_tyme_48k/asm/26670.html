@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 26670</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,256 +20,226 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="26240.html">26240</a></span></td>
+<td class="prev">
+Prev: <a href="26624.html">26624</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#26670">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="26745.html">26745</a></span></td>
+<td class="next">
+Next: <a href="26745.html">26745</a>
+</td>
 </tr>
 </table>
 <div class="description">26670: Display input device selection menu</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="55685.html">55685</a>.
 </div>
 </div>
-<table class="input-0">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26670"></span>26670</td>
 <td class="instruction">EI</td>
-<td class="comment-11" rowspan="1">Enable Interrupts</td>
+<td class="comment-1" rowspan="1">Enable interrupts</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26671"></span>26671</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">Wait for interrupt</td>
+<td class="comment-1" rowspan="1">Wait for interrupt</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26672"></span>26672</td>
 <td class="instruction">LD SP,26240</td>
-<td class="comment-11" rowspan="1">Set Stack Pointer to 26240</td>
+<td class="comment-1" rowspan="1">Set stack pointer to 26240</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26675"></span>26675</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Reset all Interrupt Routine flags...</td>
+<td class="comment-1" rowspan="1">Reset all interrupt routine flags...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26676"></span>26676</td>
 <td class="instruction">LD (IY+65),A</td>
-<td class="comment-11" rowspan="1">... (IY = 23610)</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26679"></span>26679</td>
 <td class="instruction">IM 2</td>
-<td class="comment-11" rowspan="1">Set Interrupt Mode 2</td>
+<td class="comment-1" rowspan="1">Set interrupt mode 2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26681"></span>26681</td>
 <td class="instruction">CALL <a href="26976.html">26976</a></td>
-<td class="comment-11" rowspan="1">Set border to black and clear temporary storage area of memory</td>
+<td class="comment-1" rowspan="1">Set border to black and clear temporary storage area of memory</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26684"></span>26684</td>
 <td class="instruction">CALL <a href="26884.html">26884</a></td>
-<td class="comment-11" rowspan="1">Draw Input Device Selection Menu and update currently selected input device</td>
+<td class="comment-1" rowspan="1">Draw input device selection menu and update currently selected input device</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26687"></span>26687</td>
 <td class="instruction">CALL <a href="35296.html">35296</a></td>
-<td class="comment-11" rowspan="1">Process keyboard / joystick input on a menu and load A with selected item index</td>
+<td class="comment-1" rowspan="1">Process keyboard / joystick input on a menu and load <span class="register">A</span> with selected item index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26690"></span>26690</td>
 <td class="instruction">CP 4</td>
-<td class="comment-11" rowspan="1">If "CHANGE GAME OPTIONS" selected...</td>
+<td class="comment-1" rowspan="1">If "CHANGE GAME OPTIONS" selected...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26692"></span>26692</td>
 <td class="instruction">JP Z,26739</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="26670.html#26739">26739</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="26670.html#26739">26739</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26695"></span>26695</td>
 <td class="instruction">CP 5</td>
-<td class="comment-11" rowspan="1">If "INSTRUCTIONS" selected...</td>
+<td class="comment-1" rowspan="1">If "INSTRUCTIONS" selected...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26697"></span>26697</td>
 <td class="instruction">JR Z,26734</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="26670.html#26734">26734</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="26670.html#26734">26734</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26699"></span>26699</td>
 <td class="instruction">CP 6</td>
-<td class="comment-11" rowspan="1">If "PLAY GAME" selected...</td>
+<td class="comment-1" rowspan="1">If "PLAY GAME" selected...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26701"></span>26701</td>
 <td class="instruction">JP Z,<a href="26997.html">26997</a></td>
-<td class="comment-11" rowspan="1">...then jump to <a href="26997.html">26997</a> (initialise data and start a new game)</td>
+<td class="comment-1" rowspan="1">...then jump to <a href="26997.html">26997</a> (initialise data and start a new game)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26704"></span>26704</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = index of selected menu item)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = index of selected menu item)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26705"></span>26705</td>
 <td class="instruction">LD A,(54560)</td>
-<td class="comment-11" rowspan="1">Load A with index of currently selected input device (<a href="../reference/facts.html#debugcode001">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of currently selected input device (<a href="../reference/facts.html#debugcode001">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26708"></span>26708</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = index of currently selected input device)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = index of currently selected input device)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26709"></span>26709</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load C with index of currently selected input device</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with index of currently selected input device</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26710"></span>26710</td>
 <td class="instruction">LD A,(37139)</td>
-<td class="comment-11" rowspan="1">Load A with y-coordinate of top edge of Window 6 (Control Selection Window)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with y-coordinate of top edge of window 6 (control selection window)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26713"></span>26713</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">Add index of currently selected input device...</td>
+<td class="comment-1" rowspan="1">Add index of currently selected input device...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26714"></span>26714</td>
 <td class="instruction">ADD A,2</td>
-<td class="comment-11" rowspan="1">...and add two more to get y-coordinate of menu item for currently selected input device</td>
+<td class="comment-1" rowspan="1">...and add two more to get y-coordinate of menu item for currently selected input device</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26716"></span>26716</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load value into B</td>
+<td class="comment-1" rowspan="1">Load value into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26717"></span>26717</td>
 <td class="instruction">LD C,3</td>
-<td class="comment-11" rowspan="1">Load C with 3</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with 3</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26719"></span>26719</td>
 <td class="instruction">CALL <a href="54148.html">54148</a></td>
-<td class="comment-11" rowspan="1">Load HL with Attribute File address for coordinates (C, B)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with attribute file address for coordinates (<span class="register">C</span>, <span class="register">B</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26722"></span>26722</td>
 <td class="instruction">LD (HL),71</td>
-<td class="comment-11" rowspan="1">Set attribute at this location to 71 (white INK, black PAPER, BRIGHT) (<a href="../reference/facts.html#debugcode001">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">Set attribute at this location to 71 (white INK, black PAPER, BRIGHT) (<a href="../reference/facts.html#debugcode001">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26724"></span>26724</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE (D = index of currently selected input device, previously in AF)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span> (<span class="register">D</span> = index of currently selected input device, previously in <span class="register">AF</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26725"></span>26725</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = index of selected menu item)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = index of selected menu item)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26726"></span>26726</td>
 <td class="instruction">LD (54560),A</td>
-<td class="comment-11" rowspan="1">Set new selected input device index at <a href="54560.html">54560</a></td>
+<td class="comment-1" rowspan="1">Set new selected input device index at <a href="54560.html">54560</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26729"></span>26729</td>
 <td class="instruction">CALL <a href="54505.html">54505</a></td>
-<td class="comment-11" rowspan="1">Update currently selected input device...</td>
+<td class="comment-1" rowspan="1">Update currently selected input device...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26732"></span>26732</td>
 <td class="instruction">JR 26687</td>
-<td class="comment-11" rowspan="1">...and loop back to <a href="26670.html#26687">26687</a></td>
+<td class="comment-1" rowspan="1">...and loop back to <a href="26670.html#26687">26687</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26734"></span>26734</td>
 <td class="instruction">CALL <a href="26926.html">26926</a></td>
-<td class="comment-11" rowspan="1">Display Instructions windows</td>
+<td class="comment-1" rowspan="1">Display instructions windows</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26737"></span>26737</td>
 <td class="instruction">JR 26684</td>
-<td class="comment-11" rowspan="1">Jump back to <a href="26670.html#26684">26684</a> to capture next menu selection</td>
+<td class="comment-1" rowspan="1">Jump back to <a href="26670.html#26684">26684</a> to capture next menu selection</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26739"></span>26739</td>
 <td class="instruction">CALL <a href="26745.html">26745</a></td>
-<td class="comment-11" rowspan="1">Display and handle Gadget X Menu</td>
+<td class="comment-1" rowspan="1">Display and handle Gadget X menu</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26742"></span>26742</td>
 <td class="instruction">JP 26684</td>
-<td class="comment-11" rowspan="1">Jump back to <a href="26670.html#26684">26684</a> to capture next menu selection</td>
+<td class="comment-1" rowspan="1">Jump back to <a href="26670.html#26684">26684</a> to capture next menu selection</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="26240.html">26240</a></span></td>
+<td class="prev">
+Prev: <a href="26624.html">26624</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#26670">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="26745.html">26745</a></span></td>
+<td class="next">
+Next: <a href="26745.html">26745</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 47628</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,196 +20,167 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47589.html">47589</a></span></td>
+<td class="prev">
+Prev: <a href="47589.html">47589</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47628">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47682.html">47682</a></span></td>
+<td class="next">
+Next: <a href="47682.html">47682</a>
+</td>
 </tr>
 </table>
-<div class="description">47628: Print Score / Total / High Score String in Current Character's Colours</div>
+<div class="description">47628: Print score / total / high score string in current character's colours</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="34916.html">34916</a>, <a href="46830.html">46830</a> and <a href="47499.html">47499</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47628"></span>47628</td>
 <td class="instruction">LD IY,47589</td>
-<td class="comment-11" rowspan="1">Point IY at SCORE / TOTAL / HI-SC text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IY</span> at SCORE / TOTAL / HI-SC text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47632"></span>47632</td>
 <td class="instruction">LD HL,23232</td>
-<td class="comment-11" rowspan="1">Set Attribute File address at which to print text to start of second-last character row</td>
+<td class="comment-1" rowspan="1">Set attribute file address at which to print text to start of second-last character row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47635"></span>47635</td>
 <td class="instruction">LD A,(IY+0)</td>
-<td class="comment-11" rowspan="1">Load a character from the string into A</td>
+<td class="comment-1" rowspan="1">Load a character from the string into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47638"></span>47638</td>
 <td class="instruction">CP 36</td>
-<td class="comment-11" rowspan="1">If the character is 36 (end marker)...</td>
+<td class="comment-1" rowspan="1">If the character is 36 (end marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47640"></span>47640</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47641"></span>47641</td>
 <td class="instruction">CP 42</td>
-<td class="comment-11" rowspan="1">If character is not 42 ("set attribute to current character's colours" marker)...</td>
+<td class="comment-1" rowspan="1">If character is not 42 ("set attribute to current character's colours" marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47643"></span>47643</td>
 <td class="instruction">JR NZ,47660</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="47628.html#47660">47660</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="47628.html#47660">47660</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47645"></span>47645</td>
 <td class="instruction">LD A,(34226)</td>
-<td class="comment-11" rowspan="1">Load current character's attribute into A (blue for Berk, yellow for Drutt)</td>
+<td class="comment-1" rowspan="1">Load current character's attribute into <span class="register">A</span> (blue for Berk, yellow for Drutt)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47648"></span>47648</td>
 <td class="instruction">CP 1</td>
-<td class="comment-11" rowspan="1">If blue (Berk)...</td>
+<td class="comment-1" rowspan="1">If blue (Berk)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47650"></span>47650</td>
 <td class="instruction">JR Z,47656</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="47628.html#47656">47656</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="47628.html#47656">47656</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47652"></span>47652</td>
 <td class="instruction">LD A,112</td>
-<td class="comment-11" rowspan="1">Load A with value for black INK, yellow PAPER, BRIGHT (Drutt's colours)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with value for black INK, yellow PAPER, BRIGHT (Drutt's colours)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47654"></span>47654</td>
 <td class="instruction">JR 47666</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="47628.html#47666">47666</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="47628.html#47666">47666</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47656"></span>47656</td>
 <td class="instruction">LD A,79</td>
-<td class="comment-11" rowspan="1">Load A with value for white INK, blue PAPER, BRIGHT (Berk's colours)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with value for white INK, blue PAPER, BRIGHT (Berk's colours)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47658"></span>47658</td>
 <td class="instruction">JR 47666</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="47628.html#47666">47666</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="47628.html#47666">47666</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47660"></span>47660</td>
 <td class="instruction">CP 35</td>
-<td class="comment-11" rowspan="1">If character is not 35 ("set attribute to standard" marker)...</td>
+<td class="comment-1" rowspan="1">If character is not 35 ("set attribute to standard" marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47662"></span>47662</td>
 <td class="instruction">JR NZ,47673</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="47628.html#47673">47673</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="47628.html#47673">47673</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47664"></span>47664</td>
 <td class="instruction">LD A,71</td>
-<td class="comment-11" rowspan="1">Load A with value for white INK, black PAPER, BRIGHT</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with value for white INK, black PAPER, BRIGHT</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47666"></span>47666</td>
 <td class="instruction">LD (34269),A</td>
-<td class="comment-11" rowspan="1">Store this value as the attribute to print text</td>
+<td class="comment-1" rowspan="1">Store this value as the attribute to print text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47669"></span>47669</td>
 <td class="instruction">INC IY</td>
-<td class="comment-11" rowspan="1">Advance IY to next character in string to print</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IY</span> to next character in string to print</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47671"></span>47671</td>
 <td class="instruction">JR 47635</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="47628.html#47635">47635</a> for next character</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="47628.html#47635">47635</a> for next character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47673"></span>47673</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">Load character to print into E</td>
+<td class="comment-1" rowspan="1">Load character to print into <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47674"></span>47674</td>
 <td class="instruction">CALL <a href="47682.html">47682</a></td>
-<td class="comment-11" rowspan="1">Print double-height text character in E</td>
+<td class="comment-1" rowspan="1">Print double-height text character in <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47677"></span>47677</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to next Attribute File address</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next attribute file address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47678"></span>47678</td>
 <td class="instruction">INC IY</td>
-<td class="comment-11" rowspan="1">Advance IY to next character to process</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IY</span> to next character to process</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47680"></span>47680</td>
 <td class="instruction">JR 47635</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="47628.html#47635">47635</a> for next character</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="47628.html#47635">47635</a> for next character</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47589.html">47589</a></span></td>
+<td class="prev">
+Prev: <a href="47589.html">47589</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47628">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47682.html">47682</a></span></td>
+<td class="next">
+Next: <a href="47682.html">47682</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

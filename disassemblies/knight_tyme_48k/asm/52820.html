@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 52820</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,30 +20,37 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="52717.html">52717</a></span></td>
+<td class="prev">
+Prev: <a href="52717.html">52717</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#52820">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="52924.html">52924</a></span></td>
+<td class="next">
+Next: <a href="52924.html">52924</a>
+</td>
 </tr>
 </table>
-<div class="description">52820: Room Drawing: Advance HL to next Display File address to be drawn to (Apply Horizontal Mirror Flag set)</div>
+<div class="description">52820: Room drawing: Advance <span class="register">HL</span> to next display file address to be drawn to (apply-horizontal-mirror flag set)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Used when Apply Horizontal Mirror Flag is set
+Used when apply-horizontal-mirror flag is set
+</div>
+<div class="paragraph">
+Used by the routine at <a href="52714.html">52714</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">A Display File address</td>
+<td class="register-desc">A display file address</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -52,377 +60,327 @@ Used when Apply Horizontal Mirror Flag is set
 </tr>
 <tr>
 <td class="register">F</td>
-<td class="register-desc">Zero Flag reset (if returning via <a href="52717.html#52792">52792</a>, drawing complete)</td>
+<td class="register-desc">Zero flag reset (if returning via <a href="52717.html#52792">52792</a>, drawing complete)</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52820"></span>52820</td>
 <td class="instruction">LD A,(23449)</td>
-<td class="comment-11" rowspan="1">Increase Pixel Row Counter...</td>
+<td class="comment-1" rowspan="1">Increase pixel row counter...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52823"></span>52823</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52824"></span>52824</td>
 <td class="instruction">AND 7</td>
-<td class="comment-11" rowspan="1">...and reset to 7 if it falls below zero...</td>
+<td class="comment-1" rowspan="1">...and reset to 7 if it falls below zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52826"></span>52826</td>
 <td class="instruction">LD (23449),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52829"></span>52829</td>
 <td class="instruction">CP 7</td>
-<td class="comment-11" rowspan="1">If new value of Pixel Row Counter is 7 (i.e. we have rolled over to a new character block)...</td>
+<td class="comment-1" rowspan="1">If new value of pixel row counter is 7 (i.e. we have rolled over to a new character block)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52831"></span>52831</td>
 <td class="instruction">JR Z,52836</td>
-<td class="comment-11" rowspan="1">...then advance HL to next character block to be drawn and return</td>
+<td class="comment-1" rowspan="1">...then advance <span class="register">HL</span> to next character block to be drawn and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52833"></span>52833</td>
 <td class="instruction">DEC H</td>
-<td class="comment-11" rowspan="1">Decrease Display File address by 256 bytes (i.e. move to next pixel row up)</td>
+<td class="comment-1" rowspan="1">Decrease display file address by 256 bytes (i.e. move to next pixel row up)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52834"></span>52834</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52835"></span>52835</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52836"></span>
 <div class="comments">
 <div class="paragraph">
-This next section advances HL to next character block to be drawn
+This next section advances <span class="register">HL</span> to next character block to be drawn
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52836"></span>52836</td>
 <td class="instruction">LD A,(23450)</td>
-<td class="comment-11" rowspan="1">Load A with Horizontal and Vertical Mirror Flags</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with apply-horizontal-mirror and apply-vertical-mirror flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52839"></span>52839</td>
 <td class="instruction">AND 1</td>
-<td class="comment-11" rowspan="1">If Apply Vertical Mirror Flag is set...</td>
+<td class="comment-1" rowspan="1">If apply-vertical-mirror flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52841"></span>52841</td>
 <td class="instruction">JP NZ,52897</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="52820.html#52897">52897</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="52820.html#52897">52897</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52844"></span>52844</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52845"></span>52845</td>
 <td class="instruction">LD A,(23444)</td>
-<td class="comment-11" rowspan="1">Load x-coordinate of character block currently being drawn into A...</td>
+<td class="comment-1" rowspan="1">Load x-coordinate of character block currently being drawn into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52848"></span>52848</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...increase by one...</td>
+<td class="comment-1" rowspan="1">...increase by one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52849"></span>52849</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...and load into B</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52850"></span>52850</td>
 <td class="instruction">LD A,(23495)</td>
-<td class="comment-11" rowspan="1">Load (x-coordinate + 1) of right of graphic being drawn into A</td>
+<td class="comment-1" rowspan="1">Load (x-coordinate + 1) of right of graphic being drawn into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52853"></span>52853</td>
 <td class="instruction">CP B</td>
-<td class="comment-11" rowspan="1">If both x-coordinates are the same (i.e. we have moved beyond graphic's right edge)...</td>
+<td class="comment-1" rowspan="1">If both x-coordinates are the same (i.e. we have moved beyond graphic's right edge)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52854"></span>52854</td>
 <td class="instruction">JR Z,52874</td>
-<td class="comment-11" rowspan="1">...then jump to <a href="52820.html#52874">52874</a></td>
+<td class="comment-1" rowspan="1">...then jump to <a href="52820.html#52874">52874</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52856"></span>52856</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Store increased x-coordinate at <a href="23444.html">23444</a>...</td>
+<td class="comment-1" rowspan="1">Store increased x-coordinate at <a href="23444.html">23444</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52857"></span>52857</td>
 <td class="instruction">LD (23444),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52860"></span>52860</td>
 <td class="instruction">LD BC,(23444)</td>
-<td class="comment-11" rowspan="1">Load BC with coordinates of new character block to draw</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with coordinates of new character block to draw</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52864"></span>52864</td>
 <td class="instruction">CALL <a href="54132.html">54132</a></td>
-<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+<td class="comment-1" rowspan="1">Move virtual cursor (bitmap) to display file address for coordinates x=<span class="register">C</span>, y=<span class="register">B</span> and load address into <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52867"></span>52867</td>
 <td class="instruction">LD A,7</td>
-<td class="comment-11" rowspan="1">Advance HL down seven pixel rows to bottom of character block...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> down seven pixel rows to bottom of character block...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52869"></span>52869</td>
 <td class="instruction">ADD A,H</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52870"></span>52870</td>
 <td class="instruction">LD H,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52871"></span>52871</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52872"></span>52872</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52873"></span>52873</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52874"></span>
 <div class="comments">
 <div class="paragraph">
-This next section advances HL to next character row to be drawn
+This next section advances <span class="register">HL</span> to next character row to be drawn
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52874"></span>52874</td>
 <td class="instruction">LD A,(23493)</td>
-<td class="comment-11" rowspan="1">Load A with x-coordinate of left of graphic to draw...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with x-coordinate of left of graphic to draw...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52877"></span>52877</td>
 <td class="instruction">LD (23444),A</td>
-<td class="comment-11" rowspan="1">...and set current x-coordinate to match</td>
+<td class="comment-1" rowspan="1">...and set current x-coordinate to match</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52880"></span>52880</td>
 <td class="instruction">LD A,(23445)</td>
-<td class="comment-11" rowspan="1">Load current y-coordinate into C, decreasing by one...</td>
+<td class="comment-1" rowspan="1">Load current y-coordinate into <span class="register">C</span>, decreasing by one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52883"></span>52883</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52884"></span>52884</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52885"></span>52885</td>
 <td class="instruction">LD A,(23494)</td>
-<td class="comment-11" rowspan="1">Load y-coordinate of top of graphic being drawn into A</td>
+<td class="comment-1" rowspan="1">Load y-coordinate of top of graphic being drawn into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52888"></span>52888</td>
 <td class="instruction">CP C</td>
-<td class="comment-11" rowspan="1">If both y-coordinates are the same (i.e. we have moved beyond graphic's top edge)...</td>
+<td class="comment-1" rowspan="1">If both y-coordinates are the same (i.e. we have moved beyond graphic's top edge)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52889"></span>52889</td>
 <td class="instruction">JR Z,<a href="52717.html#52788">52788</a></td>
-<td class="comment-11" rowspan="1">...then jump to <a href="52717.html#52788">52788</a> (load A with 1, reset Zero Flag and return)</td>
+<td class="comment-1" rowspan="1">...then jump to <a href="52717.html#52788">52788</a> (load <span class="register">A</span> with 1, reset zero flag and return)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52891"></span>52891</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Store increased y-coordinate at <a href="23444.html#23445">23445</a>...</td>
+<td class="comment-1" rowspan="1">Store increased y-coordinate at <a href="23444.html#23445">23445</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52892"></span>52892</td>
 <td class="instruction">LD (23445),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52895"></span>52895</td>
 <td class="instruction">JR 52860</td>
-<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL then return</td>
+<td class="comment-1" rowspan="1">Move virtual cursor (bitmap) to display file address for coordinates x=<span class="register">C</span>, y=<span class="register">B</span> and load address into <span class="register">HL</span> then return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52897"></span>
 <div class="comments">
 <div class="paragraph">
-This next section advances HL to next character block to be drawn where the Apply Vertical Mirror Flag is set
+This next section advances <span class="register">HL</span> to next character block to be drawn where the apply-vertical-mirror flag is set
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52897"></span>52897</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52898"></span>52898</td>
 <td class="instruction">LD A,(23444)</td>
-<td class="comment-11" rowspan="1">Load x-coordinate of character block currently being drawn into A...</td>
+<td class="comment-1" rowspan="1">Load x-coordinate of character block currently being drawn into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52901"></span>52901</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">...decrease by one...</td>
+<td class="comment-1" rowspan="1">...decrease by one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52902"></span>52902</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...and load into B</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52903"></span>52903</td>
 <td class="instruction">LD A,(23493)</td>
-<td class="comment-11" rowspan="1">Load x-coordinate of left of graphic being drawn into A...</td>
+<td class="comment-1" rowspan="1">Load x-coordinate of left of graphic being drawn into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52906"></span>52906</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">...and decrease by one</td>
+<td class="comment-1" rowspan="1">...and decrease by one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52907"></span>52907</td>
 <td class="instruction">CP B</td>
-<td class="comment-11" rowspan="1">If both x-coordinates are the same (i.e. we have moved beyond graphic's left edge)...</td>
+<td class="comment-1" rowspan="1">If both x-coordinates are the same (i.e. we have moved beyond graphic's left edge)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52908"></span>52908</td>
 <td class="instruction">JR Z,52917</td>
-<td class="comment-11" rowspan="1">...then jump to <a href="52820.html#52917">52917</a></td>
+<td class="comment-1" rowspan="1">...then jump to <a href="52820.html#52917">52917</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52910"></span>52910</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Store decreased x-coordinate at <a href="23444.html">23444</a>...</td>
+<td class="comment-1" rowspan="1">Store decreased x-coordinate at <a href="23444.html">23444</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52911"></span>52911</td>
 <td class="instruction">LD (23444),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52914"></span>52914</td>
 <td class="instruction">JP 52860</td>
-<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL then return</td>
+<td class="comment-1" rowspan="1">Move virtual cursor (bitmap) to display file address for coordinates x=<span class="register">C</span>, y=<span class="register">B</span> and load address into <span class="register">HL</span> then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52917"></span>52917</td>
 <td class="instruction">LD A,(23495)</td>
-<td class="comment-11" rowspan="1">Load x-coordinate of right of graphic being drawn into A...</td>
+<td class="comment-1" rowspan="1">Load x-coordinate of right of graphic being drawn into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52920"></span>52920</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52921"></span>52921</td>
 <td class="instruction">JP 52877</td>
-<td class="comment-11" rowspan="1">Move current character position down one character row and return</td>
+<td class="comment-1" rowspan="1">Move current character position down one character row and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="52717.html">52717</a></span></td>
+<td class="prev">
+Prev: <a href="52717.html">52717</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#52820">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="52924.html">52924</a></span></td>
+<td class="next">
+Next: <a href="52924.html">52924</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

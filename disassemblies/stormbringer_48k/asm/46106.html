@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 46106</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,24 +20,28 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45963.html">45963</a></span></td>
+<td class="prev">
+Prev: <a href="45963.html">45963</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#46106">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="46183.html">46183</a></span></td>
+<td class="next">
+Next: <a href="46183.html">46183</a>
+</td>
 </tr>
 </table>
-<div class="description">46106: Display and Process Input for Character Selection Menu (Character List Defined at HL)</div>
+<div class="description">46106: Display and process input for character selection menu (character list defined at <span class="register">HL</span>)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-This routine is called at <a href="44100.html#44116">44116</a> and <a href="44337.html#44397">44397</a>. In both cases, the address of a piece of text ("TRAVEL TO" or "SUMMON") is PUSHed onto the Stack just before the call.
+This routine is called at <a href="44100.html#44116">44116</a> and <a href="44337.html#44397">44397</a>. In both cases, the address of a piece of text ("TRAVEL TO" or "SUMMON") is PUSHed onto the stack just before the call.
 </div>
 <div class="paragraph">
 Used by the routines at <a href="44100.html">44100</a> and <a href="44337.html">44337</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -45,100 +50,80 @@ Used by the routines at <a href="44100.html">44100</a> and <a href="44337.html">
 <td class="register-desc">Start address of list of characters for a character selection menu</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46106"></span>46106</td>
 <td class="instruction">LD (46138),HL</td>
-<td class="comment-11" rowspan="1">Load list start address into operand of instruction at <a href="46106.html#46137">46137</a></td>
+<td class="comment-1" rowspan="1">Load list start address into operand of instruction at <a href="46106.html#46137">46137</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46109"></span>46109</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (start address of list of characters)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (start address of list of characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46110"></span>46110</td>
 <td class="instruction">CALL <a href="47938.html">47938</a></td>
-<td class="comment-11" rowspan="1">Play Short Downward Scale Sound</td>
+<td class="comment-1" rowspan="1">Play short downward scale sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46113"></span>46113</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (start address of list of characters)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (start address of list of characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46114"></span>46114</td>
 <td class="instruction">LD DE,49060</td>
-<td class="comment-11" rowspan="1">Point DE at y-coordinate of top edge of Window 3 in Window Data Table at <a href="49034.html">49034</a>...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at y-coordinate of top edge of window 3 in window data table at <a href="49034.html">49034</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46117"></span>46117</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load required window height from start of list of characters...</td>
+<td class="comment-1" rowspan="1">Load required window height from start of list of characters...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46118"></span>46118</td>
 <td class="instruction">CALL <a href="45625.html">45625</a></td>
-<td class="comment-11" rowspan="1">...and set window's height to this value</td>
+<td class="comment-1" rowspan="1">...and set window's height to this value</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46121"></span>46121</td>
 <td class="instruction">LD A,3</td>
-<td class="comment-11" rowspan="1">Display character selection menu...</td>
+<td class="comment-1" rowspan="1">Display character selection menu...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46123"></span>46123</td>
 <td class="instruction">CALL <a href="47185.html">47185</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46126"></span>46126</td>
 <td class="instruction">LD HL,51367</td>
-<td class="comment-11" rowspan="1">Print "WHO DO YOU WANT TO " text...</td>
+<td class="comment-1" rowspan="1">Print "WHO DO YOU WANT TO " text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46129"></span>46129</td>
 <td class="instruction">CALL <a href="46902.html">46902</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46132"></span>46132</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (address to return to upon RET instruction)...</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (address to return to upon <span class="instruction">RET</span> instruction)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46133"></span>46133</td>
 <td class="instruction">EX (SP),HL</td>
-<td class="comment-11" rowspan="1">...and swap with next value on stack (pointer to text that was PUSHed before this routine was called)</td>
+<td class="comment-1" rowspan="1">...and swap with next value on stack (pointer to text that was PUSHed before this routine was called)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46134"></span>46134</td>
 <td class="instruction">CALL <a href="46902.html">46902</a></td>
-<td class="comment-11" rowspan="1">Print the text ("TRAVEL TO" or "SUMMON")</td>
+<td class="comment-1" rowspan="1">Print the text ("TRAVEL TO" or "SUMMON")</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="46137"></span>
 <div class="comments">
 <div class="paragraph">
@@ -148,149 +133,130 @@ The operand of the instruction at <a href="46106.html#46137">46137</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46137"></span>46137</td>
 <td class="instruction">LD HL,0</td>
-<td class="comment-11" rowspan="1">Load HL with start address of list of characters</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with start address of list of characters</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46140"></span>46140</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL by one byte</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> by one byte</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46141"></span>46141</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">If value at HL is 255 (End Marker)...</td>
+<td class="comment-1" rowspan="1">If value at <span class="register">HL</span> is 255 (end marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46142"></span>46142</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46144"></span>46144</td>
 <td class="instruction">JR Z,46165</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="46106.html#46165">46165</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="46106.html#46165">46165</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46146"></span>46146</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (current position in list of characters)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (current position in list of characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46147"></span>46147</td>
 <td class="instruction">LD (41937),A</td>
-<td class="comment-11" rowspan="1">Set character at current position in list to be Current Character</td>
+<td class="comment-1" rowspan="1">Set character at current position in list to be Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46150"></span>46150</td>
 <td class="instruction">LD HL,50753</td>
-<td class="comment-11" rowspan="1">Point HL to text printing instruction to move cursor to start of next character row within window, then right by two characters...</td>
+<td class="comment-1" rowspan="2">Point <span class="register">HL</span> to text printing instruction to move cursor to start of next character row within window, then right by two characters and print</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46153"></span>46153</td>
 <td class="instruction">CALL <a href="46902.html">46902</a></td>
-<td class="comment-11" rowspan="1">...and print</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46156"></span>46156</td>
 <td class="instruction">LD HL,45800</td>
-<td class="comment-11" rowspan="1">Point HL at instruction to print full name of Current Character...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at instruction to print full name of Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46159"></span>46159</td>
 <td class="instruction">CALL <a href="46902.html">46902</a></td>
-<td class="comment-11" rowspan="1">...and print</td>
+<td class="comment-1" rowspan="1">...and print</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46162"></span>46162</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (current position in list of characters)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (current position in list of characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46163"></span>46163</td>
 <td class="instruction">JR 46140</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="46106.html#46140">46140</a> for next entry in list</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="46106.html#46140">46140</a> for next entry in list</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46165"></span>46165</td>
 <td class="instruction">CALL <a href="47502.html">47502</a></td>
-<td class="comment-11" rowspan="1">Process keyboard / joystick input on a menu and load A with selected item index</td>
+<td class="comment-1" rowspan="1">Process keyboard / joystick input on a menu and load <span class="register">A</span> with selected item index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46168"></span>46168</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">Add one to selected item index (as first entry in list is window height)...</td>
+<td class="comment-1" rowspan="1">Add one to selected item index (as first entry in list is window height)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46169"></span>46169</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...and load into BC...</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">BC</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46170"></span>46170</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46172"></span>46172</td>
 <td class="instruction">LD HL,(46138)</td>
-<td class="comment-11" rowspan="1">Load HL with list start address...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with list start address...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46175"></span>46175</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...and add BC as offset</td>
+<td class="comment-1" rowspan="1">...and add <span class="register">BC</span> as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46176"></span>46176</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load A with entry at position HL in list (i.e. index of selected character)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with entry at position <span class="register">HL</span> in list (i.e. index of selected character)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46177"></span>46177</td>
 <td class="instruction">LD (41937),A</td>
-<td class="comment-11" rowspan="1">...and set as Current Character</td>
+<td class="comment-1" rowspan="1">...and set as Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46180"></span>46180</td>
 <td class="instruction">JP <a href="45781.html#45792">45792</a></td>
-<td class="comment-11" rowspan="1">Print character's name and return</td>
+<td class="comment-1" rowspan="1">Print character's name and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45963.html">45963</a></span></td>
+<td class="prev">
+Prev: <a href="45963.html">45963</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#46106">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="46183.html">46183</a></span></td>
+<td class="next">
+Next: <a href="46183.html">46183</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

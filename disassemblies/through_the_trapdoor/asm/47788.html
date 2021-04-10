@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 47788</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,27 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47772.html">47772</a></span></td>
+<td class="prev">
+Prev: <a href="47772.html">47772</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47788">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47853.html">47853</a></span></td>
+<td class="next">
+Next: <a href="47853.html">47853</a>
+</td>
 </tr>
 </table>
-<div class="description">47788: Read Keyboard and Load Pressed Key Character into A</div>
+<div class="description">47788: Read keyboard and load pressed key character into <span class="register">A</span></div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="47893.html">47893</a> and <a href="47942.html">47942</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -54,245 +50,211 @@ Used by the routines at <a href="47893.html">47893</a> and <a href="47942.html">
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47788"></span>47788</td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1">Swap registers</td>
+<td class="comment-1" rowspan="1">Swap registers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47789"></span>47789</td>
 <td class="instruction">LD BC,65278</td>
-<td class="comment-11" rowspan="1">Load B and C with 254</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> and <span class="register">C</span> with 254</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47792"></span>47792</td>
 <td class="instruction">LD HL,47853</td>
-<td class="comment-11" rowspan="1">Point HL at list of return values</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at list of return values</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47795"></span>47795</td>
 <td class="instruction">IN A,(C)</td>
-<td class="comment-11" rowspan="1">Read from port 254 into A (i.e. read keyboard) [IN 65278 reads the half row CAPS SHIFT to V]</td>
+<td class="comment-1" rowspan="1">Read from port 254 into <span class="register">A</span> (i.e. read keyboard) [<span class="instruction">IN 65278</span> reads the half row CAPS SHIFT to V]</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47797"></span>47797</td>
 <td class="instruction">SET 0,A</td>
-<td class="comment-11" rowspan="1">Set bit 0 of A (i.e. clear pressing of CAPS SHIFT)</td>
+<td class="comment-1" rowspan="1">Set bit 0 of <span class="register">A</span> (i.e. clear pressing of CAPS SHIFT)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47799"></span>47799</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">Strip out all but the five bits representing key presses</td>
+<td class="comment-1" rowspan="1">Strip out all but the five bits representing key presses</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47801"></span>47801</td>
 <td class="instruction">XOR 31</td>
-<td class="comment-11" rowspan="1">Invert all of the lowest five bits</td>
+<td class="comment-1" rowspan="1">Invert all of the lowest five bits</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47803"></span>47803</td>
 <td class="instruction">JR NZ,47843</td>
-<td class="comment-11" rowspan="1">If this value is non-zero, then a key has been pressed, so skip ahead to <a href="47788.html#47843">47843</a></td>
+<td class="comment-1" rowspan="1">If this value is non-zero, then a key has been pressed, so skip ahead to <a href="47788.html#47843">47843</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47805"></span>47805</td>
 <td class="instruction">LD DE,5</td>
-<td class="comment-11" rowspan="1">Advance HL by five characters in list of return values string...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> by five characters in list of return values string...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47808"></span>47808</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47809"></span>47809</td>
 <td class="instruction">LD E,6</td>
-<td class="comment-11" rowspan="1">Load E with 6 as there are 6 keyboard half-rows to test (loop counter)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with 6 as there are 6 keyboard half-rows to test (loop counter)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47811"></span>47811</td>
 <td class="instruction">RLC B</td>
-<td class="comment-11" rowspan="1">With each loop, change BC from 65278 -&gt; 65022 -&gt; 64510 -&gt; 63486 -&gt; 61438 -&gt; 57342 -&gt; 49150</td>
+<td class="comment-1" rowspan="1">With each loop, change <span class="register">BC</span> from 65278 -&gt; 65022 -&gt; 64510 -&gt; 63486 -&gt; 61438 -&gt; 57342 -&gt; 49150</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47813"></span>47813</td>
 <td class="instruction">IN A,(C)</td>
-<td class="comment-11" rowspan="1">Read from port 254 into A (i.e. read keyboard)</td>
+<td class="comment-1" rowspan="1">Read from port 254 into <span class="register">A</span> (i.e. read keyboard)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47815"></span>47815</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">Strip out all but the five bits representing key presses</td>
+<td class="comment-1" rowspan="1">Strip out all but the five bits representing key presses</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47817"></span>47817</td>
 <td class="instruction">XOR 31</td>
-<td class="comment-11" rowspan="1">Invert all of the lowest five bits</td>
+<td class="comment-1" rowspan="1">Invert all of the lowest five bits</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47819"></span>47819</td>
 <td class="instruction">JR NZ,47843</td>
-<td class="comment-11" rowspan="1">If this value is non-zero, then a key has been pressed, so skip ahead to <a href="47788.html#47843">47843</a></td>
+<td class="comment-1" rowspan="1">If this value is non-zero, then a key has been pressed, so skip ahead to <a href="47788.html#47843">47843</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47821"></span>47821</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL by five characters in list of return values string...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> by five characters in list of return values string...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47822"></span>47822</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47823"></span>47823</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47824"></span>47824</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47825"></span>47825</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47826"></span>47826</td>
 <td class="instruction">DEC E</td>
-<td class="comment-11" rowspan="1">Decrease number of remaining keyboard half-rows to check</td>
+<td class="comment-1" rowspan="1">Decrease number of remaining keyboard half-rows to check</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47827"></span>47827</td>
 <td class="instruction">JR NZ,47811</td>
-<td class="comment-11" rowspan="1">If there are any more half rows to check then loop back to <a href="47788.html#47811">47811</a></td>
+<td class="comment-1" rowspan="1">If there are any more half rows to check then loop back to <a href="47788.html#47811">47811</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47829"></span>47829</td>
 <td class="instruction">RLC B</td>
-<td class="comment-11" rowspan="1">Set BC to 32766 for final keyboard half-row</td>
+<td class="comment-1" rowspan="1">Set <span class="register">BC</span> to 32766 for final keyboard half-row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47831"></span>47831</td>
 <td class="instruction">IN A,(C)</td>
-<td class="comment-11" rowspan="1">Read from port 254 into A (i.e. read keyboard)</td>
+<td class="comment-1" rowspan="1">Read from port 254 into <span class="register">A</span> (i.e. read keyboard)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47833"></span>47833</td>
 <td class="instruction">SET 1,A</td>
-<td class="comment-11" rowspan="1">Set bit 1 of A (i.e. clear pressing of SYMBOL SHIFT)</td>
+<td class="comment-1" rowspan="1">Set bit 1 of <span class="register">A</span> (i.e. clear pressing of SYMBOL SHIFT)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47835"></span>47835</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">Strip out all but the five bits representing key presses</td>
+<td class="comment-1" rowspan="1">Strip out all but the five bits representing key presses</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47837"></span>47837</td>
 <td class="instruction">XOR 31</td>
-<td class="comment-11" rowspan="1">Invert all of the lowest five bits</td>
+<td class="comment-1" rowspan="1">Invert all of the lowest five bits</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47839"></span>47839</td>
 <td class="instruction">JR NZ,47843</td>
-<td class="comment-11" rowspan="1">If this value is non-zero, then a key has been pressed, so skip ahead to <a href="47788.html#47843">47843</a></td>
+<td class="comment-1" rowspan="1">If this value is non-zero, then a key has been pressed, so skip ahead to <a href="47788.html#47843">47843</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47841"></span>47841</td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1">Swap registers</td>
+<td class="comment-1" rowspan="1">Swap registers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47842"></span>47842</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return [no key pressed]</td>
+<td class="comment-1" rowspan="1">Return [no key pressed]</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47843"></span>47843</td>
 <td class="instruction">SRL A</td>
-<td class="comment-11" rowspan="1">Shift bits right</td>
+<td class="comment-1" rowspan="1">Shift bits right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47845"></span>47845</td>
 <td class="instruction">JR C,47850</td>
-<td class="comment-11" rowspan="1">If carry flag is set, then this is the key that was pressed, so skip ahead to <a href="47788.html#47850">47850</a></td>
+<td class="comment-1" rowspan="1">If carry flag is set, then this is the key that was pressed, so skip ahead to <a href="47788.html#47850">47850</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47847"></span>47847</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to check next character</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to check next character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47848"></span>47848</td>
 <td class="instruction">JR 47843</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="47788.html#47843">47843</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="47788.html#47843">47843</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47850"></span>47850</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load current character in list of return values string into A as this is the key that was pressed</td>
+<td class="comment-1" rowspan="1">Load current character in list of return values string into <span class="register">A</span> as this is the key that was pressed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47851"></span>47851</td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1">Swap registers</td>
+<td class="comment-1" rowspan="1">Swap registers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47852"></span>47852</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return [key pressed]</td>
+<td class="comment-1" rowspan="1">Return [key pressed]</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47772.html">47772</a></span></td>
+<td class="prev">
+Prev: <a href="47772.html">47772</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47788">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47853.html">47853</a></span></td>
+<td class="next">
+Next: <a href="47853.html">47853</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

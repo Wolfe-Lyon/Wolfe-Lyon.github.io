@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Text at 57693</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="57269.html">57269</a></span></td>
+<td class="prev">
+Prev: <a href="57269.html">57269</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#57693">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="58459.html">58459</a></span></td>
+<td class="next">
+Next: <a href="58459.html">58459</a>
+</td>
 </tr>
 </table>
-<div class="description">57693: Common Words Table, Part 1</div>
+<div class="description">57693: Common words table, part 1</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 This data block contains a list of zero-terminated (sub-)strings. Other text blocks reference this table when a particular string is required. This reduces the space requirements for storage of all of the game's text.
@@ -36,632 +41,524 @@ This data block contains a list of zero-terminated (sub-)strings. Other text blo
 The game assigns indices to these strings, starting at 91. So, for example, if a text block contains a byte of value 95, that byte will be replaced with the sub-string of index 95 (5th entry) in this table.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57693"></span>57693</td>
 <td class="instruction">DEFM 14,14,0</td>
-<td class="comment-11" rowspan="1"><pre class="text">{carriage return / line feed}{carriage return / line feed}</pre></td>
+<td class="comment-1" rowspan="1"><pre class="text">{carriage return / line feed}{carriage return / line feed}</pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57696"></span>57696</td>
 <td class="instruction">DEFM 16,6,0</td>
-<td class="comment-11" rowspan="1"><pre class="text">{change INK colour to yellow}</pre></td>
+<td class="comment-1" rowspan="1"><pre class="text">{change INK colour to yellow}</pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57699"></span>57699</td>
 <td class="instruction">DEFM 9,9,0</td>
-<td class="comment-11" rowspan="1"><pre class="text">{move text cursor right by two characters}</pre></td>
+<td class="comment-1" rowspan="1"><pre class="text">{move text cursor right by two characters}</pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57702"></span>57702</td>
 <td class="instruction">DEFM 14,16,7,0</td>
-<td class="comment-11" rowspan="1"><pre class="text">{carriage return / line feed}{change INK colour to white}</pre></td>
+<td class="comment-1" rowspan="1"><pre class="text">{carriage return / line feed}{change INK colour to white}</pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57706"></span>57706</td>
 <td class="instruction">DEFM "INSTRUCTION",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">INSTRUCTION</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">INSTRUCTION</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57718"></span>57718</td>
 <td class="instruction">DEFM " = ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright"> = </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright"> = </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57722"></span>57722</td>
 <td class="instruction">DEFM "A ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">A </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">A </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57725"></span>57725</td>
 <td class="instruction">DEFM "AN ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">AN </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">AN </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57729"></span>57729</td>
 <td class="instruction">DEFM "TO ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">TO </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">TO </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57733"></span>57733</td>
 <td class="instruction">DEFM "IT",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">IT</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">IT</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57736"></span>57736</td>
 <td class="instruction">DEFM "CHARACTER",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">CHARACTER</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">CHARACTER</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57746"></span>57746</td>
 <td class="instruction">DEFM "FROM ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">FROM </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">FROM </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57752"></span>57752</td>
 <td class="instruction">DEFM "OBJECT ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">OBJECT </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">OBJECT </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57760"></span>57760</td>
 <td class="instruction">DEFM "AND ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">AND </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">AND </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57765"></span>57765</td>
 <td class="instruction">DEFM "YOU ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">YOU </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">YOU </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57770"></span>57770</td>
 <td class="instruction">DEFM "GAME ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">GAME </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">GAME </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57776"></span>57776</td>
 <td class="instruction">DEFM "LEVER",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">LEVER</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">LEVER</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57782"></span>57782</td>
 <td class="instruction">DEFM "ANY ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ANY </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ANY </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57787"></span>57787</td>
 <td class="instruction">DEFM "KEY",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">KEY</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">KEY</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57791"></span>57791</td>
 <td class="instruction">DEFM "   ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">   </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">   </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57795"></span>57795</td>
 <td class="instruction">DEFM "THE ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">THE </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">THE </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57800"></span>57800</td>
 <td class="instruction">DEFM "WHICH ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WHICH </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WHICH </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57807"></span>57807</td>
 <td class="instruction">DEFM "BUT",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BUT</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BUT</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57811"></span>57811</td>
 <td class="instruction">DEFM "EGG",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">EGG</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">EGG</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57815"></span>57815</td>
 <td class="instruction">DEFM "SUMMON ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SUMMON </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SUMMON </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57823"></span>57823</td>
 <td class="instruction">DEFM "ARE",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ARE</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ARE</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57827"></span>57827</td>
 <td class="instruction">DEFM "IS ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">IS </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">IS </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57831"></span>57831</td>
 <td class="instruction">DEFM "SAYS ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SAYS </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SAYS </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57837"></span>57837</td>
 <td class="instruction">DEFM "YOUR ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">YOUR </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">YOUR </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57843"></span>57843</td>
 <td class="instruction">DEFM "NOT ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">NOT </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">NOT </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57848"></span>57848</td>
 <td class="instruction">DEFM "YOURSELF ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">YOURSELF </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">YOURSELF </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57858"></span>57858</td>
 <td class="instruction">DEFM "OF ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">OF </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">OF </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57862"></span>57862</td>
 <td class="instruction">DEFM "ING ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ING </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ING </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57867"></span>57867</td>
 <td class="instruction">DEFM "DISQUISE",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">DISQUISE</span></div></pre> (<a href="../reference/bugs.html#spellingandpunctuation">bug</a>)</td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">DISQUISE</span></div></pre> (<a href="../reference/bugs.html#spellingandpunctuation">bug</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57876"></span>57876</td>
 <td class="instruction">DEFM "SOMETHING ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SOMETHING </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SOMETHING </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57887"></span>57887</td>
 <td class="instruction">DEFM "BROKEN GLASS",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BROKEN GLASS</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BROKEN GLASS</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57900"></span>57900</td>
 <td class="instruction">DEFM "GOLDEN ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">GOLDEN </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">GOLDEN </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57908"></span>57908</td>
 <td class="instruction">DEFM "HELP ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">HELP </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">HELP </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57914"></span>57914</td>
 <td class="instruction">DEFM "DAVID JONES",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">DAVID JONES</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">DAVID JONES</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57926"></span>57926</td>
 <td class="instruction">DEFM "FOOTMAN ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">FOOTMAN </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">FOOTMAN </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57935"></span>57935</td>
 <td class="instruction">DEFM "GUARD ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">GUARD </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">GUARD </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57942"></span>57942</td>
 <td class="instruction">DEFM "WIZARD ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WIZARD </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WIZARD </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57950"></span>57950</td>
 <td class="instruction">DEFM "CHAMBERMAID ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">CHAMBERMAID </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">CHAMBERMAID </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57963"></span>57963</td>
 <td class="instruction">DEFM "WHITE WITCH ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WHITE WITCH </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WHITE WITCH </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57976"></span>57976</td>
 <td class="instruction">DEFM "WARRIOR ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WARRIOR </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WARRIOR </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57985"></span>57985</td>
 <td class="instruction">DEFM "SILVER",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SILVER</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SILVER</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57992"></span>57992</td>
 <td class="instruction">DEFM "COPPER",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">COPPER</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">COPPER</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="57999"></span>57999</td>
 <td class="instruction">DEFM "CRYSTAL",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">CRYSTAL</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">CRYSTAL</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58007"></span>58007</td>
 <td class="instruction">DEFM "THIS ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">THIS </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">THIS </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58013"></span>58013</td>
 <td class="instruction">DEFM "NOTHING",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">NOTHING</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">NOTHING</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58021"></span>58021</td>
 <td class="instruction">DEFM "ALL",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ALL</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ALL</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58025"></span>58025</td>
 <td class="instruction">DEFM "THERE ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">THERE </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">THERE </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58032"></span>58032</td>
 <td class="instruction">DEFM "THEIR",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">THEIR</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">THEIR</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58038"></span>58038</td>
 <td class="instruction">DEFM "STRENGTH ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">STRENGTH </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">STRENGTH </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58048"></span>58048</td>
 <td class="instruction">DEFM "BOOK",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BOOK</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BOOK</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58053"></span>58053</td>
 <td class="instruction">DEFM "SOME",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SOME</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SOME</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58058"></span>58058</td>
 <td class="instruction">DEFM "YES",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">YES</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">YES</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58062"></span>58062</td>
 <td class="instruction">DEFM "NO",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">NO</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">NO</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58065"></span>58065</td>
 <td class="instruction">DEFM "BOTTLE",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BOTTLE</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BOTTLE</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58072"></span>58072</td>
 <td class="instruction">DEFM "BOTTLE OF LIQUID",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BOTTLE OF LIQUID</span></div></pre> (<a href="../reference/facts.html#missedoptimisation">see trivia</a>)</td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BOTTLE OF LIQUID</span></div></pre> (<a href="../reference/facts.html#missedoptimisation">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58089"></span>58089</td>
 <td class="instruction">DEFM "THAT ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">THAT </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">THAT </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58095"></span>58095</td>
 <td class="instruction">DEFM "HAS ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">HAS </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">HAS </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58100"></span>58100</td>
 <td class="instruction">DEFM "BREAK ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BREAK </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BREAK </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58107"></span>58107</td>
 <td class="instruction">DEFM "WILL ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WILL </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WILL </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58113"></span>58113</td>
 <td class="instruction">DEFM "WANT",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WANT</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WANT</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58118"></span>58118</td>
 <td class="instruction">DEFM "TRAVEL",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">TRAVEL</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">TRAVEL</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58125"></span>58125</td>
 <td class="instruction">DEFM "BODY ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BODY </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BODY </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58131"></span>58131</td>
 <td class="instruction">DEFM "BEARWOOLF",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BEARWOOLF</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BEARWOOLF</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58141"></span>58141</td>
 <td class="instruction">DEFM "TEDDY BEAR",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">TEDDY BEAR</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">TEDDY BEAR</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58152"></span>58152</td>
 <td class="instruction">DEFM "WAS ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WAS </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">WAS </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58157"></span>58157</td>
 <td class="instruction">DEFM "REQUIRE",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">REQUIRE</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">REQUIRE</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58165"></span>58165</td>
 <td class="instruction">DEFM "PRESS",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">PRESS</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">PRESS</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58171"></span>58171</td>
 <td class="instruction">DEFM "KILLED ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">KILLED </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">KILLED </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58179"></span>58179</td>
 <td class="instruction">DEFM "ATTRIBUTE",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ATTRIBUTE</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ATTRIBUTE</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58189"></span>58189</td>
 <td class="instruction">DEFM "STORMBRINGER",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">STORMBRINGER</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">STORMBRINGER</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58202"></span>58202</td>
 <td class="instruction">DEFM "COPYRIGHT ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">COPYRIGHT </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">COPYRIGHT </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58213"></span>58213</td>
 <td class="instruction">DEFM " IS TOO TIRED TO",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright"> IS TOO TIRED TO</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright"> IS TOO TIRED TO</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58230"></span>58230</td>
 <td class="instruction">DEFM "ONE WAY CORRIDOR",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ONE WAY CORRIDOR</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ONE WAY CORRIDOR</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58247"></span>58247</td>
 <td class="instruction">DEFM "HERE",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">HERE</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">HERE</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58252"></span>58252</td>
 <td class="instruction">DEFM "YET",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">YET</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">YET</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58256"></span>58256</td>
 <td class="instruction">DEFM "BEARWOOLFS CAVE",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BEARWOOLFS CAVE</span></div></pre> (<a href="../reference/bugs.html#spellingandpunctuation">bug</a>)</td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">BEARWOOLFS CAVE</span></div></pre> (<a href="../reference/bugs.html#spellingandpunctuation">bug</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58272"></span>58272</td>
 <td class="instruction">DEFM "FOREST",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">FOREST</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">FOREST</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58279"></span>58279</td>
 <td class="instruction">DEFM "QUITICUS GAMUS",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">QUITICUS GAMUS</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">QUITICUS GAMUS</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58294"></span>58294</td>
 <td class="instruction">DEFM "MAIN ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">MAIN </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">MAIN </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58300"></span>58300</td>
 <td class="instruction">DEFM "SPELL",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SPELL</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SPELL</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58306"></span>58306</td>
 <td class="instruction">DEFM 175," OF WONDER",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SPELL OF WONDER</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SPELL OF WONDER</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58318"></span>58318</td>
 <td class="instruction">DEFM "FLOOR",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">FLOOR</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">FLOOR</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58324"></span>58324</td>
 <td class="instruction">DEFM "ROOM",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ROOM</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ROOM</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58329"></span>58329</td>
 <td class="instruction">DEFM "DIMENSION MERGE",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">DIMENSION MERGE</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">DIMENSION MERGE</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58345"></span>58345</td>
 <td class="instruction">DEFM "MELT GRANITE",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">MELT GRANITE</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">MELT GRANITE</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58358"></span>58358</td>
 <td class="instruction">DEFM "PASS PLANT",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">PASS PLANT</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">PASS PLANT</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58369"></span>58369</td>
 <td class="instruction">DEFM "TRAVEL ",99,"PERSON",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">TRAVEL TO PERSON</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">TRAVEL TO PERSON</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58384"></span>58384</td>
 <td class="instruction">DEFM "MAGIC FULCRUM",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">MAGIC FULCRUM</span></div></pre> (<a href="../reference/facts.html#missedoptimisation">see trivia</a>)</td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">MAGIC FULCRUM</span></div></pre> (<a href="../reference/facts.html#missedoptimisation">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58398"></span>58398</td>
 <td class="instruction">DEFM "HAPPY",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">HAPPY</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">HAPPY</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58404"></span>58404</td>
 <td class="instruction">DEFM "SPOOKY ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SPOOKY </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">SPOOKY </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58412"></span>58412</td>
 <td class="instruction">DEFM "PLAYER ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">PLAYER </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">PLAYER </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58420"></span>58420</td>
 <td class="instruction">DEFM "CANDLE",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">CANDLE</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">CANDLE</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58427"></span>58427</td>
 <td class="instruction">DEFM "ALREADY",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ALREADY</span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">ALREADY</span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58435"></span>58435</td>
 <td class="instruction">DEFM "REDEFINE ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">REDEFINE </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">REDEFINE </span></div></pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="58445"></span>58445</td>
 <td class="instruction">DEFM "MASTERTRONIC ",0</td>
-<td class="comment-11" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">MASTERTRONIC </span></div></pre></td>
+<td class="comment-1" rowspan="1"><pre class="text"><div class="whiteInk blackPaper bright"><span class="whiteInk blackPaper bright">MASTERTRONIC </span></div></pre></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="57269.html">57269</a></span></td>
+<td class="prev">
+Prev: <a href="57269.html">57269</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#57693">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="58459.html">58459</a></span></td>
+<td class="next">
+Next: <a href="58459.html">58459</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

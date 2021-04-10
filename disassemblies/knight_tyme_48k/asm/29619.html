@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 29619</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,58 +20,48 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29488.html">29488</a></span></td>
+<td class="prev">
+Prev: <a href="29488.html">29488</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29619">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29756.html">29756</a></span></td>
+<td class="next">
+Next: <a href="29756.html">29756</a>
+</td>
 </tr>
 </table>
-<div class="description">29619: Process Command to Take an Object</div>
+<div class="description">29619: Process command to take an object</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="55726.html">55726</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29619"></span>29619</td>
 <td class="instruction">LD HL,38647</td>
-<td class="comment-11" rowspan="1">Point HL at "TAKE AN OBJECT FROM ?" text (end of sub-menu title, after "WHO DO YOU WANT TO ")</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "TAKE AN OBJECT FROM ?" text (end of sub-menu title, after "WHO DO YOU WANT TO ")</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29622"></span>29622</td>
 <td class="instruction">LD DE,39015</td>
-<td class="comment-11" rowspan="1">Point DE (Command Summary Text Pointer) at "TAKE SOMETHING FROM" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> (command summary text pointer) at "TAKE SOMETHING FROM" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29625"></span>29625</td>
 <td class="instruction">CALL <a href="34122.html">34122</a></td>
-<td class="comment-11" rowspan="1">Display and process input for Character Selection Menu (current room's characters only), setting Current Character</td>
+<td class="comment-1" rowspan="1">Display and process input for character selection menu (current room's characters only), setting Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29628"></span>29628</td>
 <td class="instruction">JP Z,<a href="29330.html#29482">29482</a></td>
-<td class="comment-11" rowspan="1">If there are no characters in the room then set MK's available action flags, validate I.D. Card if appropriate and jump to start of Main Game Loop (<a href="29330.html#29482">29482</a>)</td>
+<td class="comment-1" rowspan="1">If there are no characters in the room then return to game</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="29631"></span>
 <div class="comments">
 <div class="paragraph">
@@ -80,317 +71,271 @@ The operand of the instruction at <a href="29619.html#29631">29631</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29631"></span>29631</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Point IX at current inventory of Current Character...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at current inventory of Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29633"></span>29633</td>
 <td class="instruction">CALL <a href="33585.html">33585</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29636"></span>29636</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">If the first inventory slot of the character is empty...</td>
+<td class="comment-1" rowspan="1">If the first inventory slot of the character is empty...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29639"></span>29639</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29640"></span>29640</td>
 <td class="instruction">JP Z,<a href="55202.html">55202</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character]'S HANDS ARE EMPTY" Window (13), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character]'S HANDS ARE EMPTY" window (13) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29643"></span>29643</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX (start of inventory)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span> (start of inventory)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29645"></span>29645</td>
 <td class="instruction">LD B,5</td>
-<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 5 (five inventory slots)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29647"></span>29647</td>
 <td class="instruction">LD HL,38998</td>
-<td class="comment-11" rowspan="1">Point HL at "TAKE WHICH OBJECT ?" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "TAKE WHICH OBJECT ?" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29650"></span>29650</td>
 <td class="instruction">LD DE,0</td>
-<td class="comment-11" rowspan="1">Load DE with zero (i.e. no Command Summary Text)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with zero (i.e. no command summary text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29653"></span>29653</td>
 <td class="instruction">CALL <a href="33952.html">33952</a></td>
-<td class="comment-11" rowspan="1">Show list of objects in character's inventory as a menu and load A with selected item index</td>
+<td class="comment-1" rowspan="1">Show list of objects in character's inventory as a menu and load <span class="register">A</span> with selected item index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29656"></span>29656</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = index of chosen object's inventory slot)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = index of chosen object's inventory slot)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29657"></span>29657</td>
 <td class="instruction">CALL <a href="54333.html">54333</a></td>
-<td class="comment-11" rowspan="1">Print or update Command Summary Window at top of screen</td>
+<td class="comment-1" rowspan="1">Print or update command summary window at top of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29660"></span>29660</td>
 <td class="instruction">LD DE,39010</td>
-<td class="comment-11" rowspan="1">Point DE at "TAKE THE" text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at "TAKE THE" text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29663"></span>29663</td>
 <td class="instruction">CALL <a href="54283.html">54283</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at top of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29666"></span>29666</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = index of chosen object's inventory slot)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = index of chosen object's inventory slot)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29667"></span>29667</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (previously IX, pointer to current inventory of current character)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (previously <span class="register">IX</span>, pointer to current inventory of current character)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29668"></span>29668</td>
 <td class="instruction">CALL <a href="33911.html">33911</a></td>
-<td class="comment-11" rowspan="1">Print name of object in inventory slot A of inventory data at HL in Command Summary Window</td>
+<td class="comment-1" rowspan="1">Print name of object in inventory slot <span class="register">A</span> of inventory data at <span class="register">HL</span> in command summary window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29671"></span>29671</td>
 <td class="instruction">LD DE,39023</td>
-<td class="comment-11" rowspan="1">Point DE at " FROM" text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at " FROM" text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29674"></span>29674</td>
 <td class="instruction">CALL <a href="54283.html">54283</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at top of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29677"></span>29677</td>
 <td class="instruction">LD A,(29632)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29680"></span>29680</td>
 <td class="instruction">CALL <a href="33926.html#33937">33937</a></td>
-<td class="comment-11" rowspan="1">Print character's name</td>
+<td class="comment-1" rowspan="1">Print character's name</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29683"></span>29683</td>
 <td class="instruction">CALL <a href="55115.html">55115</a></td>
-<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display execute / reject command window and return here if execute chosen, else exit to main game loop</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29686"></span>29686</td>
 <td class="instruction">LD A,253</td>
-<td class="comment-11" rowspan="1">Decrease Current Character's happiness by 3...</td>
+<td class="comment-1" rowspan="1">Decrease Current Character's happiness by 3...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29688"></span>29688</td>
 <td class="instruction">CALL <a href="33569.html">33569</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29691"></span>29691</td>
 <td class="instruction">LD IX,44238</td>
-<td class="comment-11" rowspan="1">Point IX at Table of Characters' Wanted Objects</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at table of characters' wanted objects</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29695"></span>29695</td>
 <td class="instruction">CALL <a href="33863.html">33863</a></td>
-<td class="comment-11" rowspan="1">If Current Character wants Current Object...</td>
+<td class="comment-1" rowspan="1">If Current Character wants Current Object...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29698"></span>29698</td>
 <td class="instruction">JP Z,<a href="55207.html">55207</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character] WANTS TO KEEP THE [Object]" Window (13), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character] WANTS TO KEEP THE [Object]" window (13) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29701"></span>29701</td>
 <td class="instruction">LD HL,25168</td>
-<td class="comment-11" rowspan="1">Load A with index of object in Magic Knight's fifth inventory slot (carrying)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of object in Magic Knight's fifth inventory slot (carrying)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29704"></span>29704</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29705"></span>29705</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If this is not zero (i.e. Magic Knight's hands are full)...</td>
+<td class="comment-1" rowspan="1">If this is not zero (i.e. Magic Knight's hands are full)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29706"></span>29706</td>
 <td class="instruction">JP NZ,<a href="55165.html">55165</a></td>
-<td class="comment-11" rowspan="1">...then display "YOUR HANDS ARE FULL" window, wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "YOUR HANDS ARE FULL" window and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29709"></span>29709</td>
 <td class="instruction">CALL <a href="33601.html">33601</a></td>
-<td class="comment-11" rowspan="1">Check whether object has a weight greater than Magic Knight's surplus strength...</td>
+<td class="comment-1" rowspan="1">Check whether object has a weight greater than Magic Knight's surplus strength...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29712"></span>29712</td>
 <td class="instruction">JP P,<a href="55177.html">55177</a></td>
-<td class="comment-11" rowspan="1">...and if it does then display "THE [name of Current Object] IS TOO HEAVY FOR YOU" Window, wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...and if it does then display "THE [name of Current Object] IS TOO HEAVY FOR YOU" window and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29715"></span>29715</td>
 <td class="instruction">CALL <a href="33500.html">33500</a></td>
-<td class="comment-11" rowspan="1">Load A with Current Character's Happiness Level...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Current Character's happiness level...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29718"></span>29718</td>
 <td class="instruction">CP 30</td>
-<td class="comment-11" rowspan="1">and if this is less than 30...</td>
+<td class="comment-1" rowspan="1">and if this is less than 30...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29720"></span>29720</td>
 <td class="instruction">JP C,<a href="55207.html">55207</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character] WANTS TO KEEP THE [Object]" Window (13), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character] WANTS TO KEEP THE [Object]" window (13) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29723"></span>29723</td>
 <td class="instruction">LD A,(29632)</td>
-<td class="comment-11" rowspan="1">Point IX at current inventory of Current Character...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at current inventory of Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29726"></span>29726</td>
 <td class="instruction">CALL <a href="33585.html">33585</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29729"></span>29729</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Copy value from IX...</td>
+<td class="comment-1" rowspan="1">Copy value from <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29731"></span>29731</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">...to HL</td>
+<td class="comment-1" rowspan="1">...to <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29732"></span>29732</td>
 <td class="instruction">LD A,(29526)</td>
-<td class="comment-11" rowspan="1">Load C with index of Current Object...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with index of Current Object...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29735"></span>29735</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29736"></span>29736</td>
 <td class="instruction">LD B,5</td>
-<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 5 (five inventory slots)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29738"></span>29738</td>
 <td class="instruction">CALL <a href="36254.html">36254</a></td>
-<td class="comment-11" rowspan="1">Remove object C from Current Character's inventory</td>
+<td class="comment-1" rowspan="1">Remove object <span class="register">C</span> from Current Character's inventory</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29741"></span>29741</td>
 <td class="instruction">LD A,(29526)</td>
-<td class="comment-11" rowspan="1">Load C with index of Current Object...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with index of Current Object...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29744"></span>29744</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29745"></span>29745</td>
 <td class="instruction">LD B,5</td>
-<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 5 (five inventory slots)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29747"></span>29747</td>
 <td class="instruction">LD HL,25164</td>
-<td class="comment-11" rowspan="1">Point HL at start of Magic Knight's current inventory (carrying)...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of Magic Knight's current inventory (carrying)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29750"></span>29750</td>
 <td class="instruction">CALL <a href="33516.html">33516</a></td>
-<td class="comment-11" rowspan="1">...and load object C into the first empty slot</td>
+<td class="comment-1" rowspan="1">...and load object <span class="register">C</span> into the first empty slot</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29753"></span>29753</td>
 <td class="instruction">JP <a href="29330.html#29467">29467</a></td>
-<td class="comment-11" rowspan="1">Show Magic Knight's current inventory and jump back to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Show Magic Knight's current inventory and jump back to main game loop</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29488.html">29488</a></span></td>
+<td class="prev">
+Prev: <a href="29488.html">29488</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29619">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29756.html">29756</a></span></td>
+<td class="next">
+Next: <a href="29756.html">29756</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

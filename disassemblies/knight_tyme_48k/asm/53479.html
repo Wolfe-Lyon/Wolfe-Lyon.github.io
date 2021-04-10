@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 53479</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,82 +20,81 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53429.html">53429</a></span></td>
+<td class="prev">
+Prev: <a href="53429.html">53429</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53479">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53498.html">53498</a></span></td>
+<td class="next">
+Next: <a href="53498.html">53498</a>
+</td>
 </tr>
 </table>
-<div class="description">53479: Call Time-Dependent Routines [Main Interrupt Routine]</div>
+<div class="description">53479: Call time-dependent routines (main interrupt routine)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="65524.html">65524</a>.
 </div>
 </div>
-<table class="input-0">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53479"></span>53479</td>
 <td class="instruction">CALL <a href="54051.html">54051</a></td>
-<td class="comment-11" rowspan="1">Store all registers on the stack</td>
+<td class="comment-1" rowspan="1">Store all registers on the stack</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53482"></span>53482</td>
 <td class="instruction">BIT 0,(IY+65)</td>
-<td class="comment-11" rowspan="1">If Game In Progress Flag is reset... (IY = 23610)</td>
+<td class="comment-1" rowspan="1">If game-in-progress flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53486"></span>53486</td>
 <td class="instruction">JP Z,53492</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="53479.html#53492">53492</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="53479.html#53492">53492</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53489"></span>53489</td>
 <td class="instruction">CALL <a href="53498.html">53498</a></td>
-<td class="comment-11" rowspan="1">Update game time, time left and move characters if appropriate</td>
+<td class="comment-1" rowspan="1">Update game time, time left and move characters if appropriate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53492"></span>53492</td>
 <td class="instruction">CALL <a href="54079.html">54079</a></td>
-<td class="comment-11" rowspan="1">Restore all registers from the stack</td>
+<td class="comment-1" rowspan="1">Restore all registers from the stack</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53495"></span>53495</td>
 <td class="instruction">JP 56</td>
-<td class="comment-11" rowspan="1">Jump to ROM maskable interrupt routine (update frame counter, read keyboard and then return from interrupt routine)</td>
+<td class="comment-1" rowspan="1">Jump to ROM maskable interrupt routine (update frame counter, read keyboard and then return from interrupt routine)</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53429.html">53429</a></span></td>
+<td class="prev">
+Prev: <a href="53429.html">53429</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53479">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53498.html">53498</a></span></td>
+<td class="next">
+Next: <a href="53498.html">53498</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

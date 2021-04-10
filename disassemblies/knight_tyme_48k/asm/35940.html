@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 35940</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,48 +20,38 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="35903.html">35903</a></span></td>
+<td class="prev">
+Prev: <a href="35903.html">35903</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#35940">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="35994.html">35994</a></span></td>
+<td class="next">
+Next: <a href="35994.html">35994</a>
+</td>
 </tr>
 </table>
-<div class="description">35940: Fill a Region of Attribute File with Specified Attribute (e.g. Background Colour and Colour of Text Within)</div>
+<div class="description">35940: Fill a region of attribute file with specified attribute (e.g. background colour and colour of text within)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="32158.html">32158</a>, <a href="32252.html">32252</a>, <a href="32602.html">32602</a>, <a href="34990.html">34990</a> and <a href="35828.html">35828</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35940"></span>35940</td>
 <td class="instruction">LD BC,(23493)</td>
-<td class="comment-11" rowspan="1">Load BC with the coordinates of the top-left corner of the area to fill</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with the coordinates of the top-left corner of the area to fill</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35944"></span>35944</td>
 <td class="instruction">CALL <a href="54148.html">54148</a></td>
-<td class="comment-11" rowspan="1">Load HL with Attribute File address for coordinates (C, B)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with attribute file address for coordinates (<span class="register">C</span>, <span class="register">B</span>)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="35947"></span>
 <div class="comments">
 <div class="paragraph">
@@ -70,173 +61,151 @@ The operand of the instruction at <a href="35940.html#35947">35947</a> is an att
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35947"></span>35947</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Load attribute to place into A</td>
+<td class="comment-1" rowspan="1">Load attribute to place into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35949"></span>35949</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Apply attribute data to Attribute File address in HL</td>
+<td class="comment-1" rowspan="1">Apply attribute data to attribute file address in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35950"></span>35950</td>
 <td class="instruction">LD A,(23495)</td>
-<td class="comment-11" rowspan="1">Load A with x-coordinate of right side of area to fill</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with x-coordinate of right side of area to fill</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35953"></span>35953</td>
 <td class="instruction">CP C</td>
-<td class="comment-11" rowspan="1">Check if left and right edges are at same x-coordinate (i.e. zero width)...</td>
+<td class="comment-1" rowspan="1">Check if left and right edges are at same x-coordinate (i.e. zero width)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35954"></span>35954</td>
 <td class="instruction">JP Z,35970</td>
-<td class="comment-11" rowspan="1">...and if so, skip to <a href="35940.html#35970">35970</a></td>
+<td class="comment-1" rowspan="1">...and if so, skip to <a href="35940.html#35970">35970</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35957"></span>35957</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">Increase C</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35958"></span>35958</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Copy C into A</td>
+<td class="comment-1" rowspan="1">Copy <span class="register">C</span> into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35959"></span>35959</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">Ensure current x-coordinate doesn't exceed 31 (i.e. width of screen)</td>
+<td class="comment-1" rowspan="1">Ensure current x-coordinate doesn't exceed 31 (i.e. width of screen)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35961"></span>35961</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Place back into C</td>
+<td class="comment-1" rowspan="1">Place back into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35962"></span>35962</td>
 <td class="instruction">LD A,L</td>
-<td class="comment-11" rowspan="1">Get LSB of Attribute File address</td>
+<td class="comment-1" rowspan="1">Get LSB of attribute file address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35963"></span>35963</td>
 <td class="instruction">AND 224</td>
-<td class="comment-11" rowspan="1">Decrease to nearest multiple of 32 (i.e. start of character row in Attribute File)</td>
+<td class="comment-1" rowspan="1">Decrease to nearest multiple of 32 (i.e. start of character row in attribute file)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35965"></span>35965</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">Add x-offset (i.e. current x-coordinate, C)</td>
+<td class="comment-1" rowspan="1">Add x-offset (i.e. current x-coordinate, <span class="register">C</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35966"></span>35966</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">Update HL with x-offset</td>
+<td class="comment-1" rowspan="1">Update <span class="register">HL</span> with x-offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35967"></span>35967</td>
 <td class="instruction">JP 35947</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="35940.html#35947">35947</a> to print next attribute block</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="35940.html#35947">35947</a> to print next attribute block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35970"></span>35970</td>
 <td class="instruction">LD A,(23493)</td>
-<td class="comment-11" rowspan="1">Get x-coordinate of left of area to fill</td>
+<td class="comment-1" rowspan="1">Get x-coordinate of left of area to fill</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35973"></span>35973</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Store in C</td>
+<td class="comment-1" rowspan="1">Store in <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35974"></span>35974</td>
 <td class="instruction">LD A,(23496)</td>
-<td class="comment-11" rowspan="1">Get y-coordinate of bottom of area to fill</td>
+<td class="comment-1" rowspan="1">Get y-coordinate of bottom of area to fill</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35977"></span>35977</td>
 <td class="instruction">CP B</td>
-<td class="comment-11" rowspan="1">Compare with y-coordinate of top of area to fill</td>
+<td class="comment-1" rowspan="1">Compare with y-coordinate of top of area to fill</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35978"></span>35978</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">If no difference between current y-coordinate and y-coordinate of bottom of area to fill then exit function and return</td>
+<td class="comment-1" rowspan="1">If no difference between current y-coordinate and y-coordinate of bottom of area to fill then exit function and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35979"></span>35979</td>
 <td class="instruction">INC B</td>
-<td class="comment-11" rowspan="1">Advance current y-coordinate down one unit</td>
+<td class="comment-1" rowspan="1">Advance current y-coordinate down one unit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35980"></span>35980</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Copy current y-coordinate into A...</td>
+<td class="comment-1" rowspan="1">Copy current y-coordinate into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35981"></span>35981</td>
 <td class="instruction">CP 24</td>
-<td class="comment-11" rowspan="1">...and ensure it doesn't exceed 24 (i.e. height of screen)...</td>
+<td class="comment-1" rowspan="1">...and ensure it doesn't exceed 24 (i.e. height of screen)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35983"></span>35983</td>
 <td class="instruction">JP NZ,35988</td>
-<td class="comment-11" rowspan="1">...if it doesn't then skip ahead to <a href="35940.html#35988">35988</a>...</td>
+<td class="comment-1" rowspan="1">...if it doesn't then skip ahead to <a href="35940.html#35988">35988</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35986"></span>35986</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...else set current y-coord to zero (top of screen)</td>
+<td class="comment-1" rowspan="1">...else set current y-coordinate to zero (top of screen)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35988"></span>35988</td>
 <td class="instruction">CALL <a href="54148.html">54148</a></td>
-<td class="comment-11" rowspan="1">Load HL with Attribute File address for coordinates (C, B)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with attribute file address for coordinates (<span class="register">C</span>, <span class="register">B</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35991"></span>35991</td>
 <td class="instruction">JP 35947</td>
-<td class="comment-11" rowspan="1">Loop back to print next attribute block row</td>
+<td class="comment-1" rowspan="1">Loop back to print next attribute block row</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="35903.html">35903</a></span></td>
+<td class="prev">
+Prev: <a href="35903.html">35903</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#35940">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="35994.html">35994</a></span></td>
+<td class="next">
+Next: <a href="35994.html">35994</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

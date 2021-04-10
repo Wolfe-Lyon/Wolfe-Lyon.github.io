@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 46577</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,21 +20,28 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="46559.html">46559</a></span></td>
+<td class="prev">
+Prev: <a href="46559.html">46559</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#46577">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="46594.html">46594</a></span></td>
+<td class="next">
+Next: <a href="46594.html">46594</a>
+</td>
 </tr>
 </table>
-<div class="description">46577: Graphic Layout Routine (247): Jump to Randomly Selected Graphic Layout Data Address from List</div>
+<div class="description">46577: Graphic layout routine: (247) Jump to randomly selected graphic layout data address from list</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Read current byte value (n) from graphic layout data, generate random number m (0 - n-1) then jump to address in m-th WORD after current position.
 </div>
+<div class="paragraph">
+Used by the routine at <a href="46218.html">46218</a>.
 </div>
-<table class="input-1">
+</div>
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -53,7 +58,7 @@ Read current byte value (n) from graphic layout data, generate random number m (
 <td class="register-desc">Address of first parameter in current graphic layout data instruction</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -65,25 +70,22 @@ Read current byte value (n) from graphic layout data, generate random number m (
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46577"></span>46577</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load current byte of graphic layout data into A</td>
+<td class="comment-1" rowspan="1">Load current byte of graphic layout data into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46580"></span>46580</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance pointer to next byte</td>
+<td class="comment-1" rowspan="1">Advance pointer to next byte</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46582"></span>46582</td>
 <td class="instruction">CALL <a href="54222.html">54222</a></td>
-<td class="comment-11" rowspan="1">Load A with a random number between 0 and (A-1)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with a random number between 0 and (<span class="register">A</span>-1)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="46585"></span>
 <div class="comments">
 <div class="paragraph">
@@ -93,13 +95,12 @@ This entry point is used by the routine at <a href="46594.html">46594</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46585"></span>46585</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">Double the number</td>
+<td class="comment-1" rowspan="1">Double value in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="46586"></span>
 <div class="comments">
 <div class="paragraph">
@@ -109,41 +110,40 @@ This entry point is used by the routine at <a href="46559.html">46559</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46586"></span>46586</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load BC with offset value in A...</td>
+<td class="comment-1" rowspan="2">Load <span class="register">BC</span> with offset value in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46587"></span>46587</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46589"></span>46589</td>
 <td class="instruction">ADD IX,BC</td>
-<td class="comment-11" rowspan="1">Advance IX by offset value</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> by offset value</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46591"></span>46591</td>
 <td class="instruction">JP <a href="46481.html">46481</a></td>
-<td class="comment-11" rowspan="1">Jump to <a href="46481.html">46481</a> (set current position in graphic layout data to value of WORD at this address)</td>
+<td class="comment-1" rowspan="1">Jump to <a href="46481.html">46481</a> (set current position in graphic layout data to value of WORD at this address)</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="46559.html">46559</a></span></td>
+<td class="prev">
+Prev: <a href="46559.html">46559</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#46577">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="46594.html">46594</a></span></td>
+<td class="next">
+Next: <a href="46594.html">46594</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

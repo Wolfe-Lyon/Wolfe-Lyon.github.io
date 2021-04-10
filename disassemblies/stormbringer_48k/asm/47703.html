@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 47703</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,27 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47665.html">47665</a></span></td>
+<td class="prev">
+Prev: <a href="47665.html">47665</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47703">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47731.html">47731</a></span></td>
+<td class="next">
+Next: <a href="47731.html">47731</a>
+</td>
 </tr>
 </table>
-<div class="description">47703: Load A with (Zero-Based) Index of Selected Menu Item</div>
+<div class="description">47703: Load <span class="register">A</span> with (zero-based) index of selected menu item</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="47502.html">47502</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -51,107 +50,96 @@ Used by the routine at <a href="47502.html">47502</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47703"></span>47703</td>
 <td class="instruction">CALL <a href="47592.html">47592</a></td>
-<td class="comment-11" rowspan="1">Wait for Fire Button / Key to be Released</td>
+<td class="comment-1" rowspan="1">Wait for fire button / key to be released</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47706"></span>47706</td>
 <td class="instruction">LD BC,(23476)</td>
-<td class="comment-11" rowspan="1">Load BC with absolute coordinates (characters) of start of row of text of interest in menu</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with absolute coordinates (characters) of start of row of text of interest in menu</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47710"></span>47710</td>
 <td class="instruction">LD A,(23456)</td>
-<td class="comment-11" rowspan="1">Load C with initial y-coordinate of top of Hand Cursor relative to current window (characters)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with initial y-coordinate of top of hand cursor relative to current window (characters)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47713"></span>47713</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47714"></span>47714</td>
 <td class="instruction">LD A,(23409)</td>
-<td class="comment-11" rowspan="1">Load A with y-coordinate of top edge of current window (characters)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with y-coordinate of top edge of current window (characters)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47717"></span>47717</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...add C...</td>
+<td class="comment-1" rowspan="1">...add <span class="register">C</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47718"></span>47718</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...and add 1 to get absolute y-coordinate of first item in menu</td>
+<td class="comment-1" rowspan="1">...and add 1 to get absolute y-coordinate of first item in menu</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47719"></span>47719</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Store y-coordinate in C</td>
+<td class="comment-1" rowspan="1">Store y-coordinate in <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47720"></span>47720</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Load A with y-coordinate of row of text of interest in menu</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with y-coordinate of row of text of interest in menu</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47721"></span>47721</td>
 <td class="instruction">SUB C</td>
-<td class="comment-11" rowspan="1">Subtract absolute y-coordinate of first item in menu to give zero-based index of selected item</td>
+<td class="comment-1" rowspan="1">Subtract absolute y-coordinate of first item in menu to give zero-based index of selected item</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47722"></span>47722</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = selected item index)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = selected item index)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47723"></span>47723</td>
 <td class="instruction">LD A,(23479)</td>
-<td class="comment-11" rowspan="1">Load A with current y-coordinate of hand cursor relative to its starting position (pixels)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with current y-coordinate of hand cursor relative to its starting position (pixels)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47726"></span>47726</td>
 <td class="instruction">CALL <a href="47731.html">47731</a></td>
-<td class="comment-11" rowspan="1">...and use to de-highlight selected menu item</td>
+<td class="comment-1" rowspan="1">...and use to de-highlight selected menu item</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47729"></span>47729</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = selected item index)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = selected item index)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47730"></span>47730</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47665.html">47665</a></span></td>
+<td class="prev">
+Prev: <a href="47665.html">47665</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47703">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47731.html">47731</a></span></td>
+<td class="next">
+Next: <a href="47731.html">47731</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

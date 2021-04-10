@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 33312</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,650 +20,555 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="33278.html">33278</a></span></td>
+<td class="prev">
+Prev: <a href="33278.html">33278</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#33312">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="33565.html">33565</a></span></td>
+<td class="next">
+Next: <a href="33565.html">33565</a>
+</td>
 </tr>
 </table>
-<div class="description">33312: Process Command to Blow an Object</div>
+<div class="description">33312: Process command to blow an object</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routines at <a href="27176.html">27176</a> and <a href="31153.html">31153</a>.
 </div>
-<table class="input-0">
+</div>
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33312"></span>33312</td>
 <td class="instruction">LD A,(65532)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current action flags into A</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's current action flags into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33315"></span>33315</td>
 <td class="instruction">BIT 6,A</td>
-<td class="comment-11" rowspan="1">If "Magic Knight Can Blow" flag is unset...</td>
+<td class="comment-1" rowspan="1">If blow-enabled flag is unset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33317"></span>33317</td>
 <td class="instruction">JP Z,<a href="27176.html#27189">27189</a></td>
-<td class="comment-11" rowspan="1">...then jump into Main Game Loop (process keyboard input and move Magic Knight, enter menus or execute other command)</td>
+<td class="comment-1" rowspan="1">...then jump into main game loop (process keyboard input and move Magic Knight, enter menus or execute other command)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33320"></span>33320</td>
 <td class="instruction">CALL <a href="38075.html">38075</a></td>
-<td class="comment-11" rowspan="1">Play upward scale sound</td>
+<td class="comment-1" rowspan="1">Play upward scale sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33323"></span>33323</td>
 <td class="instruction">LD IX,25395</td>
-<td class="comment-11" rowspan="1">Point IX at Magic Knight's current inventory</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at Magic Knight's current inventory</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33327"></span>33327</td>
 <td class="instruction">LD B,5</td>
-<td class="comment-11" rowspan="1">Set B to 5 (as there are 5 inventory slots)</td>
+<td class="comment-1" rowspan="1">Set <span class="register">B</span> to 5 (as there are 5 inventory slots)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33329"></span>33329</td>
 <td class="instruction">LD HL,50891</td>
-<td class="comment-11" rowspan="1">Point HL at "BLOW WHICH OBJECT?" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "BLOW WHICH OBJECT?" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33332"></span>33332</td>
 <td class="instruction">LD DE,50902</td>
-<td class="comment-11" rowspan="1">Point DE at "BLOW" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at "BLOW" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33335"></span>33335</td>
 <td class="instruction">CALL <a href="34914.html">34914</a></td>
-<td class="comment-11" rowspan="1">Display list of objects in Magic Knight's inventory and wait for one to be selected. Load its index into A</td>
+<td class="comment-1" rowspan="1">Display list of objects in Magic Knight's inventory and wait for one to be selected. Load its index into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33338"></span>33338</td>
 <td class="instruction">LD HL,25395</td>
-<td class="comment-11" rowspan="1">Point DE at name of a selected object in object names table and print in command summary window...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at name of a selected object in object names table and print in command summary window...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33341"></span>33341</td>
 <td class="instruction">CALL <a href="34864.html">34864</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33344"></span>33344</td>
 <td class="instruction">LD A,(30467)</td>
-<td class="comment-11" rowspan="1">If selected object is not the Elf Horn...</td>
+<td class="comment-1" rowspan="1">If selected object is not the Elf-Horn...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33347"></span>33347</td>
 <td class="instruction">CP 38</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33349"></span>33349</td>
 <td class="instruction">JP NZ,<a href="33574.html">33574</a></td>
-<td class="comment-11" rowspan="1">...then confirm and process blow command (create dust or racket!) then return to game</td>
+<td class="comment-1" rowspan="1">...then confirm and process blow command (create dust or racket!) then return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33352"></span>33352</td>
 <td class="instruction">SET 2,(IY+65)</td>
-<td class="comment-11" rowspan="1">Set "Characters Can't Move" flag</td>
+<td class="comment-1" rowspan="1">Set characters-can't-move flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33356"></span>33356</td>
 <td class="instruction">CALL <a href="37654.html">37654</a></td>
-<td class="comment-11" rowspan="1">Display / update command summary window at bottom of screen</td>
+<td class="comment-1" rowspan="1">Display / update command summary window at bottom of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33359"></span>33359</td>
 <td class="instruction">LD DE,50909</td>
-<td class="comment-11" rowspan="1">Point DE at "SUMMON" text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at "SUMMON" text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33362"></span>33362</td>
 <td class="instruction">CALL <a href="38693.html">38693</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at bottom of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at bottom of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33365"></span>33365</td>
 <td class="instruction">LD HL,44069</td>
-<td class="comment-11" rowspan="1">Point HL at "SUMMON ?" text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "SUMMON ?" text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33368"></span>33368</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">...and store</td>
+<td class="comment-1" rowspan="1">...and store</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33369"></span>33369</td>
 <td class="instruction">CALL <a href="35293.html">35293</a></td>
-<td class="comment-11" rowspan="1">Display and handle full character selection menu</td>
+<td class="comment-1" rowspan="1">Display and handle full character selection menu</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33372"></span>33372</td>
 <td class="instruction">CALL <a href="38725.html">38725</a></td>
-<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return if Execute chosen, else exit</td>
+<td class="comment-1" rowspan="1">Display execute / reject command window and return if execute chosen, else exit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33375"></span>33375</td>
 <td class="instruction">CALL <a href="34402.html">34402</a></td>
-<td class="comment-11" rowspan="1">Point HL at current position data for Current Character</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at current position data for Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33378"></span>33378</td>
 <td class="instruction">LD A,(65529)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current room into A</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's current room into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33381"></span>33381</td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">If character is in the same room as Magic Knight...</td>
+<td class="comment-1" rowspan="1">If character is in the same room as Magic Knight...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33382"></span>33382</td>
 <td class="instruction">JP Z,<a href="34616.html">34616</a></td>
-<td class="comment-11" rowspan="1">...then display "[CHARACTER] IS ALREADY HERE!" message and return to game</td>
+<td class="comment-1" rowspan="1">...then display "[CHARACTER] IS ALREADY HERE!" message and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33385"></span>33385</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load character's current room into A</td>
+<td class="comment-1" rowspan="1">Load character's current room into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33386"></span>33386</td>
 <td class="instruction">LD HL,51173</td>
-<td class="comment-11" rowspan="1">Point HL at "[CHARACTER] IS NO LONGER AROUND" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "[CHARACTER] IS NO LONGER AROUND" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33389"></span>33389</td>
 <td class="instruction">CP 100</td>
-<td class="comment-11" rowspan="1">If character's current room is 100...</td>
+<td class="comment-1" rowspan="1">If character's current room is 100...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33391"></span>33391</td>
 <td class="instruction">JP Z,<a href="34808.html">34808</a></td>
-<td class="comment-11" rowspan="1">...then display "[CHARACTER] IS NO LONGER AROUND" window then return to game</td>
+<td class="comment-1" rowspan="1">...then display "[CHARACTER] IS NO LONGER AROUND" window then return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33394"></span>33394</td>
 <td class="instruction">LD A,(30615)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33397"></span>33397</td>
 <td class="instruction">CP 7</td>
-<td class="comment-11" rowspan="1">If character is The Banshee...</td>
+<td class="comment-1" rowspan="1">If character is The Banshee...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33399"></span>33399</td>
 <td class="instruction">JR Z,33435</td>
-<td class="comment-11" rowspan="1">...skip over asleep / tiredness check as Banshee never sleeps or gets tired</td>
+<td class="comment-1" rowspan="1">...skip over asleep / tiredness check as Banshee never sleeps or gets tired</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33401"></span>33401</td>
 <td class="instruction">LD A,(30615)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33404"></span>33404</td>
 <td class="instruction">LD E,0</td>
-<td class="comment-11" rowspan="1">Point HL at property 0 (strength) of character...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at property 0 (strength) of character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33406"></span>33406</td>
 <td class="instruction">CALL <a href="34174.html">34174</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33409"></span>33409</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Copy location from HL to IX...</td>
+<td class="comment-1" rowspan="1">Copy location from <span class="register">HL</span> to <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33410"></span>33410</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33412"></span>33412</td>
 <td class="instruction">BIT 7,(IX+6)</td>
-<td class="comment-11" rowspan="1">If character is asleep (bit 7 of the byte 6 bytes forward)...</td>
+<td class="comment-1" rowspan="1">If character is asleep (bit 7 of the byte 6 bytes forward)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33416"></span>33416</td>
 <td class="instruction">JP NZ,<a href="34598.html">34598</a></td>
-<td class="comment-11" rowspan="1">...then display "[CHARACTER] IS ASLEEP" message and return to game</td>
+<td class="comment-1" rowspan="1">...then display "[CHARACTER] IS ASLEEP" message and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33419"></span>33419</td>
 <td class="instruction">LD A,(IX+1)</td>
-<td class="comment-11" rowspan="1">Load A with happiness of Current Character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with happiness of Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33422"></span>33422</td>
 <td class="instruction">CP 40</td>
-<td class="comment-11" rowspan="1">If happiness is less than 40...</td>
+<td class="comment-1" rowspan="1">If happiness is less than 40...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33424"></span>33424</td>
 <td class="instruction">JP C,<a href="34604.html">34604</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33427"></span>33427</td>
 <td class="instruction">LD A,(IX+2)</td>
-<td class="comment-11" rowspan="1">...then display "[CHARACTER] DOES NOT WANT TO BE SUMMONED" message and return to game</td>
+<td class="comment-1" rowspan="1">...then display "[CHARACTER] DOES NOT WANT TO BE SUMMONED" message and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33430"></span>33430</td>
 <td class="instruction">CP 30</td>
-<td class="comment-11" rowspan="1">If happiness is less than 30...</td>
+<td class="comment-1" rowspan="1">If happiness is less than 30...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33432"></span>33432</td>
 <td class="instruction">JP C,<a href="34610.html">34610</a></td>
-<td class="comment-11" rowspan="1">...then display "[CHARACTER] IS TOO TIRED TO BE SUMMONED" message and return to game</td>
+<td class="comment-1" rowspan="1">...then display "[CHARACTER] IS TOO TIRED TO BE SUMMONED" message and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33435"></span>33435</td>
 <td class="instruction">CALL <a href="34402.html">34402</a></td>
-<td class="comment-11" rowspan="1">Point HL at current position data for Current Character</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at current position data for Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33438"></span>33438</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33439"></span>33439</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33441"></span>33441</td>
 <td class="instruction">LD A,(65529)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current room into C...</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's current room into <span class="register">C</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33444"></span>33444</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33445"></span>33445</td>
 <td class="instruction">LD A,(30615)</td>
-<td class="comment-11" rowspan="1">Load B with index of Current Character...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with index of Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33448"></span>33448</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33449"></span>33449</td>
 <td class="instruction">CALL <a href="36327.html">36327</a></td>
-<td class="comment-11" rowspan="1">Assign a slot in room C to character B and get x- and y-coordinates in BC</td>
+<td class="comment-1" rowspan="1">Assign a slot in room <span class="register">C</span> to character <span class="register">B</span> and get x- and y-coordinates in <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33452"></span>33452</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33454"></span>33454</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33455"></span>33455</td>
 <td class="instruction">CP 4</td>
-<td class="comment-11" rowspan="1">If assigned slot number is 4 (i.e. already three characters in this room)...</td>
+<td class="comment-1" rowspan="1">If assigned slot number is 4 (i.e. already three characters in this room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33457"></span>33457</td>
 <td class="instruction">JP Z,<a href="34622.html">34622</a></td>
-<td class="comment-11" rowspan="1">...then display "[CHARACTER] DOES NOT WANT TO COME TO SUCH A CROWDED ROOM" message and return to game</td>
+<td class="comment-1" rowspan="1">...then display "[CHARACTER] DOES NOT WANT TO COME TO SUCH A CROWDED ROOM" message and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33460"></span>33460</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (current position data for Current Character)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (current position data for Current Character)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33461"></span>33461</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Load x-coordinate of character into C...</td>
+<td class="comment-1" rowspan="1">Load x-coordinate of character into <span class="register">C</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33462"></span>33462</td>
 <td class="instruction">LD (HL),C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33463"></span>33463</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Load y-coordinate of character into B...</td>
+<td class="comment-1" rowspan="1">Load y-coordinate of character into <span class="register">B</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33464"></span>33464</td>
 <td class="instruction">LD (HL),B</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33465"></span>33465</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (start of current position data for Current Character)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (start of current position data for Current Character)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33466"></span>33466</td>
 <td class="instruction">LD A,(65529)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current room into A</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's current room into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33469"></span>33469</td>
 <td class="instruction">OR 128</td>
-<td class="comment-11" rowspan="1">Set bit 7 of room index data if it is not already set to denote that this character's entry needs to be animated (puff of smoke)</td>
+<td class="comment-1" rowspan="1">Set bit 7 of room index data if it is not already set to denote that this character's entry needs to be animated (puff of smoke)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33471"></span>33471</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Load data into current room of Current Character</td>
+<td class="comment-1" rowspan="1">Load data into current room of Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33472"></span>33472</td>
 <td class="instruction">LD A,(30615)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33475"></span>33475</td>
 <td class="instruction">CP 7</td>
-<td class="comment-11" rowspan="1">If character is The Banshee...</td>
+<td class="comment-1" rowspan="2">If character is The Banshee then skip over section dealing with decreasing summoned characters stats as Banshee's stats never change (<a href="../reference/facts.html#summoningspellpower">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33477"></span>33477</td>
 <td class="instruction">JP Z,33512</td>
-<td class="comment-11" rowspan="1">...then skip over section dealing with decreasing summoned characters stats as Banshee's stats never change (<a href="../reference/facts.html#summoningspellpower">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33480"></span>33480</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">Decrease character's strength by 10...</td>
+<td class="comment-1" rowspan="1">Decrease character's strength by 10...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33483"></span>33483</td>
 <td class="instruction">SUB 10</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33485"></span>33485</td>
 <td class="instruction">LD (IX+0),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33488"></span>33488</td>
 <td class="instruction">LD A,(IX+1)</td>
-<td class="comment-11" rowspan="1">Decrease character's happiness by 5...</td>
+<td class="comment-1" rowspan="1">Decrease character's happiness by 5...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33491"></span>33491</td>
 <td class="instruction">SUB 5</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33493"></span>33493</td>
 <td class="instruction">LD (IX+1),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33496"></span>33496</td>
 <td class="instruction">LD A,(IX+2)</td>
-<td class="comment-11" rowspan="1">Decrease character's stamina by 12...</td>
+<td class="comment-1" rowspan="1">Decrease character's stamina by 12...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33499"></span>33499</td>
 <td class="instruction">SUB 12</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33501"></span>33501</td>
 <td class="instruction">LD (IX+2),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33504"></span>33504</td>
 <td class="instruction">LD A,(25318)</td>
-<td class="comment-11" rowspan="1">Decrease Magic Knight's spell power by 3...</td>
+<td class="comment-1" rowspan="1">Decrease Magic Knight's spell power by 3...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33507"></span>33507</td>
 <td class="instruction">SUB 3</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33509"></span>33509</td>
 <td class="instruction">LD (25318),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33512"></span>33512</td>
 <td class="instruction">LD A,(23378)</td>
-<td class="comment-11" rowspan="1">If Release Spell score flag is not set...</td>
+<td class="comment-1" rowspan="1">If Release-Spell-cast score flag is not set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33515"></span>33515</td>
 <td class="instruction">BIT 4,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33517"></span>33517</td>
 <td class="instruction">JP Z,<a href="34628.html">34628</a></td>
-<td class="comment-11" rowspan="1">...then display "[CHARACTER] APPEARS IN A THICK PUFF OF SMOKE" window and return to game</td>
+<td class="comment-1" rowspan="1">...then display "[CHARACTER] APPEARS IN A THICK PUFF OF SMOKE" window and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33520"></span>33520</td>
 <td class="instruction">LD IX,(23503)</td>
-<td class="comment-11" rowspan="1">Else load IX with address of index of next character to send home from table at <a href="33565.html">33565</a></td>
+<td class="comment-1" rowspan="1">Else load <span class="register">IX</span> with address of index of next character to send home from table at <a href="33565.html">33565</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33524"></span>33524</td>
 <td class="instruction">LD A,(30615)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33527"></span>33527</td>
 <td class="instruction">CP (IX+0)</td>
-<td class="comment-11" rowspan="1">If data at IX does not match Current Character...</td>
+<td class="comment-1" rowspan="1">If data at <span class="register">IX</span> does not match Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33530"></span>33530</td>
 <td class="instruction">JP NZ,<a href="34628.html">34628</a></td>
-<td class="comment-11" rowspan="1">...then  display "[CHARACTER] APPEARS IN A THICK PUFF OF SMOKE" window and return to game (character is not to be sent home yet)</td>
+<td class="comment-1" rowspan="1">...then display "[CHARACTER] APPEARS IN A THICK PUFF OF SMOKE" window and return to game (character is not to be sent home yet)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33533"></span>33533</td>
 <td class="instruction">LD (HL),100</td>
-<td class="comment-11" rowspan="1">Set character's current room to 100</td>
+<td class="comment-1" rowspan="1">Set character's current room to 100</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33535"></span>33535</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to next character in sequence...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to next character in sequence...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33537"></span>33537</td>
 <td class="instruction">LD (23503),IX</td>
-<td class="comment-11" rowspan="1">...and store this new pointer</td>
+<td class="comment-1" rowspan="1">...and store this new pointer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33541"></span>33541</td>
 <td class="instruction">LD A,255</td>
-<td class="comment-11" rowspan="1">If index of next character to go home is 255...</td>
+<td class="comment-1" rowspan="1">If index of next character to go home is 255...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33543"></span>33543</td>
 <td class="instruction">CP (IX+0)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33546"></span>33546</td>
 <td class="instruction">JP Z,<a href="33180.html">33180</a></td>
-<td class="comment-11" rowspan="1">...then jump to "Well Done" (i.e. game complete) routine</td>
+<td class="comment-1" rowspan="1">...then jump to "well done" (i.e. game complete) routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33549"></span>33549</td>
 <td class="instruction">CALL <a href="33278.html">33278</a></td>
-<td class="comment-11" rowspan="1">Flash border and screen (as in cast a spell)</td>
+<td class="comment-1" rowspan="1">Flash border and screen (as in cast a spell)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33552"></span>33552</td>
 <td class="instruction">LD A,(23506)</td>
-<td class="comment-11" rowspan="1">Add one to "characters sent home" score...</td>
+<td class="comment-1" rowspan="1">Add one to "characters sent home" score...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33555"></span>33555</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33556"></span>33556</td>
 <td class="instruction">LD (23506),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33559"></span>33559</td>
 <td class="instruction">LD HL,51194</td>
-<td class="comment-11" rowspan="1">Display "[CHARACTER] APPEARS IN SPIRIT FORM AS GIMBAL..." window and return to game...</td>
+<td class="comment-1" rowspan="1">Display "[CHARACTER] APPEARS IN SPIRIT FORM AS GIMBAL..." window and return to game...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33562"></span>33562</td>
 <td class="instruction">JP <a href="34808.html">34808</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="33278.html">33278</a></span></td>
+<td class="prev">
+Prev: <a href="33278.html">33278</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#33312">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="33565.html">33565</a></span></td>
+<td class="next">
+Next: <a href="33565.html">33565</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

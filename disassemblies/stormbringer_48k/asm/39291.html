@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 39291</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,23 +20,27 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39216.html">39216</a></span></td>
+<td class="prev">
+Prev: <a href="39216.html">39216</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39291">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39366.html">39366</a></span></td>
+<td class="next">
+Next: <a href="39366.html">39366</a>
+</td>
 </tr>
 </table>
-<div class="description">39291: Draw Run of 2x2 Blocks Vertically</div>
+<div class="description">39291: Draw run of 2 &times; 2 blocks vertically</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-The parameters for block drawing start at the byte after the address in IX. These are:
+The parameters for block drawing start at the byte after the address in <span class="register">IX</span>. These are:
 </div>
 <div class="paragraph">
 <table class="default">
 <tr>
-<th colspan="1" rowspan="1">Byte offset from IX</th>
+<th colspan="1" rowspan="1">Byte offset from <span class="register">IX</span></th>
 <th colspan="1" rowspan="1">Effect</th>
 </tr>
 <tr>
@@ -56,7 +61,7 @@ The parameters for block drawing start at the byte after the address in IX. Thes
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">n + 1</td>
-<td class="" colspan="1" rowspan="1">End Marker (255)</td>
+<td class="" colspan="1" rowspan="1">End marker (255)</td>
 </tr>
 </table>
 </div>
@@ -64,10 +69,10 @@ The parameters for block drawing start at the byte after the address in IX. Thes
 The block data is comprised of one or more byte values.
 </div>
 <div class="paragraph">
-If a block data byte has its most significant bit reset, then it is interpreted as a block style index corresponding to an entry in the Table of Block Style Definitions at <a href="49794.html">49794</a>, and a single such block is drawn before the next byte is processed.
+If a block data byte has its most significant bit reset, then it is interpreted as a block style index corresponding to an entry in the table of block style definitions at <a href="49794.html">49794</a>, and a single such block is drawn before the next byte is processed.
 </div>
 <div class="paragraph">
-If a block data byte has its most significant bit set, then bits 0-6 are interpreted as a run-length (e.g. a value of 144 means a run-length of 16 2x2 blocks) and the following data byte represents the index of the entry in the Table of Block Style Definitions at <a href="49794.html">49794</a> to repeatedly use throughout the run. Once the run of blocks has been drawn, the next byte is processed.
+If a block data byte has its most significant bit set, then bits 0-6 are interpreted as a run-length (e.g. a value of 144 means a run-length of 16 2 &times; 2 blocks) and the following data byte represents the index of the entry in the table of block style definitions at <a href="49794.html">49794</a> to repeatedly use throughout the run. Once the run of blocks has been drawn, the next byte is processed.
 </div>
 <div class="paragraph">
 When the value 255, the end marker, is encountered, the vertical drawing ends.
@@ -76,7 +81,7 @@ When the value 255, the end marker, is encountered, the vertical drawing ends.
 Used by the routine at <a href="39047.html">39047</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -85,262 +90,224 @@ Used by the routine at <a href="39047.html">39047</a>.
 <td class="register-desc">Current position in room layout data</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39291"></span>39291</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to x-coordinate...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to x-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39293"></span>39293</td>
 <td class="instruction">LD L,(IX+0)</td>
-<td class="comment-11" rowspan="1">...and load into L</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">L</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39296"></span>39296</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to y-coordinate...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to y-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39298"></span>39298</td>
 <td class="instruction">LD H,(IX+0)</td>
-<td class="comment-11" rowspan="1">...and load into H</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">H</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39301"></span>39301</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to first block layout data byte</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to first block layout data byte</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39303"></span>39303</td>
 <td class="instruction">LD (23463),HL</td>
-<td class="comment-11" rowspan="1">Store coordinates of top-left of block at <a href="23462.html#23463">23463</a></td>
+<td class="comment-1" rowspan="1">Store coordinates of top-left of block at <a href="23462.html#23463">23463</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39306"></span>39306</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load A with next block layout data...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with next block layout data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39309"></span>39309</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">...and if this is 255 (End Marker)...</td>
+<td class="comment-1" rowspan="1">...and if this is 255 (end marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39311"></span>39311</td>
 <td class="instruction">JR Z,39332</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39291.html#39332">39332</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39291.html#39332">39332</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39313"></span>39313</td>
 <td class="instruction">BIT 7,A</td>
-<td class="comment-11" rowspan="1">If Draw Run Flag is set...</td>
+<td class="comment-1" rowspan="1">If draw-run flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39315"></span>39315</td>
 <td class="instruction">JR NZ,39337</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39291.html#39337">39337</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39291.html#39337">39337</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39317"></span>39317</td>
 <td class="instruction">CALL <a href="39366.html">39366</a></td>
-<td class="comment-11" rowspan="1">Draw 2x2 block with style index A at coordinates stored at <a href="23462.html#23463">23463</a> then move right two characters</td>
+<td class="comment-1" rowspan="1">Draw 2 &times; 2 block with style index <span class="register">A</span> at coordinates stored at <a href="23462.html#23463">23463</a> then move right two characters</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39320"></span>39320</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to next block layout data</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to next block layout data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39322"></span>39322</td>
 <td class="instruction">LD HL,(23463)</td>
-<td class="comment-11" rowspan="1">Load HL with coordinates of top-left of block just drawn...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with coordinates of top-left of block just drawn...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39325"></span>39325</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">...add two to y-coordinate...</td>
+<td class="comment-1" rowspan="1">...add two to y-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39326"></span>39326</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39327"></span>39327</td>
 <td class="instruction">LD (23463),HL</td>
-<td class="comment-11" rowspan="1">...and store updated coordinates at <a href="23462.html#23463">23463</a></td>
+<td class="comment-1" rowspan="1">...and store updated coordinates at <a href="23462.html#23463">23463</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39330"></span>39330</td>
 <td class="instruction">JR 39306</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="39291.html#39306">39306</a> to process next block layout data</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="39291.html#39306">39306</a> to process next block layout data</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39332"></span>
 <div class="comments">
 <div class="paragraph">
-End Marker encountered
+End marker encountered
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39332"></span>39332</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to next byte in room layout data...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to next byte in room layout data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39334"></span>39334</td>
 <td class="instruction">JP <a href="39047.html#39067">39067</a></td>
-<td class="comment-11" rowspan="1">...and jump to <a href="39047.html#39067">39067</a> to process</td>
+<td class="comment-1" rowspan="1">...and jump to <a href="39047.html#39067">39067</a> to process</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="39337"></span>
 <div class="comments">
 <div class="paragraph">
-Draw Run Flag set
+Draw-run flag set
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39337"></span>39337</td>
 <td class="instruction">AND 127</td>
-<td class="comment-11" rowspan="1">Reset Draw Run Flag...</td>
+<td class="comment-1" rowspan="1">Reset draw-run flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39339"></span>39339</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...and load B with run length</td>
+<td class="comment-1" rowspan="1">...and load <span class="register">B</span> with run length</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39340"></span>39340</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to block style index...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to block style index...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39342"></span>39342</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">...and load into A</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39345"></span>39345</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to next block layout data</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to next block layout data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39347"></span>39347</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = remaining number of blocks to draw)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = remaining number of blocks to draw)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39348"></span>39348</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39349"></span>39349</td>
 <td class="instruction">CALL <a href="39366.html">39366</a></td>
-<td class="comment-11" rowspan="1">Draw 2x2 block with style index A at coordinates stored at <a href="23462.html#23463">23463</a> then move right two characters</td>
+<td class="comment-1" rowspan="1">Draw 2 &times; 2 block with style index <span class="register">A</span> at coordinates stored at <a href="23462.html#23463">23463</a> then move right two characters</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39352"></span>39352</td>
 <td class="instruction">LD HL,(23463)</td>
-<td class="comment-11" rowspan="1">Load HL with coordinates of top-left of block just drawn...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with coordinates of top-left of block just drawn...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39355"></span>39355</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">...add two to y-coordinate...</td>
+<td class="comment-1" rowspan="1">...add two to y-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39356"></span>39356</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39357"></span>39357</td>
 <td class="instruction">LD (23463),HL</td>
-<td class="comment-11" rowspan="1">...and store updated coordinates at <a href="23462.html#23463">23463</a></td>
+<td class="comment-1" rowspan="1">...and store updated coordinates at <a href="23462.html#23463">23463</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39360"></span>39360</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39361"></span>39361</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = remaining number of blocks to draw)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = remaining number of blocks to draw)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39362"></span>39362</td>
 <td class="instruction">DJNZ 39347</td>
-<td class="comment-11" rowspan="1">Decrease remaining number of blocks and loop back to <a href="39291.html#39347">39347</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease remaining number of blocks and loop back to <a href="39291.html#39347">39347</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39364"></span>39364</td>
 <td class="instruction">JR 39306</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="39291.html#39306">39306</a> for next block layout data</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="39291.html#39306">39306</a> for next block layout data</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39216.html">39216</a></span></td>
+<td class="prev">
+Prev: <a href="39216.html">39216</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39291">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39366.html">39366</a></span></td>
+<td class="next">
+Next: <a href="39366.html">39366</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 61336</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="61297.html">61297</a></span></td>
+<td class="prev">
+Prev: <a href="61297.html">61297</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#61336">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="61387.html">61387</a></span></td>
+<td class="next">
+Next: <a href="61387.html">61387</a>
+</td>
 </tr>
 </table>
-<div class="description">61336: Room Drawing: Draw a Graphic</div>
+<div class="description">61336: Room drawing: Draw a graphic</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="61214.html">61214</a> and <a href="61236.html">61236</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -43,31 +48,23 @@ Used by the routines at <a href="61214.html">61214</a> and <a href="61236.html">
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">(Entry at <a href="61336.html#61343">61343</a> only) Address in Display File to start drawing</td>
+<td class="register-desc">(Entry at <a href="61336.html#61343">61343</a> only) Address in display file to start drawing</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="61336"></span>61336</td>
 <td class="instruction">LD (23444),BC</td>
-<td class="comment-11" rowspan="1">Store x- and y-coordinates of character block currently being drawn at <a href="23441.html#23444">23444</a></td>
+<td class="comment-1" rowspan="1">Store x- and y-coordinates of character block currently being drawn at <a href="23441.html#23444">23444</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61340"></span>61340</td>
 <td class="instruction">CALL <a href="63203.html">63203</a></td>
-<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+<td class="comment-1" rowspan="1">Move virtual cursor (bitmap) to display file address for coordinates x=<span class="register">C</span>, y=<span class="register">B</span> and load address into <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="61343"></span>
 <div class="comments">
 <div class="paragraph">
@@ -77,61 +74,52 @@ This entry point is used by the routine at <a href="61297.html">61297</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="61343"></span>61343</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (address in Display File to print character)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (address in display file to print character)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61344"></span>61344</td>
 <td class="instruction">LD HL,61418</td>
-<td class="comment-11" rowspan="1">Load HL with 61418 (address of "Advance HL to next Display File Address to be drawn to (Apply Horizontal Mirror Flag reset)" routine)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with <a href="61418.html">61418</a> (address of routine to advance <span class="register">HL</span> with apply-horizontal-mirror flag reset)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61347"></span>61347</td>
 <td class="instruction">LD A,(23450)</td>
-<td class="comment-11" rowspan="1">Load A with Apply Horizontal and Apply Vertical Mirror Flags</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with apply-horizontal-mirror and apply-vertical-mirror flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61350"></span>61350</td>
 <td class="instruction">AND 2</td>
-<td class="comment-11" rowspan="1">If Apply Horizontal Mirror Flag is reset...</td>
+<td class="comment-1" rowspan="1">If apply-horizontal-mirror flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61352"></span>61352</td>
 <td class="instruction">JR Z,61357</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="61336.html#61357">61357</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="61336.html#61357">61357</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61354"></span>61354</td>
 <td class="instruction">LD HL,61521</td>
-<td class="comment-11" rowspan="1">Load HL with 61521 (address of "Advance HL to next Display File Address to be drawn to (Apply Horizontal Mirror Flag set)" routine)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with <a href="61521.html">61521</a> (address of routine to advance <span class="register">HL</span> with apply-horizontal-mirror flag set)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="61357"></span>61357</td>
 <td class="instruction">LD (61416),HL</td>
-<td class="comment-11" rowspan="1">Change destination for JP instruction at <a href="61415.html">61415</a> to value in HL...</td>
+<td class="comment-1" rowspan="1">Change destination for <span class="instruction">JP</span> instruction at <a href="61415.html">61415</a> to value in <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61360"></span>61360</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (address in Display File to print character)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (address in display file to print character)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61361"></span>61361</td>
 <td class="instruction">LD DE,(23447)</td>
-<td class="comment-11" rowspan="1">Load DE with graphic data address</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with graphic data address</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="61365"></span>
 <div class="comments">
 <div class="paragraph">
@@ -141,37 +129,32 @@ This entry point is used by the routine at <a href="61390.html">61390</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="61365"></span>61365</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Load A with a byte of graphic data</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with a byte of graphic data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61366"></span>61366</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If data is zero...</td>
+<td class="comment-1" rowspan="1">If data is zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61367"></span>61367</td>
 <td class="instruction">JR Z,<a href="61390.html">61390</a></td>
-<td class="comment-11" rowspan="1">...then read repeat counter value, x, and draw x rows of reset pixels</td>
+<td class="comment-1" rowspan="1">...then read repeat counter value, x, and draw x rows of reset pixels</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61369"></span>61369</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">If data is 255...</td>
+<td class="comment-1" rowspan="1">If data is 255...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61371"></span>61371</td>
 <td class="instruction">JR Z,<a href="61411.html">61411</a></td>
-<td class="comment-11" rowspan="1">...then read repeat counter value, x, and draw x rows of set pixels</td>
+<td class="comment-1" rowspan="1">...then read repeat counter value, x, and draw x rows of set pixels</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="61373"></span>
 <div class="comments">
 <div class="paragraph">
@@ -181,28 +164,28 @@ The three-byte instruction at <a href="61336.html#61373">61373</a> is modified b
 <table class="default">
 <tr>
 <th colspan="1" rowspan="1">Instruction</th>
-<th colspan="1" rowspan="1">Mirror Options</th>
+<th colspan="1" rowspan="1">Mirror options</th>
 <th colspan="1" rowspan="1">Effect</th>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1"><a href="61214.html#61215">61215</a></td>
 <td class="" colspan="1" rowspan="1">None</td>
-<td class="" colspan="1" rowspan="1">NOP / NOP / NOP (do nothing)</td>
+<td class="" colspan="1" rowspan="1"><span class="instruction">NOP</span> / <span class="instruction">NOP</span> / <span class="instruction">NOP</span> (do nothing)</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1"><a href="61236.html#61238">61238</a></td>
-<td class="" colspan="1" rowspan="1">Apply Vertical</td>
-<td class="" colspan="1" rowspan="1">CALL <a href="61625.html">61625</a> (Reverse the order of the bits in A)</td>
+<td class="" colspan="1" rowspan="1">Apply vertical</td>
+<td class="" colspan="1" rowspan="1"><span class="instruction">CALL <a href="61625.html">61625</a></span> (reverse the order of the bits in <span class="register">A</span>)</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1"><a href="61267.html#61268">61268</a></td>
-<td class="" colspan="1" rowspan="1">Apply Horizontal</td>
-<td class="" colspan="1" rowspan="1">NOP / NOP / NOP (do nothing)</td>
+<td class="" colspan="1" rowspan="1">Apply horizontal</td>
+<td class="" colspan="1" rowspan="1"><span class="instruction">NOP</span> / <span class="instruction">NOP</span> / <span class="instruction">NOP</span> (do nothing)</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1"><a href="61297.html#61299">61299</a></td>
 <td class="" colspan="1" rowspan="1">Both</td>
-<td class="" colspan="1" rowspan="1">CALL <a href="61625.html">61625</a> (Reverse the order of the bits in A)</td>
+<td class="" colspan="1" rowspan="1"><span class="instruction">CALL <a href="61625.html">61625</a></span> (reverse the order of the bits in <span class="register">A</span>)</td>
 </tr>
 </table>
 </div>
@@ -210,37 +193,32 @@ The three-byte instruction at <a href="61336.html#61373">61373</a> is modified b
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61373"></span>61373</td>
 <td class="instruction">CALL <a href="61625.html">61625</a></td>
-<td class="comment-11" rowspan="1">Reverse the order of the bits in A [This instruction is modified by the instructions at <a href="61214.html#61215">61215</a>, <a href="61236.html#61238">61238</a>, <a href="61267.html#61268">61268</a> and <a href="61297.html#61299">61299</a>]</td>
+<td class="comment-1" rowspan="1">Reverse the order of the bits in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61376"></span>61376</td>
 <td class="instruction">CALL <a href="61387.html">61387</a></td>
-<td class="comment-11" rowspan="1">Load byte of graphic data in A into Display File address in HL</td>
+<td class="comment-1" rowspan="1">Load byte of graphic data in <span class="register">A</span> into display file address in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61379"></span>61379</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Advance DE to next byte of graphic data</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">DE</span> to next byte of graphic data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61380"></span>61380</td>
 <td class="instruction">CALL <a href="61415.html">61415</a></td>
-<td class="comment-11" rowspan="1">Advance HL to next location in Display File (up or down one pixel)...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next location in display file (up or down one pixel)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="61383"></span>61383</td>
 <td class="instruction">JP Z,61365</td>
-<td class="comment-11" rowspan="1">...and if this new location is not outside dimensions of the graphic then loop back to <a href="61336.html#61365">61365</a></td>
+<td class="comment-1" rowspan="1">...and if this new location is not outside dimensions of the graphic then loop back to <a href="61336.html#61365">61365</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="61386"></span>
 <div class="comments">
 <div class="paragraph">
@@ -250,23 +228,26 @@ This entry point is used by the routine at <a href="61390.html">61390</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="61386"></span>61386</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="61297.html">61297</a></span></td>
+<td class="prev">
+Prev: <a href="61297.html">61297</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#61336">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="61387.html">61387</a></span></td>
+<td class="next">
+Next: <a href="61387.html">61387</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

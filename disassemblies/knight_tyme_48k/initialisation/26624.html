@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 26624</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,143 +20,113 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-0">Prev: <a href=""></a></span></td>
+<td class="prev">
+</td>
 <td class="up">Up: <a href="initialisation.html#26624">Map</a></td>
-<td class="next"><span class="next-0">Next: <a href=""></a></span></td>
+<td class="next">
+</td>
 </tr>
 </table>
-<div class="description">26624: Initialise Interrupt Code then Display and Handle Input Device Selection Menu</div>
+<div class="description">26624: Initialise interrupt code then display and handle input device selection menu</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
 </div>
-<table class="input-0">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26624"></span>26624</td>
 <td class="instruction">LD (IY+87),3</td>
-<td class="comment-11" rowspan="1">Set P-FLAG bits 0 and 1 (OVER 1) (IY = 23610)</td>
+<td class="comment-1" rowspan="1">Set <a href="../asm/23697.html">P FLAG system variable</a> bits 0 and 1 (OVER 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26628"></span>26628</td>
 <td class="instruction">LD HL,(55968)</td>
-<td class="comment-11" rowspan="1">Load HL with address of graphic data for Advert's mask...</td>
+<td class="comment-1" rowspan="2">Copy address of graphic data for Advert's mask to graphic data for graphic 33 at <a href="../asm/55950.html#56082">56082</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26631"></span>26631</td>
 <td class="instruction">LD (56082),HL</td>
-<td class="comment-11" rowspan="1">...and store at <a href="../asm/55950.html#56082">56082</a> (graphic data for graphic 33)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26634"></span>26634</td>
 <td class="instruction">LD HL,55918</td>
-<td class="comment-11" rowspan="1">Load HL with address of Unknown Mask Data...</td>
+<td class="comment-1" rowspan="2">Set address of mask data for graphic 33 at <a href="../asm/55950.html#56082">56084</a> to address of <a href="../asm/55918.html">unknown mask data</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26637"></span>26637</td>
 <td class="instruction">LD (56084),HL</td>
-<td class="comment-11" rowspan="1">...and store at <a href="../asm/55950.html#56082">56084</a> (mask data for graphic 33)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26640"></span>26640</td>
 <td class="instruction">LD A,(23728)</td>
-<td class="comment-11" rowspan="1">If Cheat Mode Enabled Flag is reset (<a href="../reference/facts.html#cheatmode">see trivia</a>)...</td>
+<td class="comment-1" rowspan="3">If cheat-mode-enabled flag is reset (<a href="../reference/facts.html#cheatmode">see trivia</a>) then skip ahead to <a href="26624.html#26650">26650</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26643"></span>26643</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26644"></span>26644</td>
 <td class="instruction">JR Z,26650</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="26624.html#26650">26650</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26646"></span>26646</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set initial room of Valid I.D. Card to USS Pisces, 0, "The Recreation Room" (00)...</td>
+<td class="comment-1" rowspan="2">Set initial room of Valid I.D. Card to USS Pisces, 0, "The Recreation Room" (00)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26647"></span>26647</td>
 <td class="instruction">LD (36920),A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26650"></span>26650</td>
 <td class="instruction">LD A,24</td>
-<td class="comment-11" rowspan="1">Put JR instruction at <a href="../asm/65535.html">65535</a> for jumping to interrupt routine...</td>
+<td class="comment-1" rowspan="2">Put <span class="instruction">JR</span> instruction at <a href="../asm/65535.html">65535</a> for jumping to interrupt routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26652"></span>26652</td>
 <td class="instruction">LD (65535),A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26655"></span>26655</td>
 <td class="instruction">LD A,195</td>
-<td class="comment-11" rowspan="1">Load first byte of interrupt routine with 195...</td>
+<td class="comment-1" rowspan="2">Load first byte of interrupt routine with 195 representing <span class="instruction">JP</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26657"></span>26657</td>
 <td class="instruction">LD (65524),A</td>
-<td class="comment-11" rowspan="1">...representing "JP"</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26660"></span>26660</td>
 <td class="instruction">LD HL,53479</td>
-<td class="comment-11" rowspan="1">Load following two bytes of interrupt routine with <a href="../asm/53479.html">53479</a>...</td>
+<td class="comment-1" rowspan="2">Load following two bytes of interrupt routine with <a href="../asm/53479.html">53479</a> to make <span class="instruction">JP <a href="../asm/53479.html">53479</a></span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26663"></span>26663</td>
 <td class="instruction">LD (65525),HL</td>
-<td class="comment-11" rowspan="1">...to make "JP <a href="../asm/53479.html">53479</a>"</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26666"></span>26666</td>
 <td class="instruction">LD A,57</td>
-<td class="comment-11" rowspan="1">Load I register with 57 (for interrupt routine)...</td>
+<td class="comment-1" rowspan="2">Load <span class="register">I</span> register with 57 (for interrupt routine)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26668"></span>26668</td>
 <td class="instruction">LD I,A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
-
+<td class="routine-comment" colspan="5">
 <div class="comments">
 <div class="paragraph">
 Execution continues into the routine at <a href="../asm/26670.html">26670</a> that displays the input device selection menu.
@@ -166,15 +137,17 @@ Execution continues into the routine at <a href="../asm/26670.html">26670</a> th
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-0">Prev: <a href=""></a></span></td>
+<td class="prev">
+</td>
 <td class="up">Up: <a href="initialisation.html#26624">Map</a></td>
-<td class="next"><span class="next-0">Next: <a href=""></a></span></td>
+<td class="next">
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

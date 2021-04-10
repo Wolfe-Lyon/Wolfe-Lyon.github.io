@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Data at 48915</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,364 +20,308 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48811.html">48811</a></span></td>
+<td class="prev">
+Prev: <a href="48811.html">48811</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48915">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="49019.html">49019</a></span></td>
+<td class="next">
+Next: <a href="49019.html">49019</a>
+</td>
 </tr>
 </table>
-<div class="description">48915: Character Movement Restriction Data</div>
+<div class="description">48915: Character movement restriction data</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 The values in this table serve to restrict the movement of characters in two ways:
 </div>
 <div class="paragraph">
 <ul class="">
-<li>When a character tries to move left or right within a room, his / her new x-coordinate is checked against the two values in the entry below for that character's current room. If the new x-coordinate is equal to either of the current room's values here, then the move is aborted and the routine that controls the character's movement (<a href="62622.html">62622</a>) is RETurned from.</li>
-<li>When a character tries to move into a new room, the first byte in the entry for the room the character is trying to enter is checked. If this value is 98, then the move is prevented. Instead of adding double the index of the destination room to the start address of this table (<a href="48915.html">48915</a>), double the index of the character's <em>current</em> room is added to either 48913 (when moving left) or 48917 (when moving right). This is equivalent, however, because the entries in this table are ordered such that the rooms run left-to-right.</li>
+<li>when a character tries to move left or right within a room, his / her new x-coordinate is checked against the two values in the entry below for that character's current room. If the new x-coordinate is equal to either of the current room's values here, then the move is aborted and the routine that controls the character's movement (<a href="62622.html">62622</a>) is returned from.</li>
+<li>when a character tries to move into a new room, the first byte in the entry for the room the character is trying to enter is checked. If this value is 98, then the move is prevented. Instead of adding double the index of the destination room to the start address of this table (<a href="48915.html">48915</a>), double the index of the character's <em>current</em> room is added to either 48913 (when moving left) or 48917 (when moving right). This is equivalent, however, because the entries in this table are ordered such that the rooms run left-to-right.</li>
 </ul>
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48915"></span>48915</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(00) - Limbo</td>
+<td class="comment-1" rowspan="1">(00) Limbo</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48917"></span>48917</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(01) - Outdoors, 0 (Bearwoolf's Hoard)</td>
+<td class="comment-1" rowspan="1">(01) Outdoors, 0 (Bearwoolf's Hoard)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48919"></span>48919</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(02) - Outdoors, 1 (Bearwoolf's Cave)</td>
+<td class="comment-1" rowspan="1">(02) Outdoors, 1 (Bearwoolf's Cave)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48921"></span>48921</td>
 <td class="instruction">DEFB 18,99</td>
-<td class="comment-11" rowspan="1">(03) - Outdoors, 2 (Beware Bearwoolf)</td>
+<td class="comment-1" rowspan="1">(03) Outdoors, 2 (Beware Bearwoolf)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48923"></span>48923</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(04) - Outdoors, 3 (The Spooky Forest, 1)</td>
+<td class="comment-1" rowspan="1">(04) Outdoors, 3 (The Spooky Forest, 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48925"></span>48925</td>
 <td class="instruction">DEFB 26,8</td>
-<td class="comment-11" rowspan="1">(05) - Outdoors, 4</td>
+<td class="comment-1" rowspan="1">(05) Outdoors, 4</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48927"></span>48927</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(06) - Outdoors, 5 (The Spooky Forest, 2)</td>
+<td class="comment-1" rowspan="1">(06) Outdoors, 5 (The Spooky Forest, 2)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48929"></span>48929</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(07) - Outdoors, 6 (The Sword in the Concrete)</td>
+<td class="comment-1" rowspan="1">(07) Outdoors, 6 (The Sword in the Concrete)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48931"></span>48931</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(08) - Outdoors, 7 (Robin's Little Hut)</td>
+<td class="comment-1" rowspan="1">(08) Outdoors, 7 (Robin's Little Hut)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48933"></span>48933</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(09) - Outdoors, 8 (Exit from Limbo)</td>
+<td class="comment-1" rowspan="1">(09) Outdoors, 8 (Exit from Limbo)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48935"></span>48935</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(10) - Outdoors, 9 (More Spooky Forest)</td>
+<td class="comment-1" rowspan="1">(10) Outdoors, 9 (More Spooky Forest)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48937"></span>48937</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(11) - Outdoors, 10 (Entwood)</td>
+<td class="comment-1" rowspan="1">(11) Outdoors, 10 (Entwood)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48939"></span>48939</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(12) - Outdoors, 11 (The Spooky Forest, 3)</td>
+<td class="comment-1" rowspan="1">(12) Outdoors, 11 (The Spooky Forest, 3)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48941"></span>48941</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(13) - Outdoors, 12 (The Spooky Forest, 4)</td>
+<td class="comment-1" rowspan="1">(13) Outdoors, 12 (The Spooky Forest, 4)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48943"></span>48943</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(14) - Outdoors, 13 (Wishing Well)</td>
+<td class="comment-1" rowspan="1">(14) Outdoors, 13 (Wishing Well)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48945"></span>48945</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(15) - Outdoors, 14</td>
+<td class="comment-1" rowspan="1">(15) Outdoors, 14</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48947"></span>48947</td>
 <td class="instruction">DEFB 99,16</td>
-<td class="comment-11" rowspan="1">(16) - Outdoors, 15 (The Castle Entrance)</td>
+<td class="comment-1" rowspan="1">(16) Outdoors, 15 (The Castle Entrance)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48949"></span>48949</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(17) - Castle Ground Floor, 0 (One Axe Room)</td>
+<td class="comment-1" rowspan="1">(17) Castle Ground Floor, 0 (One Axe Room)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48951"></span>48951</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(18) - Castle Ground Floor, 1 (Indoor Bowling Green)</td>
+<td class="comment-1" rowspan="1">(18) Castle Ground Floor, 1 (Indoor Bowling Green)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48953"></span>48953</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(19) - Castle Ground Floor, 2</td>
+<td class="comment-1" rowspan="1">(19) Castle Ground Floor, 2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48955"></span>48955</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(20) - Castle Ground Floor, 3</td>
+<td class="comment-1" rowspan="1">(20) Castle Ground Floor, 3</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48957"></span>48957</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(21) - Castle Ground Floor, 4 (More Axe Problems)</td>
+<td class="comment-1" rowspan="1">(21) Castle Ground Floor, 4 (More Axe Problems)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48959"></span>48959</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(22) - Castle Ground Floor, 5 (Even More Axes)</td>
+<td class="comment-1" rowspan="1">(22) Castle Ground Floor, 5 (Even More Axes)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48961"></span>48961</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(23) - Castle Ground Floor, 6 (The First Jump Chute)</td>
+<td class="comment-1" rowspan="1">(23) Castle Ground Floor, 6 (The First Jump Chute)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48963"></span>48963</td>
 <td class="instruction">DEFB 2,99</td>
-<td class="comment-11" rowspan="1">(24) - Castle First Floor, 0 (Main Lever 7)</td>
+<td class="comment-1" rowspan="1">(24) Castle First Floor, 0 (Main Lever 7)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48965"></span>48965</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(25) - Castle First Floor, 1 (Main Lever 6)</td>
+<td class="comment-1" rowspan="1">(25) Castle First Floor, 1 (Main Lever 6)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48967"></span>48967</td>
 <td class="instruction">DEFB 20,10</td>
-<td class="comment-11" rowspan="1">(26) - Castle First Floor, 2 (Security Door &amp; Main Lever 5)</td>
+<td class="comment-1" rowspan="1">(26) Castle First Floor, 2 (Security Door &amp; Main Lever 5)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48969"></span>48969</td>
 <td class="instruction">DEFB 22,8</td>
-<td class="comment-11" rowspan="1">(27) - Castle First Floor, 3 (Main Lever 4)</td>
+<td class="comment-1" rowspan="1">(27) Castle First Floor, 3 (Main Lever 4)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48971"></span>48971</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(28) - Castle First Floor, 4 (Main Lever 3)</td>
+<td class="comment-1" rowspan="1">(28) Castle First Floor, 4 (Main Lever 3)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48973"></span>48973</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(29) - Castle First Floor, 5 (Main Lever 2)</td>
+<td class="comment-1" rowspan="1">(29) Castle First Floor, 5 (Main Lever 2)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48975"></span>48975</td>
 <td class="instruction">DEFB 22,14</td>
-<td class="comment-11" rowspan="1">(30) - Castle First Floor, 6 (Main Lever 1)</td>
+<td class="comment-1" rowspan="1">(30) Castle First Floor, 6 (Main Lever 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48977"></span>48977</td>
 <td class="instruction">DEFB 20,12</td>
-<td class="comment-11" rowspan="1">(31) - Castle Second Floor, 0 (The Broken Teleport)</td>
+<td class="comment-1" rowspan="1">(31) Castle Second Floor, 0 (The Broken Teleport)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48979"></span>48979</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(32) - Castle Second Floor, 1 (Terrible Twins)</td>
+<td class="comment-1" rowspan="1">(32) Castle Second Floor, 1 (Terrible Twins)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48981"></span>48981</td>
 <td class="instruction">DEFB 99,20</td>
-<td class="comment-11" rowspan="1">(33) - Castle Second Floor, 2 (The Guardian Statues)</td>
+<td class="comment-1" rowspan="1">(33) Castle Second Floor, 2 (The Guardian Statues)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48983"></span>48983</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(34) - Castle Second Floor, 3 (One Way Corridor, 1)</td>
+<td class="comment-1" rowspan="1">(34) Castle Second Floor, 3 (One Way Corridor, 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48985"></span>48985</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(35) - Castle Second Floor, 4 (One Way Corridor, 2)</td>
+<td class="comment-1" rowspan="1">(35) Castle Second Floor, 4 (One Way Corridor, 2)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48987"></span>48987</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(36) - Castle Second Floor, 5 (One Way Corridor, 3)</td>
+<td class="comment-1" rowspan="1">(36) Castle Second Floor, 5 (One Way Corridor, 3)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48989"></span>48989</td>
 <td class="instruction">DEFB 22,14</td>
-<td class="comment-11" rowspan="1">(37) - Castle Second Floor, 6</td>
+<td class="comment-1" rowspan="1">(37) Castle Second Floor, 6</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48991"></span>48991</td>
 <td class="instruction">DEFB 22,99</td>
-<td class="comment-11" rowspan="1">(38) - Castle Third Floor, 0 (Big White Statue)</td>
+<td class="comment-1" rowspan="1">(38) Castle Third Floor, 0 (Big White Statue)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48993"></span>48993</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(39) - Castle Third Floor, 1</td>
+<td class="comment-1" rowspan="1">(39) Castle Third Floor, 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48995"></span>48995</td>
 <td class="instruction">DEFB 20,10</td>
-<td class="comment-11" rowspan="1">(40) - Castle Third Floor, 2 (Teleport Room, 1)</td>
+<td class="comment-1" rowspan="1">(40) Castle Third Floor, 2 (Teleport Room, 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48997"></span>48997</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(41) - Castle Third Floor, 3 (One Way Corridor, 4)</td>
+<td class="comment-1" rowspan="1">(41) Castle Third Floor, 3 (One Way Corridor, 4)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48999"></span>48999</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(42) - Castle Third Floor, 4 (One Way Corridor, 5)</td>
+<td class="comment-1" rowspan="1">(42) Castle Third Floor, 4 (One Way Corridor, 5)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49001"></span>49001</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(43) - Castle Third Floor, 5 (One Way Corridor, 6)</td>
+<td class="comment-1" rowspan="1">(43) Castle Third Floor, 5 (One Way Corridor, 6)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49003"></span>49003</td>
 <td class="instruction">DEFB 22,14</td>
-<td class="comment-11" rowspan="1">(44) - Castle Third Floor, 6</td>
+<td class="comment-1" rowspan="1">(44) Castle Third Floor, 6</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49005"></span>49005</td>
 <td class="instruction">DEFB 2,2</td>
-<td class="comment-11" rowspan="1">(45) - Spaceship, 0 (The Control Room)</td>
+<td class="comment-1" rowspan="1">(45) Spaceship, 0 (The Control Room)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49007"></span>49007</td>
 <td class="instruction">DEFB 99,99</td>
-<td class="comment-11" rowspan="1">(46) - Spaceship, 1 (Many Screened Room)</td>
+<td class="comment-1" rowspan="1">(46) Spaceship, 1 (Many Screened Room)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49009"></span>49009</td>
 <td class="instruction">DEFB 20,10</td>
-<td class="comment-11" rowspan="1">(47) - Spaceship, 2 (Teleport Room, 2)</td>
+<td class="comment-1" rowspan="1">(47) Spaceship, 2 (Teleport Room, 2)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49011"></span>49011</td>
 <td class="instruction">DEFB 16,16</td>
-<td class="comment-11" rowspan="1">(48) - Spaceship, 3</td>
+<td class="comment-1" rowspan="1">(48) Spaceship, 3</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49013"></span>49013</td>
 <td class="instruction">DEFB 98,99</td>
-<td class="comment-11" rowspan="1">(49) - Spaceship, 4 (The Power Plant)</td>
+<td class="comment-1" rowspan="1">(49) Spaceship, 4 (The Power Plant)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49015"></span>49015</td>
 <td class="instruction">DEFB 14,14</td>
-<td class="comment-11" rowspan="1">(50) - Spaceship, 5</td>
+<td class="comment-1" rowspan="1">(50) Spaceship, 5</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49017"></span>49017</td>
 <td class="instruction">DEFB 99,25</td>
-<td class="comment-11" rowspan="1">(51) - Spaceship, 6</td>
+<td class="comment-1" rowspan="1">(51) Spaceship, 6</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48811.html">48811</a></span></td>
+<td class="prev">
+Prev: <a href="48811.html">48811</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48915">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="49019.html">49019</a></span></td>
+<td class="next">
+Next: <a href="49019.html">49019</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Data at 46244</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-w">
 <table class="header">
@@ -22,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="46218.html">46218</a></span></td>
+<td class="prev">
+Prev: <a href="46218.html">46218</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#46244">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="46284.html">46284</a></span></td>
+<td class="next">
+Next: <a href="46284.html">46284</a>
+</td>
 </tr>
 </table>
-<div class="description">46244: Table of Addresses of Graphic Layout Data Handling Routines</div>
+<div class="description">46244: Table of addresses of graphic layout data handling routines</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Graphic layout data is stored in the form of encoded instructions. Generally an instruction is simply to display a graphic of given index with a given attribute and then to advance the position of the drawing "cursor". If the first byte (normally the graphic index) is 236 or greater, however, then we are dealing with a special instruction; the values 236 and above can be considered to be opcodes. These opcodes correspond to calls/jumps to routines at addresses stored in this table. The opcodes all take different combinations of parameters.
@@ -39,7 +41,7 @@ Graphic layout data is stored in the form of encoded instructions. Generally an 
 <table class="default">
 <tr>
 <th colspan="1" rowspan="1">Opcode</th>
-<th colspan="1" rowspan="1">No. of Parameters</th>
+<th colspan="1" rowspan="1">No. of parameters</th>
 <th colspan="1" rowspan="1">Meaning</th>
 </tr>
 <tr>
@@ -55,27 +57,27 @@ Graphic layout data is stored in the form of encoded instructions. Generally an 
 <tr>
 <td class="centre" colspan="1" rowspan="1">238</td>
 <td class="" colspan="1" rowspan="1">1</td>
-<td class="" colspan="1" rowspan="1">Store graphic layout data address to mark start of Loop A and set Repeat Counter A to value in parameter</td>
+<td class="" colspan="1" rowspan="1">Store graphic layout data address to mark start of loop A and set repeat counter A to value in parameter</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">239</td>
 <td class="" colspan="1" rowspan="1">0</td>
-<td class="" colspan="1" rowspan="1">Decrement Repeat Counter A and jump back to stored graphic layout data address for start of Loop A</td>
+<td class="" colspan="1" rowspan="1">Decrement repeat counter A and jump back to stored graphic layout data address for start of loop A</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">240</td>
 <td class="" colspan="1" rowspan="1">1</td>
-<td class="" colspan="1" rowspan="1">Store graphic layout data address to mark start of Loop A and set Repeat Counter B to value in parameter</td>
+<td class="" colspan="1" rowspan="1">Store graphic layout data address to mark start of loop B and set repeat counter B to value in parameter</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">241</td>
 <td class="" colspan="1" rowspan="1">0</td>
-<td class="" colspan="1" rowspan="1">Decrement Repeat Counter B and jump back to stored graphic layout data address for start of Loop B</td>
+<td class="" colspan="1" rowspan="1">Decrement repeat counter B and jump back to stored graphic layout data address for start of loop B</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">242</td>
 <td class="" colspan="1" rowspan="1">1</td>
-<td class="" colspan="1" rowspan="1">Set the Current Attribute to value in parameter</td>
+<td class="" colspan="1" rowspan="1">Set the current attribute to value in parameter</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">243</td>
@@ -85,7 +87,7 @@ Graphic layout data is stored in the form of encoded instructions. Generally an 
 <tr>
 <td class="centre" colspan="1" rowspan="1">244</td>
 <td class="" colspan="1" rowspan="1">1</td>
-<td class="" colspan="1" rowspan="1">Set the Current Graphic Set Index to value in parameter</td>
+<td class="" colspan="1" rowspan="1">Set the current graphic set index to value in parameter</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">245</td>
@@ -145,152 +147,124 @@ Graphic layout data is stored in the form of encoded instructions. Generally an 
 </table>
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46244"></span>46244</td>
 <td class="instruction">DEFW <a href="46317.html">46317</a></td>
-<td class="comment-11" rowspan="1">(236)</td>
+<td class="comment-1" rowspan="1">(236)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46246"></span>46246</td>
 <td class="instruction">DEFW <a href="46284.html">46284</a></td>
-<td class="comment-11" rowspan="1">(237)</td>
+<td class="comment-1" rowspan="1">(237)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46248"></span>46248</td>
 <td class="instruction">DEFW <a href="46611.html">46611</a></td>
-<td class="comment-11" rowspan="1">(238)</td>
+<td class="comment-1" rowspan="1">(238)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46250"></span>46250</td>
 <td class="instruction">DEFW <a href="46628.html">46628</a></td>
-<td class="comment-11" rowspan="1">(239)</td>
+<td class="comment-1" rowspan="1">(239)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46252"></span>46252</td>
 <td class="instruction">DEFW <a href="46647.html">46647</a></td>
-<td class="comment-11" rowspan="1">(240)</td>
+<td class="comment-1" rowspan="1">(240)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46254"></span>46254</td>
 <td class="instruction">DEFW <a href="46664.html">46664</a></td>
-<td class="comment-11" rowspan="1">(241)</td>
+<td class="comment-1" rowspan="1">(241)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46256"></span>46256</td>
 <td class="instruction">DEFW <a href="46295.html">46295</a></td>
-<td class="comment-11" rowspan="1">(242)</td>
+<td class="comment-1" rowspan="1">(242)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46258"></span>46258</td>
 <td class="instruction">DEFW <a href="46559.html">46559</a></td>
-<td class="comment-11" rowspan="1">(243)</td>
+<td class="comment-1" rowspan="1">(243)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46260"></span>46260</td>
 <td class="instruction">DEFW <a href="46306.html">46306</a></td>
-<td class="comment-11" rowspan="1">(244)</td>
+<td class="comment-1" rowspan="1">(244)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46262"></span>46262</td>
 <td class="instruction">DEFW <a href="46347.html">46347</a></td>
-<td class="comment-11" rowspan="1">(245)</td>
+<td class="comment-1" rowspan="1">(245)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46264"></span>46264</td>
 <td class="instruction">DEFW <a href="46363.html">46363</a></td>
-<td class="comment-11" rowspan="1">(246)</td>
+<td class="comment-1" rowspan="1">(246)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46266"></span>46266</td>
 <td class="instruction">DEFW <a href="46577.html">46577</a></td>
-<td class="comment-11" rowspan="1">(247)</td>
+<td class="comment-1" rowspan="1">(247)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46268"></span>46268</td>
 <td class="instruction">DEFW <a href="46481.html">46481</a></td>
-<td class="comment-11" rowspan="1">(248)</td>
+<td class="comment-1" rowspan="1">(248)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46270"></span>46270</td>
 <td class="instruction">DEFW <a href="46495.html">46495</a></td>
-<td class="comment-11" rowspan="1">(249)</td>
+<td class="comment-1" rowspan="1">(249)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46272"></span>46272</td>
 <td class="instruction">DEFW <a href="46427.html">46427</a></td>
-<td class="comment-11" rowspan="1">(250)</td>
+<td class="comment-1" rowspan="1">(250)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46274"></span>46274</td>
 <td class="instruction">DEFW <a href="46460.html">46460</a></td>
-<td class="comment-11" rowspan="1">(251)</td>
+<td class="comment-1" rowspan="1">(251)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46276"></span>46276</td>
 <td class="instruction">DEFW <a href="46599.html">46599</a></td>
-<td class="comment-11" rowspan="1">(252)</td>
+<td class="comment-1" rowspan="1">(252)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46278"></span>46278</td>
 <td class="instruction">DEFW <a href="46594.html">46594</a></td>
-<td class="comment-11" rowspan="1">(253)</td>
+<td class="comment-1" rowspan="1">(253)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46280"></span>46280</td>
 <td class="instruction">DEFW <a href="46442.html">46442</a></td>
-<td class="comment-11" rowspan="1">(254)</td>
+<td class="comment-1" rowspan="1">(254)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46282"></span>46282</td>
 <td class="instruction">DEFW <a href="46418.html">46418</a></td>
-<td class="comment-11" rowspan="1">(255)</td>
+<td class="comment-1" rowspan="1">(255)</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="46218.html">46218</a></span></td>
+<td class="prev">
+Prev: <a href="46218.html">46218</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#46244">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="46284.html">46284</a></span></td>
+<td class="next">
+Next: <a href="46284.html">46284</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

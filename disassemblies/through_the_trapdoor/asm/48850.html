@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 48850</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48791.html">48791</a></span></td>
+<td class="prev">
+Prev: <a href="48791.html">48791</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48850">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48920.html">48920</a></span></td>
+<td class="next">
+Next: <a href="48920.html">48920</a>
+</td>
 </tr>
 </table>
-<div class="description">48850: Have Berk Hold an Entity, and Position it Appropriately Between his Hands</div>
+<div class="description">48850: Have Berk hold an entity, and position it appropriately between his hands</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 The instruction blocks <a href="48850.html#48872">48872</a>-<a href="48850.html#48894">48894</a> and <a href="48850.html#48897">48897</a>-<a href="48850.html#48916">48916</a> move the entity that Berk is carrying into position (i.e. between Berk's hands), at a horizontal or vertical position appropriate to the height / width of that entity. These instructions result in the following x- or y-coordinates (left or top of carried entity relative to left or top of carrier, i.e. Berk):
@@ -38,8 +40,8 @@ The instruction blocks <a href="48850.html#48872">48872</a>-<a href="48850.html#
 <div class="paragraph">
 <table class="default">
 <tr>
-<th colspan="1" rowspan="1">Height / Width</th>
-<th colspan="1" rowspan="1">Offset (Characters)</th>
+<th colspan="1" rowspan="1">Height / width</th>
+<th colspan="1" rowspan="1">Offset (characters)</th>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">1</td>
@@ -53,16 +55,16 @@ The instruction blocks <a href="48850.html#48872">48872</a>-<a href="48850.html#
 <td class="centre" colspan="1" rowspan="1">3</td>
 <td class="" colspan="1" rowspan="1">1</td>
 </tr>
-</table> For example, an entity with height 2 characters (e.g. a mushroom from Level 2) will have its offset value calculated to be 2 characters, and will therefore be positioned vertically two characters below Berk's top character row.
+</table> For example, an entity with height 2 characters (e.g. a mushroom from level 2) will have its offset value calculated to be 2 characters, and will therefore be positioned vertically two characters below Berk's top character row.
 </div>
 <div class="paragraph">
-For the special case of the weight on Level 3, <a href="../reference/facts.html#heightofweight">see trivia</a>.
+For the special case of the weight on level 3, <a href="../reference/facts.html#heightofweight">see trivia</a>.
 </div>
 <div class="paragraph">
 Used by the routines at <a href="36638.html">36638</a> and <a href="48148.html">48148</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -75,7 +77,7 @@ Used by the routines at <a href="36638.html">36638</a> and <a href="48148.html">
 <td class="register-desc">(entry at <a href="48850.html#48897">48897</a>) Address of complex state data for an entity carried by Berk</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -87,109 +89,92 @@ Used by the routines at <a href="36638.html">36638</a> and <a href="48148.html">
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48850"></span>48850</td>
 <td class="instruction">LD IY,(34256)</td>
-<td class="comment-11" rowspan="1">Load IY with address of complex state data for entity to be held by Berk...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with address of complex state data for entity to be held by Berk...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48854"></span>48854</td>
 <td class="instruction">LD (34260),IY</td>
-<td class="comment-11" rowspan="1">...and store at <a href="34256.html#34260">34260</a> as address of state data for entity held by Berk</td>
+<td class="comment-1" rowspan="1">...and store at <a href="34256.html#34260">34260</a> as address of state data for entity held by Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48858"></span>48858</td>
 <td class="instruction">SET 5,(IY+10)</td>
-<td class="comment-11" rowspan="1">Set the entity's Is Being Carried Flag</td>
+<td class="comment-1" rowspan="1">Set the entity's is-being-carried flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48862"></span>48862</td>
 <td class="instruction">SET 4,(IX+9)</td>
-<td class="comment-11" rowspan="1">Set Berk's Carrying Something Flag</td>
+<td class="comment-1" rowspan="1">Set Berk's carrying-something flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48866"></span>48866</td>
 <td class="instruction">LD A,(IY+8)</td>
-<td class="comment-11" rowspan="1">Set class of entity held by Berk to be this entity's class...</td>
+<td class="comment-1" rowspan="1">Set class of entity held by Berk to be this entity's class...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48869"></span>48869</td>
 <td class="instruction">LD (34221),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48872"></span>48872</td>
 <td class="instruction">LD A,(IY+7)</td>
-<td class="comment-11" rowspan="1">Load A with the width of the entity, minus 1...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with the width of the entity, minus 1...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48875"></span>48875</td>
 <td class="instruction">SUB (IY+5)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48878"></span>48878</td>
 <td class="instruction">LD (34272),A</td>
-<td class="comment-11" rowspan="1">...and store at <a href="34256.html#34272">34272</a></td>
+<td class="comment-1" rowspan="1">...and store at <a href="34256.html#34272">34272</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48881"></span>48881</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">Load E with width of entity, minus 1</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with width of entity, minus 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48882"></span>48882</td>
 <td class="instruction">SRL A</td>
-<td class="comment-11" rowspan="1">Move entity defined at IY into horizontal position appropriate to its height (see notes above)...</td>
+<td class="comment-1" rowspan="1">Move entity defined at <span class="register">IY</span> into horizontal position appropriate to its height (see notes above)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48884"></span>48884</td>
 <td class="instruction">XOR 1</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48886"></span>48886</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48887"></span>48887</td>
 <td class="instruction">ADD A,(IX+5)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48890"></span>48890</td>
 <td class="instruction">LD (IY+5),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48893"></span>48893</td>
 <td class="instruction">ADD A,E</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48894"></span>48894</td>
 <td class="instruction">LD (IY+7),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="48897"></span>
 <div class="comments">
 <div class="paragraph">
@@ -199,83 +184,76 @@ This entry point is used by the routine at <a href="48760.html">48760</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48897"></span>48897</td>
 <td class="instruction">LD A,(IY+6)</td>
-<td class="comment-11" rowspan="1">Move entity defined at IY into vertical position appropriate to its height (see notes above)...</td>
+<td class="comment-1" rowspan="1">Move entity defined at <span class="register">IY</span> into vertical position appropriate to its height (see notes above)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48900"></span>48900</td>
 <td class="instruction">SUB (IY+4)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48903"></span>48903</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48904"></span>48904</td>
 <td class="instruction">SRL A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48906"></span>48906</td>
 <td class="instruction">XOR 1</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48908"></span>48908</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48909"></span>48909</td>
 <td class="instruction">ADD A,(IX+4)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48912"></span>48912</td>
 <td class="instruction">LD (IY+4),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48915"></span>48915</td>
 <td class="instruction">ADD A,E</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48916"></span>48916</td>
 <td class="instruction">LD (IY+6),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48919"></span>48919</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48791.html">48791</a></span></td>
+<td class="prev">
+Prev: <a href="48791.html">48791</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48850">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48920.html">48920</a></span></td>
+<td class="next">
+Next: <a href="48920.html">48920</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

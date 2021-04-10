@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 29709</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29690.html">29690</a></span></td>
+<td class="prev">
+Prev: <a href="29690.html">29690</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29709">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29763.html">29763</a></span></td>
+<td class="next">
+Next: <a href="29763.html">29763</a>
+</td>
 </tr>
 </table>
-<div class="description">29709: Animate Puff of Smoke then Draw a Character in Position</div>
+<div class="description">29709: Animate puff of smoke then draw a character in position</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Only called if high bit of Magic Knight's current room is set
@@ -36,7 +41,7 @@ Only called if high bit of Magic Knight's current room is set
 Used by the routine at <a href="29576.html">29576</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,239 +51,202 @@ Used by the routine at <a href="29576.html">29576</a>.
 </tr>
 <tr>
 <td class="register">IX</td>
-<td class="register-desc">Pointer to position data for this character (3 bytes: Screen number, x-coordinate, y-coordinate)</td>
+<td class="register-desc">Pointer to position data for this character (3 bytes: screen number, x-coordinate, y-coordinate)</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29709"></span>29709</td>
 <td class="instruction">LD E,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load character's room index into E</td>
+<td class="comment-1" rowspan="1">Load character's room index into <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29712"></span>29712</td>
 <td class="instruction">RES 7,E</td>
-<td class="comment-11" rowspan="1">Reset the most significant bit</td>
+<td class="comment-1" rowspan="1">Reset the most significant bit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29714"></span>29714</td>
 <td class="instruction">CP E</td>
-<td class="comment-11" rowspan="1">If new room index is different from Magic Knight's then...</td>
+<td class="comment-1" rowspan="1">If new room index is different from Magic Knight's then...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29715"></span>29715</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...return...</td>
+<td class="comment-1" rowspan="1">...return...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29716"></span>29716</td>
 <td class="instruction">RES 7,(IX+0)</td>
-<td class="comment-11" rowspan="1">...else reset high bit of character's room index</td>
+<td class="comment-1" rowspan="1">...else reset high bit of character's room index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29720"></span>29720</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29721"></span>29721</td>
 <td class="instruction">LD C,63</td>
-<td class="comment-11" rowspan="1">Load C with 63 (index of first frame of puff of smoke animation)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with 63 (index of first frame of puff of smoke animation)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29723"></span>29723</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (C = index of puff of smoke)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">C</span> = index of puff of smoke)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29724"></span>29724</td>
 <td class="instruction">CALL <a href="29690.html">29690</a></td>
-<td class="comment-11" rowspan="1">Load character's coordinates into BC and graphic lookup index into A and draw to screen</td>
+<td class="comment-1" rowspan="1">Load character's coordinates into <span class="register">BC</span> and graphic lookup index into <span class="register">A</span> and draw to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29727"></span>29727</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (C = index of puff of smoke)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">C</span> = index of puff of smoke)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29728"></span>29728</td>
 <td class="instruction">LD B,5</td>
-<td class="comment-11" rowspan="1">Set B to 5 (as there are six frames we need to loop 5 times)</td>
+<td class="comment-1" rowspan="1">Set <span class="register">B</span> to 5 (as there are six frames we need to loop 5 times)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29730"></span>29730</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (C = index of puff of smoke)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">C</span> = index of puff of smoke)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29731"></span>29731</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">Wait for interrupts...</td>
+<td class="comment-1" rowspan="1">Wait for interrupts...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29732"></span>29732</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29733"></span>29733</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29734"></span>29734</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29735"></span>29735</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29736"></span>29736</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29737"></span>29737</td>
 <td class="instruction">CALL <a href="29690.html">29690</a></td>
-<td class="comment-11" rowspan="1">Load object's coordinates into BC and graphic lookup index into A and draw to screen</td>
+<td class="comment-1" rowspan="1">Load object's coordinates into <span class="register">BC</span> and graphic lookup index into <span class="register">A</span> and draw to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29740"></span>29740</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (C = index of puff of smoke)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">C</span> = index of puff of smoke)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29741"></span>29741</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">Advance C by one (to point to next frame of puff of smoke animation)</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">C</span> by one (to point to next frame of puff of smoke animation)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29742"></span>29742</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (C = index of puff of smoke)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">C</span> = index of puff of smoke)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29743"></span>29743</td>
 <td class="instruction">CALL <a href="29690.html">29690</a></td>
-<td class="comment-11" rowspan="1">Load object's coordinates into BC and graphic lookup index into A and draw to screen</td>
+<td class="comment-1" rowspan="1">Load object's coordinates into <span class="register">BC</span> and graphic lookup index into <span class="register">A</span> and draw to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29746"></span>29746</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (C = index of puff of smoke)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">C</span> = index of puff of smoke)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29747"></span>29747</td>
 <td class="instruction">DJNZ 29730</td>
-<td class="comment-11" rowspan="1">Decrease B and loop back for next frame</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> and loop back for next frame</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29749"></span>29749</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">Wait for interrupts...</td>
+<td class="comment-1" rowspan="1">Wait for interrupts...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29750"></span>29750</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29751"></span>29751</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29752"></span>29752</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29753"></span>29753</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29754"></span>29754</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29755"></span>29755</td>
 <td class="instruction">CALL <a href="29690.html">29690</a></td>
-<td class="comment-11" rowspan="1">Load object's coordinates into BC and graphic lookup index into A and draw to screen</td>
+<td class="comment-1" rowspan="1">Load object's coordinates into <span class="register">BC</span> and graphic lookup index into <span class="register">A</span> and draw to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29758"></span>29758</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29759"></span>29759</td>
 <td class="instruction">CALL <a href="29680.html">29680</a></td>
-<td class="comment-11" rowspan="1">Draw character to screen</td>
+<td class="comment-1" rowspan="1">Draw character to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29762"></span>29762</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29690.html">29690</a></span></td>
+<td class="prev">
+Prev: <a href="29690.html">29690</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29709">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29763.html">29763</a></span></td>
+<td class="next">
+Next: <a href="29763.html">29763</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

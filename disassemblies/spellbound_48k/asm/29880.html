@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 29880</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,110 +20,106 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29879.html">29879</a></span></td>
+<td class="prev">
+Prev: <a href="29879.html">29879</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29880">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29910.html">29910</a></span></td>
+<td class="next">
+Next: <a href="29910.html">29910</a>
+</td>
 </tr>
 </table>
-<div class="description">29880: Room-Specific Routine: Kill Magic Knight if he is in the Gas Room Without Protection</div>
+<div class="description">29880: Room-specific routine: Kill Magic Knight if he is in the gas room without protection</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="29763.html">29763</a>.
 </div>
-<table class="input-0">
+</div>
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29880"></span>29880</td>
 <td class="instruction">LD A,(23468)</td>
-<td class="comment-11" rowspan="1">Check Magic Knight spell flags...</td>
+<td class="comment-1" rowspan="1">Check Magic Knight spell flags...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29883"></span>29883</td>
 <td class="instruction">AND 2</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29885"></span>29885</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...and return if bit 2 is set (i.e. Fumaticus Protectium has been successfully cast)</td>
+<td class="comment-1" rowspan="1">...and return if bit 2 is set (i.e. Fumaticus Protectium has been successfully cast)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29886"></span>29886</td>
 <td class="instruction">RES 0,(IY+65)</td>
-<td class="comment-11" rowspan="1">Reset "Update Game Time and Locate Arrow Glow" flag</td>
+<td class="comment-1" rowspan="1">Reset update-game-time-and-locate-arrow-glow flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29890"></span>29890</td>
 <td class="instruction">LD A,31</td>
-<td class="comment-11" rowspan="1">Draw window 31 ("Death info" window, i.e. have entered the Gas Room without Fumaticus Protectium)...</td>
+<td class="comment-1" rowspan="1">Draw window 31 ("death info" window, i.e. have entered the Gas Room without Fumaticus Protectium)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29892"></span>29892</td>
 <td class="instruction">CALL <a href="36987.html">36987</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29895"></span>29895</td>
 <td class="instruction">LD HL,51583</td>
-<td class="comment-11" rowspan="1">Point to "CHOKE... CHOKE..." text</td>
+<td class="comment-1" rowspan="1">Point to "CHOKE... CHOKE..." text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29898"></span>29898</td>
 <td class="instruction">CALL <a href="36725.html">36725</a></td>
-<td class="comment-11" rowspan="1">Print the text</td>
+<td class="comment-1" rowspan="1">Print the text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29901"></span>29901</td>
 <td class="instruction">CALL <a href="38749.html">38749</a></td>
-<td class="comment-11" rowspan="1">Display "PRESS SPACE OR FIRE TO CONTINUE" window and wait for space / fire</td>
+<td class="comment-1" rowspan="1">Display "PRESS SPACE OR FIRE TO CONTINUE" window and wait for space / fire</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29904"></span>29904</td>
 <td class="instruction">LD HL,43651</td>
-<td class="comment-11" rowspan="1">Point HL at "THE GAS GOT YOU" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "THE GAS GOT YOU" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29907"></span>29907</td>
 <td class="instruction">JP <a href="35101.html">35101</a></td>
-<td class="comment-11" rowspan="1">Jump to "Game over" window routine and exit</td>
+<td class="comment-1" rowspan="1">Jump to "game over" window routine and exit</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29879.html">29879</a></span></td>
+<td class="prev">
+Prev: <a href="29879.html">29879</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29880">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29910.html">29910</a></span></td>
+<td class="next">
+Next: <a href="29910.html">29910</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

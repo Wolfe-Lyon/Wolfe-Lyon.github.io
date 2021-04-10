@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 39795</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,124 +20,116 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39758.html">39758</a></span></td>
+<td class="prev">
+Prev: <a href="39758.html">39758</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39795">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39829.html">39829</a></span></td>
+<td class="next">
+Next: <a href="39829.html">39829</a>
+</td>
 </tr>
 </table>
-<div class="description">39795: Draw all Characters in Magic Knight's Current Room</div>
+<div class="description">39795: Draw all characters in Magic Knight's current room</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="39393.html">39393</a> and <a href="39553.html">39553</a>.
 </div>
 </div>
-<table class="input-0">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39795"></span>39795</td>
 <td class="instruction">SET 2,(IY+65)</td>
-<td class="comment-11" rowspan="1">Set Characters Can't Move Flag</td>
+<td class="comment-1" rowspan="1">Set characters-can't-move flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39799"></span>39799</td>
 <td class="instruction">LD IX,24898</td>
-<td class="comment-11" rowspan="1">Point IX at start of Table of Characters' Current Positions at <a href="24898.html">24898</a></td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at start of table of characters' current positions at <a href="24898.html">24898</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39803"></span>39803</td>
 <td class="instruction">LD BC,2048</td>
-<td class="comment-11" rowspan="1">Load B with 8 and C (current character) with 0</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 8 and <span class="register">C</span> (current character) with 0</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39806"></span>39806</td>
 <td class="instruction">LD A,(23702)</td>
-<td class="comment-11" rowspan="1">Load A with Magic Knight's current room</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Magic Knight's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39809"></span>39809</td>
 <td class="instruction">CP (IX+0)</td>
-<td class="comment-11" rowspan="1">If Magic Knight and current character are in the same room...</td>
+<td class="comment-1" rowspan="1">If Magic Knight and current character are in the same room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39812"></span>39812</td>
 <td class="instruction">CALL Z,<a href="39883.html">39883</a></td>
-<td class="comment-11" rowspan="1">...then draw character with index C</td>
+<td class="comment-1" rowspan="1">...then draw character with index <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39815"></span>39815</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">Increase C to advance to next character</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">C</span> to advance to next character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39816"></span>39816</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to entry for next character...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to entry for next character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39818"></span>39818</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39820"></span>39820</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39822"></span>39822</td>
 <td class="instruction">DJNZ 39806</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="39795.html#39806">39806</a> for next character</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="39795.html#39806">39806</a> for next character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39824"></span>39824</td>
 <td class="instruction">RES 2,(IY+65)</td>
-<td class="comment-11" rowspan="1">Reset Characters Can't Move Flag</td>
+<td class="comment-1" rowspan="1">Reset characters-can't-move flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39828"></span>39828</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39758.html">39758</a></span></td>
+<td class="prev">
+Prev: <a href="39758.html">39758</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39795">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39829.html">39829</a></span></td>
+<td class="next">
+Next: <a href="39829.html">39829</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

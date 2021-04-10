@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 30001</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,314 +20,262 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29756.html">29756</a></span></td>
+<td class="prev">
+Prev: <a href="29756.html">29756</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#30001">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="30123.html">30123</a></span></td>
+<td class="next">
+Next: <a href="30123.html">30123</a>
+</td>
 </tr>
 </table>
-<div class="description">30001: Display and Handle Main In-Game Menu (When Fire is Pressed)</div>
+<div class="description">30001: Display and handle main in-game menu (when fire is pressed)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="27136.html">27136</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30001"></span>30001</td>
 <td class="instruction">CALL <a href="35386.html">35386</a></td>
-<td class="comment-11" rowspan="1">Wait for Fire Button / Key to be Released</td>
+<td class="comment-1" rowspan="1">Wait for fire button / key to be released</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30004"></span>30004</td>
 <td class="instruction">CALL <a href="35723.html">35723</a></td>
-<td class="comment-11" rowspan="1">Play downward scale sound</td>
+<td class="comment-1" rowspan="1">Play downward scale sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30007"></span>30007</td>
 <td class="instruction">CALL <a href="34265.html">34265</a></td>
-<td class="comment-11" rowspan="1">Set Magic Knight's available action flags and validate I.D. Card if appropriate</td>
+<td class="comment-1" rowspan="1">Set Magic Knight's available action flags and validate I.D. Card if appropriate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30010"></span>30010</td>
 <td class="instruction">LD BC,2048</td>
-<td class="comment-11" rowspan="1">Set B = 8 (eight action flags) and C = 0 (count of set flags)</td>
+<td class="comment-1" rowspan="1">Set <span class="register">B</span> = 8 (eight action flags) and <span class="register">C</span> = 0 (count of set flags)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30013"></span>30013</td>
 <td class="instruction">LD A,(23698)</td>
-<td class="comment-11" rowspan="1">Load A with Available In-Game Menu Command Flags (part 1)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with available in-game menu command flags, part 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30016"></span>30016</td>
 <td class="instruction">RLCA</td>
-<td class="comment-11" rowspan="1">Pop a bit into Carry Flag</td>
+<td class="comment-1" rowspan="1">Pop a bit into carry flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30017"></span>30017</td>
 <td class="instruction">JR NC,30020</td>
-<td class="comment-11" rowspan="1">If Magic Knight action flag is not set then skip ahead to <a href="30001.html#30020">30020</a> to repeat loop for next flag...</td>
+<td class="comment-1" rowspan="1">If Magic Knight action flag is not set then skip ahead to <a href="30001.html#30020">30020</a> to repeat loop for next flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30019"></span>30019</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">...else increase count of set flags</td>
+<td class="comment-1" rowspan="1">...else increase count of set flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30020"></span>30020</td>
 <td class="instruction">DJNZ 30016</td>
-<td class="comment-11" rowspan="1">Loop back for next bit until all eight are done</td>
+<td class="comment-1" rowspan="1">Loop back for next bit until all eight are done</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30022"></span>30022</td>
 <td class="instruction">LD B,8</td>
-<td class="comment-11" rowspan="1">Set B = 8 (another eight action flags)</td>
+<td class="comment-1" rowspan="1">Set <span class="register">B</span> = 8 (another eight action flags)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30024"></span>30024</td>
 <td class="instruction">LD A,(23699)</td>
-<td class="comment-11" rowspan="1">Load A with Available In-Game Menu Command Flags (part 2)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with available in-game menu command flags, part 2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30027"></span>30027</td>
 <td class="instruction">RLCA</td>
-<td class="comment-11" rowspan="1">Pop a bit into Carry Flag</td>
+<td class="comment-1" rowspan="1">Pop a bit into carry flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30028"></span>30028</td>
 <td class="instruction">JR NC,30031</td>
-<td class="comment-11" rowspan="1">If Magic Knight action flag is not set then skip ahead to <a href="30001.html#30031">30031</a> to repeat loop for next flag...</td>
+<td class="comment-1" rowspan="1">If Magic Knight action flag is not set then skip ahead to <a href="30001.html#30031">30031</a> to repeat loop for next flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30030"></span>30030</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">...else increase count of set flags</td>
+<td class="comment-1" rowspan="1">...else increase count of set flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30031"></span>30031</td>
 <td class="instruction">DJNZ 30027</td>
-<td class="comment-11" rowspan="1">Loop back for next bit until all eight are done</td>
+<td class="comment-1" rowspan="1">Loop back for next bit until all eight are done</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30033"></span>30033</td>
 <td class="instruction">LD A,8</td>
-<td class="comment-11" rowspan="1">Load A with 8 (as minimal command window has bottom y-coordinate of 8)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 8 (as minimal command window has bottom y-coordinate of 8)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30035"></span>30035</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">Increase A by number of extra commands available</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">A</span> by number of extra commands available</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30036"></span>30036</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load value back into C</td>
+<td class="comment-1" rowspan="1">Load value back into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30037"></span>30037</td>
 <td class="instruction">LD A,(37091)</td>
-<td class="comment-11" rowspan="1">Load A with y-coordinate (characters) of top of menu window</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with y-coordinate (characters) of top of menu window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30040"></span>30040</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">Update y-coordinate of bottom of window according to number of extra commands...</td>
+<td class="comment-1" rowspan="1">Update y-coordinate of bottom of window according to number of extra commands...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30041"></span>30041</td>
 <td class="instruction">LD (37092),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30044"></span>30044</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Display main in-game menu window (window number zero)...</td>
+<td class="comment-1" rowspan="1">Display main in-game menu window (window number zero)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30046"></span>30046</td>
 <td class="instruction">CALL <a href="34982.html">34982</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30049"></span>30049</td>
 <td class="instruction">LD HL,38685</td>
-<td class="comment-11" rowspan="1">Print "COMMANDS AVAILABLE:-" followed by first five commands (Pick up, drop, etc.) that are always available...</td>
+<td class="comment-1" rowspan="1">Print "COMMANDS AVAILABLE:-" followed by first five commands (pick up, drop, etc.) that are always available...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30052"></span>30052</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30055"></span>30055</td>
 <td class="instruction">LD HL,38734</td>
-<td class="comment-11" rowspan="1">Point HL at zero immediately preceding list of conditional entry (Main in-Game Menu) texts</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at zero immediately preceding list of conditional entry (main in-game menu) texts</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30058"></span>30058</td>
 <td class="instruction">LD A,(23698)</td>
-<td class="comment-11" rowspan="1">Load A with Available In-Game Menu Command Flags (part 1)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with available in-game menu command flags, part 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30061"></span>30061</td>
 <td class="instruction">CALL <a href="30123.html">30123</a></td>
-<td class="comment-11" rowspan="1">Print currently available additional In-Game Menu command options (part 1)</td>
+<td class="comment-1" rowspan="1">Print currently available additional in-game menu command options, part 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30064"></span>30064</td>
 <td class="instruction">LD A,(23699)</td>
-<td class="comment-11" rowspan="1">Load A with Available In-Game Menu Command Flags (part 2)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with available in-game menu command flags, part 2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30067"></span>30067</td>
 <td class="instruction">CALL <a href="30123.html">30123</a></td>
-<td class="comment-11" rowspan="1">Print currently available additional In-Game Menu command options (part 2)</td>
+<td class="comment-1" rowspan="1">Print currently available additional in-game menu command options, part 2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30070"></span>30070</td>
 <td class="instruction">CALL <a href="35296.html">35296</a></td>
-<td class="comment-11" rowspan="1">Process keyboard / joystick input on a menu and load A with selected item index</td>
+<td class="comment-1" rowspan="1">Process keyboard / joystick input on a menu and load <span class="register">A</span> with selected item index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30073"></span>30073</td>
 <td class="instruction">CP 5</td>
-<td class="comment-11" rowspan="1">If index of selected item is less than 5 (i.e. is a permanent, yellow entry)...</td>
+<td class="comment-1" rowspan="1">If index of selected item is less than 5 (i.e. is a permanent, yellow entry)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30075"></span>30075</td>
 <td class="instruction">JR C,30097</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="30001.html#30097">30097</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="30001.html#30097">30097</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30077"></span>30077</td>
 <td class="instruction">SUB 4</td>
-<td class="comment-11" rowspan="1">Subtract 4 from index to get index within currently available conditional entries...</td>
+<td class="comment-1" rowspan="1">Subtract 4 from index to get index within currently available conditional entries...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30079"></span>30079</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...and load this value into B</td>
+<td class="comment-1" rowspan="1">...and load this value into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30080"></span>30080</td>
 <td class="instruction">LD C,0</td>
-<td class="comment-11" rowspan="1">Load C with zero</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30082"></span>30082</td>
 <td class="instruction">LD HL,(23698)</td>
-<td class="comment-11" rowspan="1">Load HL with Available In-Game Menu Command Flags</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with available in-game menu command flags</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="30085"></span>
 <div class="comments">
 <div class="paragraph">
-At this point, B is initialised to the index of the selected menu option among the currently available conditional entries. The following loop loads C with the index of the selected action's Action Flag (bit) in the WORD value at <a href="23698.html">23698</a>.
+At this point, <span class="register">B</span> is initialised to the index of the selected menu option among the currently available conditional entries. The following loop loads <span class="register">C</span> with the index of the selected action's action flag (bit) in the WORD value at <a href="23698.html">23698</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30085"></span>30085</td>
 <td class="instruction">RR H</td>
-<td class="comment-11" rowspan="1">Perform 16-bit rotation (right) through HL and into Carry Flag...</td>
+<td class="comment-1" rowspan="1">Perform 16-bit rotation (right) through <span class="register">HL</span> and into carry flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30087"></span>30087</td>
 <td class="instruction">RR L</td>
-<td class="comment-11" rowspan="1">...so that Carry Flag contains "current" Action Flag</td>
+<td class="comment-1" rowspan="1">...so that carry flag contains "current" action flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30089"></span>30089</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">Increase C (index of current Action Flag)</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">C</span> (index of current action flag)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30090"></span>30090</td>
 <td class="instruction">JR NC,30085</td>
-<td class="comment-11" rowspan="1">If current Action Flag is not set then loop back to <a href="30001.html#30085">30085</a>...</td>
+<td class="comment-1" rowspan="1">If current action flag is not set then loop back to <a href="30001.html#30085">30085</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30092"></span>30092</td>
 <td class="instruction">DJNZ 30085</td>
-<td class="comment-11" rowspan="1">...otherwise decrease B then loop back to <a href="30001.html#30085">30085</a></td>
+<td class="comment-1" rowspan="1">...otherwise decrease <span class="register">B</span> then loop back to <a href="30001.html#30085">30085</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30094"></span>30094</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Load index of appropriate Action Flag into A</td>
+<td class="comment-1" rowspan="1">Load index of appropriate action flag into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30095"></span>30095</td>
 <td class="instruction">ADD A,4</td>
-<td class="comment-11" rowspan="1">Add 4, to restore original index value (i.e. reverse of instruction at <a href="30001.html#30077">30077</a>)</td>
+<td class="comment-1" rowspan="1">Add 4, to restore original index value (i.e. reverse of instruction at <a href="30001.html#30077">30077</a>)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="30097"></span>
 <div class="comments">
 <div class="paragraph">
-At this point, A holds either the index of the appropriate Action Flag plus four, or the index of the originally selected menu item if less than 5. In either case, A contains the index of the command to initiate.
+At this point, <span class="register">A</span> holds either the index of the appropriate action flag plus four, or the index of the originally selected menu item if less than 5. In either case, <span class="register">A</span> contains the index of the command to initiate.
 </div>
 <div class="paragraph">
 Code between <a href="30001.html#30097">30097</a> and <a href="30001.html#30105">30105</a> is not necessary; <a href="../reference/facts.html#redundantinstructions">see trivia</a>.
@@ -335,107 +284,96 @@ Code between <a href="30001.html#30097">30097</a> and <a href="30001.html#30105"
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30097"></span>30097</td>
 <td class="instruction">LD HL,36749</td>
-<td class="comment-11" rowspan="1">Point HL at List of Command Indices</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at list of command indices</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30100"></span>30100</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load index of selected command into B, setting C to zero...</td>
+<td class="comment-1" rowspan="1">Load index of selected command into <span class="register">B</span>, setting <span class="register">C</span> to zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30101"></span>30101</td>
 <td class="instruction">LD C,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30103"></span>30103</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">If current entry in List of Command Indices is the same as the index of the selected command...</td>
+<td class="comment-1" rowspan="1">If current entry in list of command indices is the same as the index of the selected command...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30104"></span>30104</td>
 <td class="instruction">CP B</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30105"></span>30105</td>
 <td class="instruction">JR Z,30111</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="30001.html#30111">30111</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="30001.html#30111">30111</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30107"></span>30107</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">Increase C (index of command index)</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">C</span> (index of command index)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30108"></span>30108</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to next command index in list</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next command index in list</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30109"></span>30109</td>
 <td class="instruction">JR 30103</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="30001.html#30103">30103</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="30001.html#30103">30103</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30111"></span>30111</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = selected command index, C = index of selected command index)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = selected command index, <span class="register">C</span> = index of selected command index)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30112"></span>30112</td>
 <td class="instruction">CALL <a href="35690.html">35690</a></td>
-<td class="comment-11" rowspan="1">Play upward scale sound</td>
+<td class="comment-1" rowspan="1">Play upward scale sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30115"></span>30115</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = selected command index, C = index of selected command index)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = selected command index, <span class="register">C</span> = index of selected command index)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30116"></span>30116</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Load index (of selected command index) into A</td>
+<td class="comment-1" rowspan="1">Load index (of selected command index) into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30117"></span>30117</td>
 <td class="instruction">LD HL,36765</td>
-<td class="comment-11" rowspan="1">Point HL at start of Table of Command Routine Addresses</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of table of command routine addresses</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30120"></span>30120</td>
 <td class="instruction">JP <a href="55726.html">55726</a></td>
-<td class="comment-11" rowspan="1">Advance HL by A words, load HL with word at location HL as address and jump to it</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> by <span class="register">A</span> words, load <span class="register">HL</span> with word at location <span class="register">HL</span> as address and jump to it</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29756.html">29756</a></span></td>
+<td class="prev">
+Prev: <a href="29756.html">29756</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#30001">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="30123.html">30123</a></span></td>
+<td class="next">
+Next: <a href="30123.html">30123</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

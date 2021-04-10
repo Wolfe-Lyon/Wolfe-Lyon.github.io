@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 29690</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29680.html">29680</a></span></td>
+<td class="prev">
+Prev: <a href="29680.html">29680</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29690">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29709.html">29709</a></span></td>
+<td class="next">
+Next: <a href="29709.html">29709</a>
+</td>
 </tr>
 </table>
-<div class="description">29690: Load Object's coordinates into BC and Graphic Lookup Index into A and Draw to Screen</div>
+<div class="description">29690: Load object's coordinates into <span class="register">BC</span> and graphic lookup index into <span class="register">A</span> and draw to screen</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="29709.html">29709</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -43,37 +48,28 @@ Used by the routine at <a href="29709.html">29709</a>.
 </tr>
 <tr>
 <td class="register">IX</td>
-<td class="register-desc">Pointer to position data for this object (3 bytes: Screen number, x-coordinate, y-coordinate)</td>
+<td class="register-desc">Pointer to position data for this object (3 bytes: screen number, x-coordinate, y-coordinate)</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29690"></span>29690</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29691"></span>29691</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29693"></span>29693</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="29694"></span>
 <div class="comments">
 <div class="paragraph">
@@ -83,65 +79,61 @@ This entry point is used by the routine at <a href="29680.html">29680</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29694"></span>29694</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Copy index of object to draw (as it appears in the  graphics data lookup table at 42642) into A</td>
+<td class="comment-1" rowspan="1">Copy index of object to draw (as it appears in the graphics data lookup table at 42642) into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29695"></span>29695</td>
 <td class="instruction">LD C,(IX+1)</td>
-<td class="comment-11" rowspan="1">Load x-coordinate of object into C</td>
+<td class="comment-1" rowspan="1">Load x-coordinate of object into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29698"></span>29698</td>
 <td class="instruction">LD B,(IX+2)</td>
-<td class="comment-11" rowspan="1">Load y-coordinate of object into B</td>
+<td class="comment-1" rowspan="1">Load y-coordinate of object into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29701"></span>29701</td>
 <td class="instruction">CALL <a href="29950.html">29950</a></td>
-<td class="comment-11" rowspan="1">Draw graphic in XOR mode</td>
+<td class="comment-1" rowspan="1">Draw graphic in <span class="instruction">XOR</span> mode</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29704"></span>29704</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29705"></span>29705</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29707"></span>29707</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29708"></span>29708</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29680.html">29680</a></span></td>
+<td class="prev">
+Prev: <a href="29680.html">29680</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29690">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29709.html">29709</a></span></td>
+<td class="next">
+Next: <a href="29709.html">29709</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

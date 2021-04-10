@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 54144</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,24 +20,28 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54034.html">54034</a></span></td>
+<td class="prev">
+Prev: <a href="54034.html">54034</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54144">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54194.html">54194</a></span></td>
+<td class="next">
+Next: <a href="54219.html">54219</a>
+</td>
 </tr>
 </table>
-<div class="description">54144: Draw a Graphic Character Block to Display</div>
+<div class="description">54144: Draw a graphic character block to display</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-This routine uses the same technique as seen in the routine at <a href="47709.html">47709</a> to convert from an Attribute File address to a Display File address. See the notes in <a href="47709.html">that routine</a> for more details.
+This routine uses the same technique as seen in the routine at <a href="47709.html">47709</a> to convert from an attribute file address to a display file address. See the notes in <a href="47709.html">that routine</a> for more details.
 </div>
 <div class="paragraph">
 Used by the routines at <a href="47323.html">47323</a> and <a href="54034.html">54034</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -57,245 +59,273 @@ Used by the routines at <a href="47323.html">47323</a> and <a href="54034.html">
 </tr>
 <tr>
 <td class="register">IX</td>
-<td class="register-desc">Address in Attribute File</td>
+<td class="register-desc">Address in attribute file</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54144"></span>54144</td>
 <td class="instruction">SET 6,A</td>
-<td class="comment-11" rowspan="1">Set Bright Flag</td>
+<td class="comment-1" rowspan="1">Set BRIGHT flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54146"></span>54146</td>
 <td class="instruction">LD (IX+0),A</td>
-<td class="comment-11" rowspan="1">Load attribute value into current Attribute File address</td>
+<td class="comment-1" rowspan="1">Load attribute value into current attribute file address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54149"></span>54149</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Load graphic set index into HL..</td>
+<td class="comment-1" rowspan="4">Load <span class="register">HL</span> with double graphic set index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54150"></span>54150</td>
 <td class="instruction">LD L,B</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54151"></span>54151</td>
 <td class="instruction">LD H,A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54152"></span>54152</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">Double (as start address entries in table at <a href="27000.html">27000</a> are two bytes wide)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54153"></span>54153</td>
 <td class="instruction">LD DE,27000</td>
-<td class="comment-11" rowspan="1">...and add as offset to <a href="27000.html">27000</a> (in HL)...</td>
+<td class="comment-1" rowspan="2">Add double graphic set index as an offset to the address of the table of graphic sets' start addresses (in <span class="register">HL</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54156"></span>54156</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54157"></span>54157</td>
 <td class="instruction">LD E,(HL)</td>
-<td class="comment-11" rowspan="1">Load start address for this graphic set into DE...</td>
+<td class="comment-1" rowspan="3">Load <span class="register">DE</span> with start address of this graphic set</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54158"></span>54158</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54159"></span>54159</td>
 <td class="instruction">LD D,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54160"></span>54160</td>
 <td class="instruction">LD L,C</td>
-<td class="comment-11" rowspan="1">Load graphic index into HL...</td>
+<td class="comment-1" rowspan="2">Load <span class="register">HL</span> with graphic index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54161"></span>54161</td>
 <td class="instruction">LD H,A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54162"></span>54162</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">Multiply by eight, as graphic blocks are eight bytes long...</td>
+<td class="comment-1" rowspan="5">Load <span class="register">DE</span> with start address of graphic set plus eight times graphic index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54163"></span>54163</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54164"></span>54164</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54165"></span>54165</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Add to address of start of this graphic set as an offset in HL</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54166"></span>54166</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Swap DE (now points to required graphic data) and HL (now address of start of graphic set from table at <a href="27000.html">27000</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54167"></span>54167</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Switch Attribute File address into HL...</td>
+<td class="comment-1" rowspan="2">Load <span class="register">HL</span> with attribute file address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54169"></span>54169</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54170"></span>54170</td>
 <td class="instruction">LD A,H</td>
-<td class="comment-11" rowspan="1">Multiply the most significant byte (MSB) of the Attribute File address by eight...</td>
+<td class="comment-1" rowspan="6">Multiply the most significant byte (MSB) of the attribute file address by eight to put it on the same scale as the MSB of the display file address MSB (see notes) and drop the most significant bit to point to the correct location in display file</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54171"></span>54171</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...to put it on the same scale as the MSB of the Display File address MSB (see notes)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54172"></span>54172</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54173"></span>54173</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54174"></span>54174</td>
 <td class="instruction">AND 91</td>
-<td class="comment-11" rowspan="1">Drop the most significant bit to point to the correct location in Display File</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54176"></span>54176</td>
 <td class="instruction">LD H,A</td>
-<td class="comment-11" rowspan="1">Load back into HL (L is unaffected, as it should be)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54177"></span>54177</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Switch DE (now Display File address) and HL (now pointer to graphic data)</td>
+<td class="comment-1" rowspan="1">Switch <span class="register">DE</span> (now display file address) and <span class="register">HL</span> (now pointer to graphic data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54178"></span>54178</td>
 <td class="instruction">BIT 7,(IX+0)</td>
-<td class="comment-11" rowspan="1">If mirror flag is set for Attribute File at current location...</td>
+<td class="comment-1" rowspan="2">If mirror flag is set for attribute file at current location then skip ahead to <a href="54144.html#54194">54194</a> to draw mirrored version</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54182"></span>54182</td>
-<td class="instruction">JP NZ,<a href="54194.html">54194</a></td>
-<td class="comment-11" rowspan="1">...then skip to <a href="54194.html">54194</a> to draw mirrored version</td>
+<td class="instruction">JP NZ,54194</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54185"></span>54185</td>
 <td class="instruction">LD B,8</td>
-<td class="comment-11" rowspan="1">Set counter to 8 rows</td>
+<td class="comment-1" rowspan="6">Copy eight bytes of data from address in <span class="register">HL</span> (graphic data) to successive display file rows starting at address in <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54187"></span>54187</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Read byte from graphic data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54188"></span>54188</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">...and load into Display File</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54189"></span>54189</td>
 <td class="instruction">INC D</td>
-<td class="comment-11" rowspan="1">Move down one pixel row in Display File</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54190"></span>54190</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance to next byte of graphic data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54191"></span>54191</td>
 <td class="instruction">DJNZ 54187</td>
-<td class="comment-11" rowspan="1">Loop back for next row of pixels</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54193"></span>54193</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
+</tr>
+<tr>
+<td class="routine-comment" colspan="5">
+<span id="54194"></span>
+<div class="comments">
+<div class="paragraph">
+Draw mirrored graphic character block to display file
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="address-2"><span id="54194"></span>54194</td>
+<td class="instruction">RES 7,(IX+0)</td>
+<td class="comment-1" rowspan="1">Reset bit 7 (FLASH flag)</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54198"></span>54198</td>
+<td class="instruction">LD B,8</td>
+<td class="comment-1" rowspan="1">Prepare to draw eight pixel rows</td>
+</tr>
+<tr>
+<td class="address-2"><span id="54200"></span>54200</td>
+<td class="instruction">PUSH BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (remaining rows to draw)</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54201"></span>54201</td>
+<td class="instruction">LD A,(HL)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with graphic data byte</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54202"></span>54202</td>
+<td class="instruction">PUSH HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to graphic data)</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54203"></span>54203</td>
+<td class="instruction">LD HL,27030</td>
+<td class="comment-1" rowspan="5">Load <span class="register">A</span> with mirrored graphic byte</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54206"></span>54206</td>
+<td class="instruction">LD C,A</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54207"></span>54207</td>
+<td class="instruction">LD B,0</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54209"></span>54209</td>
+<td class="instruction">ADD HL,BC</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54210"></span>54210</td>
+<td class="instruction">LD A,(HL)</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54211"></span>54211</td>
+<td class="instruction">POP HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to graphic data)</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54212"></span>54212</td>
+<td class="instruction">LD (DE),A</td>
+<td class="comment-1" rowspan="3">Write mirrored graphic data to display file, advance down to next row in display file and advance to next byte of graphic data</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54213"></span>54213</td>
+<td class="instruction">INC D</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54214"></span>54214</td>
+<td class="instruction">INC HL</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54215"></span>54215</td>
+<td class="instruction">POP BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (remaining rows to draw)</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54216"></span>54216</td>
+<td class="instruction">DJNZ 54200</td>
+<td class="comment-1" rowspan="1">Loop back for next row of pixels</td>
+</tr>
+<tr>
+<td class="address-1"><span id="54218"></span>54218</td>
+<td class="instruction">RET</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54034.html">54034</a></span></td>
+<td class="prev">
+Prev: <a href="54034.html">54034</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54144">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54194.html">54194</a></span></td>
+<td class="next">
+Next: <a href="54219.html">54219</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

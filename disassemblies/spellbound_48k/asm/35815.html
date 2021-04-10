@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 35815</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,106 +20,92 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="35789.html">35789</a></span></td>
+<td class="prev">
+Prev: <a href="35789.html">35789</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#35815">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="35837.html">35837</a></span></td>
+<td class="next">
+Next: <a href="35837.html">35837</a>
+</td>
 </tr>
 </table>
-<div class="description">35815: Set the "Magic Knight Can Move Lift" Flag if he is in the Lift</div>
+<div class="description">35815: Set the move-lift-enabled flag if in the lift</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="35495.html">35495</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35815"></span>35815</td>
 <td class="instruction">LD A,(65533)</td>
-<td class="comment-11" rowspan="1">Reset "Magic Knight Can Move Lift" flag (i.e. false)...</td>
+<td class="comment-1" rowspan="1">Reset move-lift-enabled flag (i.e. false)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35818"></span>35818</td>
 <td class="instruction">RES 0,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35820"></span>35820</td>
 <td class="instruction">LD (65533),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35823"></span>35823</td>
 <td class="instruction">LD A,(65529)</td>
-<td class="comment-11" rowspan="1">Load A with Magic Knight's current room</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Magic Knight's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35826"></span>35826</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If room number is not zero (i.e. not "The Lift")...</td>
+<td class="comment-1" rowspan="1">If room number is not zero (i.e. not "the lift")...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35827"></span>35827</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return with flag unset</td>
+<td class="comment-1" rowspan="1">...then return with flag unset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35828"></span>35828</td>
 <td class="instruction">LD A,(65533)</td>
-<td class="comment-11" rowspan="1">Set "Magic Knight Can Move Lift" flag (i.e. true)...</td>
+<td class="comment-1" rowspan="1">Set move-lift-enabled flag (i.e. true)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35831"></span>35831</td>
 <td class="instruction">SET 0,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35833"></span>35833</td>
 <td class="instruction">LD (65533),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35836"></span>35836</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="35789.html">35789</a></span></td>
+<td class="prev">
+Prev: <a href="35789.html">35789</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#35815">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="35837.html">35837</a></span></td>
+<td class="next">
+Next: <a href="35837.html">35837</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 52937</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="52924.html">52924</a></span></td>
+<td class="prev">
+Prev: <a href="52924.html">52924</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#52937">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53019.html">53019</a></span></td>
+<td class="next">
+Next: <a href="53019.html">53019</a>
+</td>
 </tr>
 </table>
-<div class="description">52937: Store Background Bitmap Data at Magic Knight's Current Location</div>
+<div class="description">52937: Store background bitmap data at Magic Knight's current location</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="53150.html">53150</a>.
@@ -36,308 +41,254 @@ Used by the routine at <a href="53150.html">53150</a>.
 See also analogous routine at <a href="53185.html">53185</a>
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52937"></span>52937</td>
 <td class="instruction">LD DE,23813</td>
-<td class="comment-11" rowspan="1">Point DE at Table of Bitmap Data for Magic Knight at his Current Location</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at table of bitmap data for Magic Knight at his current location</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52940"></span>52940</td>
 <td class="instruction">LD A,(25157)</td>
-<td class="comment-11" rowspan="1">Load HL with double Magic Knight's current y-coordinate (pixels)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with double Magic Knight's current y-coordinate (pixels)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52943"></span>52943</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52944"></span>52944</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52946"></span>52946</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52947"></span>52947</td>
 <td class="instruction">LD BC,26240</td>
-<td class="comment-11" rowspan="1">Point BC at Table of Display File Addresses of Start of Each Pixel Row</td>
+<td class="comment-1" rowspan="1">Point <span class="register">BC</span> at table of display file addresses of start of each pixel row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52950"></span>52950</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">Add double y-coordinate as offset in HL</td>
+<td class="comment-1" rowspan="1">Add double y-coordinate as offset in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52951"></span>52951</td>
 <td class="instruction">LD (23420),HL</td>
-<td class="comment-11" rowspan="1">Store pointer to entry for pixel row at Magic Knight's current y-coordinate</td>
+<td class="comment-1" rowspan="1">Store pointer to entry for pixel row at Magic Knight's current y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52954"></span>52954</td>
 <td class="instruction">LD A,(25156)</td>
-<td class="comment-11" rowspan="1">Load A with Magic Knight's current x-coordinate (pixels)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Magic Knight's current x-coordinate (pixels)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52957"></span>52957</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">Divide by two</td>
+<td class="comment-1" rowspan="1">Divide by two</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52958"></span>52958</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = Magic Knight's current x-coordinate in pixels, divided by two)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = Magic Knight's current x-coordinate in pixels, divided by two)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52959"></span>52959</td>
 <td class="instruction">AND 3</td>
-<td class="comment-11" rowspan="1">Clear all but the lowest three bits...</td>
+<td class="comment-1" rowspan="1">Clear all but the lowest three bits...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52961"></span>52961</td>
 <td class="instruction">LD (25159),A</td>
-<td class="comment-11" rowspan="1">...and store the remaining value as Magic Knight's current frame index</td>
+<td class="comment-1" rowspan="1">...and store the remaining value as Magic Knight's current frame index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52964"></span>52964</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = Magic Knight's current x-coordinate in pixels, divided by two)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = Magic Knight's current x-coordinate in pixels, divided by two)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52965"></span>52965</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">Divide Magic Knight's current x-coordinate in pixels by eight and remove remainder...</td>
+<td class="comment-1" rowspan="1">Divide Magic Knight's current x-coordinate in pixels by eight and remove remainder...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52966"></span>52966</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52967"></span>52967</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52969"></span>52969</td>
 <td class="instruction">LD (23422),A</td>
-<td class="comment-11" rowspan="1">Store value (Magic Knight's current x-coordinate in characters) at <a href="23420.html#23422">23422</a>...</td>
+<td class="comment-1" rowspan="1">Store value (Magic Knight's current x-coordinate in characters) at <a href="23420.html#23422">23422</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52972"></span>52972</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...and load into C</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52973"></span>52973</td>
 <td class="instruction">LD B,32</td>
-<td class="comment-11" rowspan="1">Load B with 32 (as Magic Knight is 32 pixels tall)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 32 (as Magic Knight is 32 pixels tall)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52975"></span>52975</td>
 <td class="instruction">LD IX,(23420)</td>
-<td class="comment-11" rowspan="1">Load IX with pointer to entry for pixel row at Magic Knight's current y-coordinate</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with pointer to entry for pixel row at Magic Knight's current y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52979"></span>52979</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = remaining number of pixel rows to store, C = MK's x-coordinate in characters)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = remaining number of pixel rows to store, <span class="register">C</span> = Magic Knight's x-coordinate in characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52980"></span>52980</td>
 <td class="instruction">LD L,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load Display File address of pixel row at IX into HL...</td>
+<td class="comment-1" rowspan="1">Load display file address of pixel row at <span class="register">IX</span> into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52983"></span>52983</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">...and advance IX to entry for next pixel row down...</td>
+<td class="comment-1" rowspan="1">...and advance <span class="register">IX</span> to entry for next pixel row down...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52985"></span>52985</td>
 <td class="instruction">LD H,(IX+0)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52988"></span>52988</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52990"></span>52990</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">Set B to zero (BC = Magic Knight's current x-coordinate in characters)</td>
+<td class="comment-1" rowspan="1">Set <span class="register">B</span> to zero (<span class="register">BC</span> = Magic Knight's current x-coordinate in characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52992"></span>52992</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">Add BC to HL as offset</td>
+<td class="comment-1" rowspan="1">Add <span class="register">BC</span> to <span class="register">HL</span> as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52993"></span>52993</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Copy three bytes of graphic data from Display File address...</td>
+<td class="comment-1" rowspan="1">Copy three bytes of graphic data from display file address...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52994"></span>52994</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">...into Table of Background Bitmap Data...</td>
+<td class="comment-1" rowspan="1">...into table of background bitmap data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52995"></span>52995</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...as Magic Knight can only occupy three consecutive character blocks horizontally...</td>
+<td class="comment-1" rowspan="1">...as Magic Knight can only occupy three consecutive character blocks horizontally...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52996"></span>52996</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52997"></span>52997</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52998"></span>52998</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52999"></span>52999</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53000"></span>53000</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53001"></span>53001</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53002"></span>53002</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53003"></span>53003</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53004"></span>53004</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = remaining number of pixel rows to store, C = MK's x-coordinate in characters)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = remaining number of pixel rows to store, <span class="register">C</span> = Magic Knight's x-coordinate in characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53005"></span>53005</td>
 <td class="instruction">DJNZ 52979</td>
-<td class="comment-11" rowspan="1">Decrease B (remaining number of pixel rows to store) and loop back to <a href="52937.html#52979">52979</a> if non-zero for next pixel row</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (remaining number of pixel rows to store) and loop back to <a href="52937.html#52979">52979</a> if non-zero for next pixel row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53007"></span>53007</td>
 <td class="instruction">LD HL,23813</td>
-<td class="comment-11" rowspan="1">Copy contents of Table of Bitmap Data for Magic Knight at his Current Location to Table of Background Bitmap Data <a href="23909.html">23909</a>...</td>
+<td class="comment-1" rowspan="1">Copy contents of table of bitmap data for Magic Knight at his current location to table of background bitmap data <a href="23909.html">23909</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53010"></span>53010</td>
 <td class="instruction">LD DE,23909</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53013"></span>53013</td>
 <td class="instruction">LD BC,96</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53016"></span>53016</td>
 <td class="instruction">LDIR</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53018"></span>53018</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="52924.html">52924</a></span></td>
+<td class="prev">
+Prev: <a href="52924.html">52924</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#52937">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53019.html">53019</a></span></td>
+<td class="next">
+Next: <a href="53019.html">53019</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

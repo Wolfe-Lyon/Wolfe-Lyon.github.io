@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 40357</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,150 +20,123 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40338.html">40338</a></span></td>
+<td class="prev">
+Prev: <a href="40338.html">40338</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40357">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40406.html">40406</a></span></td>
+<td class="next">
+Next: <a href="40406.html">40406</a>
+</td>
 </tr>
 </table>
-<div class="description">40357: Check Whether an Egg Has Been Dropped Down the Wishing Well and Set Wish Pending Flag if So</div>
+<div class="description">40357: Check whether an egg has been dropped down the wishing well and set wish-pending flag if so</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="40338.html">40338</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="40357"></span>40357</td>
 <td class="instruction">LD A,36</td>
-<td class="comment-11" rowspan="1">Load A with 36 (object index of Golden Egg)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 36 (object index of Golden Egg)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40359"></span>40359</td>
 <td class="instruction">LD B,6</td>
-<td class="comment-11" rowspan="1">Load B with 6 (as there are six eggs)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 6 (as there are six eggs)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="40361"></span>40361</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = remaining number of eggs to process)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = remaining number of eggs to process)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40362"></span>40362</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = object index of current egg)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = object index of current egg)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40363"></span>40363</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load BC with three times object index of current egg...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with three times object index of current egg...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40364"></span>40364</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40365"></span>40365</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40366"></span>40366</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40367"></span>40367</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40369"></span>40369</td>
 <td class="instruction">LD HL,24922</td>
-<td class="comment-11" rowspan="1">Point HL at start of Objects' Current Positions Table...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of objects' current positions table...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40372"></span>40372</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...and add BC as offset</td>
+<td class="comment-1" rowspan="1">...and add <span class="register">BC</span> as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40373"></span>40373</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load A with room of current egg...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with room of current egg...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40374"></span>40374</td>
 <td class="instruction">CP 14</td>
-<td class="comment-11" rowspan="1">...and if this is not 14 (Outdoors, 13, Wishing Well)...</td>
+<td class="comment-1" rowspan="1">...and if this is not 14 (Outdoors, 13, Wishing Well)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40376"></span>40376</td>
 <td class="instruction">JR NZ,40395</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="40357.html#40395">40395</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="40357.html#40395">40395</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40378"></span>40378</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to y-coordinate of object...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to y-coordinate of object...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40379"></span>40379</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40380"></span>40380</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...and load into A</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40381"></span>40381</td>
 <td class="instruction">CP 19</td>
-<td class="comment-11" rowspan="1">If this is not 19...</td>
+<td class="comment-1" rowspan="1">If this is not 19...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40383"></span>40383</td>
 <td class="instruction">JR NZ,40395</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="40357.html#40395">40395</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="40357.html#40395">40395</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="40385"></span>
 <div class="comments">
 <div class="paragraph">
@@ -172,67 +146,57 @@ The instructions between <a href="40357.html#40385">40385</a> and <a href="40357
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40385"></span>40385</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = object index of current egg)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = object index of current egg)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40386"></span>40386</td>
 <td class="instruction">LD (23365),A</td>
-<td class="comment-11" rowspan="1">Store object index of current egg at <a href="23364.html#23365">23365</a>, i.e. set Wish Pending Flag</td>
+<td class="comment-1" rowspan="1">Store object index of current egg at <a href="23364.html#23365">23365</a>, i.e. set wish-pending flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40389"></span>40389</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = object index of current egg)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = object index of current egg)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40390"></span>40390</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move HL back to room of object...</td>
+<td class="comment-1" rowspan="1">Move <span class="register">HL</span> back to room of object...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40391"></span>40391</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40392"></span>40392</td>
 <td class="instruction">LD (40401),HL</td>
-<td class="comment-11" rowspan="1">...and store address in operand of instruction at <a href="40357.html#40400">40400</a></td>
+<td class="comment-1" rowspan="1">...and store address in operand of instruction at <a href="40357.html#40400">40400</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="40395"></span>40395</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = object index of current egg)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = object index of current egg)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40396"></span>40396</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = remaining number of eggs to process)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = remaining number of eggs to process)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40397"></span>40397</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">Advance A to next egg</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">A</span> to next egg</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40398"></span>40398</td>
 <td class="instruction">DJNZ 40361</td>
-<td class="comment-11" rowspan="1">Decrease remaining number of eggs to process and loop back to <a href="40357.html#40361">40361</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease remaining number of eggs to process and loop back to <a href="40357.html#40361">40361</a> if not zero</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="40400"></span>
 <div class="comments">
 <div class="paragraph">
@@ -242,35 +206,36 @@ The operand of the instruction at <a href="40357.html#40400">40400</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40400"></span>40400</td>
 <td class="instruction">LD HL,0</td>
-<td class="comment-11" rowspan="1">Load HL with address of current position data for dropped egg...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of current position data for dropped egg...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40403"></span>40403</td>
 <td class="instruction">LD (HL),99</td>
-<td class="comment-11" rowspan="1">...and set its current room to 99</td>
+<td class="comment-1" rowspan="1">...and set its current room to 99</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40405"></span>40405</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40338.html">40338</a></span></td>
+<td class="prev">
+Prev: <a href="40338.html">40338</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40357">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40406.html">40406</a></span></td>
+<td class="next">
+Next: <a href="40406.html">40406</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

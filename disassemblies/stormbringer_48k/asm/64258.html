@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 64258</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="64230.html">64230</a></span></td>
+<td class="prev">
+Prev: <a href="64230.html">64230</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#64258">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="64265.html">64265</a></span></td>
+<td class="next">
+Next: <a href="64265.html">64265</a>
+</td>
 </tr>
 </table>
-<div class="description">64258: Display "YOUR HANDS ARE FULL" Window (13), wait for Fire to be pressed then Jump to Main Game Loop</div>
+<div class="description">64258: Display "YOUR HANDS ARE FULL" window (13) and return to game</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="41578.html">41578</a>, <a href="41924.html">41924</a> and <a href="44635.html">44635</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,22 +47,15 @@ Used by the routines at <a href="41578.html">41578</a>, <a href="41924.html">419
 <td class="register-desc">(entry at <a href="64258.html#64261">64261</a> only) Address of text to print in window</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="64258"></span>64258</td>
 <td class="instruction">LD HL,51849</td>
-<td class="comment-11" rowspan="1">Point HL at "YOUR HANDS ARE FULL" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "YOUR HANDS ARE FULL" text</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="64261"></span>
 <div class="comments">
 <div class="paragraph">
@@ -67,29 +65,31 @@ This entry point is used by the routines at <a href="41578.html">41578</a>, <a h
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="64261"></span>64261</td>
 <td class="instruction">CALL <a href="64317.html">64317</a></td>
-<td class="comment-11" rowspan="1">Display Window 13 with text at HL, wait for Fire to be pressed then jump to Main Game Loop...</td>
+<td class="comment-1" rowspan="1">Display window 13 with text at <span class="register">HL</span> and return to game...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64264"></span>64264</td>
 <td class="instruction">DEFB 13</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="64230.html">64230</a></span></td>
+<td class="prev">
+Prev: <a href="64230.html">64230</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#64258">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="64265.html">64265</a></span></td>
+<td class="next">
+Next: <a href="64265.html">64265</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 47897</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,24 +20,28 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47881.html">47881</a></span></td>
+<td class="prev">
+Prev: <a href="47881.html">47881</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47897">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47930.html">47930</a></span></td>
+<td class="next">
+Next: <a href="47930.html">47930</a>
+</td>
 </tr>
 </table>
-<div class="description">47897: Set Parameters for and Play Upward Scale Sound</div>
+<div class="description">47897: Set parameters for and play upward scale sound</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-The value of A (set to zero at the start of this routine, or set to 1 before jumps from other routines into <a href="47897.html#47902">47902</a>) is a delay constant that determines the speed at which the sound is played.
+The value of <span class="register">A</span> (set to zero at the start of this routine, or set to 1 before jumps from other routines into <a href="47897.html#47902">47902</a>) is a delay constant that determines the speed at which the sound is played.
 </div>
 <div class="paragraph">
 Used by the routines at <a href="37764.html">37764</a>, <a href="37880.html">37880</a>, <a href="37951.html">37951</a>, <a href="38024.html">38024</a>, <a href="42494.html">42494</a>, <a href="62330.html">62330</a>, <a href="64230.html">64230</a> and <a href="64926.html">64926</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -45,40 +50,30 @@ Used by the routines at <a href="37764.html">37764</a>, <a href="37880.html">378
 <td class="register-desc">(Entry at <a href="47897.html#47902">47902</a> only) Delay constant</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47897"></span>47897</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to 0</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to 0</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47898"></span>47898</td>
 <td class="instruction">LD B,13</td>
-<td class="comment-11" rowspan="1">Set B to 13 (DEC C)</td>
+<td class="comment-1" rowspan="1">Set <span class="register">B</span> to 13 (<span class="instruction">DEC C</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47900"></span>47900</td>
 <td class="instruction">LD H,A</td>
-<td class="comment-11" rowspan="1">Set HL to 0...</td>
+<td class="comment-1" rowspan="1">Set <span class="register">HL</span> to 0...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47901"></span>47901</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="47902"></span>
 <div class="comments">
 <div class="paragraph">
@@ -88,37 +83,32 @@ This entry point is used by the routines at <a href="47930.html">47930</a> and <
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47902"></span>47902</td>
 <td class="instruction">LD (47916),A</td>
-<td class="comment-11" rowspan="1">Modify instruction at <a href="47897.html#47915">47915</a> with value of delay constant</td>
+<td class="comment-1" rowspan="1">Modify instruction at <a href="47897.html#47915">47915</a> with value of delay constant</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47905"></span>47905</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Load B into A</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47906"></span>47906</td>
 <td class="instruction">LD (47924),A</td>
-<td class="comment-11" rowspan="1">Set instruction at <a href="47897.html#47924">47924</a></td>
+<td class="comment-1" rowspan="1">Set instruction at <a href="47897.html#47924">47924</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47909"></span>47909</td>
 <td class="instruction">LD (47925),HL</td>
-<td class="comment-11" rowspan="1">Set instructions at <a href="47897.html#47925">47925</a> and <a href="47897.html#47926">47926</a></td>
+<td class="comment-1" rowspan="1">Set instructions at <a href="47897.html#47925">47925</a> and <a href="47897.html#47926">47926</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47912"></span>47912</td>
 <td class="instruction">CALL <a href="48018.html">48018</a></td>
-<td class="comment-11" rowspan="1">Load A with current border colour</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with current border colour</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="47915"></span>
 <div class="comments">
 <div class="paragraph">
@@ -128,87 +118,81 @@ The operand of the instruction at <a href="47897.html#47915">47915</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47915"></span>47915</td>
 <td class="instruction">LD C,0</td>
-<td class="comment-11" rowspan="1">Load C with delay constant</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with delay constant</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47917"></span>47917</td>
 <td class="instruction">OUT (254),A</td>
-<td class="comment-11" rowspan="1">Set border colour, and reset ear/speaker</td>
+<td class="comment-1" rowspan="1">Set border colour, and reset ear/speaker</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47919"></span>47919</td>
 <td class="instruction">XOR 16</td>
-<td class="comment-11" rowspan="1">Invert ear/speaker bit of A</td>
+<td class="comment-1" rowspan="1">Invert ear/speaker bit of <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47921"></span>47921</td>
 <td class="instruction">LD B,C</td>
-<td class="comment-11" rowspan="1">Load C (delay constant) into B...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> (delay constant) into <span class="register">B</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47922"></span>47922</td>
 <td class="instruction">DJNZ 47922</td>
-<td class="comment-11" rowspan="1">...and delay</td>
+<td class="comment-1" rowspan="1">...and delay</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="47924"></span>
 <div class="comments">
 <div class="paragraph">
-The instructions at <a href="47897.html#47924">47924</a> - <a href="47897.html#47926">47926</a> represent the manipulation of the delay constant between iterations of this routine. These instructions may decrease C by one, increase C by three or do nothing. These instructions are modified by the instructions at <a href="47897.html#47906">47906</a> and <a href="47897.html#47909">47909</a>.
+The instructions at <a href="47897.html#47924">47924</a> - <a href="47897.html#47926">47926</a> represent the manipulation of the delay constant between iterations of this routine. These instructions may decrease <span class="register">C</span> by one, increase <span class="register">C</span> by three or do nothing. These instructions are modified by the instructions at <a href="47897.html#47906">47906</a> and <a href="47897.html#47909">47909</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47924"></span>47924</td>
 <td class="instruction">DEC C</td>
-<td class="comment-11" rowspan="1">Decrease / increase delay constant for next pass, increasing / decreasing pitch of tone respectively</td>
+<td class="comment-1" rowspan="1">Decrease / increase delay constant for next pass, increasing / decreasing pitch of tone respectively</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47925"></span>47925</td>
 <td class="instruction">NOP</td>
-<td class="comment-11" rowspan="1">Do nothing, or increase delay constant</td>
+<td class="comment-1" rowspan="1">Do nothing, or increase delay constant</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47926"></span>47926</td>
 <td class="instruction">NOP</td>
-<td class="comment-11" rowspan="1">Do nothing, or increase delay constant</td>
+<td class="comment-1" rowspan="1">Do nothing, or increase delay constant</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47927"></span>47927</td>
 <td class="instruction">JR NZ,47917</td>
-<td class="comment-11" rowspan="1">If delay constant is not zero, then loop back to continue playing tone</td>
+<td class="comment-1" rowspan="1">If delay constant is not zero, then loop back to continue playing tone</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47929"></span>47929</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47881.html">47881</a></span></td>
+<td class="prev">
+Prev: <a href="47881.html">47881</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47897">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47930.html">47930</a></span></td>
+<td class="next">
+Next: <a href="47930.html">47930</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

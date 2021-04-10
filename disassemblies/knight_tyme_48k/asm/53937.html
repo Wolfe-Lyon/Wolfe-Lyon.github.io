@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 53937</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,104 +20,92 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53929.html">53929</a></span></td>
+<td class="prev">
+Prev: <a href="53929.html">53929</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53937">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53955.html">53955</a></span></td>
+<td class="next">
+Next: <a href="53955.html">53955</a>
+</td>
 </tr>
 </table>
-<div class="description">53937: End Game Due to Running Out of Time</div>
+<div class="description">53937: End game due to running out of time</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="53498.html">53498</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53937"></span>53937</td>
 <td class="instruction">LD HL,45224</td>
-<td class="comment-11" rowspan="1">Point HL at "YOU RAN OUT OF TIME" text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "YOU RAN OUT OF TIME" text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53940"></span>53940</td>
 <td class="instruction">LD (53949),HL</td>
-<td class="comment-11" rowspan="1">...and store as operand in instruction at <a href="53937.html#53948">53948</a></td>
+<td class="comment-1" rowspan="1">...and store as operand in instruction at <a href="53937.html#53948">53948</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53943"></span>53943</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Remove return address (call to this routine) from top of stack</td>
+<td class="comment-1" rowspan="1">Remove return address (call to this routine) from top of stack</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53944"></span>53944</td>
 <td class="instruction">CALL <a href="54079.html">54079</a></td>
-<td class="comment-11" rowspan="1">Restore all registers from the stack</td>
+<td class="comment-1" rowspan="1">Restore all registers from the stack</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53947"></span>53947</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Remove return address (call to interrupt routine) from top of stack</td>
+<td class="comment-1" rowspan="1">Remove return address (call to interrupt routine) from top of stack</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="53948"></span>
 <div class="comments">
 <div class="paragraph">
-The operand of the instruction at <a href="53937.html#53948">53948</a> represents the address of the Game Over text to use. This is modified by the instruction at <a href="53937.html#53940">53940</a>.
+The operand of the instruction at <a href="53937.html#53948">53948</a> represents the address of the game over text to use. This is modified by the instruction at <a href="53937.html#53940">53940</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53948"></span>53948</td>
 <td class="instruction">LD HL,0</td>
-<td class="comment-11" rowspan="1">Restore address of "YOU RAN OUT OF TIME" text to HL</td>
+<td class="comment-1" rowspan="1">Restore address of "YOU RAN OUT OF TIME" text to <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53951"></span>53951</td>
 <td class="instruction">EI</td>
-<td class="comment-11" rowspan="1">Enable interrupts</td>
+<td class="comment-1" rowspan="1">Enable interrupts</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53952"></span>53952</td>
 <td class="instruction">JP <a href="55685.html">55685</a></td>
-<td class="comment-11" rowspan="1">Jump to "Game over" window routine and return to Control Selection Menu</td>
+<td class="comment-1" rowspan="1">Jump to "game over" window routine and return to control selection menu</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53929.html">53929</a></span></td>
+<td class="prev">
+Prev: <a href="53929.html">53929</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53937">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53955.html">53955</a></span></td>
+<td class="next">
+Next: <a href="53955.html">53955</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

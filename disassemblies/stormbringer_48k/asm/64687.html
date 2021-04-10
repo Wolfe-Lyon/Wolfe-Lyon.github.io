@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 64687</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,125 +20,106 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="64637.html">64637</a></span></td>
+<td class="prev">
+Prev: <a href="64637.html">64637</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#64687">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="64810.html">64810</a></span></td>
+<td class="next">
+Next: <a href="64810.html">64810</a>
+</td>
 </tr>
 </table>
-<div class="description">64687: If Do Not Draw Storm Cloud Flag is Reset then Draw Storm Cloud</div>
+<div class="description">64687: If do-not-draw-storm-cloud flag is reset then draw storm cloud</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-If the Do Not Draw Storm Cloud Flag is reset, then the Storm Cloud will be drawn. After this, the flag is set, ensuring that the position of the Storm Cloud can be updated by the routine at <a href="64637.html">64637</a>. This also ensures that if Magic Knight moves to a different room, the drawing of the Storm Cloud will cease, since the Do Not Draw Storm Cloud Flag is only reset by the routine at <a href="64637.html">64637</a>, which in turn is only called when both the Storm Cloud and Magic Knight are in the same room.
+If the do-not-draw-storm-cloud flag is reset, then the Storm Cloud will be drawn. After this, the flag is set, ensuring that the position of the Storm Cloud can be updated by the routine at <a href="64637.html">64637</a>. This also ensures that if Magic Knight moves to a different room, the drawing of the Storm Cloud will cease, since the do-not-draw-storm-cloud flag is only reset by the routine at <a href="64637.html">64637</a>, which in turn is only called when both the Storm Cloud and Magic Knight are in the same room.
 </div>
 <div class="paragraph">
 Used by the routine at <a href="62178.html">62178</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="64687"></span>
 <div class="comments">
 <div class="paragraph">
-The operand of the instruction at <a href="64687.html">64687</a> represents the Do Not Draw Storm Cloud Flag. This is modified by the instructions at <a href="38024.html#38134">38134</a>, <a href="64637.html#64683">64683</a> and <a href="64687.html#64806">64806</a>.
+The operand of the instruction at <a href="64687.html">64687</a> represents the do-not-draw-storm-cloud flag. This is modified by the instructions at <a href="38024.html#38134">38134</a>, <a href="64637.html#64683">64683</a> and <a href="64687.html#64806">64806</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="64687"></span>64687</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">If Do Not Draw Storm Cloud Flag is set...</td>
+<td class="comment-1" rowspan="1">If do-not-draw-storm-cloud flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64689"></span>64689</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64690"></span>64690</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64691"></span>64691</td>
 <td class="instruction">LD HL,(23677)</td>
-<td class="comment-11" rowspan="1">Store value of system variable COORDS on stack...</td>
+<td class="comment-1" rowspan="1">Store value in <a href="23677.html">coordinate storage</a> on stack...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64694"></span>64694</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64695"></span>64695</td>
 <td class="instruction">LD HL,(63018)</td>
-<td class="comment-11" rowspan="1">Load HL with address of Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64698"></span>64698</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (Bitmap Virtual Cursor address)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (bitmap virtual cursor address)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64699"></span>64699</td>
 <td class="instruction">LD HL,(23707)</td>
-<td class="comment-11" rowspan="1">Load HL with address of Attribute Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of attribute virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64702"></span>64702</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (Attribute Virtual Cursor address)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (attribute virtual cursor address)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="64703"></span>
 <div class="comments">
 <div class="paragraph">
-The operand of the instruction at <a href="64687.html#64703">64703</a> represents the Display File address for the top-left of the Storm Cloud. This is modified by the instruction at <a href="64637.html#64657">64657</a>.
+The operand of the instruction at <a href="64687.html#64703">64703</a> represents the display file address for the top-left of the Storm Cloud. This is modified by the instruction at <a href="64637.html#64657">64657</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64703"></span>64703</td>
 <td class="instruction">LD HL,0</td>
-<td class="comment-11" rowspan="1">Load HL with current Display File address of Storm Cloud</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with current display file address of Storm Cloud</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64706"></span>64706</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (current Display File address of Storm Cloud)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (current display file address of Storm Cloud)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="64707"></span>
 <div class="comments">
 <div class="paragraph">
@@ -147,539 +129,456 @@ The operand of the instruction at <a href="64687.html#64707">64707</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64707"></span>64707</td>
 <td class="instruction">LD DE,0</td>
-<td class="comment-11" rowspan="1">Load DE with start address of graphic data for Storm Cloud's current frame</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with start address of graphic data for Storm Cloud's current frame</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64710"></span>64710</td>
 <td class="instruction">LD B,8</td>
-<td class="comment-11" rowspan="1">Load B with 8 (as we are drawing the first eight pixel rows of cloud graphic data)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 8 (as we are drawing the first eight pixel rows of cloud graphic data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="64712"></span>64712</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (current Display File address at left side of cloud)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (current display file address at left side of cloud)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64713"></span>64713</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Copy a run of eight bytes from Storm Cloud's graphic data...</td>
+<td class="comment-1" rowspan="1">Copy a run of eight bytes from Storm Cloud's graphic data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64714"></span>64714</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...to Display File, starting at current Display File address...</td>
+<td class="comment-1" rowspan="1">...to display file, starting at current display file address...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64715"></span>64715</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64716"></span>64716</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64717"></span>64717</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64718"></span>64718</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64719"></span>64719</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64720"></span>64720</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64721"></span>64721</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64722"></span>64722</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64723"></span>64723</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64724"></span>64724</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64725"></span>64725</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64726"></span>64726</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64727"></span>64727</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64728"></span>64728</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64729"></span>64729</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64730"></span>64730</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64731"></span>64731</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64732"></span>64732</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64733"></span>64733</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64734"></span>64734</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64735"></span>64735</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64736"></span>64736</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64737"></span>64737</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64738"></span>64738</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64739"></span>64739</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64740"></span>64740</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64741"></span>64741</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64742"></span>64742</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64743"></span>64743</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Advance DE to next byte in graphic data (i.e. start of next pixel row)</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">DE</span> to next byte in graphic data (i.e. start of next pixel row)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64744"></span>64744</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (current Display File address at left side of cloud)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (current display file address at left side of cloud)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64745"></span>64745</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">Advance down a pixel row</td>
+<td class="comment-1" rowspan="1">Advance down a pixel row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64746"></span>64746</td>
 <td class="instruction">DJNZ 64712</td>
-<td class="comment-11" rowspan="1">Decrease remaining number of pixel rows to draw, and loop back to <a href="64687.html#64712">64712</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease remaining number of pixel rows to draw, and loop back to <a href="64687.html#64712">64712</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64748"></span>64748</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (current Display File address of Storm Cloud)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (current display file address of Storm Cloud)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64749"></span>64749</td>
 <td class="instruction">LD A,32</td>
-<td class="comment-11" rowspan="1">Add 32 to Display File address to move down eight pixels...</td>
+<td class="comment-1" rowspan="1">Add 32 to display file address to move down eight pixels...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64751"></span>64751</td>
 <td class="instruction">ADD A,L</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64752"></span>64752</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64753"></span>64753</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64754"></span>64754</td>
 <td class="instruction">LD B,5</td>
-<td class="comment-11" rowspan="1">Load B with 5 (as we are drawing a further five pixel rows of cloud graphic data)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 5 (as we are drawing a further five pixel rows of cloud graphic data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="64756"></span>64756</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (current Display File address at left side of cloud)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (current display file address at left side of cloud)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64757"></span>64757</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Copy a run of eight bytes from Storm Cloud's graphic data...</td>
+<td class="comment-1" rowspan="1">Copy a run of eight bytes from Storm Cloud's graphic data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64758"></span>64758</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...to Display File, starting at current Display File address...</td>
+<td class="comment-1" rowspan="1">...to display file, starting at current display file address...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64759"></span>64759</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64760"></span>64760</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64761"></span>64761</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64762"></span>64762</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64763"></span>64763</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64764"></span>64764</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64765"></span>64765</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64766"></span>64766</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64767"></span>64767</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64768"></span>64768</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64769"></span>64769</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64770"></span>64770</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64771"></span>64771</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64772"></span>64772</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64773"></span>64773</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64774"></span>64774</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64775"></span>64775</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64776"></span>64776</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64777"></span>64777</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64778"></span>64778</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64779"></span>64779</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64780"></span>64780</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64781"></span>64781</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64782"></span>64782</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64783"></span>64783</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64784"></span>64784</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64785"></span>64785</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64786"></span>64786</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64787"></span>64787</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64788"></span>64788</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (current Display File address at left side of cloud)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (current display file address at left side of cloud)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64789"></span>64789</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">Advance down a pixel row</td>
+<td class="comment-1" rowspan="1">Advance down a pixel row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64790"></span>64790</td>
 <td class="instruction">DJNZ 64756</td>
-<td class="comment-11" rowspan="1">Decrease remaining number of pixel rows to draw, and loop back to <a href="64687.html#64756">64756</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease remaining number of pixel rows to draw, and loop back to <a href="64687.html#64756">64756</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64792"></span>64792</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (Attribute Virtual Cursor address)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (attribute virtual cursor address)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64793"></span>64793</td>
 <td class="instruction">LD (23707),HL</td>
-<td class="comment-11" rowspan="1">Restore Attribute Virtual Cursor address</td>
+<td class="comment-1" rowspan="1">Restore attribute virtual cursor address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64796"></span>64796</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (Bitmap Virtual Cursor address)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (bitmap virtual cursor address)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64797"></span>64797</td>
 <td class="instruction">LD (63018),HL</td>
-<td class="comment-11" rowspan="1">Restore Bitmap Virtual Cursor address</td>
+<td class="comment-1" rowspan="1">Restore bitmap virtual cursor address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64800"></span>64800</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore value of system variable COORDS from stack...</td>
+<td class="comment-1" rowspan="1">Restore value in <a href="23677.html">coordinate storage</a> from stack...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64801"></span>64801</td>
 <td class="instruction">LD (23677),HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64804"></span>64804</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Set Do Not Draw Storm Cloud Flag...</td>
+<td class="comment-1" rowspan="1">Set do-not-draw-storm-cloud flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64806"></span>64806</td>
 <td class="instruction">LD (64688),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64809"></span>64809</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="64637.html">64637</a></span></td>
+<td class="prev">
+Prev: <a href="64637.html">64637</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#64687">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="64810.html">64810</a></span></td>
+<td class="next">
+Next: <a href="64810.html">64810</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

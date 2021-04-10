@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 54222</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,18 +20,22 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54219.html">54219</a></span></td>
+<td class="prev">
+Prev: <a href="54219.html">54219</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54222">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54283.html">54283</a></span></td>
+<td class="next">
+Next: <a href="54283.html">54283</a>
+</td>
 </tr>
 </table>
-<div class="description">54222: Load A with a Pseudo-Random Number Between 0 and the Higher of 2 and A (Input)</div>
+<div class="description">54222: Load <span class="register">A</span> with a pseudo-random number between 0 and the higher of 2 and <span class="register">A</span> (input)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-This routine uses a linear congruential generator to generate a new pseudo-random number based upon a seed value. The seed value is stored at <a href="54219.html">54219</a>, is initially set to the value in the least significant byte of the system variable FRAMES, and subsequently set to the previously generated pseudo-random number. On entering this routine, the A register holds the range for the random number (e.g. 5 means this routine will generate a random number in the range 0-4 inclusive). A range of less than 2 is not allowed, so if A is less than this then it will be set to 2.
+This routine uses a linear congruential generator to generate a new pseudo-random number based upon a seed value. The seed value is stored at <a href="54219.html">54219</a>, is initially set to the value in the least significant byte of the FRAMES system variable, and subsequently set to the previously generated pseudo-random number. On entering this routine, the <span class="register">A</span> register holds the range for the random number (e.g. 5 means this routine will generate a random number in the range 0-4 inclusive). A range of less than 2 is not allowed, so if <span class="register">A</span> is less than this then it will be set to 2.
 </div>
 <div class="paragraph">
 The <em>n<sup>th</sup></em> pseudo-random number, <em>R(n)</em> is given by:
@@ -57,40 +59,40 @@ The modulo operation is carried out by the instructions between <a href="54222.h
 <em>256<sup>2</sup> + 256<sup>0</sup></em>
 </div>
 <div class="paragraph">
-The 24-bit dividend (stored in the registers A, H and L) has the value:
+The 24-bit dividend (stored in the registers <span class="register">A</span>, <span class="register">H</span> and <span class="register">L</span>) has the value:
 </div>
 <div class="paragraph">
-<em>256<sup>2</sup>A + 256<sup>1</sup>H + 256<sup>0</sup>L</em>
+<em>256<sup>2</sup><span class="register">A</span> + 256<sup>1</sup><span class="register">H</span> + 256<sup>0</sup><span class="register">L</span></em>
 </div>
 <div class="paragraph">
 This can be expressed as:
 </div>
 <div class="paragraph">
-<em>256<sup>2</sup>A + 256<sup>1</sup>H + 256<sup>0</sup>A + 256<sup>0</sup>(L - A)</em>
+<em>256<sup>2</sup><span class="register">A</span> + 256<sup>1</sup><span class="register">H</span> + 256<sup>0</sup><span class="register">A</span> + 256<sup>0</sup>(<span class="register">L</span> - <span class="register">A</span>)</em>
 </div>
 <div class="paragraph">
-Since A is an integer, then:
+Since <span class="register">A</span> is an integer, then:
 </div>
 <div class="paragraph">
-<em>256<sup>2</sup>A + 256<sup>0</sup>A</em>
+<em>256<sup>2</sup><span class="register">A</span> + 256<sup>0</sup><span class="register">A</span></em>
 </div>
 <div class="paragraph">
 must be an integer multiple of the divisor. We can therefore drop these terms, and those that are left constitute the remainder that we are seeking:
 </div>
 <div class="paragraph">
-<em>256<sup>1</sup>H + 256<sup>0</sup>(L - A)</em>
+<em>256<sup>1</sup><span class="register">H</span> + 256<sup>0</sup>(<span class="register">L</span> - <span class="register">A</span>)</em>
 </div>
 <div class="paragraph">
 or:
 </div>
 <div class="paragraph">
-<em>HL - A</em>
+<em><span class="register">HL</span> - <span class="register">A</span></em>
 </div>
 <div class="paragraph">
 Used by the routines at <a href="38074.html">38074</a>, <a href="38592.html">38592</a>, <a href="39601.html">39601</a>, <a href="41617.html">41617</a>, <a href="42064.html">42064</a>, <a href="46317.html">46317</a>, <a href="46385.html">46385</a>, <a href="46495.html">46495</a>, <a href="46577.html">46577</a>, <a href="47323.html">47323</a>, <a href="47363.html">47363</a>, <a href="47431.html">47431</a>, <a href="51779.html">51779</a>, <a href="51904.html">51904</a>, <a href="51924.html">51924</a>, <a href="52914.html">52914</a> and <a href="53083.html">53083</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -99,7 +101,7 @@ Used by the routines at <a href="38074.html">38074</a>, <a href="38592.html">385
 <td class="register-desc">Range</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -111,273 +113,231 @@ Used by the routines at <a href="38074.html">38074</a>, <a href="38592.html">385
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54222"></span>54222</td>
 <td class="instruction">CP 2</td>
-<td class="comment-11" rowspan="1">If range is less than 2...</td>
+<td class="comment-1" rowspan="3">If range is less than 2 then set it to 2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54224"></span>54224</td>
 <td class="instruction">JP NC,54229</td>
-<td class="comment-11" rowspan="1">...then set range to 2...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54227"></span>54227</td>
 <td class="instruction">LD A,2</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54229"></span>54229</td>
 <td class="instruction">LD (54221),A</td>
-<td class="comment-11" rowspan="1">Store range at <a href="54194.html#54211">54211</a></td>
+<td class="comment-1" rowspan="1">Store range at <a href="54144.html#54211">54211</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54232"></span>54232</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54233"></span>54233</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54234"></span>54234</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54235"></span>54235</td>
 <td class="instruction">LD DE,(54219)</td>
-<td class="comment-11" rowspan="1">Load DE with seed</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with seed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54239"></span>54239</td>
 <td class="instruction">LD H,E</td>
-<td class="comment-11" rowspan="1">Load least significant byte of random seed into H</td>
+<td class="comment-1" rowspan="1">Load least significant byte of random seed into <span class="register">H</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54240"></span>54240</td>
 <td class="instruction">LD L,253</td>
-<td class="comment-11" rowspan="1">Set L to 253</td>
+<td class="comment-1" rowspan="1">Set <span class="register">L</span> to 253</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54242"></span>54242</td>
 <td class="instruction">LD A,D</td>
-<td class="comment-11" rowspan="1">Load most significant byte (MSB) of random seed into A</td>
+<td class="comment-1" rowspan="1">Load most significant byte (MSB) of random seed into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="54243"></span>
 <div class="comments">
 <div class="paragraph">
-At this point, the three registers A, H and L encode a 24-bit number whose value is (256 * seed + 253)
+At this point, the three registers <span class="register">A</span>, <span class="register">H</span> and <span class="register">L</span> encode a 24-bit number whose value is (256 &times; seed + 253)
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54243"></span>54243</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">Reset carry flag</td>
+<td class="comment-1" rowspan="1">Reset carry flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54244"></span>54244</td>
 <td class="instruction">SBC HL,DE</td>
-<td class="comment-11" rowspan="1">Subtract seed from HL...</td>
+<td class="comment-1" rowspan="2">Subtract seed from <span class="register">HL</span> and decrement <span class="register">A</span> if carry flag is set</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54246"></span>54246</td>
 <td class="instruction">SBC A,0</td>
-<td class="comment-11" rowspan="1">...and decrement A if Carry Flag is set</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54248"></span>54248</td>
 <td class="instruction">SBC HL,DE</td>
-<td class="comment-11" rowspan="1">Subtract seed from HL...</td>
+<td class="comment-1" rowspan="2">Subtract seed from <span class="register">HL</span> and decrement <span class="register">A</span> if carry flag is set</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54250"></span>54250</td>
 <td class="instruction">SBC A,0</td>
-<td class="comment-11" rowspan="1">...and decrement A if Carry Flag is set</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="54252"></span>
 <div class="comments">
 <div class="paragraph">
-At this point, the three registers A, H and L encode a 24-bit number whose value is (254 * seed + 253)
+At this point, the three registers <span class="register">A</span>, <span class="register">H</span> and <span class="register">L</span> encode a 24-bit number whose value is (254 &times; seed + 253)
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54252"></span>54252</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">Calculate (AHL mod 65,537)...</td>
+<td class="comment-1" rowspan="5">Calculate (<span class="register">AHL</span> mod 65,537) loading result into <span class="register">HL</span>, and if this is negative then add one (as zero in <span class="register">HL</span> can represent both zero and 65,536)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54253"></span>54253</td>
 <td class="instruction">LD D,0</td>
-<td class="comment-11" rowspan="1">...loading result into HL...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54255"></span>54255</td>
 <td class="instruction">SBC HL,DE</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54257"></span>54257</td>
 <td class="instruction">JP NC,54261</td>
-<td class="comment-11" rowspan="1">...and if this is negative...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54260"></span>54260</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...then add one (as zero in HL can represent both zero and 65,536)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54261"></span>54261</td>
 <td class="instruction">LD (54219),HL</td>
-<td class="comment-11" rowspan="1">Store HL (new seed) at <a href="54219.html">54219</a></td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (new seed) at <a href="54219.html">54219</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="54264"></span>
 <div class="comments">
 <div class="paragraph">
-At this point, HL contains a new pseudo-random 16-bit number
+At this point, <span class="register">HL</span> contains a new pseudo-random 16-bit number
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54264"></span>54264</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Copy 16-bit pseudo-random number from HL into DE...</td>
+<td class="comment-1" rowspan="2">Copy 16-bit pseudo-random number from <span class="register">HL</span> into <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54265"></span>54265</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54266"></span>54266</td>
 <td class="instruction">LD A,(54221)</td>
-<td class="comment-11" rowspan="1">Load A with range as stored previously</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with range as stored previously</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54269"></span>54269</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">Decrease range by 1 to get maximum value as we want the output to range from 0 to (A-1)...</td>
+<td class="comment-1" rowspan="2">Decrease range by 1 to get maximum value as we want the output to range from 0 to (<span class="register">A</span>-1) and load result into <span class="register">B</span> (loop counter)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54270"></span>54270</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...and load into B (loop counter)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="54271"></span>
 <div class="comments">
 <div class="paragraph">
-In the following loop we are obtaining the number of times that 65,536 goes into RANGE x DE. In other words, (RANGE x DE) is divided by 65,536 and the integer part of the result is loaded into A. A is therefore limited to values between zero, and the value A had on entering this routine minus one, inclusive.
+In the following loop we are obtaining the number of times that 65,536 goes into RANGE &times; <span class="register">DE</span>. In other words, (RANGE &times; <span class="register">DE</span>) is divided by 65,536 and the integer part of the result is loaded into <span class="register">A</span>. <span class="register">A</span> is therefore limited to values between zero, and the value <span class="register">A</span> had on entering this routine minus one, inclusive.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54271"></span>54271</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54272"></span>54272</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Add DE to HL</td>
+<td class="comment-1" rowspan="1">Add <span class="register">DE</span> to <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54273"></span>54273</td>
 <td class="instruction">JP NC,54277</td>
-<td class="comment-11" rowspan="1">If DE has not crossed the 65,535 - 0 boundary then skip ahead to <a href="54222.html#54277">54277</a></td>
+<td class="comment-1" rowspan="1">If <span class="register">DE</span> has not crossed the 65,535 - 0 boundary then skip ahead to <a href="54222.html#54277">54277</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54276"></span>54276</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">Increase A (count of number of times DE rolls over from 65,535 to 0)</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">A</span> (count of number of times <span class="register">DE</span> rolls over from 65,535 to 0)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54277"></span>54277</td>
 <td class="instruction">DJNZ 54272</td>
-<td class="comment-11" rowspan="1">Decrease B and loop back to <a href="54222.html#54272">54272</a></td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> and loop back to <a href="54222.html#54272">54272</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54279"></span>54279</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54280"></span>54280</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54281"></span>54281</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54282"></span>54282</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54219.html">54219</a></span></td>
+<td class="prev">
+Prev: <a href="54219.html">54219</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54222">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54283.html">54283</a></span></td>
+<td class="next">
+Next: <a href="54283.html">54283</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

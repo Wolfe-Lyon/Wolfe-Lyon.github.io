@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 62827</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="62812.html">62812</a></span></td>
+<td class="prev">
+Prev: <a href="62812.html">62812</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#62827">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="62853.html">62853</a></span></td>
+<td class="next">
+Next: <a href="62853.html">62853</a>
+</td>
 </tr>
 </table>
-<div class="description">62827: Update Character's x-Coordinate if New Value is Allowed, Otherwise Return</div>
+<div class="description">62827: Update character's x-coordinate if new value is allowed, otherwise return</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="62622.html">62622</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,7 +51,7 @@ Used by the routine at <a href="62622.html">62622</a>.
 <td class="register-desc">Pointer to x-coordinate data in a character's current position data</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -58,143 +63,126 @@ Used by the routine at <a href="62622.html">62622</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="62827"></span>62827</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to x-coordinate in a character's current position data)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to x-coordinate in a character's current position data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62828"></span>62828</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = updated x-coordinate)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = updated x-coordinate)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62829"></span>62829</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move HL back to room index</td>
+<td class="comment-1" rowspan="1">Move <span class="register">HL</span> back to room index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62830"></span>62830</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load BC with double character's room index...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with double character's room index...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62831"></span>62831</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62832"></span>62832</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62833"></span>62833</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62835"></span>62835</td>
 <td class="instruction">LD HL,48915</td>
-<td class="comment-11" rowspan="1">Load HL with start address of Character Movement Restriction Data</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with start address of character movement restriction data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62838"></span>62838</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...and add BC as offset</td>
+<td class="comment-1" rowspan="1">...and add <span class="register">BC</span> as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62839"></span>62839</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = updated x-coordinate)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = updated x-coordinate)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62840"></span>62840</td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">If new x-coordinate is same as first disallowed x-coordinate...</td>
+<td class="comment-1" rowspan="1">If new x-coordinate is same as first disallowed x-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62841"></span>62841</td>
 <td class="instruction">JR Z,62850</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="62827.html#62850">62850</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="62827.html#62850">62850</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62843"></span>62843</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">If new x-coordinate is same as second disallowed x-coordinate...</td>
+<td class="comment-1" rowspan="1">If new x-coordinate is same as second disallowed x-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62844"></span>62844</td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62845"></span>62845</td>
 <td class="instruction">JR Z,62850</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="62827.html#62850">62850</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="62827.html#62850">62850</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62847"></span>62847</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to x-coordinate in a character's current position data)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to x-coordinate in a character's current position data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62848"></span>62848</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Store updated x-coordinate</td>
+<td class="comment-1" rowspan="1">Store updated x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62849"></span>62849</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="62850"></span>62850</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to x-coordinate in a character's current position data)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to x-coordinate in a character's current position data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62851"></span>62851</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Remove return address from top of stack...</td>
+<td class="comment-1" rowspan="1">Remove return address from top of stack...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62852"></span>62852</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">...and return to routine that called the routine that called this one</td>
+<td class="comment-1" rowspan="1">...and return to routine that called the routine that called this one</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="62812.html">62812</a></span></td>
+<td class="prev">
+Prev: <a href="62812.html">62812</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#62827">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="62853.html">62853</a></span></td>
+<td class="next">
+Next: <a href="62853.html">62853</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

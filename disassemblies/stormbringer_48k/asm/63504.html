@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 63504</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="63499.html">63499</a></span></td>
+<td class="prev">
+Prev: <a href="63499.html">63499</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#63504">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="63598.html">63598</a></span></td>
+<td class="next">
+Next: <a href="63598.html">63598</a>
+</td>
 </tr>
 </table>
-<div class="description">63504: Draw a Graphic with Lookup Index A at Character Coordinates (C, B)</div>
+<div class="description">63504: Draw a graphic with lookup index <span class="register">A</span> at character coordinates (<span class="register">C</span>, <span class="register">B</span>)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="39883.html">39883</a> and <a href="42638.html">42638</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -58,22 +63,15 @@ Used by the routines at <a href="39883.html">39883</a> and <a href="42638.html">
 <td class="register-desc">(entry at <a href="63504.html#63507">63507</a>) Graphic width (characters)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63504"></span>63504</td>
 <td class="instruction">LD DE,1026</td>
-<td class="comment-11" rowspan="1">Set D (height) to 4 and E to 2 (width)</td>
+<td class="comment-1" rowspan="1">Set <span class="register">D</span> (height) to 4 and <span class="register">E</span> to 2 (width)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="63507"></span>
 <div class="comments">
 <div class="paragraph">
@@ -83,277 +81,232 @@ This entry point is used by the routines at <a href="47193.html">47193</a>, <a h
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63507"></span>63507</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63508"></span>63508</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63509"></span>63509</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63510"></span>63510</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Load x-coordinate to draw item into instruction at <a href="63504.html#63570">63570</a>...</td>
+<td class="comment-1" rowspan="1">Load x-coordinate to draw item into instruction at <a href="63504.html#63570">63570</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63511"></span>63511</td>
 <td class="instruction">LD (63571),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63514"></span>63514</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Multiply y-coordinate by 8...</td>
+<td class="comment-1" rowspan="1">Multiply y-coordinate by 8...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63515"></span>63515</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63516"></span>63516</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63517"></span>63517</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63518"></span>63518</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...and load into HL...</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63519"></span>63519</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63521"></span>63521</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">Double again (so now 16 times y-coordinate, as 8 pixels in a character block, and two bytes per entry in data at <a href="65140.html">65140</a>)</td>
+<td class="comment-1" rowspan="1">Double again (so now 16 times y-coordinate, as 8 pixels in a character block, and two bytes per entry in data at <a href="65140.html">65140</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63522"></span>63522</td>
 <td class="instruction">LD DE,65140</td>
-<td class="comment-11" rowspan="1">Point DE at Table of Display File Addresses of Start of Each Pixel Row</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at table of display file addresses of start of each pixel row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63525"></span>63525</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Advance by 16 times y-coordinate to point HL at entry for start of item's current pixel row</td>
+<td class="comment-1" rowspan="1">Advance by 16 times y-coordinate to point <span class="register">HL</span> at entry for start of item's current pixel row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63526"></span>63526</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Transfer this value into IX...</td>
+<td class="comment-1" rowspan="1">Transfer this value into <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63527"></span>63527</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63529"></span>63529</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore A (graphic index of item to draw)...</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">A</span> (graphic index of item to draw)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63530"></span>63530</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...and load into HL...</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63531"></span>63531</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63533"></span>63533</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">Multiply by four (as there are two WORD entries for each graphic in the table at <a href="29272.html">29272</a>)...</td>
+<td class="comment-1" rowspan="1">Multiply by four (as there are two WORD entries for each graphic in the table at <a href="29272.html">29272</a>)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63534"></span>63534</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63535"></span>63535</td>
 <td class="instruction">LD BC,29272</td>
-<td class="comment-11" rowspan="1">Point BC at start of Graphics Data Lookup Table at <a href="29272.html">29272</a>...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">BC</span> at start of graphics data lookup table at <a href="29272.html">29272</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63538"></span>63538</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...and add offset to point to entry for item of interest</td>
+<td class="comment-1" rowspan="1">...and add offset to point to entry for item of interest</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63539"></span>63539</td>
 <td class="instruction">LD E,(HL)</td>
-<td class="comment-11" rowspan="1">Load graphic data address for this graphic into DE...</td>
+<td class="comment-1" rowspan="1">Load graphic data address for this graphic into <span class="register">DE</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63540"></span>63540</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63541"></span>63541</td>
 <td class="instruction">LD D,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63542"></span>63542</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63543"></span>63543</td>
 <td class="instruction">CALL <a href="64627.html#64632">64632</a></td>
-<td class="comment-11" rowspan="1">Load next value in table (address of graphic data for this object's mask) into HL</td>
+<td class="comment-1" rowspan="1">Load next value in table (address of graphic data for this object's mask) into <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63546"></span>63546</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = height, C = width)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = height, <span class="register">C</span> = width)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63547"></span>63547</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Load height into A...</td>
+<td class="comment-1" rowspan="1">Load height into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63548"></span>63548</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...and multiply by eight...</td>
+<td class="comment-1" rowspan="1">...and multiply by eight...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63549"></span>63549</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63550"></span>63550</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63551"></span>63551</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Swap A and A'</td>
+<td class="comment-1" rowspan="1">Swap <span class="register">A</span> and <span class="register">A'</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63552"></span>63552</td>
 <td class="instruction">LD B,C</td>
-<td class="comment-11" rowspan="1">Copy graphic width into B...</td>
+<td class="comment-1" rowspan="1">Copy graphic width into <span class="register">B</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63553"></span>63553</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">...and A'...</td>
+<td class="comment-1" rowspan="1">...and <span class="register">A'</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63554"></span>63554</td>
 <td class="instruction">LD (63574),A</td>
-<td class="comment-11" rowspan="1">...and modify instruction at <a href="63504.html#63573">63573</a> with this value also</td>
+<td class="comment-1" rowspan="1">...and modify instruction at <a href="63504.html#63573">63573</a> with this value also</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63557"></span>63557</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Swap A and A'</td>
+<td class="comment-1" rowspan="1">Swap <span class="register">A</span> and <span class="register">A'</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63558"></span>63558</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Swap DE (now pointer to object's mask graphic data) and HL (now pointer to object's graphic data)</td>
+<td class="comment-1" rowspan="1">Swap <span class="register">DE</span> (now pointer to object's mask graphic data) and <span class="register">HL</span> (now pointer to object's graphic data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63559"></span>63559</td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1">Switch registers</td>
+<td class="comment-1" rowspan="1">Switch registers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63560"></span>63560</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load C with eight times graphic's height</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with eight times graphic's height</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63561"></span>63561</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (C = remaining number of pixel rows to draw, initially eight times graphic's height)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">C</span> = remaining number of pixel rows to draw, initially eight times graphic's height)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63562"></span>63562</td>
 <td class="instruction">LD L,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load HL' with Display File address of start of pixel row at object's y-coordinate...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL'</span> with display file address of start of pixel row at object's y-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63565"></span>63565</td>
 <td class="instruction">LD H,(IX+1)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63568"></span>63568</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">Set B' to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">B'</span> to zero</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="63570"></span>
 <div class="comments">
 <div class="paragraph">
@@ -363,19 +316,17 @@ The operand of the instruction at <a href="63504.html#63570">63570</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63570"></span>63570</td>
 <td class="instruction">LD C,0</td>
-<td class="comment-11" rowspan="1">Set C' to x-coordinate of item</td>
+<td class="comment-1" rowspan="1">Set <span class="register">C'</span> to x-coordinate of item</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63572"></span>63572</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">Add x-coordinate as offset to address of start of pixel row in HL' (HL' now points at Display File address to begin drawing)</td>
+<td class="comment-1" rowspan="1">Add x-coordinate as offset to address of start of pixel row in <span class="register">HL'</span> (<span class="register">HL'</span> now points at display file address to begin drawing)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="63573"></span>
 <div class="comments">
 <div class="paragraph">
@@ -385,137 +336,121 @@ The operand of the instruction at <a href="63504.html#63573">63573</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63573"></span>63573</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">Load B with graphic width</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with graphic width</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63575"></span>63575</td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1">Switch registers</td>
+<td class="comment-1" rowspan="1">Switch registers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63576"></span>63576</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Load graphic data byte from graphic mask data into A</td>
+<td class="comment-1" rowspan="1">Load graphic data byte from graphic mask data into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63577"></span>63577</td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1">Switch registers</td>
+<td class="comment-1" rowspan="1">Switch registers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63578"></span>63578</td>
 <td class="instruction">AND (HL)</td>
-<td class="comment-11" rowspan="1">Modify mask data by AND-ing with data already present in Display File (to allow scenery in background to show as set pixels are transparent)</td>
+<td class="comment-1" rowspan="1">Modify mask data by <span class="instruction">AND</span>-ing with contents of display file allowing scenery in background to show; set pixels are transparent</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63579"></span>63579</td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1">Switch registers</td>
+<td class="comment-1" rowspan="1">Switch registers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63580"></span>63580</td>
 <td class="instruction">OR (HL)</td>
-<td class="comment-11" rowspan="1">Modify modified mask data by OR-ing with object graphic data byte from graphic data</td>
+<td class="comment-1" rowspan="1">Modify modified mask data by <span class="instruction">OR</span>-ing with object graphic data byte from graphic data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63581"></span>63581</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to next byte in object graphic data</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next byte in object graphic data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63582"></span>63582</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Advance DE to next byte in object graphic mask data</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">DE</span> to next byte in object graphic mask data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63583"></span>63583</td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1">Switch registers</td>
+<td class="comment-1" rowspan="1">Switch registers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63584"></span>63584</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Load masked graphic data byte into Display File</td>
+<td class="comment-1" rowspan="1">Load masked graphic data byte into display file</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63585"></span>63585</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to next byte in Display File</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next byte in display file</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63586"></span>63586</td>
 <td class="instruction">DJNZ 63575</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="63504.html#63575">63575</a> for next column of object graphic data</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="63504.html#63575">63575</a> for next column of object graphic data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63588"></span>63588</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX by two bytes to next address in Table of Addresses of Starts of Pixel Rows...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> by two bytes to next address in table of addresses of starts of pixel rows...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63590"></span>63590</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63592"></span>63592</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (C = remaining number of pixel rows to draw)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">C</span> = remaining number of pixel rows to draw)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63593"></span>63593</td>
 <td class="instruction">DEC C</td>
-<td class="comment-11" rowspan="1">Decrease remaining number pixel rows to draw</td>
+<td class="comment-1" rowspan="1">Decrease remaining number pixel rows to draw</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63594"></span>63594</td>
 <td class="instruction">JR NZ,63561</td>
-<td class="comment-11" rowspan="1">If not zero (i.e. still need to draw at least one more pixel row of graphic data) then loop back to <a href="63504.html#63561">63561</a></td>
+<td class="comment-1" rowspan="1">If not zero (i.e. still need to draw at least one more pixel row of graphic data) then loop back to <a href="63504.html#63561">63561</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63596"></span>63596</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63597"></span>63597</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="63499.html">63499</a></span></td>
+<td class="prev">
+Prev: <a href="63499.html">63499</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#63504">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="63598.html">63598</a></span></td>
+<td class="next">
+Next: <a href="63598.html">63598</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

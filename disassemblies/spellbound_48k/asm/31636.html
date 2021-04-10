@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 31636</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,252 +20,217 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31370.html">31370</a></span></td>
+<td class="prev">
+Prev: <a href="31370.html">31370</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31636">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="31710.html">31710</a></span></td>
+<td class="next">
+Next: <a href="31710.html">31710</a>
+</td>
 </tr>
 </table>
-<div class="description">31636: Process and Execute Command to Command a Character</div>
+<div class="description">31636: Process and execute command to command a character</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routines at <a href="27176.html">27176</a> and <a href="31153.html">31153</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31636"></span>31636</td>
 <td class="instruction">LD A,(65532)</td>
-<td class="comment-11" rowspan="1">Check Magic Knight's action flags...</td>
+<td class="comment-1" rowspan="1">Check Magic Knight's action flags...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31639"></span>31639</td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="1">...and if he can't command...</td>
+<td class="comment-1" rowspan="1">...and if he can't command...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31641"></span>31641</td>
 <td class="instruction">JP Z,<a href="27176.html#27189">27189</a></td>
-<td class="comment-11" rowspan="1">...then jump into Main Game Loop (process keyboard input and move Magic Knight, enter menus or execute other command)</td>
+<td class="comment-1" rowspan="1">...then jump into main game loop (process keyboard input and move Magic Knight, enter menus or execute other command)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31644"></span>31644</td>
 <td class="instruction">CALL <a href="38075.html">38075</a></td>
-<td class="comment-11" rowspan="1">Play upward scale sound</td>
+<td class="comment-1" rowspan="1">Play upward scale sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31647"></span>31647</td>
 <td class="instruction">LD HL,44073</td>
-<td class="comment-11" rowspan="1">Point HL at "COMMAND ?" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "COMMAND ?" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31650"></span>31650</td>
 <td class="instruction">LD DE,46402</td>
-<td class="comment-11" rowspan="1">Point DE at "COMMAND" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at "COMMAND" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31653"></span>31653</td>
 <td class="instruction">CALL <a href="35141.html">35141</a></td>
-<td class="comment-11" rowspan="1">Display and process input for character selection menu (current room's characters only), setting Current Character</td>
+<td class="comment-1" rowspan="1">Display and process input for character selection menu (current room's characters only), setting Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31656"></span>31656</td>
 <td class="instruction">LD DE,45820</td>
-<td class="comment-11" rowspan="1">Point DE at "TO" text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at "TO" text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31659"></span>31659</td>
 <td class="instruction">CALL <a href="38693.html">38693</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at bottom of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at bottom of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31662"></span>31662</td>
 <td class="instruction">LD A,23</td>
-<td class="comment-11" rowspan="1">Display "WHICH COMMAND DO YOU WANT TO USE" (Command [CHARACTER] to...) menu window...</td>
+<td class="comment-1" rowspan="1">Display "WHICH COMMAND DO YOU WANT TO USE" (Command [CHARACTER] to...) menu window...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31664"></span>31664</td>
 <td class="instruction">CALL <a href="36979.html">36979</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31667"></span>31667</td>
 <td class="instruction">LD HL,46405</td>
-<td class="comment-11" rowspan="1">Print "WHICH COMMAND DO YOU WANT TO USE" + "A GO TO SLEEP ... B WAKE UP ..." etc. text...</td>
+<td class="comment-1" rowspan="1">Print "WHICH COMMAND DO YOU WANT TO USE" + "A GO TO SLEEP ... B WAKE UP ..." etc. text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31670"></span>31670</td>
 <td class="instruction">CALL <a href="36725.html">36725</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31673"></span>31673</td>
 <td class="instruction">CALL <a href="37333.html">37333</a></td>
-<td class="comment-11" rowspan="1">Process keyboard / joystick input for menu, and load ASCII code of shortcut for selected (i.e. SPACE or fire pressed) item into A</td>
+<td class="comment-1" rowspan="1">Process input for menu, and load ASCII code of shortcut for selected (i.e. SPACE or fire pressed) item into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31676"></span>31676</td>
 <td class="instruction">SUB 65</td>
-<td class="comment-11" rowspan="1">Subtract 65 (ASCII code for "A") to leave index of selected command</td>
+<td class="comment-1" rowspan="1">Subtract 65 (ASCII code for "A") to leave index of selected command</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31678"></span>31678</td>
 <td class="instruction">LD (31696),A</td>
-<td class="comment-11" rowspan="1">Set index of "Command a character" routine to jump to later</td>
+<td class="comment-1" rowspan="1">Set index of "command a character" routine to jump to later</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31681"></span>31681</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Copy into B</td>
+<td class="comment-1" rowspan="1">Copy into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31682"></span>31682</td>
 <td class="instruction">CALL <a href="34859.html">34859</a></td>
-<td class="comment-11" rowspan="1">Advance HL to the B-th entry in list of option texts from "Command a character" menu</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to the <span class="register">B</span>-th entry in list of option texts from "command a character" menu</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31685"></span>31685</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Swap DE (now points to selected command's "Command a character" menu text) and HL (now undefined)</td>
+<td class="comment-1" rowspan="1">Swap <span class="register">DE</span> (now points to selected command's "command a character" menu text) and <span class="register">HL</span> (now undefined)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31686"></span>31686</td>
 <td class="instruction">CALL <a href="38693.html">38693</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at bottom of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at bottom of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31689"></span>31689</td>
 <td class="instruction">LD A,(30615)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Character [<a href="../reference/bugs.html#unnecessaryinstruction">bug</a>]</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Character (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31692"></span>31692</td>
 <td class="instruction">CALL <a href="38725.html">38725</a></td>
-<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return if Execute chosen, else exit</td>
+<td class="comment-1" rowspan="1">Display execute / reject command window and return if execute chosen, else exit</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="31695"></span>
 <div class="comments">
 <div class="paragraph">
-The operand of the instruction at <a href="31636.html#31695">31695</a> represents the index of the "Command a Character" routine to jump to as stored previously. This is modified by the instruction at <a href="31636.html#31678">31678</a>.
+The operand of the instruction at <a href="31636.html#31695">31695</a> represents the index of the "command a character" routine to jump to as stored previously. This is modified by the instruction at <a href="31636.html#31678">31678</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31695"></span>31695</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Load A with index of "Command a Character" routine to jump to...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of "command a character" routine to jump to...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31697"></span>31697</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...double it (as entries are two bytes wide)...</td>
+<td class="comment-1" rowspan="1">...double it (as entries are two bytes wide)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31698"></span>31698</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...and load it into DE...</td>
+<td class="comment-1" rowspan="1">...and load it into <span class="register">DE</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31699"></span>31699</td>
 <td class="instruction">LD D,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31701"></span>31701</td>
 <td class="instruction">LD HL,31710</td>
-<td class="comment-11" rowspan="1">Point HL to start of "Magic Knight command a character to..." routines table</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> to start of "Magic Knight command a character to..." routines table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31704"></span>31704</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Add offset to obtain entry of interest</td>
+<td class="comment-1" rowspan="1">Add offset to obtain entry of interest</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31705"></span>31705</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load address at this location into HL...</td>
+<td class="comment-1" rowspan="1">Load address at this location into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31706"></span>31706</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31707"></span>31707</td>
 <td class="instruction">LD H,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31708"></span>31708</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31709"></span>31709</td>
 <td class="instruction">JP (HL)</td>
-<td class="comment-11" rowspan="1">...and jump to it</td>
+<td class="comment-1" rowspan="1">...and jump to it</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31370.html">31370</a></span></td>
+<td class="prev">
+Prev: <a href="31370.html">31370</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31636">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="31710.html">31710</a></span></td>
+<td class="next">
+Next: <a href="31710.html">31710</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

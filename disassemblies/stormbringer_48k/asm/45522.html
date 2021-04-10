@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 45522</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45510.html">45510</a></span></td>
+<td class="prev">
+Prev: <a href="45510.html">45510</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45522">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45552.html">45552</a></span></td>
+<td class="next">
+Next: <a href="45552.html">45552</a>
+</td>
 </tr>
 </table>
-<div class="description">45522: Insert Current Time and Score into "Time Left" and "Percentage Completion" Texts</div>
+<div class="description">45522: Insert current time and score into "time left" and "percentage completion" texts</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="42638.html">42638</a> and <a href="64582.html">64582</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,128 +51,109 @@ Used by the routines at <a href="42638.html">42638</a> and <a href="64582.html">
 <td class="register-desc">Points to time left text (<a href="52301.html#52302">52323</a> or <a href="50640.html#50756">50791</a>)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="45522"></span>45522</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE (address of time left text)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span> (address of time left text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45523"></span>45523</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (address of percentage completion text)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (address of percentage completion text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45524"></span>45524</td>
 <td class="instruction">LD HL,23488</td>
-<td class="comment-11" rowspan="1">Point HL at Visited Rooms table</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at visited rooms table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45527"></span>45527</td>
 <td class="instruction">LD BC,13312</td>
-<td class="comment-11" rowspan="1">Set B=52, C=0</td>
+<td class="comment-1" rowspan="1">Set <span class="register">B</span>=52, <span class="register">C</span>=0</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="45530"></span>45530</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load A with value at HL</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with value at <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45531"></span>45531</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">Add this to C...</td>
+<td class="comment-1" rowspan="1">Add this to <span class="register">C</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45532"></span>45532</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45533"></span>45533</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance to next byte</td>
+<td class="comment-1" rowspan="1">Advance to next byte</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45534"></span>45534</td>
 <td class="instruction">DJNZ 45530</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="45522.html#45530">45530</a> (adding together 52 values from <a href="23488.html">23488</a> onwards to get score for exploring rooms)</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="45522.html#45530">45530</a> (adding together 52 values from <a href="23488.html">23488</a> onwards to get score for exploring rooms)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45536"></span>45536</td>
 <td class="instruction">DEC C</td>
-<td class="comment-11" rowspan="1">Decrease exploration score by one (due to no score for The Sword in the Concrete)</td>
+<td class="comment-1" rowspan="1">Decrease exploration score by one (due to no score for The Sword in the Concrete)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45537"></span>45537</td>
 <td class="instruction">LD A,(23446)</td>
-<td class="comment-11" rowspan="1">Add Bonus Score to total...</td>
+<td class="comment-1" rowspan="1">Add bonus score to total...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45540"></span>45540</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45541"></span>45541</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (address of percentage completion text)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (address of percentage completion text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45542"></span>45542</td>
 <td class="instruction">CALL <a href="46837.html">46837</a></td>
-<td class="comment-11" rowspan="1">Splice numeric data A as a string into a string at HL</td>
+<td class="comment-1" rowspan="1">Splice numeric data <span class="register">A</span> as a string into a string at <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45545"></span>45545</td>
 <td class="instruction">LD A,(23457)</td>
-<td class="comment-11" rowspan="1">Load A with number of hours left</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with number of hours left</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45548"></span>45548</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (originally DE, address of time left text)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (originally <span class="register">DE</span>, address of time left text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45549"></span>45549</td>
 <td class="instruction">JP <a href="46837.html">46837</a></td>
-<td class="comment-11" rowspan="1">Splice numeric data A as a string into a string at HL and return</td>
+<td class="comment-1" rowspan="1">Splice numeric data <span class="register">A</span> as a string into a string at <span class="register">HL</span> and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45510.html">45510</a></span></td>
+<td class="prev">
+Prev: <a href="45510.html">45510</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45522">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45552.html">45552</a></span></td>
+<td class="next">
+Next: <a href="45552.html">45552</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

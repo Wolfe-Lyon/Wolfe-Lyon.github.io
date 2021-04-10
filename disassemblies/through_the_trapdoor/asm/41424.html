@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 41424</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,227 +20,201 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="41412.html">41412</a></span></td>
+<td class="prev">
+Prev: <a href="41412.html">41412</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#41424">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="41498.html">41498</a></span></td>
+<td class="next">
+Next: <a href="41498.html">41498</a>
+</td>
 </tr>
 </table>
-<div class="description">41424: Update State of Skeleton (Dying)</div>
+<div class="description">41424: Update state of skeleton (dying)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="41381.html">41381</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">IX</td>
-<td class="register-desc">Address of complex state data for Skeleton (Level 4)</td>
+<td class="register-desc">Address of complex state data for skeleton (level 4)</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41424"></span>41424</td>
 <td class="instruction">LD A,(42911)</td>
-<td class="comment-11" rowspan="1">If current attribute in Skeleton's graphic layout data is not 1...</td>
+<td class="comment-1" rowspan="1">If current attribute in skeleton's graphic layout data is not 1...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41427"></span>41427</td>
 <td class="instruction">CP 1</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41429"></span>41429</td>
 <td class="instruction">JR NZ,41473</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="41424.html#41473">41473</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="41424.html#41473">41473</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41431"></span>41431</td>
 <td class="instruction">LD (IX+1),0</td>
-<td class="comment-11" rowspan="1">Set Skeleton's room to 0</td>
+<td class="comment-1" rowspan="1">Set skeleton's room to 0</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41435"></span>41435</td>
 <td class="instruction">LD IY,45417</td>
-<td class="comment-11" rowspan="1">Load IY with address of complex state data for Boni (Level 4)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with address of complex state data for Boni (level 4)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41439"></span>41439</td>
 <td class="instruction">LD A,(IX+4)</td>
-<td class="comment-11" rowspan="1">Set y-coordinate of Boni's top edge...</td>
+<td class="comment-1" rowspan="1">Set y-coordinate of Boni's top edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41442"></span>41442</td>
 <td class="instruction">LD (IY+4),A</td>
-<td class="comment-11" rowspan="1">...to same as that of skeleton</td>
+<td class="comment-1" rowspan="1">...to same as that of skeleton</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41445"></span>41445</td>
 <td class="instruction">ADD A,3</td>
-<td class="comment-11" rowspan="1">Set y-coordinate of Boni's bottom edge...</td>
+<td class="comment-1" rowspan="1">Set y-coordinate of Boni's bottom edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41447"></span>41447</td>
 <td class="instruction">LD (IY+6),A</td>
-<td class="comment-11" rowspan="1">...to three characters below this</td>
+<td class="comment-1" rowspan="1">...to three characters below this</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41450"></span>41450</td>
 <td class="instruction">LD A,(IX+5)</td>
-<td class="comment-11" rowspan="1">Set x-coordinate of Boni's left edge...</td>
+<td class="comment-1" rowspan="1">Set x-coordinate of Boni's left edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41453"></span>41453</td>
 <td class="instruction">LD (IY+5),A</td>
-<td class="comment-11" rowspan="1">...to same as that of skeleton</td>
+<td class="comment-1" rowspan="1">...to same as that of skeleton</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41456"></span>41456</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">Set x-coordinate of Boni's right edge...</td>
+<td class="comment-1" rowspan="1">Set x-coordinate of Boni's right edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41457"></span>41457</td>
 <td class="instruction">LD (IY+7),A</td>
-<td class="comment-11" rowspan="1">...to one to the right of this</td>
+<td class="comment-1" rowspan="1">...to one to the right of this</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41460"></span>41460</td>
 <td class="instruction">LD (IY+1),1</td>
-<td class="comment-11" rowspan="1">Set Boni's depth to 1</td>
+<td class="comment-1" rowspan="1">Set Boni's depth to 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41464"></span>41464</td>
 <td class="instruction">SET 6,(IY+10)</td>
-<td class="comment-11" rowspan="1">Set Boni's Can Fall Flag</td>
+<td class="comment-1" rowspan="1">Set Boni's can-fall flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41468"></span>41468</td>
 <td class="instruction">SET 2,(IX+9)</td>
-<td class="comment-11" rowspan="1">Set Skeleton's Removed From Game Flag</td>
+<td class="comment-1" rowspan="1">Set skeleton's removed-from-game flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41472"></span>41472</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="41473"></span>
 <div class="comments">
 <div class="paragraph">
-Current attribute in Skeleton's graphic layout data is not 1
+Current attribute in skeleton's graphic layout data is not 1
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41473"></span>41473</td>
 <td class="instruction">LD IX,41412</td>
-<td class="comment-11" rowspan="1">Load IX with address of Table of Addresses of Attribute Data in Skeleton's GLD Blocks</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with address of table of addresses of attribute data in skeleton's GLD blocks</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41477"></span>41477</td>
 <td class="instruction">LD B,6</td>
-<td class="comment-11" rowspan="1">Load B with 6 (as there are six blocks of graphic layout data to modify)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 6 (as there are six blocks of graphic layout data to modify)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41479"></span>41479</td>
 <td class="instruction">LD L,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load HL with address of attribute data in current block...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of attribute data in current block...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41482"></span>41482</td>
 <td class="instruction">LD H,(IX+1)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41485"></span>41485</td>
 <td class="instruction">DEC (HL)</td>
-<td class="comment-11" rowspan="1">Decrease the attribute value</td>
+<td class="comment-1" rowspan="1">Decrease the attribute value</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41486"></span>41486</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX to next address...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to next address...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41488"></span>41488</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41490"></span>41490</td>
 <td class="instruction">DJNZ 41479</td>
-<td class="comment-11" rowspan="1">Decrease remaining number of blocks to modify and loop back to <a href="41424.html#41479">41479</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease remaining number of blocks to modify and loop back to <a href="41424.html#41479">41479</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41492"></span>41492</td>
 <td class="instruction">LD A,11</td>
-<td class="comment-11" rowspan="1">Set sound 11 as pending if appropriate, then play and clear pending sound...</td>
+<td class="comment-1" rowspan="1">Set sound 11 as pending if appropriate, then play and clear pending sound...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41494"></span>41494</td>
 <td class="instruction">CALL <a href="59722.html">59722</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41497"></span>41497</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="41412.html">41412</a></span></td>
+<td class="prev">
+Prev: <a href="41412.html">41412</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#41424">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="41498.html">41498</a></span></td>
+<td class="next">
+Next: <a href="41498.html">41498</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

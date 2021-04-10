@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 35393</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,130 +20,112 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="35293.html">35293</a></span></td>
+<td class="prev">
+Prev: <a href="35293.html">35293</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#35393">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="35420.html">35420</a></span></td>
+<td class="next">
+Next: <a href="35420.html">35420</a>
+</td>
 </tr>
 </table>
-<div class="description">35393: Display Warning and Abort if Command is not Safe While Gimbal is Whited-Out</div>
+<div class="description">35393: Display warning and abort if command is not safe while Gimbal is whited-out</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="35141.html">35141</a> and <a href="35293.html">35293</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35393"></span>35393</td>
 <td class="instruction">LD A,(30615)</td>
-<td class="comment-11" rowspan="1">Load index of Current Character into A</td>
+<td class="comment-1" rowspan="1">Load index of Current Character into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35396"></span>35396</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If not zero (Gimbal)...</td>
+<td class="comment-1" rowspan="1">If not zero (Gimbal)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35397"></span>35397</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35398"></span>35398</td>
 <td class="instruction">LD A,(23377)</td>
-<td class="comment-11" rowspan="1">If Gimbal-White-Out Safe Flag is set...</td>
+<td class="comment-1" rowspan="1">If Gimbal-white-out-safe flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35401"></span>35401</td>
 <td class="instruction">AND 1</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35403"></span>35403</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35404"></span>35404</td>
 <td class="instruction">LD A,(23468)</td>
-<td class="comment-11" rowspan="1">If Gimbal is released...</td>
+<td class="comment-1" rowspan="1">If Gimbal is released...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35407"></span>35407</td>
 <td class="instruction">AND 1</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35409"></span>35409</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35410"></span>35410</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35411"></span>35411</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35412"></span>35412</td>
 <td class="instruction">LD A,32</td>
-<td class="comment-11" rowspan="1">Display "GIMBAL IS NOT YET RELEASED..." window and return to game...</td>
+<td class="comment-1" rowspan="1">Display "GIMBAL IS NOT YET RELEASED..." window and return to game...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35414"></span>35414</td>
 <td class="instruction">LD HL,43274</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35417"></span>35417</td>
 <td class="instruction">JP <a href="34768.html">34768</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="35293.html">35293</a></span></td>
+<td class="prev">
+Prev: <a href="35293.html">35293</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#35393">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="35420.html">35420</a></span></td>
+<td class="next">
+Next: <a href="35420.html">35420</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

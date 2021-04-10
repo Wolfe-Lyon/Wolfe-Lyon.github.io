@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 36296</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36116.html">36116</a></span></td>
+<td class="prev">
+Prev: <a href="36116.html">36116</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36296">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36367.html">36367</a></span></td>
+<td class="next">
+Next: <a href="36367.html">36367</a>
+</td>
 </tr>
 </table>
-<div class="description">36296: Make Berk Drop the Entity He is Holding and Load IY with its Complex State Data Address</div>
+<div class="description">36296: Make Berk drop the entity he is holding and load <span class="register">IY</span> with its complex state data address</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="35735.html">35735</a>, <a href="36116.html">36116</a>, <a href="36390.html">36390</a>, <a href="36638.html">36638</a>, <a href="39151.html">39151</a>, <a href="39278.html">39278</a>, <a href="39776.html">39776</a>, <a href="48920.html">48920</a> and <a href="53723.html">53723</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -45,7 +47,7 @@ Used by the routines at <a href="35735.html">35735</a>, <a href="36116.html">361
 <td class="register-desc">Address of complex state data (current level) for Berk</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -57,173 +59,151 @@ Used by the routines at <a href="35735.html">35735</a>, <a href="36116.html">361
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36296"></span>36296</td>
 <td class="instruction">LD A,(34221)</td>
-<td class="comment-11" rowspan="1">If Berk is not holding anything...</td>
+<td class="comment-1" rowspan="1">If Berk is not holding anything...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36299"></span>36299</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36300"></span>36300</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36301"></span>36301</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set class of entity held by Berk to zero (i.e. nothing)...</td>
+<td class="comment-1" rowspan="1">Set class of entity held by Berk to zero (i.e. nothing)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36302"></span>36302</td>
 <td class="instruction">LD (34221),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36305"></span>36305</td>
 <td class="instruction">LD IY,(34260)</td>
-<td class="comment-11" rowspan="1">Load IY with address of complex state data for entity last held by Berk</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with address of complex state data for entity last held by Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36309"></span>36309</td>
 <td class="instruction">LD (IY+12),2</td>
-<td class="comment-11" rowspan="1">Set this dropped entity's velocity factor to 2...</td>
+<td class="comment-1" rowspan="1">Set this dropped entity's velocity factor to 2...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36313"></span>36313</td>
 <td class="instruction">RES 5,(IY+10)</td>
-<td class="comment-11" rowspan="1">...reset its Is Being Carried Flag...</td>
+<td class="comment-1" rowspan="1">...reset its is-being-carried flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36317"></span>36317</td>
 <td class="instruction">SET 6,(IY+10)</td>
-<td class="comment-11" rowspan="1">...and set its Can Fall Flag</td>
+<td class="comment-1" rowspan="1">...and set its can-fall flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36321"></span>36321</td>
 <td class="instruction">RES 4,(IX+9)</td>
-<td class="comment-11" rowspan="1">Reset Berk's Carrying Something Flag</td>
+<td class="comment-1" rowspan="1">Reset Berk's carrying-something flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36325"></span>36325</td>
 <td class="instruction">BIT 0,(IX+11)</td>
-<td class="comment-11" rowspan="1">If Berk's Walking Right Flag is reset...</td>
+<td class="comment-1" rowspan="1">If Berk's walking-right flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36329"></span>36329</td>
 <td class="instruction">JR Z,36339</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="36296.html#36339">36339</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36296.html#36339">36339</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36331"></span>36331</td>
 <td class="instruction">INC (IY+7)</td>
-<td class="comment-11" rowspan="1">Move dropped entity right one character...</td>
+<td class="comment-1" rowspan="1">Move dropped entity right one character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36334"></span>36334</td>
 <td class="instruction">INC (IY+5)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36337"></span>36337</td>
 <td class="instruction">JR 36351</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="36296.html#36351">36351</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="36296.html#36351">36351</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36339"></span>36339</td>
 <td class="instruction">BIT 1,(IX+11)</td>
-<td class="comment-11" rowspan="1">If Berk's Walking Left Flag is reset...</td>
+<td class="comment-1" rowspan="1">If Berk's walking-left flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36343"></span>36343</td>
 <td class="instruction">JR Z,36351</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="36296.html#36351">36351</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36296.html#36351">36351</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36345"></span>36345</td>
 <td class="instruction">DEC (IY+7)</td>
-<td class="comment-11" rowspan="1">Move dropped entity left one character...</td>
+<td class="comment-1" rowspan="1">Move dropped entity left one character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36348"></span>36348</td>
 <td class="instruction">DEC (IY+5)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36351"></span>36351</td>
 <td class="instruction">LD A,(IY+5)</td>
-<td class="comment-11" rowspan="1">If entity at IY has the x-coordinate of its left side less than 100...</td>
+<td class="comment-1" rowspan="1">If entity at <span class="register">IY</span> has the x-coordinate of its left side less than 100...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36354"></span>36354</td>
 <td class="instruction">CP 100</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36356"></span>36356</td>
 <td class="instruction">JR C,36331</td>
-<td class="comment-11" rowspan="1">...then move right until left x-coordinate is 100</td>
+<td class="comment-1" rowspan="1">...then move right until left x-coordinate is 100</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36358"></span>36358</td>
 <td class="instruction">LD A,(34235)</td>
-<td class="comment-11" rowspan="1">Load A with width of current room (chars) + 99</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with width of current room (chars) + 99</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36361"></span>36361</td>
 <td class="instruction">CP (IY+7)</td>
-<td class="comment-11" rowspan="1">If entity at IY has the x-coordinate of its right side greater than the width of the current room...</td>
+<td class="comment-1" rowspan="1">If entity at <span class="register">IY</span> has the x-coordinate of its right side greater than the width of the current room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36364"></span>36364</td>
 <td class="instruction">JR C,36345</td>
-<td class="comment-11" rowspan="1">...then move right until left x-coordinate is less than room width</td>
+<td class="comment-1" rowspan="1">...then move right until left x-coordinate is less than room width</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36366"></span>36366</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36116.html">36116</a></span></td>
+<td class="prev">
+Prev: <a href="36116.html">36116</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36296">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36367.html">36367</a></span></td>
+<td class="next">
+Next: <a href="36367.html">36367</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 33863</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,145 +20,138 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="33834.html">33834</a></span></td>
+<td class="prev">
+Prev: <a href="33834.html">33834</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#33863">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="33896.html">33896</a></span></td>
+<td class="next">
+Next: <a href="33896.html">33896</a>
+</td>
 </tr>
 </table>
-<div class="description">33863: Check Whether Current Object is Wanted / Unwanted by Current Character</div>
+<div class="description">33863: Check whether current object is wanted / unwanted by current character</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-This routine checks whether the Current Object is associated with the Current Character in either the Table of Characters' Wanted Objects (IX = <a href="44238.html">44238</a>) or the Table of Characters' Unwanted Objects (IX = <a href="44251.html">44251</a>).
+This routine checks whether the Current Object is associated with the Current Character in either the table of characters' wanted objects (<span class="register">IX</span> = <a href="44238.html">44238</a>) or the table of characters' unwanted objects (<span class="register">IX</span> = <a href="44251.html">44251</a>).
 </div>
 <div class="paragraph">
 Used by the routines at <a href="29619.html">29619</a> and <a href="29756.html">29756</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">IX</td>
-<td class="register-desc">Points to Table of Characters' Wanted (IX = <a href="44238.html">44238</a>) or Unwanted (IX = <a href="44251.html">44251</a>) Objects</td>
+<td class="register-desc">Points to table of characters' wanted (<span class="register">IX</span> = <a href="44238.html">44238</a>) or unwanted (<span class="register">IX</span> = <a href="44251.html">44251</a>) objects</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">F</td>
-<td class="register-desc">Zero Flag set if match found, reset otherwise</td>
+<td class="register-desc">Zero flag set if match found, reset otherwise</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33863"></span>33863</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">Wait for interrupt</td>
+<td class="comment-1" rowspan="1">Wait for interrupt</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33864"></span>33864</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">If current entry's character index is 255 (End Marker)...</td>
+<td class="comment-1" rowspan="1">If current entry's character index is 255 (end marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33867"></span>33867</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33869"></span>33869</td>
 <td class="instruction">JP Z,33894</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="33863.html#33894">33894</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="33863.html#33894">33894</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33872"></span>33872</td>
 <td class="instruction">LD A,(29632)</td>
-<td class="comment-11" rowspan="1">If current entry's character index is not the same as the Current Character...</td>
+<td class="comment-1" rowspan="1">If current entry's character index is not the same as the Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33875"></span>33875</td>
 <td class="instruction">CP (IX+0)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33878"></span>33878</td>
 <td class="instruction">JR NZ,33888</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="33863.html#33888">33888</a> (advance to next character-object pair record)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="33863.html#33888">33888</a> (advance to next character-object pair record)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33880"></span>33880</td>
 <td class="instruction">LD A,(29526)</td>
-<td class="comment-11" rowspan="1">If current entry's object index is the same as Current Object...</td>
+<td class="comment-1" rowspan="1">If current entry's object index is the same as Current Object...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33883"></span>33883</td>
 <td class="instruction">CP (IX+1)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33886"></span>33886</td>
 <td class="instruction">JR Z,33895</td>
-<td class="comment-11" rowspan="1">... then return (with Zero Flag set)</td>
+<td class="comment-1" rowspan="1">...then return (with zero flag set)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33888"></span>33888</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance to next character-object pair to check...</td>
+<td class="comment-1" rowspan="1">Advance to next character-object pair to check...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33890"></span>33890</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33892"></span>33892</td>
 <td class="instruction">JR 33864</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="33863.html#33864">33864</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="33863.html#33864">33864</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33894"></span>33894</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">Reset Zero Flag as no match was found</td>
+<td class="comment-1" rowspan="1">Reset zero flag as no match was found</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33895"></span>33895</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="33834.html">33834</a></span></td>
+<td class="prev">
+Prev: <a href="33834.html">33834</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#33863">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="33896.html">33896</a></span></td>
+<td class="next">
+Next: <a href="33896.html">33896</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

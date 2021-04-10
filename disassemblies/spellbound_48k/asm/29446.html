@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 29446</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,124 +20,107 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29441.html">29441</a></span></td>
+<td class="prev">
+Prev: <a href="29441.html">29441</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29446">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29468.html">29468</a></span></td>
+<td class="next">
+Next: <a href="29468.html">29468</a>
+</td>
 </tr>
 </table>
-<div class="description">29446: Set Magic Knight's Action Flags and Prepare to Execute Room-Specific Routine for his Current Room</div>
+<div class="description">29446: Set Magic Knight's action flags and prepare to execute room-specific routine for his current room</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="28092.html">28092</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29446"></span>29446</td>
 <td class="instruction">LD A,(65529)</td>
-<td class="comment-11" rowspan="1">Load double Magic Knight's current room index into BC...</td>
+<td class="comment-1" rowspan="1">Load double Magic Knight's current room index into <span class="register">BC</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29449"></span>29449</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29450"></span>29450</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29452"></span>29452</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29453"></span>29453</td>
 <td class="instruction">LD HL,54753</td>
-<td class="comment-11" rowspan="1">Add as offset to address of start of table of room-specific routine addresses and load this result into HL...</td>
+<td class="comment-1" rowspan="1">Add as offset to address of start of table of room-specific routine addresses and load this result into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29456"></span>29456</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29457"></span>29457</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load WORD value at this address into HL...</td>
+<td class="comment-1" rowspan="1">Load WORD value at this address into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29458"></span>29458</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29459"></span>29459</td>
 <td class="instruction">LD H,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29460"></span>29460</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29461"></span>29461</td>
 <td class="instruction">LD (29773),HL</td>
-<td class="comment-11" rowspan="1">Update jump in routine at 29763 to execute room-specific routine</td>
+<td class="comment-1" rowspan="1">Update jump in routine at 29763 to execute room-specific routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29464"></span>29464</td>
 <td class="instruction">CALL <a href="35495.html">35495</a></td>
-<td class="comment-11" rowspan="1">Set Magic Knight's available action flags</td>
+<td class="comment-1" rowspan="1">Set Magic Knight's available action flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29467"></span>29467</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29441.html">29441</a></span></td>
+<td class="prev">
+Prev: <a href="29441.html">29441</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29446">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29468.html">29468</a></span></td>
+<td class="next">
+Next: <a href="29468.html">29468</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 36692</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36675.html">36675</a></span></td>
+<td class="prev">
+Prev: <a href="36675.html">36675</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36692">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36703.html">36703</a></span></td>
+<td class="next">
+Next: <a href="36703.html">36703</a>
+</td>
 </tr>
 </table>
-<div class="description">36692: Convert Leading Zeroes to Spaces in a String Number</div>
+<div class="description">36692: Convert leading zeroes to spaces in a string number</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a href="36647.html">36647</a> and <a href="36675.html">36675</a>.
+Used by the routine at <a href="36647.html">36647</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,74 +51,64 @@ Used by the routines at <a href="36647.html">36647</a> and <a href="36675.html">
 <td class="register-desc">Pointer to location within ASCII string</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36692"></span>36692</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load ASCII character at HL into A</td>
+<td class="comment-1" rowspan="1">Load ASCII character at <span class="register">HL</span> into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36693"></span>36693</td>
 <td class="instruction">CP 48</td>
-<td class="comment-11" rowspan="1">If character is not a zero ("0")...</td>
+<td class="comment-1" rowspan="1">If character is not a zero ("0")...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36695"></span>36695</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36696"></span>36696</td>
 <td class="instruction">LD (HL),32</td>
-<td class="comment-11" rowspan="1">Replace the zero character with a space (i.e. remove leading zeroes from number)</td>
+<td class="comment-1" rowspan="1">Replace the zero character with a space (i.e. remove leading zeroes from number)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36698"></span>36698</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance to next character in string</td>
+<td class="comment-1" rowspan="1">Advance to next character in string</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36699"></span>36699</td>
 <td class="instruction">DEC C</td>
-<td class="comment-11" rowspan="1">Decrease C (number of remaining digits to process)</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">C</span> (number of remaining digits to process)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36700"></span>36700</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">Return if last digit has been processed</td>
+<td class="comment-1" rowspan="1">Return if last digit has been processed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36701"></span>36701</td>
 <td class="instruction">JR 36692</td>
-<td class="comment-11" rowspan="1">Loop back for next digit</td>
+<td class="comment-1" rowspan="1">Loop back for next digit</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36675.html">36675</a></span></td>
+<td class="prev">
+Prev: <a href="36675.html">36675</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36692">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36703.html">36703</a></span></td>
+<td class="next">
+Next: <a href="36703.html">36703</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 41381</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,112 +20,97 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="41354.html">41354</a></span></td>
+<td class="prev">
+Prev: <a href="41354.html">41354</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#41381">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="41412.html">41412</a></span></td>
+<td class="next">
+Next: <a href="41412.html">41412</a>
+</td>
 </tr>
 </table>
-<div class="description">41381: Update State of Skeleton (Level 4) and Store Current Position in Script Data</div>
+<div class="description">41381: Update state of skeleton (level 4) and store current position in script data</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="41211.html">41211</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41381"></span>41381</td>
 <td class="instruction">LD IX,45404</td>
-<td class="comment-11" rowspan="1">Load IX with address of complex state data for Skeleton (Level 4)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with address of complex state data for skeleton (level 4)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41385"></span>41385</td>
 <td class="instruction">BIT 2,(IX+9)</td>
-<td class="comment-11" rowspan="1">If Skeleton's Removed From Game Flag is set...</td>
+<td class="comment-1" rowspan="1">If skeleton's removed-from-game flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41389"></span>41389</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41390"></span>41390</td>
 <td class="instruction">BIT 1,(IX+9)</td>
-<td class="comment-11" rowspan="1">If Skeleton's Is Dying Flag is set...</td>
+<td class="comment-1" rowspan="1">If skeleton's is-dying flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41394"></span>41394</td>
 <td class="instruction">JR NZ,<a href="41424.html">41424</a></td>
-<td class="comment-11" rowspan="1">...then update state of Skeleton (dying) and return</td>
+<td class="comment-1" rowspan="1">...then update state of skeleton (dying) and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41396"></span>41396</td>
 <td class="instruction">LD HL,(41230)</td>
-<td class="comment-11" rowspan="1">Load current position in Skeleton's script data from <a href="41230.html">41230</a> into HL...</td>
+<td class="comment-1" rowspan="1">Load current position in skeleton's script data from <a href="41230.html">41230</a> into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41399"></span>41399</td>
 <td class="instruction">LD (34277),HL</td>
-<td class="comment-11" rowspan="1">...and store at <a href="34277.html">34277</a> as position in script currently running</td>
+<td class="comment-1" rowspan="1">...and store at <a href="34277.html">34277</a> as position in script currently running</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41402"></span>41402</td>
 <td class="instruction">CALL <a href="41498.html">41498</a></td>
-<td class="comment-11" rowspan="1">Kill Berk if he collides with Skeleton</td>
+<td class="comment-1" rowspan="1">Kill Berk if he collides with skeleton</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41405"></span>41405</td>
 <td class="instruction">LD HL,(34277)</td>
-<td class="comment-11" rowspan="1">Store address (current position in script data) stored at <a href="34277.html">34277</a>...</td>
+<td class="comment-1" rowspan="1">Store address (current position in script data) stored at <a href="34277.html">34277</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41408"></span>41408</td>
 <td class="instruction">LD (41230),HL</td>
-<td class="comment-11" rowspan="1">...at <a href="41230.html">41230</a> as current position in Skeleton's script data</td>
+<td class="comment-1" rowspan="1">...at <a href="41230.html">41230</a> as current position in skeleton's script data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41411"></span>41411</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="41354.html">41354</a></span></td>
+<td class="prev">
+Prev: <a href="41354.html">41354</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#41381">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="41412.html">41412</a></span></td>
+<td class="next">
+Next: <a href="41412.html">41412</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

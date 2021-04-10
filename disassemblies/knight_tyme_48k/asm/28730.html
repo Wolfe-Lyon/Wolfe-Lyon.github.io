@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 28730</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,142 +20,122 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="28716.html">28716</a></span></td>
+<td class="prev">
+Prev: <a href="28716.html">28716</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#28730">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="28753.html">28753</a></span></td>
+<td class="next">
+Next: <a href="28753.html">28753</a>
+</td>
 </tr>
 </table>
-<div class="description">28730: Room Drawing (255) - Read Start Co-Ordinates, Repeat Count and UDG Code and Print Run of Characters</div>
+<div class="description">28730: Room drawing: (255) Read start coordinates, repeat count and UDG code and print run of characters</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="27762.html">27762</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="28730"></span>28730</td>
 <td class="instruction">CALL <a href="28833.html">28833</a></td>
-<td class="comment-11" rowspan="1">Move Virtual Bitmap Cursor to Co-Ordinates Specified in Layout Data</td>
+<td class="comment-1" rowspan="1">Move virtual bitmap cursor to coordinates specified in layout data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28733"></span>28733</td>
 <td class="instruction">LD B,(HL)</td>
-<td class="comment-11" rowspan="1">Load repeat count into B...</td>
+<td class="comment-1" rowspan="1">Load repeat count into <span class="register">B</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28734"></span>28734</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...and advance HL to next parameter</td>
+<td class="comment-1" rowspan="1">...and advance <span class="register">HL</span> to next parameter</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28735"></span>28735</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load UDG code to print into A...</td>
+<td class="comment-1" rowspan="1">Load UDG code to print into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28736"></span>28736</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...and advance HL to next parameter</td>
+<td class="comment-1" rowspan="1">...and advance <span class="register">HL</span> to next parameter</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28737"></span>28737</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (current position in room layout data)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (current position in room layout data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="28738"></span>28738</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = remaining number of UDGs to print)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = remaining number of UDGs to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28739"></span>28739</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = UDG code to print)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = UDG code to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28740"></span>28740</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (current position in room layout data)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (current position in room layout data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28741"></span>28741</td>
 <td class="instruction">CALL <a href="54097.html">54097</a></td>
-<td class="comment-11" rowspan="1">Print text/graphic character in A and advance Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">Print text/graphic character in <span class="register">A</span> and advance bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28744"></span>28744</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (current position in room layout data)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (current position in room layout data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28745"></span>28745</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = UDG code to print)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = UDG code to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28746"></span>28746</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = remaining number of UDGs to print)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = remaining number of UDGs to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28747"></span>28747</td>
 <td class="instruction">DJNZ 28738</td>
-<td class="comment-11" rowspan="1">Decrease remaining number of UDGs to print and loop back to <a href="28730.html#28738">28738</a></td>
+<td class="comment-1" rowspan="1">Decrease remaining number of UDGs to print and loop back to <a href="28730.html#28738">28738</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28749"></span>28749</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (current position in room layout data)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (current position in room layout data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28750"></span>28750</td>
 <td class="instruction">JP <a href="27762.html#27894">27894</a></td>
-<td class="comment-11" rowspan="1">Jump back to <a href="27762.html#27894">27894</a> for next byte of room layout data</td>
+<td class="comment-1" rowspan="1">Jump back to <a href="27762.html#27894">27894</a> for next byte of room layout data</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="28716.html">28716</a></span></td>
+<td class="prev">
+Prev: <a href="28716.html">28716</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#28730">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="28753.html">28753</a></span></td>
+<td class="next">
+Next: <a href="28753.html">28753</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 55685</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55651.html">55651</a></span></td>
+<td class="prev">
+Prev: <a href="55651.html">55651</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55685">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55726.html">55726</a></span></td>
+<td class="next">
+Next: <a href="55726.html">55726</a>
+</td>
 </tr>
 </table>
-<div class="description">55685: Display Cyan "Game Over" Window and Return to Control Selection Menu</div>
+<div class="description">55685: Display cyan "game over" window and return to control selection menu</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="27136.html">27136</a>, <a href="27762.html">27762</a>, <a href="28470.html">28470</a>, <a href="28482.html">28482</a>, <a href="28494.html">28494</a>, <a href="28542.html">28542</a>, <a href="29488.html">29488</a>, <a href="30940.html">30940</a>, <a href="31312.html">31312</a>, <a href="31468.html">31468</a>, <a href="31688.html">31688</a>, <a href="32252.html">32252</a> and <a href="53937.html">53937</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -41,117 +46,104 @@ Used by the routines at <a href="27136.html">27136</a>, <a href="27762.html">277
 <td class="register">HL</td>
 <td class="register-desc">Points to location of a string</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55685"></span>55685</td>
 <td class="instruction">RES 0,(IY+65)</td>
-<td class="comment-11" rowspan="1">Reset Game In Progress Flag (IY = 23610)</td>
+<td class="comment-1" rowspan="1">Reset game-in-progress flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55689"></span>55689</td>
 <td class="instruction">LD DE,37283</td>
-<td class="comment-11" rowspan="1">Adjust height of window 24 ("Game Over" Window) to accommodate text...</td>
+<td class="comment-1" rowspan="1">Adjust height of window 24 ("game over" window) to accommodate text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55692"></span>55692</td>
 <td class="instruction">CALL <a href="33774.html">33774</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55695"></span>55695</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (points to first character of text to display)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (points to first character of text to display)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55696"></span>55696</td>
 <td class="instruction">LD A,24</td>
-<td class="comment-11" rowspan="1">Draw Window 24 ("Game Over" Window)...</td>
+<td class="comment-1" rowspan="1">Draw window 24 ("game over" window)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55698"></span>55698</td>
 <td class="instruction">CALL <a href="34990.html">34990</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55701"></span>55701</td>
 <td class="instruction">LD HL,44530</td>
-<td class="comment-11" rowspan="1">Point to string for percentage completion</td>
+<td class="comment-1" rowspan="1">Point to string for percentage completion</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55704"></span>55704</td>
 <td class="instruction">LD DE,44542</td>
-<td class="comment-11" rowspan="1">Point to string for time left</td>
+<td class="comment-1" rowspan="1">Point to string for time left</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55707"></span>55707</td>
 <td class="instruction">CALL <a href="33657.html">33657</a></td>
-<td class="comment-11" rowspan="1">Insert current time and score into "Time Left" and "Percentage Completion" texts</td>
+<td class="comment-1" rowspan="1">Insert current time and score into "time left" and "percentage completion" texts</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55710"></span>55710</td>
 <td class="instruction">LD HL,44506</td>
-<td class="comment-11" rowspan="1">Point HL at "GAME OVER / TOTAL COMPLETION XX% / TIME LEFT XX DAYS" text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "GAME OVER / TOTAL COMPLETION XX% / TIME LEFT XX DAYS" text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55713"></span>55713</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">...and print to screen</td>
+<td class="comment-1" rowspan="1">...and print to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55716"></span>55716</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (points to first character of text to display)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (points to first character of text to display)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55717"></span>55717</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">Print text to screen</td>
+<td class="comment-1" rowspan="1">Print text to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55720"></span>55720</td>
 <td class="instruction">CALL <a href="55138.html">55138</a></td>
-<td class="comment-11" rowspan="1">Display "PRESS FIRE TO CONTINUE" Window and Wait for Fire to be Pressed</td>
+<td class="comment-1" rowspan="1">Display "PRESS FIRE TO CONTINUE" window and wait for fire to be pressed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55723"></span>55723</td>
 <td class="instruction">JP <a href="26670.html">26670</a></td>
-<td class="comment-11" rowspan="1">Display and handle Input Device Selection Menu</td>
+<td class="comment-1" rowspan="1">Display and handle input device selection menu</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55651.html">55651</a></span></td>
+<td class="prev">
+Prev: <a href="55651.html">55651</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55685">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55726.html">55726</a></span></td>
+<td class="next">
+Next: <a href="55726.html">55726</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

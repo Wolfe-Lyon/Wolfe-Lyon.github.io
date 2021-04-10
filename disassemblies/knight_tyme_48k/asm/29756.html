@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 29756</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,632 +20,532 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29619.html">29619</a></span></td>
+<td class="prev">
+Prev: <a href="29619.html">29619</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29756">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="30001.html">30001</a></span></td>
+<td class="next">
+Next: <a href="30001.html">30001</a>
+</td>
 </tr>
 </table>
-<div class="description">29756: Process Command to Give an Object</div>
+<div class="description">29756: Process command to give an object</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="55726.html">55726</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29756"></span>29756</td>
 <td class="instruction">CALL <a href="33834.html">33834</a></td>
-<td class="comment-11" rowspan="1">Display "YOU ARE NOT CARRYING ANYTHING" Window and set Zero Flag if Magic Knight's inventory (carrying) is empty</td>
+<td class="comment-1" rowspan="1">Display "YOU ARE NOT CARRYING ANYTHING" window and set zero flag if Magic Knight's inventory (carrying) is empty</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29759"></span>29759</td>
 <td class="instruction">JP Z,<a href="29330.html#29482">29482</a></td>
-<td class="comment-11" rowspan="1">If MK's inventory (carrying) is empty then set his available action flags, validate I.D. Card if appropriate and jump to start of Main Game Loop (<a href="29330.html#29482">29482</a>)</td>
+<td class="comment-1" rowspan="1">If Magic Knight's inventory (carrying) is empty then return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29762"></span>29762</td>
 <td class="instruction">LD IX,25164</td>
-<td class="comment-11" rowspan="1">Point IX at Magic Knight's current inventory (carrying)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at Magic Knight's current inventory (carrying)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29766"></span>29766</td>
 <td class="instruction">LD B,5</td>
-<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 5 (five inventory slots)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29768"></span>29768</td>
 <td class="instruction">LD HL,39065</td>
-<td class="comment-11" rowspan="1">Point HL at "GIVE WHICH OBJECT ?" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "GIVE WHICH OBJECT ?" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29771"></span>29771</td>
 <td class="instruction">LD DE,39077</td>
-<td class="comment-11" rowspan="1">Point DE at "GIVE THE " text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at "GIVE THE " text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29774"></span>29774</td>
 <td class="instruction">CALL <a href="33952.html">33952</a></td>
-<td class="comment-11" rowspan="1">Show list of objects in Magic Knight's inventory (carrying) as a menu and load A with selected item index</td>
+<td class="comment-1" rowspan="1">Show list of objects in Magic Knight's inventory (carrying) as a menu and load <span class="register">A</span> with selected item index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29777"></span>29777</td>
 <td class="instruction">LD HL,25164</td>
-<td class="comment-11" rowspan="1">Point HL at start of Characters' Current Inventories Table</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of characters' current inventories table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29780"></span>29780</td>
 <td class="instruction">CALL <a href="33911.html">33911</a></td>
-<td class="comment-11" rowspan="1">Print name of object in inventory slot A of inventory data at HL in Command Summary Window</td>
+<td class="comment-1" rowspan="1">Print name of object in inventory slot <span class="register">A</span> of inventory data at <span class="register">HL</span> in command summary window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29783"></span>29783</td>
 <td class="instruction">LD DE,39082</td>
-<td class="comment-11" rowspan="1">Point DE at "TO" text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at "TO" text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29786"></span>29786</td>
 <td class="instruction">CALL <a href="54283.html">54283</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at top of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29789"></span>29789</td>
 <td class="instruction">LD HL,38658</td>
-<td class="comment-11" rowspan="1">Point HL at "GIVE AN OBJECT TO ?" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "GIVE AN OBJECT TO ?" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29792"></span>29792</td>
 <td class="instruction">LD DE,0</td>
-<td class="comment-11" rowspan="1">Load DE with zero (i.e. no Command Summary Text)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with zero (i.e. no command summary text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29795"></span>29795</td>
 <td class="instruction">CALL <a href="34122.html">34122</a></td>
-<td class="comment-11" rowspan="1">Display and process input for Character Selection Menu (current room's characters only), setting Current Character</td>
+<td class="comment-1" rowspan="1">Display and process input for character selection menu (current room's characters only), setting Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29798"></span>29798</td>
 <td class="instruction">JP Z,<a href="29330.html#29482">29482</a></td>
-<td class="comment-11" rowspan="1">If there are no characters in the room then set MK's available action flags, validate I.D. Card if appropriate and jump to start of Main Game Loop (<a href="29330.html#29482">29482</a>)</td>
+<td class="comment-1" rowspan="1">If there are no characters in the room then return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29801"></span>29801</td>
 <td class="instruction">CALL <a href="55115.html">55115</a></td>
-<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display execute / reject command window and return here if execute chosen, else exit to main game loop</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29804"></span>29804</td>
 <td class="instruction">LD IX,44251</td>
-<td class="comment-11" rowspan="1">Point IX at Table of Characters' Unwanted Objects</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at table of characters' unwanted objects</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29808"></span>29808</td>
 <td class="instruction">CALL <a href="33863.html">33863</a></td>
-<td class="comment-11" rowspan="1">If Current Character does not want Current Object...</td>
+<td class="comment-1" rowspan="1">If Current Character does not want Current Object...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29811"></span>29811</td>
 <td class="instruction">JP Z,<a href="55222.html">55222</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character] DOES NOT WANT THE [Object]" Window (13), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character] DOES NOT WANT THE [Object]" window (13) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29814"></span>29814</td>
 <td class="instruction">LD A,4</td>
-<td class="comment-11" rowspan="1">Increase Current Character's happiness by 4...</td>
+<td class="comment-1" rowspan="1">Increase Current Character's happiness by 4...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29816"></span>29816</td>
 <td class="instruction">CALL <a href="33569.html">33569</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29819"></span>29819</td>
 <td class="instruction">LD A,(29526)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29822"></span>29822</td>
 <td class="instruction">CP 14</td>
-<td class="comment-11" rowspan="1">If the selected object is the McTablet Food...</td>
+<td class="comment-1" rowspan="1">If the selected object is the McTablet Food...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29824"></span>29824</td>
 <td class="instruction">JP Z,29907</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="29756.html#29907">29907</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="29756.html#29907">29907</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29827"></span>29827</td>
 <td class="instruction">LD A,(29632)</td>
-<td class="comment-11" rowspan="1">Point IX at current inventory of Current Character...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at current inventory of Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29830"></span>29830</td>
 <td class="instruction">CALL <a href="33585.html">33585</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29833"></span>29833</td>
 <td class="instruction">LD A,(IX+4)</td>
-<td class="comment-11" rowspan="1">If last inventory slot of character is not zero...</td>
+<td class="comment-1" rowspan="1">If last inventory slot of character is not zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29836"></span>29836</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...(i.e. last inventory slot is occupied)...</td>
+<td class="comment-1" rowspan="1">...(i.e. last inventory slot is occupied)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29837"></span>29837</td>
 <td class="instruction">JP NZ,<a href="55212.html">55212</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character]'S HANDS ARE FULL" Window (13), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character]'S HANDS ARE FULL" window (13) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29840"></span>29840</td>
 <td class="instruction">LD BC,1280</td>
-<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots) and C with zero</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 5 (five inventory slots) and <span class="register">C</span> with zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29843"></span>29843</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load content of current inventory slot into A</td>
+<td class="comment-1" rowspan="1">Load content of current inventory slot into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29846"></span>29846</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If this inventory slot is empty...</td>
+<td class="comment-1" rowspan="1">If this inventory slot is empty...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29847"></span>29847</td>
 <td class="instruction">JR Z,29858</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="29756.html#29858">29858</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="29756.html#29858">29858</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29849"></span>29849</td>
 <td class="instruction">CALL <a href="33487.html">33487</a></td>
-<td class="comment-11" rowspan="1">Load A with weight of object in current slot...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with weight of object in current slot...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29852"></span>29852</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...and add to C (running total weight)...</td>
+<td class="comment-1" rowspan="1">...and add to <span class="register">C</span> (running total weight)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29853"></span>29853</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29854"></span>29854</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance to next inventory slot</td>
+<td class="comment-1" rowspan="1">Advance to next inventory slot</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29856"></span>29856</td>
 <td class="instruction">DJNZ 29843</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="29756.html#29843">29843</a> for next slot</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="29756.html#29843">29843</a> for next slot</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29858"></span>29858</td>
 <td class="instruction">LD A,(29526)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29861"></span>29861</td>
 <td class="instruction">CALL <a href="33487.html">33487</a></td>
-<td class="comment-11" rowspan="1">Load A with weight of object being given...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with weight of object being given...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29864"></span>29864</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...and add this to total in C also...</td>
+<td class="comment-1" rowspan="1">...and add this to total in <span class="register">C</span> also...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29865"></span>29865</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29866"></span>29866</td>
 <td class="instruction">LD A,(29632)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29869"></span>29869</td>
 <td class="instruction">LD E,0</td>
-<td class="comment-11" rowspan="1">Point HL at character's current strength...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at character's current strength...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29871"></span>29871</td>
 <td class="instruction">CALL <a href="33541.html">33541</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29874"></span>29874</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load strength into A...</td>
+<td class="comment-1" rowspan="1">Load strength into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29875"></span>29875</td>
 <td class="instruction">AND 127</td>
-<td class="comment-11" rowspan="1">...and reset Bit 7 (unused)</td>
+<td class="comment-1" rowspan="1">...and reset bit 7 (unused)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29877"></span>29877</td>
 <td class="instruction">CP C</td>
-<td class="comment-11" rowspan="1">If character's strength is less than total weight of objects...</td>
+<td class="comment-1" rowspan="1">If character's strength is less than total weight of objects...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29878"></span>29878</td>
 <td class="instruction">JP C,<a href="55217.html">55217</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character] IS NOT STRONG ENOUGH" Window (13), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character] IS NOT STRONG ENOUGH" window (13) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29881"></span>29881</td>
 <td class="instruction">CALL <a href="33500.html">33500</a></td>
-<td class="comment-11" rowspan="1">Load A with Current Character's Happiness Level...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Current Character's happiness level...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29884"></span>29884</td>
 <td class="instruction">CP 25</td>
-<td class="comment-11" rowspan="1">...and if this is less than 25...</td>
+<td class="comment-1" rowspan="1">...and if this is less than 25...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29886"></span>29886</td>
 <td class="instruction">JP C,<a href="55222.html">55222</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character] DOES NOT WANT THE [Object]" Window (13), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character] DOES NOT WANT THE [Object]" window (13) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29889"></span>29889</td>
 <td class="instruction">LD A,(29526)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Object...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Object...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29892"></span>29892</td>
 <td class="instruction">LD (IX+0),A</td>
-<td class="comment-11" rowspan="1">...and load this object into the character's first empty slot</td>
+<td class="comment-1" rowspan="1">...and load this object into the character's first empty slot</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29895"></span>29895</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load index of object into C</td>
+<td class="comment-1" rowspan="1">Load index of object into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29896"></span>29896</td>
 <td class="instruction">LD B,5</td>
-<td class="comment-11" rowspan="1">Remove object C from Magic Knight's current inventory (carrying)...</td>
+<td class="comment-1" rowspan="1">Remove object <span class="register">C</span> from Magic Knight's current inventory (carrying)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29898"></span>29898</td>
 <td class="instruction">LD HL,25164</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29901"></span>29901</td>
 <td class="instruction">CALL <a href="36254.html">36254</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29904"></span>29904</td>
 <td class="instruction">JP <a href="29330.html#29467">29467</a></td>
-<td class="comment-11" rowspan="1">Show Magic Knight's current inventory and jump back to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Show Magic Knight's current inventory and jump back to main game loop</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29907"></span>29907</td>
 <td class="instruction">CALL <a href="33546.html">33546</a></td>
-<td class="comment-11" rowspan="1">Point IX at Current Character's current stats</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at Current Character's current stats</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29910"></span>29910</td>
 <td class="instruction">BIT 7,(IX+6)</td>
-<td class="comment-11" rowspan="1">If character's Asleep Flag is reset...</td>
+<td class="comment-1" rowspan="1">If character's asleep flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29914"></span>29914</td>
 <td class="instruction">JR Z,29930</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="29756.html#29930">29930</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="29756.html#29930">29930</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29916"></span>29916</td>
 <td class="instruction">LD A,28</td>
-<td class="comment-11" rowspan="1">Draw Window 28...</td>
+<td class="comment-1" rowspan="1">Draw window 28...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29918"></span>29918</td>
 <td class="instruction">CALL <a href="34990.html">34990</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29921"></span>29921</td>
 <td class="instruction">LD HL,38361</td>
-<td class="comment-11" rowspan="1">Point HL at "[Current Character's name] IS ASLEEP" text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "[Current Character's name] IS ASLEEP" text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29924"></span>29924</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">...and print to screen</td>
+<td class="comment-1" rowspan="1">...and print to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29927"></span>29927</td>
 <td class="instruction">JP <a href="29330.html#29479">29479</a></td>
-<td class="comment-11" rowspan="1">Display "PRESS FIRE TO CONTINUE" Window and wait for input and return to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display "PRESS FIRE TO CONTINUE" window and wait for input and return to main game loop</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29930"></span>29930</td>
 <td class="instruction">LD C,25</td>
-<td class="comment-11" rowspan="1">Set strength increment to 25</td>
+<td class="comment-1" rowspan="1">Set strength increment to 25</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29932"></span>29932</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load character's current strength into A...</td>
+<td class="comment-1" rowspan="1">Load character's current strength into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29935"></span>29935</td>
 <td class="instruction">AND 127</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29937"></span>29937</td>
 <td class="instruction">CALL <a href="53703.html">53703</a></td>
-<td class="comment-11" rowspan="1">Increase value by 25, up to maximum of 100</td>
+<td class="comment-1" rowspan="1">Increase value by 25, up to maximum of 100</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29940"></span>29940</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load updated strength value into C</td>
+<td class="comment-1" rowspan="1">Load updated strength value into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29941"></span>29941</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load updated strength back into character's stats...</td>
+<td class="comment-1" rowspan="1">Load updated strength back into character's stats...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29944"></span>29944</td>
 <td class="instruction">AND 128</td>
-<td class="comment-11" rowspan="1">...preserving bit 7 (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">...preserving bit 7 (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29946"></span>29946</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29947"></span>29947</td>
 <td class="instruction">LD (IX+0),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29950"></span>29950</td>
 <td class="instruction">LD C,20</td>
-<td class="comment-11" rowspan="1">Set stamina increment to 20</td>
+<td class="comment-1" rowspan="1">Set stamina increment to 20</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29952"></span>29952</td>
 <td class="instruction">LD A,(IX+2)</td>
-<td class="comment-11" rowspan="1">Load character's current stamina into A...</td>
+<td class="comment-1" rowspan="1">Load character's current stamina into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29955"></span>29955</td>
 <td class="instruction">AND 127</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29957"></span>29957</td>
 <td class="instruction">CALL <a href="53703.html">53703</a></td>
-<td class="comment-11" rowspan="1">Increase value by 20, up to maximum of 100</td>
+<td class="comment-1" rowspan="1">Increase value by 20, up to maximum of 100</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29960"></span>29960</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load updated stamina value into C</td>
+<td class="comment-1" rowspan="1">Load updated stamina value into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29961"></span>29961</td>
 <td class="instruction">LD A,(IX+2)</td>
-<td class="comment-11" rowspan="1">Load updated stamina back into character's stats...</td>
+<td class="comment-1" rowspan="1">Load updated stamina back into character's stats...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29964"></span>29964</td>
 <td class="instruction">AND 128</td>
-<td class="comment-11" rowspan="1">...preserving bit 7 (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">...preserving bit 7 (<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29966"></span>29966</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29967"></span>29967</td>
 <td class="instruction">LD (IX+2),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29970"></span>29970</td>
 <td class="instruction">LD A,(23672)</td>
-<td class="comment-11" rowspan="1">Load A with LSB of FRAMES System Variable (pseudo-random number)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with LSB of <a href="23670.html#23672">frame counter</a> (pseudo-random number)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29973"></span>29973</td>
 <td class="instruction">AND 3</td>
-<td class="comment-11" rowspan="1">Discard all but lower two bits, leaving a random number between 0 - 3 (inclusive)</td>
+<td class="comment-1" rowspan="1">Discard all but lower two bits, leaving a random number between 0 - 3 (inclusive)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29975"></span>29975</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load this number into B</td>
+<td class="comment-1" rowspan="1">Load this number into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29976"></span>29976</td>
 <td class="instruction">LD HL,44276</td>
-<td class="comment-11" rowspan="1">Point HL at start of Character's Responses to McTablet Flavours</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of character's responses to McTablet flavours</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29979"></span>29979</td>
 <td class="instruction">CALL <a href="54266.html#54269">54269</a></td>
-<td class="comment-11" rowspan="1">Advance HL to B-th entry in list of zero-terminated strings starting at HL</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to <span class="register">B</span>-th entry in list of zero-terminated strings starting at <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29982"></span>29982</td>
 <td class="instruction">LD DE,37195</td>
-<td class="comment-11" rowspan="1">Adjust height of window 13 to accommodate text...</td>
+<td class="comment-1" rowspan="1">Adjust height of window 13 to accommodate text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29985"></span>29985</td>
 <td class="instruction">CALL <a href="33774.html">33774</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29988"></span>29988</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to start of text to print)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to start of text to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29989"></span>29989</td>
 <td class="instruction">LD A,13</td>
-<td class="comment-11" rowspan="1">Draw Window 13...</td>
+<td class="comment-1" rowspan="1">Draw window 13...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29991"></span>29991</td>
 <td class="instruction">CALL <a href="34990.html">34990</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29994"></span>29994</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to start of text to print)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to start of text to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29995"></span>29995</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">Print text to screen</td>
+<td class="comment-1" rowspan="1">Print text to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29998"></span>29998</td>
 <td class="instruction">JP <a href="29330.html#29479">29479</a></td>
-<td class="comment-11" rowspan="1">Display "PRESS FIRE TO CONTINUE" Window and wait for input and return to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display "PRESS FIRE TO CONTINUE" window and wait for input and return to main game loop</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29619.html">29619</a></span></td>
+<td class="prev">
+Prev: <a href="29619.html">29619</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29756">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="30001.html">30001</a></span></td>
+<td class="next">
+Next: <a href="30001.html">30001</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 54983</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,27 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54976.html">54976</a></span></td>
+<td class="prev">
+Prev: <a href="54976.html">54976</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54983">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54996.html">54996</a></span></td>
+<td class="next">
+Next: <a href="54996.html">54996</a>
+</td>
 </tr>
 </table>
-<div class="description">54983: Interrupt Routine: Update Glowing Blocks' Attribute to Next Colour in Sequence</div>
+<div class="description">54983: Interrupt routine: Update glowing blocks' attribute to next colour in sequence</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="54853.html">54853</a> and <a href="54955.html">54955</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -51,59 +50,56 @@ Used by the routines at <a href="54853.html">54853</a> and <a href="54955.html">
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54983"></span>54983</td>
 <td class="instruction">LD A,(23409)</td>
-<td class="comment-11" rowspan="1">Load A with current INK colour of glowing blocks</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with current INK colour of glowing blocks</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54986"></span>54986</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">Advance to next colour in sequence</td>
+<td class="comment-1" rowspan="1">Advance to next colour in sequence</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54987"></span>54987</td>
 <td class="instruction">AND 7</td>
-<td class="comment-11" rowspan="1">Ensure that only INK attributes are used, rolling back over to zero (black) after seven (white)</td>
+<td class="comment-1" rowspan="1">Ensure that only INK attributes are used, rolling back over to zero (black) after seven (white)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54989"></span>54989</td>
 <td class="instruction">JR Z,54986</td>
-<td class="comment-11" rowspan="1">We don't want "black" light, so advance from zero (black) to one (blue) if black</td>
+<td class="comment-1" rowspan="1">We don't want "black" light, so advance from zero (black) to one (blue) if black</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54991"></span>54991</td>
 <td class="instruction">LD (23409),A</td>
-<td class="comment-11" rowspan="1">Place updated attribute back in memory</td>
+<td class="comment-1" rowspan="1">Place updated attribute back in memory</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54994"></span>54994</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">Copy new attribute into E</td>
+<td class="comment-1" rowspan="1">Copy new attribute into <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54995"></span>54995</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54976.html">54976</a></span></td>
+<td class="prev">
+Prev: <a href="54976.html">54976</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54983">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54996.html">54996</a></span></td>
+<td class="next">
+Next: <a href="54996.html">54996</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

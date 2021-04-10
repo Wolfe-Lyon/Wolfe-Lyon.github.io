@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 41504</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="41477.html">41477</a></span></td>
+<td class="prev">
+Prev: <a href="41477.html">41477</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#41504">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="41545.html">41545</a></span></td>
+<td class="next">
+Next: <a href="41545.html">41545</a>
+</td>
 </tr>
 </table>
-<div class="description">41504: Copy 2x4 (Characters) Region of Display File into Temporary Storage at <a href="23299.html">23299</a></div>
+<div class="description">41504: Copy 2 &times; 4 (characters) region of display file into temporary storage</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="39958.html">39958</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,182 +47,154 @@ Used by the routine at <a href="39958.html">39958</a>.
 <td class="register-desc">Address of position data for a character, or Magic Knight</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41504"></span>41504</td>
 <td class="instruction">LD DE,23299</td>
-<td class="comment-11" rowspan="1">Load DE with start address of temporary storage area</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with start address of temporary storage area</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41507"></span>41507</td>
 <td class="instruction">LD C,(IX+1)</td>
-<td class="comment-11" rowspan="1">Load C with x-coordinate of area to copy</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with x-coordinate of area to copy</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41510"></span>41510</td>
 <td class="instruction">LD B,(IX+2)</td>
-<td class="comment-11" rowspan="1">Load B with y-coordinate of area to copy...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with y-coordinate of area to copy...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41513"></span>41513</td>
 <td class="instruction">DEC B</td>
-<td class="comment-11" rowspan="1">...and decrease by one</td>
+<td class="comment-1" rowspan="1">...and decrease by one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41514"></span>41514</td>
 <td class="instruction">LD (41549),BC</td>
-<td class="comment-11" rowspan="1">Store x- and y-coordinates as operand of instruction at <a href="41545.html#41548">41548</a></td>
+<td class="comment-1" rowspan="1">Store x- and y-coordinates as operand of instruction at <a href="41545.html#41548">41548</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41518"></span>41518</td>
 <td class="instruction">LD A,4</td>
-<td class="comment-11" rowspan="1">Load A with 4 (as Magic Knight and other characters span four character blocks in height)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 4 (as Magic Knight and other characters span four character blocks in height)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41520"></span>41520</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = remaining height in characters to copy)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = remaining height in characters to copy)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41521"></span>41521</td>
 <td class="instruction">INC B</td>
-<td class="comment-11" rowspan="1">Increase y-coordinate by one</td>
+<td class="comment-1" rowspan="1">Increase y-coordinate by one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41522"></span>41522</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = current y-coordinate, C = current x-coordinate)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = current y-coordinate, <span class="register">C</span> = current x-coordinate)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41523"></span>41523</td>
 <td class="instruction">CALL <a href="63203.html">63203</a></td>
-<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+<td class="comment-1" rowspan="1">Move virtual cursor (bitmap) to display file address for coordinates x=<span class="register">C</span>, y=<span class="register">B</span> and load address into <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41526"></span>41526</td>
 <td class="instruction">LD B,8</td>
-<td class="comment-11" rowspan="1">Load B with 8 (as there are eight pixel rows per character)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 8 (as there are eight pixel rows per character)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41528"></span>41528</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Copy byte from current location in Display File...</td>
+<td class="comment-1" rowspan="1">Copy byte from current location in display file...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41529"></span>41529</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">...to temporary storage area starting at <a href="23299.html">23299</a></td>
+<td class="comment-1" rowspan="1">...to temporary storage area starting at <a href="23299.html">23299</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41530"></span>41530</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance right one character in Display File</td>
+<td class="comment-1" rowspan="1">Advance right one character in display file</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41531"></span>41531</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Advance to next byte in temporary storage area</td>
+<td class="comment-1" rowspan="1">Advance to next byte in temporary storage area</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41532"></span>41532</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Copy byte from current location in Display File...</td>
+<td class="comment-1" rowspan="1">Copy byte from current location in display file...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41533"></span>41533</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">...to temporary storage area starting at <a href="23299.html">23299</a></td>
+<td class="comment-1" rowspan="1">...to temporary storage area starting at <a href="23299.html">23299</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41534"></span>41534</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Advance to next byte in temporary storage area</td>
+<td class="comment-1" rowspan="1">Advance to next byte in temporary storage area</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41535"></span>41535</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move left one character...</td>
+<td class="comment-1" rowspan="1">Move left one character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41536"></span>41536</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">...and down one pixel in Display File</td>
+<td class="comment-1" rowspan="1">...and down one pixel in display file</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41537"></span>41537</td>
 <td class="instruction">DJNZ 41528</td>
-<td class="comment-11" rowspan="1">Decrease B (remaining number of pixel rows) and loop back to <a href="41504.html#41528">41528</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (remaining number of pixel rows) and loop back to <a href="41504.html#41528">41528</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41539"></span>41539</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = current y-coordinate, C = current x-coordinate)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = current y-coordinate, <span class="register">C</span> = current x-coordinate)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41540"></span>41540</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = remaining height in characters to copy)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = remaining height in characters to copy)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41541"></span>41541</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">Decrease remaining number of character blocks to copy...</td>
+<td class="comment-1" rowspan="1">Decrease remaining number of character blocks to copy...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41542"></span>41542</td>
 <td class="instruction">JR NZ,41520</td>
-<td class="comment-11" rowspan="1">...and loop back to <a href="41504.html#41520">41520</a> if not zero</td>
+<td class="comment-1" rowspan="1">...and loop back to <a href="41504.html#41520">41520</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41544"></span>41544</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="41477.html">41477</a></span></td>
+<td class="prev">
+Prev: <a href="41477.html">41477</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#41504">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="41545.html">41545</a></span></td>
+<td class="next">
+Next: <a href="41545.html">41545</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

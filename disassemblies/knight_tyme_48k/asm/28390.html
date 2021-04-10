@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 28390</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="28364.html">28364</a></span></td>
+<td class="prev">
+Prev: <a href="28364.html">28364</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#28390">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="28432.html">28432</a></span></td>
+<td class="next">
+Next: <a href="28432.html">28432</a>
+</td>
 </tr>
 </table>
 <div class="description">28390: Draw a character</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="28364.html">28364</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -43,161 +48,137 @@ Used by the routine at <a href="28364.html">28364</a>.
 </tr>
 <tr>
 <td class="register">IX</td>
-<td class="register-desc">That character's entry in Table of Characters' Current Positions at <a href="25244.html">25244</a></td>
+<td class="register-desc">That character's entry in table of characters' current positions at <a href="25244.html">25244</a></td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="28390"></span>28390</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28391"></span>28391</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28393"></span>28393</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Load A with character's index...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with character's index...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28394"></span>28394</td>
 <td class="instruction">LD E,4</td>
-<td class="comment-11" rowspan="1">...and point HL at this character's Magic Level / Attribute value (in Characters' Current Stats Table)...</td>
+<td class="comment-1" rowspan="1">...and point <span class="register">HL</span> at this character's magic level / attribute value (in characters' current stats table)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28396"></span>28396</td>
 <td class="instruction">CALL <a href="33541.html">33541</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28399"></span>28399</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load character's Magic Level / Attribute into A...</td>
+<td class="comment-1" rowspan="1">Load character's magic level / attribute into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28400"></span>28400</td>
 <td class="instruction">LD (28442),A</td>
-<td class="comment-11" rowspan="1">...and modify instruction at <a href="28432.html#28441">28441</a> with this value</td>
+<td class="comment-1" rowspan="1">...and modify instruction at <a href="28432.html#28441">28441</a> with this value</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28403"></span>28403</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to Character Graphic Index...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to character graphic index...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28404"></span>28404</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...and load value into A</td>
+<td class="comment-1" rowspan="1">...and load value into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28405"></span>28405</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If this is zero...</td>
+<td class="comment-1" rowspan="1">If this is zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28406"></span>28406</td>
 <td class="instruction">JR Z,28428</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="28390.html#28428">28428</a> (i.e. don't draw the character)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="28390.html#28428">28428</a> (i.e. don't draw the character)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28408"></span>28408</td>
 <td class="instruction">LD C,(IX+1)</td>
-<td class="comment-11" rowspan="1">Load C with character's x-coordinate (characters)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with character's x-coordinate (characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28411"></span>28411</td>
 <td class="instruction">LD B,(IX+2)</td>
-<td class="comment-11" rowspan="1">Load B with character's y-coordinate (characters)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with character's y-coordinate (characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28414"></span>28414</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX (pointer to character's entry in Table of Characters' Current Positions)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span> (pointer to character's entry in table of characters' current positions)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28416"></span>28416</td>
 <td class="instruction">CALL <a href="54411.html">54411</a></td>
-<td class="comment-11" rowspan="1">Draw the graphic with lookup index A at character coordinates (C, B) with width = 2 characters and height = 4 characters</td>
+<td class="comment-1" rowspan="1">Draw the graphic with lookup index <span class="register">A</span> at character coordinates (<span class="register">C</span>, <span class="register">B</span>) with width 2 and height 4</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28419"></span>28419</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX (pointer to character's entry in Table of Characters' Current Positions)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span> (pointer to character's entry in table of characters' current positions)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28421"></span>28421</td>
 <td class="instruction">LD A,(23705)</td>
-<td class="comment-11" rowspan="1">If Player Attribute Update Flag is set (Player Attribute Update mode)...</td>
+<td class="comment-1" rowspan="1">If player-attribute-update flag is set (player attribute update mode)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28424"></span>28424</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28425"></span>28425</td>
 <td class="instruction">CALL NZ,<a href="28432.html">28432</a></td>
-<td class="comment-11" rowspan="1">...then paint the character's attributes</td>
+<td class="comment-1" rowspan="1">...then paint the character's attributes</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="28428"></span>28428</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28430"></span>28430</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28431"></span>28431</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="28364.html">28364</a></span></td>
+<td class="prev">
+Prev: <a href="28364.html">28364</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#28390">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="28432.html">28432</a></span></td>
+<td class="next">
+Next: <a href="28432.html">28432</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

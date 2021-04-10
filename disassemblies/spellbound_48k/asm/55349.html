@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 55349</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,244 +20,207 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55233.html">55233</a></span></td>
+<td class="prev">
+Prev: <a href="55233.html">55233</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55349">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55404.html">55404</a></span></td>
+<td class="next">
+Next: <a href="55404.html">55404</a>
+</td>
 </tr>
 </table>
-<div class="description">55349: Move the Lift to a Random Floor if Magic Knight is not Nearby</div>
+<div class="description">55349: Move the lift to a random floor if Magic Knight is not nearby</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="54996.html">54996</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55349"></span>55349</td>
 <td class="instruction">LD A,(65529)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current room into A</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's current room into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55352"></span>55352</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">Return is Magic Knight is in the Lift (room 0)...</td>
+<td class="comment-1" rowspan="1">Return if Magic Knight is in the lift (room 0)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55353"></span>55353</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55354"></span>55354</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">Return if Magic Knight is in a room that connects with the lift...</td>
+<td class="comment-1" rowspan="1">Return if Magic Knight is in a room that connects with the lift...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55355"></span>55355</td>
 <td class="instruction">AND 7</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55357"></span>55357</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55358"></span>55358</td>
 <td class="instruction">LD B,6</td>
-<td class="comment-11" rowspan="1">Load A with a random number less than or equal to 6...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with a random number less than or equal to 6...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55360"></span>55360</td>
 <td class="instruction">CALL <a href="38505.html">38505</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55363"></span>55363</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Copy random number into B</td>
+<td class="comment-1" rowspan="1">Copy random number into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55364"></span>55364</td>
 <td class="instruction">LD A,(23411)</td>
-<td class="comment-11" rowspan="1">Load A with game progress flags</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with game progress flags, part 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55367"></span>55367</td>
 <td class="instruction">AND 1</td>
-<td class="comment-11" rowspan="1">If the Lift is fixed...</td>
+<td class="comment-1" rowspan="1">If the lift is fixed...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55369"></span>55369</td>
 <td class="instruction">JR NZ,55378</td>
-<td class="comment-11" rowspan="1">...then jump to <a href="55349.html#55378">55378</a></td>
+<td class="comment-1" rowspan="1">...then jump to <a href="55349.html#55378">55378</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55371"></span>55371</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Else copy random number back to A</td>
+<td class="comment-1" rowspan="1">Else copy random number back to <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55372"></span>55372</td>
 <td class="instruction">CP 5</td>
-<td class="comment-11" rowspan="1">If random number is 5 or 6 then return...</td>
+<td class="comment-1" rowspan="1">If random number is 5 or 6 then return...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55374"></span>55374</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55375"></span>55375</td>
 <td class="instruction">CP 6</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55377"></span>55377</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55378"></span>55378</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC...</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55379"></span>55379</td>
 <td class="instruction">CALL <a href="33770.html">33770</a></td>
-<td class="comment-11" rowspan="1">...set the Lift as not being at any floor at all...</td>
+<td class="comment-1" rowspan="1">...set the lift as not being at any floor at all...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55382"></span>55382</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">...and restore BC value to AF</td>
+<td class="comment-1" rowspan="1">...and restore <span class="register">BC</span> value to <span class="register">AF</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55383"></span>55383</td>
 <td class="instruction">LD (23382),A</td>
-<td class="comment-11" rowspan="1">Set Lift control panel light corresponding with previous randomly generated number to glow</td>
+<td class="comment-1" rowspan="1">Set lift control panel light corresponding with previous randomly generated number to glow</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55386"></span>55386</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">Multiply A by eight...</td>
+<td class="comment-1" rowspan="1">Multiply <span class="register">A</span> by eight...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55387"></span>55387</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55388"></span>55388</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55389"></span>55389</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...and add one to get first room on "random" floor</td>
+<td class="comment-1" rowspan="1">...and add one to get first room on "random" floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55390"></span>55390</td>
 <td class="instruction">LD (41712),A</td>
-<td class="comment-11" rowspan="1">Set right-exit of Lift to first room on floor</td>
+<td class="comment-1" rowspan="1">Set right-exit of lift to first room on floor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55393"></span>55393</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">Double room number</td>
+<td class="comment-1" rowspan="1">Double room number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55394"></span>55394</td>
 <td class="instruction">LD D,0</td>
-<td class="comment-11" rowspan="1">Load into DE...</td>
+<td class="comment-1" rowspan="1">Load into <span class="register">DE</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55396"></span>55396</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55397"></span>55397</td>
 <td class="instruction">LD HL,41711</td>
-<td class="comment-11" rowspan="1">Point HL at start of room connectivity data</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of room connectivity data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55400"></span>55400</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Add offset for left-exit of first room on random floor...</td>
+<td class="comment-1" rowspan="1">Add offset for left-exit of first room on random floor...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55401"></span>55401</td>
 <td class="instruction">LD (HL),0</td>
-<td class="comment-11" rowspan="1">...and set this exit to lead to the Lift</td>
+<td class="comment-1" rowspan="1">...and set this exit to lead to the lift</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55403"></span>55403</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55233.html">55233</a></span></td>
+<td class="prev">
+Prev: <a href="55233.html">55233</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55349">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55404.html">55404</a></span></td>
+<td class="next">
+Next: <a href="55404.html">55404</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

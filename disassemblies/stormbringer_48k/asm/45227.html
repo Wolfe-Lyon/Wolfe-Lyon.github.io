@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 45227</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,58 +20,48 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45224.html">45224</a></span></td>
+<td class="prev">
+Prev: <a href="45224.html">45224</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45227">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45256.html">45256</a></span></td>
+<td class="next">
+Next: <a href="45256.html">45256</a>
+</td>
 </tr>
 </table>
-<div class="description">45227: "Command Character to Help" Routine for Aramis le Peux</div>
+<div class="description">45227: Command-character-to-help routine for Aramis Le Peux</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="64623.html">64623</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="45227"></span>45227</td>
 <td class="instruction">LD A,34</td>
-<td class="comment-11" rowspan="1">Set Zero Flag if Aramis le Peux is carrying the List of Clues, reset otherwise...</td>
+<td class="comment-1" rowspan="1">Set zero flag if Aramis Le Peux is carrying the List of Clues, reset otherwise...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45229"></span>45229</td>
 <td class="instruction">LD HL,24863</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45232"></span>45232</td>
 <td class="instruction">CALL <a href="45510.html#45513">45513</a></td>
-<td class="comment-11" rowspan="1">...(<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">...(<a href="../reference/facts.html#redundantinstructions">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45235"></span>45235</td>
 <td class="instruction">JP NZ,<a href="64285.html">64285</a></td>
-<td class="comment-11" rowspan="1">If Zero Flag is reset then display "[Character] CANNOT HELP YOU" Window (29), wait for Fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">If zero flag is reset then display "[Character] CANNOT HELP YOU" window (29) and return to game</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="45238"></span>
 <div class="comments">
 <div class="paragraph">
@@ -80,65 +71,61 @@ The operand of the instruction at <a href="45227.html#45238">45238</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45238"></span>45238</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Increase index of Current Clue...</td>
+<td class="comment-1" rowspan="1">Increase index of Current Clue...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45240"></span>45240</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45241"></span>45241</td>
 <td class="instruction">AND 7</td>
-<td class="comment-11" rowspan="1">...resetting to zero if greater than 7...</td>
+<td class="comment-1" rowspan="1">...resetting to zero if greater than 7...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45243"></span>45243</td>
 <td class="instruction">LD (45239),A</td>
-<td class="comment-11" rowspan="1">...and store at <a href="45227.html#45238">45239</a></td>
+<td class="comment-1" rowspan="1">...and store at <a href="45227.html#45238">45239</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45246"></span>45246</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load B with index of Current Clue</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with index of Current Clue</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45247"></span>45247</td>
 <td class="instruction">LD HL,55198</td>
-<td class="comment-11" rowspan="1">Point HL at start of list of Clue Texts</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of list of clue texts</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45250"></span>45250</td>
 <td class="instruction">CALL <a href="63332.html#63335">63335</a></td>
-<td class="comment-11" rowspan="1">Advance HL to B-th entry in list of zero-terminated strings starting at HL</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to <span class="register">B</span>-th entry in list of zero-terminated strings starting at <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45253"></span>45253</td>
 <td class="instruction">JP <a href="64301.html">64301</a></td>
-<td class="comment-11" rowspan="1">Display Current Clue Window (24), wait for Fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display Current Clue window (24) and return to game</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45224.html">45224</a></span></td>
+<td class="prev">
+Prev: <a href="45224.html">45224</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45227">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45256.html">45256</a></span></td>
+<td class="next">
+Next: <a href="45256.html">45256</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 42105</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,150 +20,126 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="42091.html">42091</a></span></td>
+<td class="prev">
+Prev: <a href="42091.html">42091</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#42105">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="42157.html">42157</a></span></td>
+<td class="next">
+Next: <a href="42157.html">42157</a>
+</td>
 </tr>
 </table>
-<div class="description">42105: Take an Object Routine: Robin of Shylock</div>
+<div class="description">42105: Take an object routine: Robin of Shylock</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Robin will refuse to surrender the Bow or any egg he may have. He will only surrender the Newspaper in exchange for an egg. When surrendering the Newspaper, he will always take the most valuable egg Magic Knight currently has, i.e. Golden Egg &gt; Silver Egg &gt; Copper Egg.
 </div>
+<div class="paragraph">
+Used by the routine at <a href="64623.html">64623</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42105"></span>42105</td>
 <td class="instruction">LD A,(41779)</td>
-<td class="comment-11" rowspan="1">If Current Object is 33 (Newspaper)...</td>
+<td class="comment-1" rowspan="1">If Current Object is 33 (Newspaper)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42108"></span>42108</td>
 <td class="instruction">CP 33</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42110"></span>42110</td>
 <td class="instruction">JP Z,42124</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="42105.html#42124">42124</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="42105.html#42124">42124</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42113"></span>42113</td>
 <td class="instruction">CP 35</td>
-<td class="comment-11" rowspan="1">If Current Object is 35 (Bow)...</td>
+<td class="comment-1" rowspan="1">If Current Object is 35 (Bow)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42115"></span>42115</td>
 <td class="instruction">JP Z,<a href="64270.html">64270</a></td>
-<td class="comment-11" rowspan="1">Display "[Character] WANTS TO KEEP THE [Object]" Window (13), wait for Fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display "[Character] WANTS TO KEEP THE [Object]" window (13) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42118"></span>42118</td>
 <td class="instruction">CALL <a href="42247.html">42247</a></td>
-<td class="comment-11" rowspan="1">If Current Object is an egg then display "[Character] WANTS TO KEEP THE [Object]" Window (13) and return to Main Game Loop</td>
+<td class="comment-1" rowspan="1">If Current Object is an egg then display "[Character] WANTS TO KEEP THE [Object]" window (13) and return to main game loop</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42121"></span>42121</td>
 <td class="instruction">JP <a href="42036.html">42036</a></td>
-<td class="comment-11" rowspan="1">Remove Current Object from Current Character's inventory and add it to Magic Knight's then return to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Remove Current Object from Current Character's inventory and add it to Magic Knight's then return to main game loop</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42124"></span>42124</td>
 <td class="instruction">LD A,36</td>
-<td class="comment-11" rowspan="1">Have current character try to take object 36 (Golden Egg) in exchange for Newspaper...</td>
+<td class="comment-1" rowspan="1">Have current character try to take object 36 (Golden Egg) in exchange for Newspaper...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42126"></span>42126</td>
 <td class="instruction">CALL <a href="42157.html">42157</a></td>
-<td class="comment-11" rowspan="1">...returning to Main Game Loop if successful</td>
+<td class="comment-1" rowspan="1">...returning to main game loop if successful</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42129"></span>42129</td>
 <td class="instruction">LD A,39</td>
-<td class="comment-11" rowspan="1">Have current character try to take object 39 (Golden Egg) in exchange for Newspaper...</td>
+<td class="comment-1" rowspan="1">Have current character try to take object 39 (Golden Egg) in exchange for Newspaper...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42131"></span>42131</td>
 <td class="instruction">CALL <a href="42157.html">42157</a></td>
-<td class="comment-11" rowspan="1">...returning to Main Game Loop if successful</td>
+<td class="comment-1" rowspan="1">...returning to main game loop if successful</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42134"></span>42134</td>
 <td class="instruction">LD A,37</td>
-<td class="comment-11" rowspan="1">Have current character try to take object 37 (Silver Egg) in exchange for Newspaper...</td>
+<td class="comment-1" rowspan="1">Have current character try to take object 37 (Silver Egg) in exchange for Newspaper...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42136"></span>42136</td>
 <td class="instruction">CALL <a href="42157.html">42157</a></td>
-<td class="comment-11" rowspan="1">...returning to Main Game Loop if successful</td>
+<td class="comment-1" rowspan="1">...returning to main game loop if successful</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42139"></span>42139</td>
 <td class="instruction">LD A,40</td>
-<td class="comment-11" rowspan="1">Have current character try to take object 40 (Silver Egg) in exchange for Newspaper...</td>
+<td class="comment-1" rowspan="1">Have current character try to take object 40 (Silver Egg) in exchange for Newspaper...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42141"></span>42141</td>
 <td class="instruction">CALL <a href="42157.html">42157</a></td>
-<td class="comment-11" rowspan="1">...returning to Main Game Loop if successful</td>
+<td class="comment-1" rowspan="1">...returning to main game loop if successful</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42144"></span>42144</td>
 <td class="instruction">LD A,38</td>
-<td class="comment-11" rowspan="1">Have current character try to take object 38 (Copper Egg) in exchange for Newspaper...</td>
+<td class="comment-1" rowspan="1">Have current character try to take object 38 (Copper Egg) in exchange for Newspaper...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42146"></span>42146</td>
 <td class="instruction">CALL <a href="42157.html">42157</a></td>
-<td class="comment-11" rowspan="1">...returning to Main Game Loop if successful</td>
+<td class="comment-1" rowspan="1">...returning to main game loop if successful</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42149"></span>42149</td>
 <td class="instruction">LD A,41</td>
-<td class="comment-11" rowspan="1">Have current character try to take object 41 (Copper Egg) in exchange for Newspaper...</td>
+<td class="comment-1" rowspan="1">Have current character try to take object 41 (Copper Egg) in exchange for Newspaper...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42151"></span>42151</td>
 <td class="instruction">CALL <a href="42157.html">42157</a></td>
-<td class="comment-11" rowspan="1">...returning to Main Game Loop if successful</td>
+<td class="comment-1" rowspan="1">...returning to main game loop if successful</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="42154"></span>
 <div class="comments">
 <div class="paragraph">
@@ -172,23 +149,26 @@ At this point, Robin will have failed to take an egg. In this case, he will refu
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42154"></span>42154</td>
 <td class="instruction">JP <a href="64270.html">64270</a></td>
-<td class="comment-11" rowspan="1">Display "[Character] WANTS TO KEEP THE [Object]" Window (13), wait for Fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display "[Character] WANTS TO KEEP THE [Object]" window (13) and return to game</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="42091.html">42091</a></span></td>
+<td class="prev">
+Prev: <a href="42091.html">42091</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#42105">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="42157.html">42157</a></span></td>
+<td class="next">
+Next: <a href="42157.html">42157</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

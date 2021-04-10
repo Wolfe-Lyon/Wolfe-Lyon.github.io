@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 34567</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,268 +20,227 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34512.html">34512</a></span></td>
+<td class="prev">
+Prev: <a href="34512.html">34512</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34567">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34627.html">34627</a></span></td>
+<td class="next">
+Next: <a href="34627.html">34627</a>
+</td>
 </tr>
 </table>
-<div class="description">34567: Draw Strength Bar at Top of Screen</div>
+<div class="description">34567: Draw strength bar at top of screen</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="27703.html">27703</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34567"></span>34567</td>
 <td class="instruction">LD A,35</td>
-<td class="comment-11" rowspan="1">If Magic Knight is not carrying the Mirror (35)...</td>
+<td class="comment-1" rowspan="1">If Magic Knight is not carrying the Mirror (35)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34569"></span>34569</td>
 <td class="instruction">CALL <a href="33645.html">33645</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34572"></span>34572</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34573"></span>34573</td>
 <td class="instruction">LD HL,16482</td>
-<td class="comment-11" rowspan="1">Point HL at Display File Address for top pixel row of cell at (2, 3) (characters)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at display file address for top pixel row of cell at (2, 3) (characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34576"></span>34576</td>
 <td class="instruction">LD A,(25020)</td>
-<td class="comment-11" rowspan="1">Load A with Magic Knight's strength</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Magic Knight's strength</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34579"></span>34579</td>
 <td class="instruction">CALL <a href="28625.html">28625</a></td>
-<td class="comment-11" rowspan="1">Divide A by eight, rounding down to nearest integer</td>
+<td class="comment-1" rowspan="1">Divide <span class="register">A</span> by eight, rounding down to nearest integer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34582"></span>34582</td>
 <td class="instruction">AND 15</td>
-<td class="comment-11" rowspan="1">If lowest four bits are reset (i.e. don't need to draw part of a character block)...</td>
+<td class="comment-1" rowspan="1">If lowest four bits are reset (i.e. don't need to draw part of a character block)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34584"></span>34584</td>
 <td class="instruction">JR Z,34603</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34567.html#34603">34603</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34567.html#34603">34603</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34586"></span>34586</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load number of full character blocks to draw into B</td>
+<td class="comment-1" rowspan="1">Load number of full character blocks to draw into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34587"></span>34587</td>
 <td class="instruction">LD A,255</td>
-<td class="comment-11" rowspan="1">Load A with 255 (draw row of eight pixels)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 255 (draw row of eight pixels)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34589"></span>34589</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (current Display File position in health bar block)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (current display file position in health bar block)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34590"></span>34590</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = remaining number of full character blocks to draw)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = remaining number of full character blocks to draw)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34591"></span>34591</td>
 <td class="instruction">LD B,4</td>
-<td class="comment-11" rowspan="1">Load B with 4 (health bar has 4 stripes)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 4 (health bar has 4 stripes)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34593"></span>34593</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Draw a byte (i.e. a "block" of 8 health units) to health bar</td>
+<td class="comment-1" rowspan="1">Draw a byte (i.e. a "block" of 8 health units) to health bar</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34594"></span>34594</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">Advance HL two rows down (as bar is made of alternating horizontal stripes)...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> two rows down (as bar is made of alternating horizontal stripes)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34595"></span>34595</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34596"></span>34596</td>
 <td class="instruction">DJNZ 34593</td>
-<td class="comment-11" rowspan="1">Decrease B (number of stripes to draw) and loop back to <a href="34567.html#34593">34593</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (number of stripes to draw) and loop back to <a href="34567.html#34593">34593</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34598"></span>34598</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = remaining number of full character blocks to draw)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = remaining number of full character blocks to draw)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34599"></span>34599</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (current Display File position in health bar block)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (current display file position in health bar block)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34600"></span>34600</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL (horizontally) one character to draw next full block</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> (horizontally) one character to draw next full block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34601"></span>34601</td>
 <td class="instruction">DJNZ 34589</td>
-<td class="comment-11" rowspan="1">Decrease B (remaining number of full character blocks to draw) and loop back to <a href="34567.html#34589">34589</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (remaining number of full character blocks to draw) and loop back to <a href="34567.html#34589">34589</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34603"></span>34603</td>
 <td class="instruction">LD A,(25020)</td>
-<td class="comment-11" rowspan="1">Load A with Magic Knight's strength</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Magic Knight's strength</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34606"></span>34606</td>
 <td class="instruction">AND 7</td>
-<td class="comment-11" rowspan="1">Get fractional part (i.e. amount by which strength is more than a multiple of eight)</td>
+<td class="comment-1" rowspan="1">Get fractional part (i.e. amount by which strength is more than a multiple of eight)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34608"></span>34608</td>
 <td class="instruction">JR NZ,34613</td>
-<td class="comment-11" rowspan="1">If this is not zero, then skip ahead to <a href="34567.html#34613">34613</a></td>
+<td class="comment-1" rowspan="1">If this is not zero, then skip ahead to <a href="34567.html#34613">34613</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34610"></span>34610</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34611"></span>34611</td>
 <td class="instruction">JR 34619</td>
-<td class="comment-11" rowspan="1">Skip ahead to draw the blank rows (<a href="../reference/facts.html#strengthbar">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">Skip ahead to draw the blank rows (<a href="../reference/facts.html#strengthbar">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34613"></span>34613</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load fractional part of strength into B</td>
+<td class="comment-1" rowspan="1">Load fractional part of strength into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34614"></span>34614</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34615"></span>34615</td>
 <td class="instruction">SCF</td>
-<td class="comment-11" rowspan="1">Set the Carry Flag</td>
+<td class="comment-1" rowspan="1">Set the carry flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34616"></span>34616</td>
 <td class="instruction">RRA</td>
-<td class="comment-11" rowspan="1">Move carry Flag bit into MSB of A</td>
+<td class="comment-1" rowspan="1">Move carry flag bit into MSB of <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34617"></span>34617</td>
 <td class="instruction">DJNZ 34615</td>
-<td class="comment-11" rowspan="1">Decrease B and loop back if not zero (i.e. place a bit at the LHS of A for each unit of strength that is left!)</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> and loop back if not zero (i.e. place a bit at the LHS of <span class="register">A</span> for each unit of strength that is left!)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34619"></span>34619</td>
 <td class="instruction">LD B,4</td>
-<td class="comment-11" rowspan="1">Load B with 4 (health bar has 4 stripes)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 4 (health bar has 4 stripes)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34621"></span>34621</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Draw a byte (i.e. a "block" of 8 health units) to health bar</td>
+<td class="comment-1" rowspan="1">Draw a byte (i.e. a "block" of 8 health units) to health bar</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34622"></span>34622</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">Advance HL two rows down (as bar is made of alternating horizontal stripes)...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> two rows down (as bar is made of alternating horizontal stripes)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34623"></span>34623</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34624"></span>34624</td>
 <td class="instruction">DJNZ 34621</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="34567.html#34621">34621</a> to draw next row</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="34567.html#34621">34621</a> to draw next row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34626"></span>34626</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34512.html">34512</a></span></td>
+<td class="prev">
+Prev: <a href="34512.html">34512</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34567">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34627.html">34627</a></span></td>
+<td class="next">
+Next: <a href="34627.html">34627</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

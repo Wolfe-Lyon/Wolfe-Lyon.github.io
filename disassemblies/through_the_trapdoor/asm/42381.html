@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 42381</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,246 +20,208 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="42266.html">42266</a></span></td>
+<td class="prev">
+Prev: <a href="42266.html">42266</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#42381">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="42486.html">42486</a></span></td>
+<td class="next">
+Next: <a href="42486.html">42486</a>
+</td>
 </tr>
 </table>
-<div class="description">42381: Update State of Snake (Level 4)</div>
+<div class="description">42381: Update state of snake (level 4)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="41211.html">41211</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42381"></span>42381</td>
 <td class="instruction">LD IX,45495</td>
-<td class="comment-11" rowspan="1">Point IX at start of state data for Snake (Level 4)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at start of state data for snake (level 4)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42385"></span>42385</td>
 <td class="instruction">LD IY,(34240)</td>
-<td class="comment-11" rowspan="1">Load IY with address of current level's complex state data for Berk</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with address of current level's complex state data for Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42389"></span>42389</td>
 <td class="instruction">LD HL,45507</td>
-<td class="comment-11" rowspan="1">Load HL with address of Snake's Attack Progress Index</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of snake's attack progress index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42392"></span>42392</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">If Snake's Attack Progress Index is not zero...</td>
+<td class="comment-1" rowspan="1">If snake's attack progress index is not zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42393"></span>42393</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42394"></span>42394</td>
 <td class="instruction">JR NZ,42415</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="42381.html#42415">42415</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="42381.html#42415">42415</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="42396"></span>
 <div class="comments">
 <div class="paragraph">
-Snake's Attack Progress Index is zero
+Snake's attack progress index is zero
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42396"></span>42396</td>
 <td class="instruction">LD A,(IY+0)</td>
-<td class="comment-11" rowspan="1">If Berk's room is not 5 (Snake's room)...</td>
+<td class="comment-1" rowspan="1">If Berk's room is not 5 (snake's room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42399"></span>42399</td>
 <td class="instruction">CP 5</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42401"></span>42401</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42402"></span>42402</td>
 <td class="instruction">BIT 7,(IY+12)</td>
-<td class="comment-11" rowspan="1">If Berk's Is Jumping Flag is set...</td>
+<td class="comment-1" rowspan="1">If Berk's is-jumping flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42406"></span>42406</td>
 <td class="instruction">JR NZ,42413</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="42381.html#42413">42413</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="42381.html#42413">42413</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42408"></span>42408</td>
 <td class="instruction">BIT 0,(IY+9)</td>
-<td class="comment-11" rowspan="1">If Snake's Must Process Current Script Data Flag is set...</td>
+<td class="comment-1" rowspan="1">If snake's must-process-current-script-data flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42412"></span>42412</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42413"></span>42413</td>
 <td class="instruction">INC (HL)</td>
-<td class="comment-11" rowspan="1">Increase Snake's Attack Progress Index</td>
+<td class="comment-1" rowspan="1">Increase snake's attack progress index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42414"></span>42414</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="42415"></span>
 <div class="comments">
 <div class="paragraph">
-Snake's Attack Progress Index is not zero
+Snake's attack progress index is not zero
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42415"></span>42415</td>
 <td class="instruction">CP 8</td>
-<td class="comment-11" rowspan="1">If Snake's Attack Progress Index is less than 8...</td>
+<td class="comment-1" rowspan="1">If snake's attack progress index is less than 8...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42417"></span>42417</td>
 <td class="instruction">JR C,42454</td>
-<td class="comment-11" rowspan="1">...then jump to <a href="42381.html#42454">42454</a> (Snake moving right)</td>
+<td class="comment-1" rowspan="1">...then jump to <a href="42381.html#42454">42454</a> (snake moving right)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42419"></span>42419</td>
 <td class="instruction">CP 15</td>
-<td class="comment-11" rowspan="1">If Snake's Attack Progress Index is less than 15...</td>
+<td class="comment-1" rowspan="1">If snake's attack progress index is less than 15...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42421"></span>42421</td>
 <td class="instruction">JR C,42459</td>
-<td class="comment-11" rowspan="1">...then jump to <a href="42381.html#42459">42459</a> (Snake preparing to pounce)</td>
+<td class="comment-1" rowspan="1">...then jump to <a href="42381.html#42459">42459</a> (snake preparing to pounce)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42423"></span>42423</td>
 <td class="instruction">CP 17</td>
-<td class="comment-11" rowspan="1">If Snake's Attack Progress Index is less than 17...</td>
+<td class="comment-1" rowspan="1">If snake's attack progress index is less than 17...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42425"></span>42425</td>
 <td class="instruction">JR C,42461</td>
-<td class="comment-11" rowspan="1">...then jump to <a href="42381.html#42461">42461</a> (Snake pouncing)</td>
+<td class="comment-1" rowspan="1">...then jump to <a href="42381.html#42461">42461</a> (snake pouncing)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42427"></span>42427</td>
 <td class="instruction">JR Z,42480</td>
-<td class="comment-11" rowspan="1">If Snake's Attack Progress Index is 17 then jump to <a href="42381.html#42480">42480</a> (Snake finished pouncing)</td>
+<td class="comment-1" rowspan="1">If snake's attack progress index is 17 then jump to <a href="42381.html#42480">42480</a> (snake finished pouncing)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="42429"></span>
 <div class="comments">
 <div class="paragraph">
-Snake's Attack Progress Index is greater than 17
+Snake's attack progress index is greater than 17
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42429"></span>42429</td>
 <td class="instruction">LD (HL),20</td>
-<td class="comment-11" rowspan="1">Set Snake's Attack Progress Index to 20</td>
+<td class="comment-1" rowspan="1">Set snake's attack progress index to 20</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42431"></span>42431</td>
 <td class="instruction">LD BC,42648</td>
-<td class="comment-11" rowspan="1">Set Snake's graphic layout data address to <a href="42648.html">42648</a>...</td>
+<td class="comment-1" rowspan="1">Set snake's graphic layout data address to <a href="42648.html">42648</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42434"></span>42434</td>
 <td class="instruction">CALL <a href="42512.html">42512</a></td>
-<td class="comment-11" rowspan="1">...(Snake, mouth closed, with animated tongue)</td>
+<td class="comment-1" rowspan="1">...(snake, mouth closed, with animated tongue)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42437"></span>42437</td>
 <td class="instruction">LD A,(IX+5)</td>
-<td class="comment-11" rowspan="1">If x-coordinate of Snake's left edge is not 83...</td>
+<td class="comment-1" rowspan="1">If x-coordinate of snake's left edge is not 83...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42440"></span>42440</td>
 <td class="instruction">CP 83</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42442"></span>42442</td>
 <td class="instruction">JR NZ,42447</td>
-<td class="comment-11" rowspan="1">...then move Snake left one character and return</td>
+<td class="comment-1" rowspan="1">...then move snake left one character and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42444"></span>42444</td>
 <td class="instruction">LD (HL),0</td>
-<td class="comment-11" rowspan="1">Set Snake's Attack Progress Index to 0</td>
+<td class="comment-1" rowspan="1">Set snake's attack progress index to 0</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42446"></span>42446</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="42447"></span>
 <div class="comments">
 <div class="paragraph">
@@ -271,177 +231,161 @@ This entry point is used by the routine at <a href="41961.html">41961</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42447"></span>42447</td>
 <td class="instruction">DEC (IX+5)</td>
-<td class="comment-11" rowspan="1">Decrease x-coordinates of left and right edges of entity at IX by one...</td>
+<td class="comment-1" rowspan="1">Decrease x-coordinates of left and right edges of entity at <span class="register">IX</span> by one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42450"></span>42450</td>
 <td class="instruction">DEC (IX+7)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42453"></span>42453</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="42454"></span>
 <div class="comments">
 <div class="paragraph">
-Snake's Attack Progress Index is less than 8
+Snake's attack progress index is less than 8
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42454"></span>42454</td>
 <td class="instruction">INC (HL)</td>
-<td class="comment-11" rowspan="1">Increase Snake's Attack Progress Index</td>
+<td class="comment-1" rowspan="1">Increase snake's attack progress index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42455"></span>42455</td>
 <td class="instruction">CALL <a href="42505.html">42505</a></td>
-<td class="comment-11" rowspan="1">Move Snake right one character</td>
+<td class="comment-1" rowspan="1">Move snake right one character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42458"></span>42458</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="42459"></span>
 <div class="comments">
 <div class="paragraph">
-Snake's Attack Progress Index is 8 or more, but less than 15
+Snake's attack progress index is 8 or more, but less than 15
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42459"></span>42459</td>
 <td class="instruction">INC (HL)</td>
-<td class="comment-11" rowspan="1">Increase Snake's Attack Progress Index</td>
+<td class="comment-1" rowspan="1">Increase snake's attack progress index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42460"></span>42460</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="42461"></span>
 <div class="comments">
 <div class="paragraph">
-Snake's Attack Progress Index is 15 or more, but less than 17
+Snake's attack progress index is 15 or more, but less than 17
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42461"></span>42461</td>
 <td class="instruction">LD A,(IY+6)</td>
-<td class="comment-11" rowspan="1">If the y-coordinate of Berk's bottom edge is less than 116...</td>
+<td class="comment-1" rowspan="1">If the y-coordinate of Berk's bottom edge is less than 116...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42464"></span>42464</td>
 <td class="instruction">CP 116</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42466"></span>42466</td>
 <td class="instruction">JR C,42429</td>
-<td class="comment-11" rowspan="1">...then jump back to <a href="42381.html#42429">42429</a></td>
+<td class="comment-1" rowspan="1">...then jump back to <a href="42381.html#42429">42429</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42468"></span>42468</td>
 <td class="instruction">CALL <a href="42486.html">42486</a></td>
-<td class="comment-11" rowspan="1">Open Snake's mouth and set Berk Has Been Killed Flag if Snake and Berk have collided</td>
+<td class="comment-1" rowspan="1">Open snake's mouth and set Berk-has-been-killed flag if snake and Berk have collided</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42471"></span>42471</td>
 <td class="instruction">LD B,4</td>
-<td class="comment-11" rowspan="1">Move Snake right four characters...</td>
+<td class="comment-1" rowspan="1">Move snake right four characters...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42473"></span>42473</td>
 <td class="instruction">CALL <a href="42505.html">42505</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42476"></span>42476</td>
 <td class="instruction">DJNZ 42473</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42478"></span>42478</td>
 <td class="instruction">INC (HL)</td>
-<td class="comment-11" rowspan="1">Increase Snake's Attack Progress Index</td>
+<td class="comment-1" rowspan="1">Increase snake's attack progress index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42479"></span>42479</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="42480"></span>
 <div class="comments">
 <div class="paragraph">
-Snake's Attack Progress Index is 17
+Snake's attack progress index is 17
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="42480"></span>42480</td>
 <td class="instruction">CALL <a href="42486.html">42486</a></td>
-<td class="comment-11" rowspan="1">Open Snake's mouth and set Berk Has Been Killed Flag if Snake and Berk have collided</td>
+<td class="comment-1" rowspan="1">Open snake's mouth and set Berk-has-been-killed flag if snake and Berk have collided</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42483"></span>42483</td>
 <td class="instruction">LD (HL),20</td>
-<td class="comment-11" rowspan="1">Set Snake's Attack Progress Index to 20</td>
+<td class="comment-1" rowspan="1">Set snake's attack progress index to 20</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="42485"></span>42485</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="42266.html">42266</a></span></td>
+<td class="prev">
+Prev: <a href="42266.html">42266</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#42381">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="42486.html">42486</a></span></td>
+<td class="next">
+Next: <a href="42486.html">42486</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

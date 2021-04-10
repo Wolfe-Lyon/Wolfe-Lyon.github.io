@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 64627</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="64623.html">64623</a></span></td>
+<td class="prev">
+Prev: <a href="64623.html">64623</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#64627">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="64637.html">64637</a></span></td>
+<td class="next">
+Next: <a href="64637.html">64637</a>
+</td>
 </tr>
 </table>
-<div class="description">64627: Load address with index A in a list of addresses at HL into HL</div>
+<div class="description">64627: Load address with index <span class="register">A</span> in a list of addresses at <span class="register">HL</span> into <span class="register">HL</span></div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="38841.html">38841</a>, <a href="39014.html">39014</a>, <a href="39189.html">39189</a>, <a href="39655.html">39655</a>, <a href="63598.html">63598</a> and <a href="64623.html">64623</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,93 +51,88 @@ Used by the routines at <a href="38841.html">38841</a>, <a href="39014.html">390
 <td class="register-desc">Address of start of list</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">A-th address in list at HL (input)</td>
+<td class="register-desc"><span class="register">A</span>-th address in list at <span class="register">HL</span> (input)</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="64627"></span>64627</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">Double offset value...</td>
+<td class="comment-1" rowspan="1">Double offset value...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64628"></span>64628</td>
 <td class="instruction">LD D,0</td>
-<td class="comment-11" rowspan="1">...and load into DE...</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">DE</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64630"></span>64630</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64631"></span>64631</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Add doubled offset to address in HL</td>
+<td class="comment-1" rowspan="1">Add doubled offset to address in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="64632"></span>
 <div class="comments">
 <div class="paragraph">
-This entry point is used by the routines at <a href="40784.html">40784</a>, <a href="41035.html">41035</a> and <a href="63504.html">63504</a>.
+This entry point is used by the routines at <a href="41035.html">41035</a> and <a href="63504.html">63504</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="64632"></span>64632</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load address at HL into HL...</td>
+<td class="comment-1" rowspan="1">Load address at <span class="register">HL</span> into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64633"></span>64633</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64634"></span>64634</td>
 <td class="instruction">LD H,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64635"></span>64635</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64636"></span>64636</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="64623.html">64623</a></span></td>
+<td class="prev">
+Prev: <a href="64623.html">64623</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#64627">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="64637.html">64637</a></span></td>
+<td class="next">
+Next: <a href="64637.html">64637</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

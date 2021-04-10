@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Data at 50008</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-b">
 <table class="header">
@@ -22,38 +20,29 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="49705.html">49705</a></span></td>
+<td class="prev">
+Prev: <a href="49705.html">49705</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#50008">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="50304.html">50304</a></span></td>
+<td class="next">
+Next: <a href="50304.html">50304</a>
+</td>
 </tr>
 </table>
-<div class="description">50008: Graphic Layout Data: Architecture (Level 1) Part 1</div>
+<div class="description">50008: Graphic layout data: Architecture (level 1), part 1</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="50008"></span>
 <div class="comments">
 <div class="paragraph">
-Three Spider's Webs
+Three spider's webs
 </div>
 <div class="paragraph">
 <canvas class="graphicLayoutData" data-graphic-layout-data-address="50008"></canvas>
@@ -62,41 +51,36 @@ Three Spider's Webs
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50008"></span>50008</td>
 <td class="instruction">DEFB 240,3</td>
-<td class="comment-11" rowspan="1">Set Repeat Counter B to 3</td>
+<td class="comment-1" rowspan="1">Set repeat counter B to 3</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50010"></span>50010</td>
 <td class="instruction">DEFB 251,98,195</td>
-<td class="comment-11" rowspan="1">Process graphic layout data at <a href="50008.html#50018">50018</a> and upon returning, move cursor to base coordinates</td>
+<td class="comment-1" rowspan="1">Process graphic layout data at <a href="50008.html#50018">50018</a> and upon returning, move cursor to base coordinates</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50013"></span>50013</td>
 <td class="instruction">DEFB 254,0,8</td>
-<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by +8 and 0 characters respectively and store as new base coordinates</td>
+<td class="comment-1" rowspan="1">Change cursor's x- and y-coordinates by 8 and 0 characters respectively and store as new base coordinates</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50016"></span>50016</td>
 <td class="instruction">DEFB 241</td>
-<td class="comment-11" rowspan="1">Decrement Repeat Counter B and loop back to <a href="50008.html#50010">50010</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrement repeat counter B and loop back to <a href="50008.html#50010">50010</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50017"></span>50017</td>
 <td class="instruction">DEFB 255</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="50018"></span>
 <div class="comments">
 <div class="paragraph">
-Spider's Web
+Spider's web
 </div>
 <div class="paragraph">
 <canvas class="graphicLayoutData" data-graphic-layout-data-address="50018"></canvas>
@@ -105,101 +89,136 @@ Spider's Web
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50018"></span>50018</td>
 <td class="instruction">DEFB 244,5</td>
-<td class="comment-11" rowspan="1">Set current graphic set to 5</td>
+<td class="comment-1" rowspan="1">Set current graphic set to 5</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50020"></span>50020</td>
 <td class="instruction">DEFB 242,7</td>
-<td class="comment-11" rowspan="1">Set current attribute to 7</td>
+<td class="comment-1" rowspan="1">Set current attribute to 7</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50022"></span>50022</td>
 <td class="instruction">DEFB 250,2,2</td>
-<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by +2 and +2 characters respectively</td>
+<td class="comment-1" rowspan="1">Change cursor's x- and y-coordinates by 2 and 2 characters respectively</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50025"></span>50025</td>
-<td class="instruction">DEFB 1,161,2,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 1,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50027"></span>50027</td>
+<td class="instruction">DEFB 2,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50029"></span>50029</td>
-<td class="instruction">DEFB 3,157,4,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 3,157</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50031"></span>50031</td>
+<td class="instruction">DEFB 4,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50033"></span>50033</td>
-<td class="instruction">DEFB 5,161,6,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 5,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50035"></span>50035</td>
+<td class="instruction">DEFB 6,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50037"></span>50037</td>
-<td class="instruction">DEFB 7,161,8,156</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 7,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50039"></span>50039</td>
+<td class="instruction">DEFB 8,156</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50041"></span>50041</td>
-<td class="instruction">DEFB 9,161,10,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 9,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50043"></span>50043</td>
+<td class="instruction">DEFB 10,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50045"></span>50045</td>
-<td class="instruction">DEFB 11,161,12,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 11,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50047"></span>50047</td>
+<td class="instruction">DEFB 12,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50049"></span>50049</td>
-<td class="instruction">DEFB 13,161,14,155</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 13,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50051"></span>50051</td>
+<td class="instruction">DEFB 14,155</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50053"></span>50053</td>
-<td class="instruction">DEFB 15,161,16,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 15,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50055"></span>50055</td>
+<td class="instruction">DEFB 16,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50057"></span>50057</td>
-<td class="instruction">DEFB 17,161,18,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 17,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50059"></span>50059</td>
+<td class="instruction">DEFB 18,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50061"></span>50061</td>
-<td class="instruction">DEFB 19,156,20,165</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 19,156</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50063"></span>50063</td>
+<td class="instruction">DEFB 20,165</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50065"></span>50065</td>
 <td class="instruction">DEFB 21,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50067"></span>50067</td>
 <td class="instruction">DEFB 255</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="50068"></span>
 <div class="comments">
 <div class="paragraph">
-Upper Section of Arch
+Upper section of arch
 </div>
 <div class="paragraph">
 <canvas class="graphicLayoutData" data-graphic-layout-data-address="50068"></canvas>
@@ -208,95 +227,131 @@ Upper Section of Arch
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50068"></span>50068</td>
 <td class="instruction">DEFB 242,4</td>
-<td class="comment-11" rowspan="1">Set current attribute to 4</td>
+<td class="comment-1" rowspan="1">Set current attribute to 4</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50070"></span>50070</td>
 <td class="instruction">DEFB 244,3</td>
-<td class="comment-11" rowspan="1">Set current graphic set to 3</td>
+<td class="comment-1" rowspan="1">Set current graphic set to 3</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50072"></span>50072</td>
 <td class="instruction">DEFB 250,0,2</td>
-<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by +2 and 0 characters respectively</td>
+<td class="comment-1" rowspan="1">Change cursor's x- and y-coordinates by 2 and 0 characters respectively</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50075"></span>50075</td>
-<td class="instruction">DEFB 56,33,57,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 56,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50077"></span>50077</td>
+<td class="instruction">DEFB 57,33</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50079"></span>50079</td>
-<td class="instruction">DEFB 58,33,59,28</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 58,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50081"></span>50081</td>
+<td class="instruction">DEFB 59,28</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50083"></span>50083</td>
-<td class="instruction">DEFB 60,33,61,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 60,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50085"></span>50085</td>
+<td class="instruction">DEFB 61,33</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50087"></span>50087</td>
-<td class="instruction">DEFB 62,33,63,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 62,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50089"></span>50089</td>
+<td class="instruction">DEFB 63,33</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50091"></span>50091</td>
-<td class="instruction">DEFB 9,33,10,26</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 9,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50093"></span>50093</td>
+<td class="instruction">DEFB 10,26</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50095"></span>50095</td>
-<td class="instruction">DEFB 11,33,12,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 11,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50097"></span>50097</td>
+<td class="instruction">DEFB 12,33</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50099"></span>50099</td>
-<td class="instruction">DEFB 13,35,14,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 13,35</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50101"></span>50101</td>
+<td class="instruction">DEFB 14,33</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50103"></span>50103</td>
-<td class="instruction">DEFB 15,33,16,25</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 15,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50105"></span>50105</td>
+<td class="instruction">DEFB 16,25</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50107"></span>50107</td>
-<td class="instruction">DEFB 17,33,18,37</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 17,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50109"></span>50109</td>
+<td class="instruction">DEFB 18,37</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50111"></span>50111</td>
-<td class="instruction">DEFB 19,33,20,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 19,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50113"></span>50113</td>
+<td class="instruction">DEFB 20,33</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50115"></span>50115</td>
 <td class="instruction">DEFB 255</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="50116"></span>
 <div class="comments">
 <div class="paragraph">
-Four Arches
+Four arches
 </div>
 <div class="paragraph">
 <canvas class="graphicLayoutData" data-graphic-layout-data-address="50116"></canvas>
@@ -305,41 +360,36 @@ Four Arches
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50116"></span>50116</td>
 <td class="instruction">DEFB 240,4</td>
-<td class="comment-11" rowspan="1">Set Repeat Counter B to 4</td>
+<td class="comment-1" rowspan="1">Set repeat counter B to 4</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50118"></span>50118</td>
 <td class="instruction">DEFB 251,206,195</td>
-<td class="comment-11" rowspan="1">Process graphic layout data at <a href="50008.html#50126">50126</a> and upon returning, move cursor to base coordinates</td>
+<td class="comment-1" rowspan="1">Process graphic layout data at <a href="50008.html#50126">50126</a> and upon returning, move cursor to base coordinates</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50121"></span>50121</td>
 <td class="instruction">DEFB 254,0,8</td>
-<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by +8 and 0 characters respectively and store as new base coordinates</td>
+<td class="comment-1" rowspan="1">Change cursor's x- and y-coordinates by 8 and 0 characters respectively and store as new base coordinates</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50124"></span>50124</td>
 <td class="instruction">DEFB 241</td>
-<td class="comment-11" rowspan="1">Decrement Repeat Counter B and loop back to <a href="50008.html#50118">50118</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrement repeat counter B and loop back to <a href="50008.html#50118">50118</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50125"></span>50125</td>
 <td class="instruction">DEFB 255</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="50126"></span>
 <div class="comments">
 <div class="paragraph">
-Single Arch
+Single arch
 </div>
 <div class="paragraph">
 <canvas class="graphicLayoutData" data-graphic-layout-data-address="50126"></canvas>
@@ -348,53 +398,61 @@ Single Arch
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50126"></span>50126</td>
 <td class="instruction">DEFB 251,148,195</td>
-<td class="comment-11" rowspan="1">Process graphic layout data at <a href="50008.html#50068">50068</a> and upon returning, move cursor to base coordinates</td>
+<td class="comment-1" rowspan="1">Process graphic layout data at <a href="50008.html#50068">50068</a> and upon returning, move cursor to base coordinates</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50129"></span>50129</td>
 <td class="instruction">DEFB 250,4,0</td>
-<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and +4 characters respectively</td>
+<td class="comment-1" rowspan="1">Change cursor's x- and y-coordinates by 0 and 4 characters respectively</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50132"></span>50132</td>
 <td class="instruction">DEFB 242,6</td>
-<td class="comment-11" rowspan="1">Set current attribute to 6</td>
+<td class="comment-1" rowspan="1">Set current attribute to 6</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50134"></span>50134</td>
-<td class="instruction">DEFB 23,39,22,25</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 23,39</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50136"></span>50136</td>
+<td class="instruction">DEFB 22,25</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50138"></span>50138</td>
-<td class="instruction">DEFB 30,39,29,25</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 30,39</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50140"></span>50140</td>
+<td class="instruction">DEFB 29,25</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50142"></span>50142</td>
-<td class="instruction">DEFB 32,39,31,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 32,39</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50144"></span>50144</td>
+<td class="instruction">DEFB 31,33</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50146"></span>50146</td>
 <td class="instruction">DEFB 255</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="50147"></span>
 <div class="comments">
 <div class="paragraph">
-Boni's Platform
+Boni's platform
 </div>
 <div class="paragraph">
 <canvas class="graphicLayoutData" data-graphic-layout-data-address="50147"></canvas>
@@ -403,41 +461,46 @@ Boni's Platform
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50147"></span>50147</td>
 <td class="instruction">DEFB 242,6</td>
-<td class="comment-11" rowspan="1">Set current attribute to 6</td>
+<td class="comment-1" rowspan="1">Set current attribute to 6</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50149"></span>50149</td>
 <td class="instruction">DEFB 244,3</td>
-<td class="comment-11" rowspan="1">Set current graphic set to 3</td>
+<td class="comment-1" rowspan="1">Set current graphic set to 3</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50151"></span>50151</td>
-<td class="instruction">DEFB 29,33,30,31</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 29,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50153"></span>50153</td>
+<td class="instruction">DEFB 30,31</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50155"></span>50155</td>
-<td class="instruction">DEFB 31,33,32,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 31,33</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50157"></span>50157</td>
+<td class="instruction">DEFB 32,33</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50159"></span>50159</td>
 <td class="instruction">DEFB 255</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="50160"></span>
 <div class="comments">
 <div class="paragraph">
-Floor (Full Width, 32 chars)
+Floor (full width, 32 chars)
 </div>
 <div class="paragraph">
 <canvas class="graphicLayoutData" data-graphic-layout-data-address="50160" data-graphic-set-index="3"></canvas>
@@ -446,101 +509,136 @@ Floor (Full Width, 32 chars)
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50160"></span>50160</td>
 <td class="instruction">DEFB 251,62,196</td>
-<td class="comment-11" rowspan="1">Process graphic layout data at <a href="50008.html#50238">50238</a> and upon returning, move cursor to base coordinates</td>
+<td class="comment-1" rowspan="1">Process graphic layout data at <a href="50008.html#50238">50238</a> and upon returning, move cursor to base coordinates</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50163"></span>50163</td>
 <td class="instruction">DEFB 250,0,12</td>
-<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by +12 and 0 characters respectively</td>
+<td class="comment-1" rowspan="1">Change cursor's x- and y-coordinates by 12 and 0 characters respectively</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50166"></span>50166</td>
 <td class="instruction">DEFB 242,4</td>
-<td class="comment-11" rowspan="1">Set current attribute to 4</td>
+<td class="comment-1" rowspan="1">Set current attribute to 4</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50168"></span>50168</td>
-<td class="instruction">DEFB 52,161,53,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 52,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50170"></span>50170</td>
+<td class="instruction">DEFB 53,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50172"></span>50172</td>
-<td class="instruction">DEFB 54,161,55,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 54,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50174"></span>50174</td>
+<td class="instruction">DEFB 55,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50176"></span>50176</td>
 <td class="instruction">DEFB 242,132</td>
-<td class="comment-11" rowspan="1">Set current attribute to 132</td>
+<td class="comment-1" rowspan="1">Set current attribute to 132</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50178"></span>50178</td>
-<td class="instruction">DEFB 55,161,54,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 55,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50180"></span>50180</td>
+<td class="instruction">DEFB 54,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50182"></span>50182</td>
-<td class="instruction">DEFB 53,161,52,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 53,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50184"></span>50184</td>
+<td class="instruction">DEFB 52,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50186"></span>50186</td>
-<td class="instruction">DEFB 44,161,43,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 44,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50188"></span>50188</td>
+<td class="instruction">DEFB 43,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50190"></span>50190</td>
-<td class="instruction">DEFB 42,161,41,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 42,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50192"></span>50192</td>
+<td class="instruction">DEFB 41,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50194"></span>50194</td>
-<td class="instruction">DEFB 40,161,39,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 40,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50196"></span>50196</td>
+<td class="instruction">DEFB 39,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50198"></span>50198</td>
-<td class="instruction">DEFB 38,161,37,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 38,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50200"></span>50200</td>
+<td class="instruction">DEFB 37,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50202"></span>50202</td>
-<td class="instruction">DEFB 36,161,35,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 36,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50204"></span>50204</td>
+<td class="instruction">DEFB 35,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50206"></span>50206</td>
-<td class="instruction">DEFB 34,161,33,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 34,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50208"></span>50208</td>
+<td class="instruction">DEFB 33,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50210"></span>50210</td>
 <td class="instruction">DEFB 255</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="50211"></span>
 <div class="comments">
 <div class="paragraph">
-Right Half of Floor
+Right half of floor
 </div>
 <div class="paragraph">
 <canvas class="graphicLayoutData" data-graphic-layout-data-address="50211" data-graphic-set-index="3"></canvas>
@@ -549,59 +647,81 @@ Right Half of Floor
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50211"></span>50211</td>
 <td class="instruction">DEFB 242,132</td>
-<td class="comment-11" rowspan="1">Set current attribute to 132</td>
+<td class="comment-1" rowspan="1">Set current attribute to 132</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50213"></span>50213</td>
-<td class="instruction">DEFB 44,161,43,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 44,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50215"></span>50215</td>
+<td class="instruction">DEFB 43,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50217"></span>50217</td>
-<td class="instruction">DEFB 42,161,41,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 42,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50219"></span>50219</td>
+<td class="instruction">DEFB 41,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50221"></span>50221</td>
-<td class="instruction">DEFB 40,161,39,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 40,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50223"></span>50223</td>
+<td class="instruction">DEFB 39,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50225"></span>50225</td>
-<td class="instruction">DEFB 38,161,37,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 38,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50227"></span>50227</td>
+<td class="instruction">DEFB 37,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50229"></span>50229</td>
-<td class="instruction">DEFB 36,161,35,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 36,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50231"></span>50231</td>
+<td class="instruction">DEFB 35,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50233"></span>50233</td>
-<td class="instruction">DEFB 34,161,33,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 34,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50235"></span>50235</td>
+<td class="instruction">DEFB 33,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50237"></span>50237</td>
 <td class="instruction">DEFB 255</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="50238"></span>
 <div class="comments">
 <div class="paragraph">
-Left Part of Floor (Also Used in Level 4)
+Left part of floor (also used in level 4)
 </div>
 <div class="paragraph">
 <canvas class="graphicLayoutData" data-graphic-layout-data-address="50238"></canvas>
@@ -610,65 +730,86 @@ Left Part of Floor (Also Used in Level 4)
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50238"></span>50238</td>
 <td class="instruction">DEFB 244,3</td>
-<td class="comment-11" rowspan="1">Set current graphic set to 3</td>
+<td class="comment-1" rowspan="1">Set current graphic set to 3</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50240"></span>50240</td>
 <td class="instruction">DEFB 242,4</td>
-<td class="comment-11" rowspan="1">Set current attribute to 4</td>
+<td class="comment-1" rowspan="1">Set current attribute to 4</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50242"></span>50242</td>
-<td class="instruction">DEFB 33,161,34,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 33,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50244"></span>50244</td>
+<td class="instruction">DEFB 34,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50246"></span>50246</td>
-<td class="instruction">DEFB 35,161,36,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 35,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50248"></span>50248</td>
+<td class="instruction">DEFB 36,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50250"></span>50250</td>
-<td class="instruction">DEFB 37,161,38,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 37,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50252"></span>50252</td>
+<td class="instruction">DEFB 38,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50254"></span>50254</td>
-<td class="instruction">DEFB 39,161,40,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 39,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50256"></span>50256</td>
+<td class="instruction">DEFB 40,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50258"></span>50258</td>
-<td class="instruction">DEFB 41,161,42,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 41,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50260"></span>50260</td>
+<td class="instruction">DEFB 42,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50262"></span>50262</td>
-<td class="instruction">DEFB 43,161,44,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 43,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50264"></span>50264</td>
+<td class="instruction">DEFB 44,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50266"></span>50266</td>
 <td class="instruction">DEFB 255</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="50267"></span>
 <div class="comments">
 <div class="paragraph">
-Trap Door, Closed
+Trap Door, closed
 </div>
 <div class="paragraph">
 <canvas class="graphicLayoutData" data-graphic-layout-data-address="50267"></canvas>
@@ -677,59 +818,56 @@ Trap Door, Closed
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50267"></span>50267</td>
 <td class="instruction">DEFB 244,3</td>
-<td class="comment-11" rowspan="1">Set current graphic set to 3</td>
+<td class="comment-1" rowspan="1">Set current graphic set to 3</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50269"></span>50269</td>
 <td class="instruction">DEFB 242,70</td>
-<td class="comment-11" rowspan="1">Set current attribute to 70</td>
+<td class="comment-1" rowspan="1">Set current attribute to 70</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50271"></span>50271</td>
-<td class="instruction">DEFB 45,161,46,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="instruction">DEFB 45,161</td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="50273"></span>50273</td>
+<td class="instruction">DEFB 46,161</td>
+<td class="comment-1" rowspan="1"></td>
+</tr>
+<tr>
 <td class="address-1"><span id="50275"></span>50275</td>
 <td class="instruction">DEFB 238,5</td>
-<td class="comment-11" rowspan="1">Set Repeat Counter A to 5</td>
+<td class="comment-1" rowspan="1">Set repeat counter A to 5</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50277"></span>50277</td>
 <td class="instruction">DEFB 47,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50279"></span>50279</td>
 <td class="instruction">DEFB 239</td>
-<td class="comment-11" rowspan="1">Decrement Repeat Counter A and loop back to <a href="50008.html#50277">50277</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrement repeat counter A and loop back to <a href="50008.html#50277">50277</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50280"></span>50280</td>
 <td class="instruction">DEFB 48,161</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50282"></span>50282</td>
 <td class="instruction">DEFB 255</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="50283"></span>
 <div class="comments">
 <div class="paragraph">
-Trap Door, Open
+Trap Door, open
 </div>
 <div class="paragraph">
 <canvas class="graphicLayoutData" data-graphic-layout-data-address="50283"></canvas>
@@ -738,71 +876,66 @@ Trap Door, Open
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50283"></span>50283</td>
 <td class="instruction">DEFB 244,3</td>
-<td class="comment-11" rowspan="1">Set current graphic set to 3</td>
+<td class="comment-1" rowspan="1">Set current graphic set to 3</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50285"></span>50285</td>
 <td class="instruction">DEFB 250,0,8</td>
-<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by +8 and 0 characters respectively</td>
+<td class="comment-1" rowspan="1">Change cursor's x- and y-coordinates by 8 and 0 characters respectively</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50288"></span>50288</td>
 <td class="instruction">DEFB 238,7</td>
-<td class="comment-11" rowspan="1">Set Repeat Counter A to 7</td>
+<td class="comment-1" rowspan="1">Set repeat counter A to 7</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50290"></span>50290</td>
 <td class="instruction">DEFB 49,78,32</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50293"></span>50293</td>
 <td class="instruction">DEFB 239</td>
-<td class="comment-11" rowspan="1">Decrement Repeat Counter A and loop back to <a href="50008.html#50290">50290</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrement repeat counter A and loop back to <a href="50008.html#50290">50290</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50294"></span>50294</td>
 <td class="instruction">DEFB 51,78,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50297"></span>50297</td>
 <td class="instruction">DEFB 250,250,0</td>
-<td class="comment-11" rowspan="1">Change cursor's x- and y-coordinates by 0 and -6 characters respectively</td>
+<td class="comment-1" rowspan="1">Change cursor's x- and y-coordinates by 0 and -6 characters respectively</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50300"></span>50300</td>
 <td class="instruction">DEFB 50,6,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="50303"></span>50303</td>
 <td class="instruction">DEFB 255</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="49705.html">49705</a></span></td>
+<td class="prev">
+Prev: <a href="49705.html">49705</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#50008">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="50304.html">50304</a></span></td>
+<td class="next">
+Next: <a href="50304.html">50304</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

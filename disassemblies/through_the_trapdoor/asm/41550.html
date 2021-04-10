@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 41550</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,21 +20,28 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="41498.html">41498</a></span></td>
+<td class="prev">
+Prev: <a href="41498.html">41498</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#41550">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="41617.html">41617</a></span></td>
+<td class="next">
+Next: <a href="41617.html">41617</a>
+</td>
 </tr>
 </table>
-<div class="description">41550: Script Routine (63): Have Skeleton Advance or Retreat Based Upon Positions of Berk and Fake Boni</div>
+<div class="description">41550: Script routine: (63) Have skeleton advance or retreat based upon positions of Berk and yellow skull</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-The skeleton will step forward once, and then step back, if Berk is close enough and Fake Boni is in a room to the right. If Fake Boni is in the Skeleton's room, or a room to the left of this, then the Skeleton will step forward repeatedly while Berk is close enough and will only back off when Berk moves out of range. The range is nine, so if the distance between Berk's right edge and the Skeleton's left edge is less than nine then the Skeleton will advance. A distance of nine or more will see the Skeleton retreat. Note that the calculated range is based upon the Skeleton's state data at <a href="45274.html#45404">45404</a>, in which the x-coordinates of his left and right edges do not match his apparent position or width graphically.
+The skeleton will step forward once, and then step back, if Berk is close enough and the yellow skull is in a room to the right. If the yellow skull is in the skeleton's room, or a room to the left of this, then the skeleton will step forward repeatedly while Berk is close enough and will only back off when Berk moves out of range. The range is nine, so if the distance between Berk's right edge and the skeleton's left edge is less than nine then the skeleton will advance. A distance of nine or more will see the skeleton retreat. Note that the calculated range is based upon the skeleton's state data at <a href="45274.html#45404">45404</a>, in which the x-coordinates of his left and right edges do not match his apparent position or width graphically.
+</div>
+<div class="paragraph">
+Used by the routine at <a href="48096.html">48096</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -45,193 +50,173 @@ The skeleton will step forward once, and then step back, if Berk is close enough
 <td class="register-desc">Address of complex state data for an entity</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">Address of next script instruction to execute</td>
+<td class="register-desc">New address in script data</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41550"></span>41550</td>
 <td class="instruction">LD IY,(34240)</td>
-<td class="comment-11" rowspan="1">Load IY with address of current level's complex state data for Berk</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with address of current level's complex state data for Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41554"></span>41554</td>
 <td class="instruction">LD A,(IY+0)</td>
-<td class="comment-11" rowspan="1">If Berk's current room is 3 (Skeleton's room)...</td>
+<td class="comment-1" rowspan="1">If Berk's current room is 3 (skeleton's room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41557"></span>41557</td>
 <td class="instruction">CP 3</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41559"></span>41559</td>
 <td class="instruction">JR Z,41580</td>
-<td class="comment-11" rowspan="1">...then jump to <a href="41550.html#41580">41580</a></td>
+<td class="comment-1" rowspan="1">...then jump to <a href="41550.html#41580">41580</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="41561"></span>
 <div class="comments">
 <div class="paragraph">
-Berk is not in Skeleton's room, or Fake Boni is in a room right of the Skeleton's room
+Berk is not in skeleton's room, or yellow skull is in a room right of the skeleton's room
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41561"></span>41561</td>
 <td class="instruction">LD A,(IX+5)</td>
-<td class="comment-11" rowspan="1">If x-coordinate of Skeleton's left edge is at least 128...</td>
+<td class="comment-1" rowspan="1">If x-coordinate of skeleton's left edge is at least 128...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41564"></span>41564</td>
 <td class="instruction">CP 128</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41566"></span>41566</td>
 <td class="instruction">JR NC,41574</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="41550.html#41574">41574</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="41550.html#41574">41574</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41568"></span>41568</td>
 <td class="instruction">LD HL,41318</td>
-<td class="comment-11" rowspan="1">Point HL at script data for Skeleton stepping back (right)...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at script data for skeleton stepping back (right)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41571"></span>41571</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute</td>
+<td class="comment-1" rowspan="1">...and execute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41574"></span>41574</td>
 <td class="instruction">LD HL,41232</td>
-<td class="comment-11" rowspan="1">Point HL at script data for Skeleton Idling...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at script data for skeleton idling...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41577"></span>41577</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute</td>
+<td class="comment-1" rowspan="1">...and execute</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="41580"></span>
 <div class="comments">
 <div class="paragraph">
-Berk is in Skeleton's room
+Berk is in skeleton's room
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41580"></span>41580</td>
 <td class="instruction">BIT 0,(IX+9)</td>
-<td class="comment-11" rowspan="1">If Skeleton's Must Process Current Script Data Flag is reset...</td>
+<td class="comment-1" rowspan="1">If skeleton's must-process-current-script-data flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41584"></span>41584</td>
 <td class="instruction">JR Z,41597</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="41550.html#41597">41597</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="41550.html#41597">41597</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41586"></span>41586</td>
 <td class="instruction">RES 0,(IX+9)</td>
-<td class="comment-11" rowspan="1">Reset Skeleton's Must Process Current Script Data Flag</td>
+<td class="comment-1" rowspan="1">Reset skeleton's must-process-current-script-data flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41590"></span>41590</td>
 <td class="instruction">LD A,(45430)</td>
-<td class="comment-11" rowspan="1">If Fake Boni is in a room with index of 4 or more (room above Pit, or Pit)...</td>
+<td class="comment-1" rowspan="1">If yellow skull is in a room with index of 4 or more (room above pit, or pit)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41593"></span>41593</td>
 <td class="instruction">CP 4</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41595"></span>41595</td>
 <td class="instruction">JR NC,41561</td>
-<td class="comment-11" rowspan="1">...then jump back to <a href="41550.html#41561">41561</a> (move Skeleton back)</td>
+<td class="comment-1" rowspan="1">...then jump back to <a href="41550.html#41561">41561</a> (move skeleton back)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41597"></span>41597</td>
 <td class="instruction">LD A,(IX+5)</td>
-<td class="comment-11" rowspan="1">If x-coordinate of Skeleton's left edge...</td>
+<td class="comment-1" rowspan="1">If x-coordinate of skeleton's left edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41600"></span>41600</td>
 <td class="instruction">SUB 9</td>
-<td class="comment-11" rowspan="1">...is at least nine characters to the right of Berk's right edge...</td>
+<td class="comment-1" rowspan="1">...is at least nine characters to the right of Berk's right edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41602"></span>41602</td>
 <td class="instruction">CP (IY+7)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41605"></span>41605</td>
 <td class="instruction">JR NC,41561</td>
-<td class="comment-11" rowspan="1">...then jump back to <a href="41550.html#41561">41561</a> (move Skeleton back)</td>
+<td class="comment-1" rowspan="1">...then jump back to <a href="41550.html#41561">41561</a> (move skeleton back)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41607"></span>41607</td>
 <td class="instruction">SET 0,(IX+9)</td>
-<td class="comment-11" rowspan="1">Set Skeleton's Must Process Current Script Data Flag</td>
+<td class="comment-1" rowspan="1">Set skeleton's must-process-current-script-data flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41611"></span>41611</td>
 <td class="instruction">LD HL,41280</td>
-<td class="comment-11" rowspan="1">Point HL at script data for Skeleton stepping forward (left)...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at script data for skeleton stepping forward (left)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41614"></span>41614</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute</td>
+<td class="comment-1" rowspan="1">...and execute</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="41498.html">41498</a></span></td>
+<td class="prev">
+Prev: <a href="41498.html">41498</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#41550">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="41617.html">41617</a></span></td>
+<td class="next">
+Next: <a href="41617.html">41617</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

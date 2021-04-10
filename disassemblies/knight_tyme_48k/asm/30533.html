@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 30533</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,229 +20,201 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="30145.html">30145</a></span></td>
+<td class="prev">
+Prev: <a href="30145.html">30145</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#30533">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="30583.html">30583</a></span></td>
+<td class="next">
+Next: <a href="30583.html">30583</a>
+</td>
 </tr>
 </table>
-<div class="description">30533: Insert Numeric Stats (at HL) of USS Pisces into "Examine USS Pisces" Window Text</div>
+<div class="description">30533: Insert numeric stats (at <span class="register">HL</span>) of USS Pisces into "examine USS Pisces" window text</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="30145.html">30145</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">Pointer to USS Pisces' Current Stats</td>
+<td class="register-desc">Pointer to USS Pisces' current stats</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30533"></span>30533</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to start of USS Pisces' current stats)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to start of USS Pisces' current stats)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30534"></span>30534</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load Life Support level into A</td>
+<td class="comment-1" rowspan="1">Load life support level into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30535"></span>30535</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to USS Pisces' current Life Support level)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to USS Pisces' current life support level)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30536"></span>30536</td>
 <td class="instruction">LD HL,39439</td>
-<td class="comment-11" rowspan="1">Point HL at position in USS Pisces Stats Text (at <a href="39140.html#39359">39359</a>) at which to insert Life Support level...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at position in USS Pisces stats text (at <a href="39140.html#39359">39359</a>) at which to insert life support level...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30539"></span>30539</td>
 <td class="instruction">CALL <a href="34697.html">34697</a></td>
-<td class="comment-11" rowspan="1">...and splice the value in</td>
+<td class="comment-1" rowspan="1">...and splice the value in</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30542"></span>30542</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to USS Pisces' current Life Support level)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to USS Pisces' current life support level)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30543"></span>30543</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to USS Pisces' current Star Drive Fuel level...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to USS Pisces' current star drive fuel level...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30544"></span>30544</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...and load value into A</td>
+<td class="comment-1" rowspan="1">...and load value into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30545"></span>30545</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to USS Pisces' current Star Drive Fuel level)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to USS Pisces' current star drive fuel level)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30546"></span>30546</td>
 <td class="instruction">LD HL,39462</td>
-<td class="comment-11" rowspan="1">Point HL at position in USS Pisces Stats Text (at <a href="39140.html#39359">39359</a>) at which to insert Star Drive Fuel level...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at position in USS Pisces stats text (at <a href="39140.html#39359">39359</a>) at which to insert star drive fuel level...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30549"></span>30549</td>
 <td class="instruction">CALL <a href="34697.html">34697</a></td>
-<td class="comment-11" rowspan="1">...and splice the value in</td>
+<td class="comment-1" rowspan="1">...and splice the value in</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30552"></span>30552</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to USS Pisces' current Star Drive Fuel level)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to USS Pisces' current star drive fuel level)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30553"></span>30553</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to USS Pisces' current Impulse Drive level...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to USS Pisces' current impulse drive level...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30554"></span>30554</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...and load value into A</td>
+<td class="comment-1" rowspan="1">...and load value into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30555"></span>30555</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to USS Pisces' current Impulse Drive level)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to USS Pisces' current impulse drive level)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30556"></span>30556</td>
 <td class="instruction">LD HL,39486</td>
-<td class="comment-11" rowspan="1">Point HL at position in USS Pisces Stats Text (at <a href="39140.html#39359">39359</a>) at which to insert Impulse Drive level...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at position in USS Pisces stats text (at <a href="39140.html#39359">39359</a>) at which to insert impulse drive level...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30559"></span>30559</td>
 <td class="instruction">CALL <a href="34697.html">34697</a></td>
-<td class="comment-11" rowspan="1">...and splice the value in</td>
+<td class="comment-1" rowspan="1">...and splice the value in</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30562"></span>30562</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to USS Pisces' current Impulse Drive level)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to USS Pisces' current impulse drive level)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30563"></span>30563</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to USS Pisces' current Shields level...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to USS Pisces' current shields level...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30564"></span>30564</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...and load value into A</td>
+<td class="comment-1" rowspan="1">...and load value into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30565"></span>30565</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to USS Pisces' current Shields level)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to USS Pisces' current shields level)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30566"></span>30566</td>
 <td class="instruction">LD HL,39506</td>
-<td class="comment-11" rowspan="1">Point HL at position in USS Pisces Stats Text (at <a href="39140.html#39359">39359</a>) at which to insert Shields level...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at position in USS Pisces stats text (at <a href="39140.html#39359">39359</a>) at which to insert shields level...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30569"></span>30569</td>
 <td class="instruction">CALL <a href="34697.html">34697</a></td>
-<td class="comment-11" rowspan="1">...and splice the value in</td>
+<td class="comment-1" rowspan="1">...and splice the value in</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30572"></span>30572</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to USS Pisces' current Shields level)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to USS Pisces' current shields level)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30573"></span>30573</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to USS Pisces' current Transputer level...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to USS Pisces' current transputer level...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30574"></span>30574</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...and load value into A</td>
+<td class="comment-1" rowspan="1">...and load value into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30575"></span>30575</td>
 <td class="instruction">LD HL,39519</td>
-<td class="comment-11" rowspan="1">Point HL at position in USS Pisces Stats Text (at <a href="39140.html#39359">39359</a>) at which to insert Transputer level...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at position in USS Pisces stats text (at <a href="39140.html#39359">39359</a>) at which to insert transputer level...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30578"></span>30578</td>
 <td class="instruction">CALL <a href="34697.html">34697</a></td>
-<td class="comment-11" rowspan="1">...and splice the value in</td>
+<td class="comment-1" rowspan="1">...and splice the value in</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30581"></span>30581</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to start of USS Pisces' current stats)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to start of USS Pisces' current stats)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30582"></span>30582</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="30145.html">30145</a></span></td>
+<td class="prev">
+Prev: <a href="30145.html">30145</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#30533">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="30583.html">30583</a></span></td>
+<td class="next">
+Next: <a href="30583.html">30583</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

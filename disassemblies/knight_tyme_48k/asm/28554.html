@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 28554</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,218 +20,187 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="28542.html">28542</a></span></td>
+<td class="prev">
+Prev: <a href="28542.html">28542</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#28554">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="28625.html">28625</a></span></td>
+<td class="next">
+Next: <a href="28625.html">28625</a>
+</td>
 </tr>
 </table>
-<div class="description">28554: Room-Specific Routine: Show Tyme Guardians' Messages and Install Tyme Machine on USS Pisces</div>
+<div class="description">28554: Room-specific routine: Show Tyme Guardians' messages and install tyme machine on USS Pisces</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="28457.html">28457</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="28554"></span>28554</td>
 <td class="instruction">LD A,(23472)</td>
-<td class="comment-11" rowspan="1">If Tyme Machine Installed Flag is set...</td>
+<td class="comment-1" rowspan="1">If tyme-machine-installed flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28557"></span>28557</td>
 <td class="instruction">BIT 1,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28559"></span>28559</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28560"></span>28560</td>
 <td class="instruction">OR 2</td>
-<td class="comment-11" rowspan="1">Set Tyme Machine Installed Flag...</td>
+<td class="comment-1" rowspan="1">Set tyme-machine-installed flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28562"></span>28562</td>
 <td class="instruction">LD (23472),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28565"></span>28565</td>
 <td class="instruction">LD A,(23397)</td>
-<td class="comment-11" rowspan="1">Increase Bonus Score by 5...</td>
+<td class="comment-1" rowspan="1">Increase bonus score by 5...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28568"></span>28568</td>
 <td class="instruction">ADD A,5</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28570"></span>28570</td>
 <td class="instruction">LD (23397),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28573"></span>28573</td>
 <td class="instruction">LD A,24</td>
-<td class="comment-11" rowspan="1">Set right exit from USS Pisces, 5 (The Airlock) to USS Pisces, 6A (The Control Column)...</td>
+<td class="comment-1" rowspan="1">Set right exit from USS Pisces, 5 (The Airlock) to USS Pisces, 6A (The Control Column)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28575"></span>28575</td>
 <td class="instruction">LD (37033),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28578"></span>28578</td>
 <td class="instruction">LD HL,47114</td>
-<td class="comment-11" rowspan="1">Point HL at "THE TYME GUARDIANS ARE SHOCKED AT YOUR ARRIVAL..." text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "THE TYME GUARDIANS ARE SHOCKED AT YOUR ARRIVAL..." text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28581"></span>28581</td>
 <td class="instruction">LD DE,37195</td>
-<td class="comment-11" rowspan="1">Adjust height of window 13 to accommodate text...</td>
+<td class="comment-1" rowspan="1">Adjust height of window 13 to accommodate text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28584"></span>28584</td>
 <td class="instruction">CALL <a href="33774.html">33774</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28587"></span>28587</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to start of text to print)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to start of text to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28588"></span>28588</td>
 <td class="instruction">LD A,13</td>
-<td class="comment-11" rowspan="1">Draw Window 13...</td>
+<td class="comment-1" rowspan="1">Draw window 13...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28590"></span>28590</td>
 <td class="instruction">CALL <a href="34990.html">34990</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28593"></span>28593</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to start of text to print)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to start of text to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28594"></span>28594</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">Print text to screen</td>
+<td class="comment-1" rowspan="1">Print text to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28597"></span>28597</td>
 <td class="instruction">CALL <a href="55138.html">55138</a></td>
-<td class="comment-11" rowspan="1">Display "PRESS FIRE TO CONTINUE" Window and Wait for Fire to be Pressed</td>
+<td class="comment-1" rowspan="1">Display "PRESS FIRE TO CONTINUE" window and wait for fire to be pressed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28600"></span>28600</td>
 <td class="instruction">LD HL,47250</td>
-<td class="comment-11" rowspan="1">Point HL at "YOU MUST RETURN TO YOUR OWN TIME..." text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "YOU MUST RETURN TO YOUR OWN TIME..." text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28603"></span>28603</td>
 <td class="instruction">LD DE,37323</td>
-<td class="comment-11" rowspan="1">Adjust height of window 29 to accommodate text...</td>
+<td class="comment-1" rowspan="1">Adjust height of window 29 to accommodate text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28606"></span>28606</td>
 <td class="instruction">CALL <a href="33774.html">33774</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28609"></span>28609</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to start of text to print)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to start of text to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28610"></span>28610</td>
 <td class="instruction">LD A,29</td>
-<td class="comment-11" rowspan="1">Draw Window 29...</td>
+<td class="comment-1" rowspan="1">Draw window 29...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28612"></span>28612</td>
 <td class="instruction">CALL <a href="34990.html">34990</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28615"></span>28615</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to start of text to print)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to start of text to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28616"></span>28616</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">Print text to screen</td>
+<td class="comment-1" rowspan="1">Print text to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28619"></span>28619</td>
 <td class="instruction">CALL <a href="55138.html">55138</a></td>
-<td class="comment-11" rowspan="1">Display "PRESS FIRE TO CONTINUE" Window and Wait for Fire to be Pressed</td>
+<td class="comment-1" rowspan="1">Display "PRESS FIRE TO CONTINUE" window and wait for fire to be pressed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28622"></span>28622</td>
 <td class="instruction">JP <a href="27762.html#27765">27765</a></td>
-<td class="comment-11" rowspan="1">Draw Magic Knight's current room, draw objects and characters and initialise room-specific data and return</td>
+<td class="comment-1" rowspan="1">Draw Magic Knight's current room, draw objects and characters and initialise room-specific data and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="28542.html">28542</a></span></td>
+<td class="prev">
+Prev: <a href="28542.html">28542</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#28554">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="28625.html">28625</a></span></td>
+<td class="next">
+Next: <a href="28625.html">28625</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 45617</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45601.html">45601</a></span></td>
+<td class="prev">
+Prev: <a href="45601.html">45601</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45617">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45625.html">45625</a></span></td>
+<td class="next">
+Next: <a href="45625.html">45625</a>
+</td>
 </tr>
 </table>
-<div class="description">45617: Adjust Height (at DE) of a Window to Accommodate Text</div>
+<div class="description">45617: Adjust height (at <span class="register">DE</span>) of a window to accommodate text</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="43874.html">43874</a>, <a href="44635.html">44635</a>, <a href="45641.html">45641</a>, <a href="45685.html">45685</a>, <a href="45723.html">45723</a>, <a href="45963.html">45963</a>, <a href="64317.html">64317</a> and <a href="64582.html">64582</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,77 +51,73 @@ Used by the routines at <a href="43874.html">43874</a>, <a href="44635.html">446
 <td class="register-desc">Points to third byte of an entry in table at <a href="49034.html">49034</a> (i.e. y-coordinate of top edge of a window)</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">Points to first byte of text data (i.e. input HL value plus one)</td>
+<td class="register-desc">Points to first byte of text data (i.e. input <span class="register">HL</span> value plus one)</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="45617"></span>45617</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load height data into C...</td>
+<td class="comment-1" rowspan="1">Load height data into <span class="register">C</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45618"></span>45618</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45619"></span>45619</td>
 <td class="instruction">LD A,(DE)</td>
-<td class="comment-11" rowspan="1">Load y-coordinate in characters of window of interest into A</td>
+<td class="comment-1" rowspan="1">Load y-coordinate in characters of window of interest into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45620"></span>45620</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">Add height to window's top y-coordinate to get required bottom y-coordinate</td>
+<td class="comment-1" rowspan="1">Add height to window's top y-coordinate to get required bottom y-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45621"></span>45621</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Advance DE to y-coordinate of bottom edge of window...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">DE</span> to y-coordinate of bottom edge of window...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45622"></span>45622</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">...and load calculated bottom y-coordinate into address in DE</td>
+<td class="comment-1" rowspan="1">...and load calculated bottom y-coordinate into address in <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45623"></span>45623</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to first byte of actual text data</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to first byte of actual text data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45624"></span>45624</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45601.html">45601</a></span></td>
+<td class="prev">
+Prev: <a href="45601.html">45601</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45617">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45625.html">45625</a></span></td>
+<td class="next">
+Next: <a href="45625.html">45625</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Trivia</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -18,36 +19,36 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#cheatmode">Cheat Mode</a></li>
-<li><a href="#commandlocate">LOCATE Command</a></li>
-<li><a href="#debugcode001">Leftover Debug Code</a></li>
-<li><a href="#debugcode002">Leftover Debug Code Part II</a></li>
-<li><a href="#numberoftheday">Number of the Day</a></li>
-<li><a href="#redundantinstructions">Redundant Instructions / Code</a></li>
-<li><a href="#commandincreaseshappiness">Commanding a Character Makes Him or Her Happier</a></li>
+<li><a href="#cheatmode">Cheat mode</a></li>
+<li><a href="#commandlocate">LOCATE command</a></li>
+<li><a href="#debugcode001">Leftover debug code, part 1</a></li>
+<li><a href="#debugcode002">Leftover debug code, part 2</a></li>
+<li><a href="#numberoftheday">Password number</a></li>
+<li><a href="#redundantinstructions">Redundant instructions / code</a></li>
+<li><a href="#commandincreaseshappiness">Commanding a character makes him or her happier</a></li>
 <li><a href="#offwhitedrawing">Drawing Off-White Knight</a></li>
-<li><a href="#undreadablesword">Unreadable Sword</a></li>
-<li><a href="#undreadableteddybear">Unreadable Teddy Bear</a></li>
+<li><a href="#undreadablesword">Unreadable sword</a></li>
+<li><a href="#undreadableteddybear">Unreadable teddy bear</a></li>
 <li><a href="#placeholders">Placeholders</a></li>
-<li><a href="#thrownsmashable">Smashable Objects Thrown</a></li>
-<li><a href="#axeframenumbers">Axe Frame Numbers</a></li>
-<li><a href="#128ktraces">Common Code for 48k and 128k Versions</a></li>
-<li><a href="#missedoptimisation">Missed Opportunities for Optimisation</a></li>
-<li><a href="#reuseddata">Reused Data</a></li>
-<li><a href="#spellmeltgranite">Useless Spell</a></li>
-<li><a href="#spellspellofwonder">Not So Useless Spell</a></li>
-<li><a href="#reusedarchitecture">Reused Architecture Graphics</a></li>
+<li><a href="#thrownsmashable">Smashable objects thrown</a></li>
+<li><a href="#axeframenumbers">Axe frame numbers</a></li>
+<li><a href="#128ktraces">Common code for 48k and 128k versions</a></li>
+<li><a href="#missedoptimisation">Missed opportunities for optimisation</a></li>
+<li><a href="#reuseddata">Reused data</a></li>
+<li><a href="#spellmeltgranite">Useless spell</a></li>
+<li><a href="#spellspellofwonder">Not so useless spell</a></li>
+<li><a href="#reusedarchitecture">Reused architecture graphics</a></li>
 </ul>
 <div><span id="cheatmode"></span></div>
 <div class="box box-1">
-<div class="box-title">Cheat Mode</div>
+<div class="box-title">Cheat mode</div>
 <div class="paragraph">
-Stormbringer has a cheat / debug mode built in. Address <a href="../asm/23728.html">23728</a> is the Cheat Mode Enabled Flag, and if this is set (i.e. contains any non-zero value)
-then Cheat Mode becomes available:<br />
+Stormbringer has a cheat / debug mode built in. Address <a href="../asm/23728.html">23728</a> is the cheat-mode-enabled flag, and if this is set (i.e. contains any non-zero value)
+then cheat mode becomes available:<br />
 POKE <a href="../asm/23728.html">23728</a>,255
 </div>
 <div class="paragraph">
-When Cheat Mode is enabled, pressing DOWN while controlling Magic Knight will result in a prompt sound being played, and the border turning red. After
+When cheat mode is enabled, pressing DOWN while controlling Magic Knight will result in a prompt sound being played, and the border turning red. After
 this, it is possible to change Magic Knight's current room. Pressing LEFT or RIGHT decreases or increases, respectively, Magic Knight's current room
 index by one. Pressing UP or DOWN increases or decreases, respectively, Magic Knight's current room index by eight. After Magic Knight's current room
 index is changed, the new room is drawn. Pressing FIRE causes a return to the game.
@@ -55,22 +56,22 @@ index is changed, the new room is drawn. Pressing FIRE causes a return to the ga
 </div>
 <div><span id="commandlocate"></span></div>
 <div class="box box-2">
-<div class="box-title">LOCATE Command</div>
+<div class="box-title">LOCATE command</div>
 <div class="paragraph">
 Although the 128k version of Stormbringer includes the LOCATE command, the 48k version does not. Despite this, there remain some data and instructions
 in the 48k version that appear to be related to the LOCATE command. Much of the code is similar to that related to the LOCATE command in Spellbound:
 <ul class="">
-<li>Compass Glow Update Flag at <a href="../asm/23436.html">23436</a></li>
-<li>Coordinates of top-left corner of currently glowing Locate Compass sector at <a href="../asm/23471.html">23471</a></li>
-<li>Instructions between <a href="../asm/62178.html#62214">62214</a> and <a href="../asm/62178.html#62252">62252</a> (inclusive)</li>
+<li>compass-glow-update flag at <a href="../asm/23436.html">23436</a></li>
+<li>coordinates of top-left corner of currently glowing locate compass sector at <a href="../asm/23471.html">23471</a></li>
+<li>instructions between <a href="../asm/62178.html#62214">62214</a> and <a href="../asm/62178.html#62252">62252</a> (inclusive)</li>
 </ul>
 </div>
 </div>
 <div><span id="debugcode001"></span></div>
 <div class="box box-1">
-<div class="box-title">Leftover Debug Code</div>
+<div class="box-title">Leftover debug code, part 1</div>
 <div class="paragraph">
-The routine at <a href="../asm/37689.html">37689</a> displays and handles the Input Device Selection Menu, and the instructions from <a href="../asm/37689.html#37722">37722</a> onward are executed when the currently
+The routine at <a href="../asm/37689.html">37689</a> displays and handles the input device selection menu, and the instructions from <a href="../asm/37689.html#37722">37722</a> onward are executed when the currently
 selected input device is changed. The instructions between <a href="../asm/37689.html#37723">37723</a> and <a href="../asm/37689.html#37742">37742</a> seem to be set up to highlight the control device that was previously
 selected whenever a new one is chosen. The previously selected menu item is highlighted via a change in attribute for a character cell to the left of
 that item in the menu. The attribute used is 71 (white INK, black PAPER, BRIGHT), so the change will normally not be visible since there is nothing
@@ -80,55 +81,56 @@ visible.
 </div>
 <div><span id="debugcode002"></span></div>
 <div class="box box-2">
-<div class="box-title">Leftover Debug Code Part II</div>
+<div class="box-title">Leftover debug code, part 2</div>
 <div class="paragraph">
-The flag at <a href="../asm/23461.html">23461</a> determines whether or not only the top two character cells in 2x2 blocks are drawn. This flag is never modified anywhere in the game
-code, and so presumably exists only for debugging or development purposes. In order for the 2x1 drawing mode to function correctly (i.e. to move to the
-top-left cell of the next block to the right), an otherwise redundant instruction at <a href="../asm/41271.html#41322">41322</a> advances the Bitmap Virtual Text Cursor right by one
-character. When the Draw 2x1 Blocks Flag is reset, this advancing to the top-left cell of the next block to the left occurs at <a href="../asm/41271.html#41423">41423</a> and <a href="../asm/41271.html#41426">41426</a>.
+The flag at <a href="../asm/23461.html">23461</a> determines whether or not only the top two character cells in 2 × 2 blocks are drawn. This flag is never modified
+anywhere in the game code, and so presumably exists only for debugging or development purposes. In order for the 2 × 1 drawing mode to
+function correctly (i.e. to move to the top-left cell of the next block to the right), an otherwise redundant instruction at <a href="../asm/41271.html#41322">41322</a> advances the bitmap
+virtual text cursor right by one character. When the draw-2-×-1-blocks flag is reset, this advancing to the top-left cell of the next block
+to the left occurs at <a href="../asm/41271.html#41423">41423</a> and <a href="../asm/41271.html#41426">41426</a>.
 </div>
 </div>
 <div><span id="numberoftheday"></span></div>
 <div class="box box-1">
-<div class="box-title">Number of the Day</div>
+<div class="box-title">Password number</div>
 <div class="paragraph">
-Whenever a new game is started, the routine at <a href="../asm/38024.html">38024</a> is jumped to. This routine initialises data for the new game, including the Number of the Day
-which is required to activate the teleport from the Castle to the Spaceship. One of Magic Knight's tasks is to encode this number to a series of bits
-and pull those main levers that correspond to the number's set bits. Two of the levers, representing bits 5 (<a href="../asm/59798.html">59798</a>) and 6 (<a href="../asm/59772.html">59772</a>) of the number, lie
-beyond the Security Door (<a href="../asm/59841.html">59841</a>). The code that generates the number (<a href="../asm/38024.html">38024</a> - <a href="../asm/38024.html#38034">38034</a> inclusive) is set up to ensure that at least one of bits 5 and
-6 is set, thereby forcing Magic Knight to have to deal with the Security Door.
+Whenever a new game is started, the routine at <a href="../asm/38024.html">38024</a> is jumped to. This routine initialises data for the new game, including the password number which
+is required to activate the teleport from the castle to the spaceship. One of Magic Knight's tasks is to encode this number to a series of bits and pull
+those main levers that correspond to the number's set bits. Two of the levers, representing bits 5 (<a href="../asm/59798.html">59798</a>) and 6 (<a href="../asm/59772.html">59772</a>) of the number, lie beyond
+the security door (<a href="../asm/59841.html">59841</a>). The code that generates the number (<a href="../asm/38024.html">38024</a> - <a href="../asm/38024.html#38034">38034</a> inclusive) is set up to ensure that at least one of bits 5 and 6 is
+set, thereby forcing Magic Knight to have to deal with the security door.
 </div>
 </div>
 <div><span id="redundantinstructions"></span></div>
 <div class="box box-2">
-<div class="box-title">Redundant Instructions / Code</div>
+<div class="box-title">Redundant instructions / code</div>
 <div class="paragraph">
 There are many instances of redundant code, or redundant instructions in several texts. Some examples are:
 <ul class="">
-<li>The routine at <a href="../asm/38841.html">38841</a> changes Magic Knight's current room index to the value in A, however Magic Knight's room is also updated to the same value immediately prior to that routine being called at <a href="../asm/40406.html#40431">40431</a>, <a href="../asm/40437.html#40483">40483</a> and <a href="../asm/40546.html#40592">40592</a></li>
-<li>The routines at <a href="../asm/40729.html">40729</a>, <a href="../asm/40752.html">40752</a>, <a href="../asm/40765.html">40765</a>, <a href="../asm/40784.html">40784</a>, <a href="../asm/41059.html">41059</a> have been copied from Knight Tyme but are unused</li>
-<li>The instruction at <a href="../asm/41271.html#41274">41274</a> loads L with a value, but that value is overwritten at <a href="../asm/41271.html#41276">41276</a> without having been used</li>
-<li>The instruction at <a href="../asm/44337.html#44403">44403</a> loads A with the index of the Current Object, but that value is overwritten immediately afterwards in the call to <a href="../asm/45601.html">45601</a> and again at <a href="../asm/44337.html#44409">44409</a> without having been used</li>
-<li>The instruction at <a href="../asm/44635.html#44778">44778</a> checks whether the Current Object that has been selected as the target of the UNWEAR command is the Teddy Bear in order to display the "THE BEAR SAYS..." message, however this can never happen because the Teddy Bear can't be worn</li>
-<li>The routine at <a href="../asm/45670.html">45670</a> checks whether the Current Character is carrying the object with index in E, however this routine is unused. An ideal place to have used it would have been in Aramis's "Command a Character to Help" routine at <a href="../asm/45227.html">45227</a>.</li>
-<li>The instructions at <a href="../asm/38024.html#38121">38121 - 38123</a> do nothing. In the equivalent routine in Knight Tyme, the instructions in these positions set the least significant byte of the System Variable FRAMES to zero. In Knight Tyme, however, FRAMES was not used as heavily as it is in Stormbringer.</li>
-<li>The instructions at <a href="../asm/40437.html">40437 - 40438</a>, part of the room-specific routine for transporting Magic Knight between the teleports, set the BORDER to black and reset the speaker state. There is no apparent need to do this, however.</li>
-<li>The instructions between <a href="../asm/42494.html#42587">42587</a> and <a href="../asm/42494.html#42595">42595</a> are unnecessary, and replacing them with "LD C, A; JR 42601" results in the same functionality. The table at <a href="../asm/48535.html">48535</a> is likewise unnecessary</li>
-<li>The instruction at <a href="../asm/42638.html#42795">42795</a> resets the most significant bit of the current character's status text index, however this bit can never be set so this instruction is unnecessary.</li>
-<li>The instruction at <a href="../asm/43250.html#43255">43255</a> writes a 32 (SPACE character) at the end of the "[Current Character's short name] CANNOT HELP YOU&#160;&#160;" text at <a href="../asm/52523.html#52770">52770</a> even though this text already ends with two SPACE characters. It is possible that this was intentional, to enable variations of the message, e.g. "[Character] CANNOT HELP YOU YET", or "[Character] CANNOT HELP YOU HERE".</li>
-<li>The instruction at <a href="../asm/63691.html#63721">63721</a> is a jump to the instruction immediately after</li>
-<li>The instruction at <a href="../asm/64687.html#64753">64753</a> loads A with zero unnecessarily</li>
-<li>The text entry at <a href="../asm/50138.html#50360">50360</a> has an instruction to change INK colour to yellow, followed by an instruction to change INK colour to white</li>
-<li>The text entry at <a href="../asm/50640.html">50640</a> has a repeated instruction to change INK colour to yellow</li>
-<li>The instruction at <a href="../asm/46902.html#46929">46929</a> causes a conditional jump to <a href="../asm/47178.html">47178</a> if the end of the text to print is encountered. However the instruction at <a href="../asm/47178.html">47178</a> is a simple RET. The same result could have been achieved with a RET Z instruction at <a href="../asm/46902.html#46929">46929</a>.</li>
-<li>The instruction at <a href="../initialisation/37632.html#37636">37636</a> loads RAM address <a href="../asm/23364.html">23364</a> with zero, however this address is never used.</li>
-<li>The instruction at <a href="../asm/38024.html#38109">38109</a> loads RAM address <a href="../asm/23481.html#23486">23486</a> with zero, however this address is never used.</li>
+<li>the routine at <a href="../asm/38841.html">38841</a> changes Magic Knight's current room index to the value in <span class="register">A</span>, however Magic Knight's room is also updated to the same value immediately prior to that routine being called at <a href="../asm/40406.html#40431">40431</a>, <a href="../asm/40437.html#40483">40483</a> and <a href="../asm/40546.html#40592">40592</a></li>
+<li>the routines at <a href="../asm/40729.html">40729</a>, <a href="../asm/40752.html">40752</a>, <a href="../asm/40765.html">40765</a>, <a href="../asm/40784.html">40784</a>, <a href="../asm/41059.html">41059</a> have been copied from Knight Tyme but are unused</li>
+<li>the instruction at <a href="../asm/41271.html#41274">41274</a> loads <span class="register">L</span> with a value, but that value is overwritten at <a href="../asm/41271.html#41276">41276</a> without having been used</li>
+<li>the instruction at <a href="../asm/44337.html#44403">44403</a> loads <span class="register">A</span> with the index of the Current Object, but that value is overwritten immediately afterwards in the call to <a href="../asm/45601.html">45601</a> and again at <a href="../asm/44337.html#44409">44409</a> without having been used</li>
+<li>the instruction at <a href="../asm/44635.html#44778">44778</a> checks whether the Current Object that has been selected as the target of the UNWEAR command is the Teddy Bear in order to display the "THE BEAR SAYS..." message, however this can never happen because the Teddy Bear can't be worn</li>
+<li>the routine at <a href="../asm/45670.html">45670</a> checks whether the Current Character is carrying the object with index in <span class="register">E</span>, however this routine is unused. An ideal place to have used it would have been in Aramis's "command a character to help" routine at <a href="../asm/45227.html">45227</a>.</li>
+<li>the instructions at <a href="../asm/38024.html#38121">38121 - 38123</a> do nothing. In the equivalent routine in Knight Tyme, the instructions in these positions set the least significant byte of the frame counter (FRAMES system variable) to zero. In Knight Tyme, however, FRAMES was not used as heavily as it is in Stormbringer.</li>
+<li>the instructions at <a href="../asm/40437.html">40437 - 40438</a>, part of the room-specific routine for transporting Magic Knight between the teleports, set the BORDER to black and reset the speaker state. There is no apparent need to do this, however.</li>
+<li>the instructions between <a href="../asm/42494.html#42587">42587</a> and <a href="../asm/42494.html#42595">42595</a> are unnecessary, and replacing them with <span class="instruction">LD C,A</span>; <span class="instruction">JR 42601</span> results in the same functionality. The table at <a href="../asm/48535.html">48535</a> is likewise unnecessary</li>
+<li>the instruction at <a href="../asm/42638.html#42795">42795</a> resets the most significant bit of the current character's status text index, however this bit can never be set so this instruction is unnecessary.</li>
+<li>the instruction at <a href="../asm/43250.html#43255">43255</a> writes a 32 (SPACE character) at the end of the "[Current Character's short name] CANNOT HELP YOU&#160;&#160;" text at <a href="../asm/52523.html#52770">52770</a> even though this text already ends with two SPACE characters. It is possible that this was intentional, to enable variations of the message, e.g. "[Character] CANNOT HELP YOU YET", or "[Character] CANNOT HELP YOU HERE".</li>
+<li>the instruction at <a href="../asm/63691.html#63721">63721</a> is a jump to the instruction immediately after</li>
+<li>the instruction at <a href="../asm/64687.html#64753">64753</a> loads <span class="register">A</span> with zero unnecessarily</li>
+<li>the text entry at <a href="../asm/50138.html#50360">50360</a> has an instruction to change INK colour to yellow, followed by an instruction to change INK colour to white</li>
+<li>the text entry at <a href="../asm/50640.html">50640</a> has a repeated instruction to change INK colour to yellow</li>
+<li>the instruction at <a href="../asm/46902.html#46929">46929</a> causes a conditional jump to <a href="../asm/47178.html">47178</a> if the end of the text to print is encountered. However the instruction at <a href="../asm/47178.html">47178</a> is a simple <span class="instruction">RET</span>. The same result could have been achieved with a <span class="instruction">RET Z</span> instruction at <a href="../asm/46902.html#46929">46929</a>.</li>
+<li>the instruction at <a href="../initialisation/37632.html#37636">37636</a> loads RAM address <a href="../asm/23364.html">23364</a> with zero, however this address is never used.</li>
+<li>the instruction at <a href="../asm/38024.html#38109">38109</a> loads RAM address <a href="../asm/23481.html#23486">23486</a> with zero, however this address is never used.</li>
 </ul>
 </div>
 </div>
 <div><span id="commandincreaseshappiness"></span></div>
 <div class="box box-1">
-<div class="box-title">Commanding a Character Makes Him or Her Happier</div>
+<div class="box-title">Commanding a character makes him or her happier</div>
 <div class="paragraph">
 When Magic Knight uses the Wand of Command to command a character, that character's happiness is increased by two points (see <a href="../asm/43043.html#43092">43092-43094</a>).
 This is the opposite effect to that in Knight Tyme, where characters' happiness is decreased when Magic Knight commands them. It is possible that this
@@ -154,7 +156,7 @@ The purpose of this check is not clear as Off-White's graphic index cannot be se
 </div>
 <div><span id="undreadablesword"></span></div>
 <div class="box box-1">
-<div class="box-title">Unreadable Sword</div>
+<div class="box-title">Unreadable sword</div>
 <div class="paragraph">
 Certain objects in the game are not readable unless Magic Knight is holding the Crystal Ball. If he attempts to read one of these objects without the
 Crystal Ball, a message is shown stating that there is writing present in a magic language that cannot be read. The instructions between <a href="../asm/43494.html#43541">43541 -
@@ -166,7 +168,7 @@ Perhaps this was ultimately rejected because it is a little <em>too</em> silly.
 </div>
 <div><span id="undreadableteddybear"></span></div>
 <div class="box box-2">
-<div class="box-title">Unreadable Teddy Bear</div>
+<div class="box-title">Unreadable teddy bear</div>
 <div class="paragraph">
 When the Teddy Bear is read, the text shown is "TNORF OT KCAB" (<a href="../asm/52878.html#52964">52964</a>). Given that some objects have texts that cannot be read unless Magic Knight is
 in possession of the Crystal Ball, one would assume that the Mirror would reveal the Teddy Bear's text, however this is not the case. Although the Teddy
@@ -181,15 +183,15 @@ bear, Milne, is undoubtedly a reference to A. A. Milne and "HUNNEY" is close to 
 <div class="paragraph">
 Placeholder data is used in a number of locations:
 <ul class="">
-<li>A number of entries in the Main In-Game Menu Strings at <a href="../asm/51434.html">51434</a> ("A" at <a href="../asm/51434.html#51494">51494</a>, "D" at <a href="../asm/51434.html#51576">51576</a>, "E" at <a href="../asm/51434.html#51580">51580</a>, "F" at <a href="../asm/51434.html#51584">51584</a>)</li>
-<li>One entry in the list of Object Names at <a href="../asm/56565.html">56565</a> ("X" at <a href="../asm/56565.html#56841">56841</a>)</li>
-<li>A number of entries in the Common Words Table, Part 2 at <a href="../asm/58459.html">58459</a> ("*191*" at <a href="../asm/58459.html">58459</a>, "*192*" at <a href="../asm/58459.html#58465">58465</a>, "*FC*" at <a href="../asm/58459.html#58821">58821</a>, "*FE*" at <a href="../asm/58459.html#58831">58831</a>, "*FF*" at <a href="../asm/58459.html#58836">58836</a>)</li>
+<li>a number of entries in the main in-game menu strings at <a href="../asm/51434.html">51434</a> ("A" at <a href="../asm/51434.html#51494">51494</a>, "D" at <a href="../asm/51434.html#51576">51576</a>, "E" at <a href="../asm/51434.html#51580">51580</a>, "F" at <a href="../asm/51434.html#51584">51584</a>)</li>
+<li>one entry in the list of object names at <a href="../asm/56565.html">56565</a> ("X" at <a href="../asm/56565.html#56841">56841</a>)</li>
+<li>a number of entries in the common words table, part 2 at <a href="../asm/58459.html">58459</a> ("*191*" at <a href="../asm/58459.html">58459</a>, "*192*" at <a href="../asm/58459.html#58465">58465</a>, "*FC*" at <a href="../asm/58459.html#58821">58821</a>, "*FE*" at <a href="../asm/58459.html#58831">58831</a>, "*FF*" at <a href="../asm/58459.html#58836">58836</a>)</li>
 </ul>
 </div>
 </div>
 <div><span id="thrownsmashable"></span></div>
 <div class="box box-2">
-<div class="box-title">Smashable Objects Thrown</div>
+<div class="box-title">Smashable objects thrown</div>
 <div class="paragraph">
 When an object is thrown, a check is made at <a href="../asm/43636.html#43830">43830</a> to see if that object is the Mirror. If so, a special message is displayed, describing how the
 object has smashed. This message is only shown for the Mirror, even though other objects (i.e. the Bottles of Liquid and the Empty Bottles) will also
@@ -198,7 +200,7 @@ smash when thrown.
 </div>
 <div><span id="axeframenumbers"></span></div>
 <div class="box box-1">
-<div class="box-title">Axe Frame Numbers</div>
+<div class="box-title">Axe frame numbers</div>
 <div class="paragraph">
 The routine <a href="../asm/46560.html">46560</a> that draws the axes to screen relies on offset frame numbers (116, 117, 118 and 119) rather than absolute frame numbers (e.g. 0, 1,
 2 and 3). These are the same frame numbers used by the Odd Ball in Spellbound.
@@ -206,39 +208,39 @@ The routine <a href="../asm/46560.html">46560</a> that draws the axes to screen 
 </div>
 <div><span id="128ktraces"></span></div>
 <div class="box box-2">
-<div class="box-title">Common Code for 48k and 128k Versions</div>
+<div class="box-title">Common code for 48k and 128k versions</div>
 <div class="paragraph">
 There appear to be some code fragments that aren't necessary for the 48k version of the game. Generally speaking, these appear to be indications that
 the 48k version and the 128k version use much code in common. A few examples are:
 <ul class="">
-<li>split Common Words Table, handled by routine at <a href="../asm/47179.html">47179</a></li>
-<li>NOP instruction at <a href="../asm/61387.html">61387</a></li>
-<li>An extra entry (<a href="../asm/62072.html#62176">62176</a>) in the Table of Addresses of Room-Specific Routines at <a href="../asm/62072.html">62072</a>.</li>
+<li>split common words table, handled by routine at <a href="../asm/47179.html">47179</a></li>
+<li><span class="instruction">NOP</span> instruction at <a href="../asm/61387.html">61387</a></li>
+<li>an extra entry (<a href="../asm/62072.html#62176">62176</a>) in the table of addresses of room-specific routines at <a href="../asm/62072.html">62072</a>.</li>
 </ul>
 </div>
 </div>
 <div><span id="missedoptimisation"></span></div>
 <div class="box box-1">
-<div class="box-title">Missed Opportunities for Optimisation</div>
+<div class="box-title">Missed opportunities for optimisation</div>
 <div class="paragraph">
-There are a few instances where savings in memory use could have been made by taking advantage of the Common Words Table:
+There are a few instances where savings in memory use could have been made by taking advantage of the common words table:
 <ul class="">
-<li>The text entry at <a href="../asm/57693.html#58072">58072</a> ("BOTTLE OF LIQUID") could have used a reference to the preceding entry for "BOTTLE"</li>
-<li>The text entry at <a href="../asm/57693.html#58384">58384</a> ("MAGIC FULCRUM") could have used a reference to the entry for "MAGIC"</li>
-<li>The text entry at <a href="../asm/58459.html#58702">58702</a> ("MAGIC KNIGHT") could have used a reference to the entry for "MAGIC"</li>
+<li>the text entry at <a href="../asm/57693.html#58072">58072</a> ("BOTTLE OF LIQUID") could have used a reference to the preceding entry for "BOTTLE"</li>
+<li>the text entry at <a href="../asm/57693.html#58384">58384</a> ("MAGIC FULCRUM") could have used a reference to the entry for "MAGIC"</li>
+<li>the text entry at <a href="../asm/58459.html#58702">58702</a> ("MAGIC KNIGHT") could have used a reference to the entry for "MAGIC"</li>
 </ul>
 </div>
 </div>
 <div><span id="reuseddata"></span></div>
 <div class="box box-2">
-<div class="box-title">Reused Data</div>
+<div class="box-title">Reused data</div>
 <div class="paragraph">
-The values in the Table of Characters' Default Happiness Levels at <a href="../asm/43486.html">43486</a> are taken unmodified from Spellbound.
+The values in the table of characters' default happiness levels at <a href="../asm/43486.html">43486</a> are taken unmodified from Spellbound.
 </div>
 </div>
 <div><span id="spellmeltgranite"></span></div>
 <div class="box box-1">
-<div class="box-title">Useless Spell</div>
+<div class="box-title">Useless spell</div>
 <div class="paragraph">
 The Melt Granite spell does not do anything. The routine at <a href="../asm/43998.html">43998</a> that handles this spell simply displays a message stating that this spell cannot be
 cast.
@@ -246,26 +248,27 @@ cast.
 </div>
 <div><span id="spellspellofwonder"></span></div>
 <div class="box box-2">
-<div class="box-title">Not So Useless Spell</div>
+<div class="box-title">Not so useless spell</div>
 <div class="paragraph">
 The Spell of Wonder is not quite as useless as the in-game text suggests. In fact it slightly increases Magic Knight's current strength!
 </div>
 </div>
 <div><span id="reusedarchitecture"></span></div>
 <div class="box box-1">
-<div class="box-title">Reused Architecture Graphics</div>
+<div class="box-title">Reused architecture graphics</div>
 <div class="paragraph">
-The <a href="../asm/49794.html">table of 2x2 block style definitions</a> contains several blocks that are taken from a previous Magic Knight game, Finders Keepers:
+The <a href="../asm/49794.html">table of 2 × 2 block style definitions</a> contains several blocks that are taken from a previous Magic Knight game, Finders
+Keepers:
 </div>
 <div class="paragraph">
 <table class="default">
 <tr>
-<td class="centre" colspan="1" rowspan="1"><img alt="2" src="../images/udgs/blocks/2.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="3" src="../images/udgs/blocks/3.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="5" src="../images/udgs/blocks/5.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="7" src="../images/udgs/blocks/7.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="8" src="../images/udgs/blocks/8.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="9" src="../images/udgs/blocks/9.png" /></td>
+<td class="centre" colspan="1" rowspan="1"><img alt="2" src="../images/blocks/2.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="3" src="../images/blocks/3.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="5" src="../images/blocks/5.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="7" src="../images/blocks/7.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="8" src="../images/blocks/8.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="9" src="../images/blocks/9.png" /></td>
 </tr>
 </table>
 </div>
@@ -278,18 +281,18 @@ In addition, several blocks from Spellbound are also defined here:
 <div class="paragraph">
 <table class="default">
 <tr>
-<td class="centre" colspan="1" rowspan="1"><img alt="1" src="../images/udgs/blocks/1.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="11" src="../images/udgs/blocks/11.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="12" src="../images/udgs/blocks/12.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="13" src="../images/udgs/blocks/13.png" /></td>
+<td class="centre" colspan="1" rowspan="1"><img alt="1" src="../images/blocks/1.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="11" src="../images/blocks/11.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="12" src="../images/blocks/12.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="13" src="../images/blocks/13.png" /></td>
 </tr>
 </table>
 </div>
 </div>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

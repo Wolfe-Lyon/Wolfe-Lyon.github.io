@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Unused RAM at 54499</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-u">
 <table class="header">
@@ -22,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54480.html">54480</a></span></td>
+<td class="prev">
+Prev: <a href="54480.html">54480</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54499">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54505.html">54505</a></span></td>
+<td class="next">
+Next: <a href="54505.html">54505</a>
+</td>
 </tr>
 </table>
 <div class="description">54499: Unused routine</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 This routine is not used. It is assumed, since this routine flows into the routine at <a href="54505.html">54505</a>, that this unused routine was also intended to deal with room connectivity. As there are routines to deal with vertical and horizontal (left-right) connectivity, it is possible that this routine was originally intended to handle horizontal (forward-back) connectivity.
@@ -39,44 +41,34 @@ This routine is not used. It is assumed, since this routine flows into the routi
 See also unused routine at <a href="54533.html">54533</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54499"></span>54499</td>
 <td class="instruction">LD IY,(34252)</td>
-<td class="comment-11" rowspan="1">Load IY with address of Unused Data Block (09)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with address of unused data block (09)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54503"></span>54503</td>
 <td class="instruction">JR <a href="54505.html#54512">54512</a></td>
-<td class="comment-11" rowspan="1">Load B with index of room, as related to room of index D via data in Unused Data Block (09)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with index of room, as related to room of index <span class="register">D</span> via data in unused data block (09)</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54480.html">54480</a></span></td>
+<td class="prev">
+Prev: <a href="54480.html">54480</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54499">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54505.html">54505</a></span></td>
+<td class="next">
+Next: <a href="54505.html">54505</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

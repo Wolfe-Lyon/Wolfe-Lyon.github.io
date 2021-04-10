@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 38961</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,100 +20,87 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38884.html">38884</a></span></td>
+<td class="prev">
+Prev: <a href="38884.html">38884</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38961">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38980.html">38980</a></span></td>
+<td class="next">
+Next: <a href="38980.html">38980</a>
+</td>
 </tr>
 </table>
-<div class="description">38961: Reset All Stars to Point of Origin and Generate New Velocities and Movement Data</div>
+<div class="description">38961: Reset all stars to point of origin and generate new velocities and movement data</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="38884.html">38884</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38961"></span>38961</td>
 <td class="instruction">LD IX,25614</td>
-<td class="comment-11" rowspan="1">Point IX at start of table of stars' movement data</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at start of table of stars' movement data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38965"></span>38965</td>
 <td class="instruction">LD B,50</td>
-<td class="comment-11" rowspan="1">Load B with 50 (as there are 50 stars to process)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 50 (as there are 50 stars to process)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38967"></span>38967</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = remaining number of stars to process)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = remaining number of stars to process)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38968"></span>38968</td>
 <td class="instruction">CALL <a href="38795.html">38795</a></td>
-<td class="comment-11" rowspan="1">Reset star to point of origin and generate a new direction and movement data</td>
+<td class="comment-1" rowspan="1">Reset star to point of origin and generate a new direction and movement data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38971"></span>38971</td>
 <td class="instruction">LD DE,9</td>
-<td class="comment-11" rowspan="1">Load DE with 9</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with 9</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38974"></span>38974</td>
 <td class="instruction">ADD IX,DE</td>
-<td class="comment-11" rowspan="1">Advance IX by 9 bytes</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> by 9 bytes</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38976"></span>38976</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38977"></span>38977</td>
 <td class="instruction">DJNZ 38967</td>
-<td class="comment-11" rowspan="1">Decrease B and repeat loop</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> and repeat loop</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38979"></span>38979</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38884.html">38884</a></span></td>
+<td class="prev">
+Prev: <a href="38884.html">38884</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38961">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38980.html">38980</a></span></td>
+<td class="next">
+Next: <a href="38980.html">38980</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

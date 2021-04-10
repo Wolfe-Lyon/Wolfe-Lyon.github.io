@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 32886</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,82 +20,72 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="32880.html">32880</a></span></td>
+<td class="prev">
+Prev: <a href="32880.html">32880</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#32886">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="32895.html">32895</a></span></td>
+<td class="next">
+Next: <a href="32895.html">32895</a>
+</td>
 </tr>
 </table>
-<div class="description">32886: Reset Port 254 EAR Bit, Wait for Interrupt then Set EAR Bit of Port 254</div>
+<div class="description">32886: Reset EAR bit, wait for interrupt then set EAR bit</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="32694.html">32694</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="32886"></span>32886</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Reset all bits of Port 254 (including EAR bit)...</td>
+<td class="comment-1" rowspan="1">Reset all bits of Port 254 (including EAR bit)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32887"></span>32887</td>
 <td class="instruction">OUT (254),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32889"></span>32889</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">Wait for interrupt</td>
+<td class="comment-1" rowspan="1">Wait for interrupt</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32890"></span>32890</td>
 <td class="instruction">LD A,16</td>
-<td class="comment-11" rowspan="1">Set EAR bit of Port 254...</td>
+<td class="comment-1" rowspan="1">Set EAR bit of Port 254...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32892"></span>32892</td>
 <td class="instruction">OUT (254),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32894"></span>32894</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="32880.html">32880</a></span></td>
+<td class="prev">
+Prev: <a href="32880.html">32880</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#32886">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="32895.html">32895</a></span></td>
+<td class="next">
+Next: <a href="32895.html">32895</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

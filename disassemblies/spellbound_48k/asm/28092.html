@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 28092</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,27 +20,34 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="28064.html">28064</a></span></td>
+<td class="prev">
+Prev: <a href="28064.html">28064</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#28092">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="28272.html">28272</a></span></td>
+<td class="next">
+Next: <a href="28272.html">28272</a>
+</td>
 </tr>
 </table>
-<div class="description">28092: Draw Bottom in-Game Window + Room Name and Animate Entry (Puff of Smoke) of a Character if Required</div>
+<div class="description">28092: Draw bottom in-game window and room name and animate entry (puff of smoke) of a character if required</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="27865.html">27865</a>.
 </div>
 </div>
-<table class="input-0">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
+</tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -51,593 +59,501 @@ Used by the routine at <a href="27865.html">27865</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="28092"></span>28092</td>
 <td class="instruction">CALL <a href="28272.html">28272</a></td>
-<td class="comment-11" rowspan="1">Print Magic Knight's current room name to top of screen</td>
+<td class="comment-1" rowspan="1">Print Magic Knight's current room name to top of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28095"></span>28095</td>
 <td class="instruction">LD A,15</td>
-<td class="comment-11" rowspan="1">Prepare to draw window 15 (window at bottom of screen)</td>
+<td class="comment-1" rowspan="1">Prepare to draw window 15 (window at bottom of screen)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28097"></span>28097</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">Wait for interrupt</td>
+<td class="comment-1" rowspan="1">Wait for interrupt</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28098"></span>28098</td>
 <td class="instruction">CALL <a href="36987.html">36987</a></td>
-<td class="comment-11" rowspan="1">Draw window 15</td>
+<td class="comment-1" rowspan="1">Draw window 15</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28101"></span>28101</td>
 <td class="instruction">LD HL,43136</td>
-<td class="comment-11" rowspan="1">Point HL to "SPELLBOUND COPYRIGHT..." text (shown in window at bottom of in-game screen when Magic Knight is not carrying the Mirror)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> to "SPELLBOUND COPYRIGHT..." text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28104"></span>28104</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28105"></span>28105</td>
 <td class="instruction">LD A,35</td>
-<td class="comment-11" rowspan="1">Load A with object index of 35 (Mirror)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with object index of 35 (Mirror)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28107"></span>28107</td>
 <td class="instruction">CALL <a href="34256.html">34256</a></td>
-<td class="comment-11" rowspan="1">Set Zero Flag if Magic Knight is carrying the Mirror</td>
+<td class="comment-1" rowspan="1">Set zero flag if Magic Knight is carrying the Mirror</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28110"></span>28110</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28111"></span>28111</td>
 <td class="instruction">JR NZ,28116</td>
-<td class="comment-11" rowspan="1">If Magic Knight is not carrying the Mirror, then skip to <a href="28092.html#28116">28116</a></td>
+<td class="comment-1" rowspan="1">If Magic Knight is not carrying the Mirror, then skip to <a href="28092.html#28116">28116</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28113"></span>28113</td>
 <td class="instruction">LD HL,43913</td>
-<td class="comment-11" rowspan="1">Point to " * STRENGTH *  1  2  3  4  5" text</td>
+<td class="comment-1" rowspan="1">Point to " * STRENGTH *  1  2  3  4  5" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="28116"></span>28116</td>
 <td class="instruction">CALL <a href="36725.html">36725</a></td>
-<td class="comment-11" rowspan="1">Print text at HL to screen</td>
+<td class="comment-1" rowspan="1">Print text at <span class="register">HL</span> to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28119"></span>28119</td>
 <td class="instruction">CALL <a href="36215.html">36215</a></td>
-<td class="comment-11" rowspan="1">Draw health bar at bottom of screen</td>
+<td class="comment-1" rowspan="1">Draw health bar at bottom of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28122"></span>28122</td>
 <td class="instruction">CALL <a href="36275.html">36275</a></td>
-<td class="comment-11" rowspan="1">Draw objects in Magic Knight's inventory to bottom of screen if he is carrying mirror</td>
+<td class="comment-1" rowspan="1">Draw objects in Magic Knight's inventory to bottom of screen if he is carrying Mirror</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28125"></span>28125</td>
 <td class="instruction">CALL <a href="29446.html">29446</a></td>
-<td class="comment-11" rowspan="1">Set Magic Knight's action flags and prepare to execute room-specific routine for his current room</td>
+<td class="comment-1" rowspan="1">Set Magic Knight's action flags and prepare to execute room-specific routine for his current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28128"></span>28128</td>
 <td class="instruction">CALL <a href="38512.html">38512</a></td>
-<td class="comment-11" rowspan="1">Set Terrain Interaction Data for all objects in Magic Knight's current room</td>
+<td class="comment-1" rowspan="1">Set terrain interaction data for, and draw, all objects in Magic Knight's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28131"></span>28131</td>
 <td class="instruction">CALL <a href="30129.html">30129</a></td>
-<td class="comment-11" rowspan="1">Draw lift doors if Magic Knight is at Lift entrance on a different floor to the Lift</td>
+<td class="comment-1" rowspan="1">Draw lift doors if Magic Knight is at lift entrance on a different floor to the lift</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28134"></span>28134</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set Magic Knight's current frame to erase to zero (frame 0 is blank graphic data) so Magic Knight is drawn but not erased...</td>
+<td class="comment-1" rowspan="1">Set Magic Knight's current frame to erase to zero (frame 0 is blank graphic data) so Magic Knight is drawn but not erased...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28135"></span>28135</td>
 <td class="instruction">LD (25389),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28138"></span>28138</td>
 <td class="instruction">CALL <a href="34821.html">34821</a></td>
-<td class="comment-11" rowspan="1">Update Magic Knight's current frame based on x-coordinate</td>
+<td class="comment-1" rowspan="1">Update Magic Knight's current frame based on x-coordinate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28141"></span>28141</td>
 <td class="instruction">LD (65528),A</td>
-<td class="comment-11" rowspan="1">Store frame number at 65528</td>
+<td class="comment-1" rowspan="1">Store frame number at 65528</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28144"></span>28144</td>
 <td class="instruction">LD (25390),A</td>
-<td class="comment-11" rowspan="1">Set Magic Knight's current frame</td>
+<td class="comment-1" rowspan="1">Set Magic Knight's current frame</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28147"></span>28147</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero (Magic Knight) and...</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero (Magic Knight) and...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28148"></span>28148</td>
 <td class="instruction">CALL <a href="39224.html">39224</a></td>
-<td class="comment-11" rowspan="1">...draw Magic Knight (erase old frame and draw new frame)</td>
+<td class="comment-1" rowspan="1">...draw Magic Knight (erase old frame and draw new frame)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28151"></span>28151</td>
 <td class="instruction">CALL <a href="29576.html">29576</a></td>
-<td class="comment-11" rowspan="1">Draw all characters in current room and animate arrival of any new character</td>
+<td class="comment-1" rowspan="1">Draw all characters in current room and animate arrival of any new character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28154"></span>28154</td>
 <td class="instruction">LD A,71</td>
-<td class="comment-11" rowspan="1">Load system variable ATTR T with 71 (white INK, black PAPER, BRIGHT)...</td>
+<td class="comment-1" rowspan="1">Store 71 (white INK, black PAPER, BRIGHT) at <a href="23695.html">23695</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28156"></span>28156</td>
 <td class="instruction">LD (23695),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28159"></span>28159</td>
 <td class="instruction">RES 1,(IY+65)</td>
-<td class="comment-11" rowspan="1">Reset "Disable In-Game Glow" flag</td>
+<td class="comment-1" rowspan="1">Reset disable-in-game-glow flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28163"></span>28163</td>
 <td class="instruction">RES 2,(IY+65)</td>
-<td class="comment-11" rowspan="1">Reset "Characters Can't Move" flag</td>
+<td class="comment-1" rowspan="1">Reset characters-can't-move flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28167"></span>28167</td>
 <td class="instruction">LD A,(23505)</td>
-<td class="comment-11" rowspan="1">If "Animate Magic Knight's Puff of Smoke Appearance on Next Room Redraw" flag is reset...</td>
+<td class="comment-1" rowspan="1">If animate-Magic-Knight's-puff-of-smoke-appearance-on-next-room-redraw flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28170"></span>28170</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28171"></span>28171</td>
 <td class="instruction">JR Z,28264</td>
-<td class="comment-11" rowspan="1">...then jump ahead to <a href="28092.html#28264">28264</a></td>
+<td class="comment-1" rowspan="1">...then jump ahead to <a href="28092.html#28264">28264</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28173"></span>28173</td>
 <td class="instruction">LD A,(25390)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current frame number into A</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's current frame number into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28176"></span>28176</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = Magic Knight's current frame number)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = Magic Knight's current frame number)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28177"></span>28177</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set Magic Knight's current frame number to zero...</td>
+<td class="comment-1" rowspan="1">Set Magic Knight's current frame number to zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28178"></span>28178</td>
 <td class="instruction">LD (25390),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28181"></span>28181</td>
 <td class="instruction">CALL <a href="39224.html">39224</a></td>
-<td class="comment-11" rowspan="1">...draw Magic Knight (erase old frame and draw new frame)</td>
+<td class="comment-1" rowspan="1">...draw Magic Knight (erase old frame and draw new frame)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28184"></span>28184</td>
 <td class="instruction">LD A,(25393)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current attribute into system variable ATTR T...</td>
+<td class="comment-1" rowspan="1">Store Magic Knight's current attribute at <a href="23695.html">23695</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28187"></span>28187</td>
 <td class="instruction">LD (23695),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28190"></span>28190</td>
 <td class="instruction">LD A,(25387)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current x-coordinate into A</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's current x-coordinate into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28193"></span>28193</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">Divide x-coordinate by eight, rounding down to nearest integer...</td>
+<td class="comment-1" rowspan="1">Divide x-coordinate by eight, rounding down to nearest integer...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28194"></span>28194</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28195"></span>28195</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28196"></span>28196</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28198"></span>28198</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Copy x-coordinate (characters) into C</td>
+<td class="comment-1" rowspan="1">Copy x-coordinate (characters) into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28199"></span>28199</td>
 <td class="instruction">LD A,(25388)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current y-coordinate into A</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's current y-coordinate into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28202"></span>28202</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">Divide y-coordinate by eight, rounding down to nearest integer...</td>
+<td class="comment-1" rowspan="1">Divide y-coordinate by eight, rounding down to nearest integer...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28203"></span>28203</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28204"></span>28204</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28205"></span>28205</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28207"></span>28207</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Copy y-coordinate (characters) into B</td>
+<td class="comment-1" rowspan="1">Copy y-coordinate (characters) into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28208"></span>28208</td>
 <td class="instruction">LD E,63</td>
-<td class="comment-11" rowspan="1">Load E with 63 (index of Puff of Smoke frame 1)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with 63 (index of puff of smoke frame 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28210"></span>28210</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE (E = index of current Puff of Smoke animation frame)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span> (<span class="register">E</span> = index of current puff of smoke animation frame)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28211"></span>28211</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (Magic Knight's x- and y-coordinates in characters)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (Magic Knight's x- and y-coordinates in characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28212"></span>28212</td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="1">Copy index of first Puff of Smoke animation frame into A</td>
+<td class="comment-1" rowspan="1">Copy index of first puff of smoke animation frame into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28213"></span>28213</td>
 <td class="instruction">CALL <a href="29950.html">29950</a></td>
-<td class="comment-11" rowspan="1">Draw Puff of Smoke frame 1 in XOR mode</td>
+<td class="comment-1" rowspan="1">Draw puff of smoke frame 1 in <span class="instruction">XOR</span> mode</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28216"></span>28216</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (Magic Knight's x- and y-coordinates in characters)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (Magic Knight's x- and y-coordinates in characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28217"></span>28217</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE (E = index of current Puff of Smoke animation frame)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span> (<span class="register">E</span> = index of current puff of smoke animation frame)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28218"></span>28218</td>
 <td class="instruction">LD D,5</td>
-<td class="comment-11" rowspan="1">Load D with 5 (as there are five frames of the Puff of Smoke animation to draw)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">D</span> with 5 (as there are five frames of the puff of smoke animation to draw)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="28220"></span>28220</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">Wait for interrupts (delay between frames)...</td>
+<td class="comment-1" rowspan="1">Wait for interrupts (delay between frames)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28221"></span>28221</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28222"></span>28222</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28223"></span>28223</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28224"></span>28224</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28225"></span>28225</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28226"></span>28226</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE (D = count of frames to draw, E = graphic lookup index)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span> (<span class="register">D</span> = count of frames to draw, <span class="register">E</span> = graphic lookup index)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28227"></span>28227</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (Magic Knight's x- and y-coordinates in characters)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (Magic Knight's x- and y-coordinates in characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28228"></span>28228</td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="1">Copy E into A (index of current frame of Puff of Smoke animation)</td>
+<td class="comment-1" rowspan="1">Copy <span class="register">E</span> into <span class="register">A</span> (index of current frame of puff of smoke animation)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28229"></span>28229</td>
 <td class="instruction">CALL <a href="29950.html">29950</a></td>
-<td class="comment-11" rowspan="1">Redraw current frame of Puff of Smoke animation in XOR mode, erasing it</td>
+<td class="comment-1" rowspan="1">Redraw current frame of puff of smoke animation in <span class="instruction">XOR</span> mode, erasing it</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28232"></span>28232</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (Magic Knight's x- and y-coordinates in characters)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (Magic Knight's x- and y-coordinates in characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28233"></span>28233</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE (D = count of frames to draw, E = graphic lookup index)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span> (<span class="register">D</span> = count of frames to draw, <span class="register">E</span> = graphic lookup index)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28234"></span>28234</td>
 <td class="instruction">INC E</td>
-<td class="comment-11" rowspan="1">Advance index E to next Puff of Smoke frame</td>
+<td class="comment-1" rowspan="1">Advance index <span class="register">E</span> to next puff of smoke frame</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28235"></span>28235</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE (D = count of frames to draw, E = graphic lookup index)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span> (<span class="register">D</span> = count of frames to draw, <span class="register">E</span> = graphic lookup index)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28236"></span>28236</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (Magic Knight's x- and y-coordinates in characters)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (Magic Knight's x- and y-coordinates in characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28237"></span>28237</td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="1">Copy E into A (index of current frame of Puff of Smoke animation)</td>
+<td class="comment-1" rowspan="1">Copy <span class="register">E</span> into <span class="register">A</span> (index of current frame of puff of smoke animation)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28238"></span>28238</td>
 <td class="instruction">CALL <a href="29950.html">29950</a></td>
-<td class="comment-11" rowspan="1">Draw current frame of Puff of Smoke animation in XOR mode</td>
+<td class="comment-1" rowspan="1">Draw current frame of puff of smoke animation in <span class="instruction">XOR</span> mode</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28241"></span>28241</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (Magic Knight's x- and y-coordinates in characters)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (Magic Knight's x- and y-coordinates in characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28242"></span>28242</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE (D = count of frames to draw, E = graphic lookup index)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span> (<span class="register">D</span> = count of frames to draw, <span class="register">E</span> = graphic lookup index)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28243"></span>28243</td>
 <td class="instruction">DEC D</td>
-<td class="comment-11" rowspan="1">Decrease D (count of frames to draw)</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">D</span> (count of frames to draw)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28244"></span>28244</td>
 <td class="instruction">JR NZ,28220</td>
-<td class="comment-11" rowspan="1">Loop back to draw next frame if there are any remaining</td>
+<td class="comment-1" rowspan="1">Loop back to draw next frame if there are any remaining</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28246"></span>28246</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">Wait for interrupts...</td>
+<td class="comment-1" rowspan="1">Wait for interrupts...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28247"></span>28247</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28248"></span>28248</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28249"></span>28249</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28250"></span>28250</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28251"></span>28251</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28252"></span>28252</td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="1">Draw final frame in XOR mode, erasing it...</td>
+<td class="comment-1" rowspan="1">Draw final frame in <span class="instruction">XOR</span> mode, erasing it...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28253"></span>28253</td>
 <td class="instruction">CALL <a href="29950.html">29950</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28256"></span>28256</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = Magic Knight's current frame number)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = Magic Knight's current frame number)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28257"></span>28257</td>
 <td class="instruction">LD (25390),A</td>
-<td class="comment-11" rowspan="1">Restore Magic Knight's current frame number</td>
+<td class="comment-1" rowspan="1">Restore Magic Knight's current frame number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28260"></span>28260</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero (Magic Knight) and...</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero (Magic Knight) and...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28261"></span>28261</td>
 <td class="instruction">CALL <a href="39224.html">39224</a></td>
-<td class="comment-11" rowspan="1">...draw Magic Knight (erase old frame and draw new frame)</td>
+<td class="comment-1" rowspan="1">...draw Magic Knight (erase old frame and draw new frame)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="28264"></span>28264</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Reset "Animate Magic Knight's Puff of Smoke Appearance on Next Room Redraw" flag...</td>
+<td class="comment-1" rowspan="1">Reset animate-Magic-Knight's-puff-of-smoke-appearance-on-next-room-redraw flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28265"></span>28265</td>
 <td class="instruction">LD (23505),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28268"></span>28268</td>
 <td class="instruction">LD A,(65529)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current room into A</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's current room into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="28271"></span>28271</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="28064.html">28064</a></span></td>
+<td class="prev">
+Prev: <a href="28064.html">28064</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#28092">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="28272.html">28272</a></span></td>
+<td class="next">
+Next: <a href="28272.html">28272</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

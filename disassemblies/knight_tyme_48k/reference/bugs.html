@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Bugs</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -18,41 +19,46 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#thereisnothinginthisroom">"THERE IS NOTHING IN THIS ROOM" Message Never Shown</a></li>
-<li><a href="#toomanyobjects">Too Many Objects are Checked</a></li>
+<li><a href="#thereisnothinginthisroom">"THERE IS NOTHING IN THIS ROOM" message never shown</a></li>
+<li><a href="#toomanyobjects">Too many objects are checked</a></li>
 <li><a href="#examineusspisces">Examine USS Pisces</a></li>
-<li><a href="#extraflagset">Extra Flag Set</a></li>
-<li><a href="#wrongwindowtype">Incorrect Window Type</a></li>
-<li><a href="#invertedstarmovementinstruction">Starfield Rendering</a></li>
-<li><a href="#spellingandpunctuation">Spelling and Punctuation</a></li>
-<li><a href="#wrongwindowsize">Incorrect Window Size</a></li>
-<li><a href="#cargobayfloorcolour">Inconsistent Floor Colour</a></li>
-<li><a href="#pass_through_airlock_wall">Pass Through Airlock Wall</a></li>
+<li><a href="#extraflagset">Extra flag set</a></li>
+<li><a href="#wrongwindowtype">Incorrect window type</a></li>
+<li><a href="#invertedstarmovementinstruction">Starfield rendering</a></li>
+<li><a href="#spellingandpunctuation">Spelling and punctuation</a></li>
+<li><a href="#wrongwindowsize">Incorrect window size</a></li>
+<li><a href="#cargobayfloorcolour">Inconsistent floor colour</a></li>
+<li><a href="#pass_through_airlock_wall">Pass through airlock wall</a></li>
 </ul>
 <div><span id="thereisnothinginthisroom"></span></div>
 <div class="box box-1">
-<div class="box-title">"THERE IS NOTHING IN THIS ROOM" Message Never Shown</div>
+<div class="box-title">"THERE IS NOTHING IN THIS ROOM" message never shown</div>
 <div class="paragraph">
 In the routine at <a href="../asm/29330.html">29330</a> that processes Magic Knight's "PICK UP OBJECT" command, the section of code starting at <a href="../asm/29330.html#29339">29339</a> is intended to count the
-number of objects present in Magic Knight's current room. This count of objects is accumulated in the C register, and after the total (copied into A) is
-compared with zero at <a href="../asm/29330.html#29358">29358</a>, a conditional jump occurs to <a href="../asm/55192.html">55192</a> to display the "THERE IS NOTHING IN THIS ROOM" message window should the total be
-zero. Unfortunately this does not work as intended because the C register is not initialised to zero at the beginning of the count. The instruction at
-<a href="../asm/29330.html#29342">29342</a> actually initialises C to 128, so the count can never equal zero. Additionally, this same instruction should initialise B (the number of objects
-to check to determine whether they are in Magic Knight's current room) to 37 as there are 37 objects in the game; instead B is initialised to 12. So as
-it stands, this routine only counts the number of objects among the first 12 that are in Magic Knight's current room, and adds this total to 128.
-Therefore it is clearly impossible for the count to hold any value outside the range 128 - 140 (i.e. it is never zero), so the "THERE IS NOTHING IN THIS
-ROOM" message is never shown. Instead, the "THERE IS NOTHING NEAR ENOUGH" message is shown:
+number of objects present in Magic Knight's current room. This count of objects is accumulated in the <span class="register">C</span> register, and after the total (copied into
+<span class="register">A</span>) is compared with zero at <a href="../asm/29330.html#29358">29358</a>, a conditional jump occurs to <a href="../asm/55192.html">55192</a> to display the "THERE IS NOTHING IN THIS ROOM" message window should the
+total be zero. Unfortunately this does not work as intended because the <span class="register">C</span> register is not initialised to zero at the beginning of the count.
 </div>
 <div class="paragraph">
-<img src="../images/bugs/thereisnothinginthisroom-1-before.png" />
+The instruction at <a href="../asm/29330.html#29342">29342</a> (<span class="instruction">LD BC,3200</span>) actually initialises <span class="register">C</span> to 128, so the count can never equal zero. Additionally, this same
+instruction should initialise <span class="register">B</span> (the number of objects to check to determine whether they are in Magic Knight's current room) to 37 as there are 37
+objects in the game; instead <span class="register">B</span> is initialised to 12. So as it stands, this routine only counts the number of objects among the first 12 that are in
+Magic Knight's current room, and adds this total to 128. Therefore it is clearly impossible for the count to hold any value outside the range 128 - 140
+(i.e. it is never zero), so the "THERE IS NOTHING IN THIS ROOM" message is never shown. Instead, the "THERE IS NOTHING NEAR ENOUGH" message is shown:
 </div>
 <div class="paragraph">
-To fix, and ensure that B and C are initialised to 37 and 0 respectively:<br />
+<img src="../images/bugs/there_is_nothing_in_this_room_1_before.png" />
+</div>
+<div class="paragraph">
+The offending instruction should actually be <span class="instruction">LD BC,9472</span>.
+</div>
+<div class="paragraph">
+To fix, and ensure that <span class="register">B</span> and <span class="register">C</span> are initialised to 37 and 0 respectively:<br />
 POKE <a href="../asm/29330.html#29342">29343</a>,0<br />
 POKE <a href="../asm/29330.html#29342">29344</a>,37
 </div>
 <div class="paragraph">
-<img src="../images/bugs/thereisnothinginthisroom-2-after.png" />
+<img src="../images/bugs/there_is_nothing_in_this_room_2_after.png" />
 </div>
 <div class="paragraph">
 <em>This bug is also present in Spellbound</em>
@@ -60,13 +66,13 @@ POKE <a href="../asm/29330.html#29342">29344</a>,37
 </div>
 <div><span id="toomanyobjects"></span></div>
 <div class="box box-2">
-<div class="box-title">Too Many Objects are Checked</div>
+<div class="box-title">Too many objects are checked</div>
 <div class="paragraph">
-Another bug, related to the one above, involved the routine at <a href="../asm/29330.html">29330</a>. The instruction at <a href="../asm/29330.html#29374">29374</a> loads B with 50, in preparation for a loop iterating
-over all objects' positions, however there are only 37 objects in the game. As a result of this bug, the code that checks the positions of objects runs
-over the end of the Objects' Current Positions table at <a href="../asm/25286.html">25286</a> and into the Current Planetary Data Table at <a href="../asm/25397.html">25397</a>. Due to the nature of the data
-stored from <a href="../asm/25397.html">25397</a> onwards, it seems that a conflict (i.e. a false match with an "object") is unlikely, so in most circumstances this bug will not
-manifest any symptoms.
+Another bug, related to the one above, involved the routine at <a href="../asm/29330.html">29330</a>. The instruction at <a href="../asm/29330.html#29374">29374</a> loads <span class="register">B</span> with 50, in preparation for a loop
+iterating over all objects' positions, however there are only 37 objects in the game. As a result of this bug, the code that checks the positions of
+objects runs over the end of the objects' current positions table at <a href="../asm/25286.html">25286</a> and into the current planetary data table at <a href="../asm/25397.html">25397</a>. Due to the nature of
+the data stored from <a href="../asm/25397.html">25397</a> onwards, it seems that a conflict (i.e. a false match with an "object") is unlikely, so in most circumstances this bug will
+not manifest any symptoms.
 </div>
 </div>
 <div><span id="examineusspisces"></span></div>
@@ -87,11 +93,11 @@ POKE <a href="../asm/30145.html#30199">30200</a>,11
 </div>
 <div><span id="extraflagset"></span></div>
 <div class="box box-2">
-<div class="box-title">Extra Flag Set</div>
+<div class="box-title">Extra flag set</div>
 <div class="paragraph">
 The routine at <a href="../asm/31312.html">31312</a> processes the command to cast a lightning bolt. When Magic Knight casts a lightning bolt at the Control Column, the instruction
-at <a href="../asm/31312.html#31374">31374</a> ("OR 3") is intended to set the Tyme Machine Charged Flag, however as well as doing this it also sets the Barriers Removed Flag. The Tyme
-Machine Charged Flag is stored in Bit 1 of the byte at <a href="../asm/23403.html">23403</a>, so the instruction should read "OR 2".
+at <a href="../asm/31312.html#31374">31374</a> (<span class="instruction">OR 3</span>) is intended to set the tyme-machine-charged flag, however as well as doing this it also sets the barriers-removed flag. The
+tyme-machine-charged flag is stored in bit 1 of the byte at <a href="../asm/23403.html">23403</a>, so the instruction should be <span class="instruction">OR 2</span>.
 </div>
 <div class="paragraph">
 To fix:<br />
@@ -100,7 +106,7 @@ POKE <a href="../asm/31312.html#31374">31375</a>,2
 </div>
 <div><span id="wrongwindowtype"></span></div>
 <div class="box box-1">
-<div class="box-title">Incorrect Window Type</div>
+<div class="box-title">Incorrect window type</div>
 <div class="paragraph">
 When Magic Knight has his accident with the glue, photograph and blank ID card, an information window is displayed explaining that happened. However
 this window is not really an information window - it's a menu window! The instruction at <a href="../asm/34265.html#34463">34463</a> calls the routine for drawing menu windows and as a
@@ -110,20 +116,17 @@ printed, overwriting the hand cursor graphic.
 </div>
 <div><span id="invertedstarmovementinstruction"></span></div>
 <div class="box box-2">
-<div class="box-title">Starfield Rendering</div>
+<div class="box-title">Starfield rendering</div>
 <div class="paragraph">
-The instruction at <a href="../asm/36273.html#36301">36301</a> is "LD C,A", however it appears the correct instruction should be "LD A,C" as we are checking (in A) that the x-component of
-a star's direction is non-zero when its y-component has already been checked as zero. As it is, the value in A is not modified from instruction at
-<a href="../asm/36273.html#36294">36294</a> where it is set to the y-component. In the existing code, the value of A is set at <a href="../asm/36273.html#36294">36294</a>, then at <a href="../asm/36273.html#36299">36299</a> a conditional jump occurs if the
-value in A is not 70. If the jump does not occur, then the (same) value in A is loaded into C, then another conditional jump occurs only if the
-(unchanged) value in A is equal to 128 (which is can't be, because this instruction is only reached if A is 70!)
+The instruction at <a href="../asm/36273.html#36301">36301</a> is <span class="instruction">LD C,A</span>, however it appears the correct instruction should be <span class="instruction">LD A,C</span> as we are checking (in <span class="register">A</span>) that the
+x-component of a star's direction is non-zero when its y-component has already been checked as zero. As it is, the value in <span class="register">A</span> is not modified from
+instruction at <a href="../asm/36273.html#36294">36294</a> where it is set to the y-component. In the existing code, the value of <span class="register">A</span> is set at <a href="../asm/36273.html#36294">36294</a>, then at <a href="../asm/36273.html#36299">36299</a> a conditional
+jump occurs if the value in <span class="register">A</span> is not 70. If the jump does not occur, then the (same) value in <span class="register">A</span> is loaded into <span class="register">C</span>, then another conditional
+jump occurs only if the (unchanged) value in <span class="register">A</span> is equal to 128 (which is can't be, because this instruction is only reached if <span class="register">A</span> is 70!)
 </div>
 <div class="paragraph">
-To fix, change the instruction at <a href="../asm/36273.html#36301">36301</a> from "LD C,A" to "LD A,C":<br />
+To fix, change the instruction at <a href="../asm/36273.html#36301">36301</a> from <span class="instruction">LD C,A</span> to <span class="instruction">LD A,C</span>:<br />
 POKE <a href="../asm/36273.html#36301">36301</a>,121
-</div>
-<div class="paragraph">
-<!-- Prevents stars going dead right? -->
 </div>
 <div class="paragraph">
 <em>This bug is also present in Spellbound</em>
@@ -131,39 +134,39 @@ POKE <a href="../asm/36273.html#36301">36301</a>,121
 </div>
 <div><span id="spellingandpunctuation"></span></div>
 <div class="box box-1">
-<div class="box-title">Spelling and Punctuation</div>
+<div class="box-title">Spelling and punctuation</div>
 <div class="paragraph">
 There are a number of spelling and punctuation issues:
 <ul class="">
-<li>The text entries at <a href="../asm/38904.html#38931">38931</a>, <a href="../asm/39574.html#40489">40489</a>, <a href="../asm/39574.html#40819">40819</a> and <a href="../asm/40986.html#41617">41617</a> are missing apostrophes</li>
-<li>The text entry at <a href="../asm/39574.html#40562">40562</a> has an incorrect spelling of "Sharon"</li>
-<li>The text entry for "GOLDEN SUNDIAL OF ALPHA" (<a href="../asm/43196.html#43660">43660</a>) in the Common Words Table includes a full stop. This common word entry is used in a number of places where the full stop appears in the middle of a sentence (e.g. <a href="../asm/39574.html#40421">40421</a>, <a href="../asm/40986.html#41487">41487</a>, <a href="../asm/44506.html#44854">44854</a> etc.)</li>
-<li>The text entry at <a href="../asm/45236.html">45236</a> contains "TEMPORALY" instead of "TEMPORALLY"</li>
-<li>The text entry at <a href="../asm/45949.html#45989">45989</a> is missing a space between the words "NOW" and "BUT"</li>
-<li>The text entry at <a href="../asm/46989.html#47114">47114</a> contains "MISSUSE" instead of "MISUSE"</li>
-<li>The text entry at <a href="../asm/47491.html#47914">47914</a> refers to Derby IV's running speed in units of MHz; this is inconsistent with the text entry at <a href="../asm/47491.html#47671">47671</a> which uses GHz</li>
-<li>The text entry at <a href="../asm/48004.html#48520">48520</a> contains an apostrophe where it shouldn't</li>
-<li>The text entry at <a href="../asm/48004.html#49386">49386</a> contains a full stop instead of a comma</li>
+<li>the text entries at <a href="../asm/38904.html#38931">38931</a>, <a href="../asm/39574.html#40489">40489</a>, <a href="../asm/39574.html#40819">40819</a> and <a href="../asm/40986.html#41617">41617</a> are missing apostrophes</li>
+<li>the text entry at <a href="../asm/39574.html#40562">40562</a> has an incorrect spelling of "Sharon"</li>
+<li>the text entry for "GOLDEN SUNDIAL OF ALPHA" (<a href="../asm/43196.html#43660">43660</a>) in the common words table includes a full stop. This common word entry is used in a number of places where the full stop appears in the middle of a sentence (e.g. <a href="../asm/39574.html#40421">40421</a>, <a href="../asm/40986.html#41487">41487</a>, <a href="../asm/44506.html#44854">44854</a> etc.)</li>
+<li>the text entry at <a href="../asm/45236.html">45236</a> contains "TEMPORALY" instead of "TEMPORALLY"</li>
+<li>the text entry at <a href="../asm/45949.html#45989">45989</a> is missing a space between the words "NOW" and "BUT"</li>
+<li>the text entry at <a href="../asm/46989.html#47114">47114</a> contains "MISSUSE" instead of "MISUSE"</li>
+<li>the text entry at <a href="../asm/47491.html#47914">47914</a> refers to Derby IV's running speed in units of MHz; this is inconsistent with the text entry at <a href="../asm/47491.html#47671">47671</a> which uses GHz</li>
+<li>the text entry at <a href="../asm/48004.html#48520">48520</a> contains an apostrophe where it shouldn't</li>
+<li>the text entry at <a href="../asm/48004.html#49386">49386</a> contains a full stop instead of a comma</li>
 </ul>
 </div>
 </div>
 <div><span id="wrongwindowsize"></span></div>
 <div class="box box-2">
-<div class="box-title">Incorrect Window Size</div>
+<div class="box-title">Incorrect window size</div>
 <div class="paragraph">
 There are a number of issues with window sizes:
 <ul class="">
-<li>The height preceding the read text of the Instant Film (<a href="../asm/40986.html#41056">41056</a>) is one unit too small, so text overwrites bottom border of window when displayed.</li>
-<li>The height preceding the (game over) text for Magic Knight's lightning bolt alerting security is one unit too big, so window has a blank line below text</li>
+<li>the height preceding the read text of the Instant Film (<a href="../asm/40986.html#41056">41056</a>) is one unit too small, so text overwrites bottom border of window when displayed.</li>
+<li>the height preceding the (game over) text for Magic Knight's lightning bolt alerting security is one unit too big, so window has a blank line below text</li>
 </ul>
 </div>
 </div>
 <div><span id="cargobayfloorcolour"></span></div>
 <div class="box box-1">
-<div class="box-title">Inconsistent Floor Colour</div>
+<div class="box-title">Inconsistent floor colour</div>
 <div class="paragraph">
-Room number 04 ("CARGO HOLD", USS PISCES) has its floor drawn with attribute 86 (yellow INK, red PAPER) whereas all other rooms on the USS PISCES have
-their floors drawn with attribute 94 (yellow INK, magenta PAPER).
+Room number 04 ("CARGO HOLD", USS PISCES) has its floor drawn with attribute 86 (yellow INK, red PAPER, BRIGHT) whereas all other rooms on the USS
+PISCES have their floors drawn with attribute 94 (yellow INK, magenta PAPER, BRIGHT).
 </div>
 <div class="paragraph">
 To fix:<br />
@@ -172,7 +175,7 @@ POKE <a href="../asm/50489.html#50531">50533</a>,94
 </div>
 <div><span id="pass_through_airlock_wall"></span></div>
 <div class="box box-2">
-<div class="box-title">Pass Through Airlock Wall</div>
+<div class="box-title">Pass through airlock wall</div>
 <div class="paragraph">
 Magic Knight can pass through the wall separating the Airlock from the Life Boat / Control Column.
 </div>
@@ -182,9 +185,9 @@ POKE <a href="../asm/28277.html#28285">28286</a>,235
 </div>
 </div>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

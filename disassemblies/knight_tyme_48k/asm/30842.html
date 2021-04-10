@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 30842</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,110 +20,97 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="30810.html">30810</a></span></td>
+<td class="prev">
+Prev: <a href="30810.html">30810</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#30842">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="30874.html">30874</a></span></td>
+<td class="next">
+Next: <a href="30874.html">30874</a>
+</td>
 </tr>
 </table>
-<div class="description">30842: Wake Current Character Up if Possible</div>
+<div class="description">30842: Wake current character up if possible</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="55726.html">55726</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="30842"></span>30842</td>
 <td class="instruction">CALL <a href="33546.html">33546</a></td>
-<td class="comment-11" rowspan="1">Point IX at Current Character's current stats</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at Current Character's current stats</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30845"></span>30845</td>
 <td class="instruction">BIT 7,(IX+6)</td>
-<td class="comment-11" rowspan="1">If character's Asleep Flag is reset...</td>
+<td class="comment-1" rowspan="1">If character's asleep flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30849"></span>30849</td>
 <td class="instruction">JP Z,<a href="55242.html">55242</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character] IS ALREADY AWAKE" Window (29), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character] IS ALREADY AWAKE" window (29) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30852"></span>30852</td>
 <td class="instruction">LD A,(IX+2)</td>
-<td class="comment-11" rowspan="1">If character's stamina is less than 30...</td>
+<td class="comment-1" rowspan="1">If character's stamina is less than 30...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30855"></span>30855</td>
 <td class="instruction">AND 127</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30857"></span>30857</td>
 <td class="instruction">CP 30</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30859"></span>30859</td>
 <td class="instruction">JP C,<a href="55247.html">55247</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character] IS TOO TIRED TO WAKE UP" Window (29), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character] IS TOO TIRED TO WAKE UP" window (29) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30862"></span>30862</td>
 <td class="instruction">LD B,30</td>
-<td class="comment-11" rowspan="1">If character's happiness is less than 30 then Show "[Character] DOES NOT WANT TO BE COMMANDED..." and Jump to Main Game Loop...</td>
+<td class="comment-1" rowspan="1">If character's happiness is less than 30 then show "[Character] DOES NOT WANT TO BE COMMANDED..." and jump to main game loop...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30864"></span>30864</td>
 <td class="instruction">CALL <a href="33558.html">33558</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30867"></span>30867</td>
 <td class="instruction">RES 7,(IX+6)</td>
-<td class="comment-11" rowspan="1">Reset character's Asleep Flag</td>
+<td class="comment-1" rowspan="1">Reset character's asleep flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="30871"></span>30871</td>
 <td class="instruction">JP <a href="55359.html">55359</a></td>
-<td class="comment-11" rowspan="1">Display "[Character] HAS WOKEN UP" Window (29), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display "[Character] HAS WOKEN UP" window (29) and return to game</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="30810.html">30810</a></span></td>
+<td class="prev">
+Prev: <a href="30810.html">30810</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#30842">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="30874.html">30874</a></span></td>
+<td class="next">
+Next: <a href="30874.html">30874</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

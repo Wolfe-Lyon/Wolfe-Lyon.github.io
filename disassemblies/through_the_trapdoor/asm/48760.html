@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 48760</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48738.html">48738</a></span></td>
+<td class="prev">
+Prev: <a href="48738.html">48738</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48760">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48791.html">48791</a></span></td>
+<td class="next">
+Next: <a href="48791.html">48791</a>
+</td>
 </tr>
 </table>
-<div class="description">48760: Load A, D and E with Positional Data for a Carried Entity or Return</div>
+<div class="description">48760: Load <span class="register">A</span>, <span class="register">D</span> and <span class="register">E</span> with positional data for a carried entity or return</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="48710.html">48710</a>, <a href="48715.html">48715</a>, <a href="48727.html">48727</a> and <a href="48738.html">48738</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -45,7 +47,7 @@ Used by the routines at <a href="48710.html">48710</a>, <a href="48715.html">487
 <td class="register-desc">Address of complex state data for an entity</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -55,7 +57,7 @@ Used by the routines at <a href="48710.html">48710</a>, <a href="48715.html">487
 </tr>
 <tr>
 <td class="register">D</td>
-<td class="register-desc">Depth of entity at IX (Berk)</td>
+<td class="register-desc">Depth of entity at <span class="register">IX</span> (Berk)</td>
 </tr>
 <tr>
 <td class="register">E</td>
@@ -69,95 +71,86 @@ Used by the routines at <a href="48710.html">48710</a>, <a href="48715.html">487
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48760"></span>48760</td>
 <td class="instruction">BIT 4,(IX+9)</td>
-<td class="comment-11" rowspan="1">If entity IX is Berk and his Carrying Something Flag is set...</td>
+<td class="comment-1" rowspan="1">If entity <span class="register">IX</span> is Berk and his carrying-something flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48764"></span>48764</td>
 <td class="instruction">JR NZ,48768</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48760.html#48768">48768</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48760.html#48768">48768</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48766"></span>48766</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Pop top value (return address) off stack...</td>
+<td class="comment-1" rowspan="1">Pop top value (return address) off stack...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48767"></span>48767</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">...and return to routine that called the calling routine</td>
+<td class="comment-1" rowspan="1">...and return to routine that called the calling routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48768"></span>48768</td>
 <td class="instruction">LD IY,(34260)</td>
-<td class="comment-11" rowspan="1">Load IY with address of complex state data for entity held by Berk</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with address of complex state data for entity held by Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48772"></span>48772</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">Set this entity's room to be same as Berk's...</td>
+<td class="comment-1" rowspan="1">Set this entity's room to be same as Berk's...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48775"></span>48775</td>
 <td class="instruction">LD (IY+0),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48778"></span>48778</td>
 <td class="instruction">CALL <a href="48850.html#48897">48897</a></td>
-<td class="comment-11" rowspan="1">Move carried entity into vertical position appropriate to its height</td>
+<td class="comment-1" rowspan="1">Move carried entity into vertical position appropriate to its height</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48781"></span>48781</td>
 <td class="instruction">LD A,(34272)</td>
-<td class="comment-11" rowspan="1">Load A and E with width of entity (characters) carried by Berk, minus 1...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> and <span class="register">E</span> with width of entity (characters) carried by Berk, minus 1...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48784"></span>48784</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48785"></span>48785</td>
 <td class="instruction">SRL A</td>
-<td class="comment-11" rowspan="1">Divide A by two, removing remainder</td>
+<td class="comment-1" rowspan="1">Divide <span class="register">A</span> by two, removing remainder</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48787"></span>48787</td>
 <td class="instruction">LD D,(IX+1)</td>
-<td class="comment-11" rowspan="1">Load carried entity's depth into D</td>
+<td class="comment-1" rowspan="1">Load carried entity's depth into <span class="register">D</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48790"></span>48790</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48738.html">48738</a></span></td>
+<td class="prev">
+Prev: <a href="48738.html">48738</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48760">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48791.html">48791</a></span></td>
+<td class="next">
+Next: <a href="48791.html">48791</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

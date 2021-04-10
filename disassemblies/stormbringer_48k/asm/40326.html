@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 40326</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40258.html">40258</a></span></td>
+<td class="prev">
+Prev: <a href="40258.html">40258</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40326">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40338.html">40338</a></span></td>
+<td class="next">
+Next: <a href="40338.html">40338</a>
+</td>
 </tr>
 </table>
-<div class="description">40326: Load B with Room Index of Object A</div>
+<div class="description">40326: Load <span class="register">B</span> with room index of object <span class="register">A</span></div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="40258.html">40258</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,7 +47,7 @@ Used by the routine at <a href="40258.html">40258</a>.
 <td class="register-desc">Index of an object</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -58,71 +63,66 @@ Used by the routine at <a href="40258.html">40258</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="40326"></span>40326</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load BC with three times object index...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with three times object index...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40327"></span>40327</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40328"></span>40328</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40329"></span>40329</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40330"></span>40330</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40332"></span>40332</td>
 <td class="instruction">LD HL,24922</td>
-<td class="comment-11" rowspan="1">Load HL with start address of Table of Objects' Current Positions...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with start address of table of objects' current positions...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40335"></span>40335</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...and add BC as offset</td>
+<td class="comment-1" rowspan="1">...and add <span class="register">BC</span> as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40336"></span>40336</td>
 <td class="instruction">LD B,(HL)</td>
-<td class="comment-11" rowspan="1">Load B with room index of object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with room index of object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40337"></span>40337</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40258.html">40258</a></span></td>
+<td class="prev">
+Prev: <a href="40258.html">40258</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40326">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40338.html">40338</a></span></td>
+<td class="next">
+Next: <a href="40338.html">40338</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

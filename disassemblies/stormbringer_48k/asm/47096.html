@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 47096</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,42 +20,33 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47092.html">47092</a></span></td>
+<td class="prev">
+Prev: <a href="47092.html">47092</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47096">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47110.html">47110</a></span></td>
+<td class="next">
+Next: <a href="47110.html">47110</a>
+</td>
 </tr>
 </table>
-<div class="description">47096: Text Printing: Change INK Colour</div>
+<div class="description">47096: Text printing: Change INK colour</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="46902.html">46902</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47096"></span>47096</td>
 <td class="instruction">LD B,248</td>
-<td class="comment-11" rowspan="1">Load B with attribute mask (FLASH, BRIGHT and all PAPER bits set, all INK bits reset)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with attribute mask (FLASH, BRIGHT and all PAPER bits set, all INK bits reset)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="47098"></span>
 <div class="comments">
 <div class="paragraph">
@@ -64,31 +56,27 @@ This entry point is used by the routine at <a href="47092.html">47092</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47098"></span>47098</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL pointer to next byte in text data</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> pointer to next byte in text data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47099"></span>47099</td>
 <td class="instruction">LD A,(23695)</td>
-<td class="comment-11" rowspan="1">Load ATTR T system variable value into A</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with attribute stored at <a href="23693.html#23695">23695</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47102"></span>47102</td>
 <td class="instruction">AND B</td>
-<td class="comment-11" rowspan="1">Apply mask to reset all INK bits</td>
+<td class="comment-1" rowspan="1">Apply mask to reset all INK bits</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47103"></span>47103</td>
 <td class="instruction">OR (HL)</td>
-<td class="comment-11" rowspan="1">Set INK bits as defined in next text data byte</td>
+<td class="comment-1" rowspan="1">Set INK bits as defined in next text data byte</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="47104"></span>
 <div class="comments">
 <div class="paragraph">
@@ -98,29 +86,31 @@ This entry point is used by the routine at <a href="47084.html">47084</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47104"></span>47104</td>
 <td class="instruction">LD (23695),A</td>
-<td class="comment-11" rowspan="1">Store new value of ATTR T</td>
+<td class="comment-1" rowspan="1">Store attribute at <a href="23693.html#23695">23695</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47107"></span>47107</td>
 <td class="instruction">JP <a href="46902.html#46924">46924</a></td>
-<td class="comment-11" rowspan="1">Jump back to start of text printing loop to process next data byte</td>
+<td class="comment-1" rowspan="1">Jump back to start of text printing loop to process next data byte</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47092.html">47092</a></span></td>
+<td class="prev">
+Prev: <a href="47092.html">47092</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47096">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47110.html">47110</a></span></td>
+<td class="next">
+Next: <a href="47110.html">47110</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

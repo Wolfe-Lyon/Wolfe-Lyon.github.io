@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 29142</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,33 +20,37 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29110.html">29110</a></span></td>
+<td class="prev">
+Prev: <a href="29110.html">29110</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29142">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29174.html">29174</a></span></td>
+<td class="next">
+Next: <a href="29174.html">29174</a>
+</td>
 </tr>
 </table>
-<div class="description">29142: Paint Room Layout Data Entry's Terrain Interaction Parameters, Applying Vertical Mirror (Room Drawing)</div>
+<div class="description">29142: Paint room layout data entry's terrain interaction parameters, applying vertical mirror (room drawing)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="28070.html">28070</a>.
 </div>
 <div class="paragraph">
-See also analogous routine at <a href="28906.html">28906</a> (RLE Attribute Data painting)
+See also analogous routine at <a href="28906.html">28906</a> (RLE attribute data painting)
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">Points to entry in Lookup Table for RLE Terrain Interaction Data (Room Layout Graphics) (at <a href="51997.html">51997</a>)</td>
+<td class="register-desc">Points to entry in lookup table for RLE terrain interaction data (room layout graphics) (at <a href="51997.html">51997</a>)</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -61,101 +66,91 @@ See also analogous routine at <a href="28906.html">28906</a> (RLE Attribute Data
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29142"></span>29142</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (current entry in Lookup Table for RLE Terrain Interaction Data)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (current entry in lookup table for RLE terrain interaction data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29143"></span>29143</td>
 <td class="instruction">LD HL,23493</td>
-<td class="comment-11" rowspan="1">Modify instruction at <a href="29174.html#29220">29220</a> to load x-coordinate of graphic's left edge into A...</td>
+<td class="comment-1" rowspan="1">Modify instruction at <a href="29174.html#29220">29220</a> to load x-coordinate of graphic's left edge into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29146"></span>29146</td>
 <td class="instruction">LD (29221),HL</td>
-<td class="comment-11" rowspan="1">...i.e. set end x-coordinate for painting right-to-left</td>
+<td class="comment-1" rowspan="1">...i.e. set end x-coordinate for painting right-to-left</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29149"></span>29149</td>
 <td class="instruction">LD HL,29241</td>
-<td class="comment-11" rowspan="1">Modify instruction at <a href="29174.html#29224">29224</a> to jump to <a href="29174.html#29241">29241</a>...</td>
+<td class="comment-1" rowspan="1">Modify instruction at <a href="29174.html#29224">29224</a> to jump to <a href="29174.html#29241">29241</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29152"></span>29152</td>
 <td class="instruction">LD (29225),HL</td>
-<td class="comment-11" rowspan="1">...i.e. advance HL down one character row in Terrain Interaction Data Table at <a href="24064.html">24064</a></td>
+<td class="comment-1" rowspan="1">...i.e. advance <span class="register">HL</span> down one character row in terrain interaction data table at <a href="24064.html">24064</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29155"></span>29155</td>
 <td class="instruction">LD A,43</td>
-<td class="comment-11" rowspan="1">Modify instruction at <a href="29174.html#29227">29227</a> with opcode 43 (DEC HL)...</td>
+<td class="comment-1" rowspan="1">Modify instruction at <a href="29174.html#29227">29227</a> with opcode 43 (<span class="instruction">DEC HL</span>)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29157"></span>29157</td>
 <td class="instruction">LD (29227),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29160"></span>29160</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (current entry in Lookup Table for RLE Terrain Interaction Data)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (current entry in lookup table for RLE terrain interaction data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29161"></span>29161</td>
 <td class="instruction">CALL <a href="29036.html">29036</a></td>
-<td class="comment-11" rowspan="1">Store coordinates of area to be coloured and point IX at RLE Terrain Interaction Data</td>
+<td class="comment-1" rowspan="1">Store coordinates of area to be coloured and point <span class="register">IX</span> at RLE terrain interaction data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29164"></span>29164</td>
 <td class="instruction">LD A,(23495)</td>
-<td class="comment-11" rowspan="1">Load C with x-coordinate of graphic's right edge...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with x-coordinate of graphic's right edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29167"></span>29167</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29168"></span>29168</td>
 <td class="instruction">LD A,(23494)</td>
-<td class="comment-11" rowspan="1">Load B with y-coordinate of graphic's top edge...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with y-coordinate of graphic's top edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29171"></span>29171</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29172"></span>29172</td>
 <td class="instruction">JR <a href="29174.html#29200">29200</a></td>
-<td class="comment-11" rowspan="1">Jump to terrain interaction data painting routine</td>
+<td class="comment-1" rowspan="1">Jump to terrain interaction data painting routine</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29110.html">29110</a></span></td>
+<td class="prev">
+Prev: <a href="29110.html">29110</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29142">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29174.html">29174</a></span></td>
+<td class="next">
+Next: <a href="29174.html">29174</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

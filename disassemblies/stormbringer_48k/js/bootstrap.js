@@ -2,8 +2,8 @@ require.config({
     baseUrl: "../"
 });
 
-require(["stormbringer/main"], function(Main) {
-    window.onload = function() {
+require(["js/domReady", "stormbringer/main"], function(domReady, Main) {
+    domReady(function() {
         Main.Main.initialise();
-    }
+    });
 });

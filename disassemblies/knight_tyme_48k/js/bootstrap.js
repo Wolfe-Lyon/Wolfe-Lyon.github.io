@@ -2,8 +2,8 @@ require.config({
     baseUrl: "../"
 });
 
-require(["knight_tyme/main"], function(Main) {
-    window.onload = function() {
+require(["js/domReady", "knight_tyme/main"], function(domReady, Main) {
+    domReady(function() {
         Main.Main.initialise();
-    }
+    });
 });

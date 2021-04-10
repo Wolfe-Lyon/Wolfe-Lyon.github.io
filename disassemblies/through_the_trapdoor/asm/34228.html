@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Data at 34228</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-b">
 <table class="header">
@@ -22,18 +20,22 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34227.html">34227</a></span></td>
+<td class="prev">
+Prev: <a href="34227.html">34227</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34228">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34230.html">34230</a></span></td>
+<td class="next">
+Next: <a href="34230.html">34230</a>
+</td>
 </tr>
 </table>
-<div class="description">34228: Data for Clawed Foot (Level 3)</div>
+<div class="description">34228: Data for clawed foot (level 3)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Location <a href="34228.html#34229">34229</a> holds the index of the action performed by Clawed Foot after it picks Berk up. This value is incremented when the Clawed Foot reaches the top of its vertical range of travel while carrying Berk. If the incremented value exceeds six, then it is reset to one. After incrementing (and resetting if appropriate), the value is used to determine what the Clawed Foot does with Berk:
+Location <a href="34228.html#34229">34229</a> holds the index of the action performed by clawed foot after it picks Berk up. This value is incremented when the clawed foot reaches the top of its vertical range of travel while carrying Berk. If the incremented value exceeds six, then it is reset to one. After incrementing (and resetting if appropriate), the value is used to determine what the clawed foot does with Berk:
 </div>
 <div class="paragraph">
 <table class="default">
@@ -59,53 +61,43 @@ Location <a href="34228.html#34229">34229</a> holds the index of the action perf
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">5</td>
-<td class="" colspan="1" rowspan="1">Move left and release Berk when the x-coordinate of his left edge is 112 in room 5 (i.e. drop Berk down to Platform Room)</td>
+<td class="" colspan="1" rowspan="1">Move left and release Berk when the x-coordinate of his left edge is 112 in room 5 (i.e. drop Berk down to platform room)</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">6</td>
-<td class="" colspan="1" rowspan="1">Move right and release Berk when the x-coordinate of his left edge is 112 in room 7 (i.e. drop Berk down to Hatch Room)</td>
+<td class="" colspan="1" rowspan="1">Move right and release Berk when the x-coordinate of his left edge is 112 in room 7 (i.e. drop Berk down to hatch room)</td>
 </tr>
 </table>
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34228"></span>34228</td>
 <td class="instruction">DEFB 0</td>
-<td class="comment-11" rowspan="1">Time (cycles) until Clawed Foot (Level 3) attacks</td>
+<td class="comment-1" rowspan="1">Time (cycles) until clawed foot (level 3) attacks</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34229"></span>34229</td>
 <td class="instruction">DEFB 0</td>
-<td class="comment-11" rowspan="1">Clawed Foot's Action Index</td>
+<td class="comment-1" rowspan="1">Clawed foot's action index</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34227.html">34227</a></span></td>
+<td class="prev">
+Prev: <a href="34227.html">34227</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34228">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34230.html">34230</a></span></td>
+<td class="next">
+Next: <a href="34230.html">34230</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

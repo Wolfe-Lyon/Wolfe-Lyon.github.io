@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Unused RAM at 59543</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-u">
 <table class="header">
@@ -22,145 +20,131 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="59542.html">59542</a></span></td>
+<td class="prev">
+Prev: <a href="59542.html">59542</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#59543">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="59586.html">59586</a></span></td>
+<td class="next">
+Next: <a href="59586.html">59586</a>
+</td>
 </tr>
 </table>
 <div class="description">59543: Unused routine</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-This routine appears to have been set up to load visual data into the Display and Attribute files and then to load the game code and data into RAM, from address <a href="27000.html">27000</a> onwards. This routine was probably used during development.
+This routine appears to have been set up to load visual data into the display and attribute files and then to load the game code and data into RAM, from address <a href="27000.html">27000</a> onwards. This routine was probably used during development.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">A</td>
-<td class="register-desc">New value for system variable DF SZ</td>
+<td class="register-desc">New value for DF SZ system variable</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59543"></span>59543</td>
 <td class="instruction">LD (23659),A</td>
-<td class="comment-11" rowspan="1">Set System Variable DF SZ to value in A</td>
+<td class="comment-1" rowspan="1">Set DF SZ system variable to value in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59546"></span>59546</td>
 <td class="instruction">LD DE,6912</td>
-<td class="comment-11" rowspan="1">Set data length to 6912</td>
+<td class="comment-1" rowspan="1">Set data length to 6912</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59549"></span>59549</td>
 <td class="instruction">LD IX,40000</td>
-<td class="comment-11" rowspan="1">Set base address for load to 40000</td>
+<td class="comment-1" rowspan="1">Set base address for load to 40000</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59553"></span>59553</td>
 <td class="instruction">LD A,255</td>
-<td class="comment-11" rowspan="1">Load A with 255 to denote a data block</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 255 to denote a data block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59555"></span>59555</td>
 <td class="instruction">SCF</td>
-<td class="comment-11" rowspan="1">Set Carry Flag as we are LOADing, not VERIFYing</td>
+<td class="comment-1" rowspan="1">Set carry flag as we are LOADing, not VERIFYing</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59556"></span>59556</td>
 <td class="instruction">CALL 1366</td>
-<td class="comment-11" rowspan="1">Call ROM routine to load game data</td>
+<td class="comment-1" rowspan="1">Call ROM routine to load game data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59559"></span>59559</td>
 <td class="instruction">LD HL,40000</td>
-<td class="comment-11" rowspan="1">Copy data just loaded to Display File / Attribute File...</td>
+<td class="comment-1" rowspan="1">Copy data just loaded to display file / attribute file...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59562"></span>59562</td>
 <td class="instruction">LD DE,16384</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59565"></span>59565</td>
 <td class="instruction">LD BC,6912</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59568"></span>59568</td>
 <td class="instruction">LDIR</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59570"></span>59570</td>
 <td class="instruction">LD DE,32860</td>
-<td class="comment-11" rowspan="1">Set data length to 32860</td>
+<td class="comment-1" rowspan="1">Set data length to 32860</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59573"></span>59573</td>
 <td class="instruction">LD IX,27000</td>
-<td class="comment-11" rowspan="1">Set base address for load to 27000</td>
+<td class="comment-1" rowspan="1">Set base address for load to 27000</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59577"></span>59577</td>
 <td class="instruction">LD A,255</td>
-<td class="comment-11" rowspan="1">Load A with 255 to denote a data block</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 255 to denote a data block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59579"></span>59579</td>
 <td class="instruction">SCF</td>
-<td class="comment-11" rowspan="1">Set Carry Flag as we are LOADing, not VERIFYing</td>
+<td class="comment-1" rowspan="1">Set carry flag as we are LOADing, not VERIFYing</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59580"></span>59580</td>
 <td class="instruction">CALL 1366</td>
-<td class="comment-11" rowspan="1">Call ROM routine to load game data</td>
+<td class="comment-1" rowspan="1">Call ROM routine to load game data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="59583"></span>59583</td>
-<td class="instruction">JP 34200</td>
-<td class="comment-11" rowspan="1">Jump to code entry point</td>
+<td class="instruction">JP <a href="../initialisation/34200.html">34200</a></td>
+<td class="comment-1" rowspan="1">Jump to code entry point</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="59542.html">59542</a></span></td>
+<td class="prev">
+Prev: <a href="59542.html">59542</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#59543">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="59586.html">59586</a></span></td>
+<td class="next">
+Next: <a href="59586.html">59586</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

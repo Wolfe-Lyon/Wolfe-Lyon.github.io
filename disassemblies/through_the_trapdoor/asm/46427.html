@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 46427</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,21 +20,28 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="46418.html">46418</a></span></td>
+<td class="prev">
+Prev: <a href="46418.html">46418</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#46427">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="46442.html">46442</a></span></td>
+<td class="next">
+Next: <a href="46442.html">46442</a>
+</td>
 </tr>
 </table>
-<div class="description">46427: Graphic Layout Routine (250): Adjust x- and y-Coordinates for Drawing Without Storing</div>
+<div class="description">46427: Graphic layout routine: (250) Adjust x- and y-coordinates for drawing without storing</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Read following two bytes in graphic layout data and adjust y- and x-coordinates by these amounts respectively, without storing. These new coordinates will be lost on the next draw operation, being overwritten by the values stored at <a href="34279.html#34281">34281</a>.
 </div>
+<div class="paragraph">
+Used by the routine at <a href="46218.html">46218</a>.
 </div>
-<table class="input-1">
+</div>
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -45,77 +50,69 @@ Read following two bytes in graphic layout data and adjust y- and x-coordinates 
 <td class="register-desc">Address of first parameter in current graphic layout data instruction</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">B</td>
-<td class="register-desc">Do Not Recalculate Display Buffer Address Flag (0)</td>
+<td class="register-desc">Do-not-recalculate-display-buffer-address flag (0)</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46427"></span>46427</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">Read delta-y into A...</td>
+<td class="comment-1" rowspan="3">Adjust y-coordinate by delta-y</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46430"></span>46430</td>
 <td class="instruction">ADD A,L</td>
-<td class="comment-11" rowspan="1">...and adjust y-coordinate by this amount...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46431"></span>46431</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46432"></span>46432</td>
 <td class="instruction">LD A,(IX+1)</td>
-<td class="comment-11" rowspan="1">Read delta-x into A...</td>
+<td class="comment-1" rowspan="3">Adjust x-coordinate by delta-x</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46435"></span>46435</td>
 <td class="instruction">ADD A,H</td>
-<td class="comment-11" rowspan="1">...and adjust x-coordinate by this amount...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46436"></span>46436</td>
 <td class="instruction">LD H,A</td>
-<td class="comment-11" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46437"></span>46437</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">Prepare to recalculate Display Buffer address</td>
+<td class="comment-1" rowspan="1">Prepare to recalculate display buffer address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46439"></span>46439</td>
-<td class="instruction">JP <a href="45965.html#45999">45999</a></td>
-<td class="comment-11" rowspan="1">Advance graphic layout data pointer by two bytes and read / process next data</td>
+<td class="instruction">JP <a href="45999.html">45999</a></td>
+<td class="comment-1" rowspan="1">Advance graphic layout data pointer by two bytes and read / process next data</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="46418.html">46418</a></span></td>
+<td class="prev">
+Prev: <a href="46418.html">46418</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#46427">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="46442.html">46442</a></span></td>
+<td class="next">
+Next: <a href="46442.html">46442</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Trivia</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -18,19 +19,20 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#cheatmode">Cheat Mode</a></li>
-<li><a href="#oddballframenumbers">Odd Ball Frame Numbers</a></li>
-<li><a href="#strengthbar">Drawing the Strength Bar</a></li>
-<li><a href="#gimbalcanhelpflag">Gimbal's Can Help Flag</a></li>
-<li><a href="#summoningspellpower">Spell Power and Summoning</a></li>
-<li><a href="#emptyinventorycheck">Empty Inventory Check</a></li>
-<li><a href="#thewallextrainstruction">Extra Room Layout Data (The Wall)</a></li>
-<li><a href="#glowingbottleatlittlebottle">Glowing Bottle Location Check</a></li>
-<li><a href="#reusedarchitecture">Reused Architecture Graphics</a></li>
+<li><a href="#cheatmode">Cheat mode</a></li>
+<li><a href="#oddballframenumbers">Odd Ball frame numbers</a></li>
+<li><a href="#strengthbar">Drawing the strength bar</a></li>
+<li><a href="#gimbalcanhelpflag">Gimbal's can-help flag</a></li>
+<li><a href="#summoningspellpower">Spell power and summoning</a></li>
+<li><a href="#emptyinventorycheck">Empty inventory check</a></li>
+<li><a href="#thewallextrainstruction">Extra room layout data (the wall)</a></li>
+<li><a href="#glowingbottleatlittlebottle">Glowing bottle location check</a></li>
+<li><a href="#reusedarchitecture">Reused architecture graphics</a></li>
+<li><a href="#redundantinstructions">Redundant instructions / code</a></li>
 </ul>
 <div><span id="cheatmode"></span></div>
 <div class="box box-1">
-<div class="box-title">Cheat Mode</div>
+<div class="box-title">Cheat mode</div>
 <div class="paragraph">
 Spellbound has a cheat / debug mode built in. As soon as the game is loaded, the instructions between <a href="../initialisation/26627.html#26633">26633</a> - <a href="../initialisation/26627.html#26640">26640</a>
 disable the cheat mode, but it can be restored by:<br />
@@ -39,7 +41,7 @@ POKE <a href="../asm/27176.html#27236">27237</a>,92<br />
 POKE <a href="../asm/27176.html#27236">27238</a>,138
 </div>
 <div class="paragraph">
-When Cheat Mode is enabled, pressing DOWN while controlling Magic Knight will result in a prompt sound being played. After this, two main functions
+When cheat mode is enabled, pressing DOWN while controlling Magic Knight will result in a prompt sound being played. After this, two main functions
 become available. Pressing the X key will cause a return to BASIC, while pressing numeric keys will allow you to transport Magic Knight instantly to
 another room. This latter function requires two numeric keys to be pressed, as it is necessary to specify the two-digit room number that you wish to
 visit. The first must digit must be between 0 and 4 (as the game's rooms are numbered 00-49). The second digit can be any numeric value. For example,
@@ -48,7 +50,7 @@ pressing 0 then 0 will move Magic Knight to room 00 (i.e. The Lift). Pressing an
 </div>
 <div><span id="oddballframenumbers"></span></div>
 <div class="box box-2">
-<div class="box-title">Odd Ball Frame Numbers</div>
+<div class="box-title">Odd Ball frame numbers</div>
 <div class="paragraph">
 The routine <a href="../asm/39125.html">39125</a> that draws the Odd Ball to screen relies on offset frame numbers (116, 117, 118 and 119) rather than absolute frame numbers (e.g. 0,
 1, 2 and 3). These frame numbers are relative to an origin at <a href="../asm/63988.html#64500">64500</a> which seems to make little sense at first sight. Why not just set the origin to
@@ -58,35 +60,35 @@ this.
 </div>
 <div><span id="strengthbar"></span></div>
 <div class="box box-1">
-<div class="box-title">Drawing the Strength Bar</div>
+<div class="box-title">Drawing the strength bar</div>
 <div class="paragraph">
 In drawing the strength bar, if Magic Knight's strength is not a multiple of eight, then the strength bar is drawn as groups of eight pixels, then the
 remainder over and above a multiple of eight is drawn. If the Magic Knight's strength IS a multiple of eight, however, the second part of the routine
-(draw the remainder over and above a multiple of eight) is still executed, but draws nothing (see JR <a href="../asm/36215.html#36267">36267</a> instruction at <a href="../asm/36215.html#36259">36259</a> - it seems more
-logical to have JR <a href="../asm/36215.html#36274">36274</a> here to skip over the "fractional part drawing".
+(draw the remainder over and above a multiple of eight) is still executed, but draws nothing (see <span class="instruction">JR <a href="../asm/36215.html#36267">36267</a></span> instruction at <a href="../asm/36215.html#36259">36259</a> - it seems
+more logical to have <span class="instruction">JR <a href="../asm/36215.html#36274">36274</a></span> here to skip over the "fractional part drawing".
 </div>
 </div>
 <div><span id="gimbalcanhelpflag"></span></div>
 <div class="box box-2">
-<div class="box-title">Gimbal's Can Help Flag</div>
+<div class="box-title">Gimbal's can-help flag</div>
 <div class="paragraph">
-Giving Gimbal the Willow Rod sets his "can help" flag (instructions from <a href="../asm/30880.html#30989">30989</a>), even though Gimbal never helps.
+Giving Gimbal the Willow Rod sets his can-help flag (instructions from <a href="../asm/30880.html#30989">30989</a>), even though Gimbal never helps.
 </div>
 </div>
 <div><span id="summoningspellpower"></span></div>
 <div class="box box-1">
-<div class="box-title">Spell Power and Summoning</div>
+<div class="box-title">Spell power and summoning</div>
 <div class="paragraph">
 In the summoning routine, the instructions from <a href="../asm/33312.html#33480">33480</a> decrease a summoned character's strength by 10, happiness by 5 and stamina by 12 as well as
 Magic Knight's spell power by 3. As the Banshee has no stats, her strength, happiness and stamina are not affected so this part of the routine is
 skipped in her case, but Magic Knight's loss of spell power is also skipped over. Does the Banshee's own spell power fuel her summoning, rather than
 Magic Knight's spell power, as is the case for other characters? To change this to be consistent with the situation with other characters (i.e. a drain
-on Magic Knight's spell power), the instruction JP Z,33512 at <a href="../asm/33312.html#33477">33477</a> should be changed to JP Z,33504.
+on Magic Knight's spell power), the instruction <span class="instruction">JP Z,33512</span> at <a href="../asm/33312.html#33477">33477</a> should be changed to <span class="instruction">JP Z,33504</span>.
 </div>
 </div>
 <div><span id="emptyinventorycheck"></span></div>
 <div class="box box-2">
-<div class="box-title">Empty Inventory Check</div>
+<div class="box-title">Empty inventory check</div>
 <div class="paragraph">
 In the routine at <a href="../asm/34914.html">34914</a> that displays a window / menu showing a character's inventory, the beginning of the routine checks for an empty inventory, and
 if it is empty, the execution point skips ahead to <a href="../asm/34914.html#35069">35069</a> (displaying a "YOU ARE NOT CARRYING ANYTHING" message). If the inventory is not empty, then
@@ -96,16 +98,16 @@ that does the check is skipped as a result of the first check?
 </div>
 <div><span id="thewallextrainstruction"></span></div>
 <div class="box box-1">
-<div class="box-title">Extra Room Layout Data (The Wall)</div>
+<div class="box-title">Extra room layout data (the wall)</div>
 <div class="paragraph">
 At The Wall (before Elrand helps) at <a href="../asm/53289.html">53289</a>, the instruction at <a href="../asm/53289.html#53307">53307</a> is unnecessary as it draws the bottom character block of brickwork in the Wall,
 but this is part of the floor and has already been drawn. In fact the immediately preceding instruction at <a href="../asm/53289.html#53306">53306</a> can also be omitted as it just sets
-the Brickwork Drawing Mode to one row in preparation for drawing this unnecessary piece.
+the brickwork drawing mode to one row in preparation for drawing this unnecessary piece.
 </div>
 </div>
 <div><span id="glowingbottleatlittlebottle"></span></div>
 <div class="box box-2">
-<div class="box-title">Glowing Bottle Location Check</div>
+<div class="box-title">Glowing bottle location check</div>
 <div class="paragraph">
 In the room-specific routine at <a href="../asm/29800.html">29800</a>, a check is made at <a href="../asm/29800.html#29812">29812</a>-<a href="../asm/29800.html#29815">29815</a> to determine whether the Glowing Bottle is at The Little Bottle, however
 there does not appear to be a way for the Glowing Bottle to actually get there. Any attempt to drop (or throw) the Glowing Bottle causes it to break,
@@ -118,22 +120,22 @@ be set to 99 and so stop illuminating the room.
 </div>
 <div><span id="reusedarchitecture"></span></div>
 <div class="box box-1">
-<div class="box-title">Reused Architecture Graphics</div>
+<div class="box-title">Reused architecture graphics</div>
 <div class="paragraph">
 The <a href="../asm/54617.html">architecture styles lookup table</a> contains several blocks that are taken from the previous Magic Knight game, Finders Keepers:
 </div>
 <div class="paragraph">
 <table class="default">
 <tr>
-<td class="centre" colspan="1" rowspan="1"><img alt="2" src="../images/udgs/blocks/2.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="3" src="../images/udgs/blocks/3.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="4" src="../images/udgs/blocks/4.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="5" src="../images/udgs/blocks/5.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="6" src="../images/udgs/blocks/6.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="7" src="../images/udgs/blocks/7.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="8" src="../images/udgs/blocks/8.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="9" src="../images/udgs/blocks/9.png" /></td>
-<td class="" colspan="1" rowspan="1"><img alt="10" src="../images/udgs/blocks/10.png" /></td>
+<td class="centre" colspan="1" rowspan="1"><img alt="2" src="../images/blocks/2.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="3" src="../images/blocks/3.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="4" src="../images/blocks/4.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="5" src="../images/blocks/5.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="6" src="../images/blocks/6.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="7" src="../images/blocks/7.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="8" src="../images/blocks/8.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="9" src="../images/blocks/9.png" /></td>
+<td class="" colspan="1" rowspan="1"><img alt="10" src="../images/blocks/10.png" /></td>
 </tr>
 </table>
 </div>
@@ -141,10 +143,21 @@ The <a href="../asm/54617.html">architecture styles lookup table</a> contains se
 Some of these blocks are also defined in Stormbringer.
 </div>
 </div>
+<div><span id="redundantinstructions"></span></div>
+<div class="box box-2">
+<div class="box-title">Redundant instructions / code</div>
+<div class="paragraph">
+The instruction at <a href="../asm/26906.html#26970">26970</a> initialises the value at <a href="../asm/23676.html">23676</a> to zero when a new game is started. However this address is never used.
+</div>
+<div class="paragraph">
+In the routine that processes the command to command a character (<a href="../asm/31636.html">31636</a>), the instruction at <a href="../asm/31636.html#31689">31689</a> loads <span class="register">A</span> with the index of the current (i.e.
+commanded) character, however this value is never used.
+</div>
+</div>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

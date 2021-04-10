@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 47833</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,94 +20,82 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47797.html">47797</a></span></td>
+<td class="prev">
+Prev: <a href="47797.html">47797</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47833">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47856.html">47856</a></span></td>
+<td class="next">
+Next: <a href="47856.html">47856</a>
+</td>
 </tr>
 </table>
-<div class="description">47833: Clear Lower Two Thirds, and Lower Three Character Rows of Upper Third of Display File</div>
+<div class="description">47833: Clear lower two thirds, and lower three character rows of upper third of display file</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="38841.html">38841</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="47833"></span>47833</td>
 <td class="instruction">LD HL,16544</td>
-<td class="comment-11" rowspan="1">Load HL with Display File address corresponding to (0, 5) (characters)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with display file address corresponding to (0, 5) (characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47836"></span>47836</td>
 <td class="instruction">LD (63018),HL</td>
-<td class="comment-11" rowspan="1">...and move Bitmap Virtual Text Cursor here</td>
+<td class="comment-1" rowspan="1">...and move bitmap virtual text cursor here</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47839"></span>47839</td>
 <td class="instruction">LD HL,96</td>
-<td class="comment-11" rowspan="1">Load HL with 96 (repeat count)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with 96 (repeat count)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47842"></span>47842</td>
 <td class="instruction">LD A,32</td>
-<td class="comment-11" rowspan="1">Load A with 32 (character code for SPACE)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 32 (character code for SPACE)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47844"></span>47844</td>
 <td class="instruction">LD (63306),A</td>
-<td class="comment-11" rowspan="1">...and store at <a href="63302.html#63305">63306</a></td>
+<td class="comment-1" rowspan="1">...and store at <a href="63302.html#63305">63306</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47847"></span>47847</td>
 <td class="instruction">CALL <a href="63302.html">63302</a></td>
-<td class="comment-11" rowspan="1">Draw three rows of SPACE characters and set HL to zero</td>
+<td class="comment-1" rowspan="1">Draw three rows of SPACE characters and set <span class="register">HL</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47850"></span>47850</td>
 <td class="instruction">LD BC,8</td>
-<td class="comment-11" rowspan="1">Load B with 0 (repeat inner loop 256 times) and C with 8 (repeat outer loop 8 times)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 0 (repeat inner loop 256 times) and <span class="register">C</span> with 8 (repeat outer loop 8 times)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47853"></span>47853</td>
 <td class="instruction">JP <a href="47856.html#47862">47862</a></td>
-<td class="comment-11" rowspan="1">Clear lower two thirds of Display File and return</td>
+<td class="comment-1" rowspan="1">Clear lower two thirds of display file and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47797.html">47797</a></span></td>
+<td class="prev">
+Prev: <a href="47797.html">47797</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47833">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="47856.html">47856</a></span></td>
+<td class="next">
+Next: <a href="47856.html">47856</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

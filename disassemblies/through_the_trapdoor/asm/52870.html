@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 52870</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,19 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="52860.html">52860</a></span></td>
+<td class="prev">
+Prev: <a href="52860.html">52860</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#52870">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="52889.html">52889</a></span></td>
+<td class="next">
+Next: <a href="52889.html">52889</a>
+</td>
 </tr>
 </table>
-<div class="description">52870: Script Routine (53): Move Worm Left if Possible, Otherwise Choose New Direction</div>
+<div class="description">52870: Script routine: (53) Move worm left if possible, otherwise choose new direction</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="48096.html">48096</a>.
 </div>
-<table class="input-1">
+</div>
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -43,68 +47,59 @@
 <td class="register-desc">Address of complex state data for an entity</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52870"></span>52870</td>
 <td class="instruction">CALL <a href="54666.html">54666</a></td>
-<td class="comment-11" rowspan="1">Check worm for collision with another impassable / pushable entity immediately to the left...</td>
+<td class="comment-1" rowspan="1">Check worm for collision with another impassable / pushable entity immediately to the left...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52873"></span>52873</td>
 <td class="instruction">JR NC,<a href="52908.html">52908</a></td>
-<td class="comment-11" rowspan="1">...and if a collision occurred, then have worm choose new direction</td>
+<td class="comment-1" rowspan="1">...and if a collision occurred, then have worm choose new direction</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52875"></span>52875</td>
 <td class="instruction">CALL <a href="54348.html">54348</a></td>
-<td class="comment-11" rowspan="1">Move worm into room to the left, if appropriate...</td>
+<td class="comment-1" rowspan="1">Move worm into room to the left, if appropriate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52878"></span>52878</td>
 <td class="instruction">JR NC,<a href="52908.html">52908</a></td>
-<td class="comment-11" rowspan="1">...and if worm can't enter new room then have worm choose new direction</td>
+<td class="comment-1" rowspan="1">...and if worm can't enter new room then have worm choose new direction</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52880"></span>52880</td>
 <td class="instruction">DEC (IX+5)</td>
-<td class="comment-11" rowspan="1">Move worm left one character...</td>
+<td class="comment-1" rowspan="1">Move worm left one character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52883"></span>52883</td>
 <td class="instruction">DEC (IX+7)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52886"></span>52886</td>
 <td class="instruction">JP <a href="48096.html">48096</a></td>
-<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next script instruction and execute</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="52860.html">52860</a></span></td>
+<td class="prev">
+Prev: <a href="52860.html">52860</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#52870">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="52889.html">52889</a></span></td>
+<td class="next">
+Next: <a href="52889.html">52889</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

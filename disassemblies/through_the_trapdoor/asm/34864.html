@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 34864</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,176 +20,155 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34751.html">34751</a></span></td>
+<td class="prev">
+Prev: <a href="34751.html">34751</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34864">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34901.html">34901</a></span></td>
+<td class="next">
+Next: <a href="34901.html">34901</a>
+</td>
 </tr>
 </table>
-<div class="description">34864: Copy Start Addresses of Current Level's Data Blocks to <a href="34236.html">34236</a> and Clean Up Old Data</div>
+<div class="description">34864: Copy start addresses of current level's data blocks and clean up old data</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
+<div class="paragraph">
+Data blocks are copied to <a href="34236.html">34236</a>.
+</div>
 <div class="paragraph">
 Used by the routines at <a href="34438.html">34438</a> and <a href="36753.html">36753</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34864"></span>34864</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34865"></span>34865</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34866"></span>34866</td>
 <td class="instruction">LD HL,(34244)</td>
-<td class="comment-11" rowspan="1">Load HL with address of complex state data (current level) for worm</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of complex state data (current level) for worm</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34869"></span>34869</td>
 <td class="instruction">LD (HL),0</td>
-<td class="comment-11" rowspan="1">Set worm's current room to zero</td>
+<td class="comment-1" rowspan="1">Set worm's current room to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34871"></span>34871</td>
 <td class="instruction">LD A,(34207)</td>
-<td class="comment-11" rowspan="1">Load current level into A</td>
+<td class="comment-1" rowspan="1">Load current level into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34874"></span>34874</td>
 <td class="instruction">LD HL,34281</td>
-<td class="comment-11" rowspan="1">Point HL at position 20 bytes before start of list of start addresses of level 1's data blocks</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at position 20 bytes before start of list of start addresses of level 1's data blocks</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34877"></span>34877</td>
 <td class="instruction">LD BC,20</td>
-<td class="comment-11" rowspan="1">Set data length to 20, as there are 10 data blocks per level (so 10 addresses)</td>
+<td class="comment-1" rowspan="1">Set data length to 20, as there are 10 data blocks per level (so 10 addresses)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34880"></span>34880</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">Advance HL to start of data block address list for next level</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to start of data block address list for next level</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34881"></span>34881</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">Decrease level counter</td>
+<td class="comment-1" rowspan="1">Decrease level counter</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34882"></span>34882</td>
 <td class="instruction">JR NZ,34880</td>
-<td class="comment-11" rowspan="1">Loop back if we have not reached data for required level</td>
+<td class="comment-1" rowspan="1">Loop back if we have not reached data for required level</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34884"></span>
 <div class="comments">
 <div class="paragraph">
-At this point, HL points to the start of the list of start addresses of the current level's data blocks
+At this point, <span class="register">HL</span> points to the start of the list of start addresses of the current level's data blocks
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34884"></span>34884</td>
 <td class="instruction">LD DE,34236</td>
-<td class="comment-11" rowspan="1">Copy this level's data block start addresses to <a href="34236.html">34236</a>...</td>
+<td class="comment-1" rowspan="1">Copy this level's data block start addresses to <a href="34236.html">34236</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34887"></span>34887</td>
 <td class="instruction">LDIR</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34889"></span>34889</td>
 <td class="instruction">LD B,9</td>
-<td class="comment-11" rowspan="1">Clear Store for Script Instruction Loop Data...</td>
+<td class="comment-1" rowspan="1">Clear store for script instruction loop data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34891"></span>34891</td>
 <td class="instruction">LD HL,34285</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34894"></span>34894</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34895"></span>34895</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34896"></span>34896</td>
 <td class="instruction">DJNZ 34894</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34898"></span>34898</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34899"></span>34899</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34900"></span>34900</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34751.html">34751</a></span></td>
+<td class="prev">
+Prev: <a href="34751.html">34751</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34864">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34901.html">34901</a></span></td>
+<td class="next">
+Next: <a href="34901.html">34901</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

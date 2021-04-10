@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 53317</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,144 +20,139 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53309.html">53309</a></span></td>
+<td class="prev">
+Prev: <a href="53309.html">53309</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53317">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53333.html">53333</a></span></td>
+<td class="next">
+Next: <a href="53333.html">53333</a>
+</td>
 </tr>
 </table>
-<div class="description">53317: Set Zero Flag if Room B Has an Entry in Pathfinding Data Table, Otherwise Reset</div>
+<div class="description">53317: Set zero flag if room <span class="register">B</span> has an entry in pathfinding data table, otherwise reset</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="53194.html">53194</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">Address of end of Pathfinding Data Table</td>
+<td class="register-desc">Address of end of pathfinding data table</td>
 </tr>
 <tr>
 <td class="register">B</td>
 <td class="register-desc">Index of room to check table for</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">F</td>
-<td class="register-desc">(Zero Flag) Set if room B is already stored in Pathfinding Data Table, reset otherwise</td>
+<td class="register-desc">Zero flag set if room <span class="register">B</span> is already stored in pathfinding data table, reset otherwise</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53317"></span>53317</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (address of end of Pathfinding Data Table)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (address of end of pathfinding data table)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53318"></span>53318</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move HL back to previous entry's room index...</td>
+<td class="comment-1" rowspan="1">Move <span class="register">HL</span> back to previous entry's room index...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53319"></span>53319</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...load into A...</td>
+<td class="comment-1" rowspan="1">...load into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53320"></span>53320</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">...and if this is 255 (Start Marker, so room B not found)...</td>
+<td class="comment-1" rowspan="1">...and if this is 255 (start marker, so room <span class="register">B</span> not found)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53322"></span>53322</td>
 <td class="instruction">JR Z,53330</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="53317.html#53330">53330</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="53317.html#53330">53330</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53324"></span>53324</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move HL back to entry's direction index</td>
+<td class="comment-1" rowspan="1">Move <span class="register">HL</span> back to entry's direction index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53325"></span>53325</td>
 <td class="instruction">CP B</td>
-<td class="comment-11" rowspan="1">If room to search for not the same as current entry's room...</td>
+<td class="comment-1" rowspan="1">If room to search for not the same as current entry's room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53326"></span>53326</td>
 <td class="instruction">JR NZ,53318</td>
-<td class="comment-11" rowspan="1">...then loop back to <a href="53317.html#53318">53318</a> to test next entry</td>
+<td class="comment-1" rowspan="1">...then loop back to <a href="53317.html#53318">53318</a> to test next entry</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="53328"></span>
 <div class="comments">
 <div class="paragraph">
-At this point, the room we're looking for (in B) is already stored in the Pathfinding Data Table and the Zero Flag is set.
+At this point, the room we're looking for (in <span class="register">B</span>) is already stored in the pathfinding data table and the zero flag is set.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53328"></span>53328</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (address of end of Pathfinding Data Table)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (address of end of pathfinding data table)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53329"></span>53329</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53330"></span>53330</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (address of end of Pathfinding Data Table)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (address of end of pathfinding data table)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53331"></span>53331</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">Reset Zero Flag</td>
+<td class="comment-1" rowspan="1">Reset zero flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53332"></span>53332</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53309.html">53309</a></span></td>
+<td class="prev">
+Prev: <a href="53309.html">53309</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53317">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53333.html">53333</a></span></td>
+<td class="next">
+Next: <a href="53333.html">53333</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

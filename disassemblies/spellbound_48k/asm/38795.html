@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 38795</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38749.html">38749</a></span></td>
+<td class="prev">
+Prev: <a href="38749.html">38749</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38795">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38844.html">38844</a></span></td>
+<td class="next">
+Next: <a href="38844.html">38844</a>
+</td>
 </tr>
 </table>
-<div class="description">38795: Reset Star to Point of Origin and Generate a New Direction and Movement Data</div>
+<div class="description">38795: Reset star to point of origin and generate a new direction and movement data</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="38884.html">38884</a> and <a href="38961.html">38961</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,188 +47,159 @@ Used by the routines at <a href="38884.html">38884</a> and <a href="38961.html">
 <td class="register-desc">Points to an entry in table of stars' movement data at <a href="25614.html">25614</a></td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38795"></span>38795</td>
 <td class="instruction">CALL <a href="38486.html">38486</a></td>
-<td class="comment-11" rowspan="1">Set new random seed and load LSB of this into A</td>
+<td class="comment-1" rowspan="1">Set new random seed and load LSB of this into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38798"></span>38798</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">Discard bits five to seven</td>
+<td class="comment-1" rowspan="1">Discard bits five to seven</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38800"></span>38800</td>
 <td class="instruction">SUB 15</td>
-<td class="comment-11" rowspan="1">Subtract 15</td>
+<td class="comment-1" rowspan="1">Subtract 15</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38802"></span>38802</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load result into B (random number -15 to 16) (y-component of star's direction)</td>
+<td class="comment-1" rowspan="1">Load result into <span class="register">B</span> (random number -15 to 16) (y-component of star's direction)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38803"></span>38803</td>
 <td class="instruction">CALL <a href="38486.html">38486</a></td>
-<td class="comment-11" rowspan="1">Set new random seed and load LSB of this into A</td>
+<td class="comment-1" rowspan="1">Set new random seed and load LSB of this into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38806"></span>38806</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">Discard bits five to seven</td>
+<td class="comment-1" rowspan="1">Discard bits five to seven</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38808"></span>38808</td>
 <td class="instruction">SUB 15</td>
-<td class="comment-11" rowspan="1">Subtract 15</td>
+<td class="comment-1" rowspan="1">Subtract 15</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38810"></span>38810</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load result into C (random number -15 to 16) (x-component of star's direction)</td>
+<td class="comment-1" rowspan="1">Load result into <span class="register">C</span> (random number -15 to 16) (x-component of star's direction)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38811"></span>38811</td>
 <td class="instruction">LD A,128</td>
-<td class="comment-11" rowspan="1">Add to 128 (set bit 7) in C...</td>
+<td class="comment-1" rowspan="1">Add to 128 (set bit 7) in <span class="register">C</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38813"></span>38813</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38814"></span>38814</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...(random number 113 to 144)</td>
+<td class="comment-1" rowspan="1">...(random number 113 to 144)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38815"></span>38815</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Add 87 to B...</td>
+<td class="comment-1" rowspan="1">Add 87 to <span class="register">B</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38816"></span>38816</td>
 <td class="instruction">ADD A,87</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38818"></span>38818</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...(random number 72 to 103)</td>
+<td class="comment-1" rowspan="1">...(random number 72 to 103)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38819"></span>38819</td>
 <td class="instruction">CP 87</td>
-<td class="comment-11" rowspan="1">If A is not 87 (i.e. y-direction component is not zero)...</td>
+<td class="comment-1" rowspan="1">If <span class="register">A</span> is not 87 (i.e. y-direction component is not zero)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38821"></span>38821</td>
 <td class="instruction">JR NZ,38828</td>
-<td class="comment-11" rowspan="1">...skip ahead to <a href="38795.html#38828">38828</a></td>
+<td class="comment-1" rowspan="1">...skip ahead to <a href="38795.html#38828">38828</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38823"></span>38823</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">If A (loaded into C) is 128... [<a href="../reference/bugs.html#invertedstarmovementinstruction">bug</a>: this instruction only executed if A is 87, so how could it ever be 128 here? This should actually be LD A,C, preventing stars having zero for both direction components]</td>
+<td class="comment-1" rowspan="1">If <span class="register">A</span> (loaded into <span class="register">C</span>) is 128... [<a href="../reference/bugs.html#invertedstarmovementinstruction">bug</a>]</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38824"></span>38824</td>
 <td class="instruction">CP 128</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38826"></span>38826</td>
 <td class="instruction">JR Z,38795</td>
-<td class="comment-11" rowspan="1">...then restart this routine to generate two new random numbers/seeds</td>
+<td class="comment-1" rowspan="1">...then restart this routine to generate two new random numbers/seeds</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38828"></span>38828</td>
 <td class="instruction">LD D,87</td>
-<td class="comment-11" rowspan="1">Load D (initial y-coordinate) with 87</td>
+<td class="comment-1" rowspan="1">Load <span class="register">D</span> (initial y-coordinate) with 87</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38830"></span>38830</td>
 <td class="instruction">LD E,128</td>
-<td class="comment-11" rowspan="1">Load E (initial x-coordinate) with 128</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> (initial x-coordinate) with 128</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38832"></span>38832</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38833"></span>38833</td>
 <td class="instruction">CALL <a href="39016.html">39016</a></td>
-<td class="comment-11" rowspan="1">Set up star's movement data based upon starting position and direction</td>
+<td class="comment-1" rowspan="1">Set up star's movement data based upon starting position and direction</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38836"></span>38836</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38837"></span>38837</td>
 <td class="instruction">LD (IX+0),E</td>
-<td class="comment-11" rowspan="1">Set star's initial coordinates as (128, 87)...</td>
+<td class="comment-1" rowspan="1">Set star's initial coordinates as (128, 87)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38840"></span>38840</td>
 <td class="instruction">LD (IX+1),D</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38843"></span>38843</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38749.html">38749</a></span></td>
+<td class="prev">
+Prev: <a href="38749.html">38749</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38795">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38844.html">38844</a></span></td>
+<td class="next">
+Next: <a href="38844.html">38844</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

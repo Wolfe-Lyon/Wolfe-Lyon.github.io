@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 31688</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,322 +20,268 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31537.html">31537</a></span></td>
+<td class="prev">
+Prev: <a href="31537.html">31537</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31688">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="32055.html">32055</a></span></td>
+<td class="next">
+Next: <a href="32055.html">32055</a>
+</td>
 </tr>
 </table>
-<div class="description">31688: Process Command to Move Starship</div>
+<div class="description">31688: Process command to move starship</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="55726.html">55726</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31688"></span>31688</td>
 <td class="instruction">LD A,255</td>
-<td class="comment-11" rowspan="1">Set MASK P and MASK T system variables to 255...</td>
+<td class="comment-1" rowspan="1">Store 255 at <a href="23694.html">23694</a> and <a href="23694.html#23696">23696</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31690"></span>31690</td>
 <td class="instruction">LD (23696),A</td>
-<td class="comment-11" rowspan="1">...to preserve attributes already on screen...</td>
+<td class="comment-1" rowspan="1">...to preserve attributes already on screen...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31693"></span>31693</td>
 <td class="instruction">LD (23694),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31696"></span>31696</td>
 <td class="instruction">CALL <a href="54333.html">54333</a></td>
-<td class="comment-11" rowspan="1">Print or update Command Summary Window at top of screen</td>
+<td class="comment-1" rowspan="1">Print or update command summary window at top of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31699"></span>31699</td>
 <td class="instruction">LD DE,41888</td>
-<td class="comment-11" rowspan="1">Point DE at "MOVE THE STARSHIP TO"...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at "MOVE THE STARSHIP TO"...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31702"></span>31702</td>
 <td class="instruction">CALL <a href="54283.html">54283</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at top of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31705"></span>31705</td>
 <td class="instruction">LD A,(23700)</td>
-<td class="comment-11" rowspan="1">Load D with USS Pisces' Current Location...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">D</span> with USS Pisces' current location...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31708"></span>31708</td>
 <td class="instruction">LD D,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31709"></span>31709</td>
 <td class="instruction">LD HL,53329</td>
-<td class="comment-11" rowspan="1">Point HL at Starship Location Connectivity Data</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at starship location connectivity data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31712"></span>31712</td>
 <td class="instruction">LD BC,16384</td>
-<td class="comment-11" rowspan="1">Load B with 64 and C with zero</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 64 and <span class="register">C</span> with zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31715"></span>31715</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load current location index in Starship Location Connectivity Data into A...</td>
+<td class="comment-1" rowspan="1">Load current location index in starship location connectivity data into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31716"></span>31716</td>
 <td class="instruction">CP D</td>
-<td class="comment-11" rowspan="1">...and if this is the same as the USS Pisces' Current Location...</td>
+<td class="comment-1" rowspan="1">...and if this is the same as the USS Pisces' Current Location...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31717"></span>31717</td>
 <td class="instruction">JR Z,31723</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="31688.html#31723">31723</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="31688.html#31723">31723</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31719"></span>31719</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to next location index</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next location index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31720"></span>31720</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">Increase C</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31721"></span>31721</td>
 <td class="instruction">DJNZ 31715</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="31688.html#31715">31715</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="31688.html#31715">31715</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31723"></span>31723</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Load C (index of index of USS Pisces' Current Location!) into instruction at <a href="31688.html#31766">31766</a> as operand...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> (index of index of USS Pisces' Current Location!) into instruction at <a href="31688.html#31766">31766</a> as operand...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31724"></span>31724</td>
 <td class="instruction">LD (31767),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31727"></span>31727</td>
 <td class="instruction">LD BC,9</td>
-<td class="comment-11" rowspan="1">Load BC with 9</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with 9</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31730"></span>31730</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">Reset Carry Flag</td>
+<td class="comment-1" rowspan="1">Reset carry flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31731"></span>31731</td>
 <td class="instruction">SBC HL,BC</td>
-<td class="comment-11" rowspan="1">Move HL back nine bytes to cell to current location's north-west</td>
+<td class="comment-1" rowspan="1">Move <span class="register">HL</span> back nine bytes to cell to current location's north-west</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31733"></span>31733</td>
 <td class="instruction">LD DE,23436</td>
-<td class="comment-11" rowspan="1">Point DE at the List of Currently Available Destinations</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at the list of currently available destinations</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31736"></span>31736</td>
 <td class="instruction">LD B,3</td>
-<td class="comment-11" rowspan="1">Load B with 3</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 3</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31738"></span>31738</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = current repeat counter)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = current repeat counter)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31739"></span>31739</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Copy entry from Starship Location Connectivity Data to List of Currently Available Destinations...</td>
+<td class="comment-1" rowspan="1">Copy entry from starship location connectivity data to list of currently available destinations...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31740"></span>31740</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31741"></span>31741</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Advance List of Currently Available Destinations pointer</td>
+<td class="comment-1" rowspan="1">Advance list of currently available destinations pointer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31742"></span>31742</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance Starship Location Connectivity Data pointer east one unit</td>
+<td class="comment-1" rowspan="1">Advance starship location connectivity data pointer east one unit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31743"></span>31743</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">If repeat counter is 2...</td>
+<td class="comment-1" rowspan="1">If repeat counter is 2...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31744"></span>31744</td>
 <td class="instruction">CP 2</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31746"></span>31746</td>
 <td class="instruction">JR Z,31751</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="31688.html#31751">31751</a> (skip over current location as we are already here!)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="31688.html#31751">31751</a> (skip over current location as we are already here!)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31748"></span>31748</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Copy entry from Starship Location Connectivity Data to List of Currently Available Destinations...</td>
+<td class="comment-1" rowspan="1">Copy entry from starship location connectivity data to list of currently available destinations...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31749"></span>31749</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31750"></span>31750</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Advance List of Currently Available Destinations pointer</td>
+<td class="comment-1" rowspan="1">Advance list of currently available destinations pointer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31751"></span>31751</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance Starship Location Connectivity Data pointer east one unit</td>
+<td class="comment-1" rowspan="1">Advance starship location connectivity data pointer east one unit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31752"></span>31752</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Copy entry from Starship Location Connectivity Data to List of Currently Available Destinations...</td>
+<td class="comment-1" rowspan="1">Copy entry from starship location connectivity data to list of currently available destinations...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31753"></span>31753</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31754"></span>31754</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Advance List of Currently Available Destinations pointer</td>
+<td class="comment-1" rowspan="1">Advance list of currently available destinations pointer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31755"></span>31755</td>
 <td class="instruction">LD BC,6</td>
-<td class="comment-11" rowspan="1">Advance Starship Location Connectivity Data pointer by 6 bytes (i.e. south one and west two units)...</td>
+<td class="comment-1" rowspan="1">Advance starship location connectivity data pointer by 6 bytes (i.e. south one and west two units)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31758"></span>31758</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31759"></span>31759</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = current repeat counter)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = current repeat counter)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31760"></span>31760</td>
 <td class="instruction">DJNZ 31738</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="31688.html#31738">31738</a> for next iteration</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="31688.html#31738">31738</a> for next iteration</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31762"></span>31762</td>
 <td class="instruction">LD IX,23436</td>
-<td class="comment-11" rowspan="1">Point IX at start of List of Currently Available Destinations</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at start of list of currently available destinations</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31766"></span>31766</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Load A with index of index of USS Pisces' Current Location as stored by instruction at <a href="31688.html#31723">31723</a></td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of index of USS Pisces' Current Location as stored by instruction at <a href="31688.html#31723">31723</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31768"></span>31768</td>
 <td class="instruction">CP 8</td>
-<td class="comment-11" rowspan="1">If index is less than 8 (i.e. already on northern-most row of grid)...</td>
+<td class="comment-1" rowspan="1">If index is less than 8 (i.e. already on northern-most row of grid)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31770"></span>31770</td>
 <td class="instruction">JP C,<a href="32200.html">32200</a></td>
-<td class="comment-11" rowspan="1">...then remove starship destination entries for locations to the north-west, north and north-east</td>
+<td class="comment-1" rowspan="1">...then remove starship destination entries for locations to the north-west, north and north-east</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31773"></span>31773</td>
 <td class="instruction">CP 24</td>
-<td class="comment-11" rowspan="1">If index is 24 or more (i.e. already on southern-most row of grid)...</td>
+<td class="comment-1" rowspan="1">If index is 24 or more (i.e. already on southern-most row of grid)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31775"></span>31775</td>
 <td class="instruction">JP NC,<a href="32213.html">32213</a></td>
-<td class="comment-11" rowspan="1">...then remove starship destination entries for locations to the south-west, south and south-east</td>
+<td class="comment-1" rowspan="1">...then remove starship destination entries for locations to the south-west, south and south-east</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="31778"></span>
 <div class="comments">
 <div class="paragraph">
@@ -344,738 +291,620 @@ This entry point is used by the routines at <a href="32200.html">32200</a> and <
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31778"></span>31778</td>
 <td class="instruction">LD A,(31767)</td>
-<td class="comment-11" rowspan="1">Load A with index of index of USS Pisces' Current Location as stored by instruction at <a href="31688.html#31723">31723</a></td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of index of USS Pisces' Current Location as stored by instruction at <a href="31688.html#31723">31723</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31781"></span>31781</td>
 <td class="instruction">AND 7</td>
-<td class="comment-11" rowspan="1">If lowest three bits are reset...</td>
+<td class="comment-1" rowspan="1">If lowest three bits are reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31783"></span>31783</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...(i.e. already on western-most column of grid)...</td>
+<td class="comment-1" rowspan="1">...(i.e. already on western-most column of grid)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31784"></span>31784</td>
 <td class="instruction">JP Z,<a href="32226.html">32226</a></td>
-<td class="comment-11" rowspan="1">...then remove starship destination entries for locations to the north-west, west and south-west</td>
+<td class="comment-1" rowspan="1">...then remove starship destination entries for locations to the north-west, west and south-west</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31787"></span>31787</td>
 <td class="instruction">CP 7</td>
-<td class="comment-11" rowspan="1">If lowest three bits are set (i.e. already on eastern-most column of grid)...</td>
+<td class="comment-1" rowspan="1">If lowest three bits are set (i.e. already on eastern-most column of grid)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31789"></span>31789</td>
 <td class="instruction">JP Z,<a href="32239.html">32239</a></td>
-<td class="comment-11" rowspan="1">...then remove starship destination entries for locations to the north-east, east and south-east</td>
+<td class="comment-1" rowspan="1">...then remove starship destination entries for locations to the north-east, east and south-east</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="31792"></span>
 <div class="comments">
 <div class="paragraph">
 This entry point is used by the routines at <a href="32226.html">32226</a> and <a href="32239.html">32239</a>.
 </div>
 <div class="paragraph">
-Code here compacts the List of Currently Available Destinations at <a href="23436.html">23436</a> by removing mid-list zeroes.
+Code here compacts the list of currently available destinations at <a href="23436.html">23436</a> by removing mid-list zeroes.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31792"></span>31792</td>
 <td class="instruction">LD HL,23436</td>
-<td class="comment-11" rowspan="1">Point HL at start of List of Currently Available Destinations</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of list of currently available destinations</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31795"></span>31795</td>
 <td class="instruction">LD DE,23436</td>
-<td class="comment-11" rowspan="1">Point DE at start of List of Currently Available Destinations</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at start of list of currently available destinations</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31798"></span>31798</td>
 <td class="instruction">LD BC,2048</td>
-<td class="comment-11" rowspan="1">Set B = 8 (as List of Currently Available Destinations can have at most eight entries) and C = 0</td>
+<td class="comment-1" rowspan="1">Set <span class="register">B</span> = 8 (as list of currently available destinations can have at most eight entries) and <span class="register">C</span> = 0</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31801"></span>31801</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">If current Available Destination List entry is zero...</td>
+<td class="comment-1" rowspan="1">If current available destination list entry is zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31802"></span>31802</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31803"></span>31803</td>
 <td class="instruction">JR Z,31808</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="31688.html#31808">31808</a> (advance HL to next list position)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="31688.html#31808">31808</a> (advance <span class="register">HL</span> to next list position)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31805"></span>31805</td>
 <td class="instruction">LD (DE),A</td>
-<td class="comment-11" rowspan="1">Set byte at DE to value read from HL</td>
+<td class="comment-1" rowspan="1">Set byte at <span class="register">DE</span> to value read from <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31806"></span>31806</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">Increase C (current number of entries in tidied list)</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">C</span> (current number of entries in tidied list)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31807"></span>31807</td>
 <td class="instruction">INC DE</td>
-<td class="comment-11" rowspan="1">Advance DE to next list position</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">DE</span> to next list position</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31808"></span>31808</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to next list position</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next list position</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31809"></span>31809</td>
 <td class="instruction">DJNZ 31801</td>
-<td class="comment-11" rowspan="1">Decrease B (remaining list entries to process) and loop back to <a href="31688.html#31801">31801</a></td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (remaining list entries to process) and loop back to <a href="31688.html#31801">31801</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31811"></span>31811</td>
 <td class="instruction">LD A,9</td>
-<td class="comment-11" rowspan="1">Load A with 9...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 9...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31813"></span>31813</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...plus number of entries in List of Currently Available Destinations</td>
+<td class="comment-1" rowspan="1">...plus number of entries in list of currently available destinations</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31814"></span>31814</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (C = number of available destinations)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">C</span> = number of available destinations)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31815"></span>31815</td>
 <td class="instruction">LD (37292),A</td>
-<td class="comment-11" rowspan="1">Set y-coordinate of bottom of "WHERE TO ?" Window (Window 25) to value stored in A</td>
+<td class="comment-1" rowspan="1">Set y-coordinate of bottom of "WHERE TO ?" window (25) to value stored in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31818"></span>31818</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Set Initial (and minimum allowed) y-coordinate of Hand Cursor to 1 for Window 25...</td>
+<td class="comment-1" rowspan="1">Set initial (and minimum allowed) y-coordinate of hand cursor to 1 for window 25...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31820"></span>31820</td>
 <td class="instruction">LD (37295),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31823"></span>31823</td>
 <td class="instruction">LD A,25</td>
-<td class="comment-11" rowspan="1">Draw "WHERE TO?" Menu Window...</td>
+<td class="comment-1" rowspan="1">Draw "WHERE TO?" menu window...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31825"></span>31825</td>
 <td class="instruction">CALL <a href="34982.html">34982</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31828"></span>31828</td>
 <td class="instruction">LD HL,41899</td>
-<td class="comment-11" rowspan="1">Point HL at "WHERE TO ?" text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "WHERE TO ?" text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31831"></span>31831</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">...and print to screen</td>
+<td class="comment-1" rowspan="1">...and print to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31834"></span>31834</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (C = number of available destinations)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">C</span> = number of available destinations)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="31835"></span>
 <div class="comments">
 <div class="paragraph">
-Print list of available destinations as options in "WHERE TO ?" Window
+Print list of available destinations as options in "WHERE TO ?" window
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31835"></span>31835</td>
 <td class="instruction">LD HL,23436</td>
-<td class="comment-11" rowspan="1">Point HL at start of List of Currently Available Destinations</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of list of currently available destinations</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31838"></span>31838</td>
 <td class="instruction">LD B,C</td>
-<td class="comment-11" rowspan="1">Load B with number of available destinations</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with number of available destinations</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31839"></span>31839</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load location index from current position in List of Currently Available Destinations</td>
+<td class="comment-1" rowspan="1">Load location index from current position in list of currently available destinations</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31840"></span>31840</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (current position in List of Currently Available Destinations)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (current position in list of currently available destinations)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31841"></span>31841</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = remaining number of available destinations)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = remaining number of available destinations)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31842"></span>31842</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = index of a location read from destinations list)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = index of a location read from destinations list)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31843"></span>31843</td>
 <td class="instruction">LD HL,38351</td>
-<td class="comment-11" rowspan="1">Move cursor to start of next character row within window, then right by two characters...</td>
+<td class="comment-1" rowspan="1">Move cursor to start of next character row within window, then right by two characters...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31846"></span>31846</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31849"></span>31849</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = index of a location read from destinations list)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = index of a location read from destinations list)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31850"></span>31850</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load B with location index...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with location index...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31851"></span>31851</td>
 <td class="instruction">CALL <a href="54261.html">54261</a></td>
-<td class="comment-11" rowspan="1">...and point HL at that location's name</td>
+<td class="comment-1" rowspan="1">...and point <span class="register">HL</span> at that location's name</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31854"></span>31854</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">Print the location's name in the menu window</td>
+<td class="comment-1" rowspan="1">Print the location's name in the menu window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31857"></span>31857</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = remaining number of available destinations)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = remaining number of available destinations)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31858"></span>31858</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (current position in List of Currently Available Destinations)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (current position in list of currently available destinations)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31859"></span>31859</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to next location in list</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next location in list</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31860"></span>31860</td>
 <td class="instruction">DJNZ 31839</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="31688.html#31839">31839</a> to print next name in list</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="31688.html#31839">31839</a> to print next name in list</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31862"></span>31862</td>
 <td class="instruction">CALL <a href="35296.html">35296</a></td>
-<td class="comment-11" rowspan="1">Process keyboard / joystick input on a menu and load A with selected item index</td>
+<td class="comment-1" rowspan="1">Process keyboard / joystick input on a menu and load <span class="register">A</span> with selected item index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31865"></span>31865</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load BC with index of selected destination...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with index of selected destination...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31866"></span>31866</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31868"></span>31868</td>
 <td class="instruction">LD HL,23436</td>
-<td class="comment-11" rowspan="1">Point HL at start of List of Currently Available Destinations...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of list of currently available destinations...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31871"></span>31871</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...and advance to entry for selected destination</td>
+<td class="comment-1" rowspan="1">...and advance to entry for selected destination</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31872"></span>31872</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Store this location index as operand of instruction at <a href="31688.html#32034">32034</a>...</td>
+<td class="comment-1" rowspan="1">Store this location index as operand of instruction at <a href="31688.html#32034">32034</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31873"></span>31873</td>
 <td class="instruction">LD (32035),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31876"></span>31876</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load B with location's index</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with location's index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31877"></span>31877</td>
 <td class="instruction">CALL <a href="54261.html">54261</a></td>
-<td class="comment-11" rowspan="1">Point HL at the location's name</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at the location's name</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31880"></span>31880</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Switch HL and DE (DE now points to location's name)...</td>
+<td class="comment-1" rowspan="1">Switch <span class="register">HL</span> and <span class="register">DE</span> (<span class="register">DE</span> now points to location's name)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31881"></span>31881</td>
 <td class="instruction">CALL <a href="54283.html">54283</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at top of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31884"></span>31884</td>
 <td class="instruction">LD DE,38233</td>
-<td class="comment-11" rowspan="1">Point DE at "AT"...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at "AT"...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31887"></span>31887</td>
 <td class="instruction">CALL <a href="54283.html">54283</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at top of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31890"></span>31890</td>
 <td class="instruction">LD DE,37291</td>
-<td class="comment-11" rowspan="1">Point DE at y-coordinate of top edge of Window 25...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at y-coordinate of top edge of window 25...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31893"></span>31893</td>
 <td class="instruction">LD A,14</td>
-<td class="comment-11" rowspan="1">...and set this window's height to 14...</td>
+<td class="comment-1" rowspan="1">...and set this window's height to 14...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31895"></span>31895</td>
 <td class="instruction">CALL <a href="33782.html">33782</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31898"></span>31898</td>
 <td class="instruction">LD A,2</td>
-<td class="comment-11" rowspan="1">Set Initial (and minimum allowed) y-coordinate of Hand Cursor to 2 for Window 25...</td>
+<td class="comment-1" rowspan="1">Set initial (and minimum allowed) y-coordinate of hand cursor to 2 for window 25...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31900"></span>31900</td>
 <td class="instruction">LD (37295),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31903"></span>31903</td>
 <td class="instruction">LD A,25</td>
-<td class="comment-11" rowspan="1">Draw Menu Window 25...</td>
+<td class="comment-1" rowspan="1">Draw menu window 25...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31905"></span>31905</td>
 <td class="instruction">CALL <a href="34982.html">34982</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31908"></span>31908</td>
 <td class="instruction">LD HL,41928</td>
-<td class="comment-11" rowspan="1">Point HL at "MOVE STARSHIP" Speed Selection Menu Heading text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "MOVE STARSHIP" speed selection menu heading text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31911"></span>31911</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">...and print to screen</td>
+<td class="comment-1" rowspan="1">...and print to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31914"></span>31914</td>
 <td class="instruction">LD HL,41943</td>
-<td class="comment-11" rowspan="1">Point HL at "MOVE STARSHIP" Speed Selection Menu Options text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "MOVE STARSHIP" speed selection menu options text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31917"></span>31917</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">...and print to screen</td>
+<td class="comment-1" rowspan="1">...and print to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31920"></span>31920</td>
 <td class="instruction">CALL <a href="35296.html">35296</a></td>
-<td class="comment-11" rowspan="1">Process keyboard / joystick input on a menu and load A with selected item index</td>
+<td class="comment-1" rowspan="1">Process keyboard / joystick input on a menu and load <span class="register">A</span> with selected item index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31923"></span>31923</td>
 <td class="instruction">LD (23484),A</td>
-<td class="comment-11" rowspan="1">Store selected speed index at <a href="23481.html#23484">23484</a></td>
+<td class="comment-1" rowspan="1">Store selected speed index at <a href="23481.html#23484">23484</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31926"></span>31926</td>
 <td class="instruction">LD HL,41984</td>
-<td class="comment-11" rowspan="1">Point HL at start of list of Speed Strings</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of list of speed strings</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31929"></span>31929</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load B with index of selected speed</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with index of selected speed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31930"></span>31930</td>
 <td class="instruction">CALL <a href="54266.html#54269">54269</a></td>
-<td class="comment-11" rowspan="1">Advance HL to B-th entry in list of Speed Strings</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to <span class="register">B</span>-th entry in list of speed strings</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31933"></span>31933</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Switch HE and DE (DE now points to Speed String for selected speed)...</td>
+<td class="comment-1" rowspan="1">Switch HE and <span class="register">DE</span> (<span class="register">DE</span> now points to speed string for selected speed)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31934"></span>31934</td>
 <td class="instruction">CALL <a href="54283.html">54283</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at top of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31937"></span>31937</td>
 <td class="instruction">CALL <a href="55115.html">55115</a></td>
-<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display execute / reject command window and return here if execute chosen, else exit to main game loop</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31940"></span>31940</td>
 <td class="instruction">CALL <a href="33788.html">33788</a></td>
-<td class="comment-11" rowspan="1">If Gordon and Sarab are both asleep then reset Zero Flag, otherwise increase their happiness by five if not</td>
+<td class="comment-1" rowspan="1">If Gordon and Sarab are both asleep then reset zero flag, otherwise increase their happiness by five if not</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31943"></span>31943</td>
 <td class="instruction">JP NZ,<a href="55291.html">55291</a></td>
-<td class="comment-11" rowspan="1">If Zero Flag is reset then display "GORDON AND SARAB ARE BOTH ASLEEP" Window (12), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">If zero flag is reset then display "GORDON AND SARAB ARE BOTH ASLEEP" window (12) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31946"></span>31946</td>
 <td class="instruction">LD A,27</td>
-<td class="comment-11" rowspan="1">If Magic Knight is wearing the Gas Mask (27)...</td>
+<td class="comment-1" rowspan="1">If Magic Knight is wearing the Gas Mask (27)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31948"></span>31948</td>
 <td class="instruction">CALL <a href="33640.html">33640</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31951"></span>31951</td>
 <td class="instruction">JP Z,<a href="55327.html">55327</a></td>
-<td class="comment-11" rowspan="1">...then display "GORDON AND SARAB CANNOT UNDERSTAND YOU" Window (12), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "GORDON AND SARAB CANNOT UNDERSTAND YOU" window (12) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31954"></span>31954</td>
 <td class="instruction">CALL <a href="36415.html">36415</a></td>
-<td class="comment-11" rowspan="1">Reset all stars to point of origin and generate new velocities and movement data</td>
+<td class="comment-1" rowspan="1">Reset all stars to point of origin and generate new velocities and movement data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31957"></span>31957</td>
 <td class="instruction">LD A,189</td>
-<td class="comment-11" rowspan="1">Set Current Starship Location in " LOCATION : [name of Current Starship Location]" text at <a href="38233.html#38298">38298</a>...</td>
+<td class="comment-1" rowspan="1">Set Current Starship Location in " LOCATION : [name of Current Starship Location]" text at <a href="38233.html#38298">38298</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31959"></span>31959</td>
 <td class="instruction">LD (38307),A</td>
-<td class="comment-11" rowspan="1">...to "IN TRANSIT" (189)</td>
+<td class="comment-1" rowspan="1">...to "IN TRANSIT" (189)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31962"></span>31962</td>
 <td class="instruction">CALL <a href="27762.html#27765">27765</a></td>
-<td class="comment-11" rowspan="1">Draw Magic Knight's current room, draw objects and characters and initialise room-specific data</td>
+<td class="comment-1" rowspan="1">Draw Magic Knight's current room, draw objects and characters and initialise room-specific data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31965"></span>31965</td>
 <td class="instruction">CALL <a href="32065.html">32065</a></td>
-<td class="comment-11" rowspan="1">Scroll viewscreen content down 24 pixel rows then display acceleration / deceleration effect (i.e. leave orbit)</td>
+<td class="comment-1" rowspan="1">Scroll viewscreen content down 24 pixel rows then display acceleration / deceleration effect (i.e. leave orbit)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31968"></span>31968</td>
 <td class="instruction">LD A,(23484)</td>
-<td class="comment-11" rowspan="1">Load A with selected speed index...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with selected speed index...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31971"></span>31971</td>
 <td class="instruction">NEG</td>
-<td class="comment-11" rowspan="1">...multiply by minus one...</td>
+<td class="comment-1" rowspan="1">...multiply by minus one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31973"></span>31973</td>
 <td class="instruction">ADD A,10</td>
-<td class="comment-11" rowspan="1">...and add 10 to give a delay constant between 1 (fastest) to 10 (slowest)</td>
+<td class="comment-1" rowspan="1">...and add 10 to give a delay constant between 1 (fastest) to 10 (slowest)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31975"></span>31975</td>
 <td class="instruction">LD (36350),A</td>
-<td class="comment-11" rowspan="1">Update operand to instruction at <a href="36321.html#36349">36349</a> to hold delay constant value</td>
+<td class="comment-1" rowspan="1">Update operand to instruction at <a href="36321.html#36349">36349</a> to hold delay constant value</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31978"></span>31978</td>
 <td class="instruction">LD A,(23484)</td>
-<td class="comment-11" rowspan="1">Load A with selected speed index plus one...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with selected speed index plus one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31981"></span>31981</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31982"></span>31982</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">Load E with this value multiplied by eight...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with this value multiplied by eight...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31983"></span>31983</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31984"></span>31984</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31985"></span>31985</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31986"></span>31986</td>
 <td class="instruction">LD BC,1</td>
-<td class="comment-11" rowspan="1">Load B with zero and C (remaining number of blocks of 256 timesteps to process) with 1</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with zero and <span class="register">C</span> (remaining number of blocks of 256 timesteps to process) with 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="31989"></span>31989</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = remaining number of timesteps to process)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = remaining number of timesteps to process)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31990"></span>31990</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE (E = eight times [speed index + 1])</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span> (<span class="register">E</span> = eight times [speed index + 1])</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31991"></span>31991</td>
 <td class="instruction">CALL <a href="36321.html">36321</a></td>
-<td class="comment-11" rowspan="1">Advance positions of stars on viewscreen by one timestep</td>
+<td class="comment-1" rowspan="1">Advance positions of stars on viewscreen by one timestep</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31994"></span>31994</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE (E = eight times [speed index + 1])</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span> (<span class="register">E</span> = eight times [speed index + 1])</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31995"></span>31995</td>
 <td class="instruction">LD A,(23435)</td>
-<td class="comment-11" rowspan="1">Load A with fraction remaining of current unit of star drive fuel</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with fraction remaining of current unit of star drive fuel</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31998"></span>31998</td>
 <td class="instruction">SUB E</td>
-<td class="comment-11" rowspan="1">Subtract E (eight times [speed index + 1])...</td>
+<td class="comment-1" rowspan="1">Subtract <span class="register">E</span> (eight times [speed index + 1])...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="31999"></span>31999</td>
 <td class="instruction">LD (23435),A</td>
-<td class="comment-11" rowspan="1">...and store</td>
+<td class="comment-1" rowspan="1">...and store</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32002"></span>32002</td>
 <td class="instruction">JR NC,32017</td>
-<td class="comment-11" rowspan="1">If unit of star drive fuel was not completely depleted then skip ahead to <a href="31688.html#32017">32017</a></td>
+<td class="comment-1" rowspan="1">If unit of star drive fuel was not completely depleted then skip ahead to <a href="31688.html#32017">32017</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32004"></span>32004</td>
 <td class="instruction">LD A,(25013)</td>
-<td class="comment-11" rowspan="1">Decrease USS Pisces' Star Drive Fuel by one...</td>
+<td class="comment-1" rowspan="1">Decrease USS Pisces' star drive fuel by one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32007"></span>32007</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32008"></span>32008</td>
 <td class="instruction">LD (25013),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32011"></span>32011</td>
 <td class="instruction">LD HL,44953</td>
-<td class="comment-11" rowspan="1">Point HL at "YOU RAN OUT OF STAR DRIVE FUEL..." text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "YOU RAN OUT OF STAR DRIVE FUEL..." text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32014"></span>32014</td>
 <td class="instruction">JP Z,<a href="55685.html">55685</a></td>
-<td class="comment-11" rowspan="1">If no star drive fuel remains then jump to "Game over" window routine and return to Control Selection Menu</td>
+<td class="comment-1" rowspan="1">If no star drive fuel remains then jump to "game over" window routine and return to control selection menu</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="32017"></span>32017</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = remaining number of timesteps to process)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = remaining number of timesteps to process)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32018"></span>32018</td>
 <td class="instruction">DJNZ 31989</td>
-<td class="comment-11" rowspan="1">Decrease remaining number of timesteps to process and loop back to <a href="31688.html#31989">31989</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease remaining number of timesteps to process and loop back to <a href="31688.html#31989">31989</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32020"></span>32020</td>
 <td class="instruction">DEC C</td>
-<td class="comment-11" rowspan="1">Decrease C (remaining number of blocks of 256 timesteps to process)</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">C</span> (remaining number of blocks of 256 timesteps to process)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32021"></span>32021</td>
 <td class="instruction">JR NZ,31989</td>
-<td class="comment-11" rowspan="1">If C is not zero (i.e. there are more blocks of timesteps to process) then loop back to <a href="31688.html#31989">31989</a></td>
+<td class="comment-1" rowspan="1">If <span class="register">C</span> is not zero (i.e. there are more blocks of timesteps to process) then loop back to <a href="31688.html#31989">31989</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32023"></span>32023</td>
 <td class="instruction">CALL <a href="35782.html">35782</a></td>
-<td class="comment-11" rowspan="1">Play "USS Pisces has Arrived" sound</td>
+<td class="comment-1" rowspan="1">Play "USS Pisces has arrived" sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32026"></span>32026</td>
 <td class="instruction">CALL <a href="32124.html">32124</a></td>
-<td class="comment-11" rowspan="1">Display acceleration / deceleration effect then scroll viewscreen content up 24 pixel rows (i.e. enter orbit)</td>
+<td class="comment-1" rowspan="1">Display acceleration / deceleration effect then scroll viewscreen content up 24 pixel rows (i.e. enter orbit)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32029"></span>32029</td>
 <td class="instruction">LD A,28</td>
-<td class="comment-11" rowspan="1">Set Current Starship Location in " LOCATION : [name of Current Starship Location]" text at <a href="38233.html#38298">38298</a>...</td>
+<td class="comment-1" rowspan="1">Set Current Starship Location in " LOCATION : [name of Current Starship Location]" text at <a href="38233.html#38298">38298</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32031"></span>32031</td>
 <td class="instruction">LD (38307),A</td>
-<td class="comment-11" rowspan="1">...to the name of the Current Starship Location (28)</td>
+<td class="comment-1" rowspan="1">...to the name of the Current Starship Location (28)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="32034"></span>
 <div class="comments">
 <div class="paragraph">
@@ -1085,65 +914,61 @@ The operand of the instruction at <a href="31688.html#32034">32034</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32034"></span>32034</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Load A with selected destination location index...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with selected destination location index...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32036"></span>32036</td>
 <td class="instruction">LD (23700),A</td>
-<td class="comment-11" rowspan="1">...and set this as the USS Pisces' current location</td>
+<td class="comment-1" rowspan="1">...and set this as the USS Pisces' current location</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32039"></span>32039</td>
 <td class="instruction">CP 5</td>
-<td class="comment-11" rowspan="1">If A is 5 (i.e. location is Starbase 1)...</td>
+<td class="comment-1" rowspan="1">If <span class="register">A</span> is 5 (i.e. location is Starbase 1)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32041"></span>32041</td>
 <td class="instruction">CALL Z,<a href="32055.html">32055</a></td>
-<td class="comment-11" rowspan="1">...then set unknown flag and set A to zero</td>
+<td class="comment-1" rowspan="1">...then set unknown flag and set <span class="register">A</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32044"></span>32044</td>
 <td class="instruction">CP 27</td>
-<td class="comment-11" rowspan="1">If A is 27 (location index of Starbase 2 in 128k version)... (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">If <span class="register">A</span> is 27 (location index of Starbase 2 in 128k version)... (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32046"></span>32046</td>
 <td class="instruction">CALL Z,<a href="32055.html">32055</a></td>
-<td class="comment-11" rowspan="1">...then set unknown flag and set A to zero</td>
+<td class="comment-1" rowspan="1">...then set unknown flag and set <span class="register">A</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32049"></span>32049</td>
 <td class="instruction">CALL <a href="27703.html">27703</a></td>
-<td class="comment-11" rowspan="1">Draw Top In-Game Window</td>
+<td class="comment-1" rowspan="1">Draw top in-game window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32052"></span>32052</td>
 <td class="instruction">JP <a href="55277.html">55277</a></td>
-<td class="comment-11" rowspan="1">Display "THE STARSHIP HAS ARRIVED AT [Starship Location]" Window (12), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display "THE STARSHIP HAS ARRIVED AT [Starship Location]" window (12) and return to game</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="31537.html">31537</a></span></td>
+<td class="prev">
+Prev: <a href="31537.html">31537</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#31688">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="32055.html">32055</a></span></td>
+<td class="next">
+Next: <a href="32055.html">32055</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

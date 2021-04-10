@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 34160</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34151.html">34151</a></span></td>
+<td class="prev">
+Prev: <a href="34151.html">34151</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34160">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34174.html">34174</a></span></td>
+<td class="next">
+Next: <a href="34174.html">34174</a>
+</td>
 </tr>
 </table>
-<div class="description">34160: Point HL to Property (Given by E) of Object Whose Index is A</div>
+<div class="description">34160: Point <span class="register">HL</span> to property (given by <span class="register">E</span>) of object whose index is <span class="register">A</span></div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="30439.html">30439</a>, <a href="31370.html">31370</a>, <a href="32258.html">32258</a>, <a href="32390.html">32390</a>, <a href="33574.html">33574</a>, <a href="34126.html">34126</a>, <a href="35629.html">35629</a>, <a href="35669.html">35669</a>, <a href="35709.html">35709</a>, <a href="35749.html">35749</a> and <a href="36275.html">36275</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -43,92 +48,86 @@ Used by the routines at <a href="30439.html">30439</a>, <a href="31370.html">313
 </tr>
 <tr>
 <td class="register">E</td>
-<td class="register-desc">Required property from properties table at <a href="42242.html">42242</a> (e.g. E = 0 for weight)</td>
+<td class="register-desc">Required property from properties table at <a href="42242.html">42242</a> (e.g. <span class="register">E</span> = 0 for weight)</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">Property E of object A</td>
+<td class="register-desc">Property <span class="register">E</span> of object <span class="register">A</span></td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34160"></span>34160</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">Multiply index by eight...</td>
+<td class="comment-1" rowspan="1">Multiply index by eight...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34161"></span>34161</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34162"></span>34162</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34163"></span>34163</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34165"></span>34165</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...and load into HL</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34166"></span>34166</td>
 <td class="instruction">LD D,0</td>
-<td class="comment-11" rowspan="1">Add value of E (e.g. 6 for attribute)...</td>
+<td class="comment-1" rowspan="1">Add value of <span class="register">E</span> (e.g. 6 for attribute)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34168"></span>34168</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34169"></span>34169</td>
 <td class="instruction">LD DE,42242</td>
-<td class="comment-11" rowspan="1">Point DE at start of object properties table...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at start of object properties table...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34172"></span>34172</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">...and add into HL to point to property "E"</td>
+<td class="comment-1" rowspan="1">...and add into <span class="register">HL</span> to point to property "<span class="register">E</span>"</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34173"></span>34173</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34151.html">34151</a></span></td>
+<td class="prev">
+Prev: <a href="34151.html">34151</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34160">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34174.html">34174</a></span></td>
+<td class="next">
+Next: <a href="34174.html">34174</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 45631</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,76 +20,67 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45625.html">45625</a></span></td>
+<td class="prev">
+Prev: <a href="45625.html">45625</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45631">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45641.html">45641</a></span></td>
+<td class="next">
+Next: <a href="45641.html">45641</a>
+</td>
 </tr>
 </table>
-<div class="description">45631: Display "YOU ARE NOT WEARING ANYTHING" Window and Set Zero Flag if Magic Knight's Inventory (Wearing) is Empty</div>
+<div class="description">45631: Display "YOU ARE NOT WEARING ANYTHING" window and set zero flag if Magic Knight's inventory (wearing) is empty</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="44635.html">44635</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="45631"></span>45631</td>
 <td class="instruction">LD A,(24853)</td>
-<td class="comment-11" rowspan="1">If Magic Knight's first inventory slot (wearing) is not empty...</td>
+<td class="comment-1" rowspan="1">If Magic Knight's first inventory slot (wearing) is not empty...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45634"></span>45634</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45635"></span>45635</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45636"></span>45636</td>
 <td class="instruction">LD HL,51353</td>
-<td class="comment-11" rowspan="1">Point HL at "YOU ARE NOT WEARING ANYTHING" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "YOU ARE NOT WEARING ANYTHING" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="45639"></span>45639</td>
 <td class="instruction">JR <a href="45641.html#45649">45649</a></td>
-<td class="comment-11" rowspan="1">Display "YOU ARE NOT WEARING ANYTHING" Window, wait for Fire to be pressed and return</td>
+<td class="comment-1" rowspan="1">Display "YOU ARE NOT WEARING ANYTHING" window, wait for fire to be pressed and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="45625.html">45625</a></span></td>
+<td class="prev">
+Prev: <a href="45625.html">45625</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#45631">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="45641.html">45641</a></span></td>
+<td class="next">
+Next: <a href="45641.html">45641</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

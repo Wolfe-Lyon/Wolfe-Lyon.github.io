@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 46183</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,376 +20,326 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="46106.html">46106</a></span></td>
+<td class="prev">
+Prev: <a href="46106.html">46106</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#46183">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="46315.html">46315</a></span></td>
+<td class="next">
+Next: <a href="46315.html">46315</a>
+</td>
 </tr>
 </table>
-<div class="description">46183: Set Magic Knight's Available Action Flags</div>
+<div class="description">46183: Set Magic Knight's available action flags</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="38024.html">38024</a>, <a href="39393.html">39393</a>, <a href="41578.html">41578</a>, <a href="42494.html">42494</a> and <a href="43636.html">43636</a>.
 </div>
 </div>
-<table class="input-0">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46183"></span>46183</td>
 <td class="instruction">LD HL,0</td>
-<td class="comment-11" rowspan="1">Reset all Available In-Game Menu Command Flags...</td>
+<td class="comment-1" rowspan="1">Reset all available in-game menu command flags...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46186"></span>46186</td>
 <td class="instruction">LD (23698),HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46189"></span>46189</td>
 <td class="instruction">LD A,3</td>
-<td class="comment-11" rowspan="1">If Magic Knight is not carrying the Wand of Command...</td>
+<td class="comment-1" rowspan="1">If Magic Knight is not carrying the Wand of Command...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46191"></span>46191</td>
 <td class="instruction">CALL <a href="45510.html">45510</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46194"></span>46194</td>
 <td class="instruction">JR NZ,46200</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="46183.html#46200">46200</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="46183.html#46200">46200</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46196"></span>46196</td>
 <td class="instruction">SET 0,(IY+88)</td>
-<td class="comment-11" rowspan="1">Set "COMMAND A CHARACTER" Menu Command Flag (IY = 23610)</td>
+<td class="comment-1" rowspan="1">Set command-a-character-enabled menu command flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46200"></span>46200</td>
 <td class="instruction">LD A,(24771)</td>
-<td class="comment-11" rowspan="1">Load A with Magic Knight's current Magic Level...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Magic Knight's current magic level...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46203"></span>46203</td>
 <td class="instruction">AND 127</td>
-<td class="comment-11" rowspan="1">...stripping out unused bit</td>
+<td class="comment-1" rowspan="1">...stripping out unused bit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46205"></span>46205</td>
 <td class="instruction">JR Z,46211</td>
-<td class="comment-11" rowspan="1">If Magic Level is zero then skip ahead to <a href="46183.html#46211">46211</a></td>
+<td class="comment-1" rowspan="1">If magic level is zero then skip ahead to <a href="46183.html#46211">46211</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46207"></span>46207</td>
 <td class="instruction">SET 5,(IY+88)</td>
-<td class="comment-11" rowspan="1">Set "CAST A SPELL" Menu Command Flag (IY = 23610)</td>
+<td class="comment-1" rowspan="1">Set cast-a-spell-enabled menu command flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46211"></span>46211</td>
 <td class="instruction">LD A,(23702)</td>
-<td class="comment-11" rowspan="1">If Magic Knight's current room is 1 (Outdoors, 0, Bearwoolf's Hoard)...</td>
+<td class="comment-1" rowspan="1">If Magic Knight's current room is 1 (Outdoors, 0, Bearwoolf's Hoard)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46214"></span>46214</td>
 <td class="instruction">CP 1</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46216"></span>46216</td>
 <td class="instruction">JR Z,46233</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="46183.html#46233">46233</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="46183.html#46233">46233</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46218"></span>46218</td>
 <td class="instruction">CP 2</td>
-<td class="comment-11" rowspan="1">If Magic Knight's current room is 2 (Outdoors, 1, Bearwoolf's Cave)...</td>
+<td class="comment-1" rowspan="1">If Magic Knight's current room is 2 (Outdoors, 1, Bearwoolf's Cave)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46220"></span>46220</td>
 <td class="instruction">JR Z,46233</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="46183.html#46233">46233</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="46183.html#46233">46233</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46222"></span>46222</td>
 <td class="instruction">LD A,31</td>
-<td class="comment-11" rowspan="1">If Magic Knight is not carrying the Teleport Key...</td>
+<td class="comment-1" rowspan="1">If Magic Knight is not carrying the Teleport Key...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46224"></span>46224</td>
 <td class="instruction">CALL <a href="45510.html">45510</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46227"></span>46227</td>
 <td class="instruction">JR NZ,46233</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="46183.html#46233">46233</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="46183.html#46233">46233</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46229"></span>46229</td>
 <td class="instruction">SET 2,(IY+88)</td>
-<td class="comment-11" rowspan="1">Set "TELEPORT" Menu Command Flag (IY = 23610)</td>
+<td class="comment-1" rowspan="1">Set teleport-enabled menu command flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46233"></span>46233</td>
 <td class="instruction">LD A,10</td>
-<td class="comment-11" rowspan="1">If Magic Knight is not carrying the Horse Feather...</td>
+<td class="comment-1" rowspan="1">If Magic Knight is not carrying the Horse Feather...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46235"></span>46235</td>
 <td class="instruction">CALL <a href="45510.html">45510</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46238"></span>46238</td>
 <td class="instruction">JR NZ,46244</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="46183.html#46244">46244</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="46183.html#46244">46244</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46240"></span>46240</td>
 <td class="instruction">SET 0,(IY+89)</td>
-<td class="comment-11" rowspan="1">Set "TICKLE A CHARACTER" Menu Command Flag (IY = 23610)</td>
+<td class="comment-1" rowspan="1">Set tickle-a-character-enabled menu command flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46244"></span>46244</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Load C with weights / flags of all Magic Knight's carried objects, OR-ed Together...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with weights / flags of all Magic Knight's carried objects, <span class="instruction">OR</span>-ed together...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46245"></span>46245</td>
 <td class="instruction">CALL <a href="46380.html">46380</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46248"></span>46248</td>
 <td class="instruction">BIT 5,C</td>
-<td class="comment-11" rowspan="1">...and if Can Be Read Flag is not set for any of the objects...</td>
+<td class="comment-1" rowspan="1">...and if can-be-read flag is not set for any of the objects...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46250"></span>46250</td>
 <td class="instruction">JR Z,46256</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="46183.html#46256">46256</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="46183.html#46256">46256</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46252"></span>46252</td>
 <td class="instruction">SET 3,(IY+88)</td>
-<td class="comment-11" rowspan="1">Set "READ SOMETHING" Menu Command Flag (IY = 23610)</td>
+<td class="comment-1" rowspan="1">Set read-something-enabled menu command flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46256"></span>46256</td>
 <td class="instruction">BIT 6,C</td>
-<td class="comment-11" rowspan="1">If Can Be Blown Flag is not set for any of the objects...</td>
+<td class="comment-1" rowspan="1">If can-be-blown flag is not set for any of the objects...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46258"></span>46258</td>
 <td class="instruction">JR Z,46264</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="46183.html#46264">46264</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="46183.html#46264">46264</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46260"></span>46260</td>
 <td class="instruction">SET 6,(IY+88)</td>
-<td class="comment-11" rowspan="1">Set "BLOW SOMETHING" Menu Command Flag (IY = 23610)</td>
+<td class="comment-1" rowspan="1">Set blow-something-enabled menu command flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46264"></span>46264</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Load C with flags (2) of all Magic Knight's carried objects, OR-ed Together...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with flags (2) of all Magic Knight's carried objects, <span class="instruction">OR</span>-ed together...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46266"></span>46266</td>
 <td class="instruction">CALL <a href="46380.html">46380</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46269"></span>46269</td>
 <td class="instruction">BIT 3,C</td>
-<td class="comment-11" rowspan="1">...and if Can Be Worn Flag is set for at least one of the objects...</td>
+<td class="comment-1" rowspan="1">...and if can-be-worn flag is set for at least one of the objects...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46271"></span>46271</td>
 <td class="instruction">JR NZ,46279</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="46183.html#46279">46279</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="46183.html#46279">46279</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46273"></span>46273</td>
 <td class="instruction">LD A,(24853)</td>
-<td class="comment-11" rowspan="1">If Magic Knight's first inventory slot (wearing) is empty...</td>
+<td class="comment-1" rowspan="1">If Magic Knight's first inventory slot (wearing) is empty...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46276"></span>46276</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46277"></span>46277</td>
 <td class="instruction">JR Z,46283</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="46183.html#46283">46283</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="46183.html#46283">46283</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46279"></span>46279</td>
 <td class="instruction">SET 7,(IY+88)</td>
-<td class="comment-11" rowspan="1">Set "WEAR/UNWEAR OBJECT" Menu Command Flag (IY = 23610)</td>
+<td class="comment-1" rowspan="1">Set wear/unwear-object-enabled menu command flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46283"></span>46283</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Load A with flags (2) of all Magic Knight's carried objects, OR-ed Together...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with flags (2) of all Magic Knight's carried objects, <span class="instruction">OR</span>-ed together...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46285"></span>46285</td>
 <td class="instruction">CALL <a href="46380.html">46380</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46288"></span>46288</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46289"></span>46289</td>
 <td class="instruction">AND 224</td>
-<td class="comment-11" rowspan="1">If bits 5 (Can Be Thrown Flag) 6 (Can Be Thrown and is Lethal Flag) and 7 (Can Be Thrown Flag) are all reset...</td>
+<td class="comment-1" rowspan="1">If bits 5 (first can-be-thrown flag) 6 (can-be-thrown-and-is-lethal flag) and 7 (second can-be-thrown flag) are all reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46291"></span>46291</td>
 <td class="instruction">JR Z,46297</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="46183.html#46297">46297</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="46183.html#46297">46297</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46293"></span>46293</td>
 <td class="instruction">SET 4,(IY+88)</td>
-<td class="comment-11" rowspan="1">Set "THROW SOMETHING" Menu Command Flag (IY = 23610)</td>
+<td class="comment-1" rowspan="1">Set throw-something-enabled menu command flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46297"></span>46297</td>
 <td class="instruction">LD A,(23702)</td>
-<td class="comment-11" rowspan="1">Load B with Magic Knight's current room...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with Magic Knight's current room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46300"></span>46300</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46301"></span>46301</td>
 <td class="instruction">LD HL,46315</td>
-<td class="comment-11" rowspan="1">Load HL with start address of List of Indices of Rooms with Levers</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with start address of list of indices of rooms with levers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="46304"></span>46304</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">If current index is the same as Magic Knight's current room...</td>
+<td class="comment-1" rowspan="1">If current index is the same as Magic Knight's current room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46305"></span>46305</td>
 <td class="instruction">CP B</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46306"></span>46306</td>
 <td class="instruction">JR Z,<a href="46326.html">46326</a></td>
-<td class="comment-11" rowspan="1">...then set additional action flags including "PULL LEVER" and return</td>
+<td class="comment-1" rowspan="1">...then set additional action flags including pull-lever-enabled and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46308"></span>46308</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">If current index is 255 (End Marker)...</td>
+<td class="comment-1" rowspan="1">If current index is 255 (end marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46310"></span>46310</td>
 <td class="instruction">JR Z,<a href="46326.html#46330">46330</a></td>
-<td class="comment-11" rowspan="1">...then set additional action flags excluding "PULL LEVER" and return</td>
+<td class="comment-1" rowspan="1">...then set additional action flags excluding pull-lever-enabled and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46312"></span>46312</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to next room in list</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next room in list</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="46313"></span>46313</td>
 <td class="instruction">JR 46304</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="46183.html#46304">46304</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="46183.html#46304">46304</a></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="46106.html">46106</a></span></td>
+<td class="prev">
+Prev: <a href="46106.html">46106</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#46183">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="46315.html">46315</a></span></td>
+<td class="next">
+Next: <a href="46315.html">46315</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

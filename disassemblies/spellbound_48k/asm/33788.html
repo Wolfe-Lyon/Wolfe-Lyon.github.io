@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 33788</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,124 +20,107 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="33770.html">33770</a></span></td>
+<td class="prev">
+Prev: <a href="33770.html">33770</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#33788">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="33808.html">33808</a></span></td>
+<td class="next">
+Next: <a href="33808.html">33808</a>
+</td>
 </tr>
 </table>
-<div class="description">33788: Flash Border and Make Sound (as in Move Lift)</div>
+<div class="description">33788: Flash border and make sound (as in move lift)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="33663.html">33663</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33788"></span>33788</td>
 <td class="instruction">LD HL,600</td>
-<td class="comment-11" rowspan="1">Load HL with 600</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with 600</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33791"></span>33791</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33792"></span>33792</td>
 <td class="instruction">OUT (254),A</td>
-<td class="comment-11" rowspan="1">Set bits on port 254</td>
+<td class="comment-1" rowspan="1">Set bits on port 254</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33794"></span>33794</td>
 <td class="instruction">LD B,250</td>
-<td class="comment-11" rowspan="1">Load B with 250 (length of pause)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 250 (length of pause)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33796"></span>33796</td>
 <td class="instruction">NOP</td>
-<td class="comment-11" rowspan="1">Pause by doing nothing...</td>
+<td class="comment-1" rowspan="1">Pause by doing nothing...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33797"></span>33797</td>
 <td class="instruction">NOP</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33798"></span>33798</td>
 <td class="instruction">DJNZ 33796</td>
-<td class="comment-11" rowspan="1">Loop back for next part of pause</td>
+<td class="comment-1" rowspan="1">Loop back for next part of pause</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33800"></span>33800</td>
 <td class="instruction">XOR 7</td>
-<td class="comment-11" rowspan="1">Invert bits 0, 1 and 2</td>
+<td class="comment-1" rowspan="1">Invert bits 0, 1 and 2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33802"></span>33802</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Decrease HL by one</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">HL</span> by one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33803"></span>33803</td>
 <td class="instruction">LD A,H</td>
-<td class="comment-11" rowspan="1">Set various bits of A...</td>
+<td class="comment-1" rowspan="1">Set various bits of <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33804"></span>33804</td>
 <td class="instruction">OR L</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33805"></span>33805</td>
 <td class="instruction">JR NZ,33792</td>
-<td class="comment-11" rowspan="1">While HL is not zero, repeat loop</td>
+<td class="comment-1" rowspan="1">While <span class="register">HL</span> is not zero, repeat loop</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33807"></span>33807</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="33770.html">33770</a></span></td>
+<td class="prev">
+Prev: <a href="33770.html">33770</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#33788">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="33808.html">33808</a></span></td>
+<td class="next">
+Next: <a href="33808.html">33808</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

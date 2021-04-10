@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 52967</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,27 +20,34 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="52914.html">52914</a></span></td>
+<td class="prev">
+Prev: <a href="52914.html">52914</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#52967">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53057.html">53057</a></span></td>
+<td class="next">
+Next: <a href="53057.html">53057</a>
+</td>
 </tr>
 </table>
-<div class="description">52967: Script Routine (52): Increase Worm's Age and Decrease Time Until Direction Change, or React to Drutt's Presence</div>
+<div class="description">52967: Script routine: (52) Increase worm's age and decrease time until direction change, or react to Drutt's presence</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-When both Drutt and the worm are in the same room, and the worm is alerted to Drutt's presence, then the worm will take on its alarmed appearance and start fleeing in the direction away from Drutt. As long as Drutt remains in the same room as the worm, and within the "alerting" distance, the worm will continue fleeing in the same direction, and its Time Until Direction Change will be frozen.
+When both Drutt and the worm are in the same room, and the worm is alerted to Drutt's presence, then the worm will take on its alarmed appearance and start fleeing in the direction away from Drutt. As long as Drutt remains in the same room as the worm, and within the "alerting" distance, the worm will continue fleeing in the same direction, and its time until direction change will be frozen.
 </div>
 <div class="paragraph">
-As soon as the distance between Drutt and the worm exceeds the "alerting" distance, or the two find themselves in different rooms, the worm will see its In Danger Flag reset and its Time Until Direction Change will resume counting down. The worm's alarmed appearance (and increased speed) will remain, however, until the Time Until Direction Change reaches zero.
+As soon as the distance between Drutt and the worm exceeds the "alerting" distance, or the two find themselves in different rooms, the worm will see its in-danger flag reset and its time until direction change will resume counting down. The worm's alarmed appearance (and increased speed) will remain, however, until the time until direction change reaches zero.
 </div>
 <div class="paragraph">
-As long as the worm's In Danger Flag is reset, its Time Until Direction Change will decrease.
+As long as the worm's in-danger flag is reset, its time until direction change will decrease.
+</div>
+<div class="paragraph">
+Used by the routine at <a href="48096.html">48096</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -51,49 +56,44 @@ As long as the worm's In Danger Flag is reset, its Time Until Direction Change w
 <td class="register-desc">Address of complex state data for an entity</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">Address of next script instruction to execute</td>
+<td class="register-desc">New address in script data</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52967"></span>52967</td>
 <td class="instruction">CALL <a href="53057.html">53057</a></td>
-<td class="comment-11" rowspan="1">Increase Worm's Age and, if it has expired, set its depth to zero and return</td>
+<td class="comment-1" rowspan="1">Increase worm's age and, if it has expired, set its depth to zero and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52970"></span>52970</td>
 <td class="instruction">LD IY,(34242)</td>
-<td class="comment-11" rowspan="1">Load IY with address of current level's complex state data for Drutt</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with address of current level's complex state data for Drutt</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52974"></span>52974</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">If Drutt and the worm are in the same room...</td>
+<td class="comment-1" rowspan="1">If Drutt and the worm are in the same room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52977"></span>52977</td>
 <td class="instruction">CP (IY+0)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52980"></span>52980</td>
 <td class="instruction">JR Z,53004</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="52967.html#53004">53004</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="52967.html#53004">53004</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52982"></span>
 <div class="comments">
 <div class="paragraph">
@@ -103,55 +103,47 @@ Drutt and worm in different rooms, so countdown to next direction change resumes
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52982"></span>52982</td>
 <td class="instruction">RES 1,(IX+9)</td>
-<td class="comment-11" rowspan="1">Reset In Danger Flag</td>
+<td class="comment-1" rowspan="1">Reset in-danger flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52986"></span>52986</td>
 <td class="instruction">LD A,(IX+12)</td>
-<td class="comment-11" rowspan="1">If worm's Time Until Direction Change is zero...</td>
+<td class="comment-1" rowspan="1">If worm's time until direction change is zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52989"></span>52989</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52990"></span>52990</td>
 <td class="instruction">JR Z,52998</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="52967.html#52998">52998</a> (have worm choose new direction)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="52967.html#52998">52998</a> (have worm choose new direction)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52992"></span>52992</td>
 <td class="instruction">DEC (IX+12)</td>
-<td class="comment-11" rowspan="1">Decrease worm's Time Until Direction Change</td>
+<td class="comment-1" rowspan="1">Decrease worm's time until direction change</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52995"></span>52995</td>
 <td class="instruction">JP <a href="48096.html">48096</a></td>
-<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next script instruction and execute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52998"></span>52998</td>
 <td class="instruction">LD HL,52747</td>
-<td class="comment-11" rowspan="1">Point HL at script data for worm, choosing next direction...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at script data for worm, choosing next direction...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53001"></span>53001</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute</td>
+<td class="comment-1" rowspan="1">...and execute</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="53004"></span>
 <div class="comments">
 <div class="paragraph">
@@ -161,73 +153,62 @@ Drutt and worm in same room, so worm potentially in danger
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53004"></span>53004</td>
 <td class="instruction">LD A,(IX+5)</td>
-<td class="comment-11" rowspan="1">Load A with x-coordinate of worm's left edge...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with x-coordinate of worm's left edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53007"></span>53007</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...plus one...</td>
+<td class="comment-1" rowspan="1">...plus one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53008"></span>53008</td>
 <td class="instruction">SUB (IY+5)</td>
-<td class="comment-11" rowspan="1">...minus x-coordinate of Drutt's left edge</td>
+<td class="comment-1" rowspan="1">...minus x-coordinate of Drutt's left edge</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53011"></span>53011</td>
 <td class="instruction">JR C,53034</td>
-<td class="comment-11" rowspan="1">If negative then skip ahead to <a href="52967.html#53034">53034</a></td>
+<td class="comment-1" rowspan="1">If negative then skip ahead to <a href="52967.html#53034">53034</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53013"></span>53013</td>
 <td class="instruction">CP 10</td>
-<td class="comment-11" rowspan="1">If worm's left edge is 9 characters or more to the right of Drutt's...</td>
+<td class="comment-1" rowspan="1">If worm's left edge is 9 characters or more to the right of Drutt's...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53015"></span>53015</td>
 <td class="instruction">JR NC,52982</td>
-<td class="comment-11" rowspan="1">...then jump back to <a href="52967.html#52982">52982</a></td>
+<td class="comment-1" rowspan="1">...then jump back to <a href="52967.html#52982">52982</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53017"></span>53017</td>
 <td class="instruction">BIT 1,(IX+9)</td>
-<td class="comment-11" rowspan="1">If In Danger Flag is set...</td>
+<td class="comment-1" rowspan="1">If in-danger flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53021"></span>53021</td>
 <td class="instruction">JP NZ,<a href="48096.html">48096</a></td>
-<td class="comment-11" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance HL to next script instruction and execute)</td>
+<td class="comment-1" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance <span class="register">HL</span> to next script instruction and execute)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53024"></span>53024</td>
 <td class="instruction">SET 1,(IX+9)</td>
-<td class="comment-11" rowspan="1">Set In Danger Flag</td>
+<td class="comment-1" rowspan="1">Set in-danger flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53028"></span>53028</td>
 <td class="instruction">LD HL,52817</td>
-<td class="comment-11" rowspan="1">Point HL at script data for worm, fleeing right...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at script data for worm, fleeing right...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53031"></span>53031</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute</td>
+<td class="comment-1" rowspan="1">...and execute</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="53034"></span>
 <div class="comments">
 <div class="paragraph">
@@ -237,65 +218,61 @@ Drutt's left edge more than one character to the right of worm's left edge
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53034"></span>53034</td>
 <td class="instruction">NEG</td>
-<td class="comment-11" rowspan="1">If worm's left edge is 11 characters or more to the left of Drutt's...</td>
+<td class="comment-1" rowspan="1">If worm's left edge is 11 characters or more to the left of Drutt's...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53036"></span>53036</td>
 <td class="instruction">CP 10</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53038"></span>53038</td>
 <td class="instruction">JR NC,52982</td>
-<td class="comment-11" rowspan="1">...then jump back to <a href="52967.html#52982">52982</a></td>
+<td class="comment-1" rowspan="1">...then jump back to <a href="52967.html#52982">52982</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53040"></span>53040</td>
 <td class="instruction">BIT 1,(IX+9)</td>
-<td class="comment-11" rowspan="1">If In Danger Flag is set...</td>
+<td class="comment-1" rowspan="1">If in-danger flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53044"></span>53044</td>
 <td class="instruction">JP NZ,<a href="48096.html">48096</a></td>
-<td class="comment-11" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance HL to next script instruction and execute)</td>
+<td class="comment-1" rowspan="1">...then jump to <a href="48096.html">48096</a> (advance <span class="register">HL</span> to next script instruction and execute)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53047"></span>53047</td>
 <td class="instruction">SET 1,(IX+9)</td>
-<td class="comment-11" rowspan="1">Set In Danger Flag</td>
+<td class="comment-1" rowspan="1">Set in-danger flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53051"></span>53051</td>
 <td class="instruction">LD HL,52797</td>
-<td class="comment-11" rowspan="1">Point HL at script data for worm, fleeing left...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at script data for worm, fleeing left...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53054"></span>53054</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute</td>
+<td class="comment-1" rowspan="1">...and execute</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="52914.html">52914</a></span></td>
+<td class="prev">
+Prev: <a href="52914.html">52914</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#52967">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53057.html">53057</a></span></td>
+<td class="next">
+Next: <a href="53057.html">53057</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

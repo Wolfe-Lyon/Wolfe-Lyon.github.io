@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 38417</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,325 +20,285 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38356.html">38356</a></span></td>
+<td class="prev">
+Prev: <a href="38356.html">38356</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38417">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38486.html">38486</a></span></td>
+<td class="next">
+Next: <a href="38486.html">38486</a>
+</td>
 </tr>
 </table>
-<div class="description">38417: Blank an Area of the Display File</div>
+<div class="description">38417: Blank an area of the display file</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-We write zeroes to the Display File in order to blank out a region, for example the interior of a window. The top-left and bottom-right coordinates of the area to be blanked by this routine are stored at <a href="23489.html#23493">23493 - 23496</a>).
+We write zeroes to the display file in order to blank out a region, for example the interior of a window. The top-left and bottom-right coordinates of the area to be blanked by this routine are stored at <a href="23489.html#23493">23493 - 23496</a>).
 </div>
 <div class="paragraph">
 Used by the routine at <a href="36987.html">36987</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38417"></span>38417</td>
 <td class="instruction">LD BC,(23493)</td>
-<td class="comment-11" rowspan="1">Load B with y-coordinate of top edge and C with x-coordinate of left edge</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with y-coordinate of top edge and <span class="register">C</span> with x-coordinate of left edge</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38421"></span>38421</td>
 <td class="instruction">LD HL,(36488)</td>
-<td class="comment-11" rowspan="1">Load HL with current virtual text cursor location...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with current virtual text cursor location...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38424"></span>38424</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">...and store on the stack</td>
+<td class="comment-1" rowspan="1">...and store on the stack</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38425"></span>38425</td>
 <td class="instruction">CALL <a href="36551.html">36551</a></td>
-<td class="comment-11" rowspan="1">Set virtual cursor location (bitmap area)</td>
+<td class="comment-1" rowspan="1">Set virtual cursor location (bitmap area)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38428"></span>38428</td>
 <td class="instruction">LD A,(23495)</td>
-<td class="comment-11" rowspan="1">Load A with x-coordinate of right-edge</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with x-coordinate of right-edge</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38431"></span>38431</td>
 <td class="instruction">SUB C</td>
-<td class="comment-11" rowspan="1">Subtract x-coordinate of left-edge...</td>
+<td class="comment-1" rowspan="1">Subtract x-coordinate of left-edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38432"></span>38432</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...and add one to obtain width</td>
+<td class="comment-1" rowspan="1">...and add one to obtain width</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38433"></span>38433</td>
 <td class="instruction">LD D,A</td>
-<td class="comment-11" rowspan="1">Store width in D</td>
+<td class="comment-1" rowspan="1">Store width in <span class="register">D</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38434"></span>38434</td>
 <td class="instruction">LD A,(23496)</td>
-<td class="comment-11" rowspan="1">Load A with y-coordinate of bottom</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with y-coordinate of bottom</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38437"></span>38437</td>
 <td class="instruction">SUB B</td>
-<td class="comment-11" rowspan="1">Subtract y-coordinate of top-edge...</td>
+<td class="comment-1" rowspan="1">Subtract y-coordinate of top-edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38438"></span>38438</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...and add one to obtain height</td>
+<td class="comment-1" rowspan="1">...and add one to obtain height</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38439"></span>38439</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">Store height in E</td>
+<td class="comment-1" rowspan="1">Store height in <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38440"></span>38440</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Copy width and height...</td>
+<td class="comment-1" rowspan="1">Copy width and height...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38441"></span>38441</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">...into BC</td>
+<td class="comment-1" rowspan="1">...into <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38442"></span>38442</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store (initial) HL on stack</td>
+<td class="comment-1" rowspan="1">Store (initial) <span class="register">HL</span> on stack</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38443"></span>38443</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Copy width into A</td>
+<td class="comment-1" rowspan="1">Copy width into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38444"></span>38444</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Exchange AF register (preserve width)</td>
+<td class="comment-1" rowspan="1">Exchange <span class="register">AF</span> register (preserve width)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38445"></span>38445</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store width and height on stack</td>
+<td class="comment-1" rowspan="1">Store width and height on stack</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38446"></span>38446</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store (current) HL on stack</td>
+<td class="comment-1" rowspan="1">Store (current) <span class="register">HL</span> on stack</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38447"></span>38447</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38448"></span>38448</td>
 <td class="instruction">LD B,8</td>
-<td class="comment-11" rowspan="1">Set B to 8</td>
+<td class="comment-1" rowspan="1">Set <span class="register">B</span> to 8</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38450"></span>38450</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Write zero to current Display File address</td>
+<td class="comment-1" rowspan="1">Write zero to current display file address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38451"></span>38451</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">Move down one pixel row (by adding 256 bytes to current Display File address)</td>
+<td class="comment-1" rowspan="1">Move down one pixel row (by adding 256 bytes to current display file address)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38452"></span>38452</td>
 <td class="instruction">DJNZ 38450</td>
-<td class="comment-11" rowspan="1">Repeat for other 7 pixel rows</td>
+<td class="comment-1" rowspan="1">Repeat for other 7 pixel rows</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38454"></span>38454</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Recover previous (current) value of HL (start of previous character block)...</td>
+<td class="comment-1" rowspan="1">Recover previous (current) value of <span class="register">HL</span> (start of previous character block)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38455"></span>38455</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...and increase to obtain next block</td>
+<td class="comment-1" rowspan="1">...and increase to obtain next block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38456"></span>38456</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore width and height...</td>
+<td class="comment-1" rowspan="1">Restore width and height...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38457"></span>38457</td>
 <td class="instruction">DJNZ 38445</td>
-<td class="comment-11" rowspan="1">...reduce width by one and loop back to clear next block (until remaining width = 0)</td>
+<td class="comment-1" rowspan="1">...reduce width by one and loop back to clear next block (until remaining width = 0)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38459"></span>38459</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Recover (initial) value of HL</td>
+<td class="comment-1" rowspan="1">Recover (initial) value of <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38460"></span>38460</td>
 <td class="instruction">DEC C</td>
-<td class="comment-11" rowspan="1">Reduce remaining height by one...</td>
+<td class="comment-1" rowspan="1">Reduce remaining height by one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38461"></span>38461</td>
 <td class="instruction">JR Z,38481</td>
-<td class="comment-11" rowspan="1">...and if it is now zero, then exit loop...</td>
+<td class="comment-1" rowspan="1">...and if it is now zero, then exit loop...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38463"></span>38463</td>
 <td class="instruction">LD A,32</td>
-<td class="comment-11" rowspan="1">...else...</td>
+<td class="comment-1" rowspan="1">...else...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38465"></span>38465</td>
 <td class="instruction">ADD A,L</td>
-<td class="comment-11" rowspan="1">...add 32 (screen width) to current Display File pointer to move down to next character row...</td>
+<td class="comment-1" rowspan="1">...add 32 (screen width) to current display file pointer to move down to next character row...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38466"></span>38466</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="routine-comment" colspan="5">
+<span id="38467"></span>
+<div class="comments">
+<div class="paragraph">
+Here we check whether moving down a character row is valid, i.e. that we're not moving down one row from the bottom row of one of the three thirds of the bitmap area, which would actually wrap back up to the second pixel row of the top character row of the current third.
+</div>
+</div>
+</td>
+</tr>
+<tr>
 <td class="address-1"><span id="38467"></span>38467</td>
 <td class="instruction">JP NC,38474</td>
-<td class="comment-11" rowspan="1">If moving down a character row is valid (i.e. if we're not moving down one row from the bottom row of one of the three thirds of the bitmap area, which would actually wrap back up to the second pixel row of the top character row of the current third!) then skip ahead</td>
+<td class="comment-1" rowspan="1">If moving down a character row is valid then skip ahead to <a href="38417.html#38474">38474</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38470"></span>38470</td>
 <td class="instruction">LD A,8</td>
-<td class="comment-11" rowspan="1">We need to move down from the bottom character row of one third of the screen to the top character row of the third below so...</td>
+<td class="comment-1" rowspan="1">We need to move down from the bottom character row of one third of the screen to the top character row of the third below so...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38472"></span>38472</td>
 <td class="instruction">ADD A,H</td>
-<td class="comment-11" rowspan="1">...increase HL accordingly...</td>
+<td class="comment-1" rowspan="1">...increase <span class="register">HL</span> accordingly...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38473"></span>38473</td>
 <td class="instruction">LD H,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38474"></span>38474</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Swap AF register</td>
+<td class="comment-1" rowspan="1">Swap <span class="register">AF</span> register</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38475"></span>38475</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Recover width (stored earlier, at instr. 38444) into B</td>
+<td class="comment-1" rowspan="1">Recover width (stored earlier, at instr. 38444) into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38476"></span>38476</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Preserve width again</td>
+<td class="comment-1" rowspan="1">Preserve width again</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38477"></span>38477</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store current Display File address on stack...</td>
+<td class="comment-1" rowspan="1">Store current display file address on stack...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38478"></span>38478</td>
 <td class="instruction">JP 38445</td>
-<td class="comment-11" rowspan="1">...and loop back to <a href="38417.html#38445">38445</a> to write another row of zeroes</td>
+<td class="comment-1" rowspan="1">...and loop back to <a href="38417.html#38445">38445</a> to write another row of zeroes</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38481"></span>38481</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore virtual bitmap cursor location...</td>
+<td class="comment-1" rowspan="1">Restore virtual bitmap cursor location...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38482"></span>38482</td>
 <td class="instruction">LD (36488),HL</td>
-<td class="comment-11" rowspan="1">...and store</td>
+<td class="comment-1" rowspan="1">...and store</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38485"></span>38485</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38356.html">38356</a></span></td>
+<td class="prev">
+Prev: <a href="38356.html">38356</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38417">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38486.html">38486</a></span></td>
+<td class="next">
+Next: <a href="38486.html">38486</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

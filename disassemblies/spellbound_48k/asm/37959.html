@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 37959</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,19 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="37928.html">37928</a></span></td>
+<td class="prev">
+Prev: <a href="37928.html">37928</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#37959">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="37990.html">37990</a></span></td>
+<td class="next">
+Next: <a href="37990.html">37990</a>
+</td>
 </tr>
 </table>
-<div class="description">37959: Capture Fuller Joystick Input</div>
+<div class="description">37959: Capture Fuller joystick input</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="37876.html">37876</a>.
 </div>
-<table class="input-1">
+</div>
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -40,7 +47,7 @@
 <td class="register-desc"><a href="23485.html">23485</a> (store for currently active keyboard press / joystick action)</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -52,101 +59,91 @@
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="37959"></span>37959</td>
 <td class="instruction">LD C,127</td>
-<td class="comment-11" rowspan="1">Load 127 (Fuller port number) into A</td>
+<td class="comment-1" rowspan="1">Load 127 (Fuller port number) into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37961"></span>37961</td>
 <td class="instruction">IN A,(C)</td>
-<td class="comment-11" rowspan="1">Read byte from port 127 (i.e. read state of joystick)</td>
+<td class="comment-1" rowspan="1">Read byte from port 127 (i.e. read state of joystick)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37963"></span>37963</td>
 <td class="instruction">BIT 2,A</td>
-<td class="comment-11" rowspan="1">If joystick moved left...</td>
+<td class="comment-1" rowspan="1">If joystick moved left...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37965"></span>37965</td>
 <td class="instruction">CALL Z,<a href="38060.html">38060</a></td>
-<td class="comment-11" rowspan="1">...store a LEFT input from control device</td>
+<td class="comment-1" rowspan="1">...store a LEFT input from control device</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37968"></span>37968</td>
 <td class="instruction">BIT 3,A</td>
-<td class="comment-11" rowspan="1">If joystick moved right...</td>
+<td class="comment-1" rowspan="1">If joystick moved right...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37970"></span>37970</td>
 <td class="instruction">CALL Z,<a href="38063.html">38063</a></td>
-<td class="comment-11" rowspan="1">...store a RIGHT input from control device</td>
+<td class="comment-1" rowspan="1">...store a RIGHT input from control device</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37973"></span>37973</td>
 <td class="instruction">BIT 1,A</td>
-<td class="comment-11" rowspan="1">If joystick moved down...</td>
+<td class="comment-1" rowspan="1">If joystick moved down...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37975"></span>37975</td>
 <td class="instruction">CALL Z,<a href="38069.html">38069</a></td>
-<td class="comment-11" rowspan="1">...store a DOWN input from control device</td>
+<td class="comment-1" rowspan="1">...store a DOWN input from control device</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37978"></span>37978</td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="1">If joystick moved up...</td>
+<td class="comment-1" rowspan="1">If joystick moved up...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37980"></span>37980</td>
 <td class="instruction">CALL Z,<a href="38066.html">38066</a></td>
-<td class="comment-11" rowspan="1">...store an UP input from control device</td>
+<td class="comment-1" rowspan="1">...store an UP input from control device</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37983"></span>37983</td>
 <td class="instruction">BIT 7,A</td>
-<td class="comment-11" rowspan="1">If fire button pressed...</td>
+<td class="comment-1" rowspan="1">If fire button pressed...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37985"></span>37985</td>
 <td class="instruction">CALL Z,<a href="38072.html">38072</a></td>
-<td class="comment-11" rowspan="1">...store a FIRE input from control device</td>
+<td class="comment-1" rowspan="1">...store a FIRE input from control device</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37988"></span>37988</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Return stored joystick movement in A</td>
+<td class="comment-1" rowspan="1">Return stored joystick movement in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37989"></span>37989</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="37928.html">37928</a></span></td>
+<td class="prev">
+Prev: <a href="37928.html">37928</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#37959">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="37990.html">37990</a></span></td>
+<td class="next">
+Next: <a href="37990.html">37990</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

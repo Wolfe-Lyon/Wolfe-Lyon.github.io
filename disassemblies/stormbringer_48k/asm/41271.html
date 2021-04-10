@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 41271</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="41173.html">41173</a></span></td>
+<td class="prev">
+Prev: <a href="41173.html">41173</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#41271">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="41459.html">41459</a></span></td>
+<td class="next">
+Next: <a href="41459.html">41459</a>
+</td>
 </tr>
 </table>
-<div class="description">41271: Draw 2x2 Block with Style Index A at Bitmap Virtual Text Cursor then move Right Two Characters</div>
+<div class="description">41271: Draw 2 &times; 2 block with style index <span class="register">A</span> at bitmap virtual text cursor then move right two characters</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="39216.html">39216</a> and <a href="39366.html">39366</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,608 +47,509 @@ Used by the routines at <a href="39216.html">39216</a> and <a href="39366.html">
 <td class="register-desc">Block style index</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41271"></span>41271</td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1">Switch registers</td>
+<td class="comment-1" rowspan="1">Switch registers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41272"></span>41272</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">Load HL with eight times block style index...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with eight times block style index...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41274"></span>41274</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...(<a href="../reference/facts.html#redundantinstructions">see trivia</a>)...</td>
+<td class="comment-1" rowspan="1">...(<a href="../reference/facts.html#redundantinstructions">see trivia</a>)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41275"></span>41275</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41276"></span>41276</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41277"></span>41277</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41278"></span>41278</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41279"></span>41279</td>
 <td class="instruction">LD DE,49794</td>
-<td class="comment-11" rowspan="1">Load DE with start address of Table of Block Style Definitions...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with start address of table of block style definitions...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41282"></span>41282</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">...and add to HL as offset in HL</td>
+<td class="comment-1" rowspan="1">...and add to <span class="register">HL</span> as offset in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41283"></span>41283</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load system variable ATTR T with attribute value in selected style...</td>
+<td class="comment-1" rowspan="1">Store attribute value in selected style at <a href="23693.html#23695">23695</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41284"></span>41284</td>
 <td class="instruction">LD (23695),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41287"></span>41287</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to terrain interaction parameter to apply...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to terrain interaction parameter to apply...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41288"></span>41288</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41289"></span>41289</td>
 <td class="instruction">LD (23485),A</td>
-<td class="comment-11" rowspan="1">...and store at <a href="23481.html#23485">23485</a></td>
+<td class="comment-1" rowspan="1">...and store at <a href="23481.html#23485">23485</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41292"></span>41292</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to Terrain Interaction Parameter Painting Bitmap...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to terrain interaction parameter painting bitmap...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41293"></span>41293</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41294"></span>41294</td>
 <td class="instruction">LD (23298),A</td>
-<td class="comment-11" rowspan="1">...and store at <a href="23296.html#23298">23298</a></td>
+<td class="comment-1" rowspan="1">...and store at <a href="23296.html#23298">23298</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41297"></span>41297</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to index of top-left block UDG...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to index of top-left block UDG...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41298"></span>41298</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41299"></span>41299</td>
 <td class="instruction">LD DE,(63018)</td>
-<td class="comment-11" rowspan="1">Store Display File address of Bitmap Virtual Text Cursor to <a href="23296.html">23296</a>...</td>
+<td class="comment-1" rowspan="1">Store display file address of bitmap virtual text cursor to <a href="23296.html">23296</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41303"></span>41303</td>
 <td class="instruction">LD (23296),DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41307"></span>41307</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load A with index of top-left block UDG...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of top-left block UDG...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41308"></span>41308</td>
 <td class="instruction">CALL <a href="63162.html">63162</a></td>
-<td class="comment-11" rowspan="1">...and draw at location of Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">...and draw at location of bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41311"></span>41311</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to index of top-left block UDG)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to index of top-left block UDG)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41312"></span>41312</td>
 <td class="instruction">CALL <a href="63247.html">63247</a></td>
-<td class="comment-11" rowspan="1">Advance Bitmap Virtual Text Cursor right by one character</td>
+<td class="comment-1" rowspan="1">Advance bitmap virtual text cursor right by one character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41315"></span>41315</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to index of top-left block UDG)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to index of top-left block UDG)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41316"></span>41316</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to index of top-right block UDG...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to index of top-right block UDG...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41317"></span>41317</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...load into A...</td>
+<td class="comment-1" rowspan="1">...load into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41318"></span>41318</td>
 <td class="instruction">CALL <a href="63162.html">63162</a></td>
-<td class="comment-11" rowspan="1">...and draw at location of Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">...and draw at location of bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41321"></span>41321</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to index of top-right block UDG)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to index of top-right block UDG)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41322"></span>41322</td>
 <td class="instruction">CALL <a href="63247.html">63247</a></td>
-<td class="comment-11" rowspan="1">Advance Bitmap Virtual Text Cursor right by one character (<a href="../reference/facts.html#debugcode002">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">Advance bitmap virtual text cursor right by one character (<a href="../reference/facts.html#debugcode002">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41325"></span>41325</td>
 <td class="instruction">LD A,(23298)</td>
-<td class="comment-11" rowspan="1">Load B with Terrain Interaction Parameter Painting Bitmap...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with terrain interaction parameter painting bitmap...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41328"></span>41328</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41329"></span>41329</td>
 <td class="instruction">LD A,(23485)</td>
-<td class="comment-11" rowspan="1">Load A with terrain interaction parameter to apply</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with terrain interaction parameter to apply</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41332"></span>41332</td>
 <td class="instruction">LD HL,(23709)</td>
-<td class="comment-11" rowspan="1">Load HL with address of terrain interaction data for top-left character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of terrain interaction data for top-left character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41335"></span>41335</td>
 <td class="instruction">BIT 0,B</td>
-<td class="comment-11" rowspan="1">If Bit 0 of Terrain Interaction Parameter Painting Bitmap is reset...</td>
+<td class="comment-1" rowspan="1">If bit 0 of terrain interaction parameter painting bitmap is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41337"></span>41337</td>
 <td class="instruction">JR Z,41340</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="41271.html#41340">41340</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="41271.html#41340">41340</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41339"></span>41339</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Apply current terrain interaction parameter to address in HL</td>
+<td class="comment-1" rowspan="1">Apply current terrain interaction parameter to address in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41340"></span>41340</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL (i.e. move right one character)</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> (i.e. move right one character)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41341"></span>41341</td>
 <td class="instruction">BIT 1,B</td>
-<td class="comment-11" rowspan="1">If Bit 1 of Terrain Interaction Parameter Painting Bitmap is reset...</td>
+<td class="comment-1" rowspan="1">If bit 1 of terrain interaction parameter painting bitmap is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41343"></span>41343</td>
 <td class="instruction">JR Z,41346</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="41271.html#41346">41346</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="41271.html#41346">41346</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41345"></span>41345</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Apply current terrain interaction parameter to address in HL</td>
+<td class="comment-1" rowspan="1">Apply current terrain interaction parameter to address in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41346"></span>41346</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to index of top-right block UDG)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to index of top-right block UDG)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41347"></span>41347</td>
 <td class="instruction">LD A,(23461)</td>
-<td class="comment-11" rowspan="1">If Draw 2x1 Blocks Flag is set (<a href="../reference/facts.html#debugcode002">see trivia</a>)...</td>
+<td class="comment-1" rowspan="1">If draw-2-&times;-1-blocks flag is set (<a href="../reference/facts.html#debugcode002">see trivia</a>)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41350"></span>41350</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41351"></span>41351</td>
 <td class="instruction">JR NZ,41457</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="41271.html#41457">41457</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="41271.html#41457">41457</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41353"></span>41353</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to index of bottom-left block UDG</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to index of bottom-left block UDG</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41354"></span>41354</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Swap DE (now points to index of bottom-left block UDG) and HL</td>
+<td class="comment-1" rowspan="1">Swap <span class="register">DE</span> (now points to index of bottom-left block UDG) and <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41355"></span>41355</td>
 <td class="instruction">LD HL,(23296)</td>
-<td class="comment-11" rowspan="1">Restore Display File address of Bitmap Virtual Text Cursor (top-left character) from <a href="23296.html">23296</a>...</td>
+<td class="comment-1" rowspan="1">Restore display file address of bitmap virtual text cursor (top-left character) from <a href="23296.html">23296</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41358"></span>41358</td>
 <td class="instruction">LD (63018),HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41361"></span>41361</td>
 <td class="instruction">CALL <a href="63263.html">63263</a></td>
-<td class="comment-11" rowspan="1">Advance Bitmap Virtual Text Cursor to start of next character row</td>
+<td class="comment-1" rowspan="1">Advance bitmap virtual text cursor to start of next character row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41364"></span>41364</td>
 <td class="instruction">LD A,(23296)</td>
-<td class="comment-11" rowspan="1">Load A with LSB of Bitmap Virtual Text Cursor Display File address stored previously...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with LSB of bitmap virtual text cursor display file address stored previously...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41367"></span>41367</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">...and clear bits 5, 6 and 7 to leave x-coordinate in characters</td>
+<td class="comment-1" rowspan="1">...and clear bits 5, 6 and 7 to leave x-coordinate in characters</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41369"></span>41369</td>
 <td class="instruction">LD HL,(63018)</td>
-<td class="comment-11" rowspan="1">Load HL with address of Bitmap Virtual Text Cursor...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of bitmap virtual text cursor...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41372"></span>41372</td>
 <td class="instruction">OR L</td>
-<td class="comment-11" rowspan="1">...and add x-coordinate in characters to move to bottom-left character in 2x2 block...</td>
+<td class="comment-1" rowspan="1">...and add x-coordinate in characters to move to bottom-left character in 2 &times; 2 block...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41373"></span>41373</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41374"></span>41374</td>
 <td class="instruction">LD (63018),HL</td>
-<td class="comment-11" rowspan="1">Store updated address of Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">Store updated address of bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41377"></span>41377</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Swap DE and HL (now points to index of bottom-left block UDG)</td>
+<td class="comment-1" rowspan="1">Swap <span class="register">DE</span> and <span class="register">HL</span> (now points to index of bottom-left block UDG)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41378"></span>41378</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load A with index of bottom-left block UDG...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of bottom-left block UDG...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41379"></span>41379</td>
 <td class="instruction">CALL <a href="63162.html">63162</a></td>
-<td class="comment-11" rowspan="1">...and draw at location of Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">...and draw at location of bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41382"></span>41382</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to index of bottom-left block UDG)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to index of bottom-left block UDG)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41383"></span>41383</td>
 <td class="instruction">CALL <a href="63247.html">63247</a></td>
-<td class="comment-11" rowspan="1">Advance Bitmap Virtual Text Cursor right by one character</td>
+<td class="comment-1" rowspan="1">Advance bitmap virtual text cursor right by one character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41386"></span>41386</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to index of bottom-left block UDG)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to index of bottom-left block UDG)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41387"></span>41387</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to index of bottom-right block UDG...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to index of bottom-right block UDG...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41388"></span>41388</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...load into A...</td>
+<td class="comment-1" rowspan="1">...load into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41389"></span>41389</td>
 <td class="instruction">CALL <a href="63162.html">63162</a></td>
-<td class="comment-11" rowspan="1">...and draw at location of Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">...and draw at location of bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41392"></span>41392</td>
 <td class="instruction">LD HL,(23296)</td>
-<td class="comment-11" rowspan="1">Restore Display File address of Bitmap Virtual Text Cursor (top-left character) from <a href="23296.html">23296</a>...</td>
+<td class="comment-1" rowspan="1">Restore display file address of bitmap virtual text cursor (top-left character) from <a href="23296.html">23296</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41395"></span>41395</td>
 <td class="instruction">LD (63018),HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41398"></span>41398</td>
 <td class="instruction">LD A,(23298)</td>
-<td class="comment-11" rowspan="1">Load B with Terrain Interaction Parameter Painting Bitmap...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with terrain interaction parameter painting bitmap...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41401"></span>41401</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41402"></span>41402</td>
 <td class="instruction">LD A,(23485)</td>
-<td class="comment-11" rowspan="1">Load A with terrain interaction parameter to apply</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with terrain interaction parameter to apply</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41405"></span>41405</td>
 <td class="instruction">LD HL,(23709)</td>
-<td class="comment-11" rowspan="1">Load HL with address of terrain interaction data for top-left character...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of terrain interaction data for top-left character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41408"></span>41408</td>
 <td class="instruction">LD BC,32</td>
-<td class="comment-11" rowspan="1">...and add 32 to point to bottom-left character...</td>
+<td class="comment-1" rowspan="1">...and add 32 to point to bottom-left character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41411"></span>41411</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41412"></span>41412</td>
 <td class="instruction">BIT 2,B</td>
-<td class="comment-11" rowspan="1">If Bit 2 of Terrain Interaction Parameter Painting Bitmap is reset (<a href="../reference/bugs.html#2x2blockterrainpaintingbitmap">bug</a>)...</td>
+<td class="comment-1" rowspan="1">If bit 2 of terrain interaction parameter painting bitmap is reset (<a href="../reference/bugs.html#2x2blockterrainpaintingbitmap">bug</a>)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41414"></span>41414</td>
 <td class="instruction">JR Z,41417</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="41271.html#41417">41417</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="41271.html#41417">41417</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41416"></span>41416</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Apply current terrain interaction parameter to address in HL</td>
+<td class="comment-1" rowspan="1">Apply current terrain interaction parameter to address in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41417"></span>41417</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL (i.e. move right one character)</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> (i.e. move right one character)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41418"></span>41418</td>
 <td class="instruction">BIT 3,B</td>
-<td class="comment-11" rowspan="1">If Bit 3 of Terrain Interaction Parameter Painting Bitmap is reset (<a href="../reference/bugs.html#2x2blockterrainpaintingbitmap">bug</a>)...</td>
+<td class="comment-1" rowspan="1">If bit 3 of terrain interaction parameter painting bitmap is reset (<a href="../reference/bugs.html#2x2blockterrainpaintingbitmap">bug</a>)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41420"></span>41420</td>
 <td class="instruction">JR Z,41423</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="41271.html#41423">41423</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="41271.html#41423">41423</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41422"></span>41422</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Apply current terrain interaction parameter to address in HL</td>
+<td class="comment-1" rowspan="1">Apply current terrain interaction parameter to address in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41423"></span>41423</td>
 <td class="instruction">CALL <a href="63247.html">63247</a></td>
-<td class="comment-11" rowspan="1">Advance Bitmap Virtual Text Cursor right by two characters...</td>
+<td class="comment-1" rowspan="1">Advance bitmap virtual text cursor right by two characters...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41426"></span>41426</td>
 <td class="instruction">CALL <a href="63247.html">63247</a></td>
-<td class="comment-11" rowspan="1">...i.e. move to top-left character of next 2x2 block to the right</td>
+<td class="comment-1" rowspan="1">...i.e. move to top-left character of next 2 &times; 2 block to the right</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41429"></span>41429</td>
 <td class="instruction">LD HL,(23709)</td>
-<td class="comment-11" rowspan="1">Load HL with address of terrain interaction data for top-left character...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of terrain interaction data for top-left character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41432"></span>41432</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...advance by two characters...</td>
+<td class="comment-1" rowspan="1">...advance by two characters...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41433"></span>41433</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41434"></span>41434</td>
 <td class="instruction">LD (23709),HL</td>
-<td class="comment-11" rowspan="1">...and store at <a href="23709.html">23709</a></td>
+<td class="comment-1" rowspan="1">...and store at <a href="23709.html">23709</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41437"></span>41437</td>
 <td class="instruction">LD A,(63018)</td>
-<td class="comment-11" rowspan="1">Load A with LSB of Bitmap Virtual Text Cursor Display File address...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with LSB of bitmap virtual text cursor display file address...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41440"></span>41440</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">...and if at least one of bits 0-4 are set (i.e. we are not at the start of a new character row)...</td>
+<td class="comment-1" rowspan="1">...and if at least one of bits 0-4 are set (i.e. we are not at the start of a new character row)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41442"></span>41442</td>
 <td class="instruction">JR NZ,41457</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="41271.html#41457">41457</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="41271.html#41457">41457</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41444"></span>41444</td>
 <td class="instruction">CALL <a href="63263.html">63263</a></td>
-<td class="comment-11" rowspan="1">Advance Bitmap Virtual Text Cursor to start of next character row</td>
+<td class="comment-1" rowspan="1">Advance bitmap virtual text cursor to start of next character row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41447"></span>41447</td>
 <td class="instruction">LD BC,32</td>
-<td class="comment-11" rowspan="1">Add 32 to address of terrain interaction data to move to next character row...</td>
+<td class="comment-1" rowspan="1">Add 32 to address of terrain interaction data to move to next character row...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41450"></span>41450</td>
 <td class="instruction">LD HL,(23709)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41453"></span>41453</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41454"></span>41454</td>
 <td class="instruction">LD (23709),HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="41457"></span>41457</td>
 <td class="instruction">EXX</td>
-<td class="comment-11" rowspan="1">Switch registers</td>
+<td class="comment-1" rowspan="1">Switch registers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="41458"></span>41458</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="41173.html">41173</a></span></td>
+<td class="prev">
+Prev: <a href="41173.html">41173</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#41271">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="41459.html">41459</a></span></td>
+<td class="next">
+Next: <a href="41459.html">41459</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 36921</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,115 +20,106 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36887.html">36887</a></span></td>
+<td class="prev">
+Prev: <a href="36887.html">36887</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36921">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36947.html">36947</a></span></td>
+<td class="next">
+Next: <a href="36947.html">36947</a>
+</td>
 </tr>
 </table>
-<div class="description">36921: Open Trap Door if Berk is Near the Left Side of the Trap Door Room</div>
+<div class="description">36921: Open Trap Door if Berk is near the left side of the Trap Door room</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="36887.html">36887</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">IX</td>
-<td class="register-desc">Address of complex state data for Flying Skeleton Creature (Level 1)</td>
+<td class="register-desc">Address of complex state data for flying skeleton creature (level 1)</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36921"></span>36921</td>
 <td class="instruction">LD IY,43593</td>
-<td class="comment-11" rowspan="1">Load IY with address of complex state data for Berk (Level 1)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with address of complex state data for Berk (level 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36925"></span>36925</td>
 <td class="instruction">LD A,(IY+5)</td>
-<td class="comment-11" rowspan="1">If x-coordinate of Berk's left side is 104 or greater...</td>
+<td class="comment-1" rowspan="1">If x-coordinate of Berk's left side is 104 or greater...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36928"></span>36928</td>
 <td class="instruction">CP 104</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36930"></span>36930</td>
 <td class="instruction">RET NC</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36931"></span>36931</td>
 <td class="instruction">SET 2,(IX+9)</td>
-<td class="comment-11" rowspan="1">Set Trap Door Opened Flag</td>
+<td class="comment-1" rowspan="1">Set Trap-Door-opened flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36935"></span>36935</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set room of "Closed Trap Door" to 0 (i.e. remove from Trap Door Room)...</td>
+<td class="comment-1" rowspan="1">Set room of "closed Trap Door" to 0 (i.e. remove from Trap Door room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36936"></span>36936</td>
 <td class="instruction">LD (43188),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36939"></span>36939</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">Increase A to 1 (index of Trap Door Room)...</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">A</span> to 1 (index of Trap Door room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36940"></span>36940</td>
 <td class="instruction">LD (43437),A</td>
-<td class="comment-11" rowspan="1">...and set this as the current room of "Open Trap Door"...</td>
+<td class="comment-1" rowspan="1">...and set this as the current room of "open Trap Door"...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36943"></span>36943</td>
 <td class="instruction">LD (43450),A</td>
-<td class="comment-11" rowspan="1">...and marker (preventing Berk and Drutt passing door lid)</td>
+<td class="comment-1" rowspan="1">...and marker (preventing Berk and Drutt passing door lid)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36946"></span>36946</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36887.html">36887</a></span></td>
+<td class="prev">
+Prev: <a href="36887.html">36887</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36921">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36947.html">36947</a></span></td>
+<td class="next">
+Next: <a href="36947.html">36947</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

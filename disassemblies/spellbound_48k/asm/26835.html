@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 26835</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,27 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="26788.html">26788</a></span></td>
+<td class="prev">
+Prev: <a href="26788.html">26788</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#26835">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="26853.html">26853</a></span></td>
+<td class="next">
+Next: <a href="26853.html">26853</a>
+</td>
 </tr>
 </table>
-<div class="description">26835: Wait for a Key-Press then Beep</div>
+<div class="description">26835: Wait for a key-press then beep</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Used by the routines at <a href="26788.html">26788</a> and <a href="35420.html">35420</a>.
+Used by the routine at <a href="26788.html">26788</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -51,71 +50,66 @@ Used by the routines at <a href="26788.html">26788</a> and <a href="35420.html">
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26835"></span>26835</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set last key-press to null...</td>
+<td class="comment-1" rowspan="1">Clear last pressed key (<a href="23552.html#23560">LAST K system variable</a>)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26836"></span>26836</td>
 <td class="instruction">LD (23560),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26839"></span>26839</td>
 <td class="instruction">HALT</td>
-<td class="comment-11" rowspan="1">Wait for interrupt</td>
+<td class="comment-1" rowspan="1">Wait for interrupt</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26840"></span>26840</td>
 <td class="instruction">LD A,(23560)</td>
-<td class="comment-11" rowspan="1">Load last pressed key into A</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with last pressed key (<a href="23552.html#23560">LAST K system variable</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26843"></span>26843</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If A is zero (i.e. no key pressed)...</td>
+<td class="comment-1" rowspan="1">If <span class="register">A</span> is zero (i.e. no key pressed)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26844"></span>26844</td>
 <td class="instruction">JR Z,26840</td>
-<td class="comment-11" rowspan="1">...then loop back to <a href="26835.html#26840">26840</a></td>
+<td class="comment-1" rowspan="1">...then loop back to <a href="26835.html#26840">26840</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26846"></span>26846</td>
 <td class="instruction">CALL <a href="38221.html">38221</a></td>
-<td class="comment-11" rowspan="1">Make a beep</td>
+<td class="comment-1" rowspan="1">Make a beep</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26849"></span>26849</td>
 <td class="instruction">CALL <a href="37472.html">37472</a></td>
-<td class="comment-11" rowspan="1">Wait for keyboard to be released</td>
+<td class="comment-1" rowspan="1">Wait for keyboard to be released</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26852"></span>26852</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="26788.html">26788</a></span></td>
+<td class="prev">
+Prev: <a href="26788.html">26788</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#26835">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="26853.html">26853</a></span></td>
+<td class="next">
+Next: <a href="26853.html">26853</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 26745</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,322 +20,281 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="26670.html">26670</a></span></td>
+<td class="prev">
+Prev: <a href="26670.html">26670</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#26745">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="26855.html">26855</a></span></td>
+<td class="next">
+Next: <a href="26855.html">26855</a>
+</td>
 </tr>
 </table>
-<div class="description">26745: Display and Handle Gadget X Menu</div>
+<div class="description">26745: Display and handle Gadget X menu</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="26670.html">26670</a> and <a href="30968.html">30968</a>.
 </div>
 </div>
-<table class="input-0">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26745"></span>26745</td>
 <td class="instruction">LD A,7</td>
-<td class="comment-11" rowspan="1">Load A with index of "REDEFINE THE GAME" Window</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of redefine-the-game window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26747"></span>26747</td>
 <td class="instruction">LD HL,38063</td>
-<td class="comment-11" rowspan="1">Point HL at Gadget X menu text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at Gadget X menu text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26750"></span>26750</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to Gadget X menu text)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to Gadget X menu text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26751"></span>26751</td>
 <td class="instruction">CALL <a href="34982.html">34982</a></td>
-<td class="comment-11" rowspan="1">Draw "REDEFINE THE GAME" Menu Window</td>
+<td class="comment-1" rowspan="1">Draw redefine-the-game menu window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26754"></span>26754</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to Gadget X menu text)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to Gadget X menu text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26755"></span>26755</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">Print text</td>
+<td class="comment-1" rowspan="1">Print text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26758"></span>26758</td>
 <td class="instruction">CALL <a href="35690.html">35690</a></td>
-<td class="comment-11" rowspan="1">Play upward scale sound</td>
+<td class="comment-1" rowspan="1">Play upward scale sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26761"></span>26761</td>
 <td class="instruction">CALL <a href="35296.html">35296</a></td>
-<td class="comment-11" rowspan="1">Process keyboard / joystick input on a menu and load A with selected item index</td>
+<td class="comment-1" rowspan="1">Process keyboard / joystick input on a menu and load <span class="register">A</span> with selected item index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26764"></span>26764</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If REDEFINE KEYBOARD selected...</td>
+<td class="comment-1" rowspan="1">If REDEFINE KEYBOARD selected...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26765"></span>26765</td>
 <td class="instruction">JP Z,26816</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="26745.html#26816">26816</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="26745.html#26816">26816</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26768"></span>26768</td>
 <td class="instruction">CP 1</td>
-<td class="comment-11" rowspan="1">If PLAYER ATTRIBUTE IGNORE selected...</td>
+<td class="comment-1" rowspan="1">If PLAYER ATTRIBUTE IGNORE selected...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26770"></span>26770</td>
 <td class="instruction">JR Z,26807</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="26745.html#26807">26807</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="26745.html#26807">26807</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26772"></span>26772</td>
 <td class="instruction">CP 2</td>
-<td class="comment-11" rowspan="1">If PLAYER ATTRIBUTE UPDATE selected...</td>
+<td class="comment-1" rowspan="1">If PLAYER ATTRIBUTE UPDATE selected...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26774"></span>26774</td>
 <td class="instruction">JR Z,26812</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="26745.html#26812">26812</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="26745.html#26812">26812</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26776"></span>26776</td>
 <td class="instruction">BIT 0,(IY+65)</td>
-<td class="comment-11" rowspan="1">If Game In Progress Flag is reset... (IY = 23610)</td>
+<td class="comment-1" rowspan="1">If game-in-progress flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26780"></span>26780</td>
 <td class="instruction">JR Z,26790</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="26745.html#26790">26790</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="26745.html#26790">26790</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26782"></span>26782</td>
 <td class="instruction">CP 3</td>
-<td class="comment-11" rowspan="1">If SAVE THE GAME selected...</td>
+<td class="comment-1" rowspan="1">If SAVE THE GAME selected...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26784"></span>26784</td>
 <td class="instruction">JR Z,26833</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="26745.html#26833">26833</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="26745.html#26833">26833</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26786"></span>26786</td>
 <td class="instruction">CP 4</td>
-<td class="comment-11" rowspan="1">If LOAD AN OLD GAME selected...</td>
+<td class="comment-1" rowspan="1">If LOAD AN OLD GAME selected...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26788"></span>26788</td>
 <td class="instruction">JR Z,26840</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="26745.html#26840">26840</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="26745.html#26840">26840</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26790"></span>26790</td>
 <td class="instruction">LD A,5</td>
-<td class="comment-11" rowspan="1">Draw Window 5...</td>
+<td class="comment-1" rowspan="1">Draw window 5...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26792"></span>26792</td>
 <td class="instruction">CALL <a href="34990.html">34990</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26795"></span>26795</td>
 <td class="instruction">LD HL,38180</td>
-<td class="comment-11" rowspan="1">Point HL at "SAVE &amp; LOAD ARE NOT ALLOWED HERE..." text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "SAVE &amp; LOAD ARE NOT ALLOWED HERE..." text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26798"></span>26798</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">...and print to screen</td>
+<td class="comment-1" rowspan="1">...and print to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26801"></span>26801</td>
 <td class="instruction">CALL <a href="35690.html">35690</a></td>
-<td class="comment-11" rowspan="1">Play upward scale sound</td>
+<td class="comment-1" rowspan="1">Play upward scale sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26804"></span>26804</td>
 <td class="instruction">JP <a href="55138.html">55138</a></td>
-<td class="comment-11" rowspan="1">Display "PRESS FIRE TO CONTINUE" Window and Wait for Fire to be Pressed and return</td>
+<td class="comment-1" rowspan="1">Display "PRESS FIRE TO CONTINUE" window and wait for fire to be pressed and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26807"></span>26807</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Reset Player Attribute Update Flag (Player Attribute Ignore mode)...</td>
+<td class="comment-1" rowspan="1">Reset player-attribute-update flag (player attribute ignore mode)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26808"></span>26808</td>
 <td class="instruction">LD (23705),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26811"></span>26811</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26812"></span>26812</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Set Player Attribute Update Flag (Player Attribute Update mode)...</td>
+<td class="comment-1" rowspan="1">Set player-attribute-update flag (player attribute update mode)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26814"></span>26814</td>
 <td class="instruction">JR 26808</td>
-<td class="comment-11" rowspan="1">...and return</td>
+<td class="comment-1" rowspan="1">...and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26816"></span>26816</td>
 <td class="instruction">CALL <a href="35690.html">35690</a></td>
-<td class="comment-11" rowspan="1">Play upward scale sound</td>
+<td class="comment-1" rowspan="1">Play upward scale sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26819"></span>26819</td>
 <td class="instruction">LD A,8</td>
-<td class="comment-11" rowspan="1">Draw Window 8...</td>
+<td class="comment-1" rowspan="1">Draw window 8...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26821"></span>26821</td>
 <td class="instruction">CALL <a href="34990.html">34990</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26824"></span>26824</td>
 <td class="instruction">LD HL,38136</td>
-<td class="comment-11" rowspan="1">Point HL at "Redefine Keys Window" text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "redefine keys window" text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26827"></span>26827</td>
 <td class="instruction">CALL <a href="34762.html">34762</a></td>
-<td class="comment-11" rowspan="1">...and print to screen</td>
+<td class="comment-1" rowspan="1">...and print to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26830"></span>26830</td>
 <td class="instruction">JP <a href="54647.html">54647</a></td>
-<td class="comment-11" rowspan="1">Redefine keyboard controls</td>
+<td class="comment-1" rowspan="1">Redefine keyboard controls</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26833"></span>26833</td>
 <td class="instruction">CALL <a href="26855.html">26855</a></td>
-<td class="comment-11" rowspan="1">Clear Stack and Prepare to Save Data</td>
+<td class="comment-1" rowspan="1">Clear stack and prepare to save data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26836"></span>26836</td>
 <td class="instruction">CALL 1218</td>
-<td class="comment-11" rowspan="1">Jump to ROM routine to save game data</td>
+<td class="comment-1" rowspan="1">Jump to ROM routine to save game data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26839"></span>26839</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return (to start of Main Game Loop - see PUSH at <a href="26855.html#26862">26862</a>)</td>
+<td class="comment-1" rowspan="1">Return (to start of main game loop - see <span class="instruction">PUSH</span> at <a href="26855.html#26862">26862</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="26840"></span>26840</td>
 <td class="instruction">CALL <a href="26855.html">26855</a></td>
-<td class="comment-11" rowspan="1">Clear Stack and Prepare to Load Data</td>
+<td class="comment-1" rowspan="1">Clear stack and prepare to load data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26843"></span>26843</td>
 <td class="instruction">SCF</td>
-<td class="comment-11" rowspan="1">Set Carry Flag as we are LOADing, not VERIFYing</td>
+<td class="comment-1" rowspan="1">Set carry flag as we are LOADing, not VERIFYing</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26844"></span>26844</td>
 <td class="instruction">LD SP,22528</td>
-<td class="comment-11" rowspan="1">Set Stack Pointer to 22528</td>
+<td class="comment-1" rowspan="1">Set stack pointer to 22528</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26847"></span>26847</td>
 <td class="instruction">CALL 1366</td>
-<td class="comment-11" rowspan="1">Jump to ROM routine to load game data</td>
+<td class="comment-1" rowspan="1">Jump to ROM routine to load game data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26850"></span>26850</td>
 <td class="instruction">LD SP,(23613)</td>
-<td class="comment-11" rowspan="1">Restore Stack Pointer from 23613 (set to 26240 in routine at <a href="26855.html">26855</a>)</td>
+<td class="comment-1" rowspan="1">Restore stack pointer from <a href="23613.html">23613</a> (set to 26240 in routine at <a href="26855.html">26855</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="26854"></span>26854</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return (to start of Main Game Loop - see PUSH at <a href="26855.html#26862">26862</a>)</td>
+<td class="comment-1" rowspan="1">Return (to start of main game loop - see <span class="instruction">PUSH</span> at <a href="26855.html#26862">26862</a>)</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="26670.html">26670</a></span></td>
+<td class="prev">
+Prev: <a href="26670.html">26670</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#26745">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="26855.html">26855</a></span></td>
+<td class="next">
+Next: <a href="26855.html">26855</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

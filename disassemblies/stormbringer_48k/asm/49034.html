@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Data at 49034</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="49019.html">49019</a></span></td>
+<td class="prev">
+Prev: <a href="49019.html">49019</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#49034">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="49282.html">49282</a></span></td>
+<td class="next">
+Next: <a href="49282.html">49282</a>
+</td>
 </tr>
 </table>
-<div class="description">49034: Window Data</div>
+<div class="description">49034: Window data</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Eight bytes per window. The meaning of the data is:
@@ -56,19 +61,19 @@ Eight bytes per window. The meaning of the data is:
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">4</td>
-<td class="" colspan="1" rowspan="1">Border Style</td>
+<td class="" colspan="1" rowspan="1">Border style</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">5</td>
-<td class="" colspan="1" rowspan="1">Border Attribute</td>
+<td class="" colspan="1" rowspan="1">Border attribute</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">6</td>
-<td class="" colspan="1" rowspan="1">Initial (and minimum allowed) y-coordinate of Hand Cursor (characters)</td>
+<td class="" colspan="1" rowspan="1">Initial (and minimum allowed) y-coordinate of hand cursor (characters)</td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1">7</td>
-<td class="" colspan="1" rowspan="1">Content Attribute</td>
+<td class="" colspan="1" rowspan="1">Content attribute</td>
 </tr>
 </table>
 </div>
@@ -76,218 +81,179 @@ Eight bytes per window. The meaning of the data is:
 The border style data refers to the index of the first window frame graphic element in a group (of eight) which are part of the character set at <a href="27736.html">27736</a>. Character number 93, is the first element of the window frame group. This is followed by 101, 109, 117. 93 and 109 appear to be unused.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49034"></span>49034</td>
 <td class="instruction">DEFB 4,27,4,20,117,79,1,79</td>
-<td class="comment-11" rowspan="1">(00) Main Menu (Game) Window</td>
+<td class="comment-1" rowspan="1">(00) Main menu (game) window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49042"></span>49042</td>
 <td class="instruction">DEFB 0,31,0,4,101,67,0,71</td>
-<td class="comment-11" rowspan="1">(01) Command Summary Window</td>
+<td class="comment-1" rowspan="1">(01) Command summary window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49050"></span>49050</td>
 <td class="instruction">DEFB 0,25,5,15,117,68,0,79</td>
-<td class="comment-11" rowspan="1">(02)</td>
+<td class="comment-1" rowspan="1">(02)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49058"></span>49058</td>
 <td class="instruction">DEFB 0,26,5,18,117,68,2,79</td>
-<td class="comment-11" rowspan="1">(03) Character Selection Window</td>
+<td class="comment-1" rowspan="1">(03) Character selection window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49066"></span>49066</td>
 <td class="instruction">DEFB 0,25,5,20,117,70,1,79</td>
-<td class="comment-11" rowspan="1">(04) List of objects window (menu or info)</td>
+<td class="comment-1" rowspan="1">(04) List of objects window (menu or info)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49074"></span>49074</td>
 <td class="instruction">DEFB 4,24,1,6,101,66,0,70</td>
-<td class="comment-11" rowspan="1">(05) "STORMBRINGER A TRUE GRAPHIC ADVENTURE..." window above Control Selection Window</td>
+<td class="comment-1" rowspan="1">(05) "STORMBRINGER A TRUE GRAPHIC ADVENTURE..." window above control selection window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49082"></span>49082</td>
 <td class="instruction">DEFB 4,27,10,19,101,70,0,69</td>
-<td class="comment-11" rowspan="1">(06) Control Selection Window</td>
+<td class="comment-1" rowspan="1">(06) Control selection window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49090"></span>49090</td>
 <td class="instruction">DEFB 0,31,10,20,117,70,1,79</td>
-<td class="comment-11" rowspan="1">(07) "REDEFINE THE GAME" Window</td>
+<td class="comment-1" rowspan="1">(07) Redefine-the-game window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49098"></span>49098</td>
 <td class="instruction">DEFB 3,28,10,20,117,84,0,14</td>
-<td class="comment-11" rowspan="1">(08) Redefine Keys / Instructions Window</td>
+<td class="comment-1" rowspan="1">(08) Redefine keys / instructions window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49106"></span>49106</td>
 <td class="instruction">DEFB 5,26,10,20,117,115,0,69</td>
-<td class="comment-11" rowspan="1">(09) Instructions Window</td>
+<td class="comment-1" rowspan="1">(09) Instructions window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49114"></span>49114</td>
 <td class="instruction">DEFB 0,31,16,23,101,67,0,79</td>
-<td class="comment-11" rowspan="1">(10) "WELL DONE..." Window</td>
+<td class="comment-1" rowspan="1">(10) "WELL DONE..." window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49122"></span>49122</td>
 <td class="instruction">DEFB 0,19,5,9,117,76,0,70</td>
-<td class="comment-11" rowspan="1">(11)</td>
+<td class="comment-1" rowspan="1">(11)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49130"></span>49130</td>
 <td class="instruction">DEFB 0,16,5,10,117,98,0,104</td>
-<td class="comment-11" rowspan="1">(12)</td>
+<td class="comment-1" rowspan="1">(12)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49138"></span>49138</td>
 <td class="instruction">DEFB 0,18,5,9,117,67,2,70</td>
-<td class="comment-11" rowspan="1">(13)</td>
+<td class="comment-1" rowspan="1">(13)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49146"></span>49146</td>
 <td class="instruction">DEFB 4,27,21,23,117,70,0,205</td>
-<td class="comment-11" rowspan="1">(14) "PRESS FIRE TO CONTINUE" Window</td>
+<td class="comment-1" rowspan="1">(14) "PRESS FIRE TO CONTINUE" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49154"></span>49154</td>
 <td class="instruction">DEFB 0,23,5,9,117,68,0,71</td>
-<td class="comment-11" rowspan="1">(15)</td>
+<td class="comment-1" rowspan="1">(15)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49162"></span>49162</td>
 <td class="instruction">DEFB 0,15,5,11,117,98,1,112</td>
-<td class="comment-11" rowspan="1">(16) "EXAMINE WHAT?" Window</td>
+<td class="comment-1" rowspan="1">(16) "EXAMINE WHAT?" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49170"></span>49170</td>
 <td class="instruction">DEFB 0,18,5,14,117,68,5,120</td>
-<td class="comment-11" rowspan="1">(17)</td>
+<td class="comment-1" rowspan="1">(17)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49178"></span>49178</td>
 <td class="instruction">DEFB 0,22,5,17,117,67,0,120</td>
-<td class="comment-11" rowspan="1">(18) "EXAMINE YOURSELF" / "EXAMINE CHARACTER" Window</td>
+<td class="comment-1" rowspan="1">(18) "EXAMINE YOURSELF" / "EXAMINE CHARACTER" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49186"></span>49186</td>
 <td class="instruction">DEFB 17,20,8,13,117,68,0,71</td>
-<td class="comment-11" rowspan="1">(19) Frame around portrait of character on "EXAMINE CHARACTER" and "EXAMINE YOURSELF" windows</td>
+<td class="comment-1" rowspan="1">(19) Frame around portrait of character on "EXAMINE CHARACTER" and "EXAMINE YOURSELF" windows</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49194"></span>49194</td>
 <td class="instruction">DEFB 0,22,5,14,117,67,0,120</td>
-<td class="comment-11" rowspan="1">(20) "EXAMINE OBJECT" Window</td>
+<td class="comment-1" rowspan="1">(20) "EXAMINE OBJECT" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49202"></span>49202</td>
 <td class="instruction">DEFB 2,5,9,12,117,69,0,69</td>
-<td class="comment-11" rowspan="1">(21) Frame around object in "EXAMINE OBJECT" Window</td>
+<td class="comment-1" rowspan="1">(21) Frame around object in "EXAMINE OBJECT" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49210"></span>49210</td>
 <td class="instruction">DEFB 0,11,5,12,117,78,0,71</td>
-<td class="comment-11" rowspan="1">(22) "THE BEAR SAYS..." Window</td>
+<td class="comment-1" rowspan="1">(22) "THE BEAR SAYS..." window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49218"></span>49218</td>
 <td class="instruction">DEFB 0,22,5,15,117,77,2,78</td>
-<td class="comment-11" rowspan="1">(23) "WHICH COMMAND DO YOU WANT TO USE?" ("COMMAND [CHARACTER] TO...") Window</td>
+<td class="comment-1" rowspan="1">(23) "WHICH COMMAND DO YOU WANT TO USE?" ("COMMAND [CHARACTER] TO...") window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49226"></span>49226</td>
 <td class="instruction">DEFB 4,27,8,18,117,104,0,104</td>
-<td class="comment-11" rowspan="1">(24) Game Over Window</td>
+<td class="comment-1" rowspan="1">(24) Game over window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49234"></span>49234</td>
 <td class="instruction">DEFB 0,12,5,9,117,104,0,104</td>
-<td class="comment-11" rowspan="1">(25) "[CHARACTER] IS ASLEEP" Window</td>
+<td class="comment-1" rowspan="1">(25) "[CHARACTER] IS ASLEEP" window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49242"></span>49242</td>
 <td class="instruction">DEFB 4,27,7,18,117,87,0,79</td>
-<td class="comment-11" rowspan="1">(26) "SOMEBODY SWITCHED OUT THE LIGHT..." Window</td>
+<td class="comment-1" rowspan="1">(26) "SOMEBODY SWITCHED OUT THE LIGHT..." window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49250"></span>49250</td>
 <td class="instruction">DEFB 0,15,5,11,117,115,0,112</td>
-<td class="comment-11" rowspan="1">(27)</td>
+<td class="comment-1" rowspan="1">(27)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49258"></span>49258</td>
 <td class="instruction">DEFB 0,22,6,9,117,68,2,71</td>
-<td class="comment-11" rowspan="1">(28)</td>
+<td class="comment-1" rowspan="1">(28)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49266"></span>49266</td>
 <td class="instruction">DEFB 0,19,5,9,117,68,2,71</td>
-<td class="comment-11" rowspan="1">(29)</td>
+<td class="comment-1" rowspan="1">(29)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="49274"></span>49274</td>
 <td class="instruction">DEFB 0,26,5,16,117,87,2,79</td>
-<td class="comment-11" rowspan="1">(30) Spell Selection Window</td>
+<td class="comment-1" rowspan="1">(30) Spell selection window</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="49019.html">49019</a></span></td>
+<td class="prev">
+Prev: <a href="49019.html">49019</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#49034">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="49282.html">49282</a></span></td>
+<td class="next">
+Next: <a href="49282.html">49282</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 48934</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,21 +20,28 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48920.html">48920</a></span></td>
+<td class="prev">
+Prev: <a href="48920.html">48920</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48934">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48976.html">48976</a></span></td>
+<td class="next">
+Next: <a href="48976.html">48976</a>
+</td>
 </tr>
 </table>
-<div class="description">48934: Script Routine (30): Check Berk's Fall Velocity, and React to Landing</div>
+<div class="description">48934: Script routine: (30) Check Berk's fall velocity, and react to landing</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 See <a href="../reference/facts.html#redundantinstructionsx">trivia</a> and <a href="../reference/pokes.html#quickerrecoveryafterfall">pokes</a>
 </div>
+<div class="paragraph">
+Used by the routine at <a href="48096.html">48096</a>.
 </div>
-<table class="input-1">
+</div>
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -45,113 +50,103 @@ See <a href="../reference/facts.html#redundantinstructionsx">trivia</a> and <a h
 <td class="register-desc">Address of complex state data (current level) for Berk</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">Address of next script instruction to execute</td>
+<td class="register-desc">New address in script data</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48934"></span>48934</td>
 <td class="instruction">BIT 6,(IX+10)</td>
-<td class="comment-11" rowspan="1">If Berk's "Can Fall" Flag is reset (i.e. Berk has landed)...</td>
+<td class="comment-1" rowspan="1">If Berk's can-fall flag is reset (i.e. Berk has landed)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48938"></span>48938</td>
 <td class="instruction">JR Z,48958</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48934.html#48958">48958</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48934.html#48958">48958</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48940"></span>48940</td>
 <td class="instruction">BIT 3,(IX+12)</td>
-<td class="comment-11" rowspan="1">If bit 3 of Berk's velocity factor is set (i.e. Berk has a velocity factor of 8)...</td>
+<td class="comment-1" rowspan="1">If bit 3 of Berk's velocity factor is set (i.e. Berk has a velocity factor of 8)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48944"></span>48944</td>
 <td class="instruction">JR NZ,48952</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48934.html#48952">48952</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48934.html#48952">48952</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48946"></span>48946</td>
 <td class="instruction">LD HL,35363</td>
-<td class="comment-11" rowspan="1">Load HL with address of script data for Berk starting to fall...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of script data for Berk starting to fall...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48949"></span>48949</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute</td>
+<td class="comment-1" rowspan="1">...and execute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48952"></span>48952</td>
 <td class="instruction">LD HL,35367</td>
-<td class="comment-11" rowspan="1">Point HL at script data for Berk falling rapidly (horizontal, arms outstretched)...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at script data for Berk falling rapidly (horizontal, arms outstretched)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48955"></span>48955</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute</td>
+<td class="comment-1" rowspan="1">...and execute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48958"></span>48958</td>
 <td class="instruction">BIT 3,(IX+12)</td>
-<td class="comment-11" rowspan="1">If bit 3 of Berk's velocity factor is set (i.e. Berk has a velocity factor of 8)...</td>
+<td class="comment-1" rowspan="1">If bit 3 of Berk's velocity factor is set (i.e. Berk has a velocity factor of 8)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48962"></span>48962</td>
 <td class="instruction">JR NZ,48970</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48934.html#48970">48970</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48934.html#48970">48970</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48964"></span>48964</td>
 <td class="instruction">LD HL,35457</td>
-<td class="comment-11" rowspan="1">Point HL at script data for Berk landing (after jump)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at script data for Berk landing (after jump)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48967"></span>48967</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute</td>
+<td class="comment-1" rowspan="1">...and execute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48970"></span>48970</td>
 <td class="instruction">LD HL,35371</td>
-<td class="comment-11" rowspan="1">Point HL at script data for Berk lying on floor stunned and getting up</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at script data for Berk lying on floor stunned and getting up</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48973"></span>48973</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute</td>
+<td class="comment-1" rowspan="1">...and execute</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48920.html">48920</a></span></td>
+<td class="prev">
+Prev: <a href="48920.html">48920</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48934">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48976.html">48976</a></span></td>
+<td class="next">
+Next: <a href="48976.html">48976</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 37841</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,88 +20,80 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="37816.html">37816</a></span></td>
+<td class="prev">
+Prev: <a href="37816.html">37816</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#37841">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="37857.html">37857</a></span></td>
+<td class="next">
+Next: <a href="37857.html">37857</a>
+</td>
 </tr>
 </table>
-<div class="description">37841: Set Entire Attribute File to Colour Housed in ATTR T System Variable</div>
+<div class="description">37841: Flood attribute file with stored attribute value</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
+<div class="paragraph">
+The value stored at <a href="23695.html">23695</a> is used to fill the attribute file.
+</div>
 <div class="paragraph">
 Used by the routines at <a href="26747.html">26747</a> and <a href="26906.html">26906</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="37841"></span>37841</td>
 <td class="instruction">LD HL,22528</td>
-<td class="comment-11" rowspan="1">Load HL with start of Attribute File</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with start address of attribute file</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37844"></span>37844</td>
 <td class="instruction">LD DE,22529</td>
-<td class="comment-11" rowspan="1">Load DE with next byte up</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with next byte up</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37847"></span>37847</td>
 <td class="instruction">LD BC,767</td>
-<td class="comment-11" rowspan="1">Load BC with length of data to copy (767 bytes = length of Attribute File minus one)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with length of data to copy (767 bytes = length of attribute file minus one)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37850"></span>37850</td>
 <td class="instruction">LD A,(23695)</td>
-<td class="comment-11" rowspan="1">Load system variable ATTR T into A</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with attribute stored at <a href="23695.html">23695</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37853"></span>37853</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Load memory at HL with this attribute...</td>
+<td class="comment-1" rowspan="1">Load memory at <span class="register">HL</span> with this attribute...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37854"></span>37854</td>
 <td class="instruction">LDIR</td>
-<td class="comment-11" rowspan="1">...and repeat 767 times</td>
+<td class="comment-1" rowspan="1">...and repeat 767 times</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37856"></span>37856</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="37816.html">37816</a></span></td>
+<td class="prev">
+Prev: <a href="37816.html">37816</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#37841">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="37857.html">37857</a></span></td>
+<td class="next">
+Next: <a href="37857.html">37857</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

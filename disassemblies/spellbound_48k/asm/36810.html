@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 36810</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,100 +20,87 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36800.html">36800</a></span></td>
+<td class="prev">
+Prev: <a href="36800.html">36800</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36810">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36830.html">36830</a></span></td>
+<td class="next">
+Next: <a href="36830.html">36830</a>
+</td>
 </tr>
 </table>
-<div class="description">36810: Move Virtual Text Cursor Down to Start of Next Row Within Current Window</div>
+<div class="description">36810: Move virtual text cursor down to start of next row within current window</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="36725.html">36725</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36810"></span>36810</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36811"></span>36811</td>
 <td class="instruction">CALL <a href="37703.html">37703</a></td>
-<td class="comment-11" rowspan="1">Move virtual text cursor down to start of next text row</td>
+<td class="comment-1" rowspan="1">Move virtual text cursor down to start of next text row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36814"></span>36814</td>
 <td class="instruction">LD HL,(36488)</td>
-<td class="comment-11" rowspan="1">Get position of virtual text cursor</td>
+<td class="comment-1" rowspan="1">Get position of virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36817"></span>36817</td>
 <td class="instruction">LD A,(23493)</td>
-<td class="comment-11" rowspan="1">Load A with x-coordinate of left edge of current window (in characters)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with x-coordinate of left edge of current window (in characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36820"></span>36820</td>
 <td class="instruction">ADD A,L</td>
-<td class="comment-11" rowspan="1">Offset the text cursor based upon left-edge of current window to prepare to print text starting at left edge of this window...</td>
+<td class="comment-1" rowspan="1">Offset the text cursor based upon left-edge of current window to prepare to print text starting at left edge of this window...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36821"></span>36821</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36822"></span>36822</td>
 <td class="instruction">LD (36488),HL</td>
-<td class="comment-11" rowspan="1">Update virtual text cursor location</td>
+<td class="comment-1" rowspan="1">Update virtual text cursor location</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36825"></span>36825</td>
 <td class="instruction">CALL <a href="36709.html">36709</a></td>
-<td class="comment-11" rowspan="1">Update stored location of start of attribute data</td>
+<td class="comment-1" rowspan="1">Update stored location of start of attribute data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36828"></span>36828</td>
 <td class="instruction">JR <a href="36800.html#36807">36807</a></td>
-<td class="comment-11" rowspan="1">Go to <a href="36800.html#36807">36807</a> for next character</td>
+<td class="comment-1" rowspan="1">Go to <a href="36800.html#36807">36807</a> for next character</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36800.html">36800</a></span></td>
+<td class="prev">
+Prev: <a href="36800.html">36800</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36810">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36830.html">36830</a></span></td>
+<td class="next">
+Next: <a href="36830.html">36830</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

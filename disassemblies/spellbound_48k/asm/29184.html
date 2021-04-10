@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 29184</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,110 +20,97 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29150.html">29150</a></span></td>
+<td class="prev">
+Prev: <a href="29150.html">29150</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29184">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29205.html">29205</a></span></td>
+<td class="next">
+Next: <a href="29205.html">29205</a>
+</td>
 </tr>
 </table>
-<div class="description">29184: Room Drawing: Read Data for and Display Glowing Blocks</div>
+<div class="description">29184: Room drawing: Read data for and display glowing blocks</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="27865.html">27865</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29184"></span>29184</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Read next parameter into A...</td>
+<td class="comment-1" rowspan="1">Read next parameter into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29185"></span>29185</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29186"></span>29186</td>
 <td class="instruction">CP 244</td>
-<td class="comment-11" rowspan="1">If parameter is 244...</td>
+<td class="comment-1" rowspan="1">If parameter is 244...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29188"></span>29188</td>
 <td class="instruction">JP Z,<a href="27865.html#28060">28060</a></td>
-<td class="comment-11" rowspan="1">...then return to room drawing routine and process next data</td>
+<td class="comment-1" rowspan="1">...then return to room drawing routine and process next data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29191"></span>29191</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move pointer back a byte as this was more data, not an end marker</td>
+<td class="comment-1" rowspan="1">Move pointer back a byte as this was more data, not an end marker</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29192"></span>29192</td>
 <td class="instruction">CALL <a href="29441.html">29441</a></td>
-<td class="comment-11" rowspan="1">Read two bytes AFTER HL position into BC, advancing HL before both reads</td>
+<td class="comment-1" rowspan="1">Read two bytes AFTER <span class="register">HL</span> position into <span class="register">BC</span>, advancing <span class="register">HL</span> before both reads</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29195"></span>29195</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store current position of pointer to room data</td>
+<td class="comment-1" rowspan="1">Store current position of pointer to room data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29196"></span>29196</td>
 <td class="instruction">CALL <a href="36569.html">36569</a></td>
-<td class="comment-11" rowspan="1">Update Virtual Attribute Cursor storage location to coordinates x=C y=B and point HL to corresponding Attribute File address</td>
+<td class="comment-1" rowspan="1">Update virtual attribute cursor storage location to position (<span class="register">C</span>, <span class="register">B</span>) and point <span class="register">HL</span> to corresponding attribute file address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29199"></span>29199</td>
 <td class="instruction">CALL <a href="28814.html">28814</a></td>
-<td class="comment-11" rowspan="1">Add a glowing character block to the current room</td>
+<td class="comment-1" rowspan="1">Add a glowing character block to the current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29202"></span>29202</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore pointer to HL</td>
+<td class="comment-1" rowspan="1">Restore pointer to <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29203"></span>29203</td>
 <td class="instruction">JR 29184</td>
-<td class="comment-11" rowspan="1">Loop back for next data</td>
+<td class="comment-1" rowspan="1">Loop back for next data</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29150.html">29150</a></span></td>
+<td class="prev">
+Prev: <a href="29150.html">29150</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29184">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29205.html">29205</a></span></td>
+<td class="next">
+Next: <a href="29205.html">29205</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

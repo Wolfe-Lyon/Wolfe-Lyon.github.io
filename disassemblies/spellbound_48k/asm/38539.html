@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 38539</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38512.html">38512</a></span></td>
+<td class="prev">
+Prev: <a href="38512.html">38512</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38539">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38660.html">38660</a></span></td>
+<td class="next">
+Next: <a href="38660.html">38660</a>
+</td>
 </tr>
 </table>
-<div class="description">38539: Set Terrain Interaction Data for Character Blocks Spanned by an Object and Draw the Object</div>
+<div class="description">38539: Set terrain interaction data for character blocks spanned by an object and draw the object</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="31370.html">31370</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -54,40 +59,30 @@ Used by the routine at <a href="31370.html">31370</a>.
 <td class="register-desc">Points at object's position data (call to <a href="38539.html#38550">38550</a> only)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38539"></span>38539</td>
 <td class="instruction">LD IX,23296</td>
-<td class="comment-11" rowspan="1">Store object's position data temporarily at 23296 - 23298...</td>
+<td class="comment-1" rowspan="1">Store object's position data temporarily at 23296 - 23298...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38543"></span>38543</td>
 <td class="instruction">LD (IX+1),C</td>
-<td class="comment-11" rowspan="1">...x-coordinate...</td>
+<td class="comment-1" rowspan="1">...x-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38546"></span>38546</td>
 <td class="instruction">LD (IX+2),B</td>
-<td class="comment-11" rowspan="1">...y-coordinate...</td>
+<td class="comment-1" rowspan="1">...y-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38549"></span>38549</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load index of object of interest into C</td>
+<td class="comment-1" rowspan="1">Load index of object of interest into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="38550"></span>
 <div class="comments">
 <div class="paragraph">
@@ -97,235 +92,197 @@ This entry point is used by the routine at <a href="38512.html">38512</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38550"></span>38550</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38551"></span>38551</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38553"></span>38553</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Load HL with eight times current object number...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with eight times current object number...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38554"></span>38554</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38555"></span>38555</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38556"></span>38556</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38557"></span>38557</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38559"></span>38559</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38560"></span>38560</td>
 <td class="instruction">LD DE,42249</td>
-<td class="comment-11" rowspan="1">Point DE at last byte (graphic index) of "Nothing at All" properties</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at last byte (graphic index) of "nothing at all" properties</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38563"></span>38563</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Add eight times current object index as offset</td>
+<td class="comment-1" rowspan="1">Add eight times current object index as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38564"></span>38564</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load graphic index into A...</td>
+<td class="comment-1" rowspan="1">Load graphic index into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38565"></span>38565</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">...and store</td>
+<td class="comment-1" rowspan="1">...and store</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38566"></span>38566</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move pointer back one byte to point at attribute of object...</td>
+<td class="comment-1" rowspan="1">Move pointer back one byte to point at attribute of object...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38567"></span>38567</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38568"></span>38568</td>
 <td class="instruction">LD (23695),A</td>
-<td class="comment-11" rowspan="1">...and copy into system variable ATTR T</td>
+<td class="comment-1" rowspan="1">...and store value at <a href="23695.html">23695</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38571"></span>38571</td>
 <td class="instruction">LD C,(IX+1)</td>
-<td class="comment-11" rowspan="1">Load C with x-coordinate of current object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with x-coordinate of current object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38574"></span>38574</td>
 <td class="instruction">LD B,(IX+2)</td>
-<td class="comment-11" rowspan="1">Load B with y-coordinate of current object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with y-coordinate of current object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38577"></span>38577</td>
 <td class="instruction">DEC B</td>
-<td class="comment-11" rowspan="1">Decrease y-coordinate by one</td>
+<td class="comment-1" rowspan="1">Decrease y-coordinate by one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38578"></span>38578</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38579"></span>38579</td>
 <td class="instruction">LD (23483),A</td>
-<td class="comment-11" rowspan="1">Reset all Terrain Interaction Parameter flags</td>
+<td class="comment-1" rowspan="1">Reset all terrain interaction parameter flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38582"></span>38582</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore graphic index to A</td>
+<td class="comment-1" rowspan="1">Restore graphic index to <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38583"></span>38583</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">And store again</td>
+<td class="comment-1" rowspan="1">And store again</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38584"></span>38584</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX (pointer to position data for current object)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span> (pointer to position data for current object)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38586"></span>38586</td>
 <td class="instruction">CALL <a href="29955.html">29955</a></td>
-<td class="comment-11" rowspan="1">Draw the object in OR mode</td>
+<td class="comment-1" rowspan="1">Draw the object in <span class="instruction">OR</span> mode</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38589"></span>38589</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38591"></span>38591</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore graphic index to A</td>
+<td class="comment-1" rowspan="1">Restore graphic index to <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38592"></span>38592</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">Load into HL...</td>
+<td class="comment-1" rowspan="1">Load into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38593"></span>38593</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38594"></span>38594</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38596"></span>38596</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...and multiply by four</td>
+<td class="comment-1" rowspan="1">...and multiply by four</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38597"></span>38597</td>
 <td class="instruction">LD DE,42643</td>
-<td class="comment-11" rowspan="1">Point DE at height property of first object in graphics data lookup table...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at height property of first object in graphics data lookup table...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38600"></span>38600</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">...and add four times graphic index (as entries are 4 bytes wide) as offset to get entry for current object</td>
+<td class="comment-1" rowspan="1">...and add four times graphic index (as entries are 4 bytes wide) as offset to get entry for current object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38601"></span>38601</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load height property of current object into A...</td>
+<td class="comment-1" rowspan="1">Load height property of current object into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38602"></span>38602</td>
 <td class="instruction">LD (38616),A</td>
-<td class="comment-11" rowspan="1">...and modify later instruction with this data</td>
+<td class="comment-1" rowspan="1">...and modify later instruction with this data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38605"></span>38605</td>
 <td class="instruction">LD C,(IX+1)</td>
-<td class="comment-11" rowspan="1">Load C with x-coordinate of current object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with x-coordinate of current object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38608"></span>38608</td>
 <td class="instruction">LD B,(IX+2)</td>
-<td class="comment-11" rowspan="1">Load B with y-coordinate of current object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with y-coordinate of current object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38611"></span>38611</td>
 <td class="instruction">DEC B</td>
-<td class="comment-11" rowspan="1">Decrease y-coordinate by one</td>
+<td class="comment-1" rowspan="1">Decrease y-coordinate by one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38612"></span>38612</td>
 <td class="instruction">CALL <a href="36586.html">36586</a></td>
-<td class="comment-11" rowspan="1">Point HL at Terrain Interaction Data for character coordinates x=C, y=B</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at terrain interaction data for character coordinates x=<span class="register">C</span>, y=<span class="register">B</span></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="38615"></span>
 <div class="comments">
 <div class="paragraph">
@@ -335,203 +292,176 @@ The operand of the instruction at <a href="38539.html#38615">38615</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38615"></span>38615</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Load A with "height" property of graphic of current object (x=height property of current object's graphic)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with "height" property of graphic of current object (x=height property of current object's graphic)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38617"></span>38617</td>
 <td class="instruction">AND 192</td>
-<td class="comment-11" rowspan="1">Discard all but the two most significant bits</td>
+<td class="comment-1" rowspan="1">Discard all but the two most significant bits</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38619"></span>38619</td>
 <td class="instruction">OR (HL)</td>
-<td class="comment-11" rowspan="1">Combine with Terrain Interaction Data already present for that block...</td>
+<td class="comment-1" rowspan="1">Combine with terrain interaction data already present for that block...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38620"></span>38620</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38621"></span>38621</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to next byte in Terrain Interaction Data</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next byte in terrain interaction data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38622"></span>38622</td>
 <td class="instruction">LD A,(38616)</td>
-<td class="comment-11" rowspan="1">Load A with height property of graphic of current object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with height property of graphic of current object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38625"></span>38625</td>
 <td class="instruction">RLCA</td>
-<td class="comment-11" rowspan="1">Next two bits correspond to next character block's Terrain Interaction Data...</td>
+<td class="comment-1" rowspan="1">Next two bits correspond to next character block's terrain interaction data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38626"></span>38626</td>
 <td class="instruction">RLCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38627"></span>38627</td>
 <td class="instruction">AND 192</td>
-<td class="comment-11" rowspan="1">Discard all but the two most significant bits</td>
+<td class="comment-1" rowspan="1">Discard all but the two most significant bits</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38629"></span>38629</td>
 <td class="instruction">OR (HL)</td>
-<td class="comment-11" rowspan="1">Combine with Terrain Interaction Data already present for that block...</td>
+<td class="comment-1" rowspan="1">Combine with terrain interaction data already present for that block...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38630"></span>38630</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38631"></span>38631</td>
 <td class="instruction">LD BC,31</td>
-<td class="comment-11" rowspan="1">Advance HL by 31 bytes in Terrain Interaction Data (i.e. down a character row and to the left one character)...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> by 31 bytes in terrain interaction data (i.e. down a character row and to the left one character)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38634"></span>38634</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38635"></span>38635</td>
 <td class="instruction">LD A,(38616)</td>
-<td class="comment-11" rowspan="1">Load A with height property of graphic of current object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with height property of graphic of current object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38638"></span>38638</td>
 <td class="instruction">RLCA</td>
-<td class="comment-11" rowspan="1">Next two bits correspond to next character block's Terrain Interaction Data...</td>
+<td class="comment-1" rowspan="1">Next two bits correspond to next character block's terrain interaction data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38639"></span>38639</td>
 <td class="instruction">RLCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38640"></span>38640</td>
 <td class="instruction">RLCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38641"></span>38641</td>
 <td class="instruction">RLCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38642"></span>38642</td>
 <td class="instruction">AND 192</td>
-<td class="comment-11" rowspan="1">Discard all but the two most significant bits</td>
+<td class="comment-1" rowspan="1">Discard all but the two most significant bits</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38644"></span>38644</td>
 <td class="instruction">OR (HL)</td>
-<td class="comment-11" rowspan="1">Combine with Terrain Interaction Data already present for that block...</td>
+<td class="comment-1" rowspan="1">Combine with terrain interaction data already present for that block...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38645"></span>38645</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38646"></span>38646</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to next byte in Terrain Interaction Data</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next byte in terrain interaction data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38647"></span>38647</td>
 <td class="instruction">LD A,(38616)</td>
-<td class="comment-11" rowspan="1">Load A with height property of graphic of current object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with height property of graphic of current object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38650"></span>38650</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">Next two bits correspond to next character block's Terrain Interaction Data...</td>
+<td class="comment-1" rowspan="1">Next two bits correspond to next character block's terrain interaction data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38651"></span>38651</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38652"></span>38652</td>
 <td class="instruction">AND 192</td>
-<td class="comment-11" rowspan="1">Discard all but the two most significant bits</td>
+<td class="comment-1" rowspan="1">Discard all but the two most significant bits</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38654"></span>38654</td>
 <td class="instruction">OR (HL)</td>
-<td class="comment-11" rowspan="1">Combine with Terrain Interaction Data already present for that block...</td>
+<td class="comment-1" rowspan="1">Combine with terrain interaction data already present for that block...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38655"></span>38655</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38656"></span>38656</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38658"></span>38658</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38659"></span>38659</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38512.html">38512</a></span></td>
+<td class="prev">
+Prev: <a href="38512.html">38512</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38539">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38660.html">38660</a></span></td>
+<td class="next">
+Next: <a href="38660.html">38660</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

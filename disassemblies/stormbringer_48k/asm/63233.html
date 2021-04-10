@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 63233</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="63219.html">63219</a></span></td>
+<td class="prev">
+Prev: <a href="63219.html">63219</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#63233">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="63247.html">63247</a></span></td>
+<td class="next">
+Next: <a href="63247.html">63247</a>
+</td>
 </tr>
 </table>
-<div class="description">63233: Point HL at Terrain Interaction Data for Character Coordinates x=C, y=B</div>
+<div class="description">63233: Point <span class="register">HL</span> at terrain interaction data for character coordinates x=<span class="register">C</span>, y=<span class="register">B</span></div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="38434.html">38434</a>, <a href="38585.html">38585</a>, <a href="38724.html">38724</a>, <a href="39216.html">39216</a>, <a href="39366.html">39366</a>, <a href="41173.html">41173</a> and <a href="48191.html">48191</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,65 +51,63 @@ Used by the routines at <a href="38434.html">38434</a>, <a href="38585.html">385
 <td class="register-desc">x-coordinate (chars)</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">points to entry in Terrain Interaction Data</td>
+<td class="register-desc">points to entry in terrain interaction data</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="63233"></span>63233</td>
 <td class="instruction">LD A,93</td>
-<td class="comment-11" rowspan="1">Set most significant byte in Terrain Interaction Data / Attribute File lookup routine to 93 (Terrain Interaction Table)...</td>
+<td class="comment-1" rowspan="1">Set most significant byte in terrain interaction data / attribute file lookup routine to 93 (terrain interaction table)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63235"></span>63235</td>
 <td class="instruction">LD (63229),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63238"></span>63238</td>
 <td class="instruction">CALL <a href="63219.html">63219</a></td>
-<td class="comment-11" rowspan="1">Point HL at Terrain Interaction Data for Character Coordinates x=C, y=B</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at terrain interaction data for character coordinates x=<span class="register">C</span>, y=<span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63241"></span>63241</td>
 <td class="instruction">LD A,88</td>
-<td class="comment-11" rowspan="1">Set most significant byte in Terrain Interaction Data / Attribute File lookup routine to 88, (Attribute File)...</td>
+<td class="comment-1" rowspan="1">Set most significant byte in terrain interaction data / attribute file lookup routine to 88, (attribute file)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63243"></span>63243</td>
 <td class="instruction">LD (63229),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="63246"></span>63246</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="63219.html">63219</a></span></td>
+<td class="prev">
+Prev: <a href="63219.html">63219</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#63233">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="63247.html">63247</a></span></td>
+<td class="next">
+Next: <a href="63247.html">63247</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

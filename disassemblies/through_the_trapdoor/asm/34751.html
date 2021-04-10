@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 34751</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,346 +20,292 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34695.html">34695</a></span></td>
+<td class="prev">
+Prev: <a href="34695.html">34695</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34751">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34864.html">34864</a></span></td>
+<td class="next">
+Next: <a href="34864.html">34864</a>
+</td>
 </tr>
 </table>
-<div class="description">34751: Reset All Game Data in Preparation for New Game</div>
+<div class="description">34751: Reset all game data in preparation for new game</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="34438.html">34438</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34751"></span>34751</td>
 <td class="instruction">LD IY,34687</td>
-<td class="comment-11" rowspan="1">Point IY at start of Table of Start Addresses of Levels' State Data for Complex Entities</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IY</span> at start of table of start addresses of levels' state data for complex entities</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34755"></span>34755</td>
 <td class="instruction">LD HL,59821</td>
-<td class="comment-11" rowspan="1">Point HL at start of Table of Initial-State Data for Complex Entities</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of table of initial-state data for complex entities</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34758"></span>34758</td>
 <td class="instruction">LD B,4</td>
-<td class="comment-11" rowspan="1">Set B to 4 (as there are 4 levels)</td>
+<td class="comment-1" rowspan="1">Set <span class="register">B</span> to 4 (as there are 4 levels)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34760"></span>34760</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = remaining number of levels to process)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = remaining number of levels to process)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34761"></span>34761</td>
 <td class="instruction">LD E,(IY+0)</td>
-<td class="comment-11" rowspan="1">Load start address of current level's complex state data into DE...</td>
+<td class="comment-1" rowspan="1">Load start address of current level's complex state data into <span class="register">DE</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34764"></span>34764</td>
 <td class="instruction">LD D,(IY+1)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34767"></span>34767</td>
 <td class="instruction">INC IY</td>
-<td class="comment-11" rowspan="1">Advance IY to next entry in list of addresses of complex state data...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IY</span> to next entry in list of addresses of complex state data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34769"></span>34769</td>
 <td class="instruction">INC IY</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34771"></span>34771</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Transfer start address of current level's complex state data into IX...</td>
+<td class="comment-1" rowspan="1">Transfer start address of current level's complex state data into <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34772"></span>34772</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34774"></span>34774</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">If first byte in current complex state data entry is 255 (End Marker)...</td>
+<td class="comment-1" rowspan="1">If first byte in current complex state data entry is 255 (end marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34777"></span>34777</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34779"></span>34779</td>
 <td class="instruction">JR Z,34803</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34751.html#34803">34803</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34751.html#34803">34803</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34781"></span>34781</td>
 <td class="instruction">LD A,(IX+10)</td>
-<td class="comment-11" rowspan="1">If entity's Can Be Reset Flag is reset...</td>
+<td class="comment-1" rowspan="1">If entity's can-be-reset flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34784"></span>34784</td>
 <td class="instruction">AND 128</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34786"></span>34786</td>
 <td class="instruction">JR Z,34796</td>
-<td class="comment-11" rowspan="1">...then advance IX by 13 bytes to next entry and loop back to <a href="34751.html#34774">34774</a></td>
+<td class="comment-1" rowspan="1">...then advance <span class="register">IX</span> by 13 bytes to next entry and loop back to <a href="34751.html#34774">34774</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34788"></span>34788</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Transfer start address of current entry in complex state data into DE...</td>
+<td class="comment-1" rowspan="1">Transfer start address of current entry in complex state data into <span class="register">DE</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34790"></span>34790</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34791"></span>34791</td>
 <td class="instruction">LD BC,13</td>
-<td class="comment-11" rowspan="1">Load BC with 13 (as entries in complex state data are 13 bytes wide)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with 13 (as entries in complex state data are 13 bytes wide)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34794"></span>34794</td>
 <td class="instruction">LDIR</td>
-<td class="comment-11" rowspan="1">Copy current entry in Table of Initial-State Data for Complex Entities at <a href="59821.html">59821</a> into complex state data</td>
+<td class="comment-1" rowspan="1">Copy current entry in table of initial-state data for complex entities at <a href="59821.html">59821</a> into complex state data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34796"></span>34796</td>
 <td class="instruction">LD BC,13</td>
-<td class="comment-11" rowspan="1">Load BC with 13 (as entries in complex state data are 13 bytes wide)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with 13 (as entries in complex state data are 13 bytes wide)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34799"></span>34799</td>
 <td class="instruction">ADD IX,BC</td>
-<td class="comment-11" rowspan="1">Advance IX to next entry in complex state data</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to next entry in complex state data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34801"></span>34801</td>
 <td class="instruction">JR 34774</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="34751.html#34774">34774</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="34751.html#34774">34774</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34803"></span>34803</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = remaining number of levels to process)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = remaining number of levels to process)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34804"></span>34804</td>
 <td class="instruction">DJNZ 34760</td>
-<td class="comment-11" rowspan="1">Decrease B and loop back to <a href="34751.html#34760">34760</a> to process next level</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> and loop back to <a href="34751.html#34760">34760</a> to process next level</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34806"></span>34806</td>
 <td class="instruction">LD HL,34298</td>
-<td class="comment-11" rowspan="1">Point HL at Joystick Mode Flag</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at joystick-mode flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34809"></span>34809</td>
 <td class="instruction">LD DE,34207</td>
-<td class="comment-11" rowspan="1">Point DE at store for current level number</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at store for current level number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34812"></span>34812</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set A to zero and reset Carry Flag</td>
+<td class="comment-1" rowspan="1">Set <span class="register">A</span> to zero and reset carry flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34813"></span>34813</td>
 <td class="instruction">SBC HL,DE</td>
-<td class="comment-11" rowspan="1">Subtract DE from HL to leave HL = 91</td>
+<td class="comment-1" rowspan="1">Subtract <span class="register">DE</span> from <span class="register">HL</span> to leave <span class="register">HL</span> = 91</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34815"></span>34815</td>
 <td class="instruction">LD B,L</td>
-<td class="comment-11" rowspan="1">Load B with 91</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 91</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34816"></span>34816</td>
 <td class="instruction">LD HL,34207</td>
-<td class="comment-11" rowspan="1">Point HL at store for current level number...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at store for current level number...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34819"></span>34819</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...and set 91 bytes from here onwards to zero...</td>
+<td class="comment-1" rowspan="1">...and set 91 bytes from here onwards to zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34820"></span>34820</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34821"></span>34821</td>
 <td class="instruction">DJNZ 34819</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34823"></span>34823</td>
 <td class="instruction">LD A,16</td>
-<td class="comment-11" rowspan="1">Set time / lives to 16...</td>
+<td class="comment-1" rowspan="1">Set time / lives to 16...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34825"></span>34825</td>
 <td class="instruction">LD (34210),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34828"></span>34828</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Set current level to Level 1...</td>
+<td class="comment-1" rowspan="1">Set current level to level 1...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34830"></span>34830</td>
 <td class="instruction">LD (34207),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34833"></span>34833</td>
 <td class="instruction">CALL <a href="36778.html">36778</a></td>
-<td class="comment-11" rowspan="1">Initialise script data positions for Flying Skeleton Creature and Bat (Level 1)</td>
+<td class="comment-1" rowspan="1">Initialise script data positions for flying skeleton creature and bat (level 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34836"></span>34836</td>
 <td class="instruction">CALL <a href="38468.html">38468</a></td>
-<td class="comment-11" rowspan="1">Reset current positions in apebeasts' script data to initial values</td>
+<td class="comment-1" rowspan="1">Reset current positions in ape-beasts' script data to initial values</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34839"></span>34839</td>
 <td class="instruction">CALL <a href="41354.html">41354</a></td>
-<td class="comment-11" rowspan="1">Reset Skeleton to initial state</td>
+<td class="comment-1" rowspan="1">Reset skeleton to initial state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34842"></span>34842</td>
 <td class="instruction">CALL <a href="51732.html">51732</a></td>
-<td class="comment-11" rowspan="1">Reset Drutt to initial state</td>
+<td class="comment-1" rowspan="1">Reset Drutt to initial state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34845"></span>34845</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Set room of "Closed Trap Door" and impassable marker to 1 (i.e. starting room)...</td>
+<td class="comment-1" rowspan="1">Set room of "closed Trap Door" and impassable marker to 1 (i.e. starting room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34847"></span>34847</td>
 <td class="instruction">LD (43188),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34850"></span>34850</td>
 <td class="instruction">LD (43450),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34853"></span>34853</td>
 <td class="instruction">LD (34226),A</td>
-<td class="comment-11" rowspan="1">Set attribute of current character to 1 (blue, Berk)</td>
+<td class="comment-1" rowspan="1">Set attribute of current character to 1 (blue, Berk)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34856"></span>34856</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">Set room of "Open Trap Door" and "Home Sweet Home" brickwork to 0...</td>
+<td class="comment-1" rowspan="1">Set room of "open Trap Door" and "Home Sweet Home" brickwork to 0...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34857"></span>34857</td>
 <td class="instruction">LD (43437),A</td>
-<td class="comment-11" rowspan="1">...i.e. remove from game...</td>
+<td class="comment-1" rowspan="1">...i.e. remove from game...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34860"></span>34860</td>
 <td class="instruction">LD (43159),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34863"></span>34863</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34695.html">34695</a></span></td>
+<td class="prev">
+Prev: <a href="34695.html">34695</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34751">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34864.html">34864</a></span></td>
+<td class="next">
+Next: <a href="34864.html">34864</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

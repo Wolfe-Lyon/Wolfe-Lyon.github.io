@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 43043</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,154 +20,128 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="43000.html">43000</a></span></td>
+<td class="prev">
+Prev: <a href="43000.html">43000</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#43043">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="43105.html">43105</a></span></td>
+<td class="next">
+Next: <a href="43105.html">43105</a>
+</td>
 </tr>
 </table>
-<div class="description">43043: Process Command to Command a Character</div>
+<div class="description">43043: Process command to command a character</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="64623.html">64623</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="43043"></span>43043</td>
 <td class="instruction">LD HL,51408</td>
-<td class="comment-11" rowspan="1">Point HL at "[Current Command] ?" text (end of sub-menu title, after "WHO DO YOU WANT TO ")</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "[Current Command] ?" text (end of sub-menu title, after "WHO DO YOU WANT TO ")</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43046"></span>43046</td>
 <td class="instruction">LD DE,52523</td>
-<td class="comment-11" rowspan="1">Point DE (Command Summary Text Pointer) at "COMMAND " text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> (command summary text pointer) at "COMMAND " text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43049"></span>43049</td>
 <td class="instruction">CALL <a href="45963.html">45963</a></td>
-<td class="comment-11" rowspan="1">Display and process input for Character Selection Menu (current room's characters only), setting Current Character</td>
+<td class="comment-1" rowspan="1">Display and process input for character selection menu (current room's characters only), setting Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43052"></span>43052</td>
 <td class="instruction">JP Z,<a href="41578.html#41742">41742</a></td>
-<td class="comment-11" rowspan="1">If there are no characters in the room then set MK's available action flags and jump to start of Main Game Loop (<a href="41578.html#41742">41742</a>)</td>
+<td class="comment-1" rowspan="1">If there are no characters in the room then return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43055"></span>43055</td>
 <td class="instruction">LD DE,52105</td>
-<td class="comment-11" rowspan="1">Point DE at " TO " text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at " TO " text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43058"></span>43058</td>
 <td class="instruction">CALL <a href="63349.html">63349</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at top of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at top of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43061"></span>43061</td>
 <td class="instruction">LD A,23</td>
-<td class="comment-11" rowspan="1">Draw  "WHICH COMMAND DO YOU WANT TO USE?" Menu Window...</td>
+<td class="comment-1" rowspan="1">Draw "WHICH COMMAND DO YOU WANT TO USE?" menu window...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43063"></span>43063</td>
 <td class="instruction">CALL <a href="47185.html">47185</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43066"></span>43066</td>
 <td class="instruction">LD HL,52526</td>
-<td class="comment-11" rowspan="1">Print "WHICH COMMAND DO YOU WANT TO USE" Menu text...</td>
+<td class="comment-1" rowspan="1">Print "WHICH COMMAND DO YOU WANT TO USE" menu text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43069"></span>43069</td>
 <td class="instruction">CALL <a href="46902.html">46902</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43072"></span>43072</td>
 <td class="instruction">CALL <a href="47502.html">47502</a></td>
-<td class="comment-11" rowspan="1">Process keyboard / joystick input on a menu and load A with selected item index</td>
+<td class="comment-1" rowspan="1">Process keyboard / joystick input on a menu and load <span class="register">A</span> with selected item index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43075"></span>43075</td>
 <td class="instruction">LD (43098),A</td>
-<td class="comment-11" rowspan="1">Load index of selected command into operand of instruction at <a href="43043.html#43097">43097</a>...</td>
+<td class="comment-1" rowspan="1">Load index of selected command into operand of instruction at <a href="43043.html#43097">43097</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43078"></span>43078</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...and into B</td>
+<td class="comment-1" rowspan="1">...and into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43079"></span>43079</td>
 <td class="instruction">CALL <a href="63327.html">63327</a></td>
-<td class="comment-11" rowspan="1">Point HL at start of B-th entry in list of "COMMAND A CHARACTER" commands at <a href="52523.html#52590">52590</a></td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of <span class="register">B</span>-th entry in list of "COMMAND A CHARACTER" commands at <a href="52523.html#52590">52590</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43082"></span>43082</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Swap HL and DE (Command Summary Text Pointer, now at selected command string)</td>
+<td class="comment-1" rowspan="1">Swap <span class="register">HL</span> and <span class="register">DE</span> (command summary text pointer, now at selected command string)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43083"></span>43083</td>
 <td class="instruction">CALL <a href="63349.html">63349</a></td>
-<td class="comment-11" rowspan="1">Print text at DE in Command Summary Window at top of screen</td>
+<td class="comment-1" rowspan="1">Print text at <span class="register">DE</span> in command summary window at top of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43086"></span>43086</td>
 <td class="instruction">CALL <a href="64207.html">64207</a></td>
-<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return here if Execute chosen, else exit to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display execute / reject command window and return here if execute chosen, else exit to main game loop</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43089"></span>43089</td>
 <td class="instruction">CALL <a href="45723.html">45723</a></td>
-<td class="comment-11" rowspan="1">End the game if Current Character is Off-White or Grunter</td>
+<td class="comment-1" rowspan="1">End the game if Current Character is Off-White or Grunter</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43092"></span>43092</td>
 <td class="instruction">LD A,2</td>
-<td class="comment-11" rowspan="1">Increase Current Character's happiness by 2 (<a href="../reference/facts.html#commandincreaseshappiness">see trivia</a>)...</td>
+<td class="comment-1" rowspan="1">Increase Current Character's happiness by 2 (<a href="../reference/facts.html#commandincreaseshappiness">see trivia</a>)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43094"></span>43094</td>
 <td class="instruction">CALL <a href="45434.html">45434</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="43097"></span>
 <div class="comments">
 <div class="paragraph">
@@ -176,35 +151,36 @@ The operand of the instruction at <a href="43043.html#43097">43097</a> is the in
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43097"></span>43097</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Load A with index of selected "COMMAND A CHARACTER TO" command</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of selected "COMMAND A CHARACTER TO" command</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43099"></span>43099</td>
 <td class="instruction">LD HL,43105</td>
-<td class="comment-11" rowspan="1">Point HL at start of Table of "Command a Character" Routine Addresses</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of table of "command a character" routine addresses</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="43102"></span>43102</td>
 <td class="instruction">JP <a href="64623.html">64623</a></td>
-<td class="comment-11" rowspan="1">Advance HL by A words, load HL with word at location HL as address and jump to it</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> by <span class="register">A</span> words, load <span class="register">HL</span> with word at location <span class="register">HL</span> as address and jump to it</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="43000.html">43000</a></span></td>
+<td class="prev">
+Prev: <a href="43000.html">43000</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#43043">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="43105.html">43105</a></span></td>
+<td class="next">
+Next: <a href="43105.html">43105</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

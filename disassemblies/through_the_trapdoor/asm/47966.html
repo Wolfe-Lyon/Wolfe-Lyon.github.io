@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Data at 47966</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-w">
 <table class="header">
@@ -22,434 +20,704 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47955.html">47955</a></span></td>
+<td class="prev">
+Prev: <a href="47955.html">47955</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47966">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48096.html">48096</a></span></td>
+<td class="next">
+Next: <a href="48096.html">48096</a>
+</td>
 </tr>
 </table>
-<div class="description">47966: Table of Script Routine Start Addresses</div>
+<div class="description">47966: Table of addresses of script handling routines</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Script data is stored in the form of encoded instructions, usually of length two bytes. If the second byte is zero then we are dealing with a script instruction. In this case, the script corresponding to the value of the first byte (an opcode) is executed via a call/jump to one of the routines at addresses stored in this table. In the event that the second byte is not zero, then the two bytes are read as a graphic layout data address, and this address is written to the graphic layout data address field of the entity whose data address is held in <span class="register">IX</span>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
+<div class="paragraph">
+Some of the script routines take parameters.
+</div>
+<div class="paragraph">
+<table class="default">
+<tr>
+<th colspan="1" rowspan="1">Opcode</th>
+<th colspan="1" rowspan="1">No. of parameters</th>
+<th colspan="1" rowspan="1">Meaning</th>
 </tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">N/A</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
 </tr>
-
+<tr>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Load <span class="register">HL</span> (script data pointer) with new address</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move entity at <span class="register">IX</span> (and any carried entities) left one character</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move entity at <span class="register">IX</span> (and any carried entities) right one character</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">If current character and target entity are in the same room then set pending sound</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">N/A</td>
+<td class="" colspan="1" rowspan="1">Unused</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Set Berk's facing-into-screen flag, and reset his facing-left and facing-right flags</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Reset Berk's facing-into-screen, facing-left and facing-right flags</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">8</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Set must-process-current-script-data flag for entity at <span class="register">IX</span></td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">9</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Reset must-process-current-script-data flag for entity at <span class="register">IX</span></td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">10</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Reset entity's walking-left and walking-right flags</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">11</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Set walking-left flag and reset walking-right flag</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">12</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Set walking-right flag and reset walking-left flag</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">13</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Set Berk's facing-left flag, and reset his facing-into-screen and facing-right flags</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">14</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Set Berk's facing-right flag, and reset his facing-into-screen and facing-left flags</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">15</td>
+<td class="" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Jump to new address if Berk is carrying something</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">16</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Have Berk hold an entity, and position it appropriately between his hands</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">17</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Have Berk put down an entity in front of him, if appropriate</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">18</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Have Berk put down an entity behind him, if appropriate</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">19</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move carried entity to Berk's left as he faces left</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">20</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move carried entity to Berk's right as he faces right</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">21</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move carried entity in front of Berk as he faces out of screen</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">22</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move carried entity behind Berk as he faces into screen</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">23</td>
+<td class="" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Start loop (1 / 3)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">24</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">End loop (1 / 3)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">25</td>
+<td class="" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Start loop (2 / 3)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">26</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">End loop (2 / 3)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">27</td>
+<td class="" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Start loop (3 / 3)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">28</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">End loop (3 / 3)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">29</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Make Berk start falling, and drop his carried entity if appropriate</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">30</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Check Berk's fall velocity, and react to landing</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">31</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">React to Berk's landing (unused)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">32</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Update Berk's position and state (flying) depending upon control input</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">33</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Advance Berk's jump and select next phase if current phase complete</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">34</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move entity at <span class="register">IX</span> (and any carried entities) up one character</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">35</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move entity at <span class="register">IX</span> (and any carried entities) down one character</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">36</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Set Boni's room (level 1) to zero</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">37</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Remove flying skeleton creature from level 1, and terminate script processing</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">38</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Close the Trap Door</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">39</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Open the Trap Door</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">40</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move spider down one character, and if at bottom, advance it to bounce / climb up mode</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">41</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move spider up one character and, if home, reset its timer and make it wait</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">42</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Decrease remaining time until spider next descends and if zero, start descent</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">43</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Select next action for Drutt depending upon control input</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">44</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move entity up one character</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">45</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move entity down one character</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">46</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move Drutt, or entity he is pushing left one character and start pushed entity falling if appropriate</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">47</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move Drutt, or entity he is pushing right one character and start pushed entity falling if appropriate</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">48</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Return (unused)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">49</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Return (unused)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">50</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Advance Drutt's jump and select next phase if current phase complete</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">51</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Swap Drutt's current depth level if possible</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">52</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Increase worm's age and decrease time until direction change, or react to Drutt's presence</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">53</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move worm left if possible, otherwise choose new direction</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">54</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move worm right if possible, otherwise choose new direction</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">55</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Choose new direction and start crawling (worm)</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">56</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Give Berk power corresponding to entity eaten</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">57</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Cycle attributes (full-screen), clear display buffers and paint red areas outside current room</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">58</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Have Berk interact appropriately with a door in front of him</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">59</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Have Berk interact appropriately with a door behind him</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">60</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Check position of ape-beast and turn if appropriate</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">61</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Fire Bubo's projectile</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">62</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Move entity at <span class="register">IX</span> into room to the left, if appropriate</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">63</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Have skeleton advance or retreat based upon positions of Berk and yellow skull</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">64</td>
+<td class="" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Set random (1 to 10) number of iterations in following loop script instruction</td>
+</tr>
 </table>
+</div>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47966"></span>47966</td>
 <td class="instruction">DEFW 0</td>
-<td class="comment-11" rowspan="1">(00) - Unused</td>
+<td class="comment-1" rowspan="1">(00)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47968"></span>47968</td>
 <td class="instruction">DEFW <a href="48285.html">48285</a></td>
-<td class="comment-11" rowspan="1">(01) - Load HL (Script Data Pointer) with New Address</td>
+<td class="comment-1" rowspan="1">(01)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47970"></span>47970</td>
 <td class="instruction">DEFW <a href="48641.html#48660">48660</a></td>
-<td class="comment-11" rowspan="1">(02) - Move Entity at IX (and if Berk, Carried Entity) Left One Character</td>
+<td class="comment-1" rowspan="1">(02)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47972"></span>47972</td>
 <td class="instruction">DEFW <a href="48593.html#48615">48615</a></td>
-<td class="comment-11" rowspan="1">(03) - Move Entity at IX (and if Berk, Carried Entity) Right One Character</td>
+<td class="comment-1" rowspan="1">(03)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47974"></span>47974</td>
 <td class="instruction">DEFW <a href="48133.html">48133</a></td>
-<td class="comment-11" rowspan="1">(04) - If Current Character and Target Entity are in the Same Room then Set Pending Sound</td>
+<td class="comment-1" rowspan="1">(04)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47976"></span>47976</td>
 <td class="instruction">DEFW 0</td>
-<td class="comment-11" rowspan="1">(05) - Unused</td>
+<td class="comment-1" rowspan="1">(05)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47978"></span>47978</td>
 <td class="instruction">DEFW <a href="48238.html">48238</a></td>
-<td class="comment-11" rowspan="1">(06) - Set Berk's Facing Into Screen Flag, and Reset his Facing Left and Facing Right flags</td>
+<td class="comment-1" rowspan="1">(06)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47980"></span>47980</td>
 <td class="instruction">DEFW <a href="48234.html">48234</a></td>
-<td class="comment-11" rowspan="1">(07) - Reset Berk's Facing Into Screen, Facing Left and Facing Right Flags</td>
+<td class="comment-1" rowspan="1">(07)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47982"></span>47982</td>
 <td class="instruction">DEFW <a href="48267.html">48267</a></td>
-<td class="comment-11" rowspan="1">(08) - Set Must Process Current Script Data Flag for Entity at IX</td>
+<td class="comment-1" rowspan="1">(08)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47984"></span>47984</td>
 <td class="instruction">DEFW <a href="48260.html">48260</a></td>
-<td class="comment-11" rowspan="1">(09) - Reset Must Process Current Script Data Flag for Entity at IX</td>
+<td class="comment-1" rowspan="1">(09)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47986"></span>47986</td>
 <td class="instruction">DEFW <a href="48212.html">48212</a></td>
-<td class="comment-11" rowspan="1">(10) - Reset Entity's Walking Left and Walking Right flags</td>
+<td class="comment-1" rowspan="1">(10)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47988"></span>47988</td>
 <td class="instruction">DEFW <a href="48220.html">48220</a></td>
-<td class="comment-11" rowspan="1">(11) - Set Entity Walking Left Flag</td>
+<td class="comment-1" rowspan="1">(11)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47990"></span>47990</td>
 <td class="instruction">DEFW <a href="48216.html">48216</a></td>
-<td class="comment-11" rowspan="1">(12) - Set Entity Walking Right Flag</td>
+<td class="comment-1" rowspan="1">(12)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47992"></span>47992</td>
 <td class="instruction">DEFW <a href="48242.html">48242</a></td>
-<td class="comment-11" rowspan="1">(13) - Set Berk's Facing Left Flag, and Reset his Facing Into Screen and Facing Right Flags</td>
+<td class="comment-1" rowspan="1">(13)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47994"></span>47994</td>
 <td class="instruction">DEFW <a href="48246.html">48246</a></td>
-<td class="comment-11" rowspan="1">(14) - Set Berk's Facing Right Flag, and Reset his Facing Into Screen and Facing Left Flags</td>
+<td class="comment-1" rowspan="1">(14)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47996"></span>47996</td>
 <td class="instruction">DEFW <a href="48274.html">48274</a></td>
-<td class="comment-11" rowspan="1">(15) - Jump to New Address if Berk Is Carrying Something</td>
+<td class="comment-1" rowspan="1">(15)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="47998"></span>47998</td>
 <td class="instruction">DEFW <a href="48148.html">48148</a></td>
-<td class="comment-11" rowspan="1">(16) - Have Berk Hold an Entity, and Position it Appropriately Between his Hands</td>
+<td class="comment-1" rowspan="1">(16)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48000"></span>48000</td>
 <td class="instruction">DEFW <a href="48154.html">48154</a></td>
-<td class="comment-11" rowspan="1">(17) - Have Berk Put Down an Entity in Front of Him, if Appropriate</td>
+<td class="comment-1" rowspan="1">(17)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48002"></span>48002</td>
 <td class="instruction">DEFW <a href="48158.html">48158</a></td>
-<td class="comment-11" rowspan="1">(18) - Have Berk Put Down an Entity Behind Him, if Appropriate</td>
+<td class="comment-1" rowspan="1">(18)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48004"></span>48004</td>
 <td class="instruction">DEFW <a href="48698.html">48698</a></td>
-<td class="comment-11" rowspan="1">(19) - Move Carried Entity to Berk's Left as he Faces Left</td>
+<td class="comment-1" rowspan="1">(19)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48006"></span>48006</td>
 <td class="instruction">DEFW <a href="48704.html">48704</a></td>
-<td class="comment-11" rowspan="1">(20) - Move Carried Entity to Berk's Right as he Faces Right</td>
+<td class="comment-1" rowspan="1">(20)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48008"></span>48008</td>
 <td class="instruction">DEFW <a href="48692.html">48692</a></td>
-<td class="comment-11" rowspan="1">(21) - Move Carried Entity in Front of Berk as he Faces Out of Screen</td>
+<td class="comment-1" rowspan="1">(21)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48010"></span>48010</td>
 <td class="instruction">DEFW <a href="48686.html">48686</a></td>
-<td class="comment-11" rowspan="1">(22) - Move Carried Entity Behind Berk as he Faces Into Screen</td>
+<td class="comment-1" rowspan="1">(22)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48012"></span>48012</td>
 <td class="instruction">DEFW <a href="48295.html">48295</a></td>
-<td class="comment-11" rowspan="1">(23) - Start Loop (1 / 3)</td>
+<td class="comment-1" rowspan="1">(23)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48014"></span>48014</td>
 <td class="instruction">DEFW <a href="48307.html">48307</a></td>
-<td class="comment-11" rowspan="1">(24) - End Loop (1 / 3)</td>
+<td class="comment-1" rowspan="1">(24)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48016"></span>48016</td>
 <td class="instruction">DEFW <a href="48324.html">48324</a></td>
-<td class="comment-11" rowspan="1">(25) - Start Loop (2 / 3)</td>
+<td class="comment-1" rowspan="1">(25)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48018"></span>48018</td>
 <td class="instruction">DEFW <a href="48336.html">48336</a></td>
-<td class="comment-11" rowspan="1">(26) - End Loop (2 / 3)</td>
+<td class="comment-1" rowspan="1">(26)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48020"></span>48020</td>
 <td class="instruction">DEFW <a href="48353.html">48353</a></td>
-<td class="comment-11" rowspan="1">(27) - Start Loop (3 / 3)</td>
+<td class="comment-1" rowspan="1">(27)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48022"></span>48022</td>
 <td class="instruction">DEFW <a href="48365.html">48365</a></td>
-<td class="comment-11" rowspan="1">(28) - End Loop (3 / 3)</td>
+<td class="comment-1" rowspan="1">(28)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48024"></span>48024</td>
 <td class="instruction">DEFW <a href="48920.html">48920</a></td>
-<td class="comment-11" rowspan="1">(29) - Make Berk Start Falling, and Drop his Carried Entity if Appropriate</td>
+<td class="comment-1" rowspan="1">(29)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48026"></span>48026</td>
 <td class="instruction">DEFW <a href="48934.html">48934</a></td>
-<td class="comment-11" rowspan="1">(30) - Check Berk's Fall Velocity, and React to Landing</td>
+<td class="comment-1" rowspan="1">(30)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48028"></span>48028</td>
 <td class="instruction">DEFW <a href="48976.html">48976</a></td>
-<td class="comment-11" rowspan="1">(31) - React to Berk's Landing</td>
+<td class="comment-1" rowspan="1">(31)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48030"></span>48030</td>
 <td class="instruction">DEFW <a href="48487.html">48487</a></td>
-<td class="comment-11" rowspan="1">(32) - Update Berk's Position and State (Flying) Depending Upon Control Input</td>
+<td class="comment-1" rowspan="1">(32)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48032"></span>48032</td>
 <td class="instruction">DEFW <a href="49010.html">49010</a></td>
-<td class="comment-11" rowspan="1">(33) - Advance Berk's Jump and Select Next Phase if Current Phase Complete</td>
+<td class="comment-1" rowspan="1">(33)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48034"></span>48034</td>
 <td class="instruction">DEFW <a href="48487.html#48541">48541</a></td>
-<td class="comment-11" rowspan="1">(34) - Move Entity at IX (and if Berk, Carried Entity) Up One Character</td>
+<td class="comment-1" rowspan="1">(34)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48036"></span>48036</td>
 <td class="instruction">DEFW <a href="48567.html">48567</a></td>
-<td class="comment-11" rowspan="1">(35) - Move Entity at IX (and if Berk, Carried Entity) Down One Character</td>
+<td class="comment-1" rowspan="1">(35)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48038"></span>48038</td>
 <td class="instruction">DEFW <a href="36950.html">36950</a></td>
-<td class="comment-11" rowspan="1">(36) - Set Boni's Room (Level 1) to Zero</td>
+<td class="comment-1" rowspan="1">(36)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48040"></span>48040</td>
 <td class="instruction">DEFW <a href="36957.html">36957</a></td>
-<td class="comment-11" rowspan="1">(37) - Remove Flying Skeleton Creature from Level 1, and Terminate Script Processing</td>
+<td class="comment-1" rowspan="1">(37)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48042"></span>48042</td>
 <td class="instruction">DEFW <a href="36984.html">36984</a></td>
-<td class="comment-11" rowspan="1">(38) - Close the Trap Door</td>
+<td class="comment-1" rowspan="1">(38)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48044"></span>48044</td>
 <td class="instruction">DEFW <a href="36990.html">36990</a></td>
-<td class="comment-11" rowspan="1">(39) - Open the Trap Door</td>
+<td class="comment-1" rowspan="1">(39)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48046"></span>48046</td>
 <td class="instruction">DEFW <a href="37778.html">37778</a></td>
-<td class="comment-11" rowspan="1">(40) - Move Spider Down One Character, and if at Bottom, Advance it to Bounce / Climb Up Mode</td>
+<td class="comment-1" rowspan="1">(40)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48048"></span>48048</td>
 <td class="instruction">DEFW <a href="37718.html">37718</a></td>
-<td class="comment-11" rowspan="1">(41) - Move Spider Up One Character and, if Home, Reset its Timer and Make it Wait</td>
+<td class="comment-1" rowspan="1">(41)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48050"></span>48050</td>
 <td class="instruction">DEFW <a href="37753.html">37753</a></td>
-<td class="comment-11" rowspan="1">(42) - Decrease Remaining Time Until Spider Next Descends and if Zero, Start Descent</td>
+<td class="comment-1" rowspan="1">(42)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48052"></span>48052</td>
 <td class="instruction">DEFW <a href="51779.html">51779</a></td>
-<td class="comment-11" rowspan="1">(43) - Select Next Action for Drutt Depending Upon Control Input</td>
+<td class="comment-1" rowspan="1">(43)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48054"></span>48054</td>
 <td class="instruction">DEFW <a href="52029.html">52029</a></td>
-<td class="comment-11" rowspan="1">(44) - Move Entity Up One Character</td>
+<td class="comment-1" rowspan="1">(44)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48056"></span>48056</td>
 <td class="instruction">DEFW <a href="52038.html">52038</a></td>
-<td class="comment-11" rowspan="1">(45) - Move Entity Down One Character</td>
+<td class="comment-1" rowspan="1">(45)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48058"></span>48058</td>
 <td class="instruction">DEFW <a href="52047.html">52047</a></td>
-<td class="comment-11" rowspan="1">(46) - Move Drutt, or Entity he is Pushing Left One Character and Start Pushed Entity Falling if Appropriate</td>
+<td class="comment-1" rowspan="1">(46)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48060"></span>48060</td>
 <td class="instruction">DEFW <a href="52142.html">52142</a></td>
-<td class="comment-11" rowspan="1">(47) - Move Drutt, or Entity he is Pushing Right One Character and Start Pushed Entity Falling if Appropriate</td>
+<td class="comment-1" rowspan="1">(47)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48062"></span>48062</td>
 <td class="instruction">DEFW <a href="34901.html">34901</a></td>
-<td class="comment-11" rowspan="1">(48) - Return</td>
+<td class="comment-1" rowspan="1">(48)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48064"></span>48064</td>
 <td class="instruction">DEFW <a href="34901.html">34901</a></td>
-<td class="comment-11" rowspan="1">(49) - Return</td>
+<td class="comment-1" rowspan="1">(49)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48066"></span>48066</td>
 <td class="instruction">DEFW <a href="52243.html">52243</a></td>
-<td class="comment-11" rowspan="1">(50) - Advance Drutt's Jump and Select Next Phase if Current Phase Complete</td>
+<td class="comment-1" rowspan="1">(50)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48068"></span>48068</td>
 <td class="instruction">DEFW <a href="52309.html">52309</a></td>
-<td class="comment-11" rowspan="1">(51) - Swap Drutt's Current Depth Level if Possible</td>
+<td class="comment-1" rowspan="1">(51)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48070"></span>48070</td>
 <td class="instruction">DEFW <a href="52967.html">52967</a></td>
-<td class="comment-11" rowspan="1">(52) - Increase Worm's Age and Decrease Time Until Direction Change, or React to Drutt's Presence</td>
+<td class="comment-1" rowspan="1">(52)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48072"></span>48072</td>
 <td class="instruction">DEFW <a href="52870.html">52870</a></td>
-<td class="comment-11" rowspan="1">(53) - Move Worm Left if Possible, Otherwise Choose New Direction</td>
+<td class="comment-1" rowspan="1">(53)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48074"></span>48074</td>
 <td class="instruction">DEFW <a href="52889.html">52889</a></td>
-<td class="comment-11" rowspan="1">(54) - Move Worm Right if Possible, Otherwise Choose New Direction</td>
+<td class="comment-1" rowspan="1">(54)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48076"></span>48076</td>
 <td class="instruction">DEFW <a href="52914.html">52914</a></td>
-<td class="comment-11" rowspan="1">(55) - Choose New Direction and Start Crawling (Worm)</td>
+<td class="comment-1" rowspan="1">(55)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48078"></span>48078</td>
 <td class="instruction">DEFW <a href="36471.html">36471</a></td>
-<td class="comment-11" rowspan="1">(56) - Give Berk Power Corresponding to Entity Eaten</td>
+<td class="comment-1" rowspan="1">(56)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48080"></span>48080</td>
 <td class="instruction">DEFW <a href="36610.html">36610</a></td>
-<td class="comment-11" rowspan="1">(57) - Cycle Attributes (Full-Screen), Clear Display Buffers and Paint Red Areas Outside Current Room</td>
+<td class="comment-1" rowspan="1">(57)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48082"></span>48082</td>
 <td class="instruction">DEFW <a href="36390.html">36390</a></td>
-<td class="comment-11" rowspan="1">(58) - Have Berk Interact Appropriately with a Door in Front of Him</td>
+<td class="comment-1" rowspan="1">(58)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48084"></span>48084</td>
 <td class="instruction">DEFW <a href="36385.html">36385</a></td>
-<td class="comment-11" rowspan="1">(59) - Have Berk Interact Appropriately with a Door Behind Him</td>
+<td class="comment-1" rowspan="1">(59)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48086"></span>48086</td>
 <td class="instruction">DEFW <a href="38554.html">38554</a></td>
-<td class="comment-11" rowspan="1">(60) - Check Position of Apebeast and Turn If Appropriate</td>
+<td class="comment-1" rowspan="1">(60)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48088"></span>48088</td>
 <td class="instruction">DEFW <a href="38165.html">38165</a></td>
-<td class="comment-11" rowspan="1">(61) - Fire Bubo's Projectile</td>
+<td class="comment-1" rowspan="1">(61)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48090"></span>48090</td>
 <td class="instruction">DEFW <a href="48142.html">48142</a></td>
-<td class="comment-11" rowspan="1">(62) - Move Entity at IX into Room to the Left, if Appropriate</td>
+<td class="comment-1" rowspan="1">(62)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48092"></span>48092</td>
 <td class="instruction">DEFW <a href="41550.html">41550</a></td>
-<td class="comment-11" rowspan="1">(63) - Have Skeleton Advance or Retreat Based Upon Positions of Berk and Fake Boni</td>
+<td class="comment-1" rowspan="1">(63)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48094"></span>48094</td>
 <td class="instruction">DEFW <a href="41617.html">41617</a></td>
-<td class="comment-11" rowspan="1">(64) - Set Random (1 to 10) Number of Iterations in Following Loop Script Instruction</td>
+<td class="comment-1" rowspan="1">(64)</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="47955.html">47955</a></span></td>
+<td class="prev">
+Prev: <a href="47955.html">47955</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#47966">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48096.html">48096</a></span></td>
+<td class="next">
+Next: <a href="48096.html">48096</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

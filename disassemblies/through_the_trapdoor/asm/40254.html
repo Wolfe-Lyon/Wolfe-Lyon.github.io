@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Data at 40254</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-b">
 <table class="header">
@@ -22,34 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40192.html">40192</a></span></td>
+<td class="prev">
+Prev: <a href="40192.html">40192</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40254">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40320.html">40320</a></span></td>
+<td class="next">
+Next: <a href="40320.html">40320</a>
+</td>
 </tr>
 </table>
-<div class="description">40254: Graphic Layout Data: Coloured Creatures (Level 3)</div>
+<div class="description">40254: Graphic layout data: Coloured creatures (level 3)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="40254"></span>
 <div class="comments">
 <div class="paragraph">
@@ -62,31 +51,31 @@ Red
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40254"></span>40254</td>
 <td class="instruction">DEFB 244,10</td>
-<td class="comment-11" rowspan="1">Set current graphic set to 10</td>
+<td class="comment-1" rowspan="1">Set current graphic set to 10</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40256"></span>40256</td>
-<td class="instruction">DEFB 246,4,5,3,66,66,1</td>
-<td class="comment-11" rowspan="1">Decrease timer value (initially 4) and if now zero then reset to 5 and load one of the 3 following values at random into the Attribute field of the following instruction</td>
+<td class="instruction">DEFB 246,4,5,3</td>
+<td class="comment-1" rowspan="2">Decrease timer value (initially 4) and if now zero then reset to 5 and load one of the 3 following values at random into the attribute field of the next instruction</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="40260"></span>40260</td>
+<td class="instruction">DEFB 66,66,1</td>
+</tr>
+<tr>
 <td class="address-1"><span id="40263"></span>40263</td>
 <td class="instruction">DEFB 51,66,31</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40266"></span>40266</td>
 <td class="instruction">DEFB 248,104,157</td>
-<td class="comment-11" rowspan="1">Jump to <a href="40254.html#40296">40296</a> (draw creature)</td>
+<td class="comment-1" rowspan="1">Jump to <a href="40254.html#40296">40296</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="40269"></span>
 <div class="comments">
 <div class="paragraph">
@@ -99,31 +88,31 @@ Yellow
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40269"></span>40269</td>
 <td class="instruction">DEFB 244,10</td>
-<td class="comment-11" rowspan="1">Set current graphic set to 10</td>
+<td class="comment-1" rowspan="1">Set current graphic set to 10</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40271"></span>40271</td>
-<td class="instruction">DEFB 246,4,5,3,70,70,1</td>
-<td class="comment-11" rowspan="1">Decrease timer value (initially 4) and if now zero then reset to 5 and load one of the 3 following values at random into the Attribute field of the following instruction</td>
+<td class="instruction">DEFB 246,4,5,3</td>
+<td class="comment-1" rowspan="2">Decrease timer value (initially 4) and if now zero then reset to 5 and load one of the 3 following values at random into the attribute field of the next instruction</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="40275"></span>40275</td>
+<td class="instruction">DEFB 70,70,1</td>
+</tr>
+<tr>
 <td class="address-1"><span id="40278"></span>40278</td>
 <td class="instruction">DEFB 51,70,31</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40281"></span>40281</td>
 <td class="instruction">DEFB 248,104,157</td>
-<td class="comment-11" rowspan="1">Jump to <a href="40254.html#40296">40296</a> (draw creature)</td>
+<td class="comment-1" rowspan="1">Jump to <a href="40254.html#40296">40296</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="40284"></span>
 <div class="comments">
 <div class="paragraph">
@@ -136,83 +125,80 @@ White
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40284"></span>40284</td>
 <td class="instruction">DEFB 244,10</td>
-<td class="comment-11" rowspan="1">Set current graphic set to 10</td>
+<td class="comment-1" rowspan="1">Set current graphic set to 10</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40286"></span>40286</td>
-<td class="instruction">DEFB 246,4,5,3,71,71,1</td>
-<td class="comment-11" rowspan="1">Decrease timer value (initially 4) and if now zero then reset to 5 and load one of the 3 following values at random into the Attribute field of the following instruction</td>
+<td class="instruction">DEFB 246,4,5,3</td>
+<td class="comment-1" rowspan="2">Decrease timer value (initially 4) and if now zero then reset to 5 and load one of the 3 following values at random into the attribute field of the next instruction</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="address-1"><span id="40290"></span>40290</td>
+<td class="instruction">DEFB 71,71,1</td>
+</tr>
+<tr>
 <td class="address-1"><span id="40293"></span>40293</td>
 <td class="instruction">DEFB 51,71,31</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40296"></span>40296</td>
 <td class="instruction">DEFB 52,6,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40299"></span>40299</td>
 <td class="instruction">DEFB 53,69,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40302"></span>40302</td>
 <td class="instruction">DEFB 52,134,31</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40305"></span>40305</td>
 <td class="instruction">DEFB 236,2,54,70</td>
-<td class="comment-11" rowspan="1">Modify following instruction to display graphic of random index, chosen from 54 and 70</td>
+<td class="comment-1" rowspan="1">Modify following instruction to display graphic of random index, chosen from 54 and 70</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40309"></span>40309</td>
 <td class="instruction">DEFB 54,69,32</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40312"></span>40312</td>
 <td class="instruction">DEFB 236,2,55,71</td>
-<td class="comment-11" rowspan="1">Modify following instruction to display graphic of random index, chosen from 55 and 71</td>
+<td class="comment-1" rowspan="1">Modify following instruction to display graphic of random index, chosen from 55 and 71</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40316"></span>40316</td>
 <td class="instruction">DEFB 55,69,33</td>
-<td class="comment-11" rowspan="1"></td>
+<td class="comment-1" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40319"></span>40319</td>
 <td class="instruction">DEFB 255</td>
-<td class="comment-11" rowspan="1">End Marker</td>
+<td class="comment-1" rowspan="1">End marker</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40192.html">40192</a></span></td>
+<td class="prev">
+Prev: <a href="40192.html">40192</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40254">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40320.html">40320</a></span></td>
+<td class="next">
+Next: <a href="40320.html">40320</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

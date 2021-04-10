@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 54480</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54456.html">54456</a></span></td>
+<td class="prev">
+Prev: <a href="54456.html">54456</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54480">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54499.html">54499</a></span></td>
+<td class="next">
+Next: <a href="54499.html">54499</a>
+</td>
 </tr>
 </table>
-<div class="description">54480: Set Room of Entity at IX to B, Store Room Size Data for New Room and Load E with Entity's Width Minus One</div>
+<div class="description">54480: Set room of entity at <span class="register">IX</span> to <span class="register">B</span>, store room size data for new room and load <span class="register">E</span> with entity's width minus one</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="54398.html">54398</a>, <a href="54434.html">54434</a>, <a href="55433.html">55433</a> and <a href="55616.html">55616</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -49,7 +51,7 @@ Used by the routines at <a href="54398.html">54398</a>, <a href="54434.html">544
 <td class="register-desc">Address of complex state data for an entity</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -61,83 +63,76 @@ Used by the routines at <a href="54398.html">54398</a>, <a href="54434.html">544
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54480"></span>54480</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Set entity's current room to be destination room...</td>
+<td class="comment-1" rowspan="1">Set entity's current room to be destination room...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54481"></span>54481</td>
 <td class="instruction">LD (IX+0),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54484"></span>54484</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54485"></span>54485</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54486"></span>54486</td>
 <td class="instruction">CALL <a href="53825.html#53848">53848</a></td>
-<td class="comment-11" rowspan="1">Store room size data for entity's current room</td>
+<td class="comment-1" rowspan="1">Store room size data for entity's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54489"></span>54489</td>
 <td class="instruction">POP DE</td>
-<td class="comment-11" rowspan="1">Restore DE</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54490"></span>54490</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54491"></span>54491</td>
 <td class="instruction">LD A,(IX+7)</td>
-<td class="comment-11" rowspan="1">Load A with x-coordinate of entity's right...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with x-coordinate of entity's right...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54494"></span>54494</td>
 <td class="instruction">SUB (IX+5)</td>
-<td class="comment-11" rowspan="1">...subtract x-coordinate of entity's left...</td>
+<td class="comment-1" rowspan="1">...subtract x-coordinate of entity's left...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54497"></span>54497</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...and load result (entity's width minus one) into E</td>
+<td class="comment-1" rowspan="1">...and load result (entity's width minus one) into <span class="register">E</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54498"></span>54498</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54456.html">54456</a></span></td>
+<td class="prev">
+Prev: <a href="54456.html">54456</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54480">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54499.html">54499</a></span></td>
+<td class="next">
+Next: <a href="54499.html">54499</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

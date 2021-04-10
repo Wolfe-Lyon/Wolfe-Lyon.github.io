@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 36919</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36908.html">36908</a></span></td>
+<td class="prev">
+Prev: <a href="36908.html">36908</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36919">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36979.html">36979</a></span></td>
+<td class="next">
+Next: <a href="36979.html">36979</a>
+</td>
 </tr>
 </table>
-<div class="description">36919: Draw Window Frame for Character Portraits (2nd Floor) and Goblet Picture in Florin's Room</div>
+<div class="description">36919: Draw window frame for character portraits (2nd floor) and goblet picture in Florin's room</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="29150.html">29150</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -49,219 +54,189 @@ Used by the routine at <a href="29150.html">29150</a>.
 <td class="register">D</td>
 <td class="register-desc">index of graphic to draw inside frame</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36919"></span>36919</td>
 <td class="instruction">LD A,10</td>
-<td class="comment-11" rowspan="1">Load A with 10 (window index)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 10 (window index)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36921"></span>36921</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Switch AF</td>
+<td class="comment-1" rowspan="1">Switch <span class="register">AF</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36922"></span>36922</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (x- and y-coordinates of top-left corner)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (x- and y-coordinates of top-left corner)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36923"></span>36923</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">Load HL with index of graphic to draw inside frame</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with index of graphic to draw inside frame</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36925"></span>36925</td>
 <td class="instruction">LD L,D</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36926"></span>36926</td>
 <td class="instruction">LD E,3</td>
-<td class="comment-11" rowspan="1">In preparation for drawing an object (object height + 1)</td>
+<td class="comment-1" rowspan="1">In preparation for drawing an object (object height + 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36928"></span>36928</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">Multiply HL by four...</td>
+<td class="comment-1" rowspan="1">Multiply <span class="register">HL</span> by four...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36929"></span>36929</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36930"></span>36930</td>
 <td class="instruction">LD BC,42642</td>
-<td class="comment-11" rowspan="1">Point to start of graphic lookup data</td>
+<td class="comment-1" rowspan="1">Point to start of graphic lookup data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36933"></span>36933</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">Add offset (now, for example, pointing to entry for Goblet from picture in Florin's room)</td>
+<td class="comment-1" rowspan="1">Add offset (now, for example, pointing to entry for goblet from picture in Florin's room)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36934"></span>36934</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load width data into A</td>
+<td class="comment-1" rowspan="1">Load width data into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36935"></span>36935</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">If width data is 255 (i.e. we are drawing an object)...</td>
+<td class="comment-1" rowspan="1">If width data is 255 (i.e. we are drawing an object)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36937"></span>36937</td>
 <td class="instruction">JR Z,36942</td>
-<td class="comment-11" rowspan="1">...then jump ahead to <a href="36919.html#36942">36942</a></td>
+<td class="comment-1" rowspan="1">...then jump ahead to <a href="36919.html#36942">36942</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36939"></span>36939</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Load height data into E...</td>
+<td class="comment-1" rowspan="1">Load height data into <span class="register">E</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36940"></span>36940</td>
 <td class="instruction">LD E,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36941"></span>36941</td>
 <td class="instruction">INC E</td>
-<td class="comment-11" rowspan="1">Increase height by one</td>
+<td class="comment-1" rowspan="1">Increase height by one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36942"></span>36942</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (x- and y-coordinates of top-left corner)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (x- and y-coordinates of top-left corner)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36943"></span>36943</td>
 <td class="instruction">LD A,112</td>
-<td class="comment-11" rowspan="1">Set window / menu parameter to 112 (window, not menu) in window drawing routine...</td>
+<td class="comment-1" rowspan="1">Set window / menu parameter to 112 (window, not menu) in window drawing routine...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36945"></span>36945</td>
 <td class="instruction">LD (37084),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36948"></span>36948</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Load x-coordinate...</td>
+<td class="comment-1" rowspan="1">Load x-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36949"></span>36949</td>
 <td class="instruction">LD (41954),A</td>
-<td class="comment-11" rowspan="1">...into this window's "left position" entry in the window data table at <a href="41874.html">41874</a></td>
+<td class="comment-1" rowspan="1">...into this window's "left position" entry in the window data table at <a href="41874.html">41874</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36952"></span>36952</td>
 <td class="instruction">ADD A,3</td>
-<td class="comment-11" rowspan="1">Set window's "right position"...</td>
+<td class="comment-1" rowspan="1">Set window's "right position"...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36954"></span>36954</td>
 <td class="instruction">LD (41955),A</td>
-<td class="comment-11" rowspan="1">...as three characters to the right (i.e. width of window is 4 characters)</td>
+<td class="comment-1" rowspan="1">...as three characters to the right (i.e. width of window is 4 characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36957"></span>36957</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Load y-coordinate...</td>
+<td class="comment-1" rowspan="1">Load y-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36958"></span>36958</td>
 <td class="instruction">LD (41956),A</td>
-<td class="comment-11" rowspan="1">...into this window's "top position" entry in the window data table at <a href="41874.html">41874</a></td>
+<td class="comment-1" rowspan="1">...into this window's "top position" entry in the window data table at <a href="41874.html">41874</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36961"></span>36961</td>
 <td class="instruction">ADD A,E</td>
-<td class="comment-11" rowspan="1">Set window's "right position"...</td>
+<td class="comment-1" rowspan="1">Set window's "right position"...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36962"></span>36962</td>
 <td class="instruction">LD (41957),A</td>
-<td class="comment-11" rowspan="1">...as top position plus height data</td>
+<td class="comment-1" rowspan="1">...as top position plus height data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36965"></span>36965</td>
 <td class="instruction">LD A,(25393)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current attribute into A...</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's current attribute into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36968"></span>36968</td>
 <td class="instruction">LD (41959),A</td>
-<td class="comment-11" rowspan="1">...and set window's border attribute to match</td>
+<td class="comment-1" rowspan="1">...and set window's border attribute to match</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36971"></span>36971</td>
 <td class="instruction">CALL <a href="36987.html#36993">36993</a></td>
-<td class="comment-11" rowspan="1">Draw the window</td>
+<td class="comment-1" rowspan="1">Draw the window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36974"></span>36974</td>
 <td class="instruction">RES 1,(IY+65)</td>
-<td class="comment-11" rowspan="1">Reset "Disable In-Game Glow" flag</td>
+<td class="comment-1" rowspan="1">Reset disable-in-game-glow flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36978"></span>36978</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36908.html">36908</a></span></td>
+<td class="prev">
+Prev: <a href="36908.html">36908</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36919">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36979.html">36979</a></span></td>
+<td class="next">
+Next: <a href="36979.html">36979</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 36390</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,19 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36385.html">36385</a></span></td>
+<td class="prev">
+Prev: <a href="36385.html">36385</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36390">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36471.html">36471</a></span></td>
+<td class="next">
+Next: <a href="36471.html">36471</a>
+</td>
 </tr>
 </table>
-<div class="description">36390: Script Routine (58): Have Berk Interact Appropriately with a Door in Front of Him</div>
+<div class="description">36390: Script routine: (58) Have Berk interact appropriately with a door in front of him</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="48096.html">48096</a>.
 </div>
-<table class="input-1">
+</div>
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -43,22 +47,15 @@
 <td class="register-desc">(entry at <a href="36390.html#36393">36393</a> only) Address of script data to execute upon arrival of new level</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36390"></span>36390</td>
 <td class="instruction">LD BC,35081</td>
-<td class="comment-11" rowspan="1">Load BC with address of script data for Berk facing out of screen, ready to respond to control input</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with address of script data for Berk facing out of screen, ready to respond to control input</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36393"></span>
 <div class="comments">
 <div class="paragraph">
@@ -68,43 +65,37 @@ This entry point is used by the routine at <a href="36385.html">36385</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36393"></span>36393</td>
 <td class="instruction">LD (34266),BC</td>
-<td class="comment-11" rowspan="1">Store script data address in BC at <a href="34256.html#34266">34266</a></td>
+<td class="comment-1" rowspan="1">Store script data address in <span class="register">BC</span> at <a href="34256.html#34266">34266</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36397"></span>36397</td>
 <td class="instruction">LD A,(34208)</td>
-<td class="comment-11" rowspan="1">Load E with Game Flags...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with game flags...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36400"></span>36400</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36401"></span>36401</td>
 <td class="instruction">LD A,(34221)</td>
-<td class="comment-11" rowspan="1">Load A with class of entity currently held by Berk...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with class of entity currently held by Berk...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36404"></span>36404</td>
 <td class="instruction">CP 17</td>
-<td class="comment-11" rowspan="1">... and if this is not 17 (Key)...</td>
+<td class="comment-1" rowspan="1">...and if this is not 17 (key)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36406"></span>36406</td>
 <td class="instruction">JR NZ,36429</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="36390.html#36429">36429</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36390.html#36429">36429</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36408"></span>
 <div class="comments">
 <div class="paragraph">
@@ -114,55 +105,47 @@ Berk is holding a key
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36408"></span>36408</td>
 <td class="instruction">LD A,7</td>
-<td class="comment-11" rowspan="1">Set door colour to 7 (white, i.e. unlocked)...</td>
+<td class="comment-1" rowspan="1">Set door colour to 7 (white, i.e. unlocked)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36410"></span>36410</td>
 <td class="instruction">LD (50712),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36413"></span>36413</td>
 <td class="instruction">CALL <a href="36296.html">36296</a></td>
-<td class="comment-11" rowspan="1">Make Berk drop the key and load IY with its complex state data address</td>
+<td class="comment-1" rowspan="1">Make Berk drop the key and load <span class="register">IY</span> with its complex state data address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36416"></span>36416</td>
 <td class="instruction">LD (IY+1),0</td>
-<td class="comment-11" rowspan="1">Set depth of key to 0 (i.e. out of display)</td>
+<td class="comment-1" rowspan="1">Set depth of key to 0 (i.e. out of display)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36420"></span>36420</td>
 <td class="instruction">SET 4,E</td>
-<td class="comment-11" rowspan="1">Set Level Exit Door Unlocked Flag...</td>
+<td class="comment-1" rowspan="1">Set level-exit-door-unlocked flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36422"></span>36422</td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36423"></span>36423</td>
 <td class="instruction">LD (34208),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36426"></span>36426</td>
 <td class="instruction">JP <a href="48096.html">48096</a></td>
-<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next script instruction and execute</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36429"></span>
 <div class="comments">
 <div class="paragraph">
@@ -172,49 +155,42 @@ Berk is not holding a key
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36429"></span>36429</td>
 <td class="instruction">BIT 4,E</td>
-<td class="comment-11" rowspan="1">If Level Exit Door Unlocked Flag is reset...</td>
+<td class="comment-1" rowspan="1">If level-exit-door-unlocked flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36431"></span>36431</td>
 <td class="instruction">JR Z,36462</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="36390.html#36462">36462</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36390.html#36462">36462</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36433"></span>36433</td>
 <td class="instruction">LD D,A</td>
-<td class="comment-11" rowspan="1">Load D with class of entity currently held by Berk</td>
+<td class="comment-1" rowspan="1">Load <span class="register">D</span> with class of entity currently held by Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36434"></span>36434</td>
 <td class="instruction">LD A,(34207)</td>
-<td class="comment-11" rowspan="1">Set Zero Flag if current level is Level 4...</td>
+<td class="comment-1" rowspan="1">Set zero flag if current level is level 4...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36437"></span>36437</td>
 <td class="instruction">CP 4</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36439"></span>36439</td>
 <td class="instruction">LD A,D</td>
-<td class="comment-11" rowspan="1">Load A with class of entity currently held by Berk</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with class of entity currently held by Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36440"></span>36440</td>
 <td class="instruction">JR NZ,36446</td>
-<td class="comment-11" rowspan="1">If Zero Flag is not set (i.e. we are not on Level 4) then skip ahead to <a href="36390.html#36446">36446</a></td>
+<td class="comment-1" rowspan="1">If zero flag is not set (i.e. we are not on level 4) then skip ahead to <a href="36390.html#36446">36446</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36442"></span>
 <div class="comments">
 <div class="paragraph">
@@ -224,41 +200,37 @@ Level 4
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36442"></span>36442</td>
 <td class="instruction">CP 19</td>
-<td class="comment-11" rowspan="1">Set Zero Flag if class of entity currently held by Berk is 19 (Boni)</td>
+<td class="comment-1" rowspan="1">Set zero flag if class of entity currently held by Berk is 19 (Boni)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36444"></span>36444</td>
 <td class="instruction">JR 36448</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="36390.html#36448">36448</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="36390.html#36448">36448</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36446"></span>
 <div class="comments">
 <div class="paragraph">
-Not Level 4
+Not level 4
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36446"></span>36446</td>
 <td class="instruction">CP 18</td>
-<td class="comment-11" rowspan="1">Set Zero Flag if class of entity currently held by Berk is 18 (Drutt)</td>
+<td class="comment-1" rowspan="1">Set zero flag if class of entity currently held by Berk is 18 (Drutt)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36448"></span>36448</td>
 <td class="instruction">JR NZ,36462</td>
-<td class="comment-11" rowspan="1">If Zero Flag is not set (i.e. Berk is not holding Drutt on Levels 1-3 or Boni on Level 4) then skip ahead to <a href="36390.html#36462">36462</a></td>
+<td class="comment-1" rowspan="1">If zero flag is not set (i.e. Berk is not holding Drutt on levels 1-3 or Boni on level 4) then skip ahead to <a href="36390.html#36462">36462</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36450"></span>
 <div class="comments">
 <div class="paragraph">
@@ -268,41 +240,37 @@ Berk is holding the correct character
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36450"></span>36450</td>
 <td class="instruction">CALL <a href="48417.html">48417</a></td>
-<td class="comment-11" rowspan="1">Remove Berk's current power and reset sweet / mushroom / edible eyes / sausage to its original state</td>
+<td class="comment-1" rowspan="1">Remove Berk's current power and reset sweet / mushroom / edible eyes / sausage to its original state</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36453"></span>36453</td>
 <td class="instruction">CALL <a href="36638.html">36638</a></td>
-<td class="comment-11" rowspan="1">Advance to next level and if back to Level 1 then exit this routine and make Berk start falling</td>
+<td class="comment-1" rowspan="1">Advance to next level and if back-to-level-1 then exit this routine and make Berk start falling</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36456"></span>
 <div class="comments">
 <div class="paragraph">
-New level is not Level 1
+New level is not level 1
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36456"></span>36456</td>
 <td class="instruction">LD HL,(34266)</td>
-<td class="comment-11" rowspan="1">Load HL with script data address stored at <a href="34256.html#34266">34266</a>...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with script data address stored at <a href="34256.html#34266">34266</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36459"></span>36459</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute</td>
+<td class="comment-1" rowspan="1">...and execute</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36462"></span>
 <div class="comments">
 <div class="paragraph">
@@ -312,35 +280,36 @@ Door is locked or Berk is not holding the correct character
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36462"></span>36462</td>
 <td class="instruction">CALL <a href="36296.html">36296</a></td>
-<td class="comment-11" rowspan="1">Make Berk drop the entity he is holding and load IY with its complex state data address</td>
+<td class="comment-1" rowspan="1">Make Berk drop the entity he is holding and load <span class="register">IY</span> with its complex state data address</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36465"></span>36465</td>
 <td class="instruction">CALL <a href="53667.html">53667</a></td>
-<td class="comment-11" rowspan="1">Set "Berk Has Been Killed" Flag</td>
+<td class="comment-1" rowspan="1">Set Berk-has-been-killed flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36468"></span>36468</td>
 <td class="instruction">JP <a href="48096.html">48096</a></td>
-<td class="comment-11" rowspan="1">Advance HL to next script instruction and execute</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to next script instruction and execute</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36385.html">36385</a></span></td>
+<td class="prev">
+Prev: <a href="36385.html">36385</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36390">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36471.html">36471</a></span></td>
+<td class="next">
+Next: <a href="36471.html">36471</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

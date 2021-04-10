@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Unused RAM at 40752</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,91 +20,80 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40729.html">40729</a></span></td>
+<td class="prev">
+Prev: <a href="40729.html">40729</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40752">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40765.html">40765</a></span></td>
+<td class="next">
+Next: <a href="40765.html">40765</a>
+</td>
 </tr>
 </table>
 <div class="description">40752: Unused routine</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-This is a room drawing routine. It reads start co-ordinates and UDG code and prints the UDG.
+This is a room drawing routine. It reads start coordinates and UDG code and prints the UDG.
 </div>
 <div class="paragraph">
 (<a href="../reference/facts.html#redundantinstructions">See trivia</a>)
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40752"></span>40752</td>
-<td class="instruction">CALL <a href="40832.html">40832</a></td>
-<td class="comment-11" rowspan="1">Move Virtual Bitmap Cursor to Co-Ordinates Specified in Layout Data</td>
+<td class="instruction">CALL 40832</td>
+<td class="comment-1" rowspan="1">Move virtual bitmap cursor to coordinates specified in layout data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40755"></span>40755</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load UDG code to print into A...</td>
+<td class="comment-1" rowspan="1">Load UDG code to print into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40756"></span>40756</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...and advance HL to next parameter</td>
+<td class="comment-1" rowspan="1">...and advance <span class="register">HL</span> to next parameter</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40757"></span>40757</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (current position in room layout data)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (current position in room layout data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40758"></span>40758</td>
 <td class="instruction">CALL <a href="63005.html">63005</a></td>
-<td class="comment-11" rowspan="1">Print text/graphic character in A and advance Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">Print text/graphic character in <span class="register">A</span> and advance bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40761"></span>40761</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (current position in room layout data)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (current position in room layout data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="40762"></span>40762</td>
 <td class="instruction">JP <a href="38841.html#38977">38977</a></td>
-<td class="comment-11" rowspan="1">Jump back to <a href="38841.html#38977">38977</a> for next byte of room layout data</td>
+<td class="comment-1" rowspan="1">Jump back to <a href="38841.html#38977">38977</a> for next byte of room layout data</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="40729.html">40729</a></span></td>
+<td class="prev">
+Prev: <a href="40729.html">40729</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#40752">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="40765.html">40765</a></span></td>
+<td class="next">
+Next: <a href="40765.html">40765</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

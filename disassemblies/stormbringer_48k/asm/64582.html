@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 64582</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="64548.html">64548</a></span></td>
+<td class="prev">
+Prev: <a href="64548.html">64548</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#64582">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="64623.html">64623</a></span></td>
+<td class="next">
+Next: <a href="64623.html">64623</a>
+</td>
 </tr>
 </table>
-<div class="description">64582: Display Cyan "Game Over" Window and Return to Control Selection Menu</div>
+<div class="description">64582: Display cyan "game over" window and return to control selection menu</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="38205.html">38205</a>, <a href="38841.html">38841</a>, <a href="40258.html">40258</a>, <a href="40598.html">40598</a>, <a href="41748.html">41748</a>, <a href="43636.html">43636</a>, <a href="44216.html">44216</a>, <a href="44253.html">44253</a>, <a href="45723.html">45723</a>, <a href="46560.html">46560</a> and <a href="62877.html">62877</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -41,117 +46,104 @@ Used by the routines at <a href="38205.html">38205</a>, <a href="38841.html">388
 <td class="register">HL</td>
 <td class="register-desc">Points to location of a string</td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
+<tr>
+<td class="register">IY</td>
+<td class="register-desc">23610</td>
 </tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="64582"></span>64582</td>
 <td class="instruction">RES 0,(IY+65)</td>
-<td class="comment-11" rowspan="1">Reset Game In Progress Flag (IY = 23610)</td>
+<td class="comment-1" rowspan="1">Reset game-in-progress flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64586"></span>64586</td>
 <td class="instruction">LD DE,49228</td>
-<td class="comment-11" rowspan="1">Adjust height of window 24 ("Game Over" Window) to accommodate text...</td>
+<td class="comment-1" rowspan="1">Adjust height of window 24 ("game over" window) to accommodate text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64589"></span>64589</td>
 <td class="instruction">CALL <a href="45617.html">45617</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64592"></span>64592</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (points to first character of text to display)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (points to first character of text to display)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64593"></span>64593</td>
 <td class="instruction">LD A,24</td>
-<td class="comment-11" rowspan="1">Draw Window 24 ("Game Over" Window)...</td>
+<td class="comment-1" rowspan="1">Draw window 24 ("game over" window)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64595"></span>64595</td>
 <td class="instruction">CALL <a href="47193.html">47193</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64598"></span>64598</td>
 <td class="instruction">LD HL,50779</td>
-<td class="comment-11" rowspan="1">Point to string for percentage completion</td>
+<td class="comment-1" rowspan="1">Point to string for percentage completion</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64601"></span>64601</td>
 <td class="instruction">LD DE,50791</td>
-<td class="comment-11" rowspan="1">Point to string for time left</td>
+<td class="comment-1" rowspan="1">Point to string for time left</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64604"></span>64604</td>
 <td class="instruction">CALL <a href="45522.html">45522</a></td>
-<td class="comment-11" rowspan="1">Insert current time and score into "Time Left" and "Percentage Completion" texts</td>
+<td class="comment-1" rowspan="1">Insert current time and score into "time left" and "percentage completion" texts</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64607"></span>64607</td>
 <td class="instruction">LD HL,50756</td>
-<td class="comment-11" rowspan="1">Point HL at "GAME OVER / TOTAL COMPLETION XX% / TIME LEFT XX HOURS" text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "GAME OVER / TOTAL COMPLETION XX% / TIME LEFT XX HOURS" text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64610"></span>64610</td>
 <td class="instruction">CALL <a href="46902.html">46902</a></td>
-<td class="comment-11" rowspan="1">...and print to screen</td>
+<td class="comment-1" rowspan="1">...and print to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64613"></span>64613</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (points to first character of text to display)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (points to first character of text to display)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64614"></span>64614</td>
 <td class="instruction">CALL <a href="46902.html">46902</a></td>
-<td class="comment-11" rowspan="1">Print text to screen</td>
+<td class="comment-1" rowspan="1">Print text to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64617"></span>64617</td>
 <td class="instruction">CALL <a href="64230.html">64230</a></td>
-<td class="comment-11" rowspan="1">Wait for interrupt then display "PRESS FIRE TO CONTINUE" Window and wait for Fire to be pressed</td>
+<td class="comment-1" rowspan="1">Wait for interrupt then display "PRESS FIRE TO CONTINUE" window and wait for fire to be pressed</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64620"></span>64620</td>
 <td class="instruction">JP <a href="37689.html">37689</a></td>
-<td class="comment-11" rowspan="1">Wait for interrupt then display and handle Input Device Selection Menu</td>
+<td class="comment-1" rowspan="1">Wait for interrupt then display and handle input device selection menu</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="64548.html">64548</a></span></td>
+<td class="prev">
+Prev: <a href="64548.html">64548</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#64582">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="64623.html">64623</a></span></td>
+<td class="next">
+Next: <a href="64623.html">64623</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

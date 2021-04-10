@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 52148</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="52142.html">52142</a></span></td>
+<td class="prev">
+Prev: <a href="52142.html">52142</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#52148">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="52193.html">52193</a></span></td>
+<td class="next">
+Next: <a href="52193.html">52193</a>
+</td>
 </tr>
 </table>
-<div class="description">52148: Move Drutt, or Entity he is Pushing Right One Character and Start Pushed Entity Falling if Appropriate</div>
+<div class="description">52148: Move Drutt, or entity he is pushing right one character and start pushed entity falling if appropriate</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Drutt will only push other entities when he is under player control. If he is not, then he will just pass through pushable entities.
@@ -39,7 +41,7 @@ Drutt will only push other entities when he is under player control. If he is no
 Used by the routine at <a href="52142.html">52142</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -48,86 +50,70 @@ Used by the routine at <a href="52142.html">52142</a>.
 <td class="register-desc">Address of complex state data (current level) for Drutt</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52148"></span>52148</td>
 <td class="instruction">CALL <a href="54569.html">54569</a></td>
-<td class="comment-11" rowspan="1">Check Drutt for collision with another impassable / pushable entity immediately to the right...</td>
+<td class="comment-1" rowspan="1">Check Drutt for collision with another impassable / pushable entity immediately to the right...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52151"></span>52151</td>
 <td class="instruction">JR C,52182</td>
-<td class="comment-11" rowspan="1">...and if a collision has not occurred, then skip ahead to <a href="52148.html#52182">52182</a></td>
+<td class="comment-1" rowspan="1">...and if a collision has not occurred, then skip ahead to <a href="52148.html#52182">52182</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52153"></span>
 <div class="comments">
 <div class="paragraph">
-At this point, a collision has occurred, so IY points to the complex state data entry of the entity with which Drutt has collided
+At this point, a collision has occurred, so <span class="register">IY</span> points to the complex state data entry of the entity with which Drutt has collided
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52153"></span>52153</td>
 <td class="instruction">CP 22</td>
-<td class="comment-11" rowspan="1">If collision was with an entity of class 22 or greater (can't be picked up)...</td>
+<td class="comment-1" rowspan="1">If collision was with an entity of class 22 or greater (can't be picked up)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52155"></span>52155</td>
 <td class="instruction">JR NC,52171</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="52148.html#52171">52171</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="52148.html#52171">52171</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52157"></span>52157</td>
 <td class="instruction">BIT 1,(IX+9)</td>
-<td class="comment-11" rowspan="1">If Drutt's Under Player Control Flag is reset...</td>
+<td class="comment-1" rowspan="1">If Drutt's under-player-control flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52161"></span>52161</td>
 <td class="instruction">JR Z,52182</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="52148.html#52182">52182</a> (move Drutt right without pushing anything)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="52148.html#52182">52182</a> (move Drutt right without pushing anything)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52163"></span>52163</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX (address of current level's complex state data for Drutt)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span> (address of current level's complex state data for Drutt)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52165"></span>52165</td>
 <td class="instruction">CALL <a href="52193.html">52193</a></td>
-<td class="comment-11" rowspan="1">Advance position of entity pushed right by Drutt</td>
+<td class="comment-1" rowspan="1">Advance position of entity pushed right by Drutt</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52168"></span>52168</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX (address of current level's complex state data for Drutt)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span> (address of current level's complex state data for Drutt)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52170"></span>52170</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52171"></span>
 <div class="comments">
 <div class="paragraph">
@@ -137,19 +123,17 @@ Collision with entity of class 22 or greater
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52171"></span>52171</td>
 <td class="instruction">CP 129</td>
-<td class="comment-11" rowspan="1">If collision was with entity of class 129 (causes other entities to start falling)...</td>
+<td class="comment-1" rowspan="1">If collision was with entity of class 129 (causes other entities to start falling)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52173"></span>52173</td>
 <td class="instruction">JR Z,52182</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="52148.html#52182">52182</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="52148.html#52182">52182</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52175"></span>
 <div class="comments">
 <div class="paragraph">
@@ -159,25 +143,22 @@ At this point, the entity to Drutt's right is neither passable nor pushable.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52175"></span>52175</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Remove top value from stack (i.e. return address to routine that called this routine)</td>
+<td class="comment-1" rowspan="1">Remove top value from stack (i.e. return address to routine that called this routine)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52176"></span>52176</td>
 <td class="instruction">LD HL,51630</td>
-<td class="comment-11" rowspan="1">Point HL at script data for Drutt swapping depth levels...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at script data for Drutt swapping depth levels...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52179"></span>52179</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute</td>
+<td class="comment-1" rowspan="1">...and execute</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="52182"></span>
 <div class="comments">
 <div class="paragraph">
@@ -187,47 +168,46 @@ No collision, not under player control or collision with entity of class 129
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="52182"></span>52182</td>
 <td class="instruction">CALL <a href="54313.html">54313</a></td>
-<td class="comment-11" rowspan="1">Move Drutt into room to the right, if appropriate...</td>
+<td class="comment-1" rowspan="1">Move Drutt into room to the right, if appropriate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52185"></span>52185</td>
 <td class="instruction">RET NC</td>
-<td class="comment-11" rowspan="1">...and if Drutt can't enter new room then return</td>
+<td class="comment-1" rowspan="1">...and if Drutt can't enter new room then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52186"></span>52186</td>
 <td class="instruction">INC (IX+5)</td>
-<td class="comment-11" rowspan="1">Move Drutt right one character...</td>
+<td class="comment-1" rowspan="1">Move Drutt right one character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52189"></span>52189</td>
 <td class="instruction">INC (IX+7)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="52192"></span>52192</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="52142.html">52142</a></span></td>
+<td class="prev">
+Prev: <a href="52142.html">52142</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#52148">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="52193.html">52193</a></span></td>
+<td class="next">
+Next: <a href="52193.html">52193</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

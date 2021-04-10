@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Trivia</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -18,92 +19,92 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#cheatmode">Cheat Mode</a></li>
-<li><a href="#extradatacopied">Extra Data Copied</a></li>
-<li><a href="#combinedmagicattribute">Combined Magic Level / Attribute Data</a></li>
-<li><a href="#strengthbar">Drawing the Strength Bar</a></li>
-<li><a href="#128ktraces">Common Code for 48k and 128k Versions</a></li>
-<li><a href="#unusedcode001">Unused Code</a></li>
-<li><a href="#redundantinstructions">Redundant Instructions / Code</a></li>
-<li><a href="#isartificialflag">"Is Artificial" Flag</a></li>
-<li><a href="#debugcode001">Leftover Debug Code 1</a></li>
-<li><a href="#consultoraclenoflashing">No Spell Effect for Consult Oracle</a></li>
-<li><a href="#fortifyspellmagiclevel">No Restriction on Magic Level for Casting Fortify Character / Yourself</a></li>
-<li><a href="#debugcode002">Leftover Debug Code 2</a></li>
+<li><a href="#cheatmode">Cheat mode</a></li>
+<li><a href="#extradatacopied">Extra data copied</a></li>
+<li><a href="#combinedmagicattribute">Combined magic level / attribute data</a></li>
+<li><a href="#strengthbar">Drawing the strength bar</a></li>
+<li><a href="#128ktraces">Common code for 48k and 128k versions</a></li>
+<li><a href="#unusedcode001">Unused code</a></li>
+<li><a href="#redundantinstructions">Redundant instructions / code</a></li>
+<li><a href="#isartificialflag">Is-artificial flag</a></li>
+<li><a href="#debugcode001">Leftover debug code, part 1</a></li>
+<li><a href="#consultoraclenoflashing">No spell effect for Consult Oracle</a></li>
+<li><a href="#fortifyspellmagiclevel">No restriction on magic level for casting fortify character / yourself</a></li>
+<li><a href="#debugcode002">Leftover debug code, part 2</a></li>
 </ul>
 <div><span id="cheatmode"></span></div>
 <div class="box box-1">
-<div class="box-title">Cheat Mode</div>
+<div class="box-title">Cheat mode</div>
 <div class="paragraph">
-Knight Tyme has a cheat / debug mode built in. Address <a href="../asm/23728.html">23728</a> is the Cheat Mode Enabled Flag, and if this is set (i.e. contains any non-zero value)
-then Cheat Mode becomes available:<br />
+Knight Tyme has a cheat / debug mode built in. Address <a href="../asm/23728.html">23728</a> is the cheat-mode-enabled flag, and if this is set (i.e. contains any non-zero value)
+then cheat mode becomes available:<br />
 POKE <a href="../asm/23728.html">23728</a>,255
 </div>
 <div class="paragraph">
-When Cheat Mode is enabled, pressing DOWN while controlling Magic Knight will result in a prompt sound being played, and the border turning red. After
+When cheat mode is enabled, pressing DOWN while controlling Magic Knight will result in a prompt sound being played, and the border turning red. After
 this, it is possible to change both Magic Knight's current room, and the current location of the USS Pisces. Pressing LEFT or RIGHT decreases or
 increases, respectively, Magic Knight's current room index by one, and draws the new room. Pressing UP or DOWN increases or decreases, respectively,
 the index of the current location of the USS Pisces by one. Pressing FIRE causes a return to the game.
 </div>
 <div class="paragraph">
-If this POKE is entered after the game has loaded, but before execution has reached <a href="../initialisation/26624.html#26640">26640</a>, then in addition to enabling Cheat Mode,
+If this POKE is entered after the game has loaded, but before execution has reached <a href="../initialisation/26624.html#26640">26640</a>, then in addition to enabling cheat mode,
 the Valid I.D. Card will be placed in The Recreation Room aboard the USS Pisces, meaning that Magic Knight will not have to have his photograph taken or
 validate the Blank I.D. Card.
 </div>
 </div>
 <div><span id="extradatacopied"></span></div>
 <div class="box box-2">
-<div class="box-title">Extra Data Copied</div>
+<div class="box-title">Extra data copied</div>
 <div class="paragraph">
-The instructions between <a href="../asm/26997.html#27029">27029</a> - <a href="../asm/26997.html#27035">27035</a> copy inventory data from the Characters' Initial Inventories Table at <a href="../asm/36805.html">36805</a> to the Characters' Current
-Inventories Table at <a href="../asm/25164.html">25164</a>. However these instructions also copy an additional 10 bytes after this (first 10 bytes of the Characters' Initial
-Positions Table at <a href="../asm/36875.html">36875</a>) into <a href="../asm/25234.html">25234</a> - 25243.
+The instructions between <a href="../asm/26997.html#27029">27029</a> - <a href="../asm/26997.html#27035">27035</a> copy inventory data from the characters' initial inventories table at <a href="../asm/36805.html">36805</a> to the characters' current
+inventories table at <a href="../asm/25164.html">25164</a>. However these instructions also copy an additional 10 bytes after this (first 10 bytes of the characters' initial
+positions table at <a href="../asm/36875.html">36875</a>) into <a href="../asm/25234.html">25234</a> - 25243.
 </div>
 <div class="paragraph">
-The instructions after this (<a href="../asm/26997.html#27037">27037</a> - <a href="../asm/26997.html#27043">27043</a>) then copy position data from the Characters' Initial Positions Table at <a href="../asm/36875.html">36875</a> to the Characters'
-Current Positions Table at <a href="../asm/25244.html">25244</a>. Again, an extra six bytes (first six bytes of the Objects' Initial Positions Table at <a href="../asm/36911.html">36911</a>) are copied as well.
+The instructions after this (<a href="../asm/26997.html#27037">27037</a> - <a href="../asm/26997.html#27043">27043</a>) then copy position data from the characters' initial positions table at <a href="../asm/36875.html">36875</a> to the characters'
+current positions table at <a href="../asm/25244.html">25244</a>. Again, an extra six bytes (first six bytes of the objects' initial positions table at <a href="../asm/36911.html">36911</a>) are copied as well.
 </div>
 </div>
 <div><span id="combinedmagicattribute"></span></div>
 <div class="box box-1">
-<div class="box-title">Combined Magic Level / Attribute Data</div>
+<div class="box-title">Combined magic level / attribute data</div>
 <div class="paragraph">
 Characters' attributes and magic levels are both encoded in a single value.
 </div>
 </div>
 <div><span id="strengthbar"></span></div>
 <div class="box box-2">
-<div class="box-title">Drawing the Strength Bar</div>
+<div class="box-title">Drawing the strength bar</div>
 <div class="paragraph">
 In drawing the strength bar, if Magic Knight's strength is not a multiple of eight, then the strength bar is drawn as groups of eight pixels, then the
 remainder over and above a multiple of eight is drawn. If the Magic Knight's strength IS a multiple of eight, however, the second part of the routine
-(draw the remainder over and above a multiple of eight) is still executed, but draws nothing (see JR <a href="../asm/34567.html#34619">34619</a> instruction at <a href="../asm/34567.html#34611">34611</a> - it seems more
-logical to have JR <a href="../asm/34567.html#34626">34626</a> here to skip over the "fractional part drawing").
+(draw the remainder over and above a multiple of eight) is still executed, but draws nothing (see <span class="instruction">JR <a href="../asm/34567.html#34619">34619</a></span> instruction at <a href="../asm/34567.html#34611">34611</a> - it seems
+more logical to have <span class="instruction">JR <a href="../asm/34567.html#34626">34626</a></span> here to skip over the "fractional part drawing").
 </div>
 </div>
 <div><span id="128ktraces"></span></div>
 <div class="box box-1">
-<div class="box-title">Common Code for 48k and 128k Versions</div>
+<div class="box-title">Common code for 48k and 128k versions</div>
 <div class="paragraph">
 There appear to be many data structures and code fragments that aren't necessary, or have different lengths than is required, for the 48k version of the
 game. Generally speaking, these appear to be indications that the 48k version and the 128k version use much code in common. A few examples are:
 <ul class="">
 <li>character-related routines having loops with 16 iterations (<a href="../asm/28364.html#28368">28368</a>, <a href="../asm/34122.html#34202">34202</a>, <a href="../asm/53585.html">53585</a>) [48k has 12 characters, 128k has 16]</li>
-<li>split Common Words Table, handled by routine at <a href="../asm/34976.html">34976</a></li>
-<li>NOP instruction at <a href="../asm/52686.html">52686</a></li>
+<li>split common words table, handled by routine at <a href="../asm/34976.html">34976</a></li>
+<li><span class="instruction">NOP</span> instruction at <a href="../asm/52686.html">52686</a></li>
 <li>two unused routines at <a href="../asm/55421.html">55421</a> and <a href="../asm/55455.html">55455</a></li>
 <li>a check of the USS Pisces' current location against index 27 (Starbase 2 in 128k version) at <a href="../asm/31688.html#32044">32044</a></li>
 <li>a check of Magic Knight's current room against index 36 ("YE OLDE TRANSPORTER" in 128k version) at <a href="../asm/32623.html#32656">32656</a></li>
 <li>the index of the Current Character is stored by the instruction at <a href="../asm/33170.html#33173">33173</a> to distinguish between Klink and S3 E3 but this data is never used</li>
-<li>bit 6 of byte 0 of an object's properties encodes its Blow Status, however blowable objects only appear in the 128k version</li>
-<li>several unused entries in the Graphic Lookup Data Table at <a href="../asm/55950.html">55950</a> that contain data</li>
+<li>bit 6 of byte 0 of an object's properties encodes its blow status, however blowable objects only appear in the 128k version</li>
+<li>several unused entries in the graphic lookup data table at <a href="../asm/55950.html">55950</a> that contain data</li>
 <li>extra space for visited room flags, starting at <a href="../asm/23502.html#23527">23527</a></li>
 </ul>
 </div>
 </div>
 <div><span id="unusedcode001"></span></div>
 <div class="box box-2">
-<div class="box-title">Unused Code</div>
+<div class="box-title">Unused code</div>
 <div class="paragraph">
 The routine at <a href="../asm/33952.html">33952</a> will display a list of objects in a window for a given group of inventory slots. Before anything is displayed, the first slot in
 the group is checked (instructions at <a href="../asm/33952.html#33961">33961</a> and <a href="../asm/33952.html#33964">33964</a>), and if it is empty, then a jump occurs to <a href="../asm/33952.html#34087">34087</a>. The code at <a href="../asm/33952.html#34087">34087</a> appears to display
@@ -117,47 +118,47 @@ If an empty inventory is detected then this routine is never reached.
 </div>
 <div><span id="redundantinstructions"></span></div>
 <div class="box box-1">
-<div class="box-title">Redundant Instructions / Code</div>
+<div class="box-title">Redundant instructions / code</div>
 <div class="paragraph">
 There are many instances of redundant code, or redundant instructions in several texts. These may or may not be related to <a href="facts.html#128ktraces">the
 entry above</a>. Some examples are:
 <ul class="">
-<li>The text entry at <a href="../asm/37795.html#37967">37967</a> has an instruction to change INK colour to yellow, followed immediately by an instruction to change INK colour to white</li>
-<li>The text entry at <a href="../asm/38233.html#38238">38238</a> has a repeated instruction to change INK colour to yellow</li>
-<li>The text entry at <a href="../asm/39574.html#39577">39577</a> contains two explicitly coded [CR] control codes instead of a reference to entry 91 in the Common Words Table</li>
-<li>The text entries at <a href="../asm/48004.html#48005">48005</a> and <a href="../asm/48004.html#49691">49691</a> are almost identical and could have been defined as an entry in the Common Words Table</li>
-<li>The content of address <a href="../asm/53731.html#53812">53813</a> is modified as part of the CALL at <a href="../asm/53731.html#53795">53795</a>, then again immediately after at <a href="../asm/53731.html#53798">53798</a></li>
-<li>The routines at <a href="../asm/55414.html">55414</a> and <a href="../asm/55448.html">55448</a> are identical</li>
-<li>The value in A is set at <a href="../asm/53115.html#53147">53147</a> and <a href="../asm/53150.html">53150</a> but is not used</li>
-<li>The instruction at <a href="../asm/26926.html#26959">26959</a> is a jump to the instruction immediately after</li>
-<li>The routine at <a href="../asm/53703.html">53703</a> includes code to preserve the MSB of the value in A, however the calls to this routine at <a href="../asm/29756.html#29937">29937</a> and <a href="../asm/29756.html#29957">29957</a> are surrounded by unnecessary code to preserve the same MSB</li>
-<li>The instructions between <a href="../asm/30001.html#30097">30097</a> and <a href="../asm/30001.html#30105">30105</a> are unnecessary, and replacing them with "LD C, A; JR 30111" results in the same functionality. The table at <a href="../asm/36749.html">36749</a> is likewise unnecessary</li>
-<li>The instructions at <a href="../asm/32895.html#33069">33069</a> and <a href="../asm/32895.html#33072">33072</a> are identical (i.e. unnecessarily duplicated)</li>
-<li>The routine at <a href="../asm/33657.html">33657</a> iterates over 50 rooms when the game only has 25 (this code has been taken from Spellbound)</li>
-<li>The instruction at <a href="../asm/54598.html#54628">54628</a> is a jump to the instruction immediately after</li>
+<li>the text entry at <a href="../asm/37795.html#37967">37967</a> has an instruction to change INK colour to yellow, followed immediately by an instruction to change INK colour to white</li>
+<li>the text entry at <a href="../asm/38233.html#38238">38238</a> has a repeated instruction to change INK colour to yellow</li>
+<li>the text entry at <a href="../asm/39574.html#39577">39577</a> contains two explicitly coded [CR] control codes instead of a reference to entry 91 in the common words table</li>
+<li>the text entries at <a href="../asm/48004.html#48005">48005</a> and <a href="../asm/48004.html#49691">49691</a> are almost identical and could have been defined as an entry in the common words table</li>
+<li>the content of address <a href="../asm/53731.html#53812">53813</a> is modified as part of the call at <a href="../asm/53731.html#53795">53795</a>, then again immediately after at <a href="../asm/53731.html#53798">53798</a></li>
+<li>the routines at <a href="../asm/55414.html">55414</a> and <a href="../asm/55448.html">55448</a> are identical</li>
+<li>the value in <span class="register">A</span> is set at <a href="../asm/53115.html#53147">53147</a> and <a href="../asm/53150.html">53150</a> but is not used</li>
+<li>the instruction at <a href="../asm/26926.html#26959">26959</a> is a jump to the instruction immediately after</li>
+<li>the routine at <a href="../asm/53703.html">53703</a> includes code to preserve the MSB of the value in <span class="register">A</span>, however the calls to this routine at <a href="../asm/29756.html#29937">29937</a> and <a href="../asm/29756.html#29957">29957</a> are surrounded by unnecessary code to preserve the same MSB</li>
+<li>the instructions between <a href="../asm/30001.html#30097">30097</a> and <a href="../asm/30001.html#30105">30105</a> are unnecessary, and replacing them with <span class="instruction">LD C,A</span>; <span class="instruction">JR 30111</span> results in the same functionality. The table at <a href="../asm/36749.html">36749</a> is likewise unnecessary</li>
+<li>the instructions at <a href="../asm/32895.html#33069">33069</a> and <a href="../asm/32895.html#33072">33072</a> are identical (i.e. unnecessarily duplicated)</li>
+<li>the routine at <a href="../asm/33657.html">33657</a> iterates over 50 rooms when the game only has 25 (this code has been taken from Spellbound)</li>
+<li>the instruction at <a href="../asm/54598.html#54628">54628</a> is a jump to the instruction immediately after</li>
 </ul>
 </div>
 </div>
 <div><span id="isartificialflag"></span></div>
 <div class="box box-2">
-<div class="box-title">"Is Artificial" Flag</div>
+<div class="box-title">Is-artificial flag</div>
 <div class="paragraph">
-For the purposes of this disassembly, the flag held in bit 1 of byte 6 of the characters' stats data has been labelled the "Is Artificial Flag". This
+For the purposes of this disassembly, the flag held in bit 1 of byte 6 of the characters' stats data has been labelled the "is-artificial flag". This
 flag determines whether or not a character can see through the Cloak of Invisibility, and also whether or not that character will also respond to Magic
 Knight's commands without him wearing the Valid I.D. Card. Most of the artificial characters (i.e. Klink, S3 E3 and Derby IV) have this flag set, so
 they will happily obey Magic Knight's commands whether or not he is invisible / wearing the Valid I.D. Card. The obvious exception, however, is Julie 8
-who, despite being an android, does not have her Is Artificial Flag set.
+who, despite being an android, does not have her is-artificial flag set.
 </div>
 <div class="paragraph">
-It is possible that there is a logical reason why Julie 8 does not have her Is Artificial Flag set, but it is also possible that this flag actually
+It is possible that there is a logical reason why Julie 8 does not have her is-artificial flag set, but it is also possible that this flag actually
 signifies something else!
 </div>
 </div>
 <div><span id="debugcode001"></span></div>
 <div class="box box-1">
-<div class="box-title">Leftover Debug Code 1</div>
+<div class="box-title">Leftover debug code, part 1</div>
 <div class="paragraph">
-The routine at <a href="../asm/26670.html">26670</a> displays and handles the Input Device Selection Menu, and the instructions from <a href="../asm/26670.html#26704">26704</a> onward are executed when the currently
+The routine at <a href="../asm/26670.html">26670</a> displays and handles the input device selection menu, and the instructions from <a href="../asm/26670.html#26704">26704</a> onward are executed when the currently
 selected input device is changed. The instructions between <a href="../asm/26670.html#26705">26705</a> and <a href="../asm/26670.html#26724">26724</a> seem to be set up to highlight the control device that was previously
 selected whenever a new one is chosen. The previously selected menu item is highlighted via a change in attribute for a character cell to the left of
 that item in the menu. The attribute used is 71 (white INK, black PAPER, BRIGHT), so the change will normally not be visible since there is nothing
@@ -167,32 +168,32 @@ visible.
 </div>
 <div><span id="consultoraclenoflashing"></span></div>
 <div class="box box-2">
-<div class="box-title">No Spell Effect for Consult Oracle</div>
+<div class="box-title">No spell effect for Consult Oracle</div>
 <div class="paragraph">
 When casting the Consult Oracle spell, no colour-cycling / sound effects are shown, i.e. there is no call to <a href="../asm/55651.html">55651</a>.
 </div>
 </div>
 <div><span id="fortifyspellmagiclevel"></span></div>
 <div class="box box-1">
-<div class="box-title">No Restriction on Magic Level for Casting Fortify Character / Yourself</div>
+<div class="box-title">No restriction on magic level for casting fortify character / yourself</div>
 <div class="paragraph">
-Unlike the other spells, there is no minimum Magic Level requirement for casting Fortify Yourself or Fortify Character. Regardless of Magic Knight's
-Magic Level when he casts these spells, the amount by which the target is fortified is always the same, and the spell always costs ALL of Magic Knight's
+Unlike the other spells, there is no minimum magic level requirement for casting Fortify Yourself or Fortify Character. Regardless of Magic Knight's
+magic level when he casts these spells, the amount by which the target is fortified is always the same, and the spell always costs ALL of Magic Knight's
 magic reserves.
 </div>
 </div>
 <div><span id="debugcode002"></span></div>
 <div class="box box-2">
-<div class="box-title">Leftover Debug Code 2</div>
+<div class="box-title">Leftover debug code, part 2</div>
 <div class="paragraph">
 The routine at <a href="../asm/53731.html">53731</a> handles characters' movement, however execution of this routine is dependent upon whether or not bit 7 of Gordon's stamina is
 set. If this bit is set, then all characters become frozen in place.
 </div>
 </div>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

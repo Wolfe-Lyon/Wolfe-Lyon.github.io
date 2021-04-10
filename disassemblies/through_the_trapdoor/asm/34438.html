@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 34438</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,94 +20,75 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34426.html">34426</a></span></td>
+<td class="prev">
+Prev: <a href="34426.html">34426</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34438">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34675.html">34675</a></span></td>
+<td class="next">
+Next: <a href="34675.html">34675</a>
+</td>
 </tr>
 </table>
-<div class="description">34438: Display Main Menu and Handle Main Game Loop</div>
+<div class="description">34438: Display main menu and handle main game loop</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34438"></span>34438</td>
 <td class="instruction">LD SP,34426</td>
-<td class="comment-11" rowspan="1">Set Stack Pointer</td>
+<td class="comment-1" rowspan="1">Set stack pointer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34441"></span>34441</td>
 <td class="instruction">CALL <a href="34695.html">34695</a></td>
-<td class="comment-11" rowspan="1">Copy State Data for all resettable complex entities into Table of Initial-State Data</td>
+<td class="comment-1" rowspan="1">Copy state data for all resettable complex entities into table of initial-state data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34444"></span>34444</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Set current level to 1...</td>
+<td class="comment-1" rowspan="1">Set current level to 1...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34446"></span>34446</td>
 <td class="instruction">LD (34207),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34449"></span>34449</td>
 <td class="instruction">CALL <a href="46830.html">46830</a></td>
-<td class="comment-11" rowspan="1">Display and handle Main Menu</td>
+<td class="comment-1" rowspan="1">Display and handle main menu</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34452"></span>34452</td>
 <td class="instruction">LD A,(34217)</td>
-<td class="comment-11" rowspan="1">Load current border colour into A</td>
+<td class="comment-1" rowspan="1">Load current border colour into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34455"></span>34455</td>
 <td class="instruction">OUT (254),A</td>
-<td class="comment-11" rowspan="1">Set border colour</td>
+<td class="comment-1" rowspan="1">Set border colour</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34457"></span>34457</td>
 <td class="instruction">CALL <a href="34864.html">34864</a></td>
-<td class="comment-11" rowspan="1">Copy start addresses of current level's data blocks to <a href="34236.html">34236</a> and clean up old data</td>
+<td class="comment-1" rowspan="1">Copy start addresses of current level's data blocks to <a href="34236.html">34236</a> and clean up old data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34460"></span>34460</td>
 <td class="instruction">CALL <a href="53887.html">53887</a></td>
-<td class="comment-11" rowspan="1">Paint red areas outside accessible areas of current character's current room</td>
+<td class="comment-1" rowspan="1">Paint red areas outside accessible areas of current character's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34463"></span>34463</td>
 <td class="instruction">CALL <a href="47241.html">47241</a></td>
-<td class="comment-11" rowspan="1">Reset Show Score Flag and draw timer figures bar</td>
+<td class="comment-1" rowspan="1">Reset show-score flag and draw timer figures bar</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34466"></span>
 <div class="comments">
 <div class="paragraph">
@@ -119,43 +98,37 @@ Start of main loop
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34466"></span>34466</td>
 <td class="instruction">CALL <a href="53723.html">53723</a></td>
-<td class="comment-11" rowspan="1">If Berk has been killed then reset his state, flash screen and decrease time / lives</td>
+<td class="comment-1" rowspan="1">If Berk has been killed then reset his state, flash screen and decrease time / lives</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34469"></span>34469</td>
 <td class="instruction">CALL <a href="35689.html">35689</a></td>
-<td class="comment-11" rowspan="1">Update state of Berk and store current position in script data</td>
+<td class="comment-1" rowspan="1">Update state of Berk and store current position in script data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34472"></span>34472</td>
 <td class="instruction">CALL <a href="51739.html">51739</a></td>
-<td class="comment-11" rowspan="1">Update states of Drutt and worm and store current positions in script data</td>
+<td class="comment-1" rowspan="1">Update states of Drutt and worm and store current positions in script data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34475"></span>34475</td>
 <td class="instruction">LD A,(34207)</td>
-<td class="comment-11" rowspan="1">If current level is not Level 1...</td>
+<td class="comment-1" rowspan="1">If current level is not level 1...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34478"></span>34478</td>
 <td class="instruction">CP 1</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34480"></span>34480</td>
 <td class="instruction">JR NZ,34527</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34438.html#34527">34527</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34438.html#34527">34527</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34482"></span>
 <div class="comments">
 <div class="paragraph">
@@ -165,137 +138,117 @@ Level 1
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34482"></span>34482</td>
 <td class="instruction">CALL <a href="36791.html">36791</a></td>
-<td class="comment-11" rowspan="1">Update states of all Level 1 entities</td>
+<td class="comment-1" rowspan="1">Update states of all level 1 entities</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34485"></span>34485</td>
 <td class="instruction">LD IX,(34240)</td>
-<td class="comment-11" rowspan="1">Load IX with address of complex state data (current level) for Berk</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with address of complex state data (current level) for Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34489"></span>34489</td>
 <td class="instruction">BIT 2,(IX+10)</td>
-<td class="comment-11" rowspan="1">If "Back to Level 1" Flag is reset...</td>
+<td class="comment-1" rowspan="1">If back-to-level-1 flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34493"></span>34493</td>
 <td class="instruction">JR Z,34557</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34438.html#34557">34557</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34438.html#34557">34557</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34495"></span>
 <div class="comments">
 <div class="paragraph">
-Back to Level 1 Flag is set
+Back-to-level-1 flag is set
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34495"></span>34495</td>
 <td class="instruction">LD A,(43612)</td>
-<td class="comment-11" rowspan="1">If y-coordinate of Boni's bottom edge is not 121...</td>
+<td class="comment-1" rowspan="1">If y-coordinate of Boni's bottom edge is not 121...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34498"></span>34498</td>
 <td class="instruction">CP 121</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34500"></span>34500</td>
 <td class="instruction">JR NZ,34557</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34438.html#34557">34557</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34438.html#34557">34557</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34502"></span>34502</td>
 <td class="instruction">LD A,(43677)</td>
-<td class="comment-11" rowspan="1">If y-coordinate of Drutt's bottom edge is not 121...</td>
+<td class="comment-1" rowspan="1">If y-coordinate of Drutt's bottom edge is not 121...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34505"></span>34505</td>
 <td class="instruction">CP 121</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34507"></span>34507</td>
 <td class="instruction">JR NZ,34557</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34438.html#34557">34557</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34438.html#34557">34557</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34509"></span>34509</td>
 <td class="instruction">LD A,(43671)</td>
-<td class="comment-11" rowspan="1">If Drutt's room is not 1...</td>
+<td class="comment-1" rowspan="1">If Drutt's room is not 1...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34512"></span>34512</td>
 <td class="instruction">CP 1</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34514"></span>34514</td>
 <td class="instruction">JR NZ,34557</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34438.html#34557">34557</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34438.html#34557">34557</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34516"></span>34516</td>
 <td class="instruction">LD A,2</td>
-<td class="comment-11" rowspan="1">Set depth of "Home Sweet Home" brickwork to 2...</td>
+<td class="comment-1" rowspan="1">Set depth of "Home Sweet Home" brickwork to 2...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34518"></span>34518</td>
 <td class="instruction">LD (43159),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34521"></span>34521</td>
 <td class="instruction">SET 3,(IX+10)</td>
-<td class="comment-11" rowspan="1">Set "All Home" Flag</td>
+<td class="comment-1" rowspan="1">Set all-home flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34525"></span>34525</td>
 <td class="instruction">JR 34557</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="34438.html#34557">34557</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="34438.html#34557">34557</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34527"></span>34527</td>
 <td class="instruction">LD A,(34207)</td>
-<td class="comment-11" rowspan="1">If current level is not Level 2...</td>
+<td class="comment-1" rowspan="1">If current level is not level 2...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34530"></span>34530</td>
 <td class="instruction">CP 2</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34532"></span>34532</td>
 <td class="instruction">JR NZ,34537</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34438.html#34537">34537</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34438.html#34537">34537</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34534"></span>
 <div class="comments">
 <div class="paragraph">
@@ -305,31 +258,27 @@ Level 2
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34534"></span>34534</td>
 <td class="instruction">CALL <a href="38009.html">38009</a></td>
-<td class="comment-11" rowspan="1">Update states of all Level 2 entities</td>
+<td class="comment-1" rowspan="1">Update states of all level 2 entities</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34537"></span>34537</td>
 <td class="instruction">LD A,(34207)</td>
-<td class="comment-11" rowspan="1">If current level is not Level 3...</td>
+<td class="comment-1" rowspan="1">If current level is not level 3...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34540"></span>34540</td>
 <td class="instruction">CP 3</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34542"></span>34542</td>
 <td class="instruction">JR NZ,34547</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34438.html#34547">34547</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34438.html#34547">34547</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34544"></span>
 <div class="comments">
 <div class="paragraph">
@@ -339,31 +288,27 @@ Level 3
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34544"></span>34544</td>
 <td class="instruction">CALL <a href="39137.html">39137</a></td>
-<td class="comment-11" rowspan="1">Update states of all Level 3 entities</td>
+<td class="comment-1" rowspan="1">Update states of all level 3 entities</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34547"></span>34547</td>
 <td class="instruction">LD A,(34207)</td>
-<td class="comment-11" rowspan="1">If current level is not Level 4...</td>
+<td class="comment-1" rowspan="1">If current level is not level 4...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34550"></span>34550</td>
 <td class="instruction">CP 4</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34552"></span>34552</td>
 <td class="instruction">JR NZ,34557</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34438.html#34557">34557</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34438.html#34557">34557</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34554"></span>
 <div class="comments">
 <div class="paragraph">
@@ -373,13 +318,12 @@ Level 4
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34554"></span>34554</td>
 <td class="instruction">CALL <a href="41211.html">41211</a></td>
-<td class="comment-11" rowspan="1">Update states of all Level 4 entities</td>
+<td class="comment-1" rowspan="1">Update states of all level 4 entities</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34557"></span>
 <div class="comments">
 <div class="paragraph">
@@ -389,187 +333,157 @@ All levels
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34557"></span>34557</td>
 <td class="instruction">CALL <a href="47893.html">47893</a></td>
-<td class="comment-11" rowspan="1">Check for control input and store at <a href="34219.html">34219</a></td>
+<td class="comment-1" rowspan="1">Check for control input and store at <a href="34219.html">34219</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34560"></span>34560</td>
 <td class="instruction">CALL <a href="55525.html">55525</a></td>
-<td class="comment-11" rowspan="1">Move all falling entities down by distances appropriate to their current velocity factors</td>
+<td class="comment-1" rowspan="1">Move all falling entities down by distances appropriate to their current velocity factors</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34563"></span>34563</td>
 <td class="instruction">CALL <a href="34916.html">34916</a></td>
-<td class="comment-11" rowspan="1">If Fire Pressed, or Character Swap Pending Flag set, then swap characters</td>
+<td class="comment-1" rowspan="1">If fire pressed, or character-swap-pending flag set, then swap characters</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34566"></span>34566</td>
 <td class="instruction">CALL <a href="53782.html">53782</a></td>
-<td class="comment-11" rowspan="1">Set each value in Primary Display Buffer within play area to zero</td>
+<td class="comment-1" rowspan="1">Set each value in primary display buffer within play area to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34569"></span>34569</td>
 <td class="instruction">CALL <a href="45899.html">45899</a></td>
-<td class="comment-11" rowspan="1">Populate Primary Display Buffer with layout data for current character's current room</td>
+<td class="comment-1" rowspan="1">Populate primary display buffer with layout data for current character's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34572"></span>34572</td>
 <td class="instruction">CALL <a href="54034.html">54034</a></td>
-<td class="comment-11" rowspan="1">Draw contents of Primary Display Buffer to display</td>
+<td class="comment-1" rowspan="1">Draw contents of primary display buffer to display</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34575"></span>34575</td>
 <td class="instruction">CALL <a href="59722.html#59725">59725</a></td>
-<td class="comment-11" rowspan="1">Play and clear pending sound (index as stored at <a href="34256.html#34273">34273</a>)</td>
+<td class="comment-1" rowspan="1">Play and clear pending sound (index as stored at <a href="34256.html#34273">34273</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34578"></span>34578</td>
 <td class="instruction">LD A,(34210)</td>
-<td class="comment-11" rowspan="1">Load remaining time / lives into A</td>
+<td class="comment-1" rowspan="1">Load remaining time / lives into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34581"></span>34581</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If no time / lives are left...</td>
+<td class="comment-1" rowspan="1">If no time / lives are left...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34582"></span>34582</td>
 <td class="instruction">JR Z,34645</td>
-<td class="comment-11" rowspan="1">...then jump to <a href="34438.html#34645">34645</a></td>
+<td class="comment-1" rowspan="1">...then jump to <a href="34438.html#34645">34645</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34584"></span>34584</td>
 <td class="instruction">LD A,(43603)</td>
-<td class="comment-11" rowspan="1">If "All Home" Flag is set...</td>
+<td class="comment-1" rowspan="1">If all-home flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34587"></span>34587</td>
 <td class="instruction">BIT 3,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34589"></span>34589</td>
 <td class="instruction">JR NZ,34658</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34438.html#34658">34658</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34438.html#34658">34658</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34591"></span>34591</td>
 <td class="instruction">CALL <a href="47363.html">47363</a></td>
-<td class="comment-11" rowspan="1">Update eyes of a randomly selected timer figure, increase Timer Tick Counter and process timer figure blinking</td>
+<td class="comment-1" rowspan="1">Update eyes of a randomly selected timer figure, increase timer tick counter and process timer figure blinking</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34594"></span>34594</td>
 <td class="instruction">LD HL,34208</td>
-<td class="comment-11" rowspan="1">If Update Scores and Display Flag is reset...</td>
+<td class="comment-1" rowspan="1">If update-scores-and-display flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34597"></span>34597</td>
 <td class="instruction">BIT 5,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34599"></span>34599</td>
 <td class="instruction">JR Z,34606</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="34438.html#34606">34606</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="34438.html#34606">34606</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34601"></span>34601</td>
 <td class="instruction">RES 5,(HL)</td>
-<td class="comment-11" rowspan="1">Reset Update Scores and Display Flag</td>
+<td class="comment-1" rowspan="1">Reset update-scores-and-display flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34603"></span>34603</td>
 <td class="instruction">CALL <a href="47499.html">47499</a></td>
-<td class="comment-11" rowspan="1">Update scores and display</td>
+<td class="comment-1" rowspan="1">Update scores and display</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34606"></span>34606</td>
 <td class="instruction">LD HL,61312</td>
-<td class="comment-11" rowspan="1">Point HL at Display Buffer 1</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at display buffer 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34609"></span>34609</td>
 <td class="instruction">LD DE,63424</td>
-<td class="comment-11" rowspan="1">Point DE at Display Buffer 2</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at display buffer 2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34612"></span>34612</td>
 <td class="instruction">LD A,(34271)</td>
-<td class="comment-11" rowspan="1">Invert "Display Buffer 2 is Primary" Flag...</td>
+<td class="comment-1" rowspan="1">Invert display-buffer-2-is-primary flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34615"></span>34615</td>
 <td class="instruction">XOR 1</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34617"></span>34617</td>
 <td class="instruction">LD (34271),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34620"></span>34620</td>
 <td class="instruction">JR Z,34623</td>
-<td class="comment-11" rowspan="1">If "Display Buffer 2 is Primary" Flag is reset then skip ahead to <a href="34438.html#34623">34623</a> (Display Buffer 1 is Primary, Display Buffer 2 is Secondary)</td>
+<td class="comment-1" rowspan="1">If display-buffer-2-is-primary flag is reset then skip ahead to <a href="34438.html#34623">34623</a> (display buffer 1 is primary)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34622"></span>34622</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Switch DE and HL (Display Buffer 1 is Secondary, Display Buffer 2 is Primary)</td>
+<td class="comment-1" rowspan="1">Switch <span class="register">DE</span> and <span class="register">HL</span> (display buffer 1 is secondary)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34623"></span>34623</td>
 <td class="instruction">LD (34279),HL</td>
-<td class="comment-11" rowspan="1">Store address of Primary Display Buffer at <a href="34279.html">34279</a></td>
+<td class="comment-1" rowspan="1">Store address of primary display buffer at <a href="34279.html">34279</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34626"></span>34626</td>
 <td class="instruction">LD A,(34219)</td>
-<td class="comment-11" rowspan="1">Load A with control input</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with control input</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34629"></span>34629</td>
 <td class="instruction">BIT 6,A</td>
-<td class="comment-11" rowspan="1">If Restart hasn't been pressed...</td>
+<td class="comment-1" rowspan="1">If restart hasn't been pressed...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34631"></span>34631</td>
 <td class="instruction">JP Z,34466</td>
-<td class="comment-11" rowspan="1">...then jump to <a href="34438.html#34466">34466</a> (start of main loop)</td>
+<td class="comment-1" rowspan="1">...then jump to <a href="34438.html#34466">34466</a> (start of main loop)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34634"></span>
 <div class="comments">
 <div class="paragraph">
@@ -579,127 +493,116 @@ Restart has been pressed
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34634"></span>34634</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Set sound 1 as pending if appropriate, then play and clear pending sound...</td>
+<td class="comment-1" rowspan="1">Set sound 1 as pending if appropriate, then play and clear pending sound...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34636"></span>34636</td>
 <td class="instruction">CALL <a href="59722.html">59722</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34639"></span>34639</td>
 <td class="instruction">CALL <a href="34751.html">34751</a></td>
-<td class="comment-11" rowspan="1">Reset all game data in preparation for new game</td>
+<td class="comment-1" rowspan="1">Reset all game data in preparation for new game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34642"></span>34642</td>
 <td class="instruction">JP 34438</td>
-<td class="comment-11" rowspan="1">Jump back to <a href="34438.html">34438</a> (return to Main Menu)</td>
+<td class="comment-1" rowspan="1">Jump back to <a href="34438.html">34438</a> (return to main menu)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34645"></span>
 <div class="comments">
 <div class="paragraph">
-No time/lives left
+No time / lives left
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34645"></span>34645</td>
 <td class="instruction">CALL <a href="47499.html">47499</a></td>
-<td class="comment-11" rowspan="1">Update scores and display</td>
+<td class="comment-1" rowspan="1">Update scores and display</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34648"></span>34648</td>
 <td class="instruction">CALL <a href="47185.html">47185</a></td>
-<td class="comment-11" rowspan="1">Print "SORRY BERK,  BUT YOUR TIME IS UP" string</td>
+<td class="comment-1" rowspan="1">Print "SORRY BERK,  BUT YOUR TIME IS UP" string</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34651"></span>34651</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Set sound 1 as pending if appropriate, then play and clear pending sound...</td>
+<td class="comment-1" rowspan="1">Set sound 1 as pending if appropriate, then play and clear pending sound...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34653"></span>34653</td>
 <td class="instruction">CALL <a href="59722.html">59722</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34656"></span>34656</td>
 <td class="instruction">JR 34666</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="34438.html#34666">34666</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="34438.html#34666">34666</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="34658"></span>
 <div class="comments">
 <div class="paragraph">
-"All Home" Flag is set
+All-home flag is set
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34658"></span>34658</td>
 <td class="instruction">CALL <a href="47213.html">47213</a></td>
-<td class="comment-11" rowspan="1">Print "HOME SWEET HOME" string</td>
+<td class="comment-1" rowspan="1">Print "HOME SWEET HOME" string</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34661"></span>34661</td>
 <td class="instruction">LD A,3</td>
-<td class="comment-11" rowspan="1">Set sound 3 as pending if appropriate, then play and clear pending sound...</td>
+<td class="comment-1" rowspan="1">Set sound 3 as pending if appropriate, then play and clear pending sound...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34663"></span>34663</td>
 <td class="instruction">CALL <a href="59722.html">59722</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="34666"></span>34666</td>
 <td class="instruction">CALL <a href="47942.html">47942</a></td>
-<td class="comment-11" rowspan="1">Wait for current key to be released and another to be pressed, storing in A</td>
+<td class="comment-1" rowspan="1">Wait for current key to be released and another to be pressed, storing in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34669"></span>34669</td>
 <td class="instruction">CALL <a href="34751.html">34751</a></td>
-<td class="comment-11" rowspan="1">Reset all game data in preparation for new game</td>
+<td class="comment-1" rowspan="1">Reset all game data in preparation for new game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="34672"></span>34672</td>
 <td class="instruction">JP 34438</td>
-<td class="comment-11" rowspan="1">Jump back to <a href="34438.html">34438</a> (return to Main Menu)</td>
+<td class="comment-1" rowspan="1">Jump back to <a href="34438.html">34438</a> (return to main menu)</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="34426.html">34426</a></span></td>
+<td class="prev">
+Prev: <a href="34426.html">34426</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#34438">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="34675.html">34675</a></span></td>
+<td class="next">
+Next: <a href="34675.html">34675</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

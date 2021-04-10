@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 48191</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48164.html">48164</a></span></td>
+<td class="prev">
+Prev: <a href="48164.html">48164</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48191">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48341.html">48341</a></span></td>
+<td class="next">
+Next: <a href="48341.html">48341</a>
+</td>
 </tr>
 </table>
-<div class="description">48191: Set Terrain Interaction Data for Character Blocks Spanned by an Object and Draw the Object</div>
+<div class="description">48191: Set terrain interaction data for character blocks spanned by an object and draw the object</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="42638.html">42638</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -54,40 +59,30 @@ Used by the routine at <a href="42638.html">42638</a>.
 <td class="register-desc">Position data for an object (entry at <a href="48191.html#48202">48202</a> only)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48191"></span>48191</td>
 <td class="instruction">LD IX,23296</td>
-<td class="comment-11" rowspan="1">Store object's position data temporarily at 23296 - 23298...</td>
+<td class="comment-1" rowspan="1">Store object's position data temporarily at 23296 - 23298...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48195"></span>48195</td>
 <td class="instruction">LD (IX+1),C</td>
-<td class="comment-11" rowspan="1">...x-coordinate...</td>
+<td class="comment-1" rowspan="1">...x-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48198"></span>48198</td>
 <td class="instruction">LD (IX+2),B</td>
-<td class="comment-11" rowspan="1">...y-coordinate...</td>
+<td class="comment-1" rowspan="1">...y-coordinate...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48201"></span>48201</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load index of object of interest into C</td>
+<td class="comment-1" rowspan="1">Load index of object of interest into <span class="register">C</span></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="48202"></span>
 <div class="comments">
 <div class="paragraph">
@@ -97,519 +92,441 @@ This entry point is used by the routine at <a href="48164.html">48164</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48202"></span>48202</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48203"></span>48203</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48205"></span>48205</td>
 <td class="instruction">LD A,C</td>
-<td class="comment-11" rowspan="1">Load HL with eight times current object index...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with eight times current object index...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48206"></span>48206</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48207"></span>48207</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48208"></span>48208</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48209"></span>48209</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48211"></span>48211</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48212"></span>48212</td>
 <td class="instruction">LD DE,49361</td>
-<td class="comment-11" rowspan="1">Point DE at last byte (graphic index) of "Nothing at All" properties</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at last byte (graphic index) of "nothing at all" properties</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48215"></span>48215</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Add eight times current object index as offset</td>
+<td class="comment-1" rowspan="1">Add eight times current object index as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48216"></span>48216</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load graphic index into A</td>
+<td class="comment-1" rowspan="1">Load graphic index into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48217"></span>48217</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = graphic index)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = graphic index)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48218"></span>48218</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move pointer back one byte to point at attribute of object...</td>
+<td class="comment-1" rowspan="1">Move pointer back one byte to point at attribute of object...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48219"></span>48219</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48220"></span>48220</td>
 <td class="instruction">LD (23695),A</td>
-<td class="comment-11" rowspan="1">...and copy into System Variable ATTR T</td>
+<td class="comment-1" rowspan="1">...and store this value at <a href="23693.html#23695">23695</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48223"></span>48223</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move pointer back one byte to point at object's Terrain Interaction Parameter...</td>
+<td class="comment-1" rowspan="1">Move pointer back one byte to point at object's terrain interaction parameter...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48224"></span>48224</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...and store at <a href="23473.html">23473</a>...</td>
+<td class="comment-1" rowspan="1">...and store at <a href="23473.html">23473</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48225"></span>48225</td>
 <td class="instruction">LD (23473),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48228"></span>48228</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move pointer back one byte to point at object's Attribute Flags...</td>
+<td class="comment-1" rowspan="1">Move pointer back one byte to point at object's attribute flags...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48229"></span>48229</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...load into A...</td>
+<td class="comment-1" rowspan="1">...load into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48230"></span>48230</td>
 <td class="instruction">AND 15</td>
-<td class="comment-11" rowspan="1">...clear upper four bits...</td>
+<td class="comment-1" rowspan="1">...clear upper four bits...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48232"></span>48232</td>
 <td class="instruction">LD (48271),A</td>
-<td class="comment-11" rowspan="1">...and store as operand of instruction at <a href="48191.html#48270">48270</a></td>
+<td class="comment-1" rowspan="1">...and store as operand of instruction at <a href="48191.html#48270">48270</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48235"></span>48235</td>
 <td class="instruction">LD C,(IX+1)</td>
-<td class="comment-11" rowspan="1">Load C with x-coordinate of current object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with x-coordinate of current object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48238"></span>48238</td>
 <td class="instruction">LD B,(IX+2)</td>
-<td class="comment-11" rowspan="1">Load B with y-coordinate of current object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with y-coordinate of current object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48241"></span>48241</td>
 <td class="instruction">DEC B</td>
-<td class="comment-11" rowspan="1">Decrease y-coordinate by one to point to object's top-left character block</td>
+<td class="comment-1" rowspan="1">Decrease y-coordinate by one to point to object's top-left character block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48242"></span>48242</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = graphic index)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = graphic index)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48243"></span>48243</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX (pointer to position data for object)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span> (pointer to position data for object)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48245"></span>48245</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (x- and y-coordinates of object's top-left character block)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (x- and y-coordinates of object's top-left character block)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48246"></span>48246</td>
 <td class="instruction">CALL <a href="63499.html">63499</a></td>
-<td class="comment-11" rowspan="1">Draw 2x2 graphic with lookup index A at character coordinates (C, B)</td>
+<td class="comment-1" rowspan="1">Draw 2 &times; 2 graphic with lookup index <span class="register">A</span> at character coordinates (<span class="register">C</span>, <span class="register">B</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48249"></span>48249</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (x- and y-coordinates of object's top-left character block)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (x- and y-coordinates of object's top-left character block)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48250"></span>48250</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (x- and y-coordinates of object's top-left character block)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (x- and y-coordinates of object's top-left character block)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48251"></span>48251</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">If object's y-coordinate is 4 (i.e. drawn in window at top while carrying mirror)...</td>
+<td class="comment-1" rowspan="1">If object's y-coordinate is 4 (i.e. drawn in window at top while carrying Mirror)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48252"></span>48252</td>
 <td class="instruction">CP 4</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48254"></span>48254</td>
 <td class="instruction">JR Z,48263</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48191.html#48263">48263</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48191.html#48263">48263</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48256"></span>48256</td>
 <td class="instruction">LD A,(23706)</td>
-<td class="comment-11" rowspan="1">If Player Attribute Update Flag is reset (Player Attribute Ignore mode)...</td>
+<td class="comment-1" rowspan="1">If player-attribute-update flag is reset (player attribute ignore mode)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48259"></span>48259</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48260"></span>48260</td>
 <td class="instruction">JP Z,48298</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48191.html#48298">48298</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48191.html#48298">48298</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48263"></span>48263</td>
 <td class="instruction">CALL <a href="63219.html">63219</a></td>
-<td class="comment-11" rowspan="1">Load HL with Attribute File address for coordinates (C, B)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with attribute file address for coordinates (<span class="register">C</span>, <span class="register">B</span>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48266"></span>48266</td>
 <td class="instruction">LD A,(23695)</td>
-<td class="comment-11" rowspan="1">Load E with value of system variable ATTR T...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with attribute stored at <a href="23693.html#23695">23695</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48269"></span>48269</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="48270"></span>
 <div class="comments">
 <div class="paragraph">
-The operand of the instruction at <a href="48191.html#48270">48270</a> represents the object's Attribute Flags. This is modified by the instruction at <a href="48191.html#48232">48232</a>.
+The operand of the instruction at <a href="48191.html#48270">48270</a> represents the object's attribute flags. This is modified by the instruction at <a href="48191.html#48232">48232</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48270"></span>48270</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Load A with object's Attribute Flags</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with object's attribute flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48272"></span>48272</td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="1">If Paint Top-Left Flag is reset...</td>
+<td class="comment-1" rowspan="1">If paint-top-left flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48274"></span>48274</td>
 <td class="instruction">JR Z,48277</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="35277.html#36190">36190</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="35277.html#36190">36190</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48276"></span>48276</td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-11" rowspan="1">Paint top-left character block of object with object attribute</td>
+<td class="comment-1" rowspan="1">Paint top-left character block of object with object attribute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48277"></span>48277</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Increase HL to move to top-right character block</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">HL</span> to move to top-right character block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48278"></span>48278</td>
 <td class="instruction">BIT 1,A</td>
-<td class="comment-11" rowspan="1">If Paint Top-Right Flag is reset...</td>
+<td class="comment-1" rowspan="1">If paint-top-right flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48280"></span>48280</td>
 <td class="instruction">JR Z,48283</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48191.html#48283">48283</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48191.html#48283">48283</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48282"></span>48282</td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-11" rowspan="1">Paint top-right character block of object with object attribute</td>
+<td class="comment-1" rowspan="1">Paint top-right character block of object with object attribute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48283"></span>48283</td>
 <td class="instruction">LD BC,31</td>
-<td class="comment-11" rowspan="1">Advance HL by 31 bytes...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> by 31 bytes...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48286"></span>48286</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...to point to bottom-left character block of object</td>
+<td class="comment-1" rowspan="1">...to point to bottom-left character block of object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48287"></span>48287</td>
 <td class="instruction">BIT 2,A</td>
-<td class="comment-11" rowspan="1">If Paint Bottom-Left Flag is reset...</td>
+<td class="comment-1" rowspan="1">If paint-bottom-left flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48289"></span>48289</td>
 <td class="instruction">JR Z,48292</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48191.html#48292">48292</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48191.html#48292">48292</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48291"></span>48291</td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-11" rowspan="1">Paint bottom-left character block of object with object attribute</td>
+<td class="comment-1" rowspan="1">Paint bottom-left character block of object with object attribute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48292"></span>48292</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Increase HL to move to bottom-right character block</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">HL</span> to move to bottom-right character block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48293"></span>48293</td>
 <td class="instruction">BIT 3,A</td>
-<td class="comment-11" rowspan="1">If Paint Bottom-Right Flag is reset...</td>
+<td class="comment-1" rowspan="1">If paint-bottom-right flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48295"></span>48295</td>
 <td class="instruction">JR Z,48298</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48191.html#48298">48298</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48191.html#48298">48298</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48297"></span>48297</td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-11" rowspan="1">Paint bottom-right character block of object with object attribute</td>
+<td class="comment-1" rowspan="1">Paint bottom-right character block of object with object attribute</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48298"></span>48298</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Store BC (x- and y-coordinates of object's top-left character block)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (x- and y-coordinates of object's top-left character block)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48299"></span>48299</td>
 <td class="instruction">CALL <a href="63233.html">63233</a></td>
-<td class="comment-11" rowspan="1">Point HL at terrain interaction data for character coordinates x=C, y=B</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at terrain interaction data for character coordinates x=<span class="register">C</span>, y=<span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48302"></span>48302</td>
 <td class="instruction">LD A,(23473)</td>
-<td class="comment-11" rowspan="1">Load E with object's Terrain Interaction Parameter...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with object's terrain interaction parameter...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48305"></span>48305</td>
 <td class="instruction">LD E,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48306"></span>48306</td>
 <td class="instruction">LD A,(48271)</td>
-<td class="comment-11" rowspan="1">Load A with object's Attribute Flags</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with object's attribute flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48309"></span>48309</td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="1">If Paint Top-Left Flag is reset...</td>
+<td class="comment-1" rowspan="1">If paint-top-left flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48311"></span>48311</td>
 <td class="instruction">JR Z,48314</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48191.html#48314">48314</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48191.html#48314">48314</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48313"></span>48313</td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-11" rowspan="1">"Paint" object's Terrain Interaction Parameter into Terrain Interaction Data Table for top-left character block</td>
+<td class="comment-1" rowspan="1">Paint object's terrain interaction parameter into terrain interaction data table for top-left character block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48314"></span>48314</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Increase HL to move to top-right character block</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">HL</span> to move to top-right character block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48315"></span>48315</td>
 <td class="instruction">BIT 1,A</td>
-<td class="comment-11" rowspan="1">If Paint Top-Right Flag is reset...</td>
+<td class="comment-1" rowspan="1">If paint-top-right flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48317"></span>48317</td>
 <td class="instruction">JR Z,48320</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48191.html#48320">48320</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48191.html#48320">48320</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48319"></span>48319</td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-11" rowspan="1">"Paint" object's Terrain Interaction Parameter into Terrain Interaction Data Table for top-right character block</td>
+<td class="comment-1" rowspan="1">Paint object's terrain interaction parameter into terrain interaction data table for top-right character block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48320"></span>48320</td>
 <td class="instruction">LD BC,31</td>
-<td class="comment-11" rowspan="1">Advance HL by 31 bytes...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> by 31 bytes...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48323"></span>48323</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...to point to bottom-left character block of object</td>
+<td class="comment-1" rowspan="1">...to point to bottom-left character block of object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48324"></span>48324</td>
 <td class="instruction">BIT 2,A</td>
-<td class="comment-11" rowspan="1">If Paint Bottom-Left Flag is reset...</td>
+<td class="comment-1" rowspan="1">If paint-bottom-left flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48326"></span>48326</td>
 <td class="instruction">JR Z,48329</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48191.html#48329">48329</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48191.html#48329">48329</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48328"></span>48328</td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-11" rowspan="1">"Paint" object's Terrain Interaction Parameter into Terrain Interaction Data Table for bottom-left character block</td>
+<td class="comment-1" rowspan="1">Paint object's terrain interaction parameter into terrain interaction data table for bottom-left character block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48329"></span>48329</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Increase HL to move to bottom-right character block</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">HL</span> to move to bottom-right character block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48330"></span>48330</td>
 <td class="instruction">BIT 3,A</td>
-<td class="comment-11" rowspan="1">If Paint Bottom-Right Flag is reset...</td>
+<td class="comment-1" rowspan="1">If paint-bottom-right flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48332"></span>48332</td>
 <td class="instruction">JR Z,48335</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48191.html#48335">48335</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48191.html#48335">48335</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48334"></span>48334</td>
 <td class="instruction">LD (HL),E</td>
-<td class="comment-11" rowspan="1">"Paint" object's Terrain Interaction Parameter into Terrain Interaction Data Table for bottom-right character block</td>
+<td class="comment-1" rowspan="1">Paint object's terrain interaction parameter into terrain interaction data table for bottom-right character block</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48335"></span>48335</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX (pointer to position data for object)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span> (pointer to position data for object)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48337"></span>48337</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48339"></span>48339</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48340"></span>48340</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48164.html">48164</a></span></td>
+<td class="prev">
+Prev: <a href="48164.html">48164</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48191">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48341.html">48341</a></span></td>
+<td class="next">
+Next: <a href="48341.html">48341</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

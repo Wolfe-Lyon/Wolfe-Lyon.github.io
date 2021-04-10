@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 48727</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,76 +20,67 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48715.html">48715</a></span></td>
+<td class="prev">
+Prev: <a href="48715.html">48715</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48727">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48738.html">48738</a></span></td>
+<td class="next">
+Next: <a href="48738.html">48738</a>
+</td>
 </tr>
 </table>
-<div class="description">48727: Move Carried Entity to Berk's Right as he Faces Right</div>
+<div class="description">48727: Move carried entity to Berk's right as he faces right</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="48704.html">48704</a> and <a href="54383.html">54383</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48727"></span>48727</td>
 <td class="instruction">CALL <a href="48760.html">48760</a></td>
-<td class="comment-11" rowspan="1">If Berk is carrying an entity then load A with its width minus one divided by two and D with Berk's depth, else return</td>
+<td class="comment-1" rowspan="1">If Berk is carrying an entity then load <span class="register">A</span> with its width minus one divided by two and <span class="register">D</span> with Berk's depth, else return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48730"></span>48730</td>
 <td class="instruction">INC D</td>
-<td class="comment-11" rowspan="1">Increase the depth (as carried entity has moved deeper into the screen)</td>
+<td class="comment-1" rowspan="1">Increase the depth (as carried entity has moved deeper into the screen)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48731"></span>48731</td>
 <td class="instruction">NEG</td>
-<td class="comment-11" rowspan="1">Subtract width of carried entity minus one divided by two...</td>
+<td class="comment-1" rowspan="1">Subtract width of carried entity minus one divided by two...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48733"></span>48733</td>
 <td class="instruction">ADD A,(IX+7)</td>
-<td class="comment-11" rowspan="1">...from Berk's right-side x-coordinate and load into A</td>
+<td class="comment-1" rowspan="1">...from Berk's right-side x-coordinate and load into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48736"></span>48736</td>
 <td class="instruction">JR <a href="48738.html#48749">48749</a></td>
-<td class="comment-11" rowspan="1">Set carried entity's calculated horizontal position and depth and return</td>
+<td class="comment-1" rowspan="1">Set carried entity's calculated horizontal position and depth and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48715.html">48715</a></span></td>
+<td class="prev">
+Prev: <a href="48715.html">48715</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48727">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48738.html">48738</a></span></td>
+<td class="next">
+Next: <a href="48738.html">48738</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

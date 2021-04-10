@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 33170</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,316 +20,263 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="33140.html">33140</a></span></td>
+<td class="prev">
+Prev: <a href="33140.html">33140</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#33170">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="33290.html">33290</a></span></td>
+<td class="next">
+Next: <a href="33290.html">33290</a>
+</td>
 </tr>
 </table>
-<div class="description">33170: "Command Character to Help" Routine for Klink and S3 E3</div>
+<div class="description">33170: Command-character-to-help routine for Klink and S3 E3</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routine at <a href="55726.html">55726</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33170"></span>33170</td>
 <td class="instruction">LD A,(29632)</td>
-<td class="comment-11" rowspan="1">Load A with index of Current Character...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33173"></span>33173</td>
 <td class="instruction">LD (23434),A</td>
-<td class="comment-11" rowspan="1">...and store at <a href="23434.html">23434</a> (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
+<td class="comment-1" rowspan="1">...and store at <a href="23434.html">23434</a> (<a href="../reference/facts.html#128ktraces">see trivia</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33176"></span>33176</td>
 <td class="instruction">LD A,3</td>
-<td class="comment-11" rowspan="1">If Magic Knight is wearing the Valid I.D. Card (03)...</td>
+<td class="comment-1" rowspan="1">If Magic Knight is wearing the Valid I.D. Card (03)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33178"></span>33178</td>
 <td class="instruction">CALL <a href="33640.html">33640</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33181"></span>33181</td>
 <td class="instruction">JP Z,<a href="55252.html">55252</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character] CANNOT HELP YOU" Window (29), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character] CANNOT HELP YOU" window (29) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33184"></span>33184</td>
 <td class="instruction">LD A,(23451)</td>
-<td class="comment-11" rowspan="1">If I.D. Card Validated Flag is reset...</td>
+<td class="comment-1" rowspan="1">If I.D.-card-validated flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33187"></span>33187</td>
 <td class="instruction">BIT 4,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33189"></span>33189</td>
 <td class="instruction">JP Z,33195</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="33170.html#33195">33195</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="33170.html#33195">33195</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33192"></span>33192</td>
 <td class="instruction">JP <a href="55252.html">55252</a></td>
-<td class="comment-11" rowspan="1">Display "[Character] CANNOT HELP YOU" Window (29), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display "[Character] CANNOT HELP YOU" window (29) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33195"></span>33195</td>
 <td class="instruction">LD E,8</td>
-<td class="comment-11" rowspan="1">If Current Character is not carrying the Camera (8)...</td>
+<td class="comment-1" rowspan="1">If Current Character is not carrying the Camera (8)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33197"></span>33197</td>
 <td class="instruction">CALL <a href="33896.html">33896</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33200"></span>33200</td>
 <td class="instruction">JP NZ,<a href="55252.html">55252</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character] CANNOT HELP YOU" Window (29), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character] CANNOT HELP YOU" window (29) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33203"></span>33203</td>
 <td class="instruction">LD E,4</td>
-<td class="comment-11" rowspan="1">If Current Character is not carrying the Instant Film (4)...</td>
+<td class="comment-1" rowspan="1">If Current Character is not carrying the Instant Film (4)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33205"></span>33205</td>
 <td class="instruction">CALL <a href="33896.html">33896</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33208"></span>33208</td>
 <td class="instruction">JP NZ,<a href="55252.html">55252</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character] CANNOT HELP YOU" Window (29), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character] CANNOT HELP YOU" window (29) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33211"></span>33211</td>
 <td class="instruction">LD A,(29632)</td>
-<td class="comment-11" rowspan="1">Load BC with five times index of Current Character...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with five times index of Current Character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33214"></span>33214</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33215"></span>33215</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33216"></span>33216</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33217"></span>33217</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33218"></span>33218</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33219"></span>33219</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33221"></span>33221</td>
 <td class="instruction">LD IX,25174</td>
-<td class="comment-11" rowspan="1">Point IX at start of Characters' Current Inventories Table...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at start of characters' current inventories table...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33225"></span>33225</td>
 <td class="instruction">ADD IX,BC</td>
-<td class="comment-11" rowspan="1">...and add BC as offset to point to start of Current Character's inventory</td>
+<td class="comment-1" rowspan="1">...and add <span class="register">BC</span> as offset to point to start of Current Character's inventory</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33227"></span>33227</td>
 <td class="instruction">LD A,(IX+4)</td>
-<td class="comment-11" rowspan="1">If this character has no free inventory slots...</td>
+<td class="comment-1" rowspan="1">If this character has no free inventory slots...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33230"></span>33230</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33231"></span>33231</td>
 <td class="instruction">JP NZ,<a href="55252.html">55252</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character] CANNOT HELP YOU" Window (29), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character] CANNOT HELP YOU" window (29) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33234"></span>33234</td>
 <td class="instruction">LD (33282),IX</td>
-<td class="comment-11" rowspan="1">Modify operand of the instruction at <a href="33170.html#33281">33281</a> to address of start of Current Character's current inventory</td>
+<td class="comment-1" rowspan="1">Modify operand of the instruction at <a href="33170.html#33281">33281</a> to address of start of Current Character's current inventory</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33238"></span>33238</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">If Magic Knight is not wearing the Cloak of Invisibility (01)...</td>
+<td class="comment-1" rowspan="1">If Magic Knight is not wearing the Cloak of Invisibility (01)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33240"></span>33240</td>
 <td class="instruction">CALL <a href="33640.html">33640</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33243"></span>33243</td>
 <td class="instruction">JR NZ,33259</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="33170.html#33259">33259</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="33170.html#33259">33259</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33245"></span>33245</td>
 <td class="instruction">LD A,(23451)</td>
-<td class="comment-11" rowspan="1">If Photograph of Inside of Starship Taken Flag is set...</td>
+<td class="comment-1" rowspan="1">If photograph-of-inside-of-starship-taken flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33248"></span>33248</td>
 <td class="instruction">BIT 1,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33250"></span>33250</td>
 <td class="instruction">JP NZ,<a href="55252.html">55252</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character] CANNOT HELP YOU" Window (29), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character] CANNOT HELP YOU" window (29) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33253"></span>33253</td>
 <td class="instruction">LD B,2</td>
-<td class="comment-11" rowspan="1">Load B with 2 (as Photograph of Inside of Starship Taken Flag is in bit 1)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 2 (as photograph-of-inside-of-starship-taken flag is in bit 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33255"></span>33255</td>
 <td class="instruction">LD A,9</td>
-<td class="comment-11" rowspan="1">Load A with 9 (index of Photograph of inside of starship)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 9 (index of Photograph of inside of starship)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33257"></span>33257</td>
 <td class="instruction">JR 33271</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="33170.html#33271">33271</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="33170.html#33271">33271</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33259"></span>33259</td>
 <td class="instruction">LD A,(23451)</td>
-<td class="comment-11" rowspan="1">If Photograph of Magic Knight Taken Flag is set...</td>
+<td class="comment-1" rowspan="1">If photograph-of-Magic-Knight-taken flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33262"></span>33262</td>
 <td class="instruction">BIT 2,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33264"></span>33264</td>
 <td class="instruction">JP NZ,<a href="55252.html">55252</a></td>
-<td class="comment-11" rowspan="1">...then display "[Character] CANNOT HELP YOU" Window (29), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">...then display "[Character] CANNOT HELP YOU" window (29) and return to game</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33267"></span>33267</td>
 <td class="instruction">LD B,4</td>
-<td class="comment-11" rowspan="1">Load B with 4 (as Photograph of Magic Knight Taken Flag is in bit 2)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 4 (as photograph-of-Magic-Knight-taken flag is in bit 2)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33269"></span>33269</td>
 <td class="instruction">LD A,5</td>
-<td class="comment-11" rowspan="1">Load A with 5 (index of Photograph of Magic Knight)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 5 (index of Photograph of Magic Knight)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="33271"></span>33271</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">Load C with object index from A</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with object index from <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33272"></span>33272</td>
 <td class="instruction">LD A,(23451)</td>
-<td class="comment-11" rowspan="1">Load A with current Score Progress Flags</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with current score progress flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33275"></span>33275</td>
 <td class="instruction">OR B</td>
-<td class="comment-11" rowspan="1">Set Flag(s) according to value in B...</td>
+<td class="comment-1" rowspan="1">Set flag(s) according to value in <span class="register">B</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33276"></span>33276</td>
 <td class="instruction">LD (23451),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33279"></span>33279</td>
 <td class="instruction">LD B,5</td>
-<td class="comment-11" rowspan="1">Load B with 5 (five inventory slots)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 5 (five inventory slots)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="33281"></span>
 <div class="comments">
 <div class="paragraph">
@@ -338,35 +286,36 @@ The operand of the instruction at <a href="33170.html#33281">33281</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33281"></span>33281</td>
 <td class="instruction">LD HL,0</td>
-<td class="comment-11" rowspan="1">Point HL at start of Current Character's current inventory as stored previously</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of Current Character's current inventory as stored previously</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33284"></span>33284</td>
 <td class="instruction">CALL <a href="33516.html">33516</a></td>
-<td class="comment-11" rowspan="1">Load object C into the first empty inventory slot of Current Character</td>
+<td class="comment-1" rowspan="1">Load object <span class="register">C</span> into the first empty inventory slot of Current Character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="33287"></span>33287</td>
 <td class="instruction">JP <a href="55339.html">55339</a></td>
-<td class="comment-11" rowspan="1">Display "[Character] HAS TAKEN YOUR PHOTO" Window (10), wait for fire to be pressed then jump to Main Game Loop</td>
+<td class="comment-1" rowspan="1">Display "[Character] HAS TAKEN YOUR PHOTO" window (10) and return to game</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="33140.html">33140</a></span></td>
+<td class="prev">
+Prev: <a href="33140.html">33140</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#33170">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="33290.html">33290</a></span></td>
+<td class="next">
+Next: <a href="33290.html">33290</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

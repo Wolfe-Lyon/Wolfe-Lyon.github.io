@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 36830</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,54 +20,43 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36810.html">36810</a></span></td>
+<td class="prev">
+Prev: <a href="36810.html">36810</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36830">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36875.html">36875</a></span></td>
+<td class="next">
+Next: <a href="36875.html">36875</a>
+</td>
 </tr>
 </table>
-<div class="description">36830: Print Special Character or Change Text Attribute</div>
+<div class="description">36830: Print special character or change text attribute</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="36725.html">36725</a>, <a href="36892.html">36892</a> and <a href="36900.html">36900</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36830"></span>36830</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36831"></span>36831</td>
 <td class="instruction">LD HL,40149</td>
-<td class="comment-11" rowspan="1">Point HL at start of common words table</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of common words table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36834"></span>36834</td>
 <td class="instruction">SUB 91</td>
-<td class="comment-11" rowspan="1">Subtract 91 from A to get index of special character</td>
+<td class="comment-1" rowspan="1">Subtract 91 from <span class="register">A</span> to get index of special character</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36836"></span>
 <div class="comments">
 <div class="paragraph">
@@ -76,43 +66,37 @@ This entry point is used by the routine at <a href="36882.html">36882</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36836"></span>36836</td>
 <td class="instruction">JR Z,36844</td>
-<td class="comment-11" rowspan="1">If first string is required (i.e. index is zero), then jump straight to print commands</td>
+<td class="comment-1" rowspan="1">If first string is required (i.e. index is zero), then jump straight to print commands</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36838"></span>36838</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load index into B</td>
+<td class="comment-1" rowspan="1">Load index into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36839"></span>36839</td>
 <td class="instruction">CALL <a href="36703.html">36703</a></td>
-<td class="comment-11" rowspan="1">Get start of next zero-terminated string...</td>
+<td class="comment-1" rowspan="1">Get start of next zero-terminated string...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36842"></span>36842</td>
 <td class="instruction">DJNZ 36839</td>
-<td class="comment-11" rowspan="1">...and repeat until the B-th string is found (e.g. 20th)...</td>
+<td class="comment-1" rowspan="1">...and repeat until the <span class="register">B</span>-th string is found (e.g. 20th)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36844"></span>36844</td>
 <td class="instruction">CALL <a href="36725.html">36725</a></td>
-<td class="comment-11" rowspan="1">...then print this string to screen</td>
+<td class="comment-1" rowspan="1">...then print this string to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36847"></span>36847</td>
 <td class="instruction">JR <a href="36800.html#36807">36807</a></td>
-<td class="comment-11" rowspan="1">Jump to <a href="36800.html#36807">36807</a> (i.e. we have printed the common word, so go back to printing rest of original string)</td>
+<td class="comment-1" rowspan="1">Jump to <a href="36800.html#36807">36807</a> (i.e. we have printed the common word, so go back to printing rest of original string)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36849"></span>
 <div class="comments">
 <div class="paragraph">
@@ -122,19 +106,17 @@ This entry point is used by the routine at <a href="36725.html">36725</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36849"></span>36849</td>
 <td class="instruction">LD B,199</td>
-<td class="comment-11" rowspan="1">PAPER bits</td>
+<td class="comment-1" rowspan="1">PAPER bits</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36851"></span>36851</td>
 <td class="instruction">JR 36863</td>
-<td class="comment-11" rowspan="1">Update attribute</td>
+<td class="comment-1" rowspan="1">Update attribute</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36853"></span>
 <div class="comments">
 <div class="paragraph">
@@ -144,19 +126,17 @@ This entry point is used by the routine at <a href="36725.html">36725</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36853"></span>36853</td>
 <td class="instruction">LD B,191</td>
-<td class="comment-11" rowspan="1">BRIGHT bit</td>
+<td class="comment-1" rowspan="1">BRIGHT bit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36855"></span>36855</td>
 <td class="instruction">JR 36863</td>
-<td class="comment-11" rowspan="1">Update attribute</td>
+<td class="comment-1" rowspan="1">Update attribute</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36857"></span>
 <div class="comments">
 <div class="paragraph">
@@ -166,19 +146,17 @@ This entry point is used by the routine at <a href="36725.html">36725</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36857"></span>36857</td>
 <td class="instruction">LD B,127</td>
-<td class="comment-11" rowspan="1">FLASH bit</td>
+<td class="comment-1" rowspan="1">FLASH bit</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36859"></span>36859</td>
 <td class="instruction">JR 36863</td>
-<td class="comment-11" rowspan="1">Update attribute</td>
+<td class="comment-1" rowspan="1">Update attribute</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36861"></span>
 <div class="comments">
 <div class="paragraph">
@@ -188,59 +166,56 @@ This entry point is used by the routine at <a href="36725.html">36725</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36861"></span>36861</td>
 <td class="instruction">LD B,248</td>
-<td class="comment-11" rowspan="1">INK bits</td>
+<td class="comment-1" rowspan="1">INK bits</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36863"></span>36863</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance to next character</td>
+<td class="comment-1" rowspan="1">Advance to next character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36864"></span>36864</td>
 <td class="instruction">LD A,(23695)</td>
-<td class="comment-11" rowspan="1">Get system variable ATTR T</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with attribute stored at <a href="23695.html">23695</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36867"></span>36867</td>
 <td class="instruction">AND B</td>
-<td class="comment-11" rowspan="1">Clear bits</td>
+<td class="comment-1" rowspan="1">Clear bits</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36868"></span>36868</td>
 <td class="instruction">OR (HL)</td>
-<td class="comment-11" rowspan="1">Update bits with value from HL</td>
+<td class="comment-1" rowspan="1">Update bits with value from <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36869"></span>36869</td>
 <td class="instruction">LD (23695),A</td>
-<td class="comment-11" rowspan="1">Set system variable ATTR T (i.e. change INK / PAPER colour of text)</td>
+<td class="comment-1" rowspan="1">Store attribute at <a href="23695.html">23695</a> (i.e. change INK / PAPER colour of text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36872"></span>36872</td>
 <td class="instruction">JP <a href="36725.html#36732">36732</a></td>
-<td class="comment-11" rowspan="1">Move onto next character</td>
+<td class="comment-1" rowspan="1">Move onto next character</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36810.html">36810</a></span></td>
+<td class="prev">
+Prev: <a href="36810.html">36810</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36830">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36875.html">36875</a></span></td>
+<td class="next">
+Next: <a href="36875.html">36875</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

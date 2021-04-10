@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 37586</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,178 +20,152 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="37580.html">37580</a></span></td>
+<td class="prev">
+Prev: <a href="37580.html">37580</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#37586">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="37639.html">37639</a></span></td>
+<td class="next">
+Next: <a href="37639.html">37639</a>
+</td>
 </tr>
 </table>
-<div class="description">37586: Update the States of the Spiders (Level 1) and Store Current Positions in Script Data</div>
+<div class="description">37586: Update the states of the spiders (level 1) and store current positions in script data</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="36791.html">36791</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="37586"></span>37586</td>
 <td class="instruction">LD IX,43749</td>
-<td class="comment-11" rowspan="1">Load IX with address of complex state data for Spider 1 (Level 1)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with address of complex state data for spider 1 (level 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37590"></span>37590</td>
 <td class="instruction">LD IY,37580</td>
-<td class="comment-11" rowspan="1">Load IY with start address of Table of Current Positions in Spiders' Script Data</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with start address of table of current positions in spiders' script data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37594"></span>37594</td>
 <td class="instruction">LD B,3</td>
-<td class="comment-11" rowspan="1">Load B with 3 as there are 3 spiders</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 3 as there are 3 spiders</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="37596"></span>37596</td>
 <td class="instruction">LD L,(IY+0)</td>
-<td class="comment-11" rowspan="1">Load HL with current position in script data for current spider...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with current position in script data for current spider...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37599"></span>37599</td>
 <td class="instruction">LD H,(IY+1)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37602"></span>37602</td>
 <td class="instruction">LD (34277),HL</td>
-<td class="comment-11" rowspan="1">...and store at <a href="34277.html">34277</a> as position in script currently running</td>
+<td class="comment-1" rowspan="1">...and store at <a href="34277.html">34277</a> as position in script currently running</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37605"></span>37605</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37607"></span>37607</td>
 <td class="instruction">PUSH IY</td>
-<td class="comment-11" rowspan="1">Store IY</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IY</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37609"></span>37609</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37610"></span>37610</td>
 <td class="instruction">CALL <a href="37639.html">37639</a></td>
-<td class="comment-11" rowspan="1">Update the state of the current spider (Level 1)</td>
+<td class="comment-1" rowspan="1">Update the state of the current spider (level 1)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37613"></span>37613</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37614"></span>37614</td>
 <td class="instruction">POP IY</td>
-<td class="comment-11" rowspan="1">Restore IY</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IY</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37616"></span>37616</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37618"></span>37618</td>
 <td class="instruction">LD HL,(34277)</td>
-<td class="comment-11" rowspan="1">Store address (current position in script data for current spider) stored at <a href="34277.html">34277</a>...</td>
+<td class="comment-1" rowspan="1">Store address (current position in script data for current spider) stored at <a href="34277.html">34277</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37621"></span>37621</td>
 <td class="instruction">LD (IY+0),L</td>
-<td class="comment-11" rowspan="1">...in table at <a href="37580.html">37580</a> as current position in this spider's script data...</td>
+<td class="comment-1" rowspan="1">...in table at <a href="37580.html">37580</a> as current position in this spider's script data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37624"></span>37624</td>
 <td class="instruction">LD (IY+1),H</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37627"></span>37627</td>
 <td class="instruction">INC IY</td>
-<td class="comment-11" rowspan="1">Advance IY to next entry in table (i.e. position in next spider's script data)...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IY</span> to next entry in table (i.e. position in next spider's script data)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37629"></span>37629</td>
 <td class="instruction">INC IY</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37631"></span>37631</td>
 <td class="instruction">LD DE,13</td>
-<td class="comment-11" rowspan="1">Advance IX by 13 bytes (i.e. to entry for next spider)...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> by 13 bytes (i.e. to entry for next spider)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37634"></span>37634</td>
 <td class="instruction">ADD IX,DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37636"></span>37636</td>
 <td class="instruction">DJNZ 37596</td>
-<td class="comment-11" rowspan="1">Decrease B (remaining number of spiders to process) and loop back to <a href="37586.html#37596">37596</a></td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (remaining number of spiders to process) and loop back to <a href="37586.html#37596">37596</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="37638"></span>37638</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="37580.html">37580</a></span></td>
+<td class="prev">
+Prev: <a href="37580.html">37580</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#37586">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="37639.html">37639</a></span></td>
+<td class="next">
+Next: <a href="37639.html">37639</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

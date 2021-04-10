@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 64637</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,232 +20,198 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="64627.html">64627</a></span></td>
+<td class="prev">
+Prev: <a href="64627.html">64627</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#64637">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="64687.html">64687</a></span></td>
+<td class="next">
+Next: <a href="64687.html">64687</a>
+</td>
 </tr>
 </table>
-<div class="description">64637: If Do Not Draw Storm Cloud Flag is Set then Prepare to Draw Storm Cloud</div>
+<div class="description">64637: If do-not-draw-storm-cloud flag is set then prepare to draw storm cloud</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 This routine is only called when the Storm Cloud and Magic Knight are both in the same room.
 </div>
 <div class="paragraph">
-If the Do Not Draw Storm Cloud Flag is set, then the Display File address at which to draw the Storm Cloud is calculated, and the correct frame in the Storm Cloud graphic data at <a href="25176.html">25176</a> is determined. After this, the flag is reset, ensuring that the Storm Cloud can redrawn at its new position by the routine at <a href="64687.html">64687</a>.
+If the do-not-draw-storm-cloud flag is set, then the display file address at which to draw the Storm Cloud is calculated, and the correct frame in the Storm Cloud graphic data at <a href="25176.html">25176</a> is determined. After this, the flag is reset, ensuring that the Storm Cloud can redrawn at its new position by the routine at <a href="64687.html">64687</a>.
 </div>
 <div class="paragraph">
 Used by the routine at <a href="40008.html">40008</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="64637"></span>64637</td>
 <td class="instruction">LD A,(64688)</td>
-<td class="comment-11" rowspan="1">If Do Not Draw Storm Cloud Flag is reset...</td>
+<td class="comment-1" rowspan="1">If do-not-draw-storm-cloud flag is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64640"></span>64640</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64641"></span>64641</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64642"></span>64642</td>
 <td class="instruction">LD A,(23701)</td>
-<td class="comment-11" rowspan="1">Load BC with Storm Cloud's apparent x-coordinate (characters)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with Storm Cloud's apparent x-coordinate (characters)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64645"></span>64645</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64646"></span>64646</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64647"></span>64647</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64648"></span>64648</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64650"></span>64650</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64651"></span>64651</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64653"></span>64653</td>
 <td class="instruction">LD HL,16544</td>
-<td class="comment-11" rowspan="1">Load HL with Display File address for top pixel row of cell at character coordinates (0, 5)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with display file address for top pixel row of cell at character coordinates (0, 5)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64656"></span>64656</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">Add BC to HL as offset...</td>
+<td class="comment-1" rowspan="1">Add <span class="register">BC</span> to <span class="register">HL</span> as offset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64657"></span>64657</td>
 <td class="instruction">LD (64704),HL</td>
-<td class="comment-11" rowspan="1">...and store at <a href="64687.html#64703">64704</a></td>
+<td class="comment-1" rowspan="1">...and store at <a href="64687.html#64703">64704</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64660"></span>64660</td>
 <td class="instruction">LD A,(23701)</td>
-<td class="comment-11" rowspan="1">Load HL with Storm Cloud's apparent x-coordinate (pixel-within-character)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with Storm Cloud's apparent x-coordinate (pixel-within-character)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64663"></span>64663</td>
 <td class="instruction">AND 7</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64665"></span>64665</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...multiplied by 128...</td>
+<td class="comment-1" rowspan="1">...multiplied by 128...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64666"></span>64666</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...as each Storm Cloud frame graphic is 128 bytes long...</td>
+<td class="comment-1" rowspan="1">...as each Storm Cloud frame graphic is 128 bytes long...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64667"></span>64667</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64668"></span>64668</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64669"></span>64669</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64670"></span>64670</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64672"></span>64672</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64673"></span>64673</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64674"></span>64674</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64675"></span>64675</td>
 <td class="instruction">LD BC,25176</td>
-<td class="comment-11" rowspan="1">Load BC with start address of Storm Cloud graphic data...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with start address of Storm Cloud graphic data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64678"></span>64678</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...and add HL as offset in HL to give address of required frame's graphic data</td>
+<td class="comment-1" rowspan="1">...and add <span class="register">HL</span> as offset in <span class="register">HL</span> to give address of required frame's graphic data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64679"></span>64679</td>
 <td class="instruction">LD (64708),HL</td>
-<td class="comment-11" rowspan="1">Store graphic's start address at <a href="64687.html#64707">64708</a></td>
+<td class="comment-1" rowspan="1">Store graphic's start address at <a href="64687.html#64707">64708</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64682"></span>64682</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Reset Do Not Draw Storm Cloud Flag...</td>
+<td class="comment-1" rowspan="1">Reset do-not-draw-storm-cloud flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64683"></span>64683</td>
 <td class="instruction">LD (64688),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="64686"></span>64686</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="64627.html">64627</a></span></td>
+<td class="prev">
+Prev: <a href="64627.html">64627</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#64637">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="64687.html">64687</a></span></td>
+<td class="next">
+Next: <a href="64687.html">64687</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

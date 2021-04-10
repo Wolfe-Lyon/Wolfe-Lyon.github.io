@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 39601</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,322 +20,272 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39599.html">39599</a></span></td>
+<td class="prev">
+Prev: <a href="39599.html">39599</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39601">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39699.html">39699</a></span></td>
+<td class="next">
+Next: <a href="39699.html">39699</a>
+</td>
 </tr>
 </table>
-<div class="description">39601: Update States of Coloured Creatures</div>
+<div class="description">39601: Update states of coloured creatures</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="39137.html">39137</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39601"></span>39601</td>
 <td class="instruction">LD A,(44903)</td>
-<td class="comment-11" rowspan="1">Load A with first coloured creature's flags</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with first coloured creature's flags</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39604"></span>39604</td>
 <td class="instruction">BIT 2,A</td>
-<td class="comment-11" rowspan="1">If Coloured Creatures' Reward Given Flag is set...</td>
+<td class="comment-1" rowspan="1">If coloured-creatures-reward-given flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39606"></span>39606</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39607"></span>39607</td>
 <td class="instruction">BIT 1,A</td>
-<td class="comment-11" rowspan="1">If All Coloured Creatures Home Flag is set...</td>
+<td class="comment-1" rowspan="1">If all-coloured-creatures-home flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39609"></span>39609</td>
 <td class="instruction">JP NZ,<a href="39760.html">39760</a></td>
-<td class="comment-11" rowspan="1">...then present reward for getting coloured creatures home, and return</td>
+<td class="comment-1" rowspan="1">...then present reward for getting coloured creatures home, and return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39612"></span>39612</td>
 <td class="instruction">CALL <a href="39699.html">39699</a></td>
-<td class="comment-11" rowspan="1">Count coloured creatures in slots and return if all are home</td>
+<td class="comment-1" rowspan="1">Count coloured creatures in slots and return if all are home</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39615"></span>39615</td>
 <td class="instruction">LD A,L</td>
-<td class="comment-11" rowspan="1">If all three coloured creatures are in slots...</td>
+<td class="comment-1" rowspan="1">If all three coloured creatures are in slots...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39616"></span>39616</td>
 <td class="instruction">CP 3</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39618"></span>39618</td>
 <td class="instruction">RET Z</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39619"></span>39619</td>
 <td class="instruction">LD A,(34218)</td>
-<td class="comment-11" rowspan="1">If current character's current room is not 6 (coloured creatures' room)...</td>
+<td class="comment-1" rowspan="1">If current character's current room is not 6 (coloured creatures' room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39622"></span>39622</td>
 <td class="instruction">CP 6</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39624"></span>39624</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39625"></span>39625</td>
 <td class="instruction">LD HL,39600</td>
-<td class="comment-11" rowspan="1">Increase cycles elapsed since last swap of creatures...</td>
+<td class="comment-1" rowspan="1">Increase cycles elapsed since last swap of creatures...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39628"></span>39628</td>
 <td class="instruction">INC (HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39629"></span>39629</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39630"></span>39630</td>
 <td class="instruction">CP 100</td>
-<td class="comment-11" rowspan="1">...and if less than 100...</td>
+<td class="comment-1" rowspan="1">...and if less than 100...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39632"></span>39632</td>
 <td class="instruction">RET C</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39633"></span>39633</td>
 <td class="instruction">LD (HL),0</td>
-<td class="comment-11" rowspan="1">Set cycles elapsed since last swap of creatures to zero</td>
+<td class="comment-1" rowspan="1">Set cycles elapsed since last swap of creatures to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39635"></span>39635</td>
 <td class="instruction">CALL <a href="36616.html">36616</a></td>
-<td class="comment-11" rowspan="1">Cycle attributes (full-screen), clear display buffers and paint red areas outside current room</td>
+<td class="comment-1" rowspan="1">Cycle attributes (full-screen), clear display buffers and paint red areas outside current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39638"></span>39638</td>
 <td class="instruction">LD HL,39599</td>
-<td class="comment-11" rowspan="1">Point HL at current Sequence ID</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at current sequence ID</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39641"></span>39641</td>
 <td class="instruction">LD A,3</td>
-<td class="comment-11" rowspan="1">Load A with a random number, 0-2...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with a random number, 0-2...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39643"></span>39643</td>
 <td class="instruction">CALL <a href="54222.html">54222</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39646"></span>39646</td>
 <td class="instruction">CP (HL)</td>
-<td class="comment-11" rowspan="1">...and if this is the same as the current Sequence ID...</td>
+<td class="comment-1" rowspan="1">...and if this is the same as the current sequence ID...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39647"></span>39647</td>
 <td class="instruction">JR Z,39641</td>
-<td class="comment-11" rowspan="1">...then jump back to <a href="39601.html#39641">39641</a> to generate a new random number</td>
+<td class="comment-1" rowspan="1">...then jump back to <a href="39601.html#39641">39641</a> to generate a new random number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39649"></span>39649</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Set new Sequence ID to generated number</td>
+<td class="comment-1" rowspan="1">Set new sequence ID to generated number</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39650"></span>39650</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">Load BC with three times Sequence ID...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with three times sequence ID...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39651"></span>39651</td>
 <td class="instruction">ADD A,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39652"></span>39652</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39653"></span>39653</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39655"></span>39655</td>
 <td class="instruction">LD IY,39584</td>
-<td class="comment-11" rowspan="1">Load IY with start address of Table of Coloured Creatures' Properties...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IY</span> with start address of table of coloured creatures' properties...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39659"></span>39659</td>
 <td class="instruction">ADD IY,BC</td>
-<td class="comment-11" rowspan="1">...and add three times Sequence ID to get address of first entry in new sequence</td>
+<td class="comment-1" rowspan="1">...and add three times sequence ID to get address of first entry in new sequence</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39661"></span>39661</td>
 <td class="instruction">LD IX,44894</td>
-<td class="comment-11" rowspan="1">Load IX with address of complex state data for first coloured creature (Level 3)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with address of complex state data for first coloured creature (level 3)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39665"></span>39665</td>
 <td class="instruction">LD B,3</td>
-<td class="comment-11" rowspan="1">Load B with 3 (as there are three coloured creatures)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 3 (as there are three coloured creatures)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39667"></span>39667</td>
 <td class="instruction">LD A,(IY+0)</td>
-<td class="comment-11" rowspan="1">Set class of current coloured creature...</td>
+<td class="comment-1" rowspan="1">Set class of current coloured creature...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39670"></span>39670</td>
 <td class="instruction">LD (IX+8),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39673"></span>39673</td>
 <td class="instruction">LD A,(IY+1)</td>
-<td class="comment-11" rowspan="1">...and address of graphic layout data...</td>
+<td class="comment-1" rowspan="1">...and address of graphic layout data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39676"></span>39676</td>
 <td class="instruction">LD (IX+2),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39679"></span>39679</td>
 <td class="instruction">LD A,(IY+2)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39682"></span>39682</td>
 <td class="instruction">LD (IX+3),A</td>
-<td class="comment-11" rowspan="1">...to values in current record in Table of Coloured Creatures' Properties</td>
+<td class="comment-1" rowspan="1">...to values in current record in table of coloured creatures' properties</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39685"></span>39685</td>
 <td class="instruction">INC IY</td>
-<td class="comment-11" rowspan="1">Advance IY to next entry in properties table...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IY</span> to next entry in properties table...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39687"></span>39687</td>
 <td class="instruction">INC IY</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39689"></span>39689</td>
 <td class="instruction">INC IY</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39691"></span>39691</td>
 <td class="instruction">LD DE,13</td>
-<td class="comment-11" rowspan="1">Advance IX to next coloured creature's properties...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to next coloured creature's properties...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39694"></span>39694</td>
 <td class="instruction">ADD IX,DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39696"></span>39696</td>
 <td class="instruction">DJNZ 39667</td>
-<td class="comment-11" rowspan="1">Decrease remaining number of coloured creatures to update and loop back to <a href="39601.html#39667">39667</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease remaining number of coloured creatures to update and loop back to <a href="39601.html#39667">39667</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39698"></span>39698</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39599.html">39599</a></span></td>
+<td class="prev">
+Prev: <a href="39599.html">39599</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39601">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39699.html">39699</a></span></td>
+<td class="next">
+Next: <a href="39699.html">39699</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

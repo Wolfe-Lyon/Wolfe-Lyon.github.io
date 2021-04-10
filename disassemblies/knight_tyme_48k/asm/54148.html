@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 54148</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,24 +20,28 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54132.html">54132</a></span></td>
+<td class="prev">
+Prev: <a href="54132.html">54132</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54148">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54162.html">54162</a></span></td>
+<td class="next">
+Next: <a href="54162.html">54162</a>
+</td>
 </tr>
 </table>
-<div class="description">54148: Point HL at Terrain Interaction Data, or Attribute File address for Character Coordinates x=C, y=B</div>
+<div class="description">54148: Point <span class="register">HL</span> at terrain interaction data, or attribute file address for character coordinates x=<span class="register">C</span>, y=<span class="register">B</span></div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-The operand in the instruction at <a href="54148.html#54157">54157</a> is usually 88 (corresponding to a Attribute File lookup). It is only changed to 94 (corresponding to a Terrain Interaction Data lookup) by the routine at <a href="54162.html">54162</a>, and is returned to a value of 88 before that routine concludes.
+The operand of the instruction at <a href="54148.html#54157">54157</a> is usually 88 (corresponding to an attribute file lookup). It is only changed to 94 (corresponding to a terrain interaction data lookup) by the routine at <a href="54162.html">54162</a>, and is returned to a value of 88 before that routine concludes.
 </div>
 <div class="paragraph">
 Used by the routines at <a href="26670.html">26670</a>, <a href="28432.html">28432</a>, <a href="28938.html">28938</a>, <a href="32694.html">32694</a>, <a href="34627.html">34627</a>, <a href="35525.html">35525</a>, <a href="35940.html">35940</a>, <a href="36104.html">36104</a>, <a href="36321.html">36321</a>, <a href="54162.html">54162</a> and <a href="54647.html">54647</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -49,115 +54,107 @@ Used by the routines at <a href="26670.html">26670</a>, <a href="28432.html">284
 <td class="register-desc">x-coordinate (chars)</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">DE</td>
-<td class="register-desc">points to entry in data table with coordinates (C, 0)</td>
+<td class="register-desc">points to entry in data table with coordinates (<span class="register">C</span>, 0)</td>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">points to entry in data table with coordinates (C, B)</td>
+<td class="register-desc">points to entry in data table with coordinates (<span class="register">C</span>, <span class="register">B</span>)</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54148"></span>54148</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">Load y-coordinate into A</td>
+<td class="comment-1" rowspan="1">Load y-coordinate into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54149"></span>54149</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">Multiply this by 8...</td>
+<td class="comment-1" rowspan="1">Multiply this by 8...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54150"></span>54150</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54151"></span>54151</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54152"></span>54152</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">Copy 8 times y-coordinate into HL...</td>
+<td class="comment-1" rowspan="1">Copy 8 times y-coordinate into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54153"></span>54153</td>
 <td class="instruction">LD H,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54155"></span>54155</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">Multiply by 4...</td>
+<td class="comment-1" rowspan="1">Multiply by 4...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54156"></span>54156</td>
 <td class="instruction">ADD HL,HL</td>
-<td class="comment-11" rowspan="1">...to give 32 times original y-coordinate in HL</td>
+<td class="comment-1" rowspan="1">...to give 32 times original y-coordinate in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="54157"></span>
 <div class="comments">
 <div class="paragraph">
-The operand of the instruction at <a href="54148.html#54157">54157</a> determines whether we are dealing with the Attribute File (88), or the current Terrain Interaction Data (94). It is modified by the instructions at <a href="54162.html#54164">54164</a> and <a href="54162.html#54172">54172</a>.
+The operand of the instruction at <a href="54148.html#54157">54157</a> determines whether we are dealing with the attribute file (88), or the current terrain interaction data (94). It is modified by the instructions at <a href="54162.html#54164">54164</a> and <a href="54162.html#54172">54172</a>.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54157"></span>54157</td>
 <td class="instruction">LD D,88</td>
-<td class="comment-11" rowspan="1">Point DE at start of data, plus x-coordinate offset in C...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at start of data, plus x-coordinate offset in <span class="register">C</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54159"></span>54159</td>
 <td class="instruction">LD E,C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54160"></span>54160</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Add 32 times y-coordinate as offset in HL</td>
+<td class="comment-1" rowspan="1">Add 32 times y-coordinate as offset in <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54161"></span>54161</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54132.html">54132</a></span></td>
+<td class="prev">
+Prev: <a href="54132.html">54132</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54148">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54162.html">54162</a></span></td>
+<td class="next">
+Next: <a href="54162.html">54162</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

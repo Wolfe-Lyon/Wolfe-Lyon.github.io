@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 48341</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48191.html">48191</a></span></td>
+<td class="prev">
+Prev: <a href="48191.html">48191</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48341">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48360.html">48360</a></span></td>
+<td class="next">
+Next: <a href="48360.html">48360</a>
+</td>
 </tr>
 </table>
-<div class="description">48341: Remove Object C from a Character's Inventory and Tidy Up Remaining Entries</div>
+<div class="description">48341: Remove object <span class="register">C</span> from a character's inventory and tidy up remaining entries</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="41748.html">41748</a>, <a href="42036.html">42036</a>, <a href="42157.html">42157</a>, <a href="42395.html">42395</a>, <a href="43636.html">43636</a>, <a href="44635.html">44635</a>, <a href="45149.html">45149</a> and <a href="45256.html">45256</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -50,122 +55,104 @@ Used by the routines at <a href="41748.html">41748</a>, <a href="42036.html">420
 <td class="register-desc">Pointer to a character's current inventory</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48341"></span>48341</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load A with inventory object</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with inventory object</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48342"></span>48342</td>
 <td class="instruction">CP C</td>
-<td class="comment-11" rowspan="1">If this matches index in C...</td>
+<td class="comment-1" rowspan="1">If this matches index in <span class="register">C</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48343"></span>48343</td>
 <td class="instruction">JR Z,48349</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="48341.html#48349">48349</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="48341.html#48349">48349</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48345"></span>48345</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance to next inventory slot...</td>
+<td class="comment-1" rowspan="1">Advance to next inventory slot...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48346"></span>48346</td>
 <td class="instruction">DJNZ 48341</td>
-<td class="comment-11" rowspan="1">...and loop back to <a href="48341.html">48341</a> for next slot</td>
+<td class="comment-1" rowspan="1">...and loop back to <a href="48341.html">48341</a> for next slot</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48348"></span>48348</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return if object not found</td>
+<td class="comment-1" rowspan="1">Return if object not found</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48349"></span>48349</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance to next inventory slot</td>
+<td class="comment-1" rowspan="1">Advance to next inventory slot</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48350"></span>48350</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load object at this slot into A</td>
+<td class="comment-1" rowspan="1">Load object at this slot into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48351"></span>48351</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move back to previous slot again</td>
+<td class="comment-1" rowspan="1">Move back to previous slot again</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48352"></span>48352</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">Place object from next slot into current one</td>
+<td class="comment-1" rowspan="1">Place object from next slot into current one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48353"></span>48353</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance to next slot again</td>
+<td class="comment-1" rowspan="1">Advance to next slot again</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48354"></span>48354</td>
 <td class="instruction">DJNZ 48349</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="48341.html#48349">48349</a> (i.e. repeat for all remaining slots)</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="48341.html#48349">48349</a> (i.e. repeat for all remaining slots)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48356"></span>48356</td>
 <td class="instruction">DEC HL</td>
-<td class="comment-11" rowspan="1">Move back to previous slot (i.e. final slot for this character)...</td>
+<td class="comment-1" rowspan="1">Move back to previous slot (i.e. final slot for this character)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48357"></span>48357</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">...and set to empty...</td>
+<td class="comment-1" rowspan="1">...and set to empty...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48358"></span>48358</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48359"></span>48359</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48191.html">48191</a></span></td>
+<td class="prev">
+Prev: <a href="48191.html">48191</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48341">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48360.html">48360</a></span></td>
+<td class="next">
+Next: <a href="48360.html">48360</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

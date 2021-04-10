@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 48324</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,76 +20,76 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48307.html">48307</a></span></td>
+<td class="prev">
+Prev: <a href="48307.html">48307</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48324">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48336.html">48336</a></span></td>
+<td class="next">
+Next: <a href="48336.html">48336</a>
+</td>
 </tr>
 </table>
-<div class="description">48324: Script Routine (25): Start Loop (2 / 3)</div>
+<div class="description">48324: Script routine: (25) Start loop (2 / 3)</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Start a loop in script data. The first of the following two bytes is the repeat count and the second is disregarded. The current value of the repeat counter is stored at <a href="34285.html#34288">34288</a> and the address of the next instruction (i.e. the first instruction that is processed in each loop) is stored at <a href="34285.html#34288">34289</a>.
+Start a loop in script data. The first of the following two bytes is the repeat count and the second is disregarded. The current value of the repeat counter is stored at <a href="34285.html#34288">34288</a> and the address of the next instruction (i.e. the first instruction that is processed in each loop) is stored at <a href="34285.html#34289">34289</a>.
 </div>
 <div class="paragraph">
 See also routines at <a href="48295.html">48295</a> and <a href="48353.html">48353</a>.
 </div>
+<div class="paragraph">
+Used by the routine at <a href="48096.html">48096</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-1">
+</div>
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">Address of next script instruction to execute</td>
+<td class="register-desc">New address in script data</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="48324"></span>48324</td>
 <td class="instruction">CALL <a href="48382.html">48382</a></td>
-<td class="comment-11" rowspan="1">Load A with script instruction parameter, and advance HL to next instruction</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with script instruction parameter, and advance <span class="register">HL</span> to next instruction</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48327"></span>48327</td>
 <td class="instruction">LD (34288),A</td>
-<td class="comment-11" rowspan="1">Store repeat count at <a href="34285.html#34288">34288</a></td>
+<td class="comment-1" rowspan="1">Store repeat count at <a href="34285.html#34288">34288</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48330"></span>48330</td>
 <td class="instruction">LD (34289),HL</td>
-<td class="comment-11" rowspan="1">Store address to return to (i.e. first instruction in loop) at <a href="34285.html#34288">34289</a>...</td>
+<td class="comment-1" rowspan="2">Store address to return to (i.e. first instruction in loop) at <a href="34285.html#34289">34289</a> and execute script instruction at this location</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48333"></span>48333</td>
 <td class="instruction">JP <a href="48096.html#48098">48098</a></td>
-<td class="comment-11" rowspan="1">...and execute script instruction at this location</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48307.html">48307</a></span></td>
+<td class="prev">
+Prev: <a href="48307.html">48307</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48324">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48336.html">48336</a></span></td>
+<td class="next">
+Next: <a href="48336.html">48336</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

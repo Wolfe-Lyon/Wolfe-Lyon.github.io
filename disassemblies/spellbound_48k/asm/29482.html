@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 29482</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29468.html">29468</a></span></td>
+<td class="prev">
+Prev: <a href="29468.html">29468</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29482">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29514.html">29514</a></span></td>
+<td class="next">
+Next: <a href="29514.html">29514</a>
+</td>
 </tr>
 </table>
-<div class="description">29482: Change Magic Knight's Current Room if Possible</div>
+<div class="description">29482: Change Magic Knight's current room if possible</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="29514.html">29514</a> and <a href="29546.html">29546</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,155 +51,138 @@ Used by the routines at <a href="29514.html">29514</a> and <a href="29546.html">
 <td class="register-desc">Exit that Magic Knight is leaving old room from; either 0 (left exit) or 1 (right exit)</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">F</td>
-<td class="register-desc">Zero Flag set if Magic Knight can't leave his current room, reset otherwise</td>
+<td class="register-desc">Zero flag set if Magic Knight can't leave his current room, reset otherwise</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29482"></span>29482</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store new x-coordinate for later</td>
+<td class="comment-1" rowspan="1">Store new x-coordinate for later</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29483"></span>29483</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set Magic Knight's Temporary Movement Flags to zero (new room, so Magic Knight can move both left and right)...</td>
+<td class="comment-1" rowspan="1">Set Magic Knight's temporary-movement flags to zero (new room, so Magic Knight can move both left and right)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29484"></span>29484</td>
 <td class="instruction">LD (23410),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29487"></span>29487</td>
 <td class="instruction">LD HL,41711</td>
-<td class="comment-11" rowspan="1">Point HL to room connectivity data table</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> to room connectivity data table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29490"></span>29490</td>
 <td class="instruction">LD A,(65529)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's current room's index into A...</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's current room's index into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29493"></span>29493</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...double it...</td>
+<td class="comment-1" rowspan="1">...double it...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29494"></span>29494</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...and load into BC...</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">BC</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29495"></span>29495</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29497"></span>29497</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">Add BC as offset to HL</td>
+<td class="comment-1" rowspan="1">Add <span class="register">BC</span> as offset to <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29498"></span>29498</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Point to left or right exit from current room, as determined by DE</td>
+<td class="comment-1" rowspan="1">Point to left or right exit from current room, as determined by <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29499"></span>29499</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load new room number into A...</td>
+<td class="comment-1" rowspan="1">Load new room number into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29500"></span>29500</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">...and if this is 255 (i.e. Magic Knight can't leave his current room)...</td>
+<td class="comment-1" rowspan="1">...and if this is 255 (i.e. Magic Knight can't leave his current room)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29502"></span>29502</td>
 <td class="instruction">JR Z,29511</td>
-<td class="comment-11" rowspan="1">...set Zero Flag and exit routine...</td>
+<td class="comment-1" rowspan="1">...set zero flag and exit routine...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29504"></span>29504</td>
 <td class="instruction">LD (65529),A</td>
-<td class="comment-11" rowspan="1">...else update Magic Knight's current room to be this new room index</td>
+<td class="comment-1" rowspan="1">...else update Magic Knight's current room to be this new room index</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29507"></span>29507</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore new x-coordinate to B...</td>
+<td class="comment-1" rowspan="1">Restore new x-coordinate to <span class="register">B</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29508"></span>29508</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">...and load back into A</td>
+<td class="comment-1" rowspan="1">...and load back into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29509"></span>29509</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">Reset Zero Flag</td>
+<td class="comment-1" rowspan="1">Reset zero flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29510"></span>29510</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="29511"></span>29511</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore AF to BC...</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> to <span class="register">BC</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29512"></span>29512</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">...and load A with contents of B to restore to what it was on entering this routine</td>
+<td class="comment-1" rowspan="1">...and load <span class="register">A</span> with contents of <span class="register">B</span> to restore to what it was on entering this routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="29513"></span>29513</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="29468.html">29468</a></span></td>
+<td class="prev">
+Prev: <a href="29468.html">29468</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#29482">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="29514.html">29514</a></span></td>
+<td class="next">
+Next: <a href="29514.html">29514</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

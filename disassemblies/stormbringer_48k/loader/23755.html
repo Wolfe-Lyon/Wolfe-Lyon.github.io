@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Data at 23755</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,325 +20,236 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="23635.html">23635</a></span></td>
+<td class="prev">
+Prev: <a href="23635.html">23635</a>
+</td>
 <td class="up">Up: <a href="loader.html#23755">Map</a></td>
-<td class="next"><span class="next-0">Next: <a href=""></a></span></td>
+<td class="next">
+</td>
 </tr>
 </table>
-<div class="description">23755: Basic loader</div>
+<div class="description">23755: BASIC loader</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-The basic loader is set to auto-run from line 0. Line 30 loads the loading screen, and a block of code of length 40360 bytes to address 25176. This code block contains the main game code, and after loading it, we jump to the start-up routine at <a href="../initialisation/37632.html">37632</a>.
+The BASIC loader is set to auto-run from line 0, and does the following:
+</div>
+<div class="paragraph">
+<ul class="">
+<li>sets the RAMTOP system variable to 25170</li>
+<li>loads the loading screen</li>
+<li>loads the main game code (40360 bytes to address 25176)</li>
+<li>jumps to the <a href="../initialisation/37632.html">start of the initialisation code</a></li>
+</ul>
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23755"></span>23755</td>
 <td class="instruction">DEFB 0,10,149,0,253,50,53,49</td>
-<td class="comment-11" rowspan="46"><pre style="white-space: pre-wrap;">  10 CLEAR 25170: PAPER 0: BORDER 0: INK 7: BRIGHT 1: CLS : PRINT BRIGHT 1; INK 7;AT 9,3;"STORMBRINGER 48 IS LOADING";AT 12,10;"PLEASE WAIT"
+<td class="comment-1" rowspan="46"><pre style="white-space: pre-wrap;">  10 CLEAR 25170: PAPER 0: BORDER 0: INK 7: BRIGHT 1: CLS : PRINT BRIGHT 1; INK 7;AT 9,3;"STORMBRINGER 48 IS LOADING";AT 12,10;"PLEASE WAIT"
   20 PAPER 8: INK 8: BRIGHT 8: OVER 1
   30 BEEP .1,1: BEEP .1,2: BEEP .1,3: BEEP .1,4: BEEP .1,5: PRINT AT 0,0;: LOAD ""CODE 16384: PRINT AT 0,0;: LOAD ""CODE 
   40 RANDOMIZE USR 37632</pre></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23763"></span>23763</td>
 <td class="instruction">DEFB 55,48,14,0,0,82,98,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23771"></span>23771</td>
 <td class="instruction">DEFB 58,218,48,14,0,0,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23779"></span>23779</td>
 <td class="instruction">DEFB 0,58,231,48,14,0,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23787"></span>23787</td>
 <td class="instruction">DEFB 0,0,58,217,55,14,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23795"></span>23795</td>
 <td class="instruction">DEFB 7,0,0,58,220,49,14,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23803"></span>23803</td>
 <td class="instruction">DEFB 0,1,0,0,58,251,58,245</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23811"></span>23811</td>
 <td class="instruction">DEFB 220,49,14,0,0,1,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23819"></span>23819</td>
 <td class="instruction">DEFB 59,217,55,14,0,0,7,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23827"></span>23827</td>
 <td class="instruction">DEFB 0,59,172,57,14,0,0,9</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23835"></span>23835</td>
 <td class="instruction">DEFB 0,0,44,51,14,0,0,3</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23843"></span>23843</td>
 <td class="instruction">DEFB 0,0,59,34,83,84,79,82</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23851"></span>23851</td>
 <td class="instruction">DEFB 77,66,82,73,78,71,69,82</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23859"></span>23859</td>
 <td class="instruction">DEFB 32,52,56,32,73,83,32,76</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23867"></span>23867</td>
 <td class="instruction">DEFB 79,65,68,73,78,71,34,59</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23875"></span>23875</td>
 <td class="instruction">DEFB 172,49,50,14,0,0,12,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23883"></span>23883</td>
 <td class="instruction">DEFB 0,44,49,48,14,0,0,10</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23891"></span>23891</td>
 <td class="instruction">DEFB 0,0,59,34,80,76,69,65</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23899"></span>23899</td>
 <td class="instruction">DEFB 83,69,32,87,65,73,84,34</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23907"></span>23907</td>
 <td class="instruction">DEFB 13,0,20,36,0,218,56,14</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23915"></span>23915</td>
 <td class="instruction">DEFB 0,0,8,0,0,58,217,56</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23923"></span>23923</td>
 <td class="instruction">DEFB 14,0,0,8,0,0,58,220</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23931"></span>23931</td>
 <td class="instruction">DEFB 56,14,0,0,8,0,0,58</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23939"></span>23939</td>
 <td class="instruction">DEFB 222,49,14,0,0,1,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23947"></span>23947</td>
 <td class="instruction">DEFB 13,0,30,149,0,215,46,49</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23955"></span>23955</td>
 <td class="instruction">DEFB 14,125,76,204,204,204,44,49</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23963"></span>23963</td>
 <td class="instruction">DEFB 14,0,0,1,0,0,58,215</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23971"></span>23971</td>
 <td class="instruction">DEFB 46,49,14,125,76,204,204,204</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23979"></span>23979</td>
 <td class="instruction">DEFB 44,50,14,0,0,2,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23987"></span>23987</td>
 <td class="instruction">DEFB 58,215,46,49,14,125,76,204</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="23995"></span>23995</td>
 <td class="instruction">DEFB 204,204,44,51,14,0,0,3</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24003"></span>24003</td>
 <td class="instruction">DEFB 0,0,58,215,46,49,14,125</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24011"></span>24011</td>
 <td class="instruction">DEFB 76,204,204,204,44,52,14,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24019"></span>24019</td>
 <td class="instruction">DEFB 0,4,0,0,58,215,46,49</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24027"></span>24027</td>
 <td class="instruction">DEFB 14,125,76,204,204,204,44,53</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24035"></span>24035</td>
 <td class="instruction">DEFB 14,0,0,5,0,0,58,245</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24043"></span>24043</td>
 <td class="instruction">DEFB 172,48,14,0,0,0,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24051"></span>24051</td>
 <td class="instruction">DEFB 44,48,14,0,0,0,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24059"></span>24059</td>
 <td class="instruction">DEFB 59,58,239,34,34,175,49,54</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24067"></span>24067</td>
 <td class="instruction">DEFB 51,56,52,14,0,0,0,64</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24075"></span>24075</td>
 <td class="instruction">DEFB 0,58,245,172,48,14,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24083"></span>24083</td>
 <td class="instruction">DEFB 0,0,0,44,48,14,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24091"></span>24091</td>
 <td class="instruction">DEFB 0,0,0,59,58,239,34,34</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24099"></span>24099</td>
 <td class="instruction">DEFB 175,13,0,40,14,0,249,192</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24107"></span>24107</td>
 <td class="instruction">DEFB 51,55,54,51,50,14,0,0</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="24115"></span>24115</td>
 <td class="instruction">DEFB 0,147,0,13</td>
-<td class="comment-01" rowspan="1"></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="23635.html">23635</a></span></td>
+<td class="prev">
+Prev: <a href="23635.html">23635</a>
+</td>
 <td class="up">Up: <a href="loader.html#23755">Map</a></td>
-<td class="next"><span class="next-0">Next: <a href=""></a></span></td>
+<td class="next">
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

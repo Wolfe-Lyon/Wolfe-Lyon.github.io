@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 39699</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,27 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39601.html">39601</a></span></td>
+<td class="prev">
+Prev: <a href="39601.html">39601</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39699">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39760.html">39760</a></span></td>
+<td class="next">
+Next: <a href="39760.html">39760</a>
+</td>
 </tr>
 </table>
-<div class="description">39699: Count Coloured Creatures in Slots and Return if All Are Home</div>
+<div class="description">39699: Count coloured creatures in slots and return if all are home</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="39601.html">39601</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -58,197 +54,171 @@ Used by the routine at <a href="39601.html">39601</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39699"></span>39699</td>
 <td class="instruction">LD IX,44894</td>
-<td class="comment-11" rowspan="1">Load IX with address of complex state data for first coloured creature (Level 3)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with address of complex state data for first coloured creature (level 3)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39703"></span>39703</td>
 <td class="instruction">LD HL,0</td>
-<td class="comment-11" rowspan="1">Load HL with zero</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39706"></span>39706</td>
 <td class="instruction">LD B,3</td>
-<td class="comment-11" rowspan="1">Load B with 3 (as there are 3 creatures)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 3 (as there are 3 creatures)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39708"></span>39708</td>
 <td class="instruction">LD A,(IX+6)</td>
-<td class="comment-11" rowspan="1">If y-coordinate of bottom of current creature is not 114...</td>
+<td class="comment-1" rowspan="1">If y-coordinate of bottom of current creature is not 114...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39711"></span>39711</td>
 <td class="instruction">CP 114</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39713"></span>39713</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39714"></span>39714</td>
 <td class="instruction">INC L</td>
-<td class="comment-11" rowspan="1">Increase L (number of creatures in slots)</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">L</span> (number of creatures in slots)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39715"></span>39715</td>
 <td class="instruction">LD A,(IX+8)</td>
-<td class="comment-11" rowspan="1">If current entity class is not 13 (Red Coloured Creature, Level 3)...</td>
+<td class="comment-1" rowspan="1">If current entity class is not 13 (red coloured creature, level 3)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39718"></span>39718</td>
 <td class="instruction">CP 13</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39720"></span>39720</td>
 <td class="instruction">JR NZ,39726</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39699.html#39726">39726</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39699.html#39726">39726</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39722"></span>39722</td>
 <td class="instruction">LD A,108</td>
-<td class="comment-11" rowspan="1">Load A with 108 (x-coordinate of left-most slot)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 108 (x-coordinate of left-most slot)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39724"></span>39724</td>
 <td class="instruction">JR 39736</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="39699.html#39736">39736</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="39699.html#39736">39736</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39726"></span>39726</td>
 <td class="instruction">CP 14</td>
-<td class="comment-11" rowspan="1">If current entity class is not 14 (Yellow Coloured Creature, Level 3)...</td>
+<td class="comment-1" rowspan="1">If current entity class is not 14 (yellow coloured creature, level 3)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39728"></span>39728</td>
 <td class="instruction">JR NZ,39734</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39699.html#39734">39734</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39699.html#39734">39734</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39730"></span>39730</td>
 <td class="instruction">LD A,115</td>
-<td class="comment-11" rowspan="1">Load A with 115 (x-coordinate of middle slot)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 115 (x-coordinate of middle slot)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39732"></span>39732</td>
 <td class="instruction">JR 39736</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="39699.html#39736">39736</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="39699.html#39736">39736</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39734"></span>39734</td>
 <td class="instruction">LD A,122</td>
-<td class="comment-11" rowspan="1">Load A with 122 (x-coordinate of right-most slot)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with 122 (x-coordinate of right-most slot)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39736"></span>39736</td>
 <td class="instruction">CP (IX+5)</td>
-<td class="comment-11" rowspan="1">If x-coordinate of slot in A is not the same as x-coordinate of current creature's left...</td>
+<td class="comment-1" rowspan="1">If x-coordinate of slot in <span class="register">A</span> is not the same as x-coordinate of current creature's left...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39739"></span>39739</td>
 <td class="instruction">JR NZ,39742</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="39699.html#39742">39742</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="39699.html#39742">39742</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39741"></span>39741</td>
 <td class="instruction">INC H</td>
-<td class="comment-11" rowspan="1">Increase H (number of creatures at correct x-coordinate for their respective coloured slots)</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">H</span> (number of creatures at correct x-coordinate for their respective coloured slots)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39742"></span>39742</td>
 <td class="instruction">LD DE,13</td>
-<td class="comment-11" rowspan="1">Advance IX to next entity...</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> to next entity...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39745"></span>39745</td>
 <td class="instruction">ADD IX,DE</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39747"></span>39747</td>
 <td class="instruction">DJNZ 39708</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="39699.html#39708">39708</a> for next creature</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="39699.html#39708">39708</a> for next creature</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39749"></span>39749</td>
 <td class="instruction">LD A,H</td>
-<td class="comment-11" rowspan="1">If H is not 3 (i.e. at least one creature not at correct x-coordinates)...</td>
+<td class="comment-1" rowspan="1">If <span class="register">H</span> is not 3 (i.e. at least one creature not at correct x-coordinates)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39750"></span>39750</td>
 <td class="instruction">CP 3</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39752"></span>39752</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39753"></span>39753</td>
 <td class="instruction">LD A,2</td>
-<td class="comment-11" rowspan="1">Set All Coloured Creatures Home Flag</td>
+<td class="comment-1" rowspan="1">Set all-coloured-creatures-home flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39755"></span>39755</td>
 <td class="instruction">LD (44903),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39758"></span>39758</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Return to routine that called the calling routine...</td>
+<td class="comment-1" rowspan="1">Return to routine that called the calling routine...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39759"></span>39759</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39601.html">39601</a></span></td>
+<td class="prev">
+Prev: <a href="39601.html">39601</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39699">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39760.html">39760</a></span></td>
+<td class="next">
+Next: <a href="39760.html">39760</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

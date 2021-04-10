@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 55414</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,28 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55408.html">55408</a></span></td>
+<td class="prev">
+Prev: <a href="55408.html">55408</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55414">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55421.html">55421</a></span></td>
+<td class="next">
+Next: <a href="55421.html">55421</a>
+</td>
 </tr>
 </table>
-<div class="description">55414: Restore Copied Bitmap Data from Top of Region to Scroll to Bottom of Region to Scroll</div>
+<div class="description">55414: Restore copied bitmap data from top to bottom of region to scroll</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 (<a href="../reference/facts.html#redundantinstructions">See trivia</a>)
 </div>
+<div class="paragraph">
+Used by the routine at <a href="55470.html">55470</a>.
 </div>
-<table class="input-1">
+</div>
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,50 +54,44 @@
 <td class="register-desc">Points to bottom pixel row (left-most character) of region to scroll</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55414"></span>55414</td>
 <td class="instruction">LD DE,23296</td>
-<td class="comment-11" rowspan="1">Point DE at copied bitmap data at <a href="23296.html">23296</a></td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at copied bitmap data at <a href="23296.html">23296</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55417"></span>55417</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Swap DE (now points to bottom pixel row in region to scroll) and HL (now points to copied bitmap data at <a href="23296.html">23296</a>)</td>
+<td class="comment-1" rowspan="1">Swap <span class="register">DE</span> (now points to bottom pixel row in region to scroll) and <span class="register">HL</span> (now points to copied bitmap data at <a href="23296.html">23296</a>)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55418"></span>55418</td>
 <td class="instruction">LDIR</td>
-<td class="comment-11" rowspan="1">Copy previously stored bitmap data into bottom pixel row of region to scroll</td>
+<td class="comment-1" rowspan="1">Copy previously stored bitmap data into bottom pixel row of region to scroll</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55420"></span>55420</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55408.html">55408</a></span></td>
+<td class="prev">
+Prev: <a href="55408.html">55408</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55414">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55421.html">55421</a></span></td>
+<td class="next">
+Next: <a href="55421.html">55421</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 53782</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,166 +20,142 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53723.html">53723</a></span></td>
+<td class="prev">
+Prev: <a href="53723.html">53723</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53782">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53814.html">53814</a></span></td>
+<td class="next">
+Next: <a href="53814.html">53814</a>
+</td>
 </tr>
 </table>
-<div class="description">53782: Set Each Value in Primary Display Buffer Within Play Area to Zero</div>
+<div class="description">53782: Set each value in primary display buffer within play area to zero</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="34438.html">34438</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53782"></span>53782</td>
 <td class="instruction">LD HL,(34279)</td>
-<td class="comment-11" rowspan="1">Load HL with start address of Primary Display Buffer</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with start address of primary display buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53785"></span>53785</td>
 <td class="instruction">LD BC,704</td>
-<td class="comment-11" rowspan="1">Set BC to 704, as there are 704 entries in a Display Buffer</td>
+<td class="comment-1" rowspan="1">Set <span class="register">BC</span> to 704, as there are 704 entries in a display buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53788"></span>53788</td>
 <td class="instruction">LD DE,3</td>
-<td class="comment-11" rowspan="1">Load DE with 3 as each entry in the Display Buffer is three bytes wide</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with 3 as each entry in the display buffer is three bytes wide</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53791"></span>53791</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Read first byte in Display Buffer...</td>
+<td class="comment-1" rowspan="1">Read first byte in display buffer...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53792"></span>53792</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...and add one</td>
+<td class="comment-1" rowspan="1">...and add one</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53793"></span>53793</td>
 <td class="instruction">JP Z,53806</td>
-<td class="comment-11" rowspan="1">If value is now zero (i.e. was previously 255 and therefore outside normal play area), then skip ahead to <a href="53782.html#53806">53806</a></td>
+<td class="comment-1" rowspan="1">If value is now zero (i.e. was previously 255 and therefore outside normal play area), then skip ahead to <a href="53782.html#53806">53806</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53796"></span>53796</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set all values in current entry to zero...</td>
+<td class="comment-1" rowspan="1">Set all values in current entry to zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53797"></span>53797</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53798"></span>53798</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53799"></span>53799</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53800"></span>53800</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53801"></span>53801</td>
 <td class="instruction">LD (HL),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53802"></span>53802</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53803"></span>53803</td>
 <td class="instruction">JP 53807</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="53782.html#53807">53807</a></td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="53782.html#53807">53807</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53806"></span>53806</td>
 <td class="instruction">ADD HL,DE</td>
-<td class="comment-11" rowspan="1">Advance current position in Display Buffer to next entry</td>
+<td class="comment-1" rowspan="1">Advance current position in display buffer to next entry</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="53807"></span>53807</td>
 <td class="instruction">DEC BC</td>
-<td class="comment-11" rowspan="1">Decrease remaining number of entries to process</td>
+<td class="comment-1" rowspan="1">Decrease remaining number of entries to process</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53808"></span>53808</td>
 <td class="instruction">LD A,B</td>
-<td class="comment-11" rowspan="1">If remaining number of entries is not zero...</td>
+<td class="comment-1" rowspan="1">If remaining number of entries is not zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53809"></span>53809</td>
 <td class="instruction">OR C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53810"></span>53810</td>
 <td class="instruction">JP NZ,53791</td>
-<td class="comment-11" rowspan="1">...then loop back to <a href="53782.html#53791">53791</a></td>
+<td class="comment-1" rowspan="1">...then loop back to <a href="53782.html#53791">53791</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="53813"></span>53813</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="53723.html">53723</a></span></td>
+<td class="prev">
+Prev: <a href="53723.html">53723</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#53782">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="53814.html">53814</a></span></td>
+<td class="next">
+Next: <a href="53814.html">53814</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

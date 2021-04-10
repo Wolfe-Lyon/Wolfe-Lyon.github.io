@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 35689</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,158 +20,137 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="35687.html">35687</a></span></td>
+<td class="prev">
+Prev: <a href="35687.html">35687</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#35689">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="35735.html">35735</a></span></td>
+<td class="next">
+Next: <a href="35735.html">35735</a>
+</td>
 </tr>
 </table>
-<div class="description">35689: Update State of Berk and Store Current Position in Script Data</div>
+<div class="description">35689: Update state of Berk and store current position in script data</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="34438.html">34438</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="35689"></span>35689</td>
 <td class="instruction">LD IX,(34240)</td>
-<td class="comment-11" rowspan="1">Load IX with address of complex state data (current level) for Berk</td>
+<td class="comment-1" rowspan="1">Load <span class="register">IX</span> with address of complex state data (current level) for Berk</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35693"></span>35693</td>
 <td class="instruction">CALL <a href="53825.html#53848">53848</a></td>
-<td class="comment-11" rowspan="1">Store room size data for Berk's current room</td>
+<td class="comment-1" rowspan="1">Store room size data for Berk's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35696"></span>35696</td>
 <td class="instruction">BIT 5,(IX+9)</td>
-<td class="comment-11" rowspan="1">If Berk's "Do Not Update State" Flag is set...</td>
+<td class="comment-1" rowspan="1">If Berk's do-not-update-state flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35700"></span>35700</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35701"></span>35701</td>
 <td class="instruction">LD HL,(35687)</td>
-<td class="comment-11" rowspan="1">Load current position in Berk's script data from <a href="35687.html">35687</a> into HL...</td>
+<td class="comment-1" rowspan="1">Load current position in Berk's script data from <a href="35687.html">35687</a> into <span class="register">HL</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35704"></span>35704</td>
 <td class="instruction">LD (34277),HL</td>
-<td class="comment-11" rowspan="1">...and store at <a href="34277.html">34277</a> as position in script currently running</td>
+<td class="comment-1" rowspan="1">...and store at <a href="34277.html">34277</a> as position in script currently running</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35707"></span>35707</td>
 <td class="instruction">CALL <a href="35735.html">35735</a></td>
-<td class="comment-11" rowspan="1">Update state of Berk depending upon currently selected character, control input and currently active power</td>
+<td class="comment-1" rowspan="1">Update state of Berk depending upon currently selected character, control input and currently active power</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35710"></span>35710</td>
 <td class="instruction">LD HL,(34277)</td>
-<td class="comment-11" rowspan="1">Store address (current position in script data) stored at <a href="34277.html">34277</a>...</td>
+<td class="comment-1" rowspan="1">Store address (current position in script data) stored at <a href="34277.html">34277</a>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35713"></span>35713</td>
 <td class="instruction">LD (35687),HL</td>
-<td class="comment-11" rowspan="1">...at <a href="35687.html">35687</a> as current position in Berk's script data</td>
+<td class="comment-1" rowspan="1">...at <a href="35687.html">35687</a> as current position in Berk's script data</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35716"></span>35716</td>
 <td class="instruction">LD A,(34220)</td>
-<td class="comment-11" rowspan="1">If Berk's current power is not invisibility (level 3)...</td>
+<td class="comment-1" rowspan="1">If Berk's current power is not invisibility (level 3)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35719"></span>35719</td>
 <td class="instruction">CP 11</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35721"></span>35721</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="35722"></span>
 <div class="comments">
 <div class="paragraph">
-Current power is invisibility (Level 3)
+Current power is invisibility (level 3)
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35722"></span>35722</td>
 <td class="instruction">LD BC,50800</td>
-<td class="comment-11" rowspan="1">Load BC with address of blank graphic layout data...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with address of blank graphic layout data...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35725"></span>35725</td>
 <td class="instruction">LD (IX+2),C</td>
-<td class="comment-11" rowspan="1">...and set this as Berk's current graphic layout data address...</td>
+<td class="comment-1" rowspan="1">...and set this as Berk's current graphic layout data address...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35728"></span>35728</td>
 <td class="instruction">LD (IX+3),B</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35731"></span>35731</td>
 <td class="instruction">CALL <a href="48388.html">48388</a></td>
-<td class="comment-11" rowspan="1">Decrease remaining time for current power and if zero, exit this routine and run script data for removal of power</td>
+<td class="comment-1" rowspan="1">Decrease remaining time for current power and if zero, exit this routine and run script data for removal of power</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="35734"></span>35734</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="35687.html">35687</a></span></td>
+<td class="prev">
+Prev: <a href="35687.html">35687</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#35689">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="35735.html">35735</a></span></td>
+<td class="next">
+Next: <a href="35735.html">35735</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

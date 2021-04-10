@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Bugs</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Bugs">
 <table class="header">
@@ -21,20 +19,20 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#instantdirectionflip">Direction Berk is Facing Flips Instantly</a></li>
-<li><a href="#graphicglitches1">Graphical Glitches 1</a></li>
-<li><a href="#graphicglitches2">Graphical Glitches 2</a></li>
-<li><a href="#graphicglitches3">Graphical Glitches 3</a></li>
-<li><a href="#graphicglitches4">Graphical Glitches 4</a></li>
-<li><a href="#definingduplicatecontrols">Defining Duplicate Controls</a></li>
+<li><a href="#instantdirectionflip">Direction Berk is facing flips instantly</a></li>
+<li><a href="#graphicglitches1">Graphical glitches, part 1</a></li>
+<li><a href="#graphicglitches2">Graphical glitches, part 2</a></li>
+<li><a href="#graphicglitches3">Graphical glitches, part 3</a></li>
+<li><a href="#graphicglitches4">Graphical glitches, part 4</a></li>
+<li><a href="#definingduplicatecontrols">Defining duplicate controls</a></li>
 <li><a href="#spelling1">Spelling</a></li>
-<li><a href="#graphicglitches5">Graphical Glitches 5</a></li>
-<li><a href="#graphicglitches6">Graphical Glitches 6</a></li>
-<li><a href="#trapdoorclosing">Trap Door Closing</a></li>
+<li><a href="#graphicglitches5">Graphical glitches, part 5</a></li>
+<li><a href="#graphicglitches6">Graphical glitches, part 6</a></li>
+<li><a href="#trapdoorclosing">Trap Door closing</a></li>
 </ul>
 <div><span id="instantdirectionflip"></span></div>
 <div class="box box-1">
-<div class="box-title">Direction Berk is Facing Flips Instantly</div>
+<div class="box-title">Direction Berk is facing flips instantly</div>
 <div class="paragraph">
 Under certain conditions, Berk will flip instantly from facing into the screen to facing out of the screen, without an intermediate turning animation.
 For example, if:
@@ -52,10 +50,10 @@ For example, if:
 then he will flip instantly.
 </div>
 <div class="paragraph">
-The reason for this is as follows. Under the conditions above, when right is pressed, execution jumps to <a href="../asm/36116.html#36214">36214</a>. At <a href="../asm/36116.html#36221">36221</a> his Facing Into Screen Flag
+The reason for this is as follows. Under the conditions above, when right is pressed, execution jumps to <a href="../asm/36116.html#36214">36214</a>. At <a href="../asm/36116.html#36221">36221</a> his facing-into-screen flag
 is reset. A check is done at <a href="../asm/36116.html#36230">36230</a> that determines that Berk cannot enter a new room to the right, so the jump at <a href="../asm/36116.html#36233">36233</a> takes place; execution now
 jumps to <a href="../asm/35735.html#35786">35786</a>. The check at <a href="../asm/35735.html#35786">35786</a> determines that Berk is not flying, so execution jumps to <a href="../asm/35735.html#35802">35802</a>. At <a href="../asm/35735.html#35802">35802</a> a check determines that Berk's
-Facing Into Screen Flag is reset (as it was previously reset by the instruction at <a href="../asm/36116.html#36221">36221</a>). This results in a jump to <a href="../asm/35735.html#35821">35821</a> at which point the script
+facing-into-screen flag is reset (as it was previously reset by the instruction at <a href="../asm/36116.html#36221">36221</a>). This results in a jump to <a href="../asm/35735.html#35821">35821</a> at which point the script
 data for Berk facing out of the screen is executed without an intermediate turning phase.
 </div>
 <div class="paragraph">
@@ -65,27 +63,27 @@ something up from behind him.
 </div>
 <div><span id="graphicglitches1"></span></div>
 <div class="box box-2">
-<div class="box-title">Graphical Glitches 1</div>
+<div class="box-title">Graphical glitches, part 1</div>
 <div class="paragraph">
-The graphics for the apebeasts' eyes are located at <a href="../asm/29358.html#29510">29510</a> (set 9 index 20) and <a href="../asm/29358.html#29518">29518</a> (set 9 index 21). In the former, a pixel just behind the eye is
-set but in the latter, this pixel is reset:
+The graphics for the ape-beasts' eyes are located at <a href="../asm/29358.html#29510">29510</a> (set 9 index 20) and <a href="../asm/29358.html#29518">29518</a> (set 9 index 21). In the former, a pixel just behind the eye
+is set but in the latter, this pixel is reset:
 </div>
 <div class="paragraph">
 <table class="default">
 <tr>
 <th colspan="1" rowspan="1">Address</th>
-<th colspan="1" rowspan="1">Set / Index</th>
+<th colspan="1" rowspan="1">Set / index</th>
 <th colspan="1" rowspan="1">Graphic</th>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1"><a href="../asm/29358.html#29510">29510</a></td>
 <td class="" colspan="1" rowspan="1">9 / 20</td>
-<td class="" colspan="1" rowspan="1"><img alt="29510" src="../images/udgs/elements/29510.png" /></td>
+<td class="" colspan="1" rowspan="1"><div style="display:inline-block;width:16px;height:16px;background:url(../images/font/29358.png) -304px -0px;"></div></td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1"><a href="../asm/29358.html#29518">29518</a></td>
 <td class="" colspan="1" rowspan="1">9 / 21</td>
-<td class="" colspan="1" rowspan="1"><img alt="29518" src="../images/udgs/elements/29518.png" /></td>
+<td class="" colspan="1" rowspan="1"><div style="display:inline-block;width:16px;height:16px;background:url(../images/font/29358.png) -320px -0px;"></div></td>
 </tr>
 </table>
 </div>
@@ -95,9 +93,9 @@ It is possible that this was intentional, to give the impression of rotation of 
 </div>
 <div><span id="graphicglitches2"></span></div>
 <div class="box box-1">
-<div class="box-title">Graphical Glitches 2</div>
+<div class="box-title">Graphical glitches, part 2</div>
 <div class="paragraph">
-The graphic layout data for the edible eyes on Level 3 uses the wrong graphic index for the eye on the right in the "looking ahead" state (<a href="../asm/40192.html#40219">40219</a>). The
+The graphic layout data for the edible eyes on level 3 uses the wrong graphic index for the eye on the right in the "looking ahead" state (<a href="../asm/40192.html#40219">40219</a>). The
 value at <a href="../asm/40192.html#40222">40222</a> is 33 (eye looking to the left) when it should be 29 (eye looking ahead). To fix:
 </div>
 <div class="paragraph">
@@ -106,9 +104,9 @@ POKE <a href="../asm/40192.html#40222">40222</a>,29
 </div>
 <div><span id="graphicglitches3"></span></div>
 <div class="box box-2">
-<div class="box-title">Graphical Glitches 3</div>
+<div class="box-title">Graphical glitches, part 3</div>
 <div class="paragraph">
-The main block of graphic layout data for Level 3's edible eyes lies at <a href="../asm/40192.html">40192</a>. This block is set up to select one of the following seven graphic
+The main block of graphic layout data for level 3's edible eyes lies at <a href="../asm/40192.html">40192</a>. This block is set up to select one of the following seven graphic
 layout data addresses and render the graphic layout data at that selected address. However the following list actually contains eight addresses. The
 eighth, <a href="../asm/40192.html#40247">40247</a> located at <a href="../asm/40192.html#40210">40210</a>, is not included in the random address selection because the instruction at <a href="../asm/40192.html#40194">40194</a> states that there are seven
 addresses, not eight. The eighth address corresponds to the eyes looking to the left. This final address can be included in the random selection via a
@@ -120,9 +118,9 @@ POKE <a href="../asm/40192.html#40194">40195</a>,8
 </div>
 <div><span id="graphicglitches4"></span></div>
 <div class="box box-1">
-<div class="box-title">Graphical Glitches 4</div>
+<div class="box-title">Graphical glitches, part 4</div>
 <div class="paragraph">
-The ceiling of the Door Room on Level 2 contains a glitch. The lower character block at the rightmost side of the left ceiling section appears to be an
+The ceiling of the door room on level 2 contains a glitch. The lower character block at the rightmost side of the left ceiling section appears to be an
 eye, rather than rock! This happens because the wrong graphic index is used in the graphic layout data at <a href="../asm/50801.html#51195">51195</a>. This can be fixed with a couple of
 POKEs:
 </div>
@@ -133,7 +131,7 @@ POKE <a href="../asm/50801.html#51195">51196</a>,194 (to apply a vertical mirror
 </div>
 <div><span id="definingduplicatecontrols"></span></div>
 <div class="box box-2">
-<div class="box-title">Defining Duplicate Controls</div>
+<div class="box-title">Defining duplicate controls</div>
 <div class="paragraph">
 The routine at <a href="../asm/47060.html">47060</a> is used during the defining of keyboard controls to ensure that the same key is not used for two different functions. However the
 routine does not function as intended, as it only checks the first five (of seven) controls for duplicates. As a result, the same key can be assigned to
@@ -147,18 +145,18 @@ POKE <a href="../asm/47060.html#47063">47064</a>,6 (check the first six keys)
 <div class="box box-1">
 <div class="box-title">Spelling</div>
 <div class="paragraph">
-Drutt's name is spelt "DRUT" on the <a href="../asm/46710.html#46794">Main Menu</a>.
+Drutt's name is spelt "DRUT" on the <a href="../asm/46710.html#46794">main menu</a>.
 </div>
 </div>
 <div><span id="graphicglitches5"></span></div>
 <div class="box box-2">
-<div class="box-title">Graphical Glitches 5</div>
+<div class="box-title">Graphical glitches, part 5</div>
 <div class="paragraph">
 The routine at <a href="../asm/48738.html">48738</a> attempts to position an entity that is being carried by Berk such that it appears in Berk's hands when he moves left. This
 routine should work the same way as the routine at <a href="../asm/48727.html">48727</a>; the entity should be positioned such that its left edge is half of that entity's width to
 the left of Berk's left edge. The instruction at <a href="../asm/48738.html#48741">48741</a> incorrectly doubles the amount by which the carried entity is offset, resulting in a mismatch
 in the positioning of carried entities when Berk moves left to the positioning when he moves right. This is particularly noticeable for wider entities,
-such as the Weight on Level 3 or the Cannon on Level 4. To fix, the errant instruction should be removed:
+such as the weight on level 3 or the cannon on level 4. To fix, the errant instruction should be removed:
 </div>
 <div class="paragraph">
 POKE <a href="../asm/48738.html#48741">48741</a>,0<br />
@@ -166,32 +164,32 @@ POKE <a href="../asm/48738.html#48741">48741</a>,0<br />
 </div>
 <div><span id="graphicglitches6"></span></div>
 <div class="box box-1">
-<div class="box-title">Graphical Glitches 6</div>
+<div class="box-title">Graphical glitches, part 6</div>
 <div class="paragraph">
-When Berk first starts jumping, he takes on the appearance defined in the graphic layout data at <a href="../asm/58119.html">58119</a>. Berk's left hand, however, has one character
-that is not quite right. A vertical mirror should be applied to this character to correct its appearance. To fix:
+When Berk bends down while facing forwards, he takes on the appearance defined in the graphic layout data at <a href="../asm/58119.html">58119</a>. Berk's left hand, however, has one
+character that is not quite right. A vertical mirror should be applied to this character to correct its appearance. To fix:
 </div>
 <div class="paragraph">
-POKE <a href="../asm/58119.html#58166">58170</a>,193
+POKE <a href="../asm/58119.html#58169">58170</a>,193
 </div>
 </div>
 <div><span id="trapdoorclosing"></span></div>
 <div class="box box-2">
-<div class="box-title">Trap Door Closing</div>
+<div class="box-title">Trap Door closing</div>
 <div class="paragraph">
 The routine at <a href="../asm/36966.html">36966</a> controls the Trap Door closing when Berk and Drutt have passed through. The conditions that have to be met for the Trap Door to
 close are:
 </div>
 <div class="paragraph">
 <ul class="">
-<li>Berk is not in room 1 (Trap Door Room), and</li>
+<li>Berk is not in room 1 (Trap Door room), and</li>
 <li>Drutt is in room 4 (room at the bottom of the Trap Door's shaft)</li>
 </ul>
 </div>
 <div class="paragraph">
 It is possible, however, to complete all levels in the game without meeting both of these conditions simultaneously; in this case the Trap Door would
-remain open, and upon returning to Level 1 at the end of the game, Berk, Boni and Drutt would all fall down the Trap Door again! The way to achieve this
-would be to send Drutt down the Trap Door first and have him accomplish all of his tasks for Level 1 (i.e. knock down the key and push the red sweet
+remain open, and upon returning to level 1 at the end of the game, Berk, Boni and Drutt would all fall down the Trap Door again! The way to achieve this
+would be to send Drutt down the Trap Door first and have him accomplish all of his tasks for level 1 (i.e. knock down the key and push the red sweet
 into the pit). Then, leaving Drutt in the pit, switching to Berk and having him finish off the level would ensure that the Trap Door would remain open.
 </div>
 <div class="paragraph">
@@ -201,7 +199,7 @@ now-closed Trap Door.
 </div>
 <div class="paragraph">
 Ideally, to fix this, we would look for an occasion when Berk and Drutt are guaranteed to be in a room together, and through the Trap Door. This indeed
-happens at the end of Level 1 when they must both be present in the room with the exit door:
+happens at the end of level 1 when they must both be present in the room with the exit door:
 </div>
 <div class="paragraph">
 Check whether Berk is in room 9 and return if not:<br />
@@ -214,9 +212,9 @@ POKE <a href="../asm/36966.html#36975">36976</a>,9
 </div>
 </div>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

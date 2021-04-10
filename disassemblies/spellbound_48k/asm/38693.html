@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 38693</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38674.html">38674</a></span></td>
+<td class="prev">
+Prev: <a href="38674.html">38674</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38693">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38725.html">38725</a></span></td>
+<td class="next">
+Next: <a href="38725.html">38725</a>
+</td>
 </tr>
 </table>
-<div class="description">38693: Print Command Summary in Command Summary Window at Bottom of Screen</div>
+<div class="description">38693: Print command summary in command summary window at bottom of screen</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="30222.html">30222</a>, <a href="30602.html">30602</a>, <a href="30880.html">30880</a>, <a href="31370.html">31370</a>, <a href="31636.html">31636</a>, <a href="32035.html">32035</a>, <a href="32194.html">32194</a>, <a href="32390.html">32390</a>, <a href="32655.html">32655</a>, <a href="33036.html">33036</a>, <a href="33312.html">33312</a>, <a href="33593.html">33593</a>, <a href="33663.html">33663</a>, <a href="34864.html">34864</a>, <a href="34883.html">34883</a>, <a href="34914.html">34914</a> and <a href="35141.html">35141</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,104 +47,99 @@ Used by the routines at <a href="30222.html">30222</a>, <a href="30602.html">306
 <td class="register-desc">Points to command text</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38693"></span>38693</td>
 <td class="instruction">PUSH DE</td>
-<td class="comment-11" rowspan="1">Store DE</td>
+<td class="comment-1" rowspan="1">Store <span class="register">DE</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38694"></span>38694</td>
 <td class="instruction">LD A,78</td>
-<td class="comment-11" rowspan="1">Set system variable ATTR T to 78 (yellow INK, blue PAPER, BRIGHT)</td>
+<td class="comment-1" rowspan="1">Store 78 (yellow INK, blue PAPER, BRIGHT) at <a href="23695.html">23695</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38696"></span>38696</td>
 <td class="instruction">LD (23695),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38699"></span>38699</td>
 <td class="instruction">LD HL,(36488)</td>
-<td class="comment-11" rowspan="1">Load HL with (video) memory location to start printing character</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with (video) memory location to start printing character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38702"></span>38702</td>
 <td class="instruction">EX (SP),HL</td>
-<td class="comment-11" rowspan="1">Swap registers so that HL points to text to be printed, and (SP) i.e. PUSHed value) contains Display File address to start printing character</td>
+<td class="comment-1" rowspan="1">Swap registers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="routine-comment" colspan="5">
+<span id="38703"></span>
+<div class="comments">
+<div class="paragraph">
+At this point, <span class="register">HL</span> points to text to be printed, and (<span class="register">SP</span>), i.e. PUSHed value, contains display file address to start printing character
+</div>
+</div>
+</td>
+</tr>
+<tr>
 <td class="address-1"><span id="38703"></span>38703</td>
 <td class="instruction">LD DE,(65530)</td>
-<td class="comment-11" rowspan="1">Load DE with new Display File address to print character...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with new display file address to print character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38707"></span>38707</td>
 <td class="instruction">LD (36488),DE</td>
-<td class="comment-11" rowspan="1">...and update printing routine with this location</td>
+<td class="comment-1" rowspan="1">...and update printing routine with this location</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38711"></span>38711</td>
 <td class="instruction">CALL <a href="36725.html">36725</a></td>
-<td class="comment-11" rowspan="1">Print text at location HL to screen</td>
+<td class="comment-1" rowspan="1">Print text at location <span class="register">HL</span> to screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38714"></span>38714</td>
 <td class="instruction">LD HL,(36488)</td>
-<td class="comment-11" rowspan="1">Load Display File address just printed to into HL</td>
+<td class="comment-1" rowspan="1">Load display file address just printed to into <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38717"></span>38717</td>
 <td class="instruction">LD (65530),HL</td>
-<td class="comment-11" rowspan="1">Store at 65530 (where it was just read from!)</td>
+<td class="comment-1" rowspan="1">Store at 65530 (where it was just read from!)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38720"></span>38720</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore original memory location that was replaced in printing routine...</td>
+<td class="comment-1" rowspan="1">Restore original memory location that was replaced in printing routine...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38721"></span>38721</td>
 <td class="instruction">LD (36488),HL</td>
-<td class="comment-11" rowspan="1">...and put it back into the printing routine</td>
+<td class="comment-1" rowspan="1">...and put it back into the printing routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38724"></span>38724</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38674.html">38674</a></span></td>
+<td class="prev">
+Prev: <a href="38674.html">38674</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38693">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38725.html">38725</a></span></td>
+<td class="next">
+Next: <a href="38725.html">38725</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

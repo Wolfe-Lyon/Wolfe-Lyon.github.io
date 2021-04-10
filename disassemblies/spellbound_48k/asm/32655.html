@@ -4,6 +4,7 @@
 <title>Spellbound (48k): Routine at 32655</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../spellbound.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,208 +20,183 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="32390.html">32390</a></span></td>
+<td class="prev">
+Prev: <a href="32390.html">32390</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#32655">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="32764.html">32764</a></span></td>
+<td class="next">
+Next: <a href="32764.html">32764</a>
+</td>
 </tr>
 </table>
-<div class="description">32655: Process and Execute Command to Cast a Spell</div>
+<div class="description">32655: Process and execute command to cast a spell</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
-
+<div class="paragraph">
+Used by the routines at <a href="27176.html">27176</a> and <a href="31153.html">31153</a>.
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
+</div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="32655"></span>32655</td>
 <td class="instruction">LD A,(65532)</td>
-<td class="comment-11" rowspan="1">If "Magic Knight Can Cast a Spell" flag is not set...</td>
+<td class="comment-1" rowspan="1">If cast-a-spell-enabled flag is not set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32658"></span>32658</td>
 <td class="instruction">BIT 5,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32660"></span>32660</td>
 <td class="instruction">JP Z,<a href="27176.html#27189">27189</a></td>
-<td class="comment-11" rowspan="1">...then jump into Main Game Loop (process keyboard input and move Magic Knight, enter menus or execute other command)</td>
+<td class="comment-1" rowspan="1">...then jump into main game loop (process keyboard input and move Magic Knight, enter menus or execute other command)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32663"></span>32663</td>
 <td class="instruction">CALL <a href="38075.html">38075</a></td>
-<td class="comment-11" rowspan="1">Play upward scale sound</td>
+<td class="comment-1" rowspan="1">Play upward scale sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32666"></span>32666</td>
 <td class="instruction">CALL <a href="37654.html">37654</a></td>
-<td class="comment-11" rowspan="1">Display / update command summary window at bottom of screen</td>
+<td class="comment-1" rowspan="1">Display / update command summary window at bottom of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32669"></span>32669</td>
 <td class="instruction">LD DE,49377</td>
-<td class="comment-11" rowspan="1">Point DE at "CAST A SPELL" text...</td>
+<td class="comment-1" rowspan="1">Point <span class="register">DE</span> at "CAST A SPELL" text...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32672"></span>32672</td>
 <td class="instruction">CALL <a href="38693.html">38693</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at bottom of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at bottom of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32675"></span>32675</td>
 <td class="instruction">LD HL,49383</td>
-<td class="comment-11" rowspan="1">Point HL at byte before "WHICH SPELL DO YOU WANT TO CAST?" full menu text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at byte before "WHICH SPELL DO YOU WANT TO CAST?" full menu text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32678"></span>32678</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load data into position of right edge of window data for "Cast a Spell" window...</td>
+<td class="comment-1" rowspan="1">Load data into position of right edge of window data for "cast a spell" window...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32679"></span>32679</td>
 <td class="instruction">LD (42117),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32682"></span>32682</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance HL to start of actual text</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to start of actual text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32683"></span>32683</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to menu text)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to menu text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32684"></span>32684</td>
 <td class="instruction">LD A,30</td>
-<td class="comment-11" rowspan="1">Draw the "Cast a Spell" window...</td>
+<td class="comment-1" rowspan="1">Draw the "cast a spell" window...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32686"></span>32686</td>
 <td class="instruction">CALL <a href="36979.html">36979</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32689"></span>32689</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to menu text)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to menu text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32690"></span>32690</td>
 <td class="instruction">CALL <a href="36725.html">36725</a></td>
-<td class="comment-11" rowspan="1">Print the text</td>
+<td class="comment-1" rowspan="1">Print the text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32693"></span>32693</td>
 <td class="instruction">CALL <a href="37333.html">37333</a></td>
-<td class="comment-11" rowspan="1">Process keyboard / joystick input for menu, and load ASCII code of shortcut for selected (i.e. SPACE or fire pressed) item into A</td>
+<td class="comment-1" rowspan="1">Process input for menu, and load ASCII code of shortcut for selected (i.e. SPACE or fire pressed) item into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32696"></span>32696</td>
 <td class="instruction">SUB 65</td>
-<td class="comment-11" rowspan="1">Subtract ASCII value of "A" to get numeric index of option selected</td>
+<td class="comment-1" rowspan="1">Subtract ASCII value of "A" to get numeric index of option selected</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32698"></span>32698</td>
 <td class="instruction">LD (32726),A</td>
-<td class="comment-11" rowspan="1">Store index of spell selected in this routine at <a href="32655.html#32725">32726</a></td>
+<td class="comment-1" rowspan="1">Store index of spell selected in this routine at <a href="32655.html#32725">32726</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="routine-comment" colspan="5">
+<span id="32701"></span>
+<div class="comments">
+<div class="paragraph">
+If PROJECT PHYSICAL BODY spell has been selected then the command summary window shows "PROJECT PHYSICAL BODY TO..." rather than "CAST..." as with all other spells.
+</div>
+</div>
+</td>
+</tr>
+<tr>
 <td class="address-1"><span id="32701"></span>32701</td>
 <td class="instruction">CP 4</td>
-<td class="comment-11" rowspan="1">If spell number 4 (Project Physical Body) is selected...</td>
+<td class="comment-1" rowspan="1">If spell number 4 (Project Physical Body) is selected...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32703"></span>32703</td>
 <td class="instruction">JR Z,32725</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="32655.html#32725">32725</a> (as command summary window shows "PROJECT PHYSICAL BODY TO..." rather than "CAST..." as with all other spells)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="32655.html#32725">32725</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32705"></span>32705</td>
 <td class="instruction">CALL <a href="37654.html">37654</a></td>
-<td class="comment-11" rowspan="1">Display / update command summary window at bottom of screen</td>
+<td class="comment-1" rowspan="1">Display / update command summary window at bottom of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32708"></span>32708</td>
 <td class="instruction">LD HL,50184</td>
-<td class="comment-11" rowspan="1">Point HL at "CAST CRYSTALLIUM SPECTRALIS" text (i.e. first in list of "CAST [SPELL]" strings)</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "CAST CRYSTALLIUM SPECTRALIS" text (i.e. first in list of "CAST [SPELL]" strings)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32711"></span>32711</td>
 <td class="instruction">LD A,(32726)</td>
-<td class="comment-11" rowspan="1">Load index of spell selected into B...</td>
+<td class="comment-1" rowspan="1">Load index of spell selected into <span class="register">B</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32714"></span>32714</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32715"></span>32715</td>
 <td class="instruction">CALL <a href="34842.html#34845">34845</a></td>
-<td class="comment-11" rowspan="1">Advance HL to B-th entry in list of zero-terminated strings</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">HL</span> to <span class="register">B</span>-th entry in list of zero-terminated strings</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32718"></span>32718</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Swap DE (now points to "CAST [SPELL]" text) and HL (now points to "CAST A SPELL" text)</td>
+<td class="comment-1" rowspan="1">Swap <span class="register">DE</span> (now points to "CAST [SPELL]" text) and <span class="register">HL</span> (now points to "CAST A SPELL" text)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32719"></span>32719</td>
 <td class="instruction">CALL <a href="38693.html">38693</a></td>
-<td class="comment-11" rowspan="1">...and print in Command Summary Window at bottom of screen</td>
+<td class="comment-1" rowspan="1">...and print in command summary window at bottom of screen</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32722"></span>32722</td>
 <td class="instruction">CALL <a href="38725.html">38725</a></td>
-<td class="comment-11" rowspan="1">Display Execute / Reject Command window and return if Execute chosen, else exit</td>
+<td class="comment-1" rowspan="1">Display execute / reject command window and return if execute chosen, else exit</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="32725"></span>
 <div class="comments">
 <div class="paragraph">
@@ -230,113 +206,101 @@ The operand of the instruction at <a href="32655.html#32725">32725</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="32725"></span>32725</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Load A with index of spell to cast</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with index of spell to cast</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32727"></span>32727</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If spell is Crystallium Spectralis...</td>
+<td class="comment-1" rowspan="1">If spell is Crystallium Spectralis...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32728"></span>32728</td>
 <td class="instruction">JP Z,<a href="32764.html">32764</a></td>
-<td class="comment-11" rowspan="1">...then cast Crystallium Spectralis if possible, else display failure message</td>
+<td class="comment-1" rowspan="1">...then cast Crystallium Spectralis if possible, else display failure message</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32731"></span>32731</td>
 <td class="instruction">CP 1</td>
-<td class="comment-11" rowspan="1">If spell is Candelium Illuminatus...</td>
+<td class="comment-1" rowspan="1">If spell is Candelium Illuminatus...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32733"></span>32733</td>
 <td class="instruction">JP Z,<a href="32823.html">32823</a></td>
-<td class="comment-11" rowspan="1">...then jump to <a href="32823.html">32823</a></td>
+<td class="comment-1" rowspan="1">...then jump to <a href="32823.html">32823</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32736"></span>32736</td>
 <td class="instruction">CP 2</td>
-<td class="comment-11" rowspan="1">If spell is Armouris Photonicus...</td>
+<td class="comment-1" rowspan="1">If spell is Armouris Photonicus...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32738"></span>32738</td>
 <td class="instruction">JP Z,<a href="32903.html">32903</a></td>
-<td class="comment-11" rowspan="1">...then jump to <a href="32903.html">32903</a></td>
+<td class="comment-1" rowspan="1">...then jump to <a href="32903.html">32903</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32741"></span>32741</td>
 <td class="instruction">CP 3</td>
-<td class="comment-11" rowspan="1">If spell is Fumaticus Protectium...</td>
+<td class="comment-1" rowspan="1">If spell is Fumaticus Protectium...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32743"></span>32743</td>
 <td class="instruction">JP Z,<a href="32982.html">32982</a></td>
-<td class="comment-11" rowspan="1">...then jump to <a href="32982.html">32982</a></td>
+<td class="comment-1" rowspan="1">...then jump to <a href="32982.html">32982</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32746"></span>32746</td>
 <td class="instruction">CP 4</td>
-<td class="comment-11" rowspan="1">If spell is Project Physical Body...</td>
+<td class="comment-1" rowspan="1">If spell is Project Physical Body...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32748"></span>32748</td>
 <td class="instruction">JP Z,<a href="33036.html">33036</a></td>
-<td class="comment-11" rowspan="1">...then jump to <a href="33036.html">33036</a></td>
+<td class="comment-1" rowspan="1">...then jump to <a href="33036.html">33036</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32751"></span>32751</td>
 <td class="instruction">CP 5</td>
-<td class="comment-11" rowspan="1">If spell is Release Spell...</td>
+<td class="comment-1" rowspan="1">If spell is Release Spell...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32753"></span>32753</td>
 <td class="instruction">JP Z,<a href="33129.html">33129</a></td>
-<td class="comment-11" rowspan="1">...then jump to <a href="33129.html">33129</a></td>
+<td class="comment-1" rowspan="1">...then jump to <a href="33129.html">33129</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32756"></span>32756</td>
 <td class="instruction">CP 6</td>
-<td class="comment-11" rowspan="1">If spell is Quiticus Gamus...</td>
+<td class="comment-1" rowspan="1">If spell is Quiticus Gamus...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32758"></span>32758</td>
 <td class="instruction">JP Z,<a href="33269.html">33269</a></td>
-<td class="comment-11" rowspan="1">...then jump to <a href="33269.html">33269</a></td>
+<td class="comment-1" rowspan="1">...then jump to <a href="33269.html">33269</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32761"></span>32761</td>
 <td class="instruction">JP <a href="30222.html#30428">30428</a></td>
-<td class="comment-11" rowspan="1">Reset Gimbal-White-Out Safe Flag, redraw current room and return to main game loop</td>
+<td class="comment-1" rowspan="1">Reset Gimbal-white-out-safe flag, redraw current room and return to main game loop</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="32390.html">32390</a></span></td>
+<td class="prev">
+Prev: <a href="32390.html">32390</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#32655">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="32764.html">32764</a></span></td>
+<td class="next">
+Next: <a href="32764.html">32764</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 39189</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39183.html">39183</a></span></td>
+<td class="prev">
+Prev: <a href="39183.html">39183</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39189">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39216.html">39216</a></span></td>
+<td class="next">
+Next: <a href="39216.html">39216</a>
+</td>
 </tr>
 </table>
-<div class="description">39189: Room Drawing: Start Painting Attribute / Terrain Interaction Data for Layout Data Fragment</div>
+<div class="description">39189: Room drawing: Start painting attribute / terrain interaction data for layout data fragment</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="39047.html">39047</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -42,98 +47,84 @@ Used by the routine at <a href="39047.html">39047</a>.
 <td class="register-desc">Draw layout data fragment instruction</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="39189"></span>39189</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = current byte from room layout data)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = current byte from room layout data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39190"></span>39190</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Set Drawing Layout Data Fragment Flag to 1...</td>
+<td class="comment-1" rowspan="1">Set drawing-layout-data-fragment flag to 1...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39192"></span>39192</td>
 <td class="instruction">LD (23452),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39195"></span>39195</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Advance IX by one byte</td>
+<td class="comment-1" rowspan="1">Advance <span class="register">IX</span> by one byte</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39197"></span>39197</td>
 <td class="instruction">LD (23453),IX</td>
-<td class="comment-11" rowspan="1">Store current position in room layout data at <a href="23451.html#23453">23453</a></td>
+<td class="comment-1" rowspan="1">Store current position in room layout data at <a href="23451.html#23453">23453</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39201"></span>39201</td>
 <td class="instruction">LD HL,60925</td>
-<td class="comment-11" rowspan="1">Load HL with address of Room Layout Data Fragment Pointers</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of room layout data fragment pointers</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39204"></span>39204</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = current byte from room layout data)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = current byte from room layout data)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39205"></span>39205</td>
 <td class="instruction">AND 127</td>
-<td class="comment-11" rowspan="1">Reset Bit 7</td>
+<td class="comment-1" rowspan="1">Reset bit 7</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39207"></span>39207</td>
 <td class="instruction">CALL <a href="64627.html">64627</a></td>
-<td class="comment-11" rowspan="1">Load address of layout data for required fragment into HL</td>
+<td class="comment-1" rowspan="1">Load address of layout data for required fragment into <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39210"></span>39210</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Transfer address from HL to IX...</td>
+<td class="comment-1" rowspan="1">Transfer address from <span class="register">HL</span> to <span class="register">IX</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39211"></span>39211</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="39213"></span>39213</td>
 <td class="instruction">JP <a href="39047.html#39067">39067</a></td>
-<td class="comment-11" rowspan="1">Loop back to <a href="38841.html#38977">38977</a> to start painting fragment</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="38841.html#38977">38977</a> to start painting fragment</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="39183.html">39183</a></span></td>
+<td class="prev">
+Prev: <a href="39183.html">39183</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#39189">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="39216.html">39216</a></span></td>
+<td class="next">
+Next: <a href="39216.html">39216</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

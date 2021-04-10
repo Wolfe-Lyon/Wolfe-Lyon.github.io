@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 62853</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,130 +20,122 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="62827.html">62827</a></span></td>
+<td class="prev">
+Prev: <a href="62827.html">62827</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#62853">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="62877.html">62877</a></span></td>
+<td class="next">
+Next: <a href="62877.html">62877</a>
+</td>
 </tr>
 </table>
-<div class="description">62853: Set Position of Character Whose Turn it is to Move to His/Her Initial Position</div>
+<div class="description">62853: Set position of character whose turn it is to move to his/her initial position</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="62622.html">62622</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="62853"></span>62853</td>
 <td class="instruction">LD A,(23455)</td>
-<td class="comment-11" rowspan="1">Load BC with three times index of character whose turn it is to be updated...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">BC</span> with three times index of character whose turn it is to be updated...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62856"></span>62856</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62857"></span>62857</td>
 <td class="instruction">ADD A,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62858"></span>62858</td>
 <td class="instruction">ADD A,C</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62859"></span>62859</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62860"></span>62860</td>
 <td class="instruction">LD B,0</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62862"></span>62862</td>
 <td class="instruction">LD HL,24898</td>
-<td class="comment-11" rowspan="1">Load HL with start address of Table of Characters' Current Positions...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with start address of table of characters' current positions...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62865"></span>62865</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">...and add BC as offset</td>
+<td class="comment-1" rowspan="1">...and add <span class="register">BC</span> as offset</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62866"></span>62866</td>
 <td class="instruction">LD DE,48661</td>
-<td class="comment-11" rowspan="1">Load DE with start address of Table of Characters' Initial Positions</td>
+<td class="comment-1" rowspan="1">Load <span class="register">DE</span> with start address of table of characters' initial positions</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62869"></span>62869</td>
 <td class="instruction">EX DE,HL</td>
-<td class="comment-11" rowspan="1">Swap DE (now points to current position data of character of interest) and HL (now points to Table of Characters' Initial Positions)</td>
+<td class="comment-1" rowspan="1">Swap <span class="register">DE</span> and <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
+<td class="routine-comment" colspan="5">
+<span id="62870"></span>
+<div class="comments">
+<div class="paragraph">
+At this point, <span class="register">DE</span> points to current position data of character of interest and <span class="register">HL</span> points to table of characters' initial positions
+</div>
+</div>
+</td>
+</tr>
+<tr>
 <td class="address-1"><span id="62870"></span>62870</td>
 <td class="instruction">ADD HL,BC</td>
-<td class="comment-11" rowspan="1">Add BC to HL as offset (HL now points to character's initial position)</td>
+<td class="comment-1" rowspan="1">Add <span class="register">BC</span> to <span class="register">HL</span> as offset (<span class="register">HL</span> now points to character's initial position)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62871"></span>62871</td>
 <td class="instruction">LD BC,3</td>
-<td class="comment-11" rowspan="1">Set character's current position to same as initial position...</td>
+<td class="comment-1" rowspan="1">Set character's current position to same as initial position...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62874"></span>62874</td>
 <td class="instruction">LDIR</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="62876"></span>62876</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="62827.html">62827</a></span></td>
+<td class="prev">
+Prev: <a href="62827.html">62827</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#62853">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="62877.html">62877</a></span></td>
+<td class="next">
+Next: <a href="62877.html">62877</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

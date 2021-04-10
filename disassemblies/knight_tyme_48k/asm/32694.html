@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 32694</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="32672.html">32672</a></span></td>
+<td class="prev">
+Prev: <a href="32672.html">32672</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#32694">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="32867.html">32867</a></span></td>
+<td class="next">
+Next: <a href="32867.html">32867</a>
+</td>
 </tr>
 </table>
-<div class="description">32694: Handle Vertical Scrolling Digit Selection (Use Transporter Menu) and Load Selected Digit's ASCII Code into A</div>
+<div class="description">32694: Handle vertical scrolling digit selection (use transporter menu) and load selected digit's ASCII code into <span class="register">A</span></div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routine at <a href="32252.html">32252</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,7 +51,7 @@ Used by the routine at <a href="32252.html">32252</a>.
 <td class="register-desc">x-coordinate in characters</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -58,193 +63,162 @@ Used by the routine at <a href="32252.html">32252</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="32694"></span>32694</td>
 <td class="instruction">LD IX,32683</td>
-<td class="comment-11" rowspan="1">Point IX at start of second ASCII digit sequence for transport coordinate selection</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at start of second ASCII digit sequence for transport coordinate selection</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32698"></span>32698</td>
 <td class="instruction">LD A,E</td>
-<td class="comment-11" rowspan="1">Set x-coordinate of left and right of region to scroll to value in E (6, 8 or 10 characters depending upon value in E)...</td>
+<td class="comment-1" rowspan="1">Set x-coordinate of left and right of region to scroll to value in <span class="register">E</span> (6, 8 or 10 characters depending upon value in <span class="register">E</span>)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32699"></span>32699</td>
 <td class="instruction">LD (23489),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32702"></span>32702</td>
 <td class="instruction">LD (23490),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32705"></span>32705</td>
 <td class="instruction">LD A,D</td>
-<td class="comment-11" rowspan="1">Set y-coordinate of top of region to scroll to value in D (72 pixels)...</td>
+<td class="comment-1" rowspan="1">Set y-coordinate of top of region to scroll to value in <span class="register">D</span> (72 pixels)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32706"></span>32706</td>
 <td class="instruction">LD (23491),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32709"></span>32709</td>
 <td class="instruction">ADD A,39</td>
-<td class="comment-11" rowspan="1">Set y-coordinate of bottom of region to scroll to value in D plus 39 (pixels)...</td>
+<td class="comment-1" rowspan="1">Set y-coordinate of bottom of region to scroll to value in <span class="register">D</span> plus 39 (pixels)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32711"></span>32711</td>
 <td class="instruction">LD (23492),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="32714"></span>32714</td>
 <td class="instruction">CALL <a href="54942.html">54942</a></td>
-<td class="comment-11" rowspan="1">Capture keyboard or joystick input loading result into A</td>
+<td class="comment-1" rowspan="1">Capture keyboard or joystick input loading result into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32717"></span>32717</td>
 <td class="instruction">BIT 2,A</td>
-<td class="comment-11" rowspan="1">If up was pressed...</td>
+<td class="comment-1" rowspan="1">If up was pressed...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32719"></span>32719</td>
 <td class="instruction">JR NZ,32761</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="32694.html#32761">32761</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="32694.html#32761">32761</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32721"></span>32721</td>
 <td class="instruction">BIT 3,A</td>
-<td class="comment-11" rowspan="1">If down was pressed...</td>
+<td class="comment-1" rowspan="1">If down was pressed...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32723"></span>32723</td>
 <td class="instruction">JR NZ,32814</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="32694.html#32814">32814</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="32694.html#32814">32814</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32725"></span>32725</td>
 <td class="instruction">BIT 4,A</td>
-<td class="comment-11" rowspan="1">If fire was not pressed...</td>
+<td class="comment-1" rowspan="1">If fire was not pressed...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32727"></span>32727</td>
 <td class="instruction">JR Z,32714</td>
-<td class="comment-11" rowspan="1">...then jump back to <a href="32694.html#32714">32714</a></td>
+<td class="comment-1" rowspan="1">...then jump back to <a href="32694.html#32714">32714</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32729"></span>32729</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX (current position in digit sequence)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span> (current position in digit sequence)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32731"></span>32731</td>
 <td class="instruction">LD A,(23489)</td>
-<td class="comment-11" rowspan="1">Load C with x-coordinate of left and right of region to scroll (characters)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with x-coordinate of left and right of region to scroll (characters)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32734"></span>32734</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32735"></span>32735</td>
 <td class="instruction">LD A,(23491)</td>
-<td class="comment-11" rowspan="1">Load A with y-coordinate of top of region to scroll (pixels)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with y-coordinate of top of region to scroll (pixels)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32738"></span>32738</td>
 <td class="instruction">ADD A,16</td>
-<td class="comment-11" rowspan="1">...plus 16</td>
+<td class="comment-1" rowspan="1">...plus 16</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32740"></span>32740</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">Divide result by 8...</td>
+<td class="comment-1" rowspan="1">Divide result by 8...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32741"></span>32741</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32742"></span>32742</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32743"></span>32743</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...and load result (y-coordinate of "selected" coordinate value in characters) into B</td>
+<td class="comment-1" rowspan="1">...and load result (y-coordinate of "selected" coordinate value in characters) into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32744"></span>32744</td>
 <td class="instruction">CALL <a href="54148.html">54148</a></td>
-<td class="comment-11" rowspan="1">Load HL with Attribute File address for coordinates (C, B)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with attribute file address for coordinates (<span class="register">C</span>, <span class="register">B</span>)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32747"></span>32747</td>
 <td class="instruction">LD (HL),71</td>
-<td class="comment-11" rowspan="1">...and apply attribute 71 (white INK, black PAPER, BRIGHT)</td>
+<td class="comment-1" rowspan="1">...and apply attribute 71 (white INK, black PAPER, BRIGHT)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32749"></span>32749</td>
 <td class="instruction">CALL <a href="35690.html">35690</a></td>
-<td class="comment-11" rowspan="1">Play upward scale sound</td>
+<td class="comment-1" rowspan="1">Play upward scale sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32752"></span>32752</td>
 <td class="instruction">CALL <a href="35723.html">35723</a></td>
-<td class="comment-11" rowspan="1">Play downward scale sound</td>
+<td class="comment-1" rowspan="1">Play downward scale sound</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32755"></span>32755</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX (current position in digit sequence)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span> (current position in digit sequence)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32757"></span>32757</td>
 <td class="instruction">LD A,(IX+0)</td>
-<td class="comment-11" rowspan="1">Load (ASCII code of) currently selected digit into A</td>
+<td class="comment-1" rowspan="1">Load (ASCII code of) currently selected digit into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32760"></span>32760</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="32761"></span>
 <div class="comments">
 <div class="paragraph">
@@ -254,167 +228,142 @@ Up pressed
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="32761"></span>32761</td>
 <td class="instruction">LD B,8</td>
-<td class="comment-11" rowspan="1">Load B with 8, as we are scrolling by eight pixels</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 8, as we are scrolling by eight pixels</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="32763"></span>32763</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = remaining number of pixels to scroll)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = remaining number of pixels to scroll)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32764"></span>32764</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX (current position in digit sequence)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span> (current position in digit sequence)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32766"></span>32766</td>
 <td class="instruction">CALL <a href="32886.html">32886</a></td>
-<td class="comment-11" rowspan="1">Make a click sound (reset Port 254 EAR Bit, wait for interrupt then set EAR Bit of Port 254)</td>
+<td class="comment-1" rowspan="1">Make a click sound (reset Port 254 EAR bit, wait for interrupt then set EAR bit of Port 254)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32769"></span>32769</td>
 <td class="instruction">CALL <a href="55408.html">55408</a></td>
-<td class="comment-11" rowspan="1">Scroll a region of the Display File up a pixel row with wrapping</td>
+<td class="comment-1" rowspan="1">Scroll a region of the display file up a pixel row with wrapping</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32772"></span>32772</td>
 <td class="instruction">CALL <a href="32886.html">32886</a></td>
-<td class="comment-11" rowspan="1">Make a click sound (reset Port 254 EAR Bit, wait for interrupt then set EAR Bit of Port 254)</td>
+<td class="comment-1" rowspan="1">Make a click sound (reset Port 254 EAR bit, wait for interrupt then set EAR bit of Port 254)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32775"></span>32775</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX (current position in digit sequence)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span> (current position in digit sequence)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32777"></span>32777</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = remaining number of pixels to scroll)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = remaining number of pixels to scroll)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32778"></span>32778</td>
 <td class="instruction">DJNZ 32763</td>
-<td class="comment-11" rowspan="1">Decrease B (remaining number of pixels to scroll) and loop back to <a href="32694.html#32763">32763</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (remaining number of pixels to scroll) and loop back to <a href="32694.html#32763">32763</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32780"></span>32780</td>
 <td class="instruction">INC IX</td>
-<td class="comment-11" rowspan="1">Increase IX to point to next digit in sequence</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">IX</span> to point to next digit in sequence</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32782"></span>32782</td>
 <td class="instruction">LD A,(IX+2)</td>
-<td class="comment-11" rowspan="1">Load digit that is two after current one into A...</td>
+<td class="comment-1" rowspan="1">Load digit that is two after current one into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32785"></span>32785</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...and if this is zero (end marker)...</td>
+<td class="comment-1" rowspan="1">...and if this is zero (end marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32786"></span>32786</td>
 <td class="instruction">CALL Z,<a href="32867.html">32867</a></td>
-<td class="comment-11" rowspan="1">...then subtract ten from IX to wrap from 9 to 0</td>
+<td class="comment-1" rowspan="1">...then subtract ten from <span class="register">IX</span> to wrap from 9 to 0</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32789"></span>32789</td>
 <td class="instruction">LD A,(23489)</td>
-<td class="comment-11" rowspan="1">Load C with x-coordinate of left and right of region to scroll (characters)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with x-coordinate of left and right of region to scroll (characters)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32792"></span>32792</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32793"></span>32793</td>
 <td class="instruction">LD A,(23492)</td>
-<td class="comment-11" rowspan="1">Load A with y-coordinate of bottom of region to scroll (pixels)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with y-coordinate of bottom of region to scroll (pixels)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32796"></span>32796</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...divide by 8...</td>
+<td class="comment-1" rowspan="1">...divide by 8...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32797"></span>32797</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32798"></span>32798</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32799"></span>32799</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">...cap at 31 to give y-coordinate in characters, one character below bottom of the three visible "scrolling" digits...</td>
+<td class="comment-1" rowspan="1">...cap at 31 to give y-coordinate in characters, one character below bottom of the three visible "scrolling" digits...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32801"></span>32801</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...and load result into B</td>
+<td class="comment-1" rowspan="1">...and load result into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32802"></span>32802</td>
 <td class="instruction">CALL <a href="54132.html">54132</a></td>
-<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+<td class="comment-1" rowspan="1">Move virtual cursor (bitmap) to display file address for coordinates x=<span class="register">C</span>, y=<span class="register">B</span> and load address into <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32805"></span>32805</td>
 <td class="instruction">LD A,(IX+2)</td>
-<td class="comment-11" rowspan="1">Load A with digit two after currently selected one</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with digit two after currently selected one</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="32808"></span>
 <div class="comments">
 <div class="paragraph">
-By this point, the system variable ATTR T has been set to 127 (white INK, white PAPER, BRIGHT) by the instruction at <a href="32252.html#32286">32286</a>, so the character is printed but is invisible.
+By this point, the attribute stored at <a href="23694.html#23695">23695</a> has been set to 127 (white INK, white PAPER, BRIGHT) by the instruction at <a href="32252.html#32286">32286</a>, so the character is printed but is invisible.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32808"></span>32808</td>
 <td class="instruction">CALL <a href="54097.html">54097</a></td>
-<td class="comment-11" rowspan="1">Print character in A</td>
+<td class="comment-1" rowspan="1">Print character in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32811"></span>32811</td>
 <td class="instruction">JP 32714</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="32694.html#32714">32714</a> for next keyboard / joystick input</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="32694.html#32714">32714</a> for next keyboard / joystick input</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="32814"></span>
 <div class="comments">
 <div class="paragraph">
@@ -424,177 +373,156 @@ Down pressed
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="32814"></span>32814</td>
 <td class="instruction">LD B,8</td>
-<td class="comment-11" rowspan="1">Load B with 8, as we are scrolling by eight pixels</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with 8, as we are scrolling by eight pixels</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="32816"></span>32816</td>
 <td class="instruction">PUSH BC</td>
-<td class="comment-11" rowspan="1">Store BC (B = remaining number of pixels to scroll)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">BC</span> (<span class="register">B</span> = remaining number of pixels to scroll)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32817"></span>32817</td>
 <td class="instruction">PUSH IX</td>
-<td class="comment-11" rowspan="1">Store IX (current position in digit sequence)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">IX</span> (current position in digit sequence)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32819"></span>32819</td>
 <td class="instruction">CALL <a href="32886.html">32886</a></td>
-<td class="comment-11" rowspan="1">Make a click sound (reset Port 254 EAR Bit, wait for interrupt then set EAR Bit of Port 254)</td>
+<td class="comment-1" rowspan="1">Make a click sound (reset Port 254 EAR bit, wait for interrupt then set EAR bit of Port 254)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32822"></span>32822</td>
 <td class="instruction">CALL <a href="55442.html">55442</a></td>
-<td class="comment-11" rowspan="1">Scroll a region of the Display File down a pixel row with wrapping</td>
+<td class="comment-1" rowspan="1">Scroll a region of the display file down a pixel row with wrapping</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32825"></span>32825</td>
 <td class="instruction">CALL <a href="32886.html">32886</a></td>
-<td class="comment-11" rowspan="1">Make a click sound (reset Port 254 EAR Bit, wait for interrupt then set EAR Bit of Port 254)</td>
+<td class="comment-1" rowspan="1">Make a click sound (reset Port 254 EAR bit, wait for interrupt then set EAR bit of Port 254)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32828"></span>32828</td>
 <td class="instruction">POP IX</td>
-<td class="comment-11" rowspan="1">Restore IX (current position in digit sequence)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">IX</span> (current position in digit sequence)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32830"></span>32830</td>
 <td class="instruction">POP BC</td>
-<td class="comment-11" rowspan="1">Restore BC (B = remaining number of pixels to scroll)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">BC</span> (<span class="register">B</span> = remaining number of pixels to scroll)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32831"></span>32831</td>
 <td class="instruction">DJNZ 32816</td>
-<td class="comment-11" rowspan="1">Decrease B (remaining number of pixels to scroll) and loop back to <a href="32694.html#32816">32816</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (remaining number of pixels to scroll) and loop back to <a href="32694.html#32816">32816</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32833"></span>32833</td>
 <td class="instruction">DEC IX</td>
-<td class="comment-11" rowspan="1">Decrease IX to point to previous digit in sequence</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">IX</span> to point to previous digit in sequence</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32835"></span>32835</td>
 <td class="instruction">LD A,(IX-2)</td>
-<td class="comment-11" rowspan="1">Load digit that is two before current one into A...</td>
+<td class="comment-1" rowspan="1">Load digit that is two before current one into <span class="register">A</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32838"></span>32838</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">...and if this is zero (end marker)...</td>
+<td class="comment-1" rowspan="1">...and if this is zero (end marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32839"></span>32839</td>
 <td class="instruction">CALL Z,<a href="32880.html">32880</a></td>
-<td class="comment-11" rowspan="1">...then add ten to IX to wrap from 0 to 9</td>
+<td class="comment-1" rowspan="1">...then add ten to <span class="register">IX</span> to wrap from 0 to 9</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32842"></span>32842</td>
 <td class="instruction">LD A,(23489)</td>
-<td class="comment-11" rowspan="1">Load C with x-coordinate of left and right of region to scroll (characters)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with x-coordinate of left and right of region to scroll (characters)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32845"></span>32845</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32846"></span>32846</td>
 <td class="instruction">LD A,(23491)</td>
-<td class="comment-11" rowspan="1">Load A with y-coordinate of top of region to scroll (pixels)...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with y-coordinate of top of region to scroll (pixels)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32849"></span>32849</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...divide by 8...</td>
+<td class="comment-1" rowspan="1">...divide by 8...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32850"></span>32850</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32851"></span>32851</td>
 <td class="instruction">RRCA</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32852"></span>32852</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">...cap at 31 to give y-coordinate in characters, one character above top of the three visible "scrolling" digits...</td>
+<td class="comment-1" rowspan="1">...cap at 31 to give y-coordinate in characters, one character above top of the three visible "scrolling" digits...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32854"></span>32854</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...and load result into B</td>
+<td class="comment-1" rowspan="1">...and load result into <span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32855"></span>32855</td>
 <td class="instruction">CALL <a href="54132.html">54132</a></td>
-<td class="comment-11" rowspan="1">Move Virtual Cursor (Bitmap) to Display File address for Coordinates x=C, y=B and load address into HL</td>
+<td class="comment-1" rowspan="1">Move virtual cursor (bitmap) to display file address for coordinates x=<span class="register">C</span>, y=<span class="register">B</span> and load address into <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32858"></span>32858</td>
 <td class="instruction">LD A,(IX-2)</td>
-<td class="comment-11" rowspan="1">Load A with digit two before currently selected one</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with digit two before currently selected one</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="32861"></span>
 <div class="comments">
 <div class="paragraph">
-By this point, the system variable ATTR T has been set to 127 (white INK, white PAPER, BRIGHT) by the instruction at <a href="32252.html#32286">32286</a>, so the character is printed but is invisible.
+By this point, the attribute stored at <a href="23694.html#23695">23695</a> has been set to 127 (white INK, white PAPER, BRIGHT) by the instruction at <a href="32252.html#32286">32286</a>, so the character is printed but is invisible.
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32861"></span>32861</td>
 <td class="instruction">CALL <a href="54097.html">54097</a></td>
-<td class="comment-11" rowspan="1">Print character in A</td>
+<td class="comment-1" rowspan="1">Print character in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="32864"></span>32864</td>
 <td class="instruction">JP 32714</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="32694.html#32714">32714</a> for next keyboard / joystick input</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="32694.html#32714">32714</a> for next keyboard / joystick input</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="32672.html">32672</a></span></td>
+<td class="prev">
+Prev: <a href="32672.html">32672</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#32694">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="32867.html">32867</a></span></td>
+<td class="next">
+Next: <a href="32867.html">32867</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

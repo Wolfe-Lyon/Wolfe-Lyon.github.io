@@ -4,6 +4,7 @@
 <title>Stormbringer (48k): Routine at 38205</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../stormbringer.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,42 +20,33 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38024.html">38024</a></span></td>
+<td class="prev">
+Prev: <a href="38024.html">38024</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38205">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38429.html">38429</a></span></td>
+<td class="next">
+Next: <a href="38429.html">38429</a>
+</td>
 </tr>
 </table>
-<div class="description">38205: Main Game Loop - Process Keyboard Input and Move Magic Knight or Enter Menus</div>
+<div class="description">38205: Main game loop: Process keyboard input and move Magic Knight or enter menus</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="41578.html">41578</a> and <a href="64926.html">64926</a>.
 </div>
 </div>
-<table class="input-0">
-<tr class="asm-input-header">
-<th colspan="2">Input</th>
-</tr>
-
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38205"></span>38205</td>
 <td class="instruction">CALL <a href="38841.html#38844">38844</a></td>
-<td class="comment-11" rowspan="1">Draw Magic Knight's current room, draw objects and characters and initialise room-specific data</td>
+<td class="comment-1" rowspan="1">Draw Magic Knight's current room, draw objects and characters and initialise room-specific data</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="38208"></span>
 <div class="comments">
 <div class="paragraph">
@@ -64,437 +56,372 @@ This entry point is used by the routine at <a href="38024.html">38024</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38208"></span>38208</td>
 <td class="instruction">CALL <a href="40008.html">40008</a></td>
-<td class="comment-11" rowspan="1">Set Magic Knight's velocity to zero, if appropriate move to new room, update state of Storm Cloud and execute room-specific routine</td>
+<td class="comment-1" rowspan="1">Set Magic Knight's velocity to zero, if appropriate move to new room, update state of Storm Cloud and execute room-specific routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38211"></span>38211</td>
 <td class="instruction">CALL <a href="38434.html">38434</a></td>
-<td class="comment-11" rowspan="1">Handle Magic Knight's fall</td>
+<td class="comment-1" rowspan="1">Handle Magic Knight's fall</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38214"></span>38214</td>
 <td class="instruction">LD A,127</td>
-<td class="comment-11" rowspan="1">Reset Bit 7 in A to select the keyboard half-row SPACE - B</td>
+<td class="comment-1" rowspan="1">Reset bit 7 in <span class="register">A</span> to select the keyboard half-row SPACE - B</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38216"></span>38216</td>
 <td class="instruction">IN A,(254)</td>
-<td class="comment-11" rowspan="1">Read the keyboard</td>
+<td class="comment-1" rowspan="1">Read the keyboard</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38218"></span>38218</td>
 <td class="instruction">RRA</td>
-<td class="comment-11" rowspan="1">Reset Carry Flag if SPACE pressed, else set it</td>
+<td class="comment-1" rowspan="1">Reset carry flag if SPACE pressed, else set it</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38219"></span>38219</td>
 <td class="instruction">JR C,38232</td>
-<td class="comment-11" rowspan="1">SPACE was not pressed, so skip ahead to <a href="38205.html#38232">38232</a></td>
+<td class="comment-1" rowspan="1">SPACE was not pressed, so skip ahead to <a href="38205.html#38232">38232</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38221"></span>38221</td>
 <td class="instruction">LD A,254</td>
-<td class="comment-11" rowspan="1">Reset bit 0 in A to select the keyboard half-row SHIFT - V</td>
+<td class="comment-1" rowspan="1">Reset bit 0 in <span class="register">A</span> to select the keyboard half-row SHIFT - V</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38223"></span>38223</td>
 <td class="instruction">IN A,(254)</td>
-<td class="comment-11" rowspan="1">Read the keyboard</td>
+<td class="comment-1" rowspan="1">Read the keyboard</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38225"></span>38225</td>
 <td class="instruction">RRA</td>
-<td class="comment-11" rowspan="1">Reset Carry Flag if SHIFT pressed, else set it</td>
+<td class="comment-1" rowspan="1">Reset carry flag if SHIFT pressed, else set it</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38226"></span>38226</td>
 <td class="instruction">LD HL,50809</td>
-<td class="comment-11" rowspan="1">Point HL at "BREAK KEY PRESSED" text</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at "BREAK KEY PRESSED" text</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38229"></span>38229</td>
 <td class="instruction">JP NC,<a href="64582.html">64582</a></td>
-<td class="comment-11" rowspan="1">If SHIFT was pressed (i.e. SHIFT-SPACE, or BREAK) jump to "Game over" window routine and return to Control Selection Menu</td>
+<td class="comment-1" rowspan="1">If SHIFT was pressed (i.e. SHIFT-SPACE, or BREAK) jump to "game over" window routine and return to control selection menu</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38232"></span>38232</td>
 <td class="instruction">CALL <a href="38585.html">38585</a></td>
-<td class="comment-11" rowspan="1">Kill Magic Knight's x-velocity if he cannot horizontally pass through a block beside him</td>
+<td class="comment-1" rowspan="1">Kill Magic Knight's x-velocity if he cannot horizontally pass through a block beside him</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38235"></span>38235</td>
 <td class="instruction">CALL <a href="64034.html">64034</a></td>
-<td class="comment-11" rowspan="1">Capture keyboard or joystick input loading result into A</td>
+<td class="comment-1" rowspan="1">Capture keyboard or joystick input loading result into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38238"></span>38238</td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="1">If "left" pressed then...</td>
+<td class="comment-1" rowspan="1">If "left" pressed then...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38240"></span>38240</td>
 <td class="instruction">JR NZ,38272</td>
-<td class="comment-11" rowspan="1">Skip ahead to "move left" subroutine</td>
+<td class="comment-1" rowspan="1">Skip ahead to "move left" subroutine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38242"></span>38242</td>
 <td class="instruction">BIT 1,A</td>
-<td class="comment-11" rowspan="1">If "right" pressed then...</td>
+<td class="comment-1" rowspan="1">If "right" pressed then...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38244"></span>38244</td>
 <td class="instruction">JR NZ,38312</td>
-<td class="comment-11" rowspan="1">Skip ahead to "move right" subroutine</td>
+<td class="comment-1" rowspan="1">Skip ahead to "move right" subroutine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38246"></span>38246</td>
 <td class="instruction">BIT 2,A</td>
-<td class="comment-11" rowspan="1">If "up" pressed then...</td>
+<td class="comment-1" rowspan="1">If "up" pressed then...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38248"></span>38248</td>
 <td class="instruction">JP NZ,38329</td>
-<td class="comment-11" rowspan="1">Skip ahead to "jump" subroutine</td>
+<td class="comment-1" rowspan="1">Skip ahead to "jump" subroutine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38251"></span>38251</td>
 <td class="instruction">BIT 3,A</td>
-<td class="comment-11" rowspan="1">If "down" pressed then...</td>
+<td class="comment-1" rowspan="1">If "down" pressed then...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38253"></span>38253</td>
 <td class="instruction">CALL NZ,<a href="64836.html">64836</a></td>
-<td class="comment-11" rowspan="1">...select Magic Knight's Room if Cheat / Debug Mode is enabled</td>
+<td class="comment-1" rowspan="1">...select Magic Knight's room if cheat / debug mode is enabled</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38256"></span>38256</td>
 <td class="instruction">BIT 4,A</td>
-<td class="comment-11" rowspan="1">If "fire" pressed then...</td>
+<td class="comment-1" rowspan="1">If "fire" pressed then...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38258"></span>38258</td>
 <td class="instruction">JR NZ,38266</td>
-<td class="comment-11" rowspan="1">...skip ahead to <a href="38205.html#38266">38266</a></td>
+<td class="comment-1" rowspan="1">...skip ahead to <a href="38205.html#38266">38266</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38260"></span>38260</td>
 <td class="instruction">CALL <a href="61816.html">61816</a></td>
-<td class="comment-11" rowspan="1">Wait for interrupt then erase Magic Knight from display, advance his current position then redraw</td>
+<td class="comment-1" rowspan="1">Wait for interrupt then erase Magic Knight from display, advance his current position then redraw</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38263"></span>38263</td>
 <td class="instruction">JP 38208</td>
-<td class="comment-11" rowspan="1">Loop back for next key / control press</td>
+<td class="comment-1" rowspan="1">Loop back for next key / control press</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="38266"></span>
 <div class="comments">
 <div class="paragraph">
-Fire Pressed
+Fire pressed
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38266"></span>38266</td>
 <td class="instruction">CALL <a href="47592.html">47592</a></td>
-<td class="comment-11" rowspan="1">Wait for Fire Button / Key to be Released</td>
+<td class="comment-1" rowspan="1">Wait for fire button / key to be released</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38269"></span>38269</td>
 <td class="instruction">JP <a href="42494.html">42494</a></td>
-<td class="comment-11" rowspan="1">Display and handle main in-game menu</td>
+<td class="comment-1" rowspan="1">Display and handle main in-game menu</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="38272"></span>
 <div class="comments">
 <div class="paragraph">
-Left Pressed
+Left pressed
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38272"></span>38272</td>
 <td class="instruction">LD HL,23474</td>
-<td class="comment-11" rowspan="1">If "Magic Knight Can't Move Left" flag is set...</td>
+<td class="comment-1" rowspan="1">If Magic-Knight-can't-move-left flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38275"></span>38275</td>
 <td class="instruction">BIT 0,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38277"></span>38277</td>
 <td class="instruction">JP NZ,38208</td>
-<td class="comment-11" rowspan="1">...then loop back to start of keyboard check routine</td>
+<td class="comment-1" rowspan="1">...then loop back to start of keyboard check routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38280"></span>38280</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Switch AF and AF'</td>
+<td class="comment-1" rowspan="1">Switch <span class="register">AF</span> and <span class="register">AF'</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38281"></span>38281</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Set Magic Knight Facing Left Flag...</td>
+<td class="comment-1" rowspan="1">Set Magic-Knight-facing-left flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38283"></span>38283</td>
 <td class="instruction">LD (23417),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38286"></span>38286</td>
 <td class="instruction">LD A,254</td>
-<td class="comment-11" rowspan="1">Set Magic Knight's x-velocity to minus 2...</td>
+<td class="comment-1" rowspan="1">Set Magic Knight's x-velocity to minus 2...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38288"></span>38288</td>
 <td class="instruction">LD (24844),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38291"></span>38291</td>
 <td class="instruction">LD (38360),A</td>
-<td class="comment-11" rowspan="1">Prepare to set Magic Knight's x-velocity to minus 2</td>
+<td class="comment-1" rowspan="1">Prepare to set Magic Knight's x-velocity to minus 2</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38294"></span>38294</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Switch AF and AF' (A now holds pressed controls bitmap)</td>
+<td class="comment-1" rowspan="1">Switch <span class="register">AF</span> and <span class="register">AF'</span> (<span class="register">A</span> now holds pressed controls bitmap)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38295"></span>38295</td>
 <td class="instruction">BIT 2,A</td>
-<td class="comment-11" rowspan="1">If "up" was also pressed...</td>
+<td class="comment-1" rowspan="1">If "up" was also pressed...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38297"></span>38297</td>
 <td class="instruction">JR NZ,38333</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="38205.html#38333">38333</a> (jumping subroutine)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="38205.html#38333">38333</a> (jumping subroutine)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38299"></span>38299</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set Magic Knight's current y-velocity to zero...</td>
+<td class="comment-1" rowspan="1">Set Magic Knight's current y-velocity to zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38300"></span>38300</td>
 <td class="instruction">LD (24845),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38303"></span>38303</td>
 <td class="instruction">CALL <a href="61816.html">61816</a></td>
-<td class="comment-11" rowspan="1">Wait for interrupt then erase Magic Knight from display, advance his current position then redraw</td>
+<td class="comment-1" rowspan="1">Wait for interrupt then erase Magic Knight from display, advance his current position then redraw</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38306"></span>38306</td>
 <td class="instruction">CALL <a href="38434.html">38434</a></td>
-<td class="comment-11" rowspan="1">Handle Magic Knight's fall</td>
+<td class="comment-1" rowspan="1">Handle Magic Knight's fall</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38309"></span>38309</td>
 <td class="instruction">JP 38208</td>
-<td class="comment-11" rowspan="1">Loop back for next key / control press</td>
+<td class="comment-1" rowspan="1">Loop back for next key / control press</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="38312"></span>
 <div class="comments">
 <div class="paragraph">
-Right Pressed
+Right pressed
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38312"></span>38312</td>
 <td class="instruction">LD HL,23474</td>
-<td class="comment-11" rowspan="1">If "Magic Knight Can't Move Right" flag is set...</td>
+<td class="comment-1" rowspan="1">If Magic-Knight-can't-move-right flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38315"></span>38315</td>
 <td class="instruction">BIT 1,(HL)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38317"></span>38317</td>
 <td class="instruction">JP NZ,38208</td>
-<td class="comment-11" rowspan="1">...then loop back to start of keyboard check routine</td>
+<td class="comment-1" rowspan="1">...then loop back to start of keyboard check routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38320"></span>38320</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Switch AF and AF'</td>
+<td class="comment-1" rowspan="1">Switch <span class="register">AF</span> and <span class="register">AF'</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38321"></span>38321</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Reset Magic Knight Facing Left Flag...</td>
+<td class="comment-1" rowspan="1">Reset Magic-Knight-facing-left flag...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38322"></span>38322</td>
 <td class="instruction">LD (23417),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38325"></span>38325</td>
 <td class="instruction">LD A,2</td>
-<td class="comment-11" rowspan="1">Jump to <a href="38205.html#38288">38288</a>, setting Magic Knight's x-velocity to 2...</td>
+<td class="comment-1" rowspan="1">Jump to <a href="38205.html#38288">38288</a>, setting Magic Knight's x-velocity to 2...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38327"></span>38327</td>
 <td class="instruction">JR 38288</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="38329"></span>
 <div class="comments">
 <div class="paragraph">
-Up Pressed
+Up pressed
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38329"></span>38329</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Prepare to set Magic Knight's x-velocity to zero...</td>
+<td class="comment-1" rowspan="1">Prepare to set Magic Knight's x-velocity to zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38330"></span>38330</td>
 <td class="instruction">LD (38360),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38333"></span>38333</td>
 <td class="instruction">LD HL,49019</td>
-<td class="comment-11" rowspan="1">Point HL at start of Magic Knight's y-velocities sequence table</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of Magic Knight's y-velocities sequence table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38336"></span>38336</td>
 <td class="instruction">LD (23442),HL</td>
-<td class="comment-11" rowspan="1">Store current position in Magic Knight's y-velocities sequence table at <a href="23441.html#23442">23442</a></td>
+<td class="comment-1" rowspan="1">Store current position in Magic Knight's y-velocities sequence table at <a href="23441.html#23442">23442</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38339"></span>38339</td>
 <td class="instruction">LD A,(24841)</td>
-<td class="comment-11" rowspan="1">Load A with Magic Knight's current y-coordinate (pixels)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with Magic Knight's current y-coordinate (pixels)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38342"></span>38342</td>
 <td class="instruction">CP 8</td>
-<td class="comment-11" rowspan="1">If y-coordinate is less than 8...</td>
+<td class="comment-1" rowspan="1">If y-coordinate is less than 8...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38344"></span>38344</td>
 <td class="instruction">JP C,38413</td>
-<td class="comment-11" rowspan="1">...then jump to <a href="38205.html#38413">38413</a> (exit loop as Magic Knight can't get any higher!)</td>
+<td class="comment-1" rowspan="1">...then jump to <a href="38205.html#38413">38413</a> (exit loop as Magic Knight can't get any higher!)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38347"></span>38347</td>
 <td class="instruction">LD HL,(23442)</td>
-<td class="comment-11" rowspan="1">Load HL with current position in Magic Knight's y-velocities sequence table</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with current position in Magic Knight's y-velocities sequence table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38350"></span>38350</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load the current y-velocity in the sequence into A</td>
+<td class="comment-1" rowspan="1">Load the current y-velocity in the sequence into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38351"></span>38351</td>
 <td class="instruction">NEG</td>
-<td class="comment-11" rowspan="1">Negate (as Magic Knight is jumping upwards)</td>
+<td class="comment-1" rowspan="1">Negate (as Magic Knight is jumping upwards)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38353"></span>38353</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If A is zero...</td>
+<td class="comment-1" rowspan="1">If <span class="register">A</span> is zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38354"></span>38354</td>
 <td class="instruction">JR Z,38413</td>
-<td class="comment-11" rowspan="1">...jump to <a href="38205.html#38413">38413</a> (exit loop as we have reached the end of the sequence)</td>
+<td class="comment-1" rowspan="1">...jump to <a href="38205.html#38413">38413</a> (exit loop as we have reached the end of the sequence)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38356"></span>38356</td>
 <td class="instruction">LD (24845),A</td>
-<td class="comment-11" rowspan="1">Load A into Magic Knight's y-velocity</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> into Magic Knight's y-velocity</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="38359"></span>
 <div class="comments">
 <div class="paragraph">
@@ -504,197 +431,171 @@ The operand of the instruction at <a href="38205.html#38359">38359</a> represent
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38359"></span>38359</td>
 <td class="instruction">LD A,0</td>
-<td class="comment-11" rowspan="1">Set Magic Knight's x-velocity...</td>
+<td class="comment-1" rowspan="1">Set Magic Knight's x-velocity...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38361"></span>38361</td>
 <td class="instruction">LD (24844),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38364"></span>38364</td>
 <td class="instruction">CALL <a href="38585.html">38585</a></td>
-<td class="comment-11" rowspan="1">Kill Magic Knight's x-velocity if he cannot horizontally pass through a block beside him</td>
+<td class="comment-1" rowspan="1">Kill Magic Knight's x-velocity if he cannot horizontally pass through a block beside him</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38367"></span>38367</td>
 <td class="instruction">LD A,(24844)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight's x-velocity into B...</td>
+<td class="comment-1" rowspan="1">Load Magic Knight's x-velocity into <span class="register">B</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38370"></span>38370</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38371"></span>38371</td>
 <td class="instruction">LD A,(23474)</td>
-<td class="comment-11" rowspan="1">Load Magic Knight movement flags into A</td>
+<td class="comment-1" rowspan="1">Load Magic Knight movement flags into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38374"></span>38374</td>
 <td class="instruction">XOR B</td>
-<td class="comment-11" rowspan="1">Check:</td>
+<td class="comment-1" rowspan="1">Check:</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38375"></span>38375</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">If x-velocity is -2 (left), and Magic Knight can't move left...</td>
+<td class="comment-1" rowspan="1">If x-velocity is -2 (left), and Magic Knight can't move left...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38377"></span>38377</td>
 <td class="instruction">JP Z,38419</td>
-<td class="comment-11" rowspan="1">...then jump ahead to <a href="38205.html#38419">38419</a></td>
+<td class="comment-1" rowspan="1">...then jump ahead to <a href="38205.html#38419">38419</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38380"></span>38380</td>
 <td class="instruction">CP 253</td>
-<td class="comment-11" rowspan="1">If x-velocity is -2 (left), and Magic Knight can't move left or right...</td>
+<td class="comment-1" rowspan="1">If x-velocity is -2 (left), and Magic Knight can't move left or right...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38382"></span>38382</td>
 <td class="instruction">JP Z,38419</td>
-<td class="comment-11" rowspan="1">...then jump ahead to <a href="38205.html#38419">38419</a></td>
+<td class="comment-1" rowspan="1">...then jump ahead to <a href="38205.html#38419">38419</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38385"></span>38385</td>
 <td class="instruction">CP 1</td>
-<td class="comment-11" rowspan="1">If x-velocity is +2 (right), and Magic Knight can't move left or right...</td>
+<td class="comment-1" rowspan="1">If x-velocity is +2 (right), and Magic Knight can't move left or right...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38387"></span>38387</td>
 <td class="instruction">JP Z,38419</td>
-<td class="comment-11" rowspan="1">...then jump ahead to <a href="38205.html#38419">38419</a></td>
+<td class="comment-1" rowspan="1">...then jump ahead to <a href="38205.html#38419">38419</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38390"></span>38390</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If x-velocity is +2 (right), and Magic Knight can't move right...</td>
+<td class="comment-1" rowspan="1">If x-velocity is +2 (right), and Magic Knight can't move right...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38391"></span>38391</td>
 <td class="instruction">JP Z,38419</td>
-<td class="comment-11" rowspan="1">...then jump ahead to <a href="38205.html#38419">38419</a></td>
+<td class="comment-1" rowspan="1">...then jump ahead to <a href="38205.html#38419">38419</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38394"></span>38394</td>
 <td class="instruction">CALL <a href="38724.html">38724</a></td>
-<td class="comment-11" rowspan="1">Kill Magic Knight's jump if he cannot vertically pass through a block above him</td>
+<td class="comment-1" rowspan="1">Kill Magic Knight's jump if he cannot vertically pass through a block above him</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38397"></span>38397</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Switch AF and AF'</td>
+<td class="comment-1" rowspan="1">Switch <span class="register">AF</span> and <span class="register">AF'</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38398"></span>38398</td>
 <td class="instruction">CALL <a href="61816.html">61816</a></td>
-<td class="comment-11" rowspan="1">Wait for interrupt then erase Magic Knight from display, advance his current position then redraw</td>
+<td class="comment-1" rowspan="1">Wait for interrupt then erase Magic Knight from display, advance his current position then redraw</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38401"></span>38401</td>
 <td class="instruction">EX AF,AF'</td>
-<td class="comment-11" rowspan="1">Switch AF and AF'</td>
+<td class="comment-1" rowspan="1">Switch <span class="register">AF</span> and <span class="register">AF'</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38402"></span>38402</td>
 <td class="instruction">JR NZ,38413</td>
-<td class="comment-11" rowspan="1">If Magic Knight's jump was impeded by a block above him then jump to <a href="38205.html#38413">38413</a></td>
+<td class="comment-1" rowspan="1">If Magic Knight's jump was impeded by a block above him then jump to <a href="38205.html#38413">38413</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38404"></span>38404</td>
 <td class="instruction">CALL <a href="40008.html">40008</a></td>
-<td class="comment-11" rowspan="1">Set Magic Knight's velocity to zero, if appropriate move to new room, update state of Storm Cloud and execute room-specific routine</td>
+<td class="comment-1" rowspan="1">Set Magic Knight's velocity to zero, if appropriate move to new room, update state of Storm Cloud and execute room-specific routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38407"></span>38407</td>
 <td class="instruction">LD HL,(23442)</td>
-<td class="comment-11" rowspan="1">Load HL with current position in Magic Knight's y-velocities sequence table</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with current position in Magic Knight's y-velocities sequence table</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38410"></span>38410</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance to next y-velocity in the sequence</td>
+<td class="comment-1" rowspan="1">Advance to next y-velocity in the sequence</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38411"></span>38411</td>
 <td class="instruction">JR 38336</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="38205.html#38336">38336</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="38205.html#38336">38336</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38413"></span>38413</td>
 <td class="instruction">CALL <a href="38429.html">38429</a></td>
-<td class="comment-11" rowspan="1">Handle Magic Knight's fall, preserving x-velocity</td>
+<td class="comment-1" rowspan="1">Handle Magic Knight's fall, preserving x-velocity</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38416"></span>38416</td>
 <td class="instruction">JP 38208</td>
-<td class="comment-11" rowspan="1">Loop back to start of keyboard check routine</td>
+<td class="comment-1" rowspan="1">Loop back to start of keyboard check routine</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="38419"></span>38419</td>
 <td class="instruction">XOR A</td>
-<td class="comment-11" rowspan="1">Set Magic Knight's x-velocity to zero...</td>
+<td class="comment-1" rowspan="1">Set Magic Knight's x-velocity to zero...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38420"></span>38420</td>
 <td class="instruction">LD (24844),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38423"></span>38423</td>
 <td class="instruction">LD (38360),A</td>
-<td class="comment-11" rowspan="1">Prepare to set Magic Knight's x-velocity to zero</td>
+<td class="comment-1" rowspan="1">Prepare to set Magic Knight's x-velocity to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="38426"></span>38426</td>
 <td class="instruction">JP 38394</td>
-<td class="comment-11" rowspan="1">Jump back to <a href="38205.html#38394">38394</a></td>
+<td class="comment-1" rowspan="1">Jump back to <a href="38205.html#38394">38394</a></td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="38024.html">38024</a></span></td>
+<td class="prev">
+Prev: <a href="38024.html">38024</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#38205">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="38429.html">38429</a></span></td>
+<td class="next">
+Next: <a href="38429.html">38429</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

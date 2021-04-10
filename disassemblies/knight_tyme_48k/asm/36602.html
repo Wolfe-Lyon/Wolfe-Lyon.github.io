@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 36602</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,24 +20,28 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36573.html">36573</a></span></td>
+<td class="prev">
+Prev: <a href="36573.html">36573</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36602">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36731.html">36731</a></span></td>
+<td class="next">
+Next: <a href="36731.html">36731</a>
+</td>
 </tr>
 </table>
-<div class="description">36602: Print word in Temporary Text Buffer to screen, wrapping text if necessary, then process next word</div>
+<div class="description">36602: Print word in temporary text buffer to screen, wrapping text if necessary, then process next word</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-This routine prints the string of characters stored in the Temporary Text Buffer. If the string is longer than the available space to the right of the Virtual Text Cursor, then the cursor is wrapped, moving down to the next character row and to the left edge of the current window.
+This routine prints the string of characters stored in the temporary text buffer. If the string is longer than the available space to the right of the virtual text cursor, then the cursor is wrapped, moving down to the next character row and to the left edge of the current window.
 </div>
 <div class="paragraph">
 Used by the routines at <a href="34762.html">34762</a> and <a href="34861.html">34861</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,305 +51,253 @@ Used by the routines at <a href="34762.html">34762</a> and <a href="34861.html">
 </tr>
 <tr>
 <td class="register">IX</td>
-<td class="register-desc">Points to current position in Temporary Text buffer at <a href="24005.html">24005</a></td>
+<td class="register-desc">Points to current position in temporary text buffer at <a href="24005.html">24005</a></td>
 </tr>
-</table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36602"></span>36602</td>
 <td class="instruction">LD (IX+0),A</td>
-<td class="comment-11" rowspan="1">Store character in temporary text buffer</td>
+<td class="comment-1" rowspan="1">Store character in temporary text buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36605"></span>36605</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (pointer to current position in text to print)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (pointer to current position in text to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36606"></span>36606</td>
 <td class="instruction">LD HL,(54110)</td>
-<td class="comment-11" rowspan="1">Load HL with address of Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36609"></span>36609</td>
 <td class="instruction">LD A,L</td>
-<td class="comment-11" rowspan="1">Load x-coordinate of the cursor into B, decreasing by one...</td>
+<td class="comment-1" rowspan="1">Load x-coordinate of the cursor into <span class="register">B</span>, decreasing by one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36610"></span>36610</td>
 <td class="instruction">DEC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36611"></span>36611</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36613"></span>36613</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36614"></span>36614</td>
 <td class="instruction">LD A,(23495)</td>
-<td class="comment-11" rowspan="1">Load x-coordinate of right edge of current window into A</td>
+<td class="comment-1" rowspan="1">Load x-coordinate of right edge of current window into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36617"></span>36617</td>
 <td class="instruction">SUB B</td>
-<td class="comment-11" rowspan="1">Subtract B to get distance to right-edge of window in A</td>
+<td class="comment-1" rowspan="1">Subtract <span class="register">B</span> to get distance to right-edge of window in <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36618"></span>36618</td>
 <td class="instruction">PUSH AF</td>
-<td class="comment-11" rowspan="1">Store AF (A = distance to right-edge of window)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">AF</span> (<span class="register">A</span> = distance to right-edge of window)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36619"></span>36619</td>
 <td class="instruction">LD HL,24005</td>
-<td class="comment-11" rowspan="1">Point HL at start of Temporary Text Buffer</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at start of temporary text buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36622"></span>36622</td>
 <td class="instruction">LD C,0</td>
-<td class="comment-11" rowspan="1">Set C to zero</td>
+<td class="comment-1" rowspan="1">Set <span class="register">C</span> to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36624"></span>36624</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load character from current position in Temporary Text Buffer into A</td>
+<td class="comment-1" rowspan="1">Load character from current position in temporary text buffer into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36625"></span>36625</td>
 <td class="instruction">CP 32</td>
-<td class="comment-11" rowspan="1">If character is 32 (SPACE)...</td>
+<td class="comment-1" rowspan="1">If character is 32 (SPACE)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36627"></span>36627</td>
 <td class="instruction">JR Z,36645</td>
-<td class="comment-11" rowspan="1">...then skip ahead to 36645 as end of word reached</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36602.html#36645">36645</a> as end of word reached</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36629"></span>36629</td>
 <td class="instruction">CP 13</td>
-<td class="comment-11" rowspan="1">If character is 13 (Carriage return / line feed to start of next character row down)...</td>
+<td class="comment-1" rowspan="1">If character is 13 (carriage return / line feed to start of next character row down)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36631"></span>36631</td>
 <td class="instruction">JR Z,36645</td>
-<td class="comment-11" rowspan="1">...then skip ahead to 36645 as end of word reached</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36602.html#36645">36645</a> as end of word reached</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36633"></span>36633</td>
 <td class="instruction">CP 14</td>
-<td class="comment-11" rowspan="1">If character is 14 (Carriage return / line feed to start of next character row down within window)...</td>
+<td class="comment-1" rowspan="1">If character is 14 (carriage return / line feed to start of next character row down within window)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36635"></span>36635</td>
 <td class="instruction">JR Z,36645</td>
-<td class="comment-11" rowspan="1">...then skip ahead to 36645 as end of word reached</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36602.html#36645">36645</a> as end of word reached</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36637"></span>36637</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">If character is 255 (End Marker)...</td>
+<td class="comment-1" rowspan="1">If character is 255 (end marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36639"></span>36639</td>
 <td class="instruction">JR Z,36645</td>
-<td class="comment-11" rowspan="1">...then skip ahead to 36645 as end of word reached</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36602.html#36645">36645</a> as end of word reached</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36641"></span>36641</td>
 <td class="instruction">INC C</td>
-<td class="comment-11" rowspan="1">Increase C (number of characters to print)</td>
+<td class="comment-1" rowspan="1">Increase <span class="register">C</span> (number of characters to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36642"></span>36642</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance to next character in Temporary Text Buffer</td>
+<td class="comment-1" rowspan="1">Advance to next character in temporary text buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36643"></span>36643</td>
 <td class="instruction">JR 36624</td>
-<td class="comment-11" rowspan="1">Loop back to 36624</td>
+<td class="comment-1" rowspan="1">Loop back to <a href="36602.html#36624">36624</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36645"></span>36645</td>
 <td class="instruction">POP AF</td>
-<td class="comment-11" rowspan="1">Restore AF (A = distance to right-edge of window)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">AF</span> (<span class="register">A</span> = distance to right-edge of window)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36646"></span>36646</td>
 <td class="instruction">SUB C</td>
-<td class="comment-11" rowspan="1">Subtract C (number of characters)</td>
+<td class="comment-1" rowspan="1">Subtract <span class="register">C</span> (number of characters)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36647"></span>36647</td>
 <td class="instruction">CALL C,<a href="36731.html">36731</a></td>
-<td class="comment-11" rowspan="1">If result is negative (i.e. more characters than space) then move Virtual Text Cursors (Attribute and Bitmap) down to left edge of next row of window</td>
+<td class="comment-1" rowspan="1">If result is negative (i.e. more characters than space) then move virtual text cursors down to left edge of next row of window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36650"></span>36650</td>
 <td class="instruction">LD HL,24004</td>
-<td class="comment-11" rowspan="1">Point HL at byte before start of Temporary Text Buffer</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at byte before start of temporary text buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36653"></span>36653</td>
 <td class="instruction">INC HL</td>
-<td class="comment-11" rowspan="1">Advance to next byte in Temporary Text Buffer</td>
+<td class="comment-1" rowspan="1">Advance to next byte in temporary text buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36654"></span>36654</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-11" rowspan="1">Load character from current position in Temporary Text Buffer into A</td>
+<td class="comment-1" rowspan="1">Load character from current position in temporary text buffer into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36655"></span>36655</td>
 <td class="instruction">CP 255</td>
-<td class="comment-11" rowspan="1">If character is 255 (End Marker)...</td>
+<td class="comment-1" rowspan="1">If character is 255 (end marker)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36657"></span>36657</td>
 <td class="instruction">JR Z,36723</td>
-<td class="comment-11" rowspan="1">...then skip ahead to 36723 (reset Temporary Text Buffer and load next word into it)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36602.html#36723">36723</a> (reset temporary text buffer and load next word into it)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36659"></span>36659</td>
 <td class="instruction">CP 32</td>
-<td class="comment-11" rowspan="1">If character is 32 (SPACE)...</td>
+<td class="comment-1" rowspan="1">If character is 32 (SPACE)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36661"></span>36661</td>
 <td class="instruction">JR Z,36704</td>
-<td class="comment-11" rowspan="1">...then skip ahead to 36704</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36602.html#36704">36704</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36663"></span>36663</td>
 <td class="instruction">CP 13</td>
-<td class="comment-11" rowspan="1">If character is 13 (Carriage return / line feed to start of next character row down)...</td>
+<td class="comment-1" rowspan="1">If character is 13 (carriage return / line feed to start of next character row down)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36665"></span>36665</td>
 <td class="instruction">JP Z,36691</td>
-<td class="comment-11" rowspan="1">...then skip ahead to 36691</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36602.html#36691">36691</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36668"></span>36668</td>
 <td class="instruction">CP 14</td>
-<td class="comment-11" rowspan="1">If character is 14 (Carriage return / line feed to start of next character row down within window)...</td>
+<td class="comment-1" rowspan="1">If character is 14 (carriage return / line feed to start of next character row down within window)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36670"></span>36670</td>
 <td class="instruction">JP Z,36699</td>
-<td class="comment-11" rowspan="1">...then skip ahead to 36699</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36602.html#36699">36699</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36673"></span>36673</td>
 <td class="instruction">CP 9</td>
-<td class="comment-11" rowspan="1">If character is 9 (Move Virtual Text Cursor right one character)...</td>
+<td class="comment-1" rowspan="1">If character is 9 (move virtual text cursor right one character)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36675"></span>36675</td>
 <td class="instruction">JP Z,36683</td>
-<td class="comment-11" rowspan="1">...then skip ahead to 36683</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36602.html#36683">36683</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36678"></span>36678</td>
 <td class="instruction">CALL <a href="54097.html">54097</a></td>
-<td class="comment-11" rowspan="1">Print the character</td>
+<td class="comment-1" rowspan="1">Print the character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36681"></span>36681</td>
 <td class="instruction">JR 36653</td>
-<td class="comment-11" rowspan="1">Loop back to <a href="36602.html#36653">36653</a></td>
+<td class="comment-1" rowspan="1">Loop back to <a href="36602.html#36653">36653</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36683"></span>
 <div class="comments">
 <div class="paragraph">
-Move Virtual Text Cursor right one character (9)
+Move virtual text cursor right one character (9)
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36683"></span>36683</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL (current position in Temporary Text Buffer)</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span> (current position in temporary text buffer)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36684"></span>36684</td>
 <td class="instruction">CALL <a href="54176.html">54176</a></td>
-<td class="comment-11" rowspan="1">Advance Bitmap Virtual Text Cursor right by one character</td>
+<td class="comment-1" rowspan="1">Advance bitmap virtual text cursor right by one character</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36687"></span>36687</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (current position in Temporary Text Buffer)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (current position in temporary text buffer)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36688"></span>36688</td>
 <td class="instruction">JP 36653</td>
-<td class="comment-11" rowspan="1">Jump to 36653 for next character</td>
+<td class="comment-1" rowspan="1">Jump to <a href="36602.html#36653">36653</a> for next character</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36691"></span>
 <div class="comments">
 <div class="paragraph">
@@ -354,25 +307,22 @@ Carriage return / line feed to start of next character row down (13)
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36691"></span>36691</td>
 <td class="instruction">CALL <a href="54192.html">54192</a></td>
-<td class="comment-11" rowspan="1">Advance Bitmap Virtual Text Cursor to start of next character row</td>
+<td class="comment-1" rowspan="1">Advance bitmap virtual text cursor to start of next character row</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36694"></span>36694</td>
 <td class="instruction">CALL <a href="54215.html">54215</a></td>
-<td class="comment-11" rowspan="1">Update Attribute Virtual Text Cursor based upon current Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">Update attribute virtual text cursor based upon current bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36697"></span>36697</td>
 <td class="instruction">JR 36723</td>
-<td class="comment-11" rowspan="1">Skip ahead to 36723 (reset Temporary Text Buffer and load next word into it)</td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="36602.html#36723">36723</a> (reset temporary text buffer and load next word into it)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36699"></span>
 <div class="comments">
 <div class="paragraph">
@@ -382,19 +332,17 @@ Carriage return / line feed to start of next character row down within window (1
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36699"></span>36699</td>
 <td class="instruction">CALL <a href="36731.html">36731</a></td>
-<td class="comment-11" rowspan="1">Move Virtual Text Cursors (Attribute and Bitmap) down to left edge of next row of window</td>
+<td class="comment-1" rowspan="1">Move virtual text cursors (attribute and bitmap) down to left edge of next row of window</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36702"></span>36702</td>
 <td class="instruction">JR 36723</td>
-<td class="comment-11" rowspan="1">Skip ahead to 36723 (reset Temporary Text Buffer and load next word into it)</td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="36602.html#36723">36723</a> (reset temporary text buffer and load next word into it)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36704"></span>
 <div class="comments">
 <div class="paragraph">
@@ -404,105 +352,96 @@ Print a SPACE (32)
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36704"></span>36704</td>
 <td class="instruction">LD HL,(54110)</td>
-<td class="comment-11" rowspan="1">Load HL with address of Bitmap Virtual Text Cursor</td>
+<td class="comment-1" rowspan="1">Load <span class="register">HL</span> with address of bitmap virtual text cursor</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36707"></span>36707</td>
 <td class="instruction">LD A,L</td>
-<td class="comment-11" rowspan="1">Strip out higher-order bits in L to leave only x-coordinate component...</td>
+<td class="comment-1" rowspan="1">Strip out higher-order bits in <span class="register">L</span> to leave only x-coordinate component...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36708"></span>36708</td>
 <td class="instruction">AND 31</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36710"></span>36710</td>
 <td class="instruction">LD L,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36711"></span>36711</td>
 <td class="instruction">LD A,(23495)</td>
-<td class="comment-11" rowspan="1">Load A with x-coordinate of right edge of current window plus one...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with x-coordinate of right edge of current window plus one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36714"></span>36714</td>
 <td class="instruction">INC A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36715"></span>36715</td>
 <td class="instruction">CP L</td>
-<td class="comment-11" rowspan="1">If this is the same as the x-coordinate of the Bitmap Virtual Text Cursor...</td>
+<td class="comment-1" rowspan="1">If this is the same as the x-coordinate of the bitmap virtual text cursor...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36716"></span>36716</td>
 <td class="instruction">JR Z,36723</td>
-<td class="comment-11" rowspan="1">...then  skip ahead to 36723 (reset Temporary Text Buffer and load next word into it, i.e. no need to print a SPACE)</td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="36602.html#36723">36723</a> (reset temporary text buffer and load next word into it, i.e. no need to print a SPACE)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36718"></span>36718</td>
 <td class="instruction">LD A,32</td>
-<td class="comment-11" rowspan="1">Print a SPACE character (chr. 32)...</td>
+<td class="comment-1" rowspan="1">Print a SPACE character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36720"></span>36720</td>
 <td class="instruction">CALL <a href="54097.html">54097</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="36723"></span>
 <div class="comments">
 <div class="paragraph">
-End Marker (255)
+End marker (255)
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="36723"></span>36723</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL (pointer to current position in text to print)</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span> (pointer to current position in text to print)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36724"></span>36724</td>
 <td class="instruction">LD IX,24005</td>
-<td class="comment-11" rowspan="1">Point IX at start of Temporary Text Buffer</td>
+<td class="comment-1" rowspan="1">Point <span class="register">IX</span> at start of temporary text buffer</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="36728"></span>36728</td>
 <td class="instruction">JP <a href="34762.html#34784">34784</a></td>
-<td class="comment-11" rowspan="1">Jump back to <a href="34762.html#34784">34784</a> to load next word into Temporary Text Buffer</td>
+<td class="comment-1" rowspan="1">Jump back to <a href="34762.html#34784">34784</a> to load next word into temporary text buffer</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="36573.html">36573</a></span></td>
+<td class="prev">
+Prev: <a href="36573.html">36573</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#36602">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="36731.html">36731</a></span></td>
+<td class="next">
+Next: <a href="36731.html">36731</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Unused RAM at 48791</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-u">
 <table class="header">
@@ -22,238 +20,212 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48760.html">48760</a></span></td>
+<td class="prev">
+Prev: <a href="48760.html">48760</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48791">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48850.html">48850</a></span></td>
+<td class="next">
+Next: <a href="48850.html">48850</a>
+</td>
 </tr>
 </table>
 <div class="description">48791: Unused routine</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Assuming that IX and IY contain the addresses of two entities' complex state data, this routine will position the entity at IX such that it is horizontally centred with respect to, and B characters below the entity at IY.
+Assuming that <span class="register">IX</span> and <span class="register">IY</span> contain the addresses of two entities' complex state data, this routine will position the entity at <span class="register">IX</span> such that it is horizontally centred with respect to, and <span class="register">B</span> characters below the entity at <span class="register">IY</span>.
 </div>
 <div class="paragraph">
 <a href="../reference/facts.html#unusedpositioningroutine">See trivia</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
 <tr>
 <td class="register">IX</td>
-<td class="register-desc">Address of complex state data for Entity 1 (assumed)</td>
+<td class="register-desc">Address of complex state data for entity 1 (assumed)</td>
 </tr>
 <tr>
 <td class="register">IY</td>
-<td class="register-desc">Address of complex state data for Entity 2 (assumed)</td>
+<td class="register-desc">Address of complex state data for entity 2 (assumed)</td>
 </tr>
 <tr>
 <td class="register">B</td>
 <td class="register-desc">Vertical offset (assumed)</td>
 </tr>
 </table>
-<table class="output-0">
-<tr class="asm-output-header">
-<th colspan="2">Output</th>
-</tr>
-
-</table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48791"></span>48791</td>
 <td class="instruction">LD A,(IX+6)</td>
-<td class="comment-11" rowspan="1">Load C with height of Entity 1 minus one...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with height of entity 1 minus one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48794"></span>48794</td>
 <td class="instruction">SUB (IX+4)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48797"></span>48797</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48798"></span>48798</td>
 <td class="instruction">LD A,(IY+6)</td>
-<td class="comment-11" rowspan="1">Load A with y-coordinate of bottom edge of Entity 2 plus B...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with y-coordinate of bottom edge of entity 2 plus <span class="register">B</span>...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48801"></span>48801</td>
 <td class="instruction">ADD A,B</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48802"></span>48802</td>
 <td class="instruction">LD (IX+6),A</td>
-<td class="comment-11" rowspan="1">Set y-coordinate of bottom edge of Entity 1 to A</td>
+<td class="comment-1" rowspan="1">Set y-coordinate of bottom edge of entity 1 to <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48805"></span>48805</td>
 <td class="instruction">SUB C</td>
-<td class="comment-11" rowspan="1">Update y-coordinate of top edge of Entity 1 accordingly...</td>
+<td class="comment-1" rowspan="1">Update y-coordinate of top edge of entity 1 accordingly...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48806"></span>48806</td>
 <td class="instruction">LD (IX+4),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48809"></span>48809</td>
 <td class="instruction">LD A,(IX+7)</td>
-<td class="comment-11" rowspan="1">Load B with width of Entity 1 minus one...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with width of entity 1 minus one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48812"></span>48812</td>
 <td class="instruction">SUB (IX+5)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48815"></span>48815</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48816"></span>48816</td>
 <td class="instruction">SRL A</td>
-<td class="comment-11" rowspan="1">Load C with half of width of Entity 1 minus one...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">C</span> with half of width of entity 1 minus one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48818"></span>48818</td>
 <td class="instruction">LD C,A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48819"></span>48819</td>
 <td class="instruction">LD A,(IY+7)</td>
-<td class="comment-11" rowspan="1">Load A with half of width of Entity 2 minus one...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with half of width of entity 2 minus one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48822"></span>48822</td>
 <td class="instruction">SUB (IY+5)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48825"></span>48825</td>
 <td class="instruction">SRL A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48827"></span>48827</td>
 <td class="instruction">ADD A,(IY+5)</td>
-<td class="comment-11" rowspan="1">...and add x-coordinate of left edge of Entity 2</td>
+<td class="comment-1" rowspan="1">...and add x-coordinate of left edge of entity 2</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="48830"></span>
 <div class="comments">
 <div class="paragraph">
-At this point, A holds the x-coordinate of the mid-point of Entity 2
+At this point, <span class="register">A</span> holds the x-coordinate of the mid-point of entity 2
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48830"></span>48830</td>
 <td class="instruction">SUB C</td>
-<td class="comment-11" rowspan="1">Subtract half of width of Entity 1 minus one...</td>
+<td class="comment-1" rowspan="1">Subtract half of width of entity 1 minus one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48831"></span>48831</td>
 <td class="instruction">LD (IX+5),A</td>
-<td class="comment-11" rowspan="1">...and set as x-coordinate of left edge of Entity 1</td>
+<td class="comment-1" rowspan="1">...and set as x-coordinate of left edge of entity 1</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48834"></span>48834</td>
 <td class="instruction">ADD A,B</td>
-<td class="comment-11" rowspan="1">Update x-coordinate of right edge of entity 2 accordingly...</td>
+<td class="comment-1" rowspan="1">Update x-coordinate of right edge of entity 2 accordingly...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48835"></span>48835</td>
 <td class="instruction">LD (IX+7),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48838"></span>48838</td>
 <td class="instruction">LD A,(IX+8)</td>
-<td class="comment-11" rowspan="1">If Entity 1 is not Berk...</td>
+<td class="comment-1" rowspan="1">If entity 1 is not Berk...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48841"></span>48841</td>
 <td class="instruction">CP 31</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48843"></span>48843</td>
 <td class="instruction">RET NZ</td>
-<td class="comment-11" rowspan="1">...then return</td>
+<td class="comment-1" rowspan="1">...then return</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48844"></span>48844</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48845"></span>48845</td>
 <td class="instruction">CALL <a href="53887.html">53887</a></td>
-<td class="comment-11" rowspan="1">Paint red areas outside accessible areas of current character's current room</td>
+<td class="comment-1" rowspan="1">Paint red areas outside accessible areas of current character's current room</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48848"></span>48848</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="48849"></span>48849</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="48760.html">48760</a></span></td>
+<td class="prev">
+Prev: <a href="48760.html">48760</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#48791">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="48850.html">48850</a></span></td>
+<td class="next">
+Next: <a href="48850.html">48850</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

@@ -4,14 +4,12 @@
 <title>Through the Trap Door: Routine at 55196</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
-<link rel="stylesheet" type="text/css" href="../through-the-trap-door.css" />
-<script type="text/javascript" src="../classDataXML.js"></script>
-<script type="text/javascript" src="../classGLDCanvas.js"></script>
-<script type="text/javascript" src="../classImageLoader.js"></script>
-<script type="text/javascript" src="../classDisplayBuffer.js"></script>
-<script type="text/javascript" src="../classBufferPair.js"></script>
-<script type="text/javascript" src="../classGLDDrawer.js"></script>
-<script type="text/javascript" src="../main.js"></script>
+<link rel="stylesheet" type="text/css" href="../common.css" />
+<link rel="stylesheet" type="text/css" href="../through_the_trap_door.css" />
+<script type="text/javascript" src="../js/require.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/memory_dump.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 </head>
 <body class="Asm-c">
 <table class="header">
@@ -22,15 +20,19 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55187.html">55187</a></span></td>
+<td class="prev">
+Prev: <a href="55187.html">55187</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55196">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55421.html">55421</a></span></td>
+<td class="next">
+Next: <a href="55421.html">55421</a>
+</td>
 </tr>
 </table>
-<div class="description">55196: Handle Vertical Component of Character's Jump, and Load E with Jump State Index As Appropriate</div>
+<div class="description">55196: Handle vertical component of character's jump, and load <span class="register">E</span> with jump state index as appropriate</div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 This routine handles the vertical component of Berk's or Drutt's jumping, checking for collisions (e.g. Berk or Drutt hitting an obstruction above, or Drutt knocking down an entity such as a key). The routine also checks the cached control input value at <a href="55022.html">55022</a> to determine the outcome of the next "bounce" if the jumper is on the floor (for example, start a leftward jump if left was pressed).
@@ -39,7 +41,7 @@ This routine handles the vertical component of Berk's or Drutt's jumping, checki
 Used by the routine at <a href="55041.html">55041</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -48,7 +50,7 @@ Used by the routine at <a href="55041.html">55041</a>.
 <td class="register-desc">Address of complex state data (current level) for Berk or Drutt</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
@@ -60,53 +62,47 @@ Used by the routine at <a href="55041.html">55041</a>.
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55196"></span>55196</td>
 <td class="instruction">LD A,(IX+12)</td>
-<td class="comment-11" rowspan="1">Load A with current velocity of jumper's jump...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with current velocity of jumper's jump...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55199"></span>55199</td>
 <td class="instruction">AND 15</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55201"></span>55201</td>
 <td class="instruction">BIT 6,(IX+12)</td>
-<td class="comment-11" rowspan="1">If Downward Jump Phase Flag is set...</td>
+<td class="comment-1" rowspan="1">If downward-jump-phase flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55205"></span>55205</td>
 <td class="instruction">JR NZ,55281</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55196.html#55281">55281</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55196.html#55281">55281</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55207"></span>
 <div class="comments">
 <div class="paragraph">
-Downward Jump Phase Flag is reset, i.e. in upward phase of jump
+Downward jump phase flag is reset, i.e. in upward phase of jump
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55207"></span>55207</td>
 <td class="instruction">OR A</td>
-<td class="comment-11" rowspan="1">If current velocity of jumper's jump is at least one...</td>
+<td class="comment-1" rowspan="1">If current velocity of jumper's jump is at least one...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55208"></span>55208</td>
 <td class="instruction">JR NZ,55234</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55196.html#55234">55234</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55196.html#55234">55234</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55210"></span>
 <div class="comments">
 <div class="paragraph">
@@ -116,61 +112,52 @@ Current velocity of jumper's jump is zero
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55210"></span>55210</td>
 <td class="instruction">LD A,(55022)</td>
-<td class="comment-11" rowspan="1">Load A with Cached Control Input...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with cached control input...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55213"></span>55213</td>
 <td class="instruction">BIT 3,A</td>
-<td class="comment-11" rowspan="1">...and if Back Bit is reset...</td>
+<td class="comment-1" rowspan="1">...and if back bit is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55215"></span>55215</td>
 <td class="instruction">JR Z,55223</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55196.html#55223">55223</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55196.html#55223">55223</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55217"></span>55217</td>
 <td class="instruction">DEC (IX+4)</td>
-<td class="comment-11" rowspan="1">Move jumper up one character...</td>
+<td class="comment-1" rowspan="1">Move jumper up one character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55220"></span>55220</td>
 <td class="instruction">DEC (IX+6)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55223"></span>55223</td>
 <td class="instruction">SET 6,(IX+12)</td>
-<td class="comment-11" rowspan="1">Set Downward Jump Phase Flag</td>
+<td class="comment-1" rowspan="1">Set downward-jump-phase flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55227"></span>55227</td>
 <td class="instruction">CALL <a href="55421.html">55421</a></td>
-<td class="comment-11" rowspan="1">Increase current velocity of jumper's jump if less than 7</td>
+<td class="comment-1" rowspan="1">Increase current velocity of jumper's jump if less than 7</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55230"></span>55230</td>
 <td class="instruction">LD A,1</td>
-<td class="comment-11" rowspan="1">Prepare to set velocity of jumper's jump to one, downwards</td>
+<td class="comment-1" rowspan="1">Prepare to set velocity of jumper's jump to one, downwards</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55232"></span>55232</td>
 <td class="instruction">JR 55284</td>
-<td class="comment-11" rowspan="1">Skip ahead to <a href="55196.html#55284">55284</a> (handle downward phase of jump)</td>
+<td class="comment-1" rowspan="1">Skip ahead to <a href="55196.html#55284">55284</a> (handle downward phase of jump)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55234"></span>
 <div class="comments">
 <div class="paragraph">
@@ -180,49 +167,42 @@ Current velocity of jumper's jump is at least 1
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55234"></span>55234</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load B with current velocity of jumper's jump</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with current velocity of jumper's jump</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55235"></span>55235</td>
 <td class="instruction">DEC (IX+4)</td>
-<td class="comment-11" rowspan="1">Move jumper up one character...</td>
+<td class="comment-1" rowspan="1">Move jumper up one character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55238"></span>55238</td>
 <td class="instruction">DEC (IX+6)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55241"></span>55241</td>
 <td class="instruction">CALL <a href="54768.html">54768</a></td>
-<td class="comment-11" rowspan="1">Check entity at IX for collision with another entity at same depth whose Interaction (11,6) Flag is set...</td>
+<td class="comment-1" rowspan="1">Check entity at <span class="register">IX</span> for collision with another entity at same depth whose interaction-(11,6) flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55244"></span>55244</td>
 <td class="instruction">JR C,55258</td>
-<td class="comment-11" rowspan="1">...and if no collision occurred, then skip ahead to <a href="55196.html#55258">55258</a></td>
+<td class="comment-1" rowspan="1">...and if no collision occurred, then skip ahead to <a href="55196.html#55258">55258</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55246"></span>55246</td>
 <td class="instruction">CP 130</td>
-<td class="comment-11" rowspan="1">If collision was not with entity of class 130 (causes Berk and Drutt to bounce off or bang head)...</td>
+<td class="comment-1" rowspan="1">If collision was not with entity of class 130 (causes Berk and Drutt to bounce off or bang head)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55248"></span>55248</td>
 <td class="instruction">JR NZ,55258</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55196.html#55258">55258</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55196.html#55258">55258</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55250"></span>
 <div class="comments">
 <div class="paragraph">
@@ -232,31 +212,27 @@ Jumper has banged his head
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55250"></span>55250</td>
 <td class="instruction">LD A,6</td>
-<td class="comment-11" rowspan="1">Set pending sound index to 6 (banging head) if it is currently zero, or lower priority...</td>
+<td class="comment-1" rowspan="1">Set pending sound index to 6 (banging head) if it is currently zero, or lower priority...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55252"></span>55252</td>
 <td class="instruction">CALL <a href="59601.html#59613">59613</a></td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55255"></span>55255</td>
 <td class="instruction">LD E,6</td>
-<td class="comment-11" rowspan="1">Load E with 6 (jumper has banged his head on something above him)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with 6 (jumper has banged his head on something above him)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55257"></span>55257</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55258"></span>
 <div class="comments">
 <div class="paragraph">
@@ -266,129 +242,112 @@ No collision, or collision with entity other than that of class 130
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55258"></span>55258</td>
 <td class="instruction">CP 22</td>
-<td class="comment-11" rowspan="1">If collision was with an entity of class of 22 or greater (can't be picked up, or 255 for no collision)...</td>
+<td class="comment-1" rowspan="1">If collision was with an entity of class of 22 or greater (can't be picked up, or 255 for no collision)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55260"></span>55260</td>
 <td class="instruction">JR NC,55270</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55196.html#55270">55270</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55196.html#55270">55270</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55262"></span>
 <div class="comments">
 <div class="paragraph">
-Drutt has knocked down an entity, e.g. Red Sweet on Level 1
+Drutt has knocked down an entity, e.g. red sweet on level 1
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55262"></span>55262</td>
 <td class="instruction">LD (IY+12),2</td>
-<td class="comment-11" rowspan="1">Set initial velocity factor of entity jumper collided with to 2...</td>
+<td class="comment-1" rowspan="1">Set initial velocity factor of entity jumper collided with to 2...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55266"></span>55266</td>
 <td class="instruction">SET 6,(IY+10)</td>
-<td class="comment-11" rowspan="1">...and set its "Can Fall" flag</td>
+<td class="comment-1" rowspan="1">...and set its can-fall flag</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55270"></span>55270</td>
 <td class="instruction">CALL <a href="55433.html">55433</a></td>
-<td class="comment-11" rowspan="1">Change jumper's room up one if appropriate</td>
+<td class="comment-1" rowspan="1">Change jumper's room up one if appropriate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55273"></span>55273</td>
 <td class="instruction">DJNZ 55235</td>
-<td class="comment-11" rowspan="1">Decrease B (remaining number of characters to move up) and loop back to <a href="55196.html#55235">55235</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (remaining number of characters to move up) and loop back to <a href="55196.html#55235">55235</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55275"></span>55275</td>
 <td class="instruction">DEC (IX+12)</td>
-<td class="comment-11" rowspan="1">Decrease current velocity of jumper's jump, slowing ascent</td>
+<td class="comment-1" rowspan="1">Decrease current velocity of jumper's jump, slowing ascent</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55278"></span>55278</td>
 <td class="instruction">LD E,0</td>
-<td class="comment-11" rowspan="1">Load E with zero (jumper jumping upwards, no collision)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with zero (jumper jumping upwards, no collision)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55280"></span>55280</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55281"></span>
 <div class="comments">
 <div class="paragraph">
-Downward Jump Phase Flag is set, i.e. in downward phase of jump
+Downward jump phase flag is set, i.e. in downward phase of jump
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55281"></span>55281</td>
 <td class="instruction">CALL <a href="55421.html">55421</a></td>
-<td class="comment-11" rowspan="1">Increase current velocity of jumper's jump if less than 7, speeding descent, and load into A</td>
+<td class="comment-1" rowspan="1">Increase current velocity of jumper's jump if less than 7, speeding descent, and load into <span class="register">A</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55284"></span>55284</td>
 <td class="instruction">LD B,A</td>
-<td class="comment-11" rowspan="1">Load B with velocity of jumper's jump</td>
+<td class="comment-1" rowspan="1">Load <span class="register">B</span> with velocity of jumper's jump</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55285"></span>55285</td>
 <td class="instruction">INC (IX+4)</td>
-<td class="comment-11" rowspan="1">Move jumper down one character...</td>
+<td class="comment-1" rowspan="1">Move jumper down one character...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55288"></span>55288</td>
 <td class="instruction">INC (IX+6)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55291"></span>55291</td>
 <td class="instruction">CALL <a href="54768.html">54768</a></td>
-<td class="comment-11" rowspan="1">Check jumper for collision with another entity at same depth whose Interaction (11,6) Flag is set...</td>
+<td class="comment-1" rowspan="1">Check jumper for collision with another entity at same depth whose interaction-(11,6) flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55294"></span>55294</td>
 <td class="instruction">JR C,55300</td>
-<td class="comment-11" rowspan="1">...and if no collision occurred, then skip ahead to <a href="55196.html#55300">55300</a></td>
+<td class="comment-1" rowspan="1">...and if no collision occurred, then skip ahead to <a href="55196.html#55300">55300</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55296"></span>55296</td>
 <td class="instruction">CP 35</td>
-<td class="comment-11" rowspan="1">If collision was with an entity of class 35 (platform, Level 1 or Level 3)...</td>
+<td class="comment-1" rowspan="1">If collision was with an entity of class 35 (platform, level 1 or level 3)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55298"></span>55298</td>
 <td class="instruction">JR Z,55363</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55196.html#55363">55363</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55196.html#55363">55363</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55300"></span>
 <div class="comments">
 <div class="paragraph">
@@ -398,67 +357,57 @@ No collision, or collision with entity other than that of class 35
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55300"></span>55300</td>
 <td class="instruction">LD A,(IX+6)</td>
-<td class="comment-11" rowspan="1">Load A with y-coordinate of jumper's bottom edge...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with y-coordinate of jumper's bottom edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55303"></span>55303</td>
 <td class="instruction">ADD A,(IX+1)</td>
-<td class="comment-11" rowspan="1">...and add jumper's depth</td>
+<td class="comment-1" rowspan="1">...and add jumper's depth</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55306"></span>55306</td>
 <td class="instruction">CP 122</td>
-<td class="comment-11" rowspan="1">If A is 122 (i.e. jumper is at bottom of screen)...</td>
+<td class="comment-1" rowspan="1">If <span class="register">A</span> is 122 (i.e. jumper is at bottom of screen)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55308"></span>55308</td>
 <td class="instruction">JR Z,55320</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55196.html#55320">55320</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55196.html#55320">55320</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55310"></span>55310</td>
 <td class="instruction">DJNZ 55285</td>
-<td class="comment-11" rowspan="1">Decrease B (remaining number of characters to move down) and loop back to <a href="55196.html#55285">55285</a> if not zero</td>
+<td class="comment-1" rowspan="1">Decrease <span class="register">B</span> (remaining number of characters to move down) and loop back to <a href="55196.html#55285">55285</a> if not zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55312"></span>55312</td>
 <td class="instruction">PUSH HL</td>
-<td class="comment-11" rowspan="1">Store HL</td>
+<td class="comment-1" rowspan="1">Store <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55313"></span>55313</td>
 <td class="instruction">CALL <a href="55616.html">55616</a></td>
-<td class="comment-11" rowspan="1">Change jumper's room down one if appropriate</td>
+<td class="comment-1" rowspan="1">Change jumper's room down one if appropriate</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55316"></span>55316</td>
 <td class="instruction">POP HL</td>
-<td class="comment-11" rowspan="1">Restore HL</td>
+<td class="comment-1" rowspan="1">Restore <span class="register">HL</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55317"></span>55317</td>
 <td class="instruction">LD E,0</td>
-<td class="comment-11" rowspan="1">Load E with zero (jumper jumping downwards, no collision)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with zero (jumper jumping downwards, no collision)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55319"></span>55319</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55320"></span>
 <div class="comments">
 <div class="paragraph">
@@ -468,31 +417,27 @@ Jumper is at the bottom of the screen
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55320"></span>55320</td>
 <td class="instruction">CALL <a href="54768.html">54768</a></td>
-<td class="comment-11" rowspan="1">Check jumper for collision with another entity at same depth whose Interaction (11,6) Flag is set...</td>
+<td class="comment-1" rowspan="1">Check jumper for collision with another entity at same depth whose interaction-(11,6) flag is set...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55323"></span>55323</td>
 <td class="instruction">JR C,55363</td>
-<td class="comment-11" rowspan="1">...and if no collision occurred, then skip ahead to <a href="55196.html#55363">55363</a></td>
+<td class="comment-1" rowspan="1">...and if no collision occurred, then skip ahead to <a href="55196.html#55363">55363</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55325"></span>55325</td>
 <td class="instruction">CP 129</td>
-<td class="comment-11" rowspan="1">If collision was with entity of class 129 (causes other entities to start falling)...</td>
+<td class="comment-1" rowspan="1">If collision was with entity of class 129 (causes other entities to start falling)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55327"></span>55327</td>
 <td class="instruction">JR Z,55334</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55196.html#55334">55334</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55196.html#55334">55334</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55329"></span>
 <div class="comments">
 <div class="paragraph">
@@ -502,19 +447,17 @@ Collision was not with entity of class 129, so need to resume collision check fr
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55329"></span>55329</td>
 <td class="instruction">CALL <a href="54768.html#54871">54871</a></td>
-<td class="comment-11" rowspan="1">Resume checking jumper for collision with another entity at same depth whose Interaction (11,6) Flag is set</td>
+<td class="comment-1" rowspan="1">Resume checking jumper for collision with another entity at same depth whose interaction-(11,6) flag is set</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55332"></span>55332</td>
 <td class="instruction">JR 55323</td>
-<td class="comment-11" rowspan="1">...and jump back to <a href="55196.html#55323">55323</a></td>
+<td class="comment-1" rowspan="1">...and jump back to <a href="55196.html#55323">55323</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55334"></span>
 <div class="comments">
 <div class="paragraph">
@@ -524,43 +467,37 @@ Collision with entity of class 129
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55334"></span>55334</td>
 <td class="instruction">LD A,(IX+8)</td>
-<td class="comment-11" rowspan="1">If jumper is not Berk...</td>
+<td class="comment-1" rowspan="1">If jumper is not Berk...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55337"></span>55337</td>
 <td class="instruction">CP 31</td>
-<td class="comment-11" rowspan="1">...(class = 31).....</td>
+<td class="comment-1" rowspan="1">...(class = 31).....</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55339"></span>55339</td>
 <td class="instruction">JR NZ,55285</td>
-<td class="comment-11" rowspan="1">...then jump back to <a href="55196.html#55285">55285</a> (continue moving downwards)</td>
+<td class="comment-1" rowspan="1">...then jump back to <a href="55196.html#55285">55285</a> (continue moving downwards)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55341"></span>55341</td>
 <td class="instruction">LD A,(IX+5)</td>
-<td class="comment-11" rowspan="1">If Berk's left edge...</td>
+<td class="comment-1" rowspan="1">If Berk's left edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55344"></span>55344</td>
 <td class="instruction">CP (IY+5)</td>
-<td class="comment-11" rowspan="1">...is at or to the right of the colliding entity's left edge...</td>
+<td class="comment-1" rowspan="1">...is at or to the right of the colliding entity's left edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55347"></span>55347</td>
 <td class="instruction">JR NC,55352</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55196.html#55352">55352</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55196.html#55352">55352</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55349"></span>
 <div class="comments">
 <div class="paragraph">
@@ -570,19 +507,17 @@ Berk's left edge is to the left of colliding entity's left edge
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55349"></span>55349</td>
 <td class="instruction">LD E,7</td>
-<td class="comment-11" rowspan="1">Load E with 7 (jumper is Berk, his left edge is to the left of colliding, class=129, entity's left edge)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with 7 (jumper is Berk, his left edge is to the left of colliding, class=129, entity's left edge)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55351"></span>55351</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55352"></span>
 <div class="comments">
 <div class="paragraph">
@@ -592,25 +527,22 @@ Berk's left edge is at, or to the right of, colliding entity's left edge
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55352"></span>55352</td>
 <td class="instruction">LD A,(IY+7)</td>
-<td class="comment-11" rowspan="1">If Berk's right edge...</td>
+<td class="comment-1" rowspan="1">If Berk's right edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55355"></span>55355</td>
 <td class="instruction">CP (IX+7)</td>
-<td class="comment-11" rowspan="1">...is at or to the right of the colliding entity's right edge...</td>
+<td class="comment-1" rowspan="1">...is at or to the right of the colliding entity's right edge...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55358"></span>55358</td>
 <td class="instruction">JR NC,55285</td>
-<td class="comment-11" rowspan="1">...then jump back to <a href="55196.html#55285">55285</a> (continue moving downwards)</td>
+<td class="comment-1" rowspan="1">...then jump back to <a href="55196.html#55285">55285</a> (continue moving downwards)</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55360"></span>
 <div class="comments">
 <div class="paragraph">
@@ -620,255 +552,231 @@ Berk's right edge is to the left of colliding entity's right edge
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55360"></span>55360</td>
 <td class="instruction">LD E,8</td>
-<td class="comment-11" rowspan="1">Load E with 8 (jumper is Berk, and he is between left and right edges of colliding, class=129, entity)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with 8 (jumper is Berk, and he is between left and right edges of colliding, class=129, entity)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55362"></span>55362</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55363"></span>
 <div class="comments">
 <div class="paragraph">
-Downward phase, and collision with entity of class 35 (platform, Level 1 or Level 3) or no collision at bottom of screen
+Downward phase, and collision with entity of class 35 (platform, level 1 or level 3) or no collision at bottom of screen
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55363"></span>55363</td>
 <td class="instruction">RES 6,(IX+12)</td>
-<td class="comment-11" rowspan="1">Reset Downward Jump Phase Flag (i.e. prepare to jump up again)</td>
+<td class="comment-1" rowspan="1">Reset downward-jump-phase flag (i.e. prepare to jump up again)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55367"></span>55367</td>
 <td class="instruction">LD A,(55022)</td>
-<td class="comment-11" rowspan="1">Load A with Cached Control Input...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with cached control input...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55370"></span>55370</td>
 <td class="instruction">BIT 3,A</td>
-<td class="comment-11" rowspan="1">...and if Back Bit is reset...</td>
+<td class="comment-1" rowspan="1">...and if back bit is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55372"></span>55372</td>
 <td class="instruction">JR Z,55377</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55196.html#55377">55377</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55196.html#55377">55377</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55374"></span>55374</td>
 <td class="instruction">LD E,1</td>
-<td class="comment-11" rowspan="1">Load E with 1 (jumper landed on floor / platform and Back Control Input Bit set)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with 1 (jumper landed on floor / platform and back control input bit set)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55376"></span>55376</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55377"></span>
 <div class="comments">
 <div class="paragraph">
-Back Bit is reset
+Back bit is reset
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55377"></span>55377</td>
 <td class="instruction">LD A,(IX+12)</td>
-<td class="comment-11" rowspan="1">If current velocity of jumper's jump is at least 4...</td>
+<td class="comment-1" rowspan="1">If current velocity of jumper's jump is at least 4...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55380"></span>55380</td>
 <td class="instruction">AND 15</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55382"></span>55382</td>
 <td class="instruction">CP 4</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55384"></span>55384</td>
 <td class="instruction">JR NC,55393</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55196.html#55393">55393</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55196.html#55393">55393</a></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55386"></span>55386</td>
 <td class="instruction">LD (IX+12),0</td>
-<td class="comment-11" rowspan="1">Reset jumper's Is Jumping Flag and set current velocity of jump to zero</td>
+<td class="comment-1" rowspan="1">Reset jumper's is-jumping flag and set current velocity of jump to zero</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55390"></span>55390</td>
 <td class="instruction">LD E,3</td>
-<td class="comment-11" rowspan="1">Load E with 3 (jumper's jump velocity less than 4, and back not pressed, i.e. terminate jumping)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with 3 (jumper's jump velocity less than 4, and back not pressed, i.e. terminate jumping)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55392"></span>55392</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55393"></span>
 <div class="comments">
 <div class="paragraph">
-Current velocity of jumper's jump is at least 4, and Back Bit is reset
+Current velocity of jumper's jump is at least 4, and back bit is reset
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55393"></span>55393</td>
 <td class="instruction">LD A,(55022)</td>
-<td class="comment-11" rowspan="1">Load A with Cached Control Input...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with cached control input...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55396"></span>55396</td>
 <td class="instruction">BIT 1,A</td>
-<td class="comment-11" rowspan="1">...and if Left Bit is reset...</td>
+<td class="comment-1" rowspan="1">...and if left bit is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55398"></span>55398</td>
 <td class="instruction">JR Z,55404</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55196.html#55404">55404</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55196.html#55404">55404</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55400"></span>
 <div class="comments">
 <div class="paragraph">
-Left Bit is set
+Left bit is set
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55400"></span>55400</td>
 <td class="instruction">LD E,4</td>
-<td class="comment-11" rowspan="1">Load E with 4 (jumper's jump velocity at least 4 and Left Control Input Bit set)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with 4 (jumper's jump velocity at least 4 and left control input bit set)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55402"></span>55402</td>
 <td class="instruction">JR 55410</td>
-<td class="comment-11" rowspan="1">Decrease current velocity of jumper's jump by two and return</td>
+<td class="comment-1" rowspan="1">Decrease current velocity of jumper's jump by two and return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55404"></span>
 <div class="comments">
 <div class="paragraph">
-Left Bit is reset
+Left bit is reset
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55404"></span>55404</td>
 <td class="instruction">BIT 0,A</td>
-<td class="comment-11" rowspan="1">If Right Bit is reset...</td>
+<td class="comment-1" rowspan="1">If right bit is reset...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55406"></span>55406</td>
 <td class="instruction">JR Z,55417</td>
-<td class="comment-11" rowspan="1">...then skip ahead to <a href="55196.html#55417">55417</a></td>
+<td class="comment-1" rowspan="1">...then skip ahead to <a href="55196.html#55417">55417</a></td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55408"></span>
 <div class="comments">
 <div class="paragraph">
-Right Bit is set
+Right bit is set
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55408"></span>55408</td>
 <td class="instruction">LD E,5</td>
-<td class="comment-11" rowspan="1">Load E with 5 (jumper's jump velocity at least 4 and Right Control Input Bit set)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with 5 (jumper's jump velocity at least 4 and right control input bit set)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55410"></span>55410</td>
 <td class="instruction">DEC (IX+12)</td>
-<td class="comment-11" rowspan="1">Decrease current velocity of jumper's jump by two...</td>
+<td class="comment-1" rowspan="1">Decrease current velocity of jumper's jump by two...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55413"></span>55413</td>
 <td class="instruction">DEC (IX+12)</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55416"></span>55416</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <span id="55417"></span>
 <div class="comments">
 <div class="paragraph">
-Right Bit (and Left and Back bits) reset
+Right bit (and left and back bits) reset
 </div>
 </div>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="55417"></span>55417</td>
 <td class="instruction">LD E,0</td>
-<td class="comment-11" rowspan="1">Load E with zero (current velocity of jumper's jump is at least 4 and Back, Left and Right Control Input bits are reset)</td>
+<td class="comment-1" rowspan="1">Load <span class="register">E</span> with zero (current velocity of jumper's jump is at least 4 and back, left and right control input bits are reset)</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="55419"></span>55419</td>
 <td class="instruction">JR 55410</td>
-<td class="comment-11" rowspan="1">Decrease current velocity of jumper's jump by two and return</td>
+<td class="comment-1" rowspan="1">Decrease current velocity of jumper's jump by two and return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="55187.html">55187</a></span></td>
+<td class="prev">
+Prev: <a href="55187.html">55187</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#55196">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="55421.html">55421</a></span></td>
+<td class="next">
+Next: <a href="55421.html">55421</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 23/08/2017</div>
-<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.0.</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>

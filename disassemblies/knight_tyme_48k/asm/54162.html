@@ -4,6 +4,7 @@
 <title>Knight Tyme (48k): Routine at 54162</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../skoolkit.css" />
+<link rel="stylesheet" type="text/css" href="../common.css" />
 <link rel="stylesheet" type="text/css" href="../spectrum.css" />
 <link rel="stylesheet" type="text/css" href="../knight_tyme.css" />
 <script type="text/javascript" src="../js/require.js"></script>
@@ -19,21 +20,25 @@
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54148.html">54148</a></span></td>
+<td class="prev">
+Prev: <a href="54148.html">54148</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54162">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54176.html">54176</a></span></td>
+<td class="next">
+Next: <a href="54176.html">54176</a>
+</td>
 </tr>
 </table>
-<div class="description">54162: Point HL at Terrain Interaction Data for Character Coordinates x=C, y=B</div>
+<div class="description">54162: Point <span class="register">HL</span> at terrain interaction data for character coordinates x=<span class="register">C</span>, y=<span class="register">B</span></div>
 <table class="disassembly">
 <tr>
-<td class="routine-comment" colspan="4">
+<td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
 Used by the routines at <a href="27357.html">27357</a>, <a href="27508.html">27508</a>, <a href="27647.html">27647</a>, <a href="29174.html">29174</a> and <a href="36104.html">36104</a>.
 </div>
 </div>
-<table class="input-1">
+<table class="input">
 <tr class="asm-input-header">
 <th colspan="2">Input</th>
 </tr>
@@ -46,65 +51,63 @@ Used by the routines at <a href="27357.html">27357</a>, <a href="27508.html">275
 <td class="register-desc">x-coordinate (chars)</td>
 </tr>
 </table>
-<table class="output-1">
+<table class="output">
 <tr class="asm-output-header">
 <th colspan="2">Output</th>
 </tr>
 <tr>
 <td class="register">HL</td>
-<td class="register-desc">points to entry in Terrain Interaction Data</td>
+<td class="register-desc">points to entry in terrain interaction data</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-2"><span id="54162"></span>54162</td>
 <td class="instruction">LD A,94</td>
-<td class="comment-11" rowspan="1">Set most significant byte in Terrain Interaction Data / Attribute File lookup routine to 94 (Terrain Interaction Table)...</td>
+<td class="comment-1" rowspan="1">Set most significant byte in terrain interaction data / attribute file lookup routine to 94 (terrain interaction table)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54164"></span>54164</td>
 <td class="instruction">LD (54158),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54167"></span>54167</td>
 <td class="instruction">CALL <a href="54148.html">54148</a></td>
-<td class="comment-11" rowspan="1">Point HL at Terrain Interaction Data for Character Coordinates x=C, y=B</td>
+<td class="comment-1" rowspan="1">Point <span class="register">HL</span> at terrain interaction data for character coordinates x=<span class="register">C</span>, y=<span class="register">B</span></td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54170"></span>54170</td>
 <td class="instruction">LD A,88</td>
-<td class="comment-11" rowspan="1">Set most significant byte in Terrain Interaction Data / Attribute File lookup routine to 88, (Attribute File)...</td>
+<td class="comment-1" rowspan="1">Set most significant byte in terrain interaction data / attribute file lookup routine to 88, (attribute file)...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54172"></span>54172</td>
 <td class="instruction">LD (54158),A</td>
-<td class="comment-11" rowspan="1">...</td>
+<td class="comment-1" rowspan="1">...</td>
 </tr>
 <tr>
-<td class="asm-label-0"></td>
 <td class="address-1"><span id="54175"></span>54175</td>
 <td class="instruction">RET</td>
-<td class="comment-11" rowspan="1">Return</td>
+<td class="comment-1" rowspan="1">Return</td>
 </tr>
 </table>
 <table class="asm-navigation">
 <tr>
-<td class="prev"><span class="prev-1">Prev: <a href="54148.html">54148</a></span></td>
+<td class="prev">
+Prev: <a href="54148.html">54148</a>
+</td>
 <td class="up">Up: <a href="../maps/all.html#54162">Map</a></td>
-<td class="next"><span class="next-1">Next: <a href="54176.html">54176</a></span></td>
+<td class="next">
+Next: <a href="54176.html">54176</a>
+</td>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 02/06/2018</div>
-<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2017 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
-<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 6.4.</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
+<div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
 </body>
 </html>
