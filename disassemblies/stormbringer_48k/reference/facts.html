@@ -19,27 +19,28 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#cheatmode">Cheat mode</a></li>
-<li><a href="#commandlocate">LOCATE command</a></li>
-<li><a href="#debugcode001">Leftover debug code, part 1</a></li>
-<li><a href="#debugcode002">Leftover debug code, part 2</a></li>
-<li><a href="#numberoftheday">Password number</a></li>
-<li><a href="#redundantinstructions">Redundant instructions / code</a></li>
-<li><a href="#commandincreaseshappiness">Commanding a character makes him or her happier</a></li>
-<li><a href="#offwhitedrawing">Drawing Off-White Knight</a></li>
-<li><a href="#undreadablesword">Unreadable sword</a></li>
-<li><a href="#undreadableteddybear">Unreadable teddy bear</a></li>
+<li><a href="#cheat_mode">Cheat mode</a></li>
+<li><a href="#command_locate">LOCATE command</a></li>
+<li><a href="#debug_code_001">Leftover debug code, part 1</a></li>
+<li><a href="#debug_code_002">Leftover debug code, part 2</a></li>
+<li><a href="#number_of_the_day">Password number</a></li>
+<li><a href="#redundant_instructions">Redundant instructions / code</a></li>
+<li><a href="#command_increases_happiness">Commanding a character makes him or her happier</a></li>
+<li><a href="#off_white_drawing">Drawing Off-White Knight</a></li>
+<li><a href="#unreadable_sword">Unreadable sword</a></li>
+<li><a href="#unreadable_teddy_bear">Unreadable teddy bear</a></li>
 <li><a href="#placeholders">Placeholders</a></li>
-<li><a href="#thrownsmashable">Smashable objects thrown</a></li>
-<li><a href="#axeframenumbers">Axe frame numbers</a></li>
-<li><a href="#128ktraces">Common code for 48k and 128k versions</a></li>
-<li><a href="#missedoptimisation">Missed opportunities for optimisation</a></li>
-<li><a href="#reuseddata">Reused data</a></li>
-<li><a href="#spellmeltgranite">Useless spell</a></li>
-<li><a href="#spellspellofwonder">Not so useless spell</a></li>
-<li><a href="#reusedarchitecture">Reused architecture graphics</a></li>
+<li><a href="#thrown_smashable">Smashable objects thrown</a></li>
+<li><a href="#axe_frame_numbers">Axe frame numbers</a></li>
+<li><a href="#128k_traces">Common code for 48k and 128k versions</a></li>
+<li><a href="#missed_optimisation">Missed opportunities for optimisation</a></li>
+<li><a href="#reused_data">Reused data</a></li>
+<li><a href="#spell_melt_granite">Useless spell</a></li>
+<li><a href="#spell_spell_of_wonder">Not so useless spell</a></li>
+<li><a href="#reused_architecture">Reused architecture graphics</a></li>
+<li><a href="#evil_never_sleeps">Evil never sleeps</a></li>
 </ul>
-<div><span id="cheatmode"></span></div>
+<div><span id="cheat_mode"></span></div>
 <div class="box box-1">
 <div class="box-title">Cheat mode</div>
 <div class="paragraph">
@@ -54,7 +55,7 @@ index by one. Pressing UP or DOWN increases or decreases, respectively, Magic Kn
 index is changed, the new room is drawn. Pressing FIRE causes a return to the game.
 </div>
 </div>
-<div><span id="commandlocate"></span></div>
+<div><span id="command_locate"></span></div>
 <div class="box box-2">
 <div class="box-title">LOCATE command</div>
 <div class="paragraph">
@@ -67,7 +68,7 @@ in the 48k version that appear to be related to the LOCATE command. Much of the 
 </ul>
 </div>
 </div>
-<div><span id="debugcode001"></span></div>
+<div><span id="debug_code_001"></span></div>
 <div class="box box-1">
 <div class="box-title">Leftover debug code, part 1</div>
 <div class="paragraph">
@@ -79,7 +80,7 @@ drawn in the cell in question and its PAPER is already black. Changing the value
 visible.
 </div>
 </div>
-<div><span id="debugcode002"></span></div>
+<div><span id="debug_code_002"></span></div>
 <div class="box box-2">
 <div class="box-title">Leftover debug code, part 2</div>
 <div class="paragraph">
@@ -90,7 +91,7 @@ virtual text cursor right by one character. When the draw-2-×-1-blocks flag is 
 to the left occurs at <a href="../asm/41271.html#41423">41423</a> and <a href="../asm/41271.html#41426">41426</a>.
 </div>
 </div>
-<div><span id="numberoftheday"></span></div>
+<div><span id="number_of_the_day"></span></div>
 <div class="box box-1">
 <div class="box-title">Password number</div>
 <div class="paragraph">
@@ -101,7 +102,7 @@ the security door (<a href="../asm/59841.html">59841</a>). The code that generat
 set, thereby forcing Magic Knight to have to deal with the security door.
 </div>
 </div>
-<div><span id="redundantinstructions"></span></div>
+<div><span id="redundant_instructions"></span></div>
 <div class="box box-2">
 <div class="box-title">Redundant instructions / code</div>
 <div class="paragraph">
@@ -128,7 +129,7 @@ There are many instances of redundant code, or redundant instructions in several
 </ul>
 </div>
 </div>
-<div><span id="commandincreaseshappiness"></span></div>
+<div><span id="command_increases_happiness"></span></div>
 <div class="box box-1">
 <div class="box-title">Commanding a character makes him or her happier</div>
 <div class="paragraph">
@@ -138,7 +139,7 @@ is intended behaviour, however it diminishes the effect of the lower limit on ha
 command an unhappy and unwilling character until that character's happiness is raised above the threshold for compliance.
 </div>
 </div>
-<div><span id="offwhitedrawing"></span></div>
+<div><span id="off_white_drawing"></span></div>
 <div class="box box-2">
 <div class="box-title">Drawing Off-White Knight</div>
 <div class="paragraph">
@@ -154,7 +155,7 @@ bitmap:
 The purpose of this check is not clear as Off-White's graphic index cannot be set to zero by any means other than a POKE.
 </div>
 </div>
-<div><span id="undreadablesword"></span></div>
+<div><span id="unreadable_sword"></span></div>
 <div class="box box-1">
 <div class="box-title">Unreadable sword</div>
 <div class="paragraph">
@@ -166,7 +167,7 @@ unreadable text message! One of the two unused texts, which is located at <a hre
 Perhaps this was ultimately rejected because it is a little <em>too</em> silly.
 </div>
 </div>
-<div><span id="undreadableteddybear"></span></div>
+<div><span id="unreadable_teddy_bear"></span></div>
 <div class="box box-2">
 <div class="box-title">Unreadable teddy bear</div>
 <div class="paragraph">
@@ -174,7 +175,7 @@ When the Teddy Bear is read, the text shown is "TNORF OT KCAB" (<a href="../asm/
 in possession of the Crystal Ball, one would assume that the Mirror would reveal the Teddy Bear's text, however this is not the case. Although the Teddy
 Bear's true text is in the game (<a href="../asm/52878.html#53607">53607</a>), it cannot be accessed. This text contains a spelling error ("HUNNEY" instead of "HONEY"). The name of the
 bear, Milne, is undoubtedly a reference to A. A. Milne and "HUNNEY" is close to Winnie-the-Pooh's spelling, "HUNNY". See also
-<a href="bugs.html#spellingandpunctuation">this bug</a>.
+<a href="bugs.html#spelling_and_punctuation">this bug</a>.
 </div>
 </div>
 <div><span id="placeholders"></span></div>
@@ -189,7 +190,7 @@ Placeholder data is used in a number of locations:
 </ul>
 </div>
 </div>
-<div><span id="thrownsmashable"></span></div>
+<div><span id="thrown_smashable"></span></div>
 <div class="box box-2">
 <div class="box-title">Smashable objects thrown</div>
 <div class="paragraph">
@@ -198,7 +199,7 @@ object has smashed. This message is only shown for the Mirror, even though other
 smash when thrown.
 </div>
 </div>
-<div><span id="axeframenumbers"></span></div>
+<div><span id="axe_frame_numbers"></span></div>
 <div class="box box-1">
 <div class="box-title">Axe frame numbers</div>
 <div class="paragraph">
@@ -206,7 +207,7 @@ The routine <a href="../asm/46560.html">46560</a> that draws the axes to screen 
 2 and 3). These are the same frame numbers used by the Odd Ball in Spellbound.
 </div>
 </div>
-<div><span id="128ktraces"></span></div>
+<div><span id="128k_traces"></span></div>
 <div class="box box-2">
 <div class="box-title">Common code for 48k and 128k versions</div>
 <div class="paragraph">
@@ -219,7 +220,7 @@ the 48k version and the 128k version use much code in common. A few examples are
 </ul>
 </div>
 </div>
-<div><span id="missedoptimisation"></span></div>
+<div><span id="missed_optimisation"></span></div>
 <div class="box box-1">
 <div class="box-title">Missed opportunities for optimisation</div>
 <div class="paragraph">
@@ -231,14 +232,14 @@ There are a few instances where savings in memory use could have been made by ta
 </ul>
 </div>
 </div>
-<div><span id="reuseddata"></span></div>
+<div><span id="reused_data"></span></div>
 <div class="box box-2">
 <div class="box-title">Reused data</div>
 <div class="paragraph">
 The values in the table of characters' default happiness levels at <a href="../asm/43486.html">43486</a> are taken unmodified from Spellbound.
 </div>
 </div>
-<div><span id="spellmeltgranite"></span></div>
+<div><span id="spell_melt_granite"></span></div>
 <div class="box box-1">
 <div class="box-title">Useless spell</div>
 <div class="paragraph">
@@ -246,14 +247,14 @@ The Melt Granite spell does not do anything. The routine at <a href="../asm/4399
 cast.
 </div>
 </div>
-<div><span id="spellspellofwonder"></span></div>
+<div><span id="spell_spell_of_wonder"></span></div>
 <div class="box box-2">
 <div class="box-title">Not so useless spell</div>
 <div class="paragraph">
 The Spell of Wonder is not quite as useless as the in-game text suggests. In fact it slightly increases Magic Knight's current strength!
 </div>
 </div>
-<div><span id="reusedarchitecture"></span></div>
+<div><span id="reused_architecture"></span></div>
 <div class="box box-1">
 <div class="box-title">Reused architecture graphics</div>
 <div class="paragraph">
@@ -289,8 +290,17 @@ In addition, several blocks from Spellbound are also defined here:
 </table>
 </div>
 </div>
+<div><span id="evil_never_sleeps"></span></div>
+<div class="box box-2">
+<div class="box-title">Evil never sleeps</div>
+<div class="paragraph">
+One of the requirements for the success of Magic Knight's mission is that Off-White is asleep when Dimension Merge is cast. An essential task for Magic
+Knight to complete is to put Off-White to sleep by throwing the Magic Missile. Unlike other characters, Off-White does not tire while awake; in fact he
+continually regenerates. The <a href="../asm/62895.html">rates of change of his stats</a> while awake are all positive ensuring he never falls asleep independently.
+</div>
+</div>
 <footer>
-<div class="release">The Complete Stormbringer (48k) RAM Disassembly 10/04/2021</div>
+<div class="release">The Complete Stormbringer (48k) RAM Disassembly 08/05/2021</div>
 <div class="copyright">&#169; 1987 David Jones / Mastertronic (Stormbringer). &#169; 2014-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
 <div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>

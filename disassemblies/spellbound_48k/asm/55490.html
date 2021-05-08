@@ -29,13 +29,13 @@ Next: <a href="55546.html">55546</a>
 </td>
 </tr>
 </table>
-<div class="description">55490: Characters' rates of stat regeneration</div>
+<div class="description">55490: Characters' rates of stat deterioration / regeneration</div>
 <table class="disassembly">
 <tr>
 <td class="routine-comment" colspan="5">
 <div class="details">
 <div class="paragraph">
-Stats are in order:
+These values determine how quickly the characters' stats deteriorate while awake and regenerate while asleep. In each character's group, the first four bytes are negative values and are the amounts by which each stat is reduced per cycle while that character is awake and tiring. The last four bytes in each group are positive values and are the amounts by which each stat is increased per cycle while the character is asleep and regenerating.
 </div>
 <div class="paragraph">
 <table class="default">
@@ -44,28 +44,38 @@ Stats are in order:
 <th colspan="1" rowspan="1">Meaning</th>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">0, 4</td>
-<td class="" colspan="1" rowspan="1">Strength</td>
+<td class="centre" colspan="1" rowspan="1">0</td>
+<td class="" colspan="1" rowspan="1">Strength deterioration</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">1, 5</td>
-<td class="" colspan="1" rowspan="1">Happiness</td>
+<td class="centre" colspan="1" rowspan="1">1</td>
+<td class="" colspan="1" rowspan="1">Happiness deterioration</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">2, 6</td>
-<td class="" colspan="1" rowspan="1">Stamina</td>
+<td class="centre" colspan="1" rowspan="1">2</td>
+<td class="" colspan="1" rowspan="1">Stamina deterioration</td>
 </tr>
 <tr>
-<td class="centre" colspan="1" rowspan="1">3, 7</td>
-<td class="" colspan="1" rowspan="1">Spell power</td>
+<td class="centre" colspan="1" rowspan="1">3</td>
+<td class="" colspan="1" rowspan="1">Spell power deterioration</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">4</td>
+<td class="" colspan="1" rowspan="1">Strength regeneration</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">5</td>
+<td class="" colspan="1" rowspan="1">Happiness regeneration</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">6</td>
+<td class="" colspan="1" rowspan="1">Stamina regeneration</td>
+</tr>
+<tr>
+<td class="centre" colspan="1" rowspan="1">7</td>
+<td class="" colspan="1" rowspan="1">Spell power regeneration</td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<ul class="">
-<li>First four bytes are negative values and are the amount each stat is reduced by each cycle while character is awake (tiring)</li>
-<li>Last four bytes are positive values and are the amount each stat is increased by each cycle while character is asleep (regenerating)</li>
-</ul>
 </div>
 </div>
 </td>
@@ -118,7 +128,7 @@ Next: <a href="55546.html">55546</a>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 08/05/2021</div>
 <div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
 <div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>

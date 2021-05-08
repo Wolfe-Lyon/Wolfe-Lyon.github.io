@@ -122,7 +122,7 @@ This entry point is used by the routines at <a href="34858.html">34858</a>, <a h
 <tr>
 <td class="address-2"><span id="34784"></span>34784</td>
 <td class="instruction">LD A,(23488)</td>
-<td class="comment-1" rowspan="1">Start of loop - load recursion depth counter into <span class="register">A</span>...</td>
+<td class="comment-1" rowspan="1">Load <span class="register">A</span> with value in recursion depth counter...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34787"></span>34787</td>
@@ -137,17 +137,17 @@ This entry point is used by the routines at <a href="34858.html">34858</a>, <a h
 <tr>
 <td class="address-1"><span id="34790"></span>34790</td>
 <td class="instruction">INC HL</td>
-<td class="comment-1" rowspan="1">Advance to next character to be printed</td>
+<td class="comment-1" rowspan="1">Advance to next character code to be printed...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34791"></span>34791</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-1" rowspan="1">Get character from string</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="address-1"><span id="34792"></span>34792</td>
 <td class="instruction">OR A</td>
-<td class="comment-1" rowspan="1">If character is a "0"...</td>
+<td class="comment-1" rowspan="1">If character code is zero (i.e. end marker)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34793"></span>34793</td>
@@ -157,7 +157,7 @@ This entry point is used by the routines at <a href="34858.html">34858</a>, <a h
 <tr>
 <td class="address-1"><span id="34796"></span>34796</td>
 <td class="instruction">CP 32</td>
-<td class="comment-1" rowspan="1">If the character is a "32" (SPACE)...</td>
+<td class="comment-1" rowspan="1">If character code is 32 (SPACE)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34798"></span>34798</td>
@@ -167,7 +167,7 @@ This entry point is used by the routines at <a href="34858.html">34858</a>, <a h
 <tr>
 <td class="address-1"><span id="34801"></span>34801</td>
 <td class="instruction">CP 31</td>
-<td class="comment-1" rowspan="1">If the character is a "31"...</td>
+<td class="comment-1" rowspan="1">If character code is 31...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34803"></span>34803</td>
@@ -177,7 +177,7 @@ This entry point is used by the routines at <a href="34858.html">34858</a>, <a h
 <tr>
 <td class="address-1"><span id="34806"></span>34806</td>
 <td class="instruction">CP 29</td>
-<td class="comment-1" rowspan="1">If the character is a "29"...</td>
+<td class="comment-1" rowspan="1">If character code is 29...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34808"></span>34808</td>
@@ -187,7 +187,7 @@ This entry point is used by the routines at <a href="34858.html">34858</a>, <a h
 <tr>
 <td class="address-1"><span id="34811"></span>34811</td>
 <td class="instruction">CP 28</td>
-<td class="comment-1" rowspan="1">If the character is a "28"...</td>
+<td class="comment-1" rowspan="1">If character code is 28...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34813"></span>34813</td>
@@ -197,7 +197,7 @@ This entry point is used by the routines at <a href="34858.html">34858</a>, <a h
 <tr>
 <td class="address-1"><span id="34816"></span>34816</td>
 <td class="instruction">CP 19</td>
-<td class="comment-1" rowspan="1">If the character is a "19"...</td>
+<td class="comment-1" rowspan="1">If character code is 19...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34818"></span>34818</td>
@@ -207,7 +207,7 @@ This entry point is used by the routines at <a href="34858.html">34858</a>, <a h
 <tr>
 <td class="address-1"><span id="34821"></span>34821</td>
 <td class="instruction">CP 18</td>
-<td class="comment-1" rowspan="1">If the character is a "18"...</td>
+<td class="comment-1" rowspan="1">If character code is 18...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34823"></span>34823</td>
@@ -217,7 +217,7 @@ This entry point is used by the routines at <a href="34858.html">34858</a>, <a h
 <tr>
 <td class="address-1"><span id="34826"></span>34826</td>
 <td class="instruction">CP 17</td>
-<td class="comment-1" rowspan="1">If the character is a "17"...</td>
+<td class="comment-1" rowspan="1">If character code is 17...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34828"></span>34828</td>
@@ -227,7 +227,7 @@ This entry point is used by the routines at <a href="34858.html">34858</a>, <a h
 <tr>
 <td class="address-1"><span id="34831"></span>34831</td>
 <td class="instruction">CP 16</td>
-<td class="comment-1" rowspan="1">If the character is a "16"...</td>
+<td class="comment-1" rowspan="1">If character code is 16...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34833"></span>34833</td>
@@ -237,7 +237,7 @@ This entry point is used by the routines at <a href="34858.html">34858</a>, <a h
 <tr>
 <td class="address-1"><span id="34836"></span>34836</td>
 <td class="instruction">CP 14</td>
-<td class="comment-1" rowspan="1">If the character is a "14" (carriage return / line feed to start of next character row down within window)...</td>
+<td class="comment-1" rowspan="1">If character code is 14 (carriage return / line feed to start of next character row down within window)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34838"></span>34838</td>
@@ -247,7 +247,7 @@ This entry point is used by the routines at <a href="34858.html">34858</a>, <a h
 <tr>
 <td class="address-1"><span id="34841"></span>34841</td>
 <td class="instruction">CP 13</td>
-<td class="comment-1" rowspan="1">If the character is a "13" (carriage return / line feed to start of next character row down)...</td>
+<td class="comment-1" rowspan="1">If character code is 13 (carriage return / line feed to start of next character row down)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34843"></span>34843</td>
@@ -257,7 +257,7 @@ This entry point is used by the routines at <a href="34858.html">34858</a>, <a h
 <tr>
 <td class="address-1"><span id="34846"></span>34846</td>
 <td class="instruction">CP 91</td>
-<td class="comment-1" rowspan="1">If value is 91 or greater (i.e. special character)...</td>
+<td class="comment-1" rowspan="1">If character code is 91 or greater (i.e. special character)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="34848"></span>34848</td>
@@ -292,7 +292,7 @@ Next: <a href="34858.html">34858</a>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 08/05/2021</div>
 <div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
 <div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>

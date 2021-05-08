@@ -19,20 +19,20 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#cheatmode">Cheat mode</a></li>
-<li><a href="#extradatacopied">Extra data copied</a></li>
-<li><a href="#combinedmagicattribute">Combined magic level / attribute data</a></li>
-<li><a href="#strengthbar">Drawing the strength bar</a></li>
-<li><a href="#128ktraces">Common code for 48k and 128k versions</a></li>
-<li><a href="#unusedcode001">Unused code</a></li>
-<li><a href="#redundantinstructions">Redundant instructions / code</a></li>
-<li><a href="#isartificialflag">Is-artificial flag</a></li>
-<li><a href="#debugcode001">Leftover debug code, part 1</a></li>
-<li><a href="#consultoraclenoflashing">No spell effect for Consult Oracle</a></li>
-<li><a href="#fortifyspellmagiclevel">No restriction on magic level for casting fortify character / yourself</a></li>
-<li><a href="#debugcode002">Leftover debug code, part 2</a></li>
+<li><a href="#cheat_mode">Cheat mode</a></li>
+<li><a href="#extra_data_copied">Extra data copied</a></li>
+<li><a href="#combined_magic_attribute">Combined magic level / attribute data</a></li>
+<li><a href="#strength_bar">Drawing the strength bar</a></li>
+<li><a href="#128k_traces">Common code for 48k and 128k versions</a></li>
+<li><a href="#unused_code_001">Unused code</a></li>
+<li><a href="#redundant_instructions">Redundant instructions / code</a></li>
+<li><a href="#is_artificial_flag">Is-artificial flag</a></li>
+<li><a href="#debug_code_001">Leftover debug code, part 1</a></li>
+<li><a href="#consult_oracle_no_flashing">No spell effect for Consult Oracle</a></li>
+<li><a href="#fortify_spell_magic_level">No restriction on magic level for casting fortify character / yourself</a></li>
+<li><a href="#debug_code_002">Leftover debug code, part 2</a></li>
 </ul>
-<div><span id="cheatmode"></span></div>
+<div><span id="cheat_mode"></span></div>
 <div class="box box-1">
 <div class="box-title">Cheat mode</div>
 <div class="paragraph">
@@ -52,7 +52,7 @@ the Valid I.D. Card will be placed in The Recreation Room aboard the USS Pisces,
 validate the Blank I.D. Card.
 </div>
 </div>
-<div><span id="extradatacopied"></span></div>
+<div><span id="extra_data_copied"></span></div>
 <div class="box box-2">
 <div class="box-title">Extra data copied</div>
 <div class="paragraph">
@@ -65,14 +65,14 @@ The instructions after this (<a href="../asm/26997.html#27037">27037</a> - <a hr
 current positions table at <a href="../asm/25244.html">25244</a>. Again, an extra six bytes (first six bytes of the objects' initial positions table at <a href="../asm/36911.html">36911</a>) are copied as well.
 </div>
 </div>
-<div><span id="combinedmagicattribute"></span></div>
+<div><span id="combined_magic_attribute"></span></div>
 <div class="box box-1">
 <div class="box-title">Combined magic level / attribute data</div>
 <div class="paragraph">
 Characters' attributes and magic levels are both encoded in a single value.
 </div>
 </div>
-<div><span id="strengthbar"></span></div>
+<div><span id="strength_bar"></span></div>
 <div class="box box-2">
 <div class="box-title">Drawing the strength bar</div>
 <div class="paragraph">
@@ -82,7 +82,7 @@ remainder over and above a multiple of eight is drawn. If the Magic Knight's str
 more logical to have <span class="instruction">JR <a href="../asm/34567.html#34626">34626</a></span> here to skip over the "fractional part drawing").
 </div>
 </div>
-<div><span id="128ktraces"></span></div>
+<div><span id="128k_traces"></span></div>
 <div class="box box-1">
 <div class="box-title">Common code for 48k and 128k versions</div>
 <div class="paragraph">
@@ -102,7 +102,7 @@ game. Generally speaking, these appear to be indications that the 48k version an
 </ul>
 </div>
 </div>
-<div><span id="unusedcode001"></span></div>
+<div><span id="unused_code_001"></span></div>
 <div class="box box-2">
 <div class="box-title">Unused code</div>
 <div class="paragraph">
@@ -116,11 +116,11 @@ Fortunately, this strange behaviour should never occur because an empty inventor
 If an empty inventory is detected then this routine is never reached.
 </div>
 </div>
-<div><span id="redundantinstructions"></span></div>
+<div><span id="redundant_instructions"></span></div>
 <div class="box box-1">
 <div class="box-title">Redundant instructions / code</div>
 <div class="paragraph">
-There are many instances of redundant code, or redundant instructions in several texts. These may or may not be related to <a href="facts.html#128ktraces">the
+There are many instances of redundant code, or redundant instructions in several texts. These may or may not be related to <a href="facts.html#128k_traces">the
 entry above</a>. Some examples are:
 <ul class="">
 <li>the text entry at <a href="../asm/37795.html#37967">37967</a> has an instruction to change INK colour to yellow, followed immediately by an instruction to change INK colour to white</li>
@@ -139,7 +139,7 @@ entry above</a>. Some examples are:
 </ul>
 </div>
 </div>
-<div><span id="isartificialflag"></span></div>
+<div><span id="is_artificial_flag"></span></div>
 <div class="box box-2">
 <div class="box-title">Is-artificial flag</div>
 <div class="paragraph">
@@ -154,7 +154,7 @@ It is possible that there is a logical reason why Julie 8 does not have her is-a
 signifies something else!
 </div>
 </div>
-<div><span id="debugcode001"></span></div>
+<div><span id="debug_code_001"></span></div>
 <div class="box box-1">
 <div class="box-title">Leftover debug code, part 1</div>
 <div class="paragraph">
@@ -166,14 +166,14 @@ drawn in the cell in question and its PAPER is already black. Changing the value
 visible.
 </div>
 </div>
-<div><span id="consultoraclenoflashing"></span></div>
+<div><span id="consult_oracle_no_flashing"></span></div>
 <div class="box box-2">
 <div class="box-title">No spell effect for Consult Oracle</div>
 <div class="paragraph">
 When casting the Consult Oracle spell, no colour-cycling / sound effects are shown, i.e. there is no call to <a href="../asm/55651.html">55651</a>.
 </div>
 </div>
-<div><span id="fortifyspellmagiclevel"></span></div>
+<div><span id="fortify_spell_magic_level"></span></div>
 <div class="box box-1">
 <div class="box-title">No restriction on magic level for casting fortify character / yourself</div>
 <div class="paragraph">
@@ -182,7 +182,7 @@ magic level when he casts these spells, the amount by which the target is fortif
 magic reserves.
 </div>
 </div>
-<div><span id="debugcode002"></span></div>
+<div><span id="debug_code_002"></span></div>
 <div class="box box-2">
 <div class="box-title">Leftover debug code, part 2</div>
 <div class="paragraph">
@@ -191,7 +191,7 @@ set. If this bit is set, then all characters become frozen in place.
 </div>
 </div>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 08/05/2021</div>
 <div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
 <div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>

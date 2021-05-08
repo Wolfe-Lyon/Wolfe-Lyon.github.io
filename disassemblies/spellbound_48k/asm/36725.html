@@ -87,27 +87,27 @@ This entry point is used by the routines at <a href="36800.html">36800</a> and <
 <tr>
 <td class="address-2"><span id="36732"></span>36732</td>
 <td class="instruction">INC HL</td>
-<td class="comment-1" rowspan="1">Start of loop - advance to next character to be printed</td>
+<td class="comment-1" rowspan="1">Advance to next character code to be printed...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36733"></span>36733</td>
 <td class="instruction">LD A,(HL)</td>
-<td class="comment-1" rowspan="1">Get character from string at location <span class="register">HL</span> (e.g. "**&#160;&#160;" text)</td>
+<td class="comment-1" rowspan="1">...and load into <span class="register">A</span></td>
 </tr>
 <tr>
 <td class="address-1"><span id="36734"></span>36734</td>
 <td class="instruction">OR A</td>
-<td class="comment-1" rowspan="1">Check against various values...</td>
+<td class="comment-1" rowspan="1">If character code is zero (i.e. end marker)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36735"></span>36735</td>
 <td class="instruction">JP Z,36798</td>
-<td class="comment-1" rowspan="1">If character is a null character, exit routine (via <span class="instruction">RET</span> at <a href="36725.html#36798">36798</a>)</td>
+<td class="comment-1" rowspan="1">...then return from text printing</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36738"></span>36738</td>
 <td class="instruction">CP 9</td>
-<td class="comment-1" rowspan="1">If character is a "9" (move right)...</td>
+<td class="comment-1" rowspan="1">If character code is 9 (move right)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36740"></span>36740</td>
@@ -117,7 +117,7 @@ This entry point is used by the routines at <a href="36800.html">36800</a> and <
 <tr>
 <td class="address-1"><span id="36743"></span>36743</td>
 <td class="instruction">CP 13</td>
-<td class="comment-1" rowspan="1">If the character is a "13" ("ENTER" - carriage return + line feed)...</td>
+<td class="comment-1" rowspan="1">If character code is 13 ("ENTER" - carriage return + line feed)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36745"></span>36745</td>
@@ -127,7 +127,7 @@ This entry point is used by the routines at <a href="36800.html">36800</a> and <
 <tr>
 <td class="address-1"><span id="36748"></span>36748</td>
 <td class="instruction">CP 14</td>
-<td class="comment-1" rowspan="1">If the character is a "14"...</td>
+<td class="comment-1" rowspan="1">If character code is 14...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36750"></span>36750</td>
@@ -137,7 +137,7 @@ This entry point is used by the routines at <a href="36800.html">36800</a> and <
 <tr>
 <td class="address-1"><span id="36753"></span>36753</td>
 <td class="instruction">CP 16</td>
-<td class="comment-1" rowspan="1">If the character is a "16" (change of INK colour)...</td>
+<td class="comment-1" rowspan="1">If character code is 16 (change of INK colour)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36755"></span>36755</td>
@@ -147,7 +147,7 @@ This entry point is used by the routines at <a href="36800.html">36800</a> and <
 <tr>
 <td class="address-1"><span id="36758"></span>36758</td>
 <td class="instruction">CP 17</td>
-<td class="comment-1" rowspan="1">If the character is a "17" (change of PAPER colour)...</td>
+<td class="comment-1" rowspan="1">If character code is 17 (change of PAPER colour)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36760"></span>36760</td>
@@ -157,7 +157,7 @@ This entry point is used by the routines at <a href="36800.html">36800</a> and <
 <tr>
 <td class="address-1"><span id="36763"></span>36763</td>
 <td class="instruction">CP 18</td>
-<td class="comment-1" rowspan="1">If the character is a "18" (change of FLASH status)...</td>
+<td class="comment-1" rowspan="1">If character code is 18 (change of FLASH status)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36765"></span>36765</td>
@@ -167,7 +167,7 @@ This entry point is used by the routines at <a href="36800.html">36800</a> and <
 <tr>
 <td class="address-1"><span id="36768"></span>36768</td>
 <td class="instruction">CP 19</td>
-<td class="comment-1" rowspan="1">If the character is a "19" (change of BRIGHT status)...</td>
+<td class="comment-1" rowspan="1">If character code is 19 (change of BRIGHT status)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36770"></span>36770</td>
@@ -177,7 +177,7 @@ This entry point is used by the routines at <a href="36800.html">36800</a> and <
 <tr>
 <td class="address-1"><span id="36773"></span>36773</td>
 <td class="instruction">CP 29</td>
-<td class="comment-1" rowspan="1">If the character is a "29" (print name of Current Object)...</td>
+<td class="comment-1" rowspan="1">If character code is 29 (print name of Current Object)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36775"></span>36775</td>
@@ -187,7 +187,7 @@ This entry point is used by the routines at <a href="36800.html">36800</a> and <
 <tr>
 <td class="address-1"><span id="36778"></span>36778</td>
 <td class="instruction">CP 30</td>
-<td class="comment-1" rowspan="1">If the character is a "30" (print full name of Current Character)...</td>
+<td class="comment-1" rowspan="1">If character code is 30 (print full name of Current Character)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36780"></span>36780</td>
@@ -197,7 +197,7 @@ This entry point is used by the routines at <a href="36800.html">36800</a> and <
 <tr>
 <td class="address-1"><span id="36783"></span>36783</td>
 <td class="instruction">CP 31</td>
-<td class="comment-1" rowspan="1">If the character is a "31" (print short name of Current Character)...</td>
+<td class="comment-1" rowspan="1">If character code is 31 (print short name of Current Character)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36785"></span>36785</td>
@@ -207,7 +207,7 @@ This entry point is used by the routines at <a href="36800.html">36800</a> and <
 <tr>
 <td class="address-1"><span id="36788"></span>36788</td>
 <td class="instruction">CP 91</td>
-<td class="comment-1" rowspan="1">If value is 91 or greater (i.e. special character)...</td>
+<td class="comment-1" rowspan="1">If character code is 91 or greater (i.e. special character)...</td>
 </tr>
 <tr>
 <td class="address-1"><span id="36790"></span>36790</td>
@@ -247,7 +247,7 @@ Next: <a href="36800.html">36800</a>
 </tr>
 </table>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 08/05/2021</div>
 <div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
 <div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>

@@ -19,18 +19,18 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#thereisnothinginthisroom">"THERE IS NOTHING IN THIS ROOM" message never shown</a></li>
-<li><a href="#toomanyobjects">Too many objects are checked</a></li>
-<li><a href="#examineusspisces">Examine USS Pisces</a></li>
-<li><a href="#extraflagset">Extra flag set</a></li>
-<li><a href="#wrongwindowtype">Incorrect window type</a></li>
-<li><a href="#invertedstarmovementinstruction">Starfield rendering</a></li>
-<li><a href="#spellingandpunctuation">Spelling and punctuation</a></li>
-<li><a href="#wrongwindowsize">Incorrect window size</a></li>
-<li><a href="#cargobayfloorcolour">Inconsistent floor colour</a></li>
+<li><a href="#there_is_nothing_in_this_room">"THERE IS NOTHING IN THIS ROOM" message never shown</a></li>
+<li><a href="#too_many_objects">Too many objects are checked</a></li>
+<li><a href="#examine_uss_pisces">Examine USS Pisces</a></li>
+<li><a href="#extra_flag_set">Extra flag set</a></li>
+<li><a href="#wrong_window_type">Incorrect window type</a></li>
+<li><a href="#inverted_star_movement_instruction">Starfield rendering</a></li>
+<li><a href="#spelling_and_punctuation">Spelling and punctuation</a></li>
+<li><a href="#wrong_window_size">Incorrect window size</a></li>
+<li><a href="#cargo_bay_floor_colour">Inconsistent floor colour</a></li>
 <li><a href="#pass_through_airlock_wall">Pass through airlock wall</a></li>
 </ul>
-<div><span id="thereisnothinginthisroom"></span></div>
+<div><span id="there_is_nothing_in_this_room"></span></div>
 <div class="box box-1">
 <div class="box-title">"THERE IS NOTHING IN THIS ROOM" message never shown</div>
 <div class="paragraph">
@@ -64,18 +64,18 @@ POKE <a href="../asm/29330.html#29342">29344</a>,37
 <em>This bug is also present in Spellbound</em>
 </div>
 </div>
-<div><span id="toomanyobjects"></span></div>
+<div><span id="too_many_objects"></span></div>
 <div class="box box-2">
 <div class="box-title">Too many objects are checked</div>
 <div class="paragraph">
-Another bug, related to the one above, involved the routine at <a href="../asm/29330.html">29330</a>. The instruction at <a href="../asm/29330.html#29374">29374</a> loads <span class="register">B</span> with 50, in preparation for a loop
+Another bug, related to the one above, involves the routine at <a href="../asm/29330.html">29330</a>. The instruction at <a href="../asm/29330.html#29374">29374</a> loads <span class="register">B</span> with 50, in preparation for a loop
 iterating over all objects' positions, however there are only 37 objects in the game. As a result of this bug, the code that checks the positions of
 objects runs over the end of the objects' current positions table at <a href="../asm/25286.html">25286</a> and into the current planetary data table at <a href="../asm/25397.html">25397</a>. Due to the nature of
 the data stored from <a href="../asm/25397.html">25397</a> onwards, it seems that a conflict (i.e. a false match with an "object") is unlikely, so in most circumstances this bug will
 not manifest any symptoms.
 </div>
 </div>
-<div><span id="examineusspisces"></span></div>
+<div><span id="examine_uss_pisces"></span></div>
 <div class="box box-1">
 <div class="box-title">Examine USS Pisces</div>
 <div class="paragraph">
@@ -84,14 +84,14 @@ Knight is not aboard the ship, a message window should be displayed ("YOU CANNOT
 SHIP"). In order to check whether or not Magic Knight is aboard the USS Pisces, his current room's index is compared against the number 12 which is the
 index of the McTablet Food room on Starbase 1. However, if Magic Knight is in the room to the left of this (The Transporter Room, Starbase 1, index 11)
 then the check is passed even though he is not aboard the starship. The instruction here should instead check Magic Knight's current room index against
-11.
+11, i.e. it should be <span class="instruction">CP 11</span>, not <span class="instruction">CP 12</span>.
 </div>
 <div class="paragraph">
 To fix:<br />
 POKE <a href="../asm/30145.html#30199">30200</a>,11
 </div>
 </div>
-<div><span id="extraflagset"></span></div>
+<div><span id="extra_flag_set"></span></div>
 <div class="box box-2">
 <div class="box-title">Extra flag set</div>
 <div class="paragraph">
@@ -104,7 +104,7 @@ To fix:<br />
 POKE <a href="../asm/31312.html#31374">31375</a>,2
 </div>
 </div>
-<div><span id="wrongwindowtype"></span></div>
+<div><span id="wrong_window_type"></span></div>
 <div class="box box-1">
 <div class="box-title">Incorrect window type</div>
 <div class="paragraph">
@@ -114,7 +114,7 @@ result the hand cursor is also drawn. This isn't really noticeable though, since
 printed, overwriting the hand cursor graphic.
 </div>
 </div>
-<div><span id="invertedstarmovementinstruction"></span></div>
+<div><span id="inverted_star_movement_instruction"></span></div>
 <div class="box box-2">
 <div class="box-title">Starfield rendering</div>
 <div class="paragraph">
@@ -132,7 +132,7 @@ POKE <a href="../asm/36273.html#36301">36301</a>,121
 <em>This bug is also present in Spellbound</em>
 </div>
 </div>
-<div><span id="spellingandpunctuation"></span></div>
+<div><span id="spelling_and_punctuation"></span></div>
 <div class="box box-1">
 <div class="box-title">Spelling and punctuation</div>
 <div class="paragraph">
@@ -150,18 +150,18 @@ There are a number of spelling and punctuation issues:
 </ul>
 </div>
 </div>
-<div><span id="wrongwindowsize"></span></div>
+<div><span id="wrong_window_size"></span></div>
 <div class="box box-2">
 <div class="box-title">Incorrect window size</div>
 <div class="paragraph">
 There are a number of issues with window sizes:
 <ul class="">
-<li>the height preceding the read text of the Instant Film (<a href="../asm/40986.html#41056">41056</a>) is one unit too small, so text overwrites bottom border of window when displayed.</li>
-<li>the height preceding the (game over) text for Magic Knight's lightning bolt alerting security is one unit too big, so window has a blank line below text</li>
+<li>the height preceding the read text of the Instant Film (<a href="../asm/40986.html#41056">41056</a>) is one unit too small, so the text overwrites the bottom border of the window when displayed</li>
+<li>the height preceding the (game over) text for Magic Knight's lightning bolt alerting security (<a href="../asm/45949.html#46894">46894</a>) is one unit too big, so the window has a blank line below the text</li>
 </ul>
 </div>
 </div>
-<div><span id="cargobayfloorcolour"></span></div>
+<div><span id="cargo_bay_floor_colour"></span></div>
 <div class="box box-1">
 <div class="box-title">Inconsistent floor colour</div>
 <div class="paragraph">
@@ -185,7 +185,7 @@ POKE <a href="../asm/28277.html#28285">28286</a>,235
 </div>
 </div>
 <footer>
-<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 10/04/2021</div>
+<div class="release">The Complete Knight Tyme (48k) RAM Disassembly 08/05/2021</div>
 <div class="copyright">&#169; 1986 David Jones / Mastertronic (Knight Tyme). &#169; 2013-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
 <div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>

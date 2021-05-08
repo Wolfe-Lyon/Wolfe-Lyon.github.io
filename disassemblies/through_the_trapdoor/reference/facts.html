@@ -19,28 +19,28 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#redundantinstructionsi">Redundant instructions / code, part 1</a></li>
-<li><a href="#colouredcreatureslots">Coloured creatures' slots</a></li>
-<li><a href="#redundantinstructionsii">Redundant instructions / code, part 2</a></li>
-<li><a href="#spidertiming">Spiders' timing</a></li>
-<li><a href="#redundantinstructionsiii">Redundant instructions / code, part 3</a></li>
-<li><a href="#skeletonwidth">Width of skeleton</a></li>
-<li><a href="#flagsgalore">Flags galore</a></li>
-<li><a href="#redundantinstructionsiv">Redundant instructions / code, part 4</a></li>
-<li><a href="#heightofweight">Height of weight</a></li>
-<li><a href="#graphicswiderthandisplay">Graphics wider than display</a></li>
-<li><a href="#redundantinstructionsv">Redundant instructions / code, part 5</a></li>
-<li><a href="#redundantinstructionsvi">Redundant instructions / code, part 6</a></li>
-<li><a href="#redundantinstructionsvii">Redundant instructions / code, part 7</a></li>
-<li><a href="#redundantinstructionsviii">Redundant instructions / code, part 8</a></li>
-<li><a href="#redundantinstructionsix">Redundant instructions / code, part 9</a></li>
-<li><a href="#unusedskeletonscript">Unused skeleton script</a></li>
-<li><a href="#unusedroomindex">Unused room index</a></li>
-<li><a href="#unusedpositioningroutine">Unused routine</a></li>
-<li><a href="#unusedsounds">Unused sounds</a></li>
-<li><a href="#redundantinstructionsx">Redundant instructions / code, part 10</a></li>
+<li><a href="#redundant_instructions_01">Redundant instructions / code, part 1</a></li>
+<li><a href="#coloured_creature_slots">Coloured creatures' slots</a></li>
+<li><a href="#redundant_instructions_02">Redundant instructions / code, part 2</a></li>
+<li><a href="#spider_timing">Spiders' timing</a></li>
+<li><a href="#redundant_instructions_03">Redundant instructions / code, part 3</a></li>
+<li><a href="#skeleton_width">Width of skeleton</a></li>
+<li><a href="#flags_galore">Flags galore</a></li>
+<li><a href="#redundant_instructions_04">Redundant instructions / code, part 4</a></li>
+<li><a href="#height_of_weight">Height of weight</a></li>
+<li><a href="#graphics_wider_than_display">Graphics wider than display</a></li>
+<li><a href="#redundant_instructions_5">Redundant instructions / code, part 5</a></li>
+<li><a href="#redundant_instructions_06">Redundant instructions / code, part 6</a></li>
+<li><a href="#redundant_instructions_07">Redundant instructions / code, part 7</a></li>
+<li><a href="#redundant_instructions_08">Redundant instructions / code, part 8</a></li>
+<li><a href="#redundant_instructions_09">Redundant instructions / code, part 9</a></li>
+<li><a href="#unused_skeleton_script">Unused skeleton script</a></li>
+<li><a href="#unused_room_index">Unused room index</a></li>
+<li><a href="#unused_positioning_routine">Unused routine</a></li>
+<li><a href="#unused_sounds">Unused sounds</a></li>
+<li><a href="#redundant_instructions_10">Redundant instructions / code, part 10</a></li>
 </ul>
-<div><span id="redundantinstructionsi"></span></div>
+<div><span id="redundant_instructions_01"></span></div>
 <div class="box box-1">
 <div class="box-title">Redundant instructions / code, part 1</div>
 <div class="paragraph">
@@ -49,7 +49,7 @@ instruction, so this call effectively does nothing. Because this address lies ne
 it seems reasonable to assume that call was originally used in debugging or testing.
 </div>
 </div>
-<div><span id="colouredcreatureslots"></span></div>
+<div><span id="coloured_creature_slots"></span></div>
 <div class="box box-2">
 <div class="box-title">Coloured creatures' slots</div>
 <div class="paragraph">
@@ -58,7 +58,7 @@ the top and bottom y-coordinates are given as 115. This means that the slots are
 the graphic layout data for the three slots at <a href="../asm/40040.html#40138">40138</a> (red), <a href="../asm/40040.html#40143">40143</a> (yellow) and <a href="../asm/40040.html#40148">40148</a> (white) displaying them as six characters high.
 </div>
 </div>
-<div><span id="redundantinstructionsii"></span></div>
+<div><span id="redundant_instructions_02"></span></div>
 <div class="box box-1">
 <div class="box-title">Redundant instructions / code, part 2</div>
 <div class="paragraph">
@@ -69,17 +69,17 @@ the instruction at <a href="../asm/36116.html#36256">36256</a> redundant. This r
 left.
 </div>
 </div>
-<div><span id="spidertiming"></span></div>
+<div><span id="spider_timing"></span></div>
 <div class="box box-2">
 <div class="box-title">Spiders' timing</div>
 <div class="paragraph">
 It can be tricky to get past the three spiders on level 1; fortunately, players who have difficulty are given some consideration. In the routine at
 <a href="../asm/37718.html">37718</a> that controls the spiders' return to their homes, there is a check on the number of times Berk has been killed by a spider, as stored at
 <a href="../asm/34221.html#34223">34223</a>. The greater this value is, the longer the right-most spider will wait at its home position before beginning its next attack. A
-<a href="pokes.html#easierspiders">poke</a> will ensure that the other two spiders behave in the same way.
+<a href="pokes.html#easier_spiders">poke</a> will ensure that the other two spiders behave in the same way.
 </div>
 </div>
-<div><span id="redundantinstructionsiii"></span></div>
+<div><span id="redundant_instructions_03"></span></div>
 <div class="box box-1">
 <div class="box-title">Redundant instructions / code, part 3</div>
 <div class="paragraph">
@@ -87,7 +87,7 @@ The instruction at <a href="../asm/38592.html#38617">38617</a> is a call to the 
 of its top edge (see <a href="../asm/38756.html#38762">38762</a>). The instruction (at <a href="../asm/38592.html#38620">38620</a>) subsequent to this <span class="instruction">CALL</span> loads <span class="register">A</span> with the same value.
 </div>
 </div>
-<div><span id="skeletonwidth"></span></div>
+<div><span id="skeleton_width"></span></div>
 <div class="box box-2">
 <div class="box-title">Width of skeleton</div>
 <div class="paragraph">
@@ -99,7 +99,7 @@ subtraction at <a href="../asm/41498.html#41528">41528</a>.
 It is possible that this was done so that the cannon's projectile has to visibly penetrate the skeleton rather than merely impact on its left edge.
 </div>
 </div>
-<div><span id="flagsgalore"></span></div>
+<div><span id="flags_galore"></span></div>
 <div class="box box-1">
 <div class="box-title">Flags galore</div>
 <div class="paragraph">
@@ -252,7 +252,7 @@ the more significant flags, along with the entity / entities to which they apply
 </table>
 </div>
 </div>
-<div><span id="redundantinstructionsiv"></span></div>
+<div><span id="redundant_instructions_04"></span></div>
 <div class="box box-2">
 <div class="box-title">Redundant instructions / code, part 4</div>
 <div class="paragraph">
@@ -282,7 +282,7 @@ where x is the index of the required colour.
 The same situation exists further on, at <a href="../asm/49705.html#49971">49971</a>, where another set of tangleweeds is defined in the same way.
 </div>
 </div>
-<div><span id="heightofweight"></span></div>
+<div><span id="height_of_weight"></span></div>
 <div class="box box-1">
 <div class="box-title">Height of weight</div>
 <div class="paragraph">
@@ -291,7 +291,7 @@ contains instructions for drawing four character rows of UDGs. As a result, the 
 Berk. This is not a bug, however, and the resulting effect looks quite natural given that the weight is apparently bottom-heavy.
 </div>
 </div>
-<div><span id="graphicswiderthandisplay"></span></div>
+<div><span id="graphics_wider_than_display"></span></div>
 <div class="box box-2">
 <div class="box-title">Graphics wider than display</div>
 <div class="paragraph">
@@ -305,7 +305,7 @@ assigned has its left edge at an x-coordinate of zero. If an x-coordinate of -2 
 x-coordinate of -4 will show the last eight stalactites, with the first being off-screen to the left.
 </div>
 </div>
-<div><span id="redundantinstructionsv"></span></div>
+<div><span id="redundant_instructions_5"></span></div>
 <div class="box box-1">
 <div class="box-title">Redundant instructions / code, part 5</div>
 <div class="paragraph">
@@ -314,7 +314,7 @@ The routine at <a href="../asm/45965.html">45965</a> populates the primary displ
 there is no way for this to be the case, so this check is redundant.
 </div>
 </div>
-<div><span id="redundantinstructionsvi"></span></div>
+<div><span id="redundant_instructions_06"></span></div>
 <div class="box box-2">
 <div class="box-title">Redundant instructions / code, part 6</div>
 <div class="paragraph">
@@ -323,7 +323,7 @@ flag) by the next instruction. Then a jump occurs at <a href="../asm/46830.html#
 instruction at <a href="../asm/46830.html#46932">46932</a> should be removed entirely.
 </div>
 </div>
-<div><span id="redundantinstructionsvii"></span></div>
+<div><span id="redundant_instructions_07"></span></div>
 <div class="box box-1">
 <div class="box-title">Redundant instructions / code, part 7</div>
 <div class="paragraph">
@@ -331,7 +331,7 @@ In the routine at <a href="../asm/52193.html">52193</a> that advances the positi
 There is no such instruction in the equivalent routine (at <a href="../asm/52098.html">52098</a>) for an entity pushed left.
 </div>
 </div>
-<div><span id="redundantinstructionsviii"></span></div>
+<div><span id="redundant_instructions_08"></span></div>
 <div class="box box-2">
 <div class="box-title">Redundant instructions / code, part 8</div>
 <div class="paragraph">
@@ -340,7 +340,7 @@ The routine at <a href="../asm/52315.html">52315</a> handles Drutt's change of d
 them both to be satisfied simultaneously and therefore there is no point in checking both.
 </div>
 </div>
-<div><span id="redundantinstructionsix"></span></div>
+<div><span id="redundant_instructions_09"></span></div>
 <div class="box box-1">
 <div class="box-title">Redundant instructions / code, part 9</div>
 <div class="paragraph">
@@ -364,7 +364,7 @@ POKE <a href="../asm/56210.html#56303">56305</a>,8
 When restored, these additional frames make Berk's walk look slightly more awkward; perhaps this is the reason they were excluded from the lists.
 </div>
 </div>
-<div><span id="unusedskeletonscript"></span></div>
+<div><span id="unused_skeleton_script"></span></div>
 <div class="box box-2">
 <div class="box-title">Unused skeleton script</div>
 <div class="paragraph">
@@ -372,7 +372,7 @@ Level 4's skeleton has an unused block of script data at <a href="../asm/41240.h
 (1-10) number of cycles then step back again.
 </div>
 </div>
-<div><span id="unusedroomindex"></span></div>
+<div><span id="unused_room_index"></span></div>
 <div class="box box-1">
 <div class="box-title">Unused room index</div>
 <div class="paragraph">
@@ -380,7 +380,7 @@ Level 2's accessible rooms are numbered 1, 2, 3, 4, 6 and 7. There is no room wi
 however there is in the room dimension data (<a href="../asm/44436.html#44456">44456</a>). There is also a ceiling (<a href="../asm/43993.html#44097">44097</a>) and a floor (<a href="../asm/43896.html#43968">43968</a>) defined for this room.
 </div>
 </div>
-<div><span id="unusedpositioningroutine"></span></div>
+<div><span id="unused_positioning_routine"></span></div>
 <div class="box box-2">
 <div class="box-title">Unused routine</div>
 <div class="paragraph">
@@ -397,14 +397,14 @@ well as attacking Berk. If this was the case, it may be that this was deemed too
 spontaneously switch positions was developed instead.
 </div>
 </div>
-<div><span id="unusedsounds"></span></div>
+<div><span id="unused_sounds"></span></div>
 <div class="box box-1">
 <div class="box-title">Unused sounds</div>
 <div class="paragraph">
 In the table of sound parameters at <a href="../asm/59634.html">59634</a>, there are three unused sounds (<a href="../asm/59634.html#59650">03</a>, <a href="../asm/59634.html#59706">10</a> and <a href="../asm/59634.html#59714">11</a>).
 </div>
 </div>
-<div><span id="redundantinstructionsx"></span></div>
+<div><span id="redundant_instructions_10"></span></div>
 <div class="box box-2">
 <div class="box-title">Redundant instructions / code, part 10</div>
 <div class="paragraph">
@@ -412,7 +412,7 @@ Script routine 31 (at <a href="../asm/48976.html">48976</a>) is not used. Furthe
 </div>
 </div>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 08/05/2021</div>
 <div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
 <div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>

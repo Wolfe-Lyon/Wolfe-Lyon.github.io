@@ -19,17 +19,17 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#easierspiders">Easier spiders</a></li>
-<li><a href="#higherjumps">Higher jumps</a></li>
-<li><a href="#quickerrecoveryafterfall">Quicker recovery after fall</a></li>
-<li><a href="#infiniteflying">Infinite flying duration</a></li>
-<li><a href="#disablehatch">Disable hatch (level 3)</a></li>
+<li><a href="#easier_spiders">Easier spiders</a></li>
+<li><a href="#higher_jumps">Higher jumps</a></li>
+<li><a href="#quicker_recovery_after_fall">Quicker recovery after fall</a></li>
+<li><a href="#infinite_flying">Infinite flying duration</a></li>
+<li><a href="#disable_hatch">Disable hatch (level 3)</a></li>
 </ul>
-<div><span id="easierspiders"></span></div>
+<div><span id="easier_spiders"></span></div>
 <div class="box box-1">
 <div class="box-title">Easier spiders</div>
 <div class="paragraph">
-As outlined on the <a href="facts.html#spidertiming">trivia page</a>, the right-most spider will adapt to a player having difficulty getting past the spider room.
+As outlined on the <a href="facts.html#spider_timing">trivia page</a>, the right-most spider will adapt to a player having difficulty getting past the spider room.
 To extend this behaviour to the other two spiders, the jump at <a href="../asm/37718.html#37733">37733</a> should be removed:
 </div>
 <div class="paragraph">
@@ -43,7 +43,7 @@ subsequent attacks by a spider (normally only the right-most spider, unless the 
 POKE <a href="../asm/34221.html#34223">34223</a>,x (where larger x results in a longer pause between attacks)
 </div>
 </div>
-<div><span id="higherjumps"></span></div>
+<div><span id="higher_jumps"></span></div>
 <div class="box box-2">
 <div class="box-title">Higher jumps</div>
 <div class="paragraph">
@@ -58,7 +58,7 @@ Changing the cap to 15 is sufficient to allow Berk and Drutt to jump approximate
 high as level 1's entry door room (two screens above the Trap Door room) from the room at the bottom of the Trap Door shaft.
 </div>
 </div>
-<div><span id="quickerrecoveryafterfall"></span></div>
+<div><span id="quicker_recovery_after_fall"></span></div>
 <div class="box box-1">
 <div class="box-title">Quicker recovery after fall</div>
 <div class="paragraph">
@@ -70,7 +70,7 @@ fall any distance and recover instantly:
 POKE <a href="../asm/48934.html#48962">48963</a>,0
 </div>
 </div>
-<div><span id="infiniteflying"></span></div>
+<div><span id="infinite_flying"></span></div>
 <div class="box box-2">
 <div class="box-title">Infinite flying duration</div>
 <div class="paragraph">
@@ -80,7 +80,7 @@ The call at <a href="../asm/48487.html">48487</a> decreases Berk's remaining fly
 POKE <a href="../asm/48487.html">48488</a>,3
 </div>
 </div>
-<div><span id="disablehatch"></span></div>
+<div><span id="disable_hatch"></span></div>
 <div class="box box-1">
 <div class="box-title">Disable hatch (level 3)</div>
 <div class="paragraph">
@@ -91,7 +91,7 @@ POKE <a href="../asm/39151.html">39151</a>,201
 </div>
 </div>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 08/05/2021</div>
 <div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
 <div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>

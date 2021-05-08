@@ -19,18 +19,18 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#instantdirectionflip">Direction Berk is facing flips instantly</a></li>
-<li><a href="#graphicglitches1">Graphical glitches, part 1</a></li>
-<li><a href="#graphicglitches2">Graphical glitches, part 2</a></li>
-<li><a href="#graphicglitches3">Graphical glitches, part 3</a></li>
-<li><a href="#graphicglitches4">Graphical glitches, part 4</a></li>
-<li><a href="#definingduplicatecontrols">Defining duplicate controls</a></li>
-<li><a href="#spelling1">Spelling</a></li>
-<li><a href="#graphicglitches5">Graphical glitches, part 5</a></li>
-<li><a href="#graphicglitches6">Graphical glitches, part 6</a></li>
-<li><a href="#trapdoorclosing">Trap Door closing</a></li>
+<li><a href="#instant_direction_flip">Direction Berk is facing flips instantly</a></li>
+<li><a href="#graphic_glitches_1">Graphical glitches, part 1</a></li>
+<li><a href="#graphic_glitches_2">Graphical glitches, part 2</a></li>
+<li><a href="#graphic_glitches_3">Graphical glitches, part 3</a></li>
+<li><a href="#graphic_glitches_4">Graphical glitches, part 4</a></li>
+<li><a href="#defining_duplicate_controls">Defining duplicate controls</a></li>
+<li><a href="#spelling_1">Spelling</a></li>
+<li><a href="#graphic_glitches_5">Graphical glitches, part 5</a></li>
+<li><a href="#graphic_glitches_6">Graphical glitches, part 6</a></li>
+<li><a href="#trap_door_closing">Trap Door closing</a></li>
 </ul>
-<div><span id="instantdirectionflip"></span></div>
+<div><span id="instant_direction_flip"></span></div>
 <div class="box box-1">
 <div class="box-title">Direction Berk is facing flips instantly</div>
 <div class="paragraph">
@@ -61,7 +61,7 @@ This may occur whether or not Berk is already holding something, however it does
 something up from behind him.
 </div>
 </div>
-<div><span id="graphicglitches1"></span></div>
+<div><span id="graphic_glitches_1"></span></div>
 <div class="box box-2">
 <div class="box-title">Graphical glitches, part 1</div>
 <div class="paragraph">
@@ -78,20 +78,26 @@ is set but in the latter, this pixel is reset:
 <tr>
 <td class="centre" colspan="1" rowspan="1"><a href="../asm/29358.html#29510">29510</a></td>
 <td class="" colspan="1" rowspan="1">9 / 20</td>
-<td class="" colspan="1" rowspan="1"><div style="display:inline-block;width:16px;height:16px;background:url(../images/font/29358.png) -304px -0px;"></div></td>
+<td class="" colspan="1" rowspan="1"><div style="display:inline-block;width:16px;height:16px;background:url(../images/udgs/29358.png) -304px -0px;"></div></td>
 </tr>
 <tr>
 <td class="centre" colspan="1" rowspan="1"><a href="../asm/29358.html#29518">29518</a></td>
 <td class="" colspan="1" rowspan="1">9 / 21</td>
-<td class="" colspan="1" rowspan="1"><div style="display:inline-block;width:16px;height:16px;background:url(../images/font/29358.png) -320px -0px;"></div></td>
+<td class="" colspan="1" rowspan="1"><div style="display:inline-block;width:16px;height:16px;background:url(../images/udgs/29358.png) -320px -0px;"></div></td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
 It is possible that this was intentional, to give the impression of rotation of the eye.
 </div>
+<div class="paragraph">
+To make the second eye frame consistent with the first:
 </div>
-<div><span id="graphicglitches2"></span></div>
+<div class="paragraph">
+POKE <a href="../asm/29358.html#29518">29521</a>,63
+</div>
+</div>
+<div><span id="graphic_glitches_2"></span></div>
 <div class="box box-1">
 <div class="box-title">Graphical glitches, part 2</div>
 <div class="paragraph">
@@ -102,7 +108,7 @@ value at <a href="../asm/40192.html#40222">40222</a> is 33 (eye looking to the l
 POKE <a href="../asm/40192.html#40222">40222</a>,29
 </div>
 </div>
-<div><span id="graphicglitches3"></span></div>
+<div><span id="graphic_glitches_3"></span></div>
 <div class="box box-2">
 <div class="box-title">Graphical glitches, part 3</div>
 <div class="paragraph">
@@ -116,7 +122,7 @@ POKE:
 POKE <a href="../asm/40192.html#40194">40195</a>,8
 </div>
 </div>
-<div><span id="graphicglitches4"></span></div>
+<div><span id="graphic_glitches_4"></span></div>
 <div class="box box-1">
 <div class="box-title">Graphical glitches, part 4</div>
 <div class="paragraph">
@@ -129,7 +135,7 @@ POKE <a href="../asm/50801.html#51195">51195</a>,20 (to use a rock graphic rathe
 POKE <a href="../asm/50801.html#51195">51196</a>,194 (to apply a vertical mirror to the rock graphic)
 </div>
 </div>
-<div><span id="definingduplicatecontrols"></span></div>
+<div><span id="defining_duplicate_controls"></span></div>
 <div class="box box-2">
 <div class="box-title">Defining duplicate controls</div>
 <div class="paragraph">
@@ -141,14 +147,14 @@ both pause and restart. The routine should check the first six keys instead. To 
 POKE <a href="../asm/47060.html#47063">47064</a>,6 (check the first six keys)
 </div>
 </div>
-<div><span id="spelling1"></span></div>
+<div><span id="spelling_1"></span></div>
 <div class="box box-1">
 <div class="box-title">Spelling</div>
 <div class="paragraph">
 Drutt's name is spelt "DRUT" on the <a href="../asm/46710.html#46794">main menu</a>.
 </div>
 </div>
-<div><span id="graphicglitches5"></span></div>
+<div><span id="graphic_glitches_5"></span></div>
 <div class="box box-2">
 <div class="box-title">Graphical glitches, part 5</div>
 <div class="paragraph">
@@ -162,7 +168,7 @@ such as the weight on level 3 or the cannon on level 4. To fix, the errant instr
 POKE <a href="../asm/48738.html#48741">48741</a>,0<br />
 </div>
 </div>
-<div><span id="graphicglitches6"></span></div>
+<div><span id="graphic_glitches_6"></span></div>
 <div class="box box-1">
 <div class="box-title">Graphical glitches, part 6</div>
 <div class="paragraph">
@@ -173,7 +179,7 @@ character that is not quite right. A vertical mirror should be applied to this c
 POKE <a href="../asm/58119.html#58169">58170</a>,193
 </div>
 </div>
-<div><span id="trapdoorclosing"></span></div>
+<div><span id="trap_door_closing"></span></div>
 <div class="box box-2">
 <div class="box-title">Trap Door closing</div>
 <div class="paragraph">
@@ -212,7 +218,7 @@ POKE <a href="../asm/36966.html#36975">36976</a>,9
 </div>
 </div>
 <footer>
-<div class="release">The Complete Through the Trap Door RAM Disassembly 10/04/2021</div>
+<div class="release">The Complete Through the Trap Door RAM Disassembly 08/05/2021</div>
 <div class="copyright">&#169; 1987 Don Priestley / Piranha / Alternative Software Ltd (Through the Trap Door). &#169; 2015-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
 <div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>

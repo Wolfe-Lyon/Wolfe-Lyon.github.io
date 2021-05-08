@@ -19,18 +19,18 @@
 </tr>
 </table>
 <ul class="contents">
-<li><a href="#cheatmode">Cheat mode</a></li>
-<li><a href="#oddballframenumbers">Odd Ball frame numbers</a></li>
-<li><a href="#strengthbar">Drawing the strength bar</a></li>
-<li><a href="#gimbalcanhelpflag">Gimbal's can-help flag</a></li>
-<li><a href="#summoningspellpower">Spell power and summoning</a></li>
-<li><a href="#emptyinventorycheck">Empty inventory check</a></li>
-<li><a href="#thewallextrainstruction">Extra room layout data (the wall)</a></li>
-<li><a href="#glowingbottleatlittlebottle">Glowing bottle location check</a></li>
-<li><a href="#reusedarchitecture">Reused architecture graphics</a></li>
-<li><a href="#redundantinstructions">Redundant instructions / code</a></li>
+<li><a href="#cheat_mode">Cheat mode</a></li>
+<li><a href="#odd_ball_frame_numbers">Odd Ball frame numbers</a></li>
+<li><a href="#strength_bar">Drawing the strength bar</a></li>
+<li><a href="#gimbal_can_help_flag">Gimbal's can-help flag</a></li>
+<li><a href="#summoning_spell_power">Spell power and summoning</a></li>
+<li><a href="#empty_inventory_check">Empty inventory check</a></li>
+<li><a href="#the_wall_extra_instruction">Extra room layout data (the wall)</a></li>
+<li><a href="#glowing_bottle_at_little_bottle">Glowing bottle location check</a></li>
+<li><a href="#reused_architecture">Reused architecture graphics</a></li>
+<li><a href="#redundant_instructions">Redundant instructions / code</a></li>
 </ul>
-<div><span id="cheatmode"></span></div>
+<div><span id="cheat_mode"></span></div>
 <div class="box box-1">
 <div class="box-title">Cheat mode</div>
 <div class="paragraph">
@@ -48,7 +48,7 @@ visit. The first must digit must be between 0 and 4 (as the game's rooms are num
 pressing 0 then 0 will move Magic Knight to room 00 (i.e. The Lift). Pressing any key outside these allowed ranges will immediately resume the game.
 </div>
 </div>
-<div><span id="oddballframenumbers"></span></div>
+<div><span id="odd_ball_frame_numbers"></span></div>
 <div class="box box-2">
 <div class="box-title">Odd Ball frame numbers</div>
 <div class="paragraph">
@@ -58,7 +58,7 @@ The routine <a href="../asm/39125.html">39125</a> that draws the Odd Ball to scr
 this.
 </div>
 </div>
-<div><span id="strengthbar"></span></div>
+<div><span id="strength_bar"></span></div>
 <div class="box box-1">
 <div class="box-title">Drawing the strength bar</div>
 <div class="paragraph">
@@ -68,14 +68,14 @@ remainder over and above a multiple of eight is drawn. If the Magic Knight's str
 more logical to have <span class="instruction">JR <a href="../asm/36215.html#36274">36274</a></span> here to skip over the "fractional part drawing".
 </div>
 </div>
-<div><span id="gimbalcanhelpflag"></span></div>
+<div><span id="gimbal_can_help_flag"></span></div>
 <div class="box box-2">
 <div class="box-title">Gimbal's can-help flag</div>
 <div class="paragraph">
 Giving Gimbal the Willow Rod sets his can-help flag (instructions from <a href="../asm/30880.html#30989">30989</a>), even though Gimbal never helps.
 </div>
 </div>
-<div><span id="summoningspellpower"></span></div>
+<div><span id="summoning_spell_power"></span></div>
 <div class="box box-1">
 <div class="box-title">Spell power and summoning</div>
 <div class="paragraph">
@@ -86,7 +86,7 @@ Magic Knight's spell power, as is the case for other characters? To change this 
 on Magic Knight's spell power), the instruction <span class="instruction">JP Z,33512</span> at <a href="../asm/33312.html#33477">33477</a> should be changed to <span class="instruction">JP Z,33504</span>.
 </div>
 </div>
-<div><span id="emptyinventorycheck"></span></div>
+<div><span id="empty_inventory_check"></span></div>
 <div class="box box-2">
 <div class="box-title">Empty inventory check</div>
 <div class="paragraph">
@@ -96,7 +96,7 @@ execution of the routine continues, but at <a href="../asm/34914.html#34978">349
 that does the check is skipped as a result of the first check?
 </div>
 </div>
-<div><span id="thewallextrainstruction"></span></div>
+<div><span id="the_wall_extra_instruction"></span></div>
 <div class="box box-1">
 <div class="box-title">Extra room layout data (the wall)</div>
 <div class="paragraph">
@@ -105,7 +105,7 @@ but this is part of the floor and has already been drawn. In fact the immediatel
 the brickwork drawing mode to one row in preparation for drawing this unnecessary piece.
 </div>
 </div>
-<div><span id="glowingbottleatlittlebottle"></span></div>
+<div><span id="glowing_bottle_at_little_bottle"></span></div>
 <div class="box box-2">
 <div class="box-title">Glowing bottle location check</div>
 <div class="paragraph">
@@ -115,10 +115,10 @@ releasing Banshee. Giving the Glowing Bottle to another character while at the L
 be set to 99 and so stop illuminating the room.
 </div>
 <div class="paragraph">
-(<a href="bugs.html#deathbydarkissues">See also bug</a>).
+(<a href="bugs.html#death_by_dark_issues">See also bug</a>).
 </div>
 </div>
-<div><span id="reusedarchitecture"></span></div>
+<div><span id="reused_architecture"></span></div>
 <div class="box box-1">
 <div class="box-title">Reused architecture graphics</div>
 <div class="paragraph">
@@ -143,7 +143,7 @@ The <a href="../asm/54617.html">architecture styles lookup table</a> contains se
 Some of these blocks are also defined in Stormbringer.
 </div>
 </div>
-<div><span id="redundantinstructions"></span></div>
+<div><span id="redundant_instructions"></span></div>
 <div class="box box-2">
 <div class="box-title">Redundant instructions / code</div>
 <div class="paragraph">
@@ -155,7 +155,7 @@ commanded) character, however this value is never used.
 </div>
 </div>
 <footer>
-<div class="release">The Complete Spellbound (48k) RAM Disassembly 10/04/2021</div>
+<div class="release">The Complete Spellbound (48k) RAM Disassembly 08/05/2021</div>
 <div class="copyright">&#169; 1985 David Jones / Mastertronic (Spellbound). &#169; 2010-2021 Philip M. Anderson (this disassembly). Contact: weyoun47-AT-gmail.com.</div>
 <div class="created">Created using <a class="link" href="http://skoolkit.ca/">SkoolKit</a> 8.4.</div>
 </footer>
